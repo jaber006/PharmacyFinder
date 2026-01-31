@@ -34,6 +34,49 @@ The tool checks properties against these location rules from the Pharmacy Locati
 - Support for manual data import via CSV
 - Geocoding with caching to minimize API costs
 
+
+## Opportunity Scanner (NEW!)
+
+The **Opportunity Scanner** is a higher-level tool that combines development news monitoring with medical center analysis to find greenfield pharmacy opportunities before competitors notice them.
+
+### The Playbook
+
+1. **Monitor development news** - Track announcements for new Woolworths, Coles, shopping centers, housing estates, hospitals, aged care facilities
+2. **Identify growth areas** - When major development is announced, that area is growing
+3. **Scan for opportunities** - Find medical centers in those areas that don't have on-site pharmacies
+4. **Move early** - Lock in opportunities before others connect the dots
+
+### Usage
+
+Run a full opportunity scan:
+```bash
+python opportunity_scanner.py --mode full --days 30 --limit 10
+```
+
+Scan only development news:
+```bash
+python opportunity_scanner.py --mode news --days 30
+```
+
+Scan a specific area:
+```bash
+python opportunity_scanner.py --mode area --suburb "South Burnie" --state TAS
+```
+
+### Output
+
+The scanner generates a JSON report with:
+- Development signals found (new retail, housing, health precincts)
+- Priority areas ranked by growth potential
+- Medical centers without on-site pharmacies (opportunities)
+- Opportunity scores based on GP count, specialists, location
+
+### New Scrapers
+
+- ```scrapers/development_news.py``` - Monitors news sources for development announcements
+- ```scrapers/medical_centers.py``` - Finds medical centers and checks pharmacy co-location
+
+
 ## Requirements
 
 - Python 3.10+
@@ -341,3 +384,4 @@ This tool is not affiliated with or endorsed by:
 - Pharmacy Guild of Australia
 
 Results should be verified with official sources before making any decisions.
+
