@@ -37,6 +37,7 @@ from utils.database import Database
 from utils.geocoding import Geocoder
 
 from scrapers.pharmacies import PharmacyScraper
+from scrapers.findapharmacy import FindAPharmacyScraper
 from scrapers.gps import GPScraper
 from scrapers.supermarkets import SupermarketScraper
 from scrapers.hospitals import HospitalScraper
@@ -69,6 +70,7 @@ class PharmacyLocationFinder:
         self.geocoder = Geocoder(config.GOOGLE_MAPS_API_KEY, self.db)
 
         # Scrapers
+        self.findapharmacy_scraper = FindAPharmacyScraper(self.db)
         self.pharmacy_scraper = PharmacyScraper(self.db, self.geocoder)
         self.gp_scraper = GPScraper(self.db, self.geocoder)
         self.supermarket_scraper = SupermarketScraper(self.db, self.geocoder)
@@ -99,10 +101,26 @@ class PharmacyLocationFinder:
         print(f"  COLLECTING REFERENCE DATA — {config.AUSTRALIAN_STATES.get(region, region)}")
         print(f"{'='*60}\n")
 
-        self.db.clear_reference_data()
-
-        print(f"  [1/5] Pharmacies...")
-        pharmacy_count = self.pharmacy_scraper.scrape_all(region)
+        # Check if we already have comprehensive pharmacy data BEFORE clearing
+        existing_pharmacies = len(self.db.get_all_pharmacies())
+        
+        self.db.clear_reference_data(keep_findapharmacy=True)
+        if existing_pharmacies > 1000:
+            print(f"  [1/5] Pharmacies — using existing {existing_pharmacies} pharmacies from DB")
+            pharmacy_count = existing_pharmacies
+        else:
+            print(f"  [1/5] Pharmacies (findapharmacy.com.au)...")
+            pharmacy_count = 0
+            try:
+                pharmacy_count = self.findapharmacy_scraper.scrape_all(region)
+            except Exception as e:
+                print(f"         FindAPharmacy scraper failed: {e}")
+            
+            if pharmacy_count < 10:
+                print(f"         FindAPharmacy returned only {pharmacy_count}, falling back to OSM...")
+                osm_count = self.pharmacy_scraper.scrape_all(region)
+                pharmacy_count += osm_count
+        
         print(f"         [OK] {pharmacy_count} pharmacies\n")
 
         print(f"  [2/5] GP practices...")

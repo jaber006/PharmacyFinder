@@ -56,9 +56,25 @@ class Database:
                 longitude REAL NOT NULL,
                 source TEXT,
                 date_scraped TEXT,
-                UNIQUE(address)
+                suburb TEXT,
+                state TEXT,
+                postcode TEXT,
+                opening_hours TEXT,
+                UNIQUE(name, latitude, longitude)
             )
         """)
+        
+        # Migrate old schema if needed (add missing columns)
+        try:
+            cursor.execute("SELECT suburb FROM pharmacies LIMIT 1")
+        except sqlite3.OperationalError:
+            for col in [
+                "suburb TEXT", "state TEXT", "postcode TEXT", "opening_hours TEXT"
+            ]:
+                try:
+                    cursor.execute(f"ALTER TABLE pharmacies ADD COLUMN {col}")
+                except sqlite3.OperationalError:
+                    pass
 
         # GPs table - general practitioner practices
         cursor.execute("""
@@ -208,15 +224,20 @@ class Database:
         cursor = self.connection.cursor()
         cursor.execute("""
             INSERT OR IGNORE INTO pharmacies
-            (name, address, latitude, longitude, source, date_scraped)
-            VALUES (?, ?, ?, ?, ?, ?)
+            (name, address, latitude, longitude, source, date_scraped,
+             suburb, state, postcode, opening_hours)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             pharmacy_data.get('name'),
             pharmacy_data.get('address'),
             pharmacy_data.get('latitude'),
             pharmacy_data.get('longitude'),
             pharmacy_data.get('source'),
-            datetime.now().isoformat()
+            datetime.now().isoformat(),
+            pharmacy_data.get('suburb'),
+            pharmacy_data.get('state'),
+            pharmacy_data.get('postcode'),
+            pharmacy_data.get('opening_hours'),
         ))
         self.connection.commit()
         return cursor.lastrowid
@@ -390,10 +411,18 @@ class Database:
         cursor.execute("DELETE FROM eligible_properties")
         self.connection.commit()
 
-    def clear_reference_data(self):
-        """Clear all reference data (pharmacies, GPs, etc.) for refresh."""
+    def clear_reference_data(self, keep_findapharmacy: bool = True):
+        """Clear all reference data (pharmacies, GPs, etc.) for refresh.
+        
+        Args:
+            keep_findapharmacy: If True, preserve pharmacies from findapharmacy.com.au
+        """
         cursor = self.connection.cursor()
-        cursor.execute("DELETE FROM pharmacies")
+        if keep_findapharmacy:
+            # Only clear non-findapharmacy pharmacies (OSM, Healthdirect, etc.)
+            cursor.execute("DELETE FROM pharmacies WHERE source != 'findapharmacy.com.au'")
+        else:
+            cursor.execute("DELETE FROM pharmacies")
         cursor.execute("DELETE FROM gps")
         cursor.execute("DELETE FROM supermarkets")
         cursor.execute("DELETE FROM hospitals")
