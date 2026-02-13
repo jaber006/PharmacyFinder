@@ -58,7 +58,7 @@ class OpportunityScanner:
         for area in self.priority_areas[:10]:
             print(f"  {area['location']}, {area['state']} (score: {area['total_score']})")
             for sig in area['signals'][:2]:
-                print(f"    └─ {sig.development_type}: {sig.title[:50]}...")
+                print(f"    └- {sig.development_type}: {sig.title[:50]}...")
         
         return self.signals
     

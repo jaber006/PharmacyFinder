@@ -25,11 +25,13 @@ python main.py scan --region TAS --with-properties
 
 ## How It Works
 
-1. **Collects reference data** — pharmacies, GPs, supermarkets, hospitals
-   from OpenStreetMap and Healthdirect (all free, no API keys needed)
+1. **Collects reference data** — pharmacies, GPs, supermarkets, hospitals,
+   shopping centres from OpenStreetMap (plus curated hospital and shopping
+   centre data with bed counts / GLA)
 2. **Scans for opportunity zones** — checks every POI against 8 Location
    Rules to find gaps where a new pharmacy could get PBS approval
-3. **Outputs results** — interactive HTML map + CSV + console summary
+3. **Reverse-geocodes** top opportunities to human-readable addresses
+4. **Outputs results** — interactive HTML map + CSV + console summary
 
 ### Rules Scanned
 
@@ -37,7 +39,7 @@ python main.py scan --region TAS --with-properties
 |-----------|---------------|
 | Item 130  | Areas >= 1.5 km from any pharmacy with a supermarket + GP nearby |
 | Item 131  | Areas >= 10 km by road from nearest pharmacy (rural) |
-| Item 132  | Major shopping centres (15,000+ sqm) without a pharmacy |
+| Item 132  | Major shopping centres (15,000+ sqm GLA) without a pharmacy |
 | Item 133  | Supermarkets >= 1,000 sqm without an adjacent pharmacy |
 | Item 134  | Shopping centres 5,000-15,000 sqm with supermarket but no pharmacy |
 | Item 134A | Areas >= 90 km straight-line from nearest pharmacy (very remote) |
@@ -73,22 +75,25 @@ SCANNING FOR OPPORTUNITY ZONES - Tasmania
     Pharmacies:        60
     Supermarkets:      118
     GP practices:      89
-    Hospitals:         36
+    Hospitals:         38
+    Shopping centres:  10
 
-  Scanning Item 130...  -> 20 candidates
+  Scanning Item 130...  -> 36 candidates
   Scanning Item 131...  -> 64 candidates
-  Scanning Item 133...  -> 19 candidates
+  Scanning Item 132...  ->  2 candidates
+  Scanning Item 133...  -> 94 candidates
+  Scanning Item 134...  ->  7 candidates
   Scanning Item 134A... ->  7 candidates
-  Scanning Item 135...  ->  3 candidates
+  Scanning Item 135...  ->  5 candidates
 
-  After de-duplication: 69 unique opportunity zones
+  After de-duplication: 123 unique opportunity zones
 
   Top opportunities (by confidence):
-    1. [90%] Walkers Supermarket        (Flinders Island - 149 km from pharmacy)
-    2. [90%] Grassy Supermarket         (King Island - 176 km from pharmacy)
-    3. [90%] Foodworks                  (King Island - 198 km from pharmacy)
-    4. [85%] Hilly's IGA               (rural TAS - 17 km from pharmacy)
-    5. [85%] Evandale General Store     (rural TAS - 13 km from pharmacy)
+    1. [90%] Walkers Supermarket  (Flinders Island - 149 km from pharmacy)
+    2. [90%] Grassy Supermarket   (King Island - 176 km from pharmacy)
+    3. [90%] Foodworks            (King Island - 198 km from pharmacy)
+    4. [85%] Hilly's IGA          (St Helens - 17 km from pharmacy)
+    5. [85%] Evandale General Store (rural TAS - 13 km from pharmacy)
 ```
 
 ## Output Files
@@ -97,23 +102,41 @@ SCANNING FOR OPPORTUNITY ZONES - Tasmania
   zones, existing pharmacies, supermarkets, GPs, and hospitals as toggleable
   layers
 - `output/opportunity_zones_TAS.csv` — Spreadsheet with coordinates, rules,
-  evidence, confidence scores
+  evidence, confidence scores, and reverse-geocoded addresses
 
 ## Data Sources
 
 All free, no API keys required:
 
-- **OpenStreetMap** (Overpass API) — pharmacies, GPs, supermarkets, hospitals
-- **Healthdirect** — additional pharmacy and GP coverage
-- **OSRM** — driving distance calculations (public server)
-- **Nominatim** — geocoding (OpenStreetMap)
-- **AIHW** — curated hospital bed count data
+| Data | Source |
+|------|--------|
+| Pharmacies | OpenStreetMap (Overpass API) + Healthdirect |
+| GPs / Clinics | OpenStreetMap (Overpass API) + Healthdirect |
+| Supermarkets | OpenStreetMap (Overpass API) |
+| Hospitals | Curated list (AIHW bed counts) + OpenStreetMap |
+| Shopping centres | Curated list (GLA data) + OpenStreetMap |
+| Driving distances | OSRM (public server) |
+| Geocoding | Nominatim (OpenStreetMap) |
+
+## Confidence Scoring
+
+Each opportunity gets a confidence score based on data quality:
+
+| Score | Meaning |
+|-------|---------|
+| 90% | Very remote (Item 134A) — verified straight-line distance |
+| 85% | OSRM-verified route distance (Item 131), major shopping centres (Item 132) |
+| 80% | Large supermarket with clear pharmacy gap (Item 130 opt ii), hospitals (Item 135) |
+| 75% | Supermarket + GP combination (Item 130 opt i), major chain supermarkets (Item 133) |
+| 70% | Estimated routes (Item 131), non-major supermarkets |
+| 65% | Medical centre data (Item 136) |
+| 60% | GP cluster proxy (Item 136, requires manual verification) |
 
 ## Project Structure
 
 ```
 PharmacyFinder/
-  main.py                 # CLI entry point
+  main.py                 # CLI entry point + orchestrator
   config.py               # Configuration and thresholds
   scanner/
     zone_scanner.py       # Core POI-based opportunity scanner
@@ -123,6 +146,7 @@ PharmacyFinder/
     gps.py                # OSM + Healthdirect GP scraper
     supermarkets.py       # OSM supermarket scraper
     hospitals.py          # Curated + OSM hospital scraper
+    shopping_centres.py   # Curated + OSM shopping centre scraper
     commercial_re.py      # Commercial real estate scraper
     medical_centers.py    # Medical centre scanner
     development_news.py   # Development news monitor
@@ -133,6 +157,7 @@ PharmacyFinder/
     database.py           # SQLite database layer
     distance.py           # Haversine + OSRM distance utils
     geocoding.py          # Nominatim geocoder
+    boundaries.py         # State bounding box validation
   output/                 # Generated maps and CSVs
 ```
 
@@ -142,6 +167,19 @@ PharmacyFinder/
 - No paid API keys needed (all free data sources)
 - Internet connection for OSM/OSRM/Healthdirect queries
 
+## Limitations
+
+- **Shopping centre GLA** — OSM doesn't tag GLA reliably; curated data
+  covers major centres but may miss smaller ones
+- **GP FTE** — defaults to 1.0 per practice; real FTE data would improve
+  Item 130/136 accuracy
+- **Hospital bed counts** — curated for major hospitals; OSM hospitals
+  often have 0 beds tagged
+- **Rate limiting** — Overpass API has rate limits; large state scans may
+  need retry logic
+- **Road distance** — public OSRM server has rate limits; self-hosted
+  OSRM would allow faster batch processing
+
 ## License
 
-Private — not for redistribution.
+Private -- not for redistribution.

@@ -20,7 +20,7 @@ from utils.database import Database
 import config
 
 
-# ── colour palette per rule ───────────────────────────────────────
+# -- colour palette per rule ---------------------------------------
 
 RULE_COLOURS = {
     'Item 130': '#3388ff',   # blue
@@ -45,7 +45,7 @@ RULE_ICONS = {
 }
 
 
-# ── CSV ───────────────────────────────────────────────────────────
+# -- CSV -----------------------------------------------------------
 
 def generate_csv(opportunities: List[Dict], output_path: str) -> str:
     """Write opportunity zones to CSV."""
@@ -72,7 +72,7 @@ def generate_csv(opportunities: List[Dict], output_path: str) -> str:
     return output_path
 
 
-# ── Interactive Map ───────────────────────────────────────────────
+# -- Interactive Map -----------------------------------------------
 
 def generate_map(
     opportunities: List[Dict],
@@ -200,7 +200,7 @@ def generate_map(
     return output_path
 
 
-# ── Console summary ───────────────────────────────────────────────
+# -- Console summary -----------------------------------------------
 
 def print_summary(opportunities: List[Dict], region: str = ''):
     """Pretty-print a summary to stdout."""

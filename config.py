@@ -31,7 +31,7 @@ RULE_DISTANCES = {
 
 # FTE (Full-Time Equivalent) thresholds
 FTE_REQUIREMENTS = {
-    'item_130_gp': 1.0,   # Item 130 option (i): 1 FTE GP within 500m (with 1,000m² supermarket)
+    'item_130_gp': 1.0,   # Item 130 option (i): 1 FTE GP within 500m (with 1,000sqm supermarket)
     'item_132_gp': 4.0,   # Item 132: 4 FTE GPs in same town
     'item_136_prescribers': 8.0,   # Item 136: 8 FTE PBS prescribers total
     'item_136_medical': 7.0,       # Item 136: of which 7 must be medical practitioners

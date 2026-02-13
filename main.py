@@ -40,6 +40,7 @@ from scrapers.pharmacies import PharmacyScraper
 from scrapers.gps import GPScraper
 from scrapers.supermarkets import SupermarketScraper
 from scrapers.hospitals import HospitalScraper
+from scrapers.shopping_centres import ShoppingCentreScraper
 from scrapers.commercial_re import CommercialREScraper
 
 from scanner.zone_scanner import ZoneScanner
@@ -57,9 +58,9 @@ from rules.item_136 import Item136Rule
 import config
 
 
-# ══════════════════════════════════════════════════════════════════
+# ==================================================================
 #  Core orchestrator
-# ══════════════════════════════════════════════════════════════════
+# ==================================================================
 
 class PharmacyLocationFinder:
     def __init__(self, db_path: str = None):
@@ -72,6 +73,7 @@ class PharmacyLocationFinder:
         self.gp_scraper = GPScraper(self.db, self.geocoder)
         self.supermarket_scraper = SupermarketScraper(self.db, self.geocoder)
         self.hospital_scraper = HospitalScraper(self.db, self.geocoder)
+        self.shopping_centre_scraper = ShoppingCentreScraper(self.db, self.geocoder)
         self.property_scraper = CommercialREScraper(self.db, self.geocoder)
 
         # Zone scanner (new)
@@ -89,47 +91,53 @@ class PharmacyLocationFinder:
             Item136Rule(self.db),
         ]
 
-    # ── Data collection ───────────────────────────────────────────
+    # -- Data collection -------------------------------------------
 
     def collect_reference_data(self, region: str = 'TAS'):
-        """Scrape all reference data (pharmacies, GPs, supermarkets, hospitals)."""
+        """Scrape all reference data (pharmacies, GPs, supermarkets, hospitals, shopping centres)."""
         print(f"\n{'='*60}")
         print(f"  COLLECTING REFERENCE DATA — {config.AUSTRALIAN_STATES.get(region, region)}")
         print(f"{'='*60}\n")
 
         self.db.clear_reference_data()
 
-        print(f"  [1/4] Pharmacies...")
+        print(f"  [1/5] Pharmacies...")
         pharmacy_count = self.pharmacy_scraper.scrape_all(region)
         print(f"         [OK] {pharmacy_count} pharmacies\n")
 
-        print(f"  [2/4] GP practices...")
+        print(f"  [2/5] GP practices...")
         gp_count = self.gp_scraper.scrape_all(region)
         print(f"         [OK] {gp_count} GP practices\n")
 
-        print(f"  [3/4] Supermarkets...")
+        print(f"  [3/5] Supermarkets...")
         supermarket_count = self.supermarket_scraper.scrape_all(region)
         print(f"         [OK] {supermarket_count} supermarkets\n")
 
-        print(f"  [4/4] Hospitals...")
+        print(f"  [4/5] Hospitals...")
         hospital_count = self.hospital_scraper.scrape_all(region)
         print(f"         [OK] {hospital_count} hospitals\n")
 
-        print(f"  {'─'*56}")
-        print(f"  Pharmacies:   {pharmacy_count}")
-        print(f"  GPs:          {gp_count}")
-        print(f"  Supermarkets: {supermarket_count}")
-        print(f"  Hospitals:    {hospital_count}")
-        print(f"  {'─'*56}\n")
+        print(f"  [5/5] Shopping centres...")
+        shopping_centre_count = self.shopping_centre_scraper.scrape_all(region)
+        print(f"         [OK] {shopping_centre_count} shopping centres\n")
+
+        print(f"  {'-'*56}")
+        print(f"  Pharmacies:        {pharmacy_count}")
+        print(f"  GPs:               {gp_count}")
+        print(f"  Supermarkets:      {supermarket_count}")
+        print(f"  Hospitals:         {hospital_count}")
+        print(f"  Shopping centres:  {shopping_centre_count}")
+        print(f"  {'-'*56}\n")
 
         return {
             'pharmacies': pharmacy_count,
             'gps': gp_count,
             'supermarkets': supermarket_count,
             'hospitals': hospital_count,
+            'shopping_centres': shopping_centre_count,
         }
 
-    # ── Zone scanning (NEW) ───────────────────────────────────────
+    # -- Zone scanning (NEW) ---------------------------------------
 
     def scan_opportunities(self, region: str = 'TAS', output_dir: str = None):
         """
@@ -162,7 +170,7 @@ class PharmacyLocationFinder:
 
         return opp_dicts
 
-    # ── Property cross-reference (optional add-on to scan) ────────
+    # -- Property cross-reference (optional add-on to scan) --------
 
     def cross_reference_properties(self, region: str = 'TAS', limit: int = 100,
                                     output_dir: str = None):
@@ -192,7 +200,7 @@ class PharmacyLocationFinder:
         # Generate legacy outputs
         self._generate_property_outputs(output_dir)
 
-    # ── Legacy property checking ──────────────────────────────────
+    # -- Legacy property checking ----------------------------------
 
     def _check_properties_against_rules(self):
         """Check all properties in the DB against eligibility rules."""
@@ -244,7 +252,7 @@ class PharmacyLocationFinder:
         pd.DataFrame(rows).to_csv(csv_path, index=False)
         print(f"  [OK] Property CSV: {csv_path}")
 
-    # ── Stats ─────────────────────────────────────────────────────
+    # -- Stats -----------------------------------------------------
 
     def show_stats(self):
         stats = self.db.get_reference_data_stats()
@@ -264,9 +272,9 @@ class PharmacyLocationFinder:
         self.db.close()
 
 
-# ══════════════════════════════════════════════════════════════════
+# ==================================================================
 #  CLI
-# ══════════════════════════════════════════════════════════════════
+# ==================================================================
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -285,7 +293,7 @@ examples:
 
     sub = parser.add_subparsers(dest='command', help='Command to run')
 
-    # ── scan ──────────────────────────────────────────────────────
+    # -- scan ------------------------------------------------------
     p_scan = sub.add_parser(
         'scan',
         help='Collect reference data then scan for opportunity zones (recommended)',
@@ -301,14 +309,14 @@ examples:
     p_scan.add_argument('--property-limit', type=int, default=100,
                         help='Max properties to scrape (default: 100)')
 
-    # ── collect ───────────────────────────────────────────────────
+    # -- collect ---------------------------------------------------
     p_collect = sub.add_parser(
         'collect',
         help='Collect reference data only (pharmacies, GPs, supermarkets, hospitals)',
     )
     p_collect.add_argument('--region', default='TAS')
 
-    # ── check (legacy) ────────────────────────────────────────────
+    # -- check (legacy) --------------------------------------------
     p_check = sub.add_parser(
         'check',
         help='Legacy: collect data, scrape properties, check eligibility',
@@ -318,10 +326,10 @@ examples:
     p_check.add_argument('--limit', type=int, default=100)
     p_check.add_argument('--use-samples', action='store_true')
 
-    # ── stats ─────────────────────────────────────────────────────
+    # -- stats -----------------------------------------------------
     sub.add_parser('stats', help='Show database statistics')
 
-    # ── Backward-compatible flat flags ────────────────────────────
+    # -- Backward-compatible flat flags ----------------------------
     parser.add_argument('--all', action='store_true',
                         help='(Legacy) Run scan with default settings')
     parser.add_argument('--region', default=None,

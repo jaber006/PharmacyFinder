@@ -150,8 +150,7 @@ class Database:
                 poi_name TEXT,
                 poi_type TEXT,
                 region TEXT,
-                date_scanned TEXT,
-                UNIQUE(latitude, longitude, qualifying_rules)
+                date_scanned TEXT
             )
         """)
 
@@ -408,13 +407,13 @@ class Database:
         result = cursor.fetchone()
         return dict(result) if result else None
 
-    # ── Opportunity zone methods ──────────────────────────────────
+    # -- Opportunity zone methods ----------------------------------
 
     def insert_opportunity(self, opportunity_data: Dict) -> int:
         """Insert a discovered opportunity zone."""
         cursor = self.connection.cursor()
         cursor.execute("""
-            INSERT OR IGNORE INTO opportunities
+            INSERT INTO opportunities
             (latitude, longitude, address, qualifying_rules, evidence,
              confidence, nearest_pharmacy_km, nearest_pharmacy_name,
              poi_name, poi_type, region, date_scanned)
@@ -457,7 +456,7 @@ class Database:
             cursor.execute("DELETE FROM opportunities")
         self.connection.commit()
 
-    # ── Medical centre methods ────────────────────────────────────
+    # -- Medical centre methods ------------------------------------
 
     def insert_medical_centre(self, data: Dict) -> int:
         """Insert a medical centre."""
@@ -491,7 +490,7 @@ class Database:
         cursor.execute("DELETE FROM medical_centres")
         self.connection.commit()
 
-    # ── Summary / stats ───────────────────────────────────────────
+    # -- Summary / stats -------------------------------------------
 
     def get_reference_data_stats(self) -> Dict:
         """Get counts of all reference data tables."""

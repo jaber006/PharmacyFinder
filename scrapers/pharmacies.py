@@ -13,6 +13,7 @@ import re
 from typing import List, Dict, Optional
 from utils.database import Database
 from utils.geocoding import Geocoder
+from utils.boundaries import in_state
 import config
 
 
@@ -221,6 +222,12 @@ class PharmacyScraper:
             if not lat or not lon:
                 return None
 
+            lat, lon = float(lat), float(lon)
+
+            # Validate coordinates are in the correct state
+            if not in_state(lat, lon, region):
+                return None
+
             name = tags.get('name', 'Unknown Pharmacy')
             
             # Build address from OSM tags
@@ -237,18 +244,17 @@ class PharmacyScraper:
 
             address = ', '.join(p for p in addr_parts if p)
             if not address or address == region:
-                # Use reverse geocoding as fallback (but don't hammer the API)
                 address = f"{name}, {region}, Australia"
 
             return {
                 'name': name,
                 'address': address,
-                'latitude': float(lat),
-                'longitude': float(lon),
+                'latitude': lat,
+                'longitude': lon,
                 'source': 'OpenStreetMap'
             }
 
-        except Exception as e:
+        except Exception:
             return None
 
     def scrape_healthdirect_web(self, region: str = 'TAS') -> int:

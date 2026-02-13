@@ -31,10 +31,11 @@ from utils.distance import (
     format_distance,
     get_driving_distance,
 )
+from utils.geocoding import Geocoder
 import config
 
 
-# ── helpers ───────────────────────────────────────────────────────
+# -- helpers -------------------------------------------------------
 
 def _nearest_pharmacy(lat: float, lon: float, pharmacies: List[Dict]) -> Tuple[Optional[Dict], float]:
     """Return (nearest_pharmacy_dict, distance_km).  Distance is inf when list is empty."""
@@ -52,7 +53,7 @@ def _has_nearby_pharmacy(lat: float, lon: float, pharmacies: List[Dict],
     return False
 
 
-# ── data-classes for results ──────────────────────────────────────
+# -- data-classes for results --------------------------------------
 
 @dataclass
 class Opportunity:
@@ -84,7 +85,7 @@ class Opportunity:
         }
 
 
-# ── The scanner ───────────────────────────────────────────────────
+# -- The scanner ---------------------------------------------------
 
 class ZoneScanner:
     """
@@ -105,12 +106,19 @@ class ZoneScanner:
         self._shopping_centres: List[Dict] = []
         self._medical_centres: List[Dict] = []
 
-    # ── public API ────────────────────────────────────────────────
+    # -- public API ------------------------------------------------
 
-    def scan(self, region: str = 'TAS', verbose: bool = True) -> List[Opportunity]:
+    def scan(self, region: str = 'TAS', verbose: bool = True,
+             reverse_geocode: bool = True, geocode_limit: int = 20) -> List[Opportunity]:
         """
         Run all rule scanners and return a de-duplicated, scored list of
         opportunity zones.
+
+        Args:
+            region: State/territory code
+            verbose: Print progress to stdout
+            reverse_geocode: Reverse-geocode top opportunities to get addresses
+            geocode_limit: Max number of opportunities to reverse-geocode
         """
         self._load_reference_data()
 
@@ -143,15 +151,52 @@ class ZoneScanner:
         if verbose:
             print(f"\n  After de-duplication: {len(merged)} unique opportunity zones")
 
+        # Reverse-geocode top opportunities to get human-readable addresses
+        if reverse_geocode and merged:
+            self._reverse_geocode_opportunities(merged, limit=geocode_limit, verbose=verbose)
+
         # Persist to DB
+        # Clear opportunities for this region AND any region-less leftovers
         self.db.clear_opportunities(region)
         for opp in merged:
             opp.region = region
             self.db.insert_opportunity(opp.to_dict())
 
+        # Verify insertion count
+        stored = self.db.get_all_opportunities(region)
+        if verbose and len(stored) < len(merged):
+            dropped = len(merged) - len(stored)
+            print(f"  Note: {dropped} opportunities had DB conflicts (duplicate coords+rules)")
+            print(f"  Stored: {len(stored)} opportunities")
+
         return merged
 
-    # ── reference data ────────────────────────────────────────────
+    def _reverse_geocode_opportunities(self, opps: List[Opportunity],
+                                        limit: int = 20, verbose: bool = True):
+        """Reverse-geocode top opportunities to get addresses."""
+        geocoder = Geocoder(db=self.db)
+        to_geocode = [o for o in opps if not o.address][:limit]
+
+        if not to_geocode:
+            return
+
+        if verbose:
+            print(f"\n  Reverse-geocoding top {len(to_geocode)} opportunities...")
+
+        for i, opp in enumerate(to_geocode):
+            try:
+                address = geocoder.reverse_geocode(opp.latitude, opp.longitude)
+                if address:
+                    # Trim to a reasonable length
+                    opp.address = address[:200]
+            except Exception:
+                pass
+
+        geocoded = sum(1 for o in to_geocode if o.address)
+        if verbose:
+            print(f"    -> {geocoded}/{len(to_geocode)} resolved")
+
+    # -- reference data --------------------------------------------
 
     def _load_reference_data(self):
         self._pharmacies = self.db.get_all_pharmacies()
@@ -170,7 +215,7 @@ class ZoneScanner:
         print(f"    Shopping centres:  {len(self._shopping_centres)}")
         print(f"    Medical centres:   {len(self._medical_centres)}")
 
-    # ── Item 130 -- 1.5 km from pharmacy + supermarket/GP ─────────
+    # -- Item 130 -- 1.5 km from pharmacy + supermarket/GP ---------
 
     def _scan_item_130(self, region: str) -> List[Opportunity]:
         """
@@ -179,11 +224,16 @@ class ZoneScanner:
         within 500 m of either:
           (i)  a supermarket >= 1 000 sqm + a GP >= 1 FTE, or
           (ii) a supermarket >= 2 500 sqm.
+
+        We scan from two angles:
+          A) Start from each supermarket and check pharmacy distance + GP proximity
+          B) Start from each GP and check pharmacy distance + supermarket proximity
         """
         opps: List[Opportunity] = []
         threshold_km = config.RULE_DISTANCES['item_130']  # 1.5
+        seen_coords: set = set()  # avoid duplicates
 
-        # Candidate locations: every supermarket that is far enough from pharmacies
+        # --- A) Scan from supermarkets ---
         for sm in self._supermarkets:
             lat, lon = sm['latitude'], sm['longitude']
             nearest_pharm, dist_km = _nearest_pharmacy(lat, lon, self._pharmacies)
@@ -195,16 +245,19 @@ class ZoneScanner:
 
             # Option (ii): large supermarket >= 2 500 sqm
             if floor_area >= 2500:
-                opp = self._make_opportunity(
-                    lat, lon, nearest_pharm, dist_km,
-                    rule='Item 130',
-                    evidence=(f"Supermarket '{sm.get('name','')}' ({floor_area:.0f} sqm) "
-                              f"is {format_distance(dist_km)} from nearest pharmacy"),
-                    confidence=0.8,
-                    poi_name=sm.get('name', ''),
-                    poi_type='supermarket',
-                )
-                opps.append(opp)
+                grid_key = (round(lat, 3), round(lon, 3))
+                if grid_key not in seen_coords:
+                    seen_coords.add(grid_key)
+                    opp = self._make_opportunity(
+                        lat, lon, nearest_pharm, dist_km,
+                        rule='Item 130',
+                        evidence=(f"Supermarket '{sm.get('name','')}' ({floor_area:.0f} sqm) "
+                                  f"is {format_distance(dist_km)} from nearest pharmacy"),
+                        confidence=0.8,
+                        poi_name=sm.get('name', ''),
+                        poi_type='supermarket',
+                    )
+                    opps.append(opp)
                 continue
 
             # Option (i): supermarket >= 1 000 sqm + nearby GP >= 1 FTE
@@ -213,22 +266,59 @@ class ZoneScanner:
                 for gp, gp_dist in nearby_gps:
                     fte = gp.get('fte') or 0
                     if fte >= 1.0:
-                        opp = self._make_opportunity(
-                            lat, lon, nearest_pharm, dist_km,
-                            rule='Item 130',
-                            evidence=(f"Supermarket '{sm.get('name','')}' ({floor_area:.0f} sqm) + "
-                                      f"GP '{gp.get('name','')}' ({fte:.1f} FTE) within 500 m; "
-                                      f"{format_distance(dist_km)} from nearest pharmacy"),
-                            confidence=0.75,
-                            poi_name=sm.get('name', ''),
-                            poi_type='supermarket',
-                        )
-                        opps.append(opp)
+                        grid_key = (round(lat, 3), round(lon, 3))
+                        if grid_key not in seen_coords:
+                            seen_coords.add(grid_key)
+                            opp = self._make_opportunity(
+                                lat, lon, nearest_pharm, dist_km,
+                                rule='Item 130',
+                                evidence=(f"Supermarket '{sm.get('name','')}' ({floor_area:.0f} sqm) + "
+                                          f"GP '{gp.get('name','')}' ({fte:.1f} FTE) within 500 m; "
+                                          f"{format_distance(dist_km)} from nearest pharmacy"),
+                                confidence=0.75,
+                                poi_name=sm.get('name', ''),
+                                poi_type='supermarket',
+                            )
+                            opps.append(opp)
                         break  # one GP is enough
+
+        # --- B) Scan from GPs that are far from pharmacies ---
+        for gp in self._gps:
+            lat, lon = gp['latitude'], gp['longitude']
+            grid_key = (round(lat, 3), round(lon, 3))
+            if grid_key in seen_coords:
+                continue
+
+            nearest_pharm, dist_km = _nearest_pharmacy(lat, lon, self._pharmacies)
+            if dist_km < threshold_km:
+                continue
+
+            fte = gp.get('fte') or 0
+            if fte < 1.0:
+                continue
+
+            # Check for a supermarket >= 1000 sqm within 500m
+            nearby_sms = find_within_radius(lat, lon, self._supermarkets, 0.5)
+            for sm, sm_dist in nearby_sms:
+                floor_area = sm.get('floor_area_sqm') or 0
+                if floor_area >= 1000:
+                    seen_coords.add(grid_key)
+                    opp = self._make_opportunity(
+                        lat, lon, nearest_pharm, dist_km,
+                        rule='Item 130',
+                        evidence=(f"GP '{gp.get('name','')}' ({fte:.1f} FTE) + "
+                                  f"Supermarket '{sm.get('name','')}' ({floor_area:.0f} sqm) within 500 m; "
+                                  f"{format_distance(dist_km)} from nearest pharmacy"),
+                        confidence=0.75,
+                        poi_name=gp.get('name', ''),
+                        poi_type='gp',
+                    )
+                    opps.append(opp)
+                    break
 
         return opps
 
-    # ── Item 131 -- 10 km by road (rural) ─────────────────────────
+    # -- Item 131 -- 10 km by road (rural) -------------------------
 
     def _scan_item_131(self, region: str) -> List[Opportunity]:
         """
@@ -292,7 +382,7 @@ class ZoneScanner:
 
         return opps
 
-    # ── Item 132 -- Major shopping centre >= 15 000 sqm ─────────────
+    # -- Item 132 -- Major shopping centre >= 15 000 sqm -------------
 
     def _scan_item_132(self, region: str) -> List[Opportunity]:
         """
@@ -328,40 +418,43 @@ class ZoneScanner:
 
         return opps
 
-    # ── Item 133 -- Supermarket >= 1 000 sqm without adjacent pharmacy
+    # -- Item 133 -- Supermarket >= 1 000 sqm without adjacent pharmacy
 
     def _scan_item_133(self, region: str) -> List[Opportunity]:
         """
-        Supermarkets >= 1 000 sqm (major chains) that have no pharmacy
-        adjacent (within 100 m).
+        Supermarkets >= 1 000 sqm that have no pharmacy adjacent (within 100 m).
+
+        Note: The actual rule requires the supermarket to be part of a
+        shopping centre complex, but we flag all large supermarkets without
+        adjacent pharmacies as potential opportunities.
         """
         opps: List[Opportunity] = []
         min_area = config.FLOOR_AREA_THRESHOLDS['supermarket']
 
         for sm in self._supermarkets:
             name = sm.get('name', '')
-            is_major = any(c in name.lower() for c in config.MAJOR_SUPERMARKETS)
-            if not is_major:
-                continue
-
             floor_area = sm.get('floor_area_sqm') or 0
             if floor_area < min_area:
                 continue
 
             lat, lon = sm['latitude'], sm['longitude']
 
-            # Already has pharmacy next door?
+            # Already has pharmacy next door? (within 100m = adjacent)
             if _has_nearby_pharmacy(lat, lon, self._pharmacies, 0.1):
                 continue
 
             nearest_pharm, dist_km = _nearest_pharmacy(lat, lon, self._pharmacies)
+
+            # Higher confidence for known major chains
+            is_major = any(c in name.lower() for c in config.MAJOR_SUPERMARKETS)
+            confidence = 0.75 if is_major else 0.65
 
             opp = self._make_opportunity(
                 lat, lon, nearest_pharm, dist_km,
                 rule='Item 133',
                 evidence=(f"Supermarket '{name}' ({floor_area:,.0f} sqm) "
                           f"with no adjacent pharmacy (nearest {format_distance(dist_km)})"),
-                confidence=0.7,
+                confidence=confidence,
                 poi_name=name,
                 poi_type='supermarket',
             )
@@ -369,7 +462,7 @@ class ZoneScanner:
 
         return opps
 
-    # ── Item 134 -- Shopping centre 5 000-15 000 sqm + supermarket ──
+    # -- Item 134 -- Shopping centre 5 000-15 000 sqm + supermarket --
 
     def _scan_item_134(self, region: str) -> List[Opportunity]:
         """
@@ -424,7 +517,7 @@ class ZoneScanner:
 
         return opps
 
-    # ── Item 134A -- Very remote >= 90 km ──────────────────────────
+    # -- Item 134A -- Very remote >= 90 km --------------------------
 
     def _scan_item_134a(self, region: str) -> List[Opportunity]:
         """
@@ -462,7 +555,7 @@ class ZoneScanner:
 
         return opps
 
-    # ── Item 135 -- Hospital >= 100 beds ───────────────────────────
+    # -- Item 135 -- Hospital >= 100 beds ---------------------------
 
     def _scan_item_135(self, region: str) -> List[Opportunity]:
         """
@@ -497,7 +590,7 @@ class ZoneScanner:
 
         return opps
 
-    # ── Item 136 -- Large medical centre (8+ FTE prescribers) ─────
+    # -- Item 136 -- Large medical centre (8+ FTE prescribers) -----
 
     def _scan_item_136(self, region: str) -> List[Opportunity]:
         """
@@ -570,7 +663,7 @@ class ZoneScanner:
 
         return opps
 
-    # ── helpers ───────────────────────────────────────────────────
+    # -- helpers ---------------------------------------------------
 
     def _make_opportunity(self, lat, lon, nearest_pharm, dist_km,
                           rule, evidence, confidence,

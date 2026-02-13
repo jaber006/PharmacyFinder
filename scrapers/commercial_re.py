@@ -378,8 +378,8 @@ class CommercialREScraper:
         """Extract size in sqm from text."""
         try:
             text = text.replace(',', '')
-            # Match patterns like "150 sqm", "150m²", "150 m2"
-            match = re.search(r'(\d+\.?\d*)\s*(?:sqm|m²|m2|square\s*m)', text, re.IGNORECASE)
+            # Match patterns like "150 sqm", "150sqm", "150 m2"
+            match = re.search(r'(\d+\.?\d*)\s*(?:sqm|sqm|m2|square\s*m)', text, re.IGNORECASE)
             if match:
                 return float(match.group(1))
         except Exception:

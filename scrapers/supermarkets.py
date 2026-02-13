@@ -11,6 +11,7 @@ import json
 from typing import List, Dict, Optional
 from utils.database import Database
 from utils.geocoding import Geocoder
+from utils.boundaries import in_state
 import config
 
 
@@ -145,6 +146,10 @@ class SupermarketScraper:
                 lon = center.get('lon', element.get('lon'))
 
             if not lat or not lon:
+                return None
+
+            lat, lon = float(lat), float(lon)
+            if not in_state(lat, lon, region):
                 return None
 
             name = tags.get('name', 'Supermarket')

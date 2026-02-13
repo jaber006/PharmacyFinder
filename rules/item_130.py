@@ -4,8 +4,8 @@ Rule Item 130: New Pharmacy (at least 1.5km from nearest pharmacy)
 Requirements:
 (a) Proposed premises at least 1.5km (straight line) from nearest approved premises
 (b) Within 500m of proposed premises, there must be EITHER:
-    (i) 1 FTE prescribing medical practitioner AND supermarket with GLA >= 1,000m², OR
-    (ii) A supermarket with GLA >= 2,500m²
+    (i) 1 FTE prescribing medical practitioner AND supermarket with GLA >= 1,000sqm, OR
+    (ii) A supermarket with GLA >= 2,500sqm
 """
 from typing import Dict, Optional, Tuple, List
 from rules.base_rule import BaseRule
@@ -20,8 +20,8 @@ class Item130Rule(BaseRule):
     A pharmacy is eligible if:
     1. At least 1.5km from nearest existing pharmacy, AND
     2. Within 500m there is either:
-       - 1 FTE GP + supermarket >= 1,000m² GLA, OR
-       - Supermarket >= 2,500m² GLA
+       - 1 FTE GP + supermarket >= 1,000sqm GLA, OR
+       - Supermarket >= 2,500sqm GLA
     """
 
     @property
@@ -82,8 +82,8 @@ class Item130Rule(BaseRule):
     def _check_supermarket_gp_requirement(self, lat: float, lon: float) -> Tuple[bool, Optional[str]]:
         """
         Check if within 500m there is either:
-        - 1 FTE GP + supermarket >= 1,000m², OR
-        - Supermarket >= 2,500m²
+        - 1 FTE GP + supermarket >= 1,000sqm, OR
+        - Supermarket >= 2,500sqm
         """
         radius_km = config.RULE_DISTANCES.get('item_130_supermarket', 0.5)
         
@@ -95,14 +95,14 @@ class Item130Rule(BaseRule):
         gps = self.db.get_all_gps()
         nearby_gps = find_within_radius(lat, lon, gps, radius_km) if gps else []
 
-        # Option (ii): Large supermarket >= 2,500m²
+        # Option (ii): Large supermarket >= 2,500sqm
         for sm_tuple in nearby_supermarkets:
             sm, dist = sm_tuple
             floor_area = sm.get('floor_area_sqm', 0) or 0
             if floor_area >= 2500:
-                return True, f"Large supermarket within 500m: {sm.get('name', 'Unknown')} ({floor_area:.0f}m²)"
+                return True, f"Large supermarket within 500m: {sm.get('name', 'Unknown')} ({floor_area:.0f}sqm)"
 
-        # Option (i): 1 FTE GP + supermarket >= 1,000m²
+        # Option (i): 1 FTE GP + supermarket >= 1,000sqm
         has_medium_supermarket = False
         medium_sm_name = None
         medium_sm_area = 0
@@ -129,7 +129,7 @@ class Item130Rule(BaseRule):
         
         if has_medium_supermarket and has_gp_fte:
             return True, (f"GP ({gp_name}, {gp_fte:.1f} FTE) + "
-                         f"Supermarket ({medium_sm_name}, {medium_sm_area:.0f}m²) within 500m")
+                         f"Supermarket ({medium_sm_name}, {medium_sm_area:.0f}sqm) within 500m")
 
         # If we don't have reference data yet, flag for manual review
         if not supermarkets and not gps:
