@@ -1,5 +1,6 @@
 """
-Database utilities for managing SQLite storage of properties and reference data.
+Database utilities for managing SQLite storage of properties, reference data,
+and opportunity zones.
 """
 import sqlite3
 from typing import List, Dict, Optional, Tuple
@@ -115,6 +116,42 @@ class Database:
                 major_supermarkets TEXT,
                 date_scraped TEXT,
                 UNIQUE(name, address)
+            )
+        """)
+
+        # Medical centres table (for Item 136)
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS medical_centres (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT NOT NULL,
+                address TEXT NOT NULL,
+                latitude REAL NOT NULL,
+                longitude REAL NOT NULL,
+                num_gps INTEGER DEFAULT 0,
+                total_fte REAL DEFAULT 0,
+                source TEXT,
+                date_scraped TEXT,
+                UNIQUE(name, address)
+            )
+        """)
+
+        # Opportunity zones table - proactive scanner results
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS opportunities (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                latitude REAL NOT NULL,
+                longitude REAL NOT NULL,
+                address TEXT,
+                qualifying_rules TEXT NOT NULL,
+                evidence TEXT NOT NULL,
+                confidence REAL DEFAULT 0.0,
+                nearest_pharmacy_km REAL,
+                nearest_pharmacy_name TEXT,
+                poi_name TEXT,
+                poi_type TEXT,
+                region TEXT,
+                date_scanned TEXT,
+                UNIQUE(latitude, longitude, qualifying_rules)
             )
         """)
 
@@ -370,3 +407,100 @@ class Database:
         cursor.execute("SELECT * FROM properties WHERE id = ?", (property_id,))
         result = cursor.fetchone()
         return dict(result) if result else None
+
+    # ── Opportunity zone methods ──────────────────────────────────
+
+    def insert_opportunity(self, opportunity_data: Dict) -> int:
+        """Insert a discovered opportunity zone."""
+        cursor = self.connection.cursor()
+        cursor.execute("""
+            INSERT OR IGNORE INTO opportunities
+            (latitude, longitude, address, qualifying_rules, evidence,
+             confidence, nearest_pharmacy_km, nearest_pharmacy_name,
+             poi_name, poi_type, region, date_scanned)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            opportunity_data['latitude'],
+            opportunity_data['longitude'],
+            opportunity_data.get('address', ''),
+            opportunity_data['qualifying_rules'],
+            opportunity_data['evidence'],
+            opportunity_data.get('confidence', 0.0),
+            opportunity_data.get('nearest_pharmacy_km'),
+            opportunity_data.get('nearest_pharmacy_name'),
+            opportunity_data.get('poi_name', ''),
+            opportunity_data.get('poi_type', ''),
+            opportunity_data.get('region', ''),
+            datetime.now().isoformat(),
+        ))
+        self.connection.commit()
+        return cursor.lastrowid
+
+    def get_all_opportunities(self, region: str = None) -> List[Dict]:
+        """Retrieve all opportunity zones, optionally filtered by region."""
+        cursor = self.connection.cursor()
+        if region:
+            cursor.execute(
+                "SELECT * FROM opportunities WHERE region = ? ORDER BY confidence DESC",
+                (region,),
+            )
+        else:
+            cursor.execute("SELECT * FROM opportunities ORDER BY confidence DESC")
+        return [dict(row) for row in cursor.fetchall()]
+
+    def clear_opportunities(self, region: str = None):
+        """Clear opportunity zones, optionally only for a specific region."""
+        cursor = self.connection.cursor()
+        if region:
+            cursor.execute("DELETE FROM opportunities WHERE region = ?", (region,))
+        else:
+            cursor.execute("DELETE FROM opportunities")
+        self.connection.commit()
+
+    # ── Medical centre methods ────────────────────────────────────
+
+    def insert_medical_centre(self, data: Dict) -> int:
+        """Insert a medical centre."""
+        cursor = self.connection.cursor()
+        cursor.execute("""
+            INSERT OR IGNORE INTO medical_centres
+            (name, address, latitude, longitude, num_gps, total_fte, source, date_scraped)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            data.get('name'),
+            data.get('address'),
+            data.get('latitude'),
+            data.get('longitude'),
+            data.get('num_gps', 0),
+            data.get('total_fte', 0),
+            data.get('source', ''),
+            datetime.now().isoformat(),
+        ))
+        self.connection.commit()
+        return cursor.lastrowid
+
+    def get_all_medical_centres(self) -> List[Dict]:
+        """Retrieve all medical centres."""
+        cursor = self.connection.cursor()
+        cursor.execute("SELECT * FROM medical_centres")
+        return [dict(row) for row in cursor.fetchall()]
+
+    def clear_medical_centres(self):
+        """Clear all medical centres."""
+        cursor = self.connection.cursor()
+        cursor.execute("DELETE FROM medical_centres")
+        self.connection.commit()
+
+    # ── Summary / stats ───────────────────────────────────────────
+
+    def get_reference_data_stats(self) -> Dict:
+        """Get counts of all reference data tables."""
+        cursor = self.connection.cursor()
+        stats = {}
+        for table in ['pharmacies', 'gps', 'supermarkets', 'hospitals',
+                       'shopping_centres', 'medical_centres']:
+            cursor.execute(f"SELECT COUNT(*) FROM {table}")
+            stats[table] = cursor.fetchone()[0]
+        cursor.execute("SELECT COUNT(*) FROM opportunities")
+        stats['opportunities'] = cursor.fetchone()[0]
+        return stats

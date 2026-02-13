@@ -1,6 +1,11 @@
-# Pharmacy Location Finder
+# PharmacyFinder
 
-A Python tool for finding commercial properties eligible for new PBS-approved pharmacies under Australian Pharmacy Location Rules.
+**Proactive opportunity zone finder** — discover where in Australia a new
+pharmacy can be opened under the
+[Pharmacy Location Rules](https://www.health.gov.au/topics/pharmacist-services/pharmacy-location-rules).
+
+Instead of checking individual properties, PharmacyFinder scans the entire map
+and runs the Location Rules *in reverse* to find every location that qualifies.
 
 ## Quick Start
 
@@ -8,167 +13,135 @@ A Python tool for finding commercial properties eligible for new PBS-approved ph
 # Install dependencies
 pip install -r requirements.txt
 
-# Run full pipeline (Tasmania as test region)
-python main.py --all --region TAS
+# Scan Tasmania for opportunity zones (collects data + scans + outputs)
+python main.py scan --region TAS
 
-# Run with sample properties (for testing)
-python main.py --all --region TAS --use-samples
+# Scan with existing data (skip re-collection)
+python main.py scan --region TAS --skip-collect
+
+# Also find commercial properties in those zones
+python main.py scan --region TAS --with-properties
 ```
 
-**No API keys needed!** Uses free OpenStreetMap data for all location data.
+## How It Works
 
-## What It Does
+1. **Collects reference data** — pharmacies, GPs, supermarkets, hospitals
+   from OpenStreetMap and Healthdirect (all free, no API keys needed)
+2. **Scans for opportunity zones** — checks every POI against 8 Location
+   Rules to find gaps where a new pharmacy could get PBS approval
+3. **Outputs results** — interactive HTML map + CSV + console summary
 
-1. **Scrapes reference data** from OpenStreetMap: pharmacies, GPs, supermarkets, hospitals
-2. **Scrapes commercial property listings** (or generates test samples)
-3. **Checks each property** against 8 Australian Pharmacy Location Rules
-4. **Generates outputs**: CSV report + interactive HTML map
+### Rules Scanned
 
-## Data Sources (All Free)
+| Rule      | What it finds |
+|-----------|---------------|
+| Item 130  | Areas >= 1.5 km from any pharmacy with a supermarket + GP nearby |
+| Item 131  | Areas >= 10 km by road from nearest pharmacy (rural) |
+| Item 132  | Major shopping centres (15,000+ sqm) without a pharmacy |
+| Item 133  | Supermarkets >= 1,000 sqm without an adjacent pharmacy |
+| Item 134  | Shopping centres 5,000-15,000 sqm with supermarket but no pharmacy |
+| Item 134A | Areas >= 90 km straight-line from nearest pharmacy (very remote) |
+| Item 135  | Hospitals with 100+ beds without an adjacent pharmacy |
+| Item 136  | Medical centres with 8+ FTE prescribers without a nearby pharmacy |
 
-| Data | Source | Coverage |
-|------|--------|----------|
-| Pharmacies | OpenStreetMap Overpass API | ~82 in TAS, nationwide |
-| GP Practices | OpenStreetMap (doctors/clinics) | ~95 in TAS |
-| Supermarkets | OpenStreetMap | ~161 in TAS |
-| Hospitals | Curated list + OpenStreetMap | ~36 in TAS |
-| Driving distances | OSRM (free routing) | Worldwide |
-| Geocoding | Nominatim (OpenStreetMap) | Worldwide |
+## CLI Reference
 
-## Implemented Rules
+```
+python main.py <command> [options]
 
-| Rule | Description | Criteria |
-|------|------------|----------|
-| **Item 130** | New Pharmacy | >= 1.5km from nearest pharmacy + supermarket/GP within 500m |
-| **Item 131** | Rural Pharmacy | >= 10km by road from nearest pharmacy |
-| **Item 132** | Major Shopping Centre | Within centre with >= 15,000 sqm GLA |
-| **Item 133** | Supermarket | Adjacent to supermarket >= 1,000 sqm |
-| **Item 134** | Small Shopping Centre | Within 5,000-15,000 sqm centre with supermarket |
-| **Item 134A** | Very Remote | >= 90km straight-line from nearest pharmacy |
-| **Item 135** | Hospital | Within/adjacent to hospital with >= 100 beds |
-| **Item 136** | Medical Centre | Near cluster of 8+ FTE prescribers |
+Commands:
+  scan      Collect data + scan for opportunity zones (recommended)
+  collect   Collect reference data only
+  check     Legacy mode: check specific commercial properties
+  stats     Show database statistics
 
-## CLI Usage
+Scan options:
+  --region CODE       State/territory (default: TAS)
+  --skip-collect      Use existing data in the database
+  --with-properties   Also scrape commercial RE listings
+  --output-dir DIR    Output directory (default: output/)
 
-```bash
-# Full workflow
-python main.py --all --region TAS
-
-# Individual steps
-python main.py --update-reference-data --region TAS
-python main.py --scrape-properties --region TAS --limit 50
-python main.py --check-eligibility
-python main.py --generate-outputs
-
-# Options
-python main.py --all --region TAS --use-samples    # Use sample properties
-python main.py --all --region TAS --limit 25        # Limit properties
-python main.py --stats                              # Show database stats
+Regions: NSW, VIC, QLD, WA, SA, TAS, NT, ACT
 ```
 
-### Supported Regions
+## Example Output (Tasmania)
 
-`NSW`, `VIC`, `QLD`, `WA`, `SA`, `TAS`, `NT`, `ACT`
+```
+SCANNING FOR OPPORTUNITY ZONES - Tasmania
+
+  Reference data loaded:
+    Pharmacies:        60
+    Supermarkets:      118
+    GP practices:      89
+    Hospitals:         36
+
+  Scanning Item 130...  -> 20 candidates
+  Scanning Item 131...  -> 64 candidates
+  Scanning Item 133...  -> 19 candidates
+  Scanning Item 134A... ->  7 candidates
+  Scanning Item 135...  ->  3 candidates
+
+  After de-duplication: 69 unique opportunity zones
+
+  Top opportunities (by confidence):
+    1. [90%] Walkers Supermarket        (Flinders Island - 149 km from pharmacy)
+    2. [90%] Grassy Supermarket         (King Island - 176 km from pharmacy)
+    3. [90%] Foodworks                  (King Island - 198 km from pharmacy)
+    4. [85%] Hilly's IGA               (rural TAS - 17 km from pharmacy)
+    5. [85%] Evandale General Store     (rural TAS - 13 km from pharmacy)
+```
 
 ## Output Files
 
-Generated in `output/` directory:
+- `output/opportunity_zones_TAS.html` — Interactive map with all opportunity
+  zones, existing pharmacies, supermarkets, GPs, and hospitals as toggleable
+  layers
+- `output/opportunity_zones_TAS.csv` — Spreadsheet with coordinates, rules,
+  evidence, confidence scores
 
-- **`eligible_properties.csv`** - All eligible properties with evidence
-- **`eligible_properties_map.html`** - Interactive map with:
-  - Eligible properties (star markers, color-coded by rule)
-  - Existing pharmacies (red dots)
-  - GP practices (green dots)
-  - Layer controls to toggle visibility
+## Data Sources
 
-## Example Results (Tasmania Test Run)
+All free, no API keys required:
 
-```
-Reference Data:
-  Pharmacies:   82
-  GP Practices: 95
-  Supermarkets: 161
-  Hospitals:    36
-
-Properties checked: 25
-Eligible properties: 6
-
-Matches found:
-  - Huonville: Item 130 (1.5km gap) + Item 131 (rural 10km+)
-  - Hobart CBD: Item 135 (near Royal Hobart Hospital, 550 beds)
-  - Longford: Item 131 (17.8km by road from nearest pharmacy)
-  - Campbell Town: Item 131 (56km straight-line, ~73km by road)
-  - New Norfolk: Item 131 (16km from nearest pharmacy)
-```
+- **OpenStreetMap** (Overpass API) — pharmacies, GPs, supermarkets, hospitals
+- **Healthdirect** — additional pharmacy and GP coverage
+- **OSRM** — driving distance calculations (public server)
+- **Nominatim** — geocoding (OpenStreetMap)
+- **AIHW** — curated hospital bed count data
 
 ## Project Structure
 
 ```
 PharmacyFinder/
-  main.py                   # CLI entry point
-  config.py                 # Configuration
-  opportunity_scanner.py    # Development news + medical center scanner
+  main.py                 # CLI entry point
+  config.py               # Configuration and thresholds
+  scanner/
+    zone_scanner.py       # Core POI-based opportunity scanner
+    output.py             # Map, CSV, and summary generators
   scrapers/
-    pharmacies.py           # OSM pharmacy scraper
-    gps.py                  # OSM GP/clinic scraper
-    supermarkets.py         # OSM supermarket scraper
-    hospitals.py            # Known hospitals + OSM
-    commercial_re.py        # RE listing scraper + sample generator
-    development_news.py     # Growth signal scanner
-    medical_centers.py      # Medical center opportunity finder
+    pharmacies.py         # OSM + Healthdirect pharmacy scraper
+    gps.py                # OSM + Healthdirect GP scraper
+    supermarkets.py       # OSM supermarket scraper
+    hospitals.py          # Curated + OSM hospital scraper
+    commercial_re.py      # Commercial real estate scraper
+    medical_centers.py    # Medical centre scanner
+    development_news.py   # Development news monitor
   rules/
-    base_rule.py            # Abstract base class
-    item_130.py - item_136.py  # Rule implementations
+    base_rule.py          # Abstract base rule
+    item_130.py - item_136.py  # Per-property rule checkers (legacy)
   utils/
-    database.py             # SQLite operations
-    distance.py             # Haversine + OSRM routing
-    geocoding.py            # Nominatim geocoding
-```
-
-## Opportunity Scanner
-
-A higher-level tool that monitors development news for growth signals:
-
-```bash
-# Full scan: news monitoring + medical center analysis
-python opportunity_scanner.py --mode full --days 30
-
-# Scan specific area
-python opportunity_scanner.py --mode area --suburb "South Burnie" --state TAS
-```
-
-## Data Import
-
-Import your own data via CSV:
-
-```python
-from utils.database import Database
-from utils.geocoding import Geocoder
-from scrapers.pharmacies import PharmacyScraper
-
-db = Database(); db.connect()
-geocoder = Geocoder(db=db)
-scraper = PharmacyScraper(db, geocoder)
-scraper.import_from_csv('my_pharmacies.csv')  # name, address, latitude, longitude
+    database.py           # SQLite database layer
+    distance.py           # Haversine + OSRM distance utils
+    geocoding.py          # Nominatim geocoder
+  output/                 # Generated maps and CSVs
 ```
 
 ## Requirements
 
 - Python 3.10+
-- No API keys (all data sources are free)
-- See `requirements.txt` for packages
+- No paid API keys needed (all free data sources)
+- Internet connection for OSM/OSRM/Healthdirect queries
 
-## Limitations
+## License
 
-- Coordinates are building centroids, not exact door locations
-- OSM data coverage varies by region (urban areas have better coverage)
-- Commercial RE sites block automated scraping (sample data used as fallback)
-- Some rules require manual verification (especially Item 132, 136)
-- FTE data for GPs is estimated (1.0 FTE per practice by default)
-
-## Disclaimer
-
-This tool is for preliminary screening only. Results should be verified against:
-- Australian Community Pharmacy Authority
-- Pharmacy Location Rules Applicant's Handbook (v1.9, January 2024)
-- Official government data sources
+Private — not for redistribution.
