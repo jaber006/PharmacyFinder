@@ -1,22 +1,39 @@
 """
-Rule Item 136: Medical Centre (4+ FTE GPs)
+Rule Item 136: New pharmacy in a Large Medical Centre
+
+Requirements:
+(a) Proposed premises are in a large medical centre
+(b) No approved pharmacy currently in the large medical centre
+(c) Distance from nearest pharmacy >= 300m (with exceptions)
+(d) At least 8 FTE PBS prescribers, of which at least 7 must be medical practitioners
+(e) Pharmacy hours will meet patient needs
+
+Large Medical Centre definition:
+- Under single management
+- Open for at least 70 hours per week
+- Providing general practice services for at least 70 hours per week
+
+NOTE: This rule requires detailed medical centre data that's hard to scrape.
+Currently checks for proximity to GP clusters (4+ FTE GPs within 200m) as a proxy.
 """
 from typing import Dict, Optional, Tuple
 from rules.base_rule import BaseRule
-from utils.distance import find_within_radius
+from utils.distance import find_nearest, find_within_radius, format_distance
 import config
 
 
 class Item136Rule(BaseRule):
     """
-    A pharmacy is eligible if located within or adjacent to a medical centre with:
-    - Minimum 4.0 FTE GPs operating from the same premises
-    - FTE calculated as: hours_per_week / 38, minimum 20 hours to count
+    Item 136: New pharmacy in a designated complex (large medical centre)
+    
+    Since we can't easily determine if a property IS a large medical centre,
+    we check if it's near a cluster of GPs that could indicate a medical centre.
+    Flagged for manual verification.
     """
 
     @property
     def rule_name(self) -> str:
-        return "Medical Centre (4+ FTE GPs)"
+        return "Large Medical Centre (8 FTE prescribers)"
 
     @property
     def item_number(self) -> str:
@@ -24,13 +41,9 @@ class Item136Rule(BaseRule):
 
     def check_eligibility(self, property_data: Dict) -> Tuple[bool, Optional[str]]:
         """
-        Check if property is within or adjacent to a medical centre with 4+ FTE GPs.
-
-        Args:
-            property_data: Property information with latitude/longitude
-
-        Returns:
-            (is_eligible, evidence)
+        Check if property might qualify under Item 136.
+        
+        Uses GP density as a proxy for large medical centres.
         """
         lat = property_data.get('latitude')
         lon = property_data.get('longitude')
@@ -38,48 +51,37 @@ class Item136Rule(BaseRule):
         if lat is None or lon is None:
             return False, None
 
-        # Get all GPs
+        # Check for GP cluster within 200m (proxy for medical centre)
         gps = self.db.get_all_gps()
-
         if not gps:
             return False, None
 
-        # Find GPs at the same location (within 50m to account for geocoding variance)
-        # This represents GPs operating from the same medical centre
-        colocated_gps = find_within_radius(lat, lon, gps, 0.05)  # 50 meters
-
-        if not colocated_gps:
+        nearby_gps = find_within_radius(lat, lon, gps, 0.2)  # 200m
+        
+        if not nearby_gps:
             return False, None
 
-        # Calculate total FTE at this location
-        total_fte = 0.0
-        gp_details = []
+        # Calculate total FTE
+        total_fte = sum(gp[0].get('fte', 0) or 0 for gp in nearby_gps)
+        num_practices = len(nearby_gps)
 
-        for gp, distance in colocated_gps:
-            fte = gp.get('fte', 0.0)
-            total_fte += fte
+        # Need 8+ FTE prescribers to qualify
+        required_fte = config.FTE_REQUIREMENTS.get('item_136_prescribers', 8.0)
 
-            gp_details.append({
-                'name': gp.get('name', 'Unknown'),
-                'fte': fte
-            })
-
-        # Check if meets threshold
-        threshold = config.FTE_REQUIREMENTS['item_136']
-
-        if total_fte >= threshold:
-            # Format GP list for evidence
-            gp_list = ", ".join([
-                f"{gp['name']} ({gp['fte']:.1f} FTE)"
-                for gp in gp_details
-            ])
-
+        if total_fte >= required_fte:
+            gp_names = [gp[0].get('name', 'Unknown') for gp in nearby_gps[:5]]
             evidence = self.format_evidence(
-                rule="Medical centre with 4+ FTE GPs",
-                total_fte=f"{total_fte:.2f}",
-                gp_count=len(colocated_gps),
-                gps=gp_list
+                rule="Potential large medical centre (8+ FTE prescribers nearby)",
+                total_fte=f"{total_fte:.1f}",
+                num_practices=num_practices,
+                nearby_practices=", ".join(gp_names),
+                note="REQUIRES MANUAL VERIFICATION - check if premises is within a large medical centre"
             )
             return True, evidence
+
+        # Also flag if there's a significant GP cluster (potential opportunity)
+        if num_practices >= 3 and total_fte >= 4.0:
+            # This doesn't meet the threshold but is worth noting
+            pass
 
         return False, None

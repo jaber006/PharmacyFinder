@@ -23,15 +23,18 @@ OSRM_SERVER = "http://router.project-osrm.org"
 
 # Distance thresholds (in kilometers) for each rule item
 RULE_DISTANCES = {
-    'item_130': 4.0,      # Remote location - 4km from nearest pharmacy
-    'item_131': 1.5,      # GP proximity - within 1.5km of GPs
+    'item_130': 1.5,      # New pharmacy - at least 1.5km from nearest pharmacy
+    'item_130_supermarket': 0.5,  # Item 130 - supermarket/GP must be within 500m
+    'item_131': 10.0,     # New pharmacy (rural) - at least 10km from nearest pharmacy
     'item_134a': 90.0,    # Very remote location - 90km from nearest pharmacy
 }
 
 # FTE (Full-Time Equivalent) thresholds
 FTE_REQUIREMENTS = {
-    'item_131': 2.0,      # Minimum 2.0 FTE GPs within 1.5km
-    'item_136': 4.0,      # Minimum 4.0 FTE GPs in medical centre
+    'item_130_gp': 1.0,   # Item 130 option (i): 1 FTE GP within 500m (with 1,000m² supermarket)
+    'item_132_gp': 4.0,   # Item 132: 4 FTE GPs in same town
+    'item_136_prescribers': 8.0,   # Item 136: 8 FTE PBS prescribers total
+    'item_136_medical': 7.0,       # Item 136: of which 7 must be medical practitioners
 }
 
 # Hours per week calculation

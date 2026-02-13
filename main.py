@@ -3,6 +3,13 @@ Pharmacy Location Finder - Main orchestration and CLI.
 
 Finds commercial properties eligible for new PBS-approved pharmacies
 under Australian Pharmacy Location Rules.
+
+Usage:
+    python main.py --all --region TAS
+    python main.py --update-reference-data --region TAS
+    python main.py --scrape-properties --region TAS
+    python main.py --check-eligibility
+    python main.py --generate-outputs
 """
 import argparse
 import os
@@ -29,8 +36,8 @@ import config
 
 
 class PharmacyLocationFinder:
-    def __init__(self):
-        self.db = Database(config.DATABASE_PATH)
+    def __init__(self, db_path: str = None):
+        self.db = Database(db_path or config.DATABASE_PATH)
         self.db.connect()
         self.geocoder = Geocoder(config.GOOGLE_MAPS_API_KEY, self.db)
 
@@ -53,15 +60,12 @@ class PharmacyLocationFinder:
             Item136Rule(self.db),
         ]
 
-    def update_reference_data(self, region: str = 'NSW'):
+    def update_reference_data(self, region: str = 'TAS'):
         """
         Update reference data (pharmacies, GPs, supermarkets, hospitals).
-
-        Args:
-            region: State/territory to update
         """
         print(f"\n{'='*60}")
-        print("UPDATING REFERENCE DATA")
+        print(f"UPDATING REFERENCE DATA FOR {region}")
         print(f"{'='*60}\n")
 
         # Clear existing reference data
@@ -69,43 +73,60 @@ class PharmacyLocationFinder:
         self.db.clear_reference_data()
 
         # Scrape pharmacies
-        print(f"\n--- Scraping Pharmacies ---")
+        print(f"\n--- Scraping Pharmacies ({region}) ---")
         pharmacy_count = self.pharmacy_scraper.scrape_all(region)
-        print(f"Collected {pharmacy_count} pharmacies")
+        print(f"[OK] Collected {pharmacy_count} pharmacies\n")
 
         # Scrape GPs
-        print(f"\n--- Scraping GP Practices ---")
+        print(f"--- Scraping GP Practices ({region}) ---")
         gp_count = self.gp_scraper.scrape_all(region)
-        print(f"Collected {gp_count} GP practices")
+        print(f"[OK] Collected {gp_count} GP practices\n")
 
         # Scrape supermarkets
-        print(f"\n--- Scraping Supermarkets ---")
+        print(f"--- Scraping Supermarkets ({region}) ---")
         supermarket_count = self.supermarket_scraper.scrape_all(region)
-        print(f"Collected {supermarket_count} supermarkets")
+        print(f"[OK] Collected {supermarket_count} supermarkets\n")
 
         # Scrape hospitals
-        print(f"\n--- Scraping Hospitals ---")
+        print(f"--- Scraping Hospitals ({region}) ---")
         hospital_count = self.hospital_scraper.scrape_all(region)
-        print(f"Collected {hospital_count} hospitals")
+        print(f"[OK] Collected {hospital_count} hospitals\n")
 
-        print(f"\n{'='*60}")
-        print("REFERENCE DATA UPDATE COMPLETE")
+        print(f"{'='*60}")
+        print("REFERENCE DATA SUMMARY")
+        print(f"{'='*60}")
+        print(f"  Pharmacies:   {pharmacy_count}")
+        print(f"  GP Practices: {gp_count}")
+        print(f"  Supermarkets: {supermarket_count}")
+        print(f"  Hospitals:    {hospital_count}")
         print(f"{'='*60}\n")
 
-    def scrape_properties(self, region: str = 'NSW', limit: int = 100):
+    def scrape_properties(self, region: str = 'TAS', limit: int = 100, 
+                          use_samples: bool = False):
         """
         Scrape commercial property listings.
-
-        Args:
-            region: State/territory to search
-            limit: Maximum properties to scrape
         """
         print(f"\n{'='*60}")
-        print("SCRAPING COMMERCIAL PROPERTIES")
+        print(f"SCRAPING COMMERCIAL PROPERTIES ({region})")
         print(f"{'='*60}\n")
 
-        count = self.property_scraper.scrape_all(region, limit)
-        print(f"\nCollected {count} properties")
+        # Clear existing properties for fresh scrape
+        self.db.clear_properties()
+
+        if use_samples:
+            print("Generating sample properties for testing...")
+            count = self.property_scraper.generate_sample_properties(region, limit)
+            print(f"[OK] Generated {count} sample properties\n")
+        else:
+            count = self.property_scraper.scrape_all(region, limit)
+            
+            # If web scraping got nothing, fall back to samples
+            if count == 0:
+                print("\nWeb scraping returned 0 results. Generating sample properties...")
+                count = self.property_scraper.generate_sample_properties(region, min(limit, 25))
+                print(f"[OK] Generated {count} sample properties\n")
+
+        print(f"Total properties: {count}")
 
     def check_eligibility(self):
         """
@@ -116,51 +137,58 @@ class PharmacyLocationFinder:
         print(f"{'='*60}\n")
 
         properties = self.db.get_all_properties()
-        print(f"Checking {len(properties)} properties against {len(self.rules)} rules...")
+        
+        if not properties:
+            print("No properties in database. Run --scrape-properties first.")
+            return
+
+        print(f"Checking {len(properties)} properties against {len(self.rules)} rules...\n")
 
         eligible_count = 0
+        total_matches = 0
 
         for i, property_data in enumerate(properties, 1):
-            property_id = property_data['id']
             address = property_data['address']
-
-            print(f"\n[{i}/{len(properties)}] {address}")
+            print(f"[{i}/{len(properties)}] {address}")
 
             any_rule_matched = False
 
             for rule in self.rules:
-                is_eligible, evidence = rule.check_eligibility(property_data)
+                try:
+                    is_eligible, evidence = rule.check_eligibility(property_data)
 
-                if is_eligible:
-                    print(f"  ✓ {rule.item_number}: {evidence}")
-                    self.db.insert_eligible_property(
-                        property_id,
-                        rule.item_number,
-                        evidence
-                    )
-                    any_rule_matched = True
+                    if is_eligible:
+                        print(f"  [OK] {rule.item_number}: {evidence[:100]}...")
+                        self.db.insert_eligible_property(
+                            property_data['id'],
+                            rule.item_number,
+                            evidence
+                        )
+                        any_rule_matched = True
+                        total_matches += 1
+                except Exception as e:
+                    print(f"  [!] Error checking {rule.item_number}: {e}")
 
             if any_rule_matched:
                 eligible_count += 1
             else:
-                print(f"  ✗ No rules matched")
+                print(f"  [X] No rules matched")
 
         print(f"\n{'='*60}")
         print(f"ELIGIBILITY CHECK COMPLETE")
-        print(f"Found {eligible_count} eligible properties")
+        print(f"{'='*60}")
+        print(f"  Properties checked:  {len(properties)}")
+        print(f"  Eligible properties: {eligible_count}")
+        print(f"  Total rule matches:  {total_matches}")
         print(f"{'='*60}\n")
 
     def generate_outputs(self, output_dir: str = None):
         """
         Generate CSV and HTML map outputs.
-
-        Args:
-            output_dir: Output directory path
         """
         if output_dir is None:
             output_dir = config.OUTPUT_DIR
 
-        # Create output directory
         os.makedirs(output_dir, exist_ok=True)
 
         print(f"\n{'='*60}")
@@ -172,30 +200,34 @@ class PharmacyLocationFinder:
 
         if not eligible_properties:
             print("No eligible properties found.")
+            # Still generate a summary map showing reference data
+            self._generate_reference_map(output_dir)
             return
 
         # Generate CSV
         csv_path = os.path.join(output_dir, config.CSV_OUTPUT_FILE)
         self._generate_csv(eligible_properties, csv_path)
-        print(f"Generated CSV: {csv_path}")
+        print(f"[OK] Generated CSV: {csv_path}")
 
         # Generate HTML map
         map_path = os.path.join(output_dir, config.MAP_OUTPUT_FILE)
         self._generate_map(eligible_properties, map_path)
-        print(f"Generated Map: {map_path}")
+        print(f"[OK] Generated Map: {map_path}")
 
-        print(f"\n{'='*60}")
-        print(f"OUTPUT GENERATION COMPLETE")
+        # Print summary
+        print(f"\n--- Eligible Properties ---")
+        for prop in eligible_properties:
+            print(f"  [PIN] {prop['address']}")
+            print(f"     Rules: {prop['qualifying_rules']}")
+            print(f"     Evidence: {prop['evidence'][:120]}...")
+            print()
+
+        print(f"{'='*60}")
+        print(f"OUTPUT COMPLETE - {len(eligible_properties)} eligible properties")
         print(f"{'='*60}\n")
 
     def _generate_csv(self, properties: list, csv_path: str):
-        """
-        Generate CSV output file.
-
-        Args:
-            properties: List of eligible property dicts
-            csv_path: Output CSV file path
-        """
+        """Generate CSV output file."""
         rows = []
 
         for prop in properties:
@@ -203,12 +235,12 @@ class PharmacyLocationFinder:
                 'Address': prop['address'],
                 'Latitude': prop['latitude'],
                 'Longitude': prop['longitude'],
-                'Listing URL': prop['listing_url'] or '',
+                'Listing URL': prop.get('listing_url') or '',
                 'Qualifying Rules': prop['qualifying_rules'],
                 'Evidence': prop['evidence'],
-                'Agent Name': prop['agent_name'] or '',
-                'Agent Phone': prop['agent_phone'] or '',
-                'Agent Email': prop['agent_email'] or '',
+                'Agent Name': prop.get('agent_name') or '',
+                'Agent Phone': prop.get('agent_phone') or '',
+                'Agent Email': prop.get('agent_email') or '',
                 'Date Checked': datetime.now().strftime('%Y-%m-%d')
             })
 
@@ -216,13 +248,7 @@ class PharmacyLocationFinder:
         df.to_csv(csv_path, index=False)
 
     def _generate_map(self, properties: list, map_path: str):
-        """
-        Generate interactive HTML map with Folium.
-
-        Args:
-            properties: List of eligible property dicts
-            map_path: Output HTML file path
-        """
+        """Generate interactive HTML map with Folium."""
         # Calculate map center
         if properties:
             center_lat = sum(p['latitude'] for p in properties) / len(properties)
@@ -231,59 +257,164 @@ class PharmacyLocationFinder:
             center_lat = config.MAP_CONFIG['center_lat']
             center_lng = config.MAP_CONFIG['center_lng']
 
-        # Create map
         m = folium.Map(
             location=[center_lat, center_lng],
-            zoom_start=config.MAP_CONFIG['zoom_start'],
-            tiles=config.MAP_CONFIG['tile_layer']
+            zoom_start=8,
+            tiles='OpenStreetMap'
         )
 
-        # Add markers for each property
+        # Feature groups for layer control
+        eligible_group = folium.FeatureGroup(name='Eligible Properties')
+        pharmacy_group = folium.FeatureGroup(name='Existing Pharmacies')
+        gp_group = folium.FeatureGroup(name='GP Practices')
+
+        # Add eligible properties
         for prop in properties:
             rules = prop['qualifying_rules'].split(',')
-            primary_rule = rules[0] if rules else 'Unknown'
-
+            primary_rule = rules[0].strip() if rules else 'Unknown'
             color = config.RULE_COLORS.get(primary_rule, 'gray')
 
             popup_html = f"""
-            <b>{prop['address']}</b><br><br>
+            <div style="min-width: 250px">
+            <b>[PIN] {prop['address']}</b><br><br>
             <b>Qualifying Rules:</b> {prop['qualifying_rules']}<br><br>
-            <b>Evidence:</b><br>{prop['evidence']}<br><br>
+            <b>Evidence:</b><br>{prop['evidence'][:200]}<br><br>
             """
 
-            if prop['listing_url']:
+            if prop.get('listing_url'):
                 popup_html += f'<a href="{prop["listing_url"]}" target="_blank">View Listing</a><br>'
 
-            if prop['agent_name']:
+            if prop.get('agent_name'):
                 popup_html += f"<br><b>Agent:</b> {prop['agent_name']}<br>"
-            if prop['agent_phone']:
+            if prop.get('agent_phone'):
                 popup_html += f"<b>Phone:</b> {prop['agent_phone']}<br>"
-            if prop['agent_email']:
-                popup_html += f"<b>Email:</b> {prop['agent_email']}<br>"
+
+            popup_html += "</div>"
 
             folium.Marker(
                 location=[prop['latitude'], prop['longitude']],
-                popup=folium.Popup(popup_html, max_width=300),
-                icon=folium.Icon(color=color, icon='info-sign')
-            ).add_to(m)
+                popup=folium.Popup(popup_html, max_width=350),
+                icon=folium.Icon(color=color, icon='star', prefix='fa'),
+                tooltip=f"ELIGIBLE: {prop['address'][:50]}"
+            ).add_to(eligible_group)
+
+        # Add existing pharmacies as small markers
+        pharmacies = self.db.get_all_pharmacies()
+        for pharm in pharmacies:
+            folium.CircleMarker(
+                location=[pharm['latitude'], pharm['longitude']],
+                radius=4,
+                color='red',
+                fill=True,
+                fill_color='red',
+                fill_opacity=0.7,
+                popup=f"[RX] {pharm.get('name', 'Pharmacy')}",
+                tooltip=f"Pharmacy: {pharm.get('name', '')[:30]}"
+            ).add_to(pharmacy_group)
+
+        # Add GPs as small markers
+        gps = self.db.get_all_gps()
+        for gp in gps:
+            folium.CircleMarker(
+                location=[gp['latitude'], gp['longitude']],
+                radius=3,
+                color='green',
+                fill=True,
+                fill_color='green',
+                fill_opacity=0.5,
+                popup=f"[HOSP] {gp.get('name', 'GP')} ({gp.get('fte', 1.0):.1f} FTE)",
+                tooltip=f"GP: {gp.get('name', '')[:30]}"
+            ).add_to(gp_group)
+
+        # Add groups to map
+        eligible_group.add_to(m)
+        pharmacy_group.add_to(m)
+        gp_group.add_to(m)
+
+        # Add layer control
+        folium.LayerControl().add_to(m)
 
         # Add legend
         legend_html = '''
-        <div style="position: fixed; bottom: 50px; left: 50px; width: 250px; height: auto;
-                    background-color: white; border:2px solid grey; z-index:9999; font-size:14px;
-                    padding: 10px">
-        <b>Pharmacy Location Rules</b><br>
+        <div style="position: fixed; bottom: 50px; left: 50px; width: 280px; 
+                    background-color: white; border: 2px solid grey; z-index: 9999; 
+                    font-size: 13px; padding: 12px; border-radius: 5px;">
+        <b>[MAP] Pharmacy Location Rules</b><br><hr style="margin: 5px 0">
+        <span style="color: red">o</span> Existing Pharmacies<br>
+        <span style="color: green">o</span> GP Practices<br>
+        <span style="color: gold">*</span> Eligible Properties<br>
+        <hr style="margin: 5px 0">
         '''
 
         for rule_name, color in config.RULE_COLORS.items():
-            legend_html += f'<i class="fa fa-map-marker" style="color:{color}"></i> {rule_name}<br>'
+            legend_html += f'<span style="color: {color}">#</span> {rule_name}<br>'
 
         legend_html += '</div>'
-
         m.get_root().html.add_child(folium.Element(legend_html))
 
-        # Save map
         m.save(map_path)
+
+    def _generate_reference_map(self, output_dir: str):
+        """Generate a map showing just reference data (when no eligible properties)."""
+        pharmacies = self.db.get_all_pharmacies()
+        gps = self.db.get_all_gps()
+        supermarkets = self.db.get_all_supermarkets()
+        hospitals = self.db.get_all_hospitals()
+
+        all_points = pharmacies + gps + supermarkets + hospitals
+        if not all_points:
+            print("No reference data to map.")
+            return
+
+        center_lat = sum(p['latitude'] for p in all_points) / len(all_points)
+        center_lng = sum(p['longitude'] for p in all_points) / len(all_points)
+
+        m = folium.Map(location=[center_lat, center_lng], zoom_start=8)
+
+        for pharm in pharmacies:
+            folium.CircleMarker(
+                location=[pharm['latitude'], pharm['longitude']],
+                radius=4, color='red', fill=True, fill_color='red',
+                popup=f"[RX] {pharm.get('name', 'Pharmacy')}"
+            ).add_to(m)
+
+        for gp in gps:
+            folium.CircleMarker(
+                location=[gp['latitude'], gp['longitude']],
+                radius=3, color='green', fill=True, fill_color='green',
+                popup=f"[HOSP] {gp.get('name', 'GP')}"
+            ).add_to(m)
+
+        for sm in supermarkets:
+            folium.CircleMarker(
+                location=[sm['latitude'], sm['longitude']],
+                radius=3, color='blue', fill=True, fill_color='blue',
+                popup=f"[CART] {sm.get('name', 'Supermarket')}"
+            ).add_to(m)
+
+        for hosp in hospitals:
+            folium.Marker(
+                location=[hosp['latitude'], hosp['longitude']],
+                popup=f"[H] {hosp.get('name', 'Hospital')} ({hosp.get('bed_count', '?')} beds)",
+                icon=folium.Icon(color='red', icon='plus', prefix='fa')
+            ).add_to(m)
+
+        map_path = os.path.join(output_dir, 'reference_data_map.html')
+        m.save(map_path)
+        print(f"[OK] Generated reference data map: {map_path}")
+
+    def show_stats(self):
+        """Display current database statistics."""
+        print(f"\n{'='*60}")
+        print("DATABASE STATISTICS")
+        print(f"{'='*60}")
+        print(f"  Pharmacies:   {len(self.db.get_all_pharmacies())}")
+        print(f"  GP Practices: {len(self.db.get_all_gps())}")
+        print(f"  Supermarkets: {len(self.db.get_all_supermarkets())}")
+        print(f"  Hospitals:    {len(self.db.get_all_hospitals())}")
+        print(f"  Properties:   {len(self.db.get_all_properties())}")
+        print(f"  Eligible:     {len(self.db.get_eligible_properties())}")
+        print(f"{'='*60}\n")
 
     def close(self):
         """Close database connection."""
@@ -323,8 +454,8 @@ def main():
     parser.add_argument(
         '--region',
         type=str,
-        default=config.DEFAULT_REGION,
-        help=f'Australian state/territory (default: {config.DEFAULT_REGION})'
+        default='TAS',
+        help='Australian state/territory (default: TAS)'
     )
 
     parser.add_argument(
@@ -342,9 +473,21 @@ def main():
     )
 
     parser.add_argument(
+        '--use-samples',
+        action='store_true',
+        help='Use sample properties instead of web scraping (for testing)'
+    )
+
+    parser.add_argument(
         '--all',
         action='store_true',
         help='Run complete workflow (update data, scrape, check, generate outputs)'
+    )
+
+    parser.add_argument(
+        '--stats',
+        action='store_true',
+        help='Show database statistics'
     )
 
     args = parser.parse_args()
@@ -358,27 +501,34 @@ def main():
             print(f"  - {item}")
         sys.exit(1)
 
-    # Show info about geocoding
-    print("=" * 60)
-    print("GEOCODING: Using Nominatim (OpenStreetMap) - Free, no API key!")
+    # Header
+    print("\n" + "=" * 60)
+    print("PHARMACY LOCATION FINDER")
+    print("  Finding eligible properties for new PBS-approved pharmacies")
+    print("  Region: " + config.AUSTRALIAN_STATES.get(args.region, args.region))
+    print("  Geocoding: Nominatim (OpenStreetMap) - Free, no API key!")
     print("=" * 60)
 
     if optional:
-        print("\nOptional API keys not configured:")
+        print("\nOptional API keys not configured (using free alternatives):")
         for item in optional:
             print(f"  - {item}")
-        print()
 
     # Initialize finder
     finder = PharmacyLocationFinder()
 
     try:
+        if args.stats:
+            finder.show_stats()
+            return
+
         if args.all:
             # Run complete workflow
             finder.update_reference_data(args.region)
-            finder.scrape_properties(args.region, args.limit)
+            finder.scrape_properties(args.region, args.limit, args.use_samples)
             finder.check_eligibility()
             finder.generate_outputs(args.output_dir)
+            finder.show_stats()
 
         else:
             # Run individual steps
@@ -386,7 +536,7 @@ def main():
                 finder.update_reference_data(args.region)
 
             if args.scrape_properties:
-                finder.scrape_properties(args.region, args.limit)
+                finder.scrape_properties(args.region, args.limit, args.use_samples)
 
             if args.check_eligibility:
                 finder.check_eligibility()

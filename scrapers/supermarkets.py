@@ -1,9 +1,13 @@
 """
 Scraper for supermarket locations (Woolworths, Coles, ALDI, IGA).
+
+Sources:
+1. OpenStreetMap Overpass API (free, comprehensive, has coordinates)
+2. Manual CSV import
 """
 import requests
 import time
-from bs4 import BeautifulSoup
+import json
 from typing import List, Dict, Optional
 from utils.database import Database
 from utils.geocoding import Geocoder
@@ -19,7 +23,7 @@ class SupermarketScraper:
             'User-Agent': config.SCRAPER_CONFIG['user_agent']
         })
 
-    def scrape_all(self, region: str = 'NSW') -> int:
+    def scrape_all(self, region: str = 'TAS') -> int:
         """
         Scrape all supermarket locations from available sources.
 
@@ -29,251 +33,253 @@ class SupermarketScraper:
         Returns:
             Number of supermarkets scraped
         """
-        count = 0
+        total = 0
 
-        print("Scraping Woolworths stores...")
-        count += self.scrape_woolworths(region)
+        # Primary: OpenStreetMap Overpass API
+        print(f"  [1/1] Scraping OpenStreetMap for supermarkets in {region}...")
+        osm_count = self.scrape_osm_overpass(region)
+        total += osm_count
+        print(f"        Found {osm_count} supermarkets from OSM")
 
-        print("Scraping Coles stores...")
-        count += self.scrape_coles(region)
+        print(f"  Total supermarkets: {total}")
+        return total
 
-        print("Scraping ALDI stores...")
-        count += self.scrape_aldi(region)
-
-        print(f"Total supermarkets scraped: {count}")
-        return count
-
-    def scrape_woolworths(self, region: str = 'NSW') -> int:
+    def scrape_osm_overpass(self, region: str = 'TAS') -> int:
         """
-        Scrape Woolworths store locations.
-
-        Args:
-            region: State/territory to search
-
-        Returns:
-            Number of stores scraped
+        Scrape supermarket locations from OpenStreetMap.
+        Targets: Woolworths, Coles, ALDI, IGA and other supermarkets.
         """
         count = 0
+        state_name = config.AUSTRALIAN_STATES.get(region, region)
+
+        overpass_url = "https://overpass-api.de/api/interpreter"
+        query = f"""
+        [out:json][timeout:120];
+        area["name"="{state_name}"]["admin_level"="4"]->.state;
+        (
+          node["shop"="supermarket"](area.state);
+          way["shop"="supermarket"](area.state);
+          relation["shop"="supermarket"](area.state);
+        );
+        out center;
+        """
 
         try:
-            # Woolworths store locator
-            # Note: This is a placeholder. The actual implementation would depend on
-            # whether Woolworths provides an API or requires web scraping
+            response = self.session.post(
+                overpass_url,
+                data={'data': query},
+                timeout=120
+            )
 
-            if config.WOOLWORTHS_API_KEY:
-                # Use API if available
-                print("Using Woolworths API...")
-                # API implementation would go here
+            if response.status_code != 200:
+                print(f"        Overpass returned HTTP {response.status_code}")
+                return self._scrape_osm_alt(region)
+
+            data = response.json()
+            elements = data.get('elements', [])
+            print(f"        Overpass returned {len(elements)} elements")
+
+            for element in elements:
+                sm_data = self._parse_osm_supermarket(element, region)
+                if sm_data:
+                    self.db.insert_supermarket(sm_data)
+                    count += 1
+
+        except requests.exceptions.Timeout:
+            print("        Overpass timed out, trying alternate...")
+            return self._scrape_osm_alt(region)
+        except Exception as e:
+            print(f"        Error with Overpass: {e}")
+            return self._scrape_osm_alt(region)
+
+        return count
+
+    def _scrape_osm_alt(self, region: str) -> int:
+        """Try alternate Overpass server."""
+        count = 0
+        state_name = config.AUSTRALIAN_STATES.get(region, region)
+
+        query = f"""
+        [out:json][timeout:120];
+        area["name"="{state_name}"]["admin_level"="4"]->.state;
+        (
+          node["shop"="supermarket"](area.state);
+          way["shop"="supermarket"](area.state);
+        );
+        out center;
+        """
+
+        try:
+            response = self.session.post(
+                "https://overpass.kumi.systems/api/interpreter",
+                data={'data': query},
+                timeout=120
+            )
+
+            if response.status_code != 200:
+                return 0
+
+            data = response.json()
+            for element in data.get('elements', []):
+                sm_data = self._parse_osm_supermarket(element, region)
+                if sm_data:
+                    self.db.insert_supermarket(sm_data)
+                    count += 1
+
+        except Exception:
+            pass
+
+        return count
+
+    def _parse_osm_supermarket(self, element: Dict, region: str) -> Optional[Dict]:
+        """Parse OSM element into supermarket data."""
+        try:
+            tags = element.get('tags', {})
+
+            if element.get('type') == 'node':
+                lat = element.get('lat')
+                lon = element.get('lon')
             else:
-                # Web scraping approach
-                print("Note: Woolworths store data requires manual collection or API access.")
-                print("Please visit: https://www.woolworths.com.au/shop/storelocator")
+                center = element.get('center', {})
+                lat = center.get('lat', element.get('lat'))
+                lon = center.get('lon', element.get('lon'))
 
-        except Exception as e:
-            print(f"Error scraping Woolworths: {e}")
+            if not lat or not lon:
+                return None
 
-        return count
+            name = tags.get('name', 'Supermarket')
+            brand = tags.get('brand', '')
 
-    def scrape_coles(self, region: str = 'NSW') -> int:
+            # Use brand name if name is generic
+            if brand and ('supermarket' in name.lower() or name == brand):
+                name = brand
+
+            # Build address
+            addr_parts = []
+            if tags.get('addr:housenumber'):
+                addr_parts.append(tags['addr:housenumber'])
+            if tags.get('addr:street'):
+                addr_parts.append(tags['addr:street'])
+            if tags.get('addr:suburb') or tags.get('addr:city'):
+                addr_parts.append(tags.get('addr:suburb', tags.get('addr:city', '')))
+            addr_parts.append(region)
+            if tags.get('addr:postcode'):
+                addr_parts.append(tags['addr:postcode'])
+
+            address = ', '.join(p for p in addr_parts if p)
+            if not address or address == region:
+                address = f"{name}, {region}, Australia"
+
+            # Estimate floor area for major chains
+            floor_area = self._estimate_floor_area(name, brand)
+
+            return {
+                'name': name,
+                'address': address,
+                'latitude': float(lat),
+                'longitude': float(lon),
+                'floor_area_sqm': floor_area,
+            }
+
+        except Exception:
+            return None
+
+    def _estimate_floor_area(self, name: str, brand: str = '') -> Optional[float]:
         """
-        Scrape Coles store locations.
-
-        Args:
-            region: State/territory to search
-
-        Returns:
-            Number of stores scraped
+        Estimate floor area based on supermarket chain/type.
+        Major supermarkets in Australia typically:
+        - Woolworths: 2,500-4,000 sqm
+        - Coles: 2,500-4,000 sqm
+        - ALDI: 1,200-1,500 sqm
+        - IGA: 500-2,000 sqm
         """
-        count = 0
+        combined = f"{name} {brand}".lower()
 
-        try:
-            # Coles store locator
-            print("Note: Coles store data requires manual collection or API access.")
-            print("Please visit: https://www.coles.com.au/store-finder")
+        if 'woolworths' in combined or 'woolies' in combined:
+            return 3000.0  # Average Woolworths
+        elif 'coles' in combined:
+            return 3000.0  # Average Coles
+        elif 'aldi' in combined:
+            return 1300.0  # Average ALDI
+        elif 'iga' in combined:
+            return 1200.0  # Average IGA
+        elif 'harris farm' in combined:
+            return 2000.0
+        else:
+            return 1500.0  # Conservative default for unknown
 
-        except Exception as e:
-            print(f"Error scraping Coles: {e}")
-
-        return count
-
-    def scrape_aldi(self, region: str = 'NSW') -> int:
-        """
-        Scrape ALDI store locations.
-
-        Args:
-            region: State/territory to search
-
-        Returns:
-            Number of stores scraped
-        """
-        count = 0
-
-        try:
-            # ALDI store locator
-            print("Note: ALDI store data requires manual collection.")
-            print("Please visit: https://www.aldi.com.au/en/shopping-at-aldi/store-locations/")
-
-        except Exception as e:
-            print(f"Error scraping ALDI: {e}")
-
-        return count
-
-    def add_manual_supermarket(
-        self,
-        name: str,
-        address: str,
-        floor_area_sqm: Optional[float] = None
-    ) -> bool:
-        """
-        Manually add a supermarket to the database.
-
-        Args:
-            name: Supermarket name (e.g., "Woolworths", "Coles")
-            address: Full address
-            floor_area_sqm: Floor area in square meters (optional)
-
-        Returns:
-            True if successfully added
-        """
+    def add_manual_supermarket(self, name: str, address: str,
+                                floor_area_sqm: Optional[float] = None) -> bool:
+        """Manually add a supermarket."""
         try:
             coords = self.geocoder.geocode(address)
             if not coords:
-                print(f"Could not geocode address: {address}")
+                print(f"Could not geocode: {address}")
                 return False
 
-            latitude, longitude = coords
+            lat, lon = coords
 
-            supermarket_data = {
+            self.db.insert_supermarket({
                 'name': name,
                 'address': address,
-                'latitude': latitude,
-                'longitude': longitude,
-                'floor_area_sqm': floor_area_sqm
-            }
-
-            self.db.insert_supermarket(supermarket_data)
-            print(f"Added supermarket: {name} at {address}")
+                'latitude': lat,
+                'longitude': lon,
+                'floor_area_sqm': floor_area_sqm or self._estimate_floor_area(name),
+            })
+            print(f"  Added supermarket: {name}")
             return True
 
         except Exception as e:
-            print(f"Error adding manual supermarket: {e}")
+            print(f"Error adding supermarket: {e}")
             return False
 
     def import_from_csv(self, csv_path: str) -> int:
-        """
-        Import supermarkets from a CSV file.
-
-        CSV should have columns: name, address
-        Optionally: latitude, longitude, floor_area_sqm
-
-        Args:
-            csv_path: Path to CSV file
-
-        Returns:
-            Number of supermarkets imported
-        """
+        """Import supermarkets from CSV."""
         import csv
-
         count = 0
 
         try:
             with open(csv_path, 'r', encoding='utf-8') as f:
                 reader = csv.DictReader(f)
-
                 for row in reader:
                     name = row.get('name', '')
                     address = row.get('address', '')
-                    floor_area_sqm = row.get('floor_area_sqm')
-                    latitude = row.get('latitude')
-                    longitude = row.get('longitude')
-
                     if not address:
                         continue
 
-                    # Parse floor area
-                    if floor_area_sqm:
+                    floor_area = row.get('floor_area_sqm')
+                    if floor_area:
                         try:
-                            floor_area_sqm = float(floor_area_sqm)
+                            floor_area = float(floor_area)
                         except (ValueError, TypeError):
-                            floor_area_sqm = None
+                            floor_area = None
 
-                    # Geocode if coordinates not provided
-                    if not latitude or not longitude:
+                    lat = row.get('latitude')
+                    lon = row.get('longitude')
+                    if not lat or not lon:
                         coords = self.geocoder.geocode(address)
                         if coords:
-                            latitude, longitude = coords
+                            lat, lon = coords
                         else:
-                            print(f"Could not geocode: {address}")
                             continue
                     else:
-                        latitude = float(latitude)
-                        longitude = float(longitude)
+                        lat, lon = float(lat), float(lon)
 
-                    supermarket_data = {
+                    self.db.insert_supermarket({
                         'name': name or 'Supermarket',
                         'address': address,
-                        'latitude': latitude,
-                        'longitude': longitude,
-                        'floor_area_sqm': floor_area_sqm
-                    }
-
-                    self.db.insert_supermarket(supermarket_data)
+                        'latitude': lat,
+                        'longitude': lon,
+                        'floor_area_sqm': floor_area,
+                    })
                     count += 1
 
-            print(f"Imported {count} supermarkets from {csv_path}")
-
         except Exception as e:
-            print(f"Error importing from CSV: {e}")
+            print(f"Error importing CSV: {e}")
 
         return count
 
     def is_major_supermarket(self, name: str) -> bool:
-        """
-        Check if a supermarket is a major chain.
-
-        Args:
-            name: Supermarket name
-
-        Returns:
-            True if it's a major supermarket
-        """
+        """Check if a supermarket is a major chain."""
         name_lower = name.lower()
         return any(chain in name_lower for chain in config.MAJOR_SUPERMARKETS)
-
-    def meets_size_requirement(self, floor_area_sqm: Optional[float]) -> bool:
-        """
-        Check if supermarket meets minimum size requirement (1,000 sqm).
-
-        Args:
-            floor_area_sqm: Floor area in square meters
-
-        Returns:
-            True if meets requirement
-        """
-        if floor_area_sqm is None:
-            # If size unknown, assume major supermarkets meet requirement
-            return True
-
-        return floor_area_sqm >= config.FLOOR_AREA_THRESHOLDS['supermarket']
-
-
-# Example usage and testing
-if __name__ == '__main__':
-    from utils.database import Database
-    from utils.geocoding import Geocoder
-    import config
-
-    db = Database()
-    db.connect()
-
-    geocoder = Geocoder(config.GOOGLE_MAPS_API_KEY, db)
-    scraper = SupermarketScraper(db, geocoder)
-
-    # Test with manual entry
-    scraper.add_manual_supermarket(
-        "Woolworths Metro",
-        "789 George Street, Sydney, NSW 2000",
-        floor_area_sqm=1200.0
-    )
-
-    db.close()

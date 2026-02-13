@@ -1,13 +1,49 @@
 """
 Scraper for GP (General Practitioner) practice locations with FTE calculations.
+
+Sources:
+1. OpenStreetMap Overpass API (free, has coordinates)
+2. Healthdirect web search (public, no API key)
+3. Manual CSV import
 """
 import requests
 import time
+import json
 from typing import List, Dict, Optional
 from utils.database import Database
 from utils.geocoding import Geocoder
 from utils.distance import calculate_fte_from_hours
 import config
+
+
+# Key suburbs for GP searching per state
+STATE_GP_SUBURBS = {
+    'TAS': [
+        'Hobart', 'Launceston', 'Devonport', 'Burnie', 'Kingston', 'Sandy Bay',
+        'Glenorchy', 'New Town', 'Moonah', 'Bellerive', 'Rosny Park', 'Howrah',
+        'Lindisfarne', 'Claremont', 'Bridgewater', 'Brighton', 'Sorell',
+        'Ulverstone', 'Wynyard', 'Smithton', 'Queenstown', 'Scottsdale',
+        'George Town', 'Longford', 'Deloraine', 'Huonville', 'New Norfolk',
+        'Mowbray', 'Riverside', 'Kings Meadows', 'Prospect',
+        'Newnham', 'Invermay', 'Somerset', 'Penguin',
+        'Sheffield', 'Campbell Town', 'St Helens',
+        'Dodges Ferry', 'Margate', 'Cygnet', 'Dover', 'Geeveston',
+    ],
+    'NSW': [
+        'Sydney', 'Parramatta', 'Liverpool', 'Penrith', 'Blacktown',
+        'Newcastle', 'Wollongong', 'Campbelltown', 'Hornsby',
+    ],
+    'VIC': [
+        'Melbourne', 'Geelong', 'Ballarat', 'Bendigo', 'Shepparton',
+    ],
+    'QLD': [
+        'Brisbane', 'Gold Coast', 'Sunshine Coast', 'Townsville', 'Cairns',
+    ],
+    'SA':  ['Adelaide', 'Mount Gambier', 'Port Augusta'],
+    'WA':  ['Perth', 'Mandurah', 'Bunbury', 'Geraldton'],
+    'NT':  ['Darwin', 'Alice Springs', 'Katherine'],
+    'ACT': ['Canberra', 'Belconnen', 'Tuggeranong'],
+}
 
 
 class GPScraper:
@@ -19,9 +55,9 @@ class GPScraper:
             'User-Agent': config.SCRAPER_CONFIG['user_agent']
         })
 
-    def scrape_all(self, region: str = 'NSW') -> int:
+    def scrape_all(self, region: str = 'TAS') -> int:
         """
-        Scrape all GP practice locations from available sources.
+        Scrape all GP practice locations from free sources.
 
         Args:
             region: Australian state/territory code
@@ -29,217 +65,282 @@ class GPScraper:
         Returns:
             Number of GP practices scraped
         """
-        count = 0
+        total = 0
 
-        print("Scraping Healthdirect API for GPs...")
-        count += self.scrape_healthdirect(region)
+        # Primary: OpenStreetMap (free, has coordinates)
+        print(f"  [1/2] Scraping OpenStreetMap for GPs/clinics in {region}...")
+        osm_count = self.scrape_osm_overpass(region)
+        total += osm_count
+        print(f"        Found {osm_count} GP practices from OSM")
 
-        print(f"Total GP practices scraped: {count}")
-        return count
+        # Secondary: Healthdirect web (public)
+        print(f"  [2/2] Scraping Healthdirect for GPs in {region}...")
+        hd_count = self.scrape_healthdirect_web(region)
+        total += hd_count
+        print(f"        Found {hd_count} additional GP practices from Healthdirect")
 
-    def scrape_healthdirect(self, region: str = 'NSW') -> int:
+        print(f"  Total GP practices: {total}")
+        return total
+
+    def scrape_osm_overpass(self, region: str = 'TAS') -> int:
         """
-        Scrape GP practice locations using Healthdirect API.
-
-        Args:
-            region: State/territory to search
-
-        Returns:
-            Number of GP practices scraped
+        Scrape GP/clinic/doctor locations from OpenStreetMap.
         """
         count = 0
+        state_name = config.AUSTRALIAN_STATES.get(region, region)
 
-        if not config.HEALTHDIRECT_API_KEY:
-            print("WARNING: HEALTHDIRECT_API_KEY not configured. Skipping Healthdirect scraping.")
-            return 0
+        overpass_url = "https://overpass-api.de/api/interpreter"
+        # Query for doctors, clinics, and health centres
+        query = f"""
+        [out:json][timeout:120];
+        area["name"="{state_name}"]["admin_level"="4"]->.state;
+        (
+          node["amenity"="doctors"](area.state);
+          way["amenity"="doctors"](area.state);
+          node["amenity"="clinic"](area.state);
+          way["amenity"="clinic"](area.state);
+          node["healthcare"="doctor"](area.state);
+          way["healthcare"="doctor"](area.state);
+          node["healthcare"="clinic"](area.state);
+          way["healthcare"="clinic"](area.state);
+        );
+        out center;
+        """
 
         try:
-            base_url = f"{config.API_ENDPOINTS['healthdirect']}/service-finder"
+            response = self.session.post(
+                overpass_url,
+                data={'data': query},
+                timeout=120
+            )
 
-            params = {
-                'api_key': config.HEALTHDIRECT_API_KEY,
-                'service_type': 'gp',
-                'state': region,
-                'limit': 100,
-            }
+            if response.status_code != 200:
+                print(f"        Overpass API returned HTTP {response.status_code}")
+                return self._scrape_osm_alt(region)
 
-            offset = 0
-            while True:
-                params['offset'] = offset
+            data = response.json()
+            elements = data.get('elements', [])
+            print(f"        Overpass returned {len(elements)} elements")
 
-                response = self.session.get(
-                    base_url,
-                    params=params,
-                    timeout=config.SCRAPER_CONFIG['timeout']
-                )
+            for element in elements:
+                gp_data = self._parse_osm_gp(element, region)
+                if gp_data:
+                    self.db.insert_gp(gp_data)
+                    count += 1
 
-                if response.status_code != 200:
-                    print(f"Error fetching GPs: HTTP {response.status_code}")
-                    break
-
-                data = response.json()
-                results = data.get('results', [])
-
-                if not results:
-                    break
-
-                for gp_practice in results:
-                    gp_data = self._parse_healthdirect_gp(gp_practice)
-                    if gp_data:
-                        self.db.insert_gp(gp_data)
-                        count += 1
-
-                # Check if there are more results
-                if len(results) < params['limit']:
-                    break
-
-                offset += params['limit']
-                time.sleep(config.SCRAPER_CONFIG['rate_limit_delay'])
-
+        except requests.exceptions.Timeout:
+            print("        Overpass timed out, trying alternate...")
+            return self._scrape_osm_alt(region)
         except Exception as e:
-            print(f"Error scraping Healthdirect for GPs: {e}")
+            print(f"        Error with Overpass: {e}")
+            return self._scrape_osm_alt(region)
 
         return count
 
-    def _parse_healthdirect_gp(self, data: Dict) -> Optional[Dict]:
-        """
-        Parse GP practice data from Healthdirect API response.
+    def _scrape_osm_alt(self, region: str) -> int:
+        """Try alternate Overpass server."""
+        count = 0
+        state_name = config.AUSTRALIAN_STATES.get(region, region)
 
-        Args:
-            data: Raw API response data
-
-        Returns:
-            Parsed GP practice data or None
+        query = f"""
+        [out:json][timeout:120];
+        area["name"="{state_name}"]["admin_level"="4"]->.state;
+        (
+          node["amenity"="doctors"](area.state);
+          way["amenity"="doctors"](area.state);
+          node["amenity"="clinic"](area.state);
+          way["amenity"="clinic"](area.state);
+        );
+        out center;
         """
+
         try:
-            # Extract address
-            address = data.get('address', {})
-            full_address = self._format_address(address)
+            response = self.session.post(
+                "https://overpass.kumi.systems/api/interpreter",
+                data={'data': query},
+                timeout=120
+            )
 
-            if not full_address:
+            if response.status_code != 200:
+                return 0
+
+            data = response.json()
+            for element in data.get('elements', []):
+                gp_data = self._parse_osm_gp(element, region)
+                if gp_data:
+                    self.db.insert_gp(gp_data)
+                    count += 1
+
+        except Exception:
+            pass
+
+        return count
+
+    def _parse_osm_gp(self, element: Dict, region: str) -> Optional[Dict]:
+        """Parse OSM element into GP data."""
+        try:
+            tags = element.get('tags', {})
+
+            if element.get('type') == 'node':
+                lat = element.get('lat')
+                lon = element.get('lon')
+            else:
+                center = element.get('center', {})
+                lat = center.get('lat', element.get('lat'))
+                lon = center.get('lon', element.get('lon'))
+
+            if not lat or not lon:
                 return None
 
-            # Get or geocode coordinates
-            latitude = data.get('latitude')
-            longitude = data.get('longitude')
+            name = tags.get('name', 'Medical Practice')
 
-            if not latitude or not longitude:
-                coords = self.geocoder.geocode(full_address)
-                if coords:
-                    latitude, longitude = coords
+            # Skip veterinary, dentists, etc.
+            healthcare = tags.get('healthcare', '').lower()
+            speciality = tags.get('healthcare:speciality', '').lower()
+            if 'veterinary' in name.lower() or 'vet' == name.lower()[:3]:
+                return None
+            if 'dentist' in name.lower() or 'dental' in name.lower():
+                return None
+            if healthcare == 'dentist' or speciality == 'dentistry':
+                return None
+
+            # Build address
+            addr_parts = []
+            if tags.get('addr:housenumber'):
+                addr_parts.append(tags['addr:housenumber'])
+            if tags.get('addr:street'):
+                addr_parts.append(tags['addr:street'])
+            if tags.get('addr:suburb') or tags.get('addr:city'):
+                addr_parts.append(tags.get('addr:suburb', tags.get('addr:city', '')))
+            addr_parts.append(region)
+            if tags.get('addr:postcode'):
+                addr_parts.append(tags['addr:postcode'])
+
+            address = ', '.join(p for p in addr_parts if p)
+            if not address or address == region:
+                address = f"{name}, {region}, Australia"
+
+            # Default FTE: assume 1.0 per practice (conservative estimate)
+            # Real FTE data would come from practice websites or AHPRA
+            fte = 1.0
+            hours_per_week = 38.0
+
+            return {
+                'name': name,
+                'address': address,
+                'latitude': float(lat),
+                'longitude': float(lon),
+                'fte': fte,
+                'hours_per_week': hours_per_week,
+            }
+
+        except Exception:
+            return None
+
+    def scrape_healthdirect_web(self, region: str = 'TAS') -> int:
+        """
+        Scrape GP practices from Healthdirect's public web interface.
+        """
+        count = 0
+        suburbs = STATE_GP_SUBURBS.get(region, [])
+
+        if not suburbs:
+            return 0
+
+        for suburb in suburbs:
+            try:
+                search_url = "https://api.healthdirect.gov.au/v3/services"
+                params = {
+                    'type': 'gp',
+                    'location': f"{suburb}, {region}",
+                    'distance': 15,
+                    'limit': 50,
+                }
+
+                response = self.session.get(search_url, params=params, timeout=30)
+
+                if response.status_code == 200:
+                    try:
+                        data = response.json()
+                        services = data.get('data', data.get('services', data.get('results', [])))
+                        if isinstance(services, list):
+                            for svc in services:
+                                gp_data = self._parse_healthdirect_gp(svc, region)
+                                if gp_data:
+                                    self.db.insert_gp(gp_data)
+                                    count += 1
+                    except json.JSONDecodeError:
+                        pass
+
+                time.sleep(1.5)
+
+            except Exception:
+                continue
+
+        return count
+
+    def _parse_healthdirect_gp(self, data: Dict, region: str) -> Optional[Dict]:
+        """Parse Healthdirect service data into GP record."""
+        try:
+            name = data.get('name', data.get('organisationName', ''))
+            if not name:
+                return None
+
+            lat = data.get('latitude', data.get('lat'))
+            lon = data.get('longitude', data.get('lng', data.get('lon')))
+
+            if not lat or not lon:
+                location = data.get('location', data.get('address', {}))
+                if isinstance(location, dict):
+                    lat = location.get('latitude', location.get('lat'))
+                    lon = location.get('longitude', location.get('lng'))
+
+            addr = data.get('address', data.get('location', {}))
+            if isinstance(addr, dict):
+                parts = []
+                for key in ['line1', 'line2', 'street', 'suburb', 'state', 'postcode']:
+                    val = addr.get(key)
+                    if val:
+                        parts.append(str(val))
+                address = ', '.join(parts) if parts else f"{name}, {region}"
+            elif isinstance(addr, str):
+                address = addr
+            else:
+                address = f"{name}, {region}"
+
+            if not lat or not lon:
+                if address and len(address) > 10:
+                    coords = self.geocoder.geocode(address)
+                    if coords:
+                        lat, lon = coords
+                    else:
+                        return None
                 else:
                     return None
 
-            # Extract hours information
-            hours_data = data.get('hours', {})
-            hours_per_week = self._calculate_hours_per_week(hours_data)
-
-            # Calculate FTE
-            fte = calculate_fte_from_hours(hours_per_week)
-
-            # Extract number of GPs if available
-            num_gps = data.get('gp_count', 1)  # Default to 1 if not specified
-
-            # If the practice has multiple GPs, we might need to create separate entries
-            # or adjust the FTE calculation. For simplicity, we'll store the total FTE.
-
             return {
-                'name': data.get('name', 'GP Practice'),
-                'address': full_address,
-                'latitude': latitude,
-                'longitude': longitude,
-                'hours_per_week': hours_per_week,
-                'fte': fte
+                'name': name,
+                'address': address,
+                'latitude': float(lat),
+                'longitude': float(lon),
+                'fte': 1.0,
+                'hours_per_week': 38.0,
             }
 
-        except Exception as e:
-            print(f"Error parsing GP data: {e}")
+        except Exception:
             return None
 
-    def _calculate_hours_per_week(self, hours_data: Dict) -> float:
-        """
-        Calculate total hours per week from hours data.
-
-        Args:
-            hours_data: Hours information from API
-
-        Returns:
-            Total hours per week
-        """
-        # This is a simplified calculation
-        # The actual API might provide hours in different formats
-
-        total_hours = 0.0
-
-        # Example: hours_data might have fields like:
-        # { 'monday': '9am-5pm', 'tuesday': '9am-5pm', ... }
-        # or { 'hours_per_week': 38 }
-
-        if 'hours_per_week' in hours_data:
-            total_hours = float(hours_data['hours_per_week'])
-        else:
-            # Default assumption: if practice operates, assume full-time hours
-            # This is a rough estimate and should be refined based on actual data
-            total_hours = config.HOURS_PER_WEEK_FULL_TIME
-
-        return total_hours
-
-    def _format_address(self, address_data: Dict) -> str:
-        """
-        Format address components into a full address string.
-
-        Args:
-            address_data: Dict with address components
-
-        Returns:
-            Formatted address string
-        """
-        components = []
-
-        if 'street_number' in address_data:
-            components.append(str(address_data['street_number']))
-
-        if 'street_name' in address_data:
-            components.append(address_data['street_name'])
-
-        if 'suburb' in address_data:
-            components.append(address_data['suburb'])
-
-        if 'state' in address_data:
-            components.append(address_data['state'])
-
-        if 'postcode' in address_data:
-            components.append(str(address_data['postcode']))
-
-        if not components and 'full_address' in address_data:
-            return address_data['full_address']
-
-        return ', '.join(components)
-
-    def add_manual_gp(
-        self,
-        name: str,
-        address: str,
-        hours_per_week: float
-    ) -> bool:
-        """
-        Manually add a GP practice to the database.
-
-        Args:
-            name: Practice name
-            address: Full address
-            hours_per_week: Hours operated per week
-
-        Returns:
-            True if successfully added
-        """
+    def add_manual_gp(self, name: str, address: str, hours_per_week: float = 38.0,
+                      latitude: float = None, longitude: float = None) -> bool:
+        """Manually add a GP practice."""
         try:
-            coords = self.geocoder.geocode(address)
-            if not coords:
-                print(f"Could not geocode address: {address}")
-                return False
+            if latitude is None or longitude is None:
+                coords = self.geocoder.geocode(address)
+                if not coords:
+                    print(f"Could not geocode: {address}")
+                    return False
+                latitude, longitude = coords
 
-            latitude, longitude = coords
             fte = calculate_fte_from_hours(hours_per_week)
 
             gp_data = {
@@ -248,133 +349,57 @@ class GPScraper:
                 'latitude': latitude,
                 'longitude': longitude,
                 'hours_per_week': hours_per_week,
-                'fte': fte
+                'fte': fte,
             }
 
             self.db.insert_gp(gp_data)
-            print(f"Added GP practice: {name} at {address} ({fte:.2f} FTE)")
+            print(f"  Added GP: {name} ({fte:.1f} FTE)")
             return True
 
         except Exception as e:
-            print(f"Error adding manual GP: {e}")
+            print(f"Error adding GP: {e}")
             return False
 
     def import_from_csv(self, csv_path: str) -> int:
-        """
-        Import GP practices from a CSV file.
-
-        CSV should have columns: name, address, hours_per_week
-        Optionally: latitude, longitude, fte
-
-        Args:
-            csv_path: Path to CSV file
-
-        Returns:
-            Number of GP practices imported
-        """
+        """Import GP practices from CSV."""
         import csv
-
         count = 0
 
         try:
             with open(csv_path, 'r', encoding='utf-8') as f:
                 reader = csv.DictReader(f)
-
                 for row in reader:
                     name = row.get('name', '')
                     address = row.get('address', '')
-                    hours_per_week = row.get('hours_per_week', config.HOURS_PER_WEEK_FULL_TIME)
-                    latitude = row.get('latitude')
-                    longitude = row.get('longitude')
-                    fte = row.get('fte')
-
                     if not address:
                         continue
 
-                    try:
-                        hours_per_week = float(hours_per_week)
-                    except (ValueError, TypeError):
-                        hours_per_week = config.HOURS_PER_WEEK_FULL_TIME
+                    hours = float(row.get('hours_per_week', 38.0))
+                    lat = row.get('latitude')
+                    lon = row.get('longitude')
 
-                    # Geocode if coordinates not provided
-                    if not latitude or not longitude:
+                    if not lat or not lon:
                         coords = self.geocoder.geocode(address)
                         if coords:
-                            latitude, longitude = coords
+                            lat, lon = coords
                         else:
-                            print(f"Could not geocode: {address}")
                             continue
                     else:
-                        latitude = float(latitude)
-                        longitude = float(longitude)
+                        lat, lon = float(lat), float(lon)
 
-                    # Calculate FTE if not provided
-                    if not fte:
-                        fte = calculate_fte_from_hours(hours_per_week)
-                    else:
-                        fte = float(fte)
+                    fte = float(row.get('fte', 0)) or calculate_fte_from_hours(hours)
 
-                    gp_data = {
+                    self.db.insert_gp({
                         'name': name or 'GP Practice',
                         'address': address,
-                        'latitude': latitude,
-                        'longitude': longitude,
-                        'hours_per_week': hours_per_week,
-                        'fte': fte
-                    }
-
-                    self.db.insert_gp(gp_data)
+                        'latitude': lat,
+                        'longitude': lon,
+                        'hours_per_week': hours,
+                        'fte': fte,
+                    })
                     count += 1
 
-            print(f"Imported {count} GP practices from {csv_path}")
-
         except Exception as e:
-            print(f"Error importing from CSV: {e}")
+            print(f"Error importing CSV: {e}")
 
         return count
-
-    def calculate_gp_coverage(self, lat: float, lng: float, radius_km: float = 1.5) -> float:
-        """
-        Calculate total FTE of GPs within a radius of a location.
-
-        Args:
-            lat, lng: Center coordinates
-            radius_km: Search radius in kilometers
-
-        Returns:
-            Total FTE within radius
-        """
-        from utils.distance import find_within_radius
-
-        gps = self.db.get_all_gps()
-        nearby_gps = find_within_radius(lat, lng, gps, radius_km)
-
-        total_fte = sum(gp[0]['fte'] for gp in nearby_gps if gp[0].get('fte'))
-
-        return total_fte
-
-
-# Example usage and testing
-if __name__ == '__main__':
-    from utils.database import Database
-    from utils.geocoding import Geocoder
-    import config
-
-    db = Database()
-    db.connect()
-
-    geocoder = Geocoder(config.GOOGLE_MAPS_API_KEY, db)
-    scraper = GPScraper(db, geocoder)
-
-    # Test with manual entry
-    scraper.add_manual_gp(
-        "Test Medical Centre",
-        "456 Pitt Street, Sydney, NSW 2000",
-        hours_per_week=38.0
-    )
-
-    # Test FTE calculation
-    coverage = scraper.calculate_gp_coverage(-33.8688, 151.2093, radius_km=1.5)
-    print(f"GP coverage at test location: {coverage:.2f} FTE")
-
-    db.close()
