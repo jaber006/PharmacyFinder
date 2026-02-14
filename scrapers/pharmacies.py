@@ -13,6 +13,7 @@ import re
 from typing import List, Dict, Optional
 from utils.database import Database
 from utils.geocoding import Geocoder
+from utils.overpass_cache import cached_overpass_query
 from utils.boundaries import in_state
 import config
 
@@ -107,19 +108,11 @@ class PharmacyScraper:
     def scrape_osm_overpass(self, region: str = 'TAS') -> int:
         """
         Scrape pharmacy locations from OpenStreetMap using Overpass API.
-        Free, no API key, includes coordinates.
-
-        Args:
-            region: Australian state/territory code
-
-        Returns:
-            Number of pharmacies scraped
+        Uses cached_overpass_query for reliability.
         """
         count = 0
         state_name = config.AUSTRALIAN_STATES.get(region, region)
 
-        # Overpass QL query for pharmacies in a state
-        overpass_url = "https://overpass-api.de/api/interpreter"
         query = f"""
         [out:json][timeout:120];
         area["name"="{state_name}"]["admin_level"="4"]->.state;
@@ -131,76 +124,25 @@ class PharmacyScraper:
         out center;
         """
 
-        try:
-            print(f"        Querying Overpass API for {state_name}...")
-            response = self.session.post(
-                overpass_url,
-                data={'data': query},
-                timeout=120
-            )
+        print(f"        Querying Overpass API for {state_name}...")
+        data = cached_overpass_query(
+            query=query,
+            cache_key=f"pharmacies_{region}",
+            session=self.session,
+        )
 
-            if response.status_code != 200:
-                print(f"        Overpass API returned HTTP {response.status_code}")
-                # Try alternate server
-                return self._scrape_osm_overpass_alt(region)
+        if data is None:
+            print(f"        [ERROR] Overpass unavailable and no cache for pharmacies_{region}")
+            return 0
 
-            data = response.json()
-            elements = data.get('elements', [])
-            print(f"        Overpass returned {len(elements)} elements")
+        elements = data.get('elements', [])
+        print(f"        Overpass returned {len(elements)} elements")
 
-            for element in elements:
-                pharmacy_data = self._parse_osm_element(element, region)
-                if pharmacy_data:
-                    self.db.insert_pharmacy(pharmacy_data)
-                    count += 1
-
-        except requests.exceptions.Timeout:
-            print("        Overpass API timed out, trying alternate server...")
-            return self._scrape_osm_overpass_alt(region)
-        except Exception as e:
-            print(f"        Error with Overpass API: {e}")
-            return self._scrape_osm_overpass_alt(region)
-
-        return count
-
-    def _scrape_osm_overpass_alt(self, region: str) -> int:
-        """Try alternate Overpass server."""
-        count = 0
-        state_name = config.AUSTRALIAN_STATES.get(region, region)
-
-        alt_url = "https://overpass.kumi.systems/api/interpreter"
-        query = f"""
-        [out:json][timeout:120];
-        area["name"="{state_name}"]["admin_level"="4"]->.state;
-        (
-          node["amenity"="pharmacy"](area.state);
-          way["amenity"="pharmacy"](area.state);
-        );
-        out center;
-        """
-
-        try:
-            response = self.session.post(
-                alt_url,
-                data={'data': query},
-                timeout=120
-            )
-
-            if response.status_code != 200:
-                print(f"        Alternate Overpass also failed: HTTP {response.status_code}")
-                return 0
-
-            data = response.json()
-            elements = data.get('elements', [])
-
-            for element in elements:
-                pharmacy_data = self._parse_osm_element(element, region)
-                if pharmacy_data:
-                    self.db.insert_pharmacy(pharmacy_data)
-                    count += 1
-
-        except Exception as e:
-            print(f"        Error with alternate Overpass: {e}")
+        for element in elements:
+            pharmacy_data = self._parse_osm_element(element, region)
+            if pharmacy_data:
+                self.db.insert_pharmacy(pharmacy_data)
+                count += 1
 
         return count
 

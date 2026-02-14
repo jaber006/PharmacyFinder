@@ -13,6 +13,7 @@ from typing import List, Dict, Optional
 from utils.database import Database
 from utils.geocoding import Geocoder
 from utils.boundaries import in_state
+from utils.overpass_cache import cached_overpass_query
 import config
 
 
@@ -197,11 +198,11 @@ class HospitalScraper:
         return count
 
     def scrape_osm_overpass(self, region: str = 'TAS') -> int:
-        """Scrape hospital locations from OpenStreetMap."""
+        """Scrape hospital locations from OpenStreetMap.
+        Uses cached_overpass_query for reliability."""
         count = 0
         state_name = config.AUSTRALIAN_STATES.get(region, region)
 
-        overpass_url = "https://overpass-api.de/api/interpreter"
         query = f"""
         [out:json][timeout:120];
         area["name"="{state_name}"]["admin_level"="4"]->.state;
@@ -213,35 +214,31 @@ class HospitalScraper:
         out center;
         """
 
-        try:
-            response = self.session.post(
-                overpass_url,
-                data={'data': query},
-                timeout=120
-            )
+        data = cached_overpass_query(
+            query=query,
+            cache_key=f"hospitals_{region}",
+            session=self.session,
+        )
 
-            if response.status_code != 200:
-                return 0
+        if data is None:
+            print(f"        [ERROR] Overpass unavailable and no cache for hospitals_{region}")
+            return 0
 
-            data = response.json()
-            elements = data.get('elements', [])
+        elements = data.get('elements', [])
 
-            for element in elements:
-                hospital_data = self._parse_osm_hospital(element, region)
-                if hospital_data:
-                    # Only add if not already in known list
-                    name = hospital_data['name'].lower()
-                    existing = self.db.get_all_hospitals()
-                    already_exists = any(
-                        h['name'].lower() in name or name in h['name'].lower()
-                        for h in existing
-                    )
-                    if not already_exists:
-                        self.db.insert_hospital(hospital_data)
-                        count += 1
-
-        except Exception as e:
-            print(f"        Error with Overpass: {e}")
+        for element in elements:
+            hospital_data = self._parse_osm_hospital(element, region)
+            if hospital_data:
+                # Only add if not already in known list
+                name = hospital_data['name'].lower()
+                existing = self.db.get_all_hospitals()
+                already_exists = any(
+                    h['name'].lower() in name or name in h['name'].lower()
+                    for h in existing
+                )
+                if not already_exists:
+                    self.db.insert_hospital(hospital_data)
+                    count += 1
 
         return count
 

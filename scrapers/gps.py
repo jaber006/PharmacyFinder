@@ -14,6 +14,7 @@ from utils.database import Database
 from utils.geocoding import Geocoder
 from utils.distance import calculate_fte_from_hours
 from utils.boundaries import in_state
+from utils.overpass_cache import cached_overpass_query
 import config
 
 
@@ -86,12 +87,12 @@ class GPScraper:
     def scrape_osm_overpass(self, region: str = 'TAS') -> int:
         """
         Scrape GP/clinic/doctor locations from OpenStreetMap.
+        Uses cached_overpass_query for reliable results with automatic
+        fallback to cached data on API failure.
         """
         count = 0
         state_name = config.AUSTRALIAN_STATES.get(region, region)
 
-        overpass_url = "https://overpass-api.de/api/interpreter"
-        # Query for doctors, clinics, and health centres
         query = f"""
         [out:json][timeout:120];
         area["name"="{state_name}"]["admin_level"="4"]->.state;
@@ -108,72 +109,24 @@ class GPScraper:
         out center;
         """
 
-        try:
-            response = self.session.post(
-                overpass_url,
-                data={'data': query},
-                timeout=120
-            )
+        data = cached_overpass_query(
+            query=query,
+            cache_key=f"gps_{region}",
+            session=self.session,
+        )
 
-            if response.status_code != 200:
-                print(f"        Overpass API returned HTTP {response.status_code}")
-                return self._scrape_osm_alt(region)
+        if data is None:
+            print(f"        [ERROR] Overpass unavailable and no cache for gps_{region}")
+            return 0
 
-            data = response.json()
-            elements = data.get('elements', [])
-            print(f"        Overpass returned {len(elements)} elements")
+        elements = data.get('elements', [])
+        print(f"        Overpass returned {len(elements)} elements")
 
-            for element in elements:
-                gp_data = self._parse_osm_gp(element, region)
-                if gp_data:
-                    self.db.insert_gp(gp_data)
-                    count += 1
-
-        except requests.exceptions.Timeout:
-            print("        Overpass timed out, trying alternate...")
-            return self._scrape_osm_alt(region)
-        except Exception as e:
-            print(f"        Error with Overpass: {e}")
-            return self._scrape_osm_alt(region)
-
-        return count
-
-    def _scrape_osm_alt(self, region: str) -> int:
-        """Try alternate Overpass server."""
-        count = 0
-        state_name = config.AUSTRALIAN_STATES.get(region, region)
-
-        query = f"""
-        [out:json][timeout:120];
-        area["name"="{state_name}"]["admin_level"="4"]->.state;
-        (
-          node["amenity"="doctors"](area.state);
-          way["amenity"="doctors"](area.state);
-          node["amenity"="clinic"](area.state);
-          way["amenity"="clinic"](area.state);
-        );
-        out center;
-        """
-
-        try:
-            response = self.session.post(
-                "https://overpass.kumi.systems/api/interpreter",
-                data={'data': query},
-                timeout=120
-            )
-
-            if response.status_code != 200:
-                return 0
-
-            data = response.json()
-            for element in data.get('elements', []):
-                gp_data = self._parse_osm_gp(element, region)
-                if gp_data:
-                    self.db.insert_gp(gp_data)
-                    count += 1
-
-        except Exception:
-            pass
+        for element in elements:
+            gp_data = self._parse_osm_gp(element, region)
+            if gp_data:
+                self.db.insert_gp(gp_data)
+                count += 1
 
         return count
 

@@ -17,6 +17,7 @@ from typing import List, Dict, Optional
 from utils.database import Database
 from utils.geocoding import Geocoder
 from utils.boundaries import in_state
+from utils.overpass_cache import cached_overpass_query
 import config
 
 
@@ -198,13 +199,11 @@ class ShoppingCentreScraper:
     def scrape_osm_overpass(self, region: str = 'TAS') -> int:
         """
         Scrape shopping centres from OpenStreetMap.
-        Targets: malls, retail centres, shopping centres.
+        Uses cached_overpass_query for reliability.
         """
         count = 0
         state_name = config.AUSTRALIAN_STATES.get(region, region)
 
-        overpass_url = "https://overpass-api.de/api/interpreter"
-        # Query for shopping centres / malls
         query = f"""
         [out:json][timeout:120];
         area["name"="{state_name}"]["admin_level"="4"]->.state;
@@ -219,36 +218,29 @@ class ShoppingCentreScraper:
         out center;
         """
 
-        try:
-            response = self.session.post(
-                overpass_url,
-                data={'data': query},
-                timeout=120
-            )
+        data = cached_overpass_query(
+            query=query,
+            cache_key=f"shopping_centres_{region}",
+            session=self.session,
+        )
 
-            if response.status_code != 200:
-                print(f"        Overpass returned HTTP {response.status_code}")
-                return 0
+        if data is None:
+            print(f"        [ERROR] Overpass unavailable and no cache for shopping_centres_{region}")
+            return 0
 
-            data = response.json()
-            elements = data.get('elements', [])
-            print(f"        Overpass returned {len(elements)} elements")
+        elements = data.get('elements', [])
+        print(f"        Overpass returned {len(elements)} elements")
 
-            # Get existing centres to avoid duplicates
-            existing = self.db.get_all_shopping_centres()
-            existing_names = {c['name'].lower() for c in existing}
+        # Get existing centres to avoid duplicates
+        existing = self.db.get_all_shopping_centres()
+        existing_names = {c['name'].lower() for c in existing}
 
-            for element in elements:
-                centre_data = self._parse_osm_centre(element, region)
-                if centre_data and centre_data['name'].lower() not in existing_names:
-                    self.db.insert_shopping_centre(centre_data)
-                    existing_names.add(centre_data['name'].lower())
-                    count += 1
-
-        except requests.exceptions.Timeout:
-            print("        Overpass timed out")
-        except Exception as e:
-            print(f"        Error with Overpass: {e}")
+        for element in elements:
+            centre_data = self._parse_osm_centre(element, region)
+            if centre_data and centre_data['name'].lower() not in existing_names:
+                self.db.insert_shopping_centre(centre_data)
+                existing_names.add(centre_data['name'].lower())
+                count += 1
 
         return count
 
