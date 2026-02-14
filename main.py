@@ -139,6 +139,13 @@ class PharmacyLocationFinder:
         shopping_centre_count = self.shopping_centre_scraper.scrape_all(region)
         print(f"         [OK] {shopping_centre_count} shopping centres\n")
 
+        # Force commit and WAL checkpoint to ensure all data is visible
+        self.db.connection.commit()
+        try:
+            self.db.connection.execute("PRAGMA wal_checkpoint(PASSIVE)")
+        except Exception:
+            pass
+
         print(f"  {'-'*56}")
         print(f"  Pharmacies:        {pharmacy_count}")
         print(f"  GPs:               {gp_count}")

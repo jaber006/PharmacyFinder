@@ -345,13 +345,8 @@ class Database:
     def get_all_supermarkets(self) -> List[Dict]:
         """Retrieve all supermarkets."""
         cursor = self.connection.cursor()
-        cursor.execute("SELECT COUNT(*) FROM supermarkets")
-        count = cursor.fetchone()[0]
         cursor.execute("SELECT * FROM supermarkets")
-        results = [dict(row) for row in cursor.fetchall()]
-        if count != len(results):
-            print(f"        [DB WARNING] supermarkets: COUNT={count} but fetchall={len(results)}")
-        return results
+        return [dict(row) for row in cursor.fetchall()]
 
     def get_all_hospitals(self) -> List[Dict]:
         """Retrieve all hospitals."""
@@ -424,7 +419,6 @@ class Database:
         Args:
             keep_findapharmacy: If True, preserve pharmacies from findapharmacy.com.au
         """
-        import traceback
         cursor = self.connection.cursor()
         if keep_findapharmacy:
             cursor.execute("DELETE FROM pharmacies WHERE source != 'findapharmacy.com.au'")
@@ -435,8 +429,6 @@ class Database:
         cursor.execute("DELETE FROM hospitals")
         cursor.execute("DELETE FROM shopping_centres")
         self.connection.commit()
-        # Debug: log when reference data is cleared
-        print(f"        [DB] Reference data cleared (caller: {traceback.extract_stack()[-2].name})")
 
     def get_property_by_id(self, property_id: int) -> Optional[Dict]:
         """Get a specific property by ID."""
