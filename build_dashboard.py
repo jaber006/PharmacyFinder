@@ -48,6 +48,15 @@ def load_data():
                         'nearTownPop': int(row.get('Nearest Town Pop', 0) or 0),
                         'nearTownDist': float(row.get('Nearest Town Dist (km)', 0) or 0),
                         'score': float(row.get('Opportunity Score', 0) or 0),
+                        'pharm5': int(row.get('Pharmacies 5km', 0) or 0),
+                        'pharm10': int(row.get('Pharmacies 10km', 0) or 0),
+                        'pharm15': int(row.get('Pharmacies 15km', 0) or 0),
+                        'chains5': int(row.get('Chains 5km', 0) or 0),
+                        'indep5': int(row.get('Independents 5km', 0) or 0),
+                        'chainNames5': row.get('Chain Names 5km', ''),
+                        'chainNames10': row.get('Chain Names 10km', ''),
+                        'compScore': float(row.get('Competition Score', 0) or 0),
+                        'popPerPharm5': float(row.get('Pop Per Pharmacy 5km', 0) or 0),
                     }
                     all_data.append(rec)
                 except Exception as e:
@@ -258,6 +267,11 @@ function makePopup(d) {{
     '<tr><td style="padding:3px 0;color:#64748b">Nearest Town</td><td style="padding:3px 0;font-weight:600">'+d.nearTown+' (pop '+fmtPop(d.nearTownPop)+', '+d.nearTownDist.toFixed(1)+' km)</td></tr>'+
     '<tr><td style="padding:3px 0;color:#64748b">Pop 5/10/15km</td><td style="padding:3px 0;font-weight:600">'+fmtPop(d.pop5)+' / '+fmtPop(d.pop10)+' / '+fmtPop(d.pop15)+'</td></tr>'+
     '<tr><td style="padding:3px 0;color:#64748b">Opportunity Score</td><td style="padding:3px 0;font-weight:700;color:#0891b2">'+fmtScore(d.score)+'</td></tr>'+
+    '<tr><td style="padding:3px 0;color:#64748b">Competition Score</td><td style="padding:3px 0;font-weight:700;color:'+(d.compScore>=70?'#6ee7b7':d.compScore>=40?'#fde68a':'#fca5a5')+'">'+d.compScore.toFixed(1)+'/100</td></tr>'+
+    '<tr><td style="padding:3px 0;color:#64748b">Pharmacies 5/10/15km</td><td style="padding:3px 0;font-weight:600">'+d.pharm5+' / '+d.pharm10+' / '+d.pharm15+'</td></tr>'+
+    '<tr><td style="padding:3px 0;color:#64748b">Chains vs Independent (5km)</td><td style="padding:3px 0;font-weight:600">'+d.chains5+' chains / '+d.indep5+' indep</td></tr>'+
+    (d.chainNames5&&d.chainNames5!=='None'?'<tr><td style="padding:3px 0;color:#64748b">Chains (5km)</td><td style="padding:3px 0;font-size:11px">'+d.chainNames5+'</td></tr>':'')+
+    '<tr><td style="padding:3px 0;color:#64748b">Pop/Pharmacy (5km)</td><td style="padding:3px 0;font-weight:600">'+(d.popPerPharm5>=999999?'No competition':fmtPop(d.popPerPharm5))+'</td></tr>'+
     '<tr><td style="padding:3px 0;color:#64748b">Verification</td><td style="padding:3px 0"><span class="badge '+vBadge+'">'+d.verification+'</span></td></tr>'+
     '</table>'+
     '<div style="margin-top:6px;font-size:11px;color:#64748b;max-width:300px;word-wrap:break-word">'+d.evidence+'</div>'+
@@ -287,6 +301,12 @@ const COLUMNS = [
   {{key:'nearTown',label:'Town',w:'110px'}},
   {{key:'pop5',label:'Pop 5km',w:'70px',fmt:function(d){{return '<span class="pop-format">'+fmtPop(d.pop5)+'</span>'}}}},
   {{key:'pop10',label:'Pop 10km',w:'70px',fmt:function(d){{return '<span class="pop-format">'+fmtPop(d.pop10)+'</span>'}}}},
+  {{key:'pharm5',label:'Ph 5km',w:'60px'}},
+  {{key:'compScore',label:'Comp Score',w:'100px',fmt:function(d){{
+    const pct=d.compScore;
+    const col=pct>=70?'#6ee7b7':pct>=40?'#fde68a':'#fca5a5';
+    return d.compScore.toFixed(0)+' <span class="score-bar"><span class="score-fill" style="width:'+pct+'%;background:'+col+'"></span></span>';
+  }}}},
   {{key:'score',label:'Score',w:'110px',fmt:function(d){{
     const pct=Math.min(d.score/500000*100,100);
     const col=pct>66?'#22d3ee':pct>33?'#f59e0b':'#ef4444';
