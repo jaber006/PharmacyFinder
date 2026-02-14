@@ -62,6 +62,9 @@ PROXIMITY_ADJACENT_KM = 0.20     # 200m — pharmacy is adjacent/nearby
 PROXIMITY_NOTE_IN = 'Note: Pharmacy must be located INSIDE the complex, not just nearby. This distance-based check cannot verify physical containment.'
 PROXIMITY_NOTE_ADJACENT = '⚠️ Adjacent but may not be inside the complex (50-200m). Physical verification required.'
 
+# Supermarket access rule — applies to ALL rules
+SUPERMARKET_ACCESS_WARNING = '⚠️ SUPERMARKET ACCESS RULE: The proposed pharmacy must NOT be directly accessible by the public from within a supermarket. Ensure separate public entrance.'
+
 # Major supermarket chains
 MAJOR_SUPERMARKETS = [
     'woolworths',

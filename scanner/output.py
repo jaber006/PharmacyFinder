@@ -51,6 +51,10 @@ def generate_csv(opportunities: List[Dict], output_path: str) -> str:
     """Write opportunity zones to CSV."""
     rows = []
     for opp in opportunities:
+        poi_type = opp.get('poi_type', '')
+        warnings = []
+        if poi_type == 'supermarket':
+            warnings.append('Pharmacy must NOT be directly accessible from supermarket')
         rows.append({
             'Latitude': opp['latitude'],
             'Longitude': opp['longitude'],
@@ -62,6 +66,7 @@ def generate_csv(opportunities: List[Dict], output_path: str) -> str:
             'Nearest Pharmacy Name': opp.get('nearest_pharmacy_name', ''),
             'POI Name': opp.get('poi_name', ''),
             'POI Type': opp.get('poi_type', ''),
+            'Warnings': '; '.join(warnings),
             'Region': opp.get('region', ''),
             'Date Scanned': opp.get('date_scanned', datetime.now().strftime('%Y-%m-%d')),
         })

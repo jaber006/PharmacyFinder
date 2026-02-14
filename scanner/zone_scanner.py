@@ -916,6 +916,10 @@ class ZoneScanner:
         if dist_note:
             full_evidence = f"{evidence}. {dist_note}"
 
+        # Supermarket access rule warning for supermarket-anchored opportunities
+        if poi_type == 'supermarket':
+            full_evidence = f"{full_evidence}. {config.SUPERMARKET_ACCESS_WARNING}"
+
         return Opportunity(
             latitude=lat,
             longitude=lon,
