@@ -446,15 +446,21 @@ class ZoneScanner:
 
     def _scan_item_132(self, region: str) -> List[Opportunity]:
         """
-        Scan shopping centres with GLA >= 15 000 sqm that do NOT already
+        Scan shopping centres with GLA >= 15,000 sqm that do NOT already
         have a pharmacy inside (within 200 m).
+
+        Uses centre_class and estimated_tenants for better accuracy.
         """
         opps: List[Opportunity] = []
         min_gla = config.GLA_THRESHOLDS['major_centre']
 
         for centre in self._shopping_centres:
-            gla = centre.get('gla_sqm') or 0
-            if gla < min_gla:
+            gla = centre.get('estimated_gla') or centre.get('gla_sqm') or 0
+            centre_class = centre.get('centre_class', 'unknown')
+            tenants = centre.get('estimated_tenants') or 0
+
+            # Must be a major centre (>= 15,000 sqm)
+            if gla < min_gla and centre_class != 'major':
                 continue
 
             lat, lon = centre['latitude'], centre['longitude']
@@ -465,12 +471,17 @@ class ZoneScanner:
 
             nearest_pharm, dist_km = _nearest_pharmacy(lat, lon, self._pharmacies)
 
+            confidence = 0.85
+            tenant_note = ''
+            if tenants > 0:
+                tenant_note = f', est. {tenants} tenants'
+
             opp = self._make_opportunity(
                 lat, lon, nearest_pharm, dist_km,
                 rule='Item 132',
                 evidence=(f"Major shopping centre '{centre.get('name','')}' "
-                          f"(GLA {gla:,.0f} sqm) with no pharmacy within 200 m"),
-                confidence=0.85,
+                          f"(GLA {gla:,.0f} sqm{tenant_note}) with no pharmacy within 200 m"),
+                confidence=confidence,
                 poi_name=centre.get('name', ''),
                 poi_type='shopping_centre',
             )
@@ -545,25 +556,32 @@ class ZoneScanner:
 
         return opps
 
-    # -- Item 134 -- Shopping centre 5 000-15 000 sqm + supermarket --
+    # -- Item 134 -- Large shopping centre 5,000+ sqm + supermarket >= 2,500 sqm + 50 tenants --
 
     def _scan_item_134(self, region: str) -> List[Opportunity]:
         """
-        Shopping centres 5 000-15 000 sqm GLA that have a supermarket
-        but no pharmacy inside.
+        Item 134 — large shopping centre:
+        - GLA >= 5,000 sqm (but below 15,000 = Item 132 territory)
+        - Supermarket >= 2,500 sqm GLA
+        - 50+ commercial establishments
+
+        Also checks for centres that may be borderline.
         """
         opps: List[Opportunity] = []
-        gla_min = config.GLA_THRESHOLDS['small_centre_min']
-        gla_max = config.GLA_THRESHOLDS['small_centre_max']
+        gla_min = config.GLA_THRESHOLDS['small_centre_min']   # 5,000
+        gla_max = config.GLA_THRESHOLDS['major_centre']       # 15,000
 
         for centre in self._shopping_centres:
-            gla = centre.get('gla_sqm') or 0
+            gla = centre.get('estimated_gla') or centre.get('gla_sqm') or 0
             if gla < gla_min or gla >= gla_max:
                 continue
 
+            tenants = centre.get('estimated_tenants') or 0
+            centre_class = centre.get('centre_class', 'unknown')
+
             lat, lon = centre['latitude'], centre['longitude']
 
-            # Must have a supermarket inside
+            # Must have a supermarket inside (preferably >= 2,500 sqm)
             supermarkets_json = centre.get('major_supermarkets', [])
             if isinstance(supermarkets_json, str):
                 import json as _json
@@ -571,14 +589,31 @@ class ZoneScanner:
                     supermarkets_json = _json.loads(supermarkets_json)
                 except Exception:
                     supermarkets_json = []
-            has_sm = bool(supermarkets_json)
 
-            if not has_sm:
+            has_large_sm = False
+            has_any_sm = bool(supermarkets_json)
+            sm_note = ''
+
+            # Check if any listed supermarket qualifies (>= 2,500 sqm)
+            for sm_name in supermarkets_json:
+                sm_lower = sm_name.lower()
+                if any(m in sm_lower for m in ('woolworths', 'coles')):
+                    has_large_sm = True  # Coles/Woolworths >= 3,000 sqm typically
+                    break
+                elif any(m in sm_lower for m in ('drakes', 'harris farm')):
+                    has_large_sm = True
+                    break
+
+            if not has_any_sm:
                 # Check if a supermarket is within 200 m
                 nearby_sms = find_within_radius(lat, lon, self._supermarkets, 0.2)
-                has_sm = len(nearby_sms) > 0
+                for sm, _ in nearby_sms:
+                    sm_gla = sm.get('estimated_gla') or sm.get('floor_area_sqm') or 0
+                    if sm_gla >= 2500:
+                        has_large_sm = True
+                    has_any_sm = True
 
-            if not has_sm:
+            if not has_any_sm:
                 continue
 
             # Already has pharmacy?
@@ -587,12 +622,30 @@ class ZoneScanner:
 
             nearest_pharm, dist_km = _nearest_pharmacy(lat, lon, self._pharmacies)
 
+            # Determine confidence based on data quality
+            confidence = 0.75
+            notes = []
+            if has_large_sm and tenants >= 50:
+                confidence = 0.80
+                notes.append(f"Large supermarket (>= 2,500 sqm) and {tenants} est. tenants")
+            elif has_large_sm:
+                confidence = 0.70
+                notes.append(f"Large supermarket present but only {tenants} est. tenants (needs 50+)")
+            elif has_any_sm and tenants >= 50:
+                confidence = 0.65
+                notes.append(f"{tenants} est. tenants but supermarket may be < 2,500 sqm")
+                sm_note = ' ⚠️ supermarket GLA may be below 2,500 sqm threshold'
+            else:
+                confidence = 0.55
+                notes.append(f"Borderline: {tenants} est. tenants, supermarket size uncertain")
+
             opp = self._make_opportunity(
                 lat, lon, nearest_pharm, dist_km,
                 rule='Item 134',
                 evidence=(f"Shopping centre '{centre.get('name','')}' "
-                          f"(GLA {gla:,.0f} sqm) with supermarket but no pharmacy"),
-                confidence=0.75,
+                          f"(GLA {gla:,.0f} sqm, est. {tenants} tenants) "
+                          f"with supermarket but no pharmacy. {'; '.join(notes)}{sm_note}"),
+                confidence=confidence,
                 poi_name=centre.get('name', ''),
                 poi_type='shopping_centre',
             )

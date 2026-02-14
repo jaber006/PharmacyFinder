@@ -192,7 +192,15 @@ class ShoppingCentreScraper:
         count = 0
         centres = KNOWN_SHOPPING_CENTRES.get(region, [])
         for centre in centres:
-            self.db.insert_shopping_centre(centre)
+            # Enrich with classification
+            enriched = {**centre}
+            enriched['estimated_gla'] = centre.get('gla_sqm', 0)
+            enriched['estimated_tenants'] = self._estimate_tenants(
+                centre.get('name', ''), centre.get('gla_sqm', 0))
+            enriched['centre_class'] = self._classify_centre(
+                centre.get('name', ''), centre.get('gla_sqm', 0),
+                enriched['estimated_tenants'])
+            self.db.insert_shopping_centre(enriched)
             count += 1
         return count
 
@@ -284,6 +292,8 @@ class ShoppingCentreScraper:
 
             # OSM doesn't have GLA — estimate from building type/size
             gla_sqm = self._estimate_gla(tags)
+            est_tenants = self._estimate_tenants(name, gla_sqm)
+            centre_class = self._classify_centre(name, gla_sqm, est_tenants)
 
             return {
                 'name': name,
@@ -291,6 +301,9 @@ class ShoppingCentreScraper:
                 'latitude': float(lat),
                 'longitude': float(lon),
                 'gla_sqm': gla_sqm,
+                'estimated_gla': gla_sqm,
+                'estimated_tenants': est_tenants,
+                'centre_class': centre_class,
                 'major_supermarkets': [],  # Will check during scanning
             }
 
@@ -313,3 +326,78 @@ class ShoppingCentreScraper:
 
         # Default: small centre estimate
         return 5000.0  # Conservative default
+
+    def _estimate_tenants(self, name: str, gla_sqm: float) -> int:
+        """
+        Estimate tenant count from centre name and GLA.
+
+        Rules of thumb:
+        - Westfield / major regional: 150-400 tenants
+        - Sub-regional (15,000-40,000 sqm): 50-150 tenants
+        - Neighbourhood (5,000-15,000 sqm): 15-50 tenants
+        - Strip mall / small (<5,000 sqm): 5-15 tenants
+        - Average ~1 tenant per 100-200 sqm GLA depending on size
+        """
+        name_lower = name.lower()
+
+        # Known major chains — always large
+        if 'westfield' in name_lower:
+            if gla_sqm >= 80000:
+                return 300
+            elif gla_sqm >= 50000:
+                return 200
+            else:
+                return 120
+        elif 'chadstone' in name_lower:
+            return 550
+        elif 'pacific fair' in name_lower:
+            return 400
+
+        # Estimate from GLA using average tenant size
+        if gla_sqm >= 50000:
+            return int(gla_sqm / 180)  # Large centres have more small tenants
+        elif gla_sqm >= 15000:
+            return int(gla_sqm / 200)
+        elif gla_sqm >= 5000:
+            return int(gla_sqm / 250)
+        elif gla_sqm >= 1000:
+            return int(gla_sqm / 300)
+        else:
+            return max(5, int(gla_sqm / 400))
+
+    def _classify_centre(self, name: str, gla_sqm: float,
+                          estimated_tenants: int) -> str:
+        """
+        Classify a shopping centre for Items 132-134.
+
+        Returns:
+            'major'   — Item 132: GLA >= 15,000 sqm
+            'large'   — Item 134: GLA 5,000-15,000 sqm, supermarket >= 2,500 sqm, 50+ tenants
+            'small'   — Item 133: GLA 1,000-5,000 sqm, supermarket >= 1,000 sqm, 15+ tenants
+            'strip'   — Too small to qualify
+            'unknown' — Insufficient data
+        """
+        name_lower = name.lower()
+
+        # Westfield is always major
+        if 'westfield' in name_lower:
+            return 'major'
+        if 'chadstone' in name_lower:
+            return 'major'
+
+        if gla_sqm >= 15000:
+            return 'major'
+        elif gla_sqm >= 5000:
+            if estimated_tenants >= 50:
+                return 'large'
+            elif estimated_tenants >= 15:
+                return 'small'
+            else:
+                return 'small'  # 5,000+ sqm with some tenants
+        elif gla_sqm >= 1000:
+            if estimated_tenants >= 15:
+                return 'small'
+            else:
+                return 'strip'
+        else:
+            return 'strip'

@@ -141,11 +141,21 @@ class Database:
                 latitude REAL NOT NULL,
                 longitude REAL NOT NULL,
                 gla_sqm REAL,
+                estimated_gla REAL,
+                estimated_tenants INTEGER,
+                centre_class TEXT DEFAULT 'unknown',
                 major_supermarkets TEXT,
                 date_scraped TEXT,
                 UNIQUE(name, address)
             )
         """)
+        # Migrate: add columns if missing
+        for col in ["estimated_gla REAL", "estimated_tenants INTEGER",
+                     "centre_class TEXT DEFAULT 'unknown'"]:
+            try:
+                cursor.execute(f"ALTER TABLE shopping_centres ADD COLUMN {col}")
+            except sqlite3.OperationalError:
+                pass
 
         # Medical centres table (for Item 136)
         cursor.execute("""
@@ -334,14 +344,18 @@ class Database:
         major_supermarkets = json.dumps(centre_data.get('major_supermarkets', []))
         cursor.execute("""
             INSERT OR IGNORE INTO shopping_centres
-            (name, address, latitude, longitude, gla_sqm, major_supermarkets, date_scraped)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+            (name, address, latitude, longitude, gla_sqm, estimated_gla,
+             estimated_tenants, centre_class, major_supermarkets, date_scraped)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             centre_data.get('name'),
             centre_data.get('address'),
             centre_data.get('latitude'),
             centre_data.get('longitude'),
             centre_data.get('gla_sqm'),
+            centre_data.get('estimated_gla') or centre_data.get('gla_sqm'),
+            centre_data.get('estimated_tenants'),
+            centre_data.get('centre_class', 'unknown'),
             major_supermarkets,
             datetime.now().isoformat()
         ))
