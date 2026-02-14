@@ -187,11 +187,20 @@ def estimate_nearby_population(lat: float, lon: float, places: List[Dict],
         pop = ct['population']
         dist = ct['dist']
         
-        # Estimate city radius from population (rough: pop ~ pi*r^2 * density)
-        # Australian urban density ~1500-2500 people/km^2
-        density = 1500  # conservative
+        # Estimate city radius from population
+        # Use higher density for larger cities (they spread more)
+        if pop > 500000:
+            density = 2500  # major metro
+        elif pop > 100000:
+            density = 2000  # large city
+        elif pop > 20000:
+            density = 1500  # medium city
+        else:
+            density = 1000  # small town
+        
         city_radius_km = math.sqrt(pop / (math.pi * density))
         city_radius_km = max(city_radius_km, 1.0)  # at least 1km
+        city_radius_km = min(city_radius_km, 25.0)  # cap at 25km
         
         # For each search radius, estimate overlap fraction
         for radius, pop_bucket in [(5.0, 'pop_5km'), (10.0, 'pop_10km'), (15.0, 'pop_15km')]:
