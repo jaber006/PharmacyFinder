@@ -231,6 +231,70 @@ def format_distance(distance_km: float) -> str:
         return f"{distance_km:.2f} km"
 
 
+def assess_distance_confidence(
+    measured_km: float,
+    threshold_km: float,
+    margin_pct: float = 0.10,
+) -> Tuple[str, str]:
+    """
+    Assess confidence of a distance measurement relative to a threshold.
+
+    Rules specify "mid-point of public access door" but we use coordinate
+    centroids, introducing measurement error. This function flags borderline
+    distances.
+
+    Args:
+        measured_km:   Measured distance (haversine or OSRM)
+        threshold_km:  Rule threshold (e.g. 1.5 km for Item 130)
+        margin_pct:    Margin of error (default 10%)
+
+    Returns:
+        Tuple of (confidence_level, note):
+        - 'high':     measured > threshold * (1 + margin)  — clearly qualifies
+        - 'medium':   measured is within margin of threshold — borderline
+        - 'below':    measured < threshold                  — does not qualify
+    """
+    upper = threshold_km * (1 + margin_pct)
+
+    if measured_km >= upper:
+        return 'high', ''
+    elif measured_km >= threshold_km:
+        pct_over = ((measured_km - threshold_km) / threshold_km) * 100
+        return ('medium',
+                f'⚠️ Borderline distance ({measured_km:.2f} km vs {threshold_km} km threshold, '
+                f'only {pct_over:.1f}% over) — requires surveyor verification')
+    else:
+        return 'below', ''
+
+
+def assess_proximity_confidence(
+    measured_km: float,
+    threshold_km: float,
+    margin_pct: float = 0.10,
+) -> Tuple[str, str]:
+    """
+    Assess confidence for proximity checks (e.g. "within 500m" or "within 200m").
+    For proximity, we want the distance to be BELOW the threshold.
+
+    Returns:
+        Tuple of (confidence_level, note):
+        - 'high':     clearly within range (measured < threshold * (1 - margin))
+        - 'medium':   measured is within margin of threshold — borderline
+        - 'above':    measured > threshold — does not qualify
+    """
+    lower = threshold_km * (1 - margin_pct)
+
+    if measured_km <= lower:
+        return 'high', ''
+    elif measured_km <= threshold_km:
+        pct_under = ((threshold_km - measured_km) / threshold_km) * 100
+        return ('medium',
+                f'⚠️ Borderline proximity ({measured_km:.2f} km vs {threshold_km} km threshold, '
+                f'only {pct_under:.1f}% within) — requires surveyor verification')
+    else:
+        return 'above', ''
+
+
 def calculate_fte_from_hours(hours_per_week: float) -> float:
     """
     Calculate FTE (Full Time Equivalent) from hours per week.

@@ -31,6 +31,8 @@ from utils.distance import (
     haversine_distance,
     format_distance,
     get_driving_distance,
+    assess_distance_confidence,
+    assess_proximity_confidence,
 )
 from utils.geocoding import Geocoder
 import config
@@ -292,6 +294,7 @@ class ZoneScanner:
                         confidence=confidence,
                         poi_name=sm.get('name', ''),
                         poi_type='supermarket',
+                        distance_threshold_km=threshold_km,
                     )
                     opps.append(opp)
                 continue
@@ -327,6 +330,7 @@ class ZoneScanner:
                                 confidence=confidence,
                                 poi_name=sm.get('name', ''),
                                 poi_type='supermarket',
+                                distance_threshold_km=threshold_km,
                             )
                             opps.append(opp)
                         break  # one GP is enough
@@ -372,6 +376,7 @@ class ZoneScanner:
                         confidence=confidence,
                         poi_name=gp.get('name', ''),
                         poi_type='gp',
+                        distance_threshold_km=threshold_km,
                     )
                     opps.append(opp)
                     break
@@ -416,6 +421,7 @@ class ZoneScanner:
                     confidence=0.7,
                     poi_name=poi.get('name', ''),
                     poi_type=poi['_poi_type'],
+                    distance_threshold_km=10.0,
                 )
                 opps.append(opp)
                 continue
@@ -436,6 +442,7 @@ class ZoneScanner:
                         confidence=0.85,
                         poi_name=poi.get('name', ''),
                         poi_type=poi['_poi_type'],
+                        distance_threshold_km=10.0,
                     )
                     opps.append(opp)
                     time.sleep(0.3)  # rate-limit OSRM
@@ -871,12 +878,31 @@ class ZoneScanner:
 
     def _make_opportunity(self, lat, lon, nearest_pharm, dist_km,
                           rule, evidence, confidence,
-                          poi_name='', poi_type='') -> Opportunity:
+                          poi_name='', poi_type='',
+                          distance_threshold_km=None) -> Opportunity:
+        """
+        Create an Opportunity, optionally checking distance confidence.
+
+        If distance_threshold_km is set, the distance is assessed for
+        borderline status and the evidence/confidence are adjusted.
+        """
+        dist_note = ''
+        if distance_threshold_km is not None and dist_km != float('inf'):
+            dist_conf, dist_note = assess_distance_confidence(dist_km, distance_threshold_km)
+            if dist_conf == 'medium':
+                confidence = max(confidence - 0.10, 0.30)
+            elif dist_conf == 'below':
+                confidence = max(confidence - 0.25, 0.20)
+
+        full_evidence = evidence
+        if dist_note:
+            full_evidence = f"{evidence}. {dist_note}"
+
         return Opportunity(
             latitude=lat,
             longitude=lon,
             qualifying_rules=[rule],
-            evidence=[evidence],
+            evidence=[full_evidence],
             confidence=confidence,
             nearest_pharmacy_km=dist_km if dist_km != float('inf') else -1,
             nearest_pharmacy_name=(nearest_pharm.get('name', '') if nearest_pharm else ''),
