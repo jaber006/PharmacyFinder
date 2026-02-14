@@ -638,20 +638,41 @@ class ZoneScanner:
 
         return opps
 
-    # -- Item 135 -- Hospital >= 100 beds ---------------------------
+    # -- Item 135 -- Large PRIVATE hospital >= 150 beds ---------------
 
     def _scan_item_135(self, region: str) -> List[Opportunity]:
         """
-        Hospitals with >= 100 beds that do NOT have an adjacent pharmacy
-        (within 300 m).
+        Item 135 requires a "large private hospital" with >= 150 beds
+        that does NOT have an adjacent pharmacy (within 300 m).
+
+        Must be PRIVATE hospitals, not public.
+        Hospitals with unknown type or unknown bed count get lower confidence.
         """
         opps: List[Opportunity] = []
-        min_beds = config.HOSPITAL_BED_COUNT  # 100
+        min_beds = config.HOSPITAL_BED_COUNT  # 150
+
+        # Hospital types that qualify as "private"
+        private_types = {'private', 'private_non_profit', 'private_for_profit', 'religious'}
+        # Types that are definitely NOT private
+        public_types = {'public', 'government'}
 
         for hosp in self._hospitals:
             beds = hosp.get('bed_count') or 0
-            if beds < min_beds:
+            hosp_type = (hosp.get('hospital_type') or 'unknown').lower().strip()
+
+            # Skip hospitals that are definitely public
+            if hosp_type in public_types:
                 continue
+
+            is_private = hosp_type in private_types
+            beds_known = beds > 0
+
+            # Determine if this hospital qualifies
+            if beds_known and beds < min_beds:
+                continue  # Below threshold, skip
+
+            if not beds_known and not is_private:
+                continue  # Unknown beds AND unknown type — too uncertain
 
             lat, lon = hosp['latitude'], hosp['longitude']
 
@@ -660,12 +681,28 @@ class ZoneScanner:
 
             nearest_pharm, dist_km = _nearest_pharmacy(lat, lon, self._pharmacies)
 
+            # Build evidence and confidence
+            notes = []
+            if is_private and beds_known and beds >= min_beds:
+                confidence = 0.80
+                notes.append(f"Private hospital, {beds} beds (>= {min_beds})")
+            elif is_private and not beds_known:
+                confidence = 0.55
+                notes.append(f"Private hospital, bed count unknown — requires verification")
+            elif not is_private and beds_known and beds >= min_beds:
+                confidence = 0.50
+                notes.append(f"Hospital type '{hosp_type}' (may be private), {beds} beds")
+            else:
+                confidence = 0.40
+                notes.append(f"Hospital type '{hosp_type}', bed count unknown — requires verification")
+
             opp = self._make_opportunity(
                 lat, lon, nearest_pharm, dist_km,
                 rule='Item 135',
-                evidence=(f"Hospital '{hosp.get('name','')}' ({beds} beds) "
-                          f"with no adjacent pharmacy (nearest {format_distance(dist_km)})"),
-                confidence=0.8,
+                evidence=(f"Hospital '{hosp.get('name','')}' ({beds} beds, type: {hosp_type}) "
+                          f"with no adjacent pharmacy (nearest {format_distance(dist_km)}). "
+                          f"{'; '.join(notes)}"),
+                confidence=confidence,
                 poi_name=hosp.get('name', ''),
                 poi_type='hospital',
             )

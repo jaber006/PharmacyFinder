@@ -53,7 +53,8 @@ FLOOR_AREA_THRESHOLDS = {
 }
 
 # Hospital requirements
-HOSPITAL_BED_COUNT = 100  # Item 135 - Minimum 100 beds
+HOSPITAL_BED_COUNT = 150  # Item 135 - "large private hospital" = 150+ beds
+HOSPITAL_BED_COUNT_UNKNOWN_THRESHOLD = 50  # Minimum beds to consider unknown-type hospitals
 
 # Major supermarket chains
 MAJOR_SUPERMARKETS = [
