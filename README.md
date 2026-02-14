@@ -96,6 +96,47 @@ SCANNING FOR OPPORTUNITY ZONES - Tasmania
     5. [85%] Evandale General Store (rural TAS - 13 km from pharmacy)
 ```
 
+## Post-Scan Tools
+
+### Opportunity Verification
+
+Cross-references opportunity zones against live OpenStreetMap pharmacy data
+to find false positives (pharmacies that exist but aren't in our database).
+
+```bash
+# Verify a single state
+python verify_opportunities.py --state TAS
+
+# Verify all states
+python verify_opportunities.py --all
+
+# Only verify top 20 opportunities per state
+python verify_opportunities.py --state NSW --top 20
+```
+
+Outputs `verified_opportunities_<STATE>.csv` with columns:
+- **Verification**: `VERIFIED`, `FALSE POSITIVE`, `NEEDS REVIEW`, or `UNVERIFIED`
+- **Verification Notes**: Details about what was found
+- Any newly discovered pharmacies are automatically added to the database
+
+### Population Overlay
+
+Adds estimated population data to each opportunity zone to help prioritize.
+A gap near 100,000 people is more valuable than one near 500.
+
+```bash
+# Add population data for one state
+python population_overlay.py --state TAS
+
+# All states
+python population_overlay.py --all
+```
+
+Outputs `population_ranked_<STATE>.csv` with:
+- **Pop 5km/10km/15km**: Estimated population within radius
+- **Nearest Town**: Closest significant settlement
+- **Opportunity Score**: Composite score (population x distance x confidence)
+
 ## Output Files
 
 - `output/opportunity_zones_TAS.html` — Interactive map with all opportunity
@@ -103,6 +144,9 @@ SCANNING FOR OPPORTUNITY ZONES - Tasmania
   layers
 - `output/opportunity_zones_TAS.csv` — Spreadsheet with coordinates, rules,
   evidence, confidence scores, and reverse-geocoded addresses
+- `output/verified_opportunities_TAS.csv` — Verified opportunities with
+  false positive flags
+- `output/population_ranked_TAS.csv` — Opportunities ranked by population score
 
 ## Data Sources
 
@@ -138,6 +182,8 @@ Each opportunity gets a confidence score based on data quality:
 PharmacyFinder/
   main.py                 # CLI entry point + orchestrator
   config.py               # Configuration and thresholds
+  verify_opportunities.py # Opportunity verification against live OSM data
+  population_overlay.py   # Population data overlay and scoring
   scanner/
     zone_scanner.py       # Core POI-based opportunity scanner
     output.py             # Map, CSV, and summary generators
@@ -158,6 +204,8 @@ PharmacyFinder/
     distance.py           # Haversine + OSRM distance utils
     geocoding.py          # Nominatim geocoder
     boundaries.py         # State bounding box validation
+    overpass_cache.py     # Overpass API caching layer (7-day cache + failover)
+  cache/                  # Cached Overpass API responses (gitignored)
   output/                 # Generated maps and CSVs
 ```
 
@@ -175,8 +223,10 @@ PharmacyFinder/
   Item 130/136 accuracy
 - **Hospital bed counts** — curated for major hospitals; OSM hospitals
   often have 0 beds tagged
-- **Rate limiting** — Overpass API has rate limits; large state scans may
-  need retry logic
+- **Population data** — OSM only has population tags for ~5-10% of places;
+  remainder uses conservative estimates based on settlement type
+- **Rate limiting** — Overpass API has rate limits; the caching layer
+  mitigates this with 7-day caches and mirror failover
 - **Road distance** — public OSRM server has rate limits; self-hosted
   OSRM would allow faster batch processing
 
