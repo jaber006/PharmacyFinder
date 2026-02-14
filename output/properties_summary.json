@@ -1,0 +1,565 @@
+{
+  "generated": "2026-02-14T23:02:05.069775",
+  "suburbs_scraped": 98,
+  "total_raw_listings": 1639,
+  "total_matched": 3190,
+  "suitable_for_pharmacy": 1268,
+  "unique_suitable": 546,
+  "by_state": {
+    "TAS": {
+      "opportunities_with_listings": 42,
+      "unique_listings": 263,
+      "suitable_listings": 113,
+      "rent_range": "$770 - $92,000",
+      "rent_median": "$32,000",
+      "size_range": "80-500 m\u00b2",
+      "top_properties": [
+        {
+          "address": "135/5A Gladstone Street, Battery Point, TAS 7004",
+          "rent": "Contact RWC Tasmania",
+          "size": 338,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-135-5a-gladstone-street-battery-point-tas-7004-505053200",
+          "opportunity": "Ochre Health Medical Centre Clarence"
+        },
+        {
+          "address": "Harriett's Landing, Ground, 13-17 Castray Esplanade, Battery Point, TAS 7004",
+          "rent": "Contact Agent",
+          "size": 161,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-harriett-s-landing-ground-13-17-castray-esplanade-battery-point-tas-7004-505043608",
+          "opportunity": "Ochre Health Medical Centre Clarence"
+        },
+        {
+          "address": "Tenancy A, 31-35 Salamanca Place, Battery Point, TAS 7004",
+          "rent": "$92,000 + Outgoings + GST",
+          "size": 120,
+          "type": "Shops & Retail",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-tenancy-a-31-35-salamanca-place-battery-point-tas-7004-505037568",
+          "opportunity": "Ochre Health Medical Centre Clarence"
+        },
+        {
+          "address": "118 King Street, Sandy Bay, TAS 7005",
+          "rent": "Contact Agent",
+          "size": 295,
+          "type": "Shops & Retail | Medical & Consulting",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-118-king-street-sandy-bay-tas-7005-505014200",
+          "opportunity": "Ochre Health Medical Centre Clarence"
+        },
+        {
+          "address": "Ground  Shop 2, 165-167 Sandy Bay Road, Sandy Bay, TAS 7005",
+          "rent": "Contact Elders Commercial",
+          "size": 140,
+          "type": "Shops & Retail",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-ground-shop-2-165-167-sandy-bay-road-sandy-bay-tas-7005-504950116",
+          "opportunity": "Ochre Health Medical Centre Clarence"
+        },
+        {
+          "address": "Suite 18C, 31-35 Salamanca Place, Battery Point, TAS 7004",
+          "rent": "Contact Agent",
+          "size": 115,
+          "type": "Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-suite-18c-31-35-salamanca-place-battery-point-tas-7004-504772440",
+          "opportunity": "Ochre Health Medical Centre Clarence"
+        },
+        {
+          "address": "Suite 18B, 31-35 Salamanca Place, Battery Point, TAS 7004",
+          "rent": "Contact Agent",
+          "size": 112,
+          "type": "Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-suite-18b-31-35-salamanca-place-battery-point-tas-7004-504772436",
+          "opportunity": "Ochre Health Medical Centre Clarence"
+        },
+        {
+          "address": "135/5A Gladstone Street, Battery Point, TAS 7004",
+          "rent": "Contact RWC Tasmania",
+          "size": 338,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-135-5a-gladstone-street-battery-point-tas-7004-505053200",
+          "opportunity": "Eastlands Shopping Centre"
+        },
+        {
+          "address": "Harriett's Landing, Ground, 13-17 Castray Esplanade, Battery Point, TAS 7004",
+          "rent": "Contact Agent",
+          "size": 161,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-harriett-s-landing-ground-13-17-castray-esplanade-battery-point-tas-7004-505043608",
+          "opportunity": "Eastlands Shopping Centre"
+        },
+        {
+          "address": "Tenancy A, 31-35 Salamanca Place, Battery Point, TAS 7004",
+          "rent": "$92,000 + Outgoings + GST",
+          "size": 120,
+          "type": "Shops & Retail",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-tenancy-a-31-35-salamanca-place-battery-point-tas-7004-505037568",
+          "opportunity": "Eastlands Shopping Centre"
+        }
+      ]
+    },
+    "VIC": {
+      "opportunities_with_listings": 20,
+      "unique_listings": 240,
+      "suitable_listings": 99,
+      "rent_range": "$750 - $125,000",
+      "rent_median": "$45,000",
+      "size_range": "80-500 m\u00b2",
+      "top_properties": [
+        {
+          "address": "81 Main Road West,St Albans, VIC 3021",
+          "rent": "Contact Agent!",
+          "size": 299,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-81-main-road-west-st-albans-vic-3021-505033836",
+          "opportunity": "Sunshine Hospital Medical Centre"
+        },
+        {
+          "address": "53 Main Road West,St Albans, VIC 3021",
+          "rent": "$750 per week (no gst)",
+          "size": 103,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-53-main-road-west-st-albans-vic-3021-505052096",
+          "opportunity": "Sunshine Hospital Medical Centre"
+        },
+        {
+          "address": "2-4, 30-32 East Esplanade, St Albans, VIC 3021",
+          "rent": "Price & Incentive Negotiable",
+          "size": 245,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-2-4-30-32-east-esplanade-st-albans-vic-3021-504917820",
+          "opportunity": "Sunshine Hospital Medical Centre"
+        },
+        {
+          "address": "216A Main Road East, St Albans, VIC 3021",
+          "rent": "Contact Agent",
+          "size": 150,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-sale/property-216a-main-road-east-st-albans-vic-3021-504883008?listingType=rent",
+          "opportunity": "Sunshine Hospital Medical Centre"
+        },
+        {
+          "address": "306 Station Road, St Albans, VIC 3021",
+          "rent": "Contact The Leasing Agency Today",
+          "size": 155,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-306-station-road-st-albans-vic-3021-504479440",
+          "opportunity": "Sunshine Hospital Medical Centre"
+        },
+        {
+          "address": "2/5 Devonshire Road,Sunshine, VIC 3020",
+          "rent": "Contact Agent",
+          "size": 100,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-2-5-devonshire-road-sunshine-vic-3020-505061080",
+          "opportunity": "Sunshine Hospital Medical Centre"
+        },
+        {
+          "address": "Ground Flo/63 Glen Huntly Road,Elwood, VIC 3184",
+          "rent": "Contact Agent",
+          "size": 137,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-ground-flo-63-glen-huntly-road-elwood-vic-3184-505021012",
+          "opportunity": "Chadstone Lifestyle Precinct"
+        },
+        {
+          "address": "L1, S2/23-27 Wellington Street,St Kilda, VIC 3182",
+          "rent": "Contact Agent",
+          "size": 395,
+          "type": "Medical & Consulting | Offices | Other",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-l1-s2-23-27-wellington-street-st-kilda-vic-3182-504907476",
+          "opportunity": "Chadstone Lifestyle Precinct"
+        },
+        {
+          "address": "Shop 1/129 Martin Street,Brighton, VIC 3186",
+          "rent": "Contact Agent",
+          "size": 190,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-shop-1-129-martin-street-brighton-vic-3186-505059344",
+          "opportunity": "Chadstone Lifestyle Precinct"
+        },
+        {
+          "address": "22/240 Plenty Road,Bundoora, VIC 3083",
+          "rent": "$45,000 + GST + Outgoings",
+          "size": 130,
+          "type": "Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-22-240-plenty-road-bundoora-vic-3083-505053324",
+          "opportunity": "Woolworths"
+        }
+      ]
+    },
+    "NSW": {
+      "opportunities_with_listings": 20,
+      "unique_listings": 240,
+      "suitable_listings": 84,
+      "rent_range": "$350 - $145,000",
+      "rent_median": "$40,000",
+      "size_range": "80-499 m\u00b2",
+      "top_properties": [
+        {
+          "address": "Shop 24, 48 Cooper St,Strathfield, NSW 2135",
+          "rent": "$40,000 + GST PA | RENOVATED",
+          "size": 100,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-shop-24-48-cooper-st-strathfield-nsw-2135-505048648",
+          "opportunity": "Strathfield Medical Centre"
+        },
+        {
+          "address": "93 Arthur Street,Strathfield, NSW 2135",
+          "rent": "Contact Agent",
+          "size": 100,
+          "type": "Shops & Retail | Medical & Consulting",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-93-arthur-street-strathfield-nsw-2135-505026804",
+          "opportunity": "Strathfield Medical Centre"
+        },
+        {
+          "address": "Shop 35 The Boulevarde,Strathfield, NSW 2135",
+          "rent": "Contact Agent",
+          "size": 360,
+          "type": "Shops & Retail",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-shop-35-the-boulevarde-strathfield-nsw-2135-505024352",
+          "opportunity": "Strathfield Medical Centre"
+        },
+        {
+          "address": "Shop 4/448 Parramatta Road,Strathfield, NSW 2135",
+          "rent": "Contact Agent",
+          "size": 133,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-shop-4-448-parramatta-road-strathfield-nsw-2135-505022776",
+          "opportunity": "Strathfield Medical Centre"
+        },
+        {
+          "address": "Shop 2 & Shop 3/39 Cooper Street,Strathfield, NSW 2135",
+          "rent": "CONTACT AGENT",
+          "size": 125,
+          "type": "Shops & Retail | Offices | Showrooms",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-shop-2-shop-3-39-cooper-street-strathfield-nsw-2135-505022208",
+          "opportunity": "Strathfield Medical Centre"
+        },
+        {
+          "address": "Shop 2, 39 Cooper St, Strathfield, NSW 2135",
+          "rent": "RENOVATED SUITE WITH AMAZING NATURAL LIGHT",
+          "size": 125,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-shop-2-39-cooper-st-strathfield-nsw-2135-505000416",
+          "opportunity": "Strathfield Medical Centre"
+        },
+        {
+          "address": "Shop 25/45-47 The Boulevarde, Strathfield, NSW 2135",
+          "rent": "Contact Agent",
+          "size": 105,
+          "type": "Shops & Retail",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-shop-25-45-47-the-boulevarde-strathfield-nsw-2135-504896188",
+          "opportunity": "Strathfield Medical Centre"
+        },
+        {
+          "address": "5G & 5H, 9-13 Redmyre Road, Strathfield, NSW 2135",
+          "rent": "Contact Agent",
+          "size": 194,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-5g-5h-9-13-redmyre-road-strathfield-nsw-2135-504838360",
+          "opportunity": "Strathfield Medical Centre"
+        },
+        {
+          "address": "310 Forest Road,Hurstville, NSW 2220",
+          "rent": "Contact Agent",
+          "size": 138,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-310-forest-road-hurstville-nsw-2220-505020948",
+          "opportunity": "Hurstville Medical Centre"
+        },
+        {
+          "address": "Shop 3, 145-149 Forest Road,Hurstville, NSW 2220",
+          "rent": "Contact Agent",
+          "size": 153,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-shop-3-145-149-forest-road-hurstville-nsw-2220-504888268",
+          "opportunity": "Hurstville Medical Centre"
+        }
+      ]
+    },
+    "QLD": {
+      "opportunities_with_listings": 20,
+      "unique_listings": 406,
+      "suitable_listings": 154,
+      "rent_range": "$45 - $1,050,000",
+      "rent_median": "$39,692",
+      "size_range": "80-462 m\u00b2",
+      "top_properties": [
+        {
+          "address": "4/33 Sanders Street,Upper Mount Gravatt, QLD 4122",
+          "rent": "Price on Application",
+          "size": 238,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-4-33-sanders-street-upper-mount-gravatt-qld-4122-505040692",
+          "opportunity": "Upper Mount Gravatt Medical Centre"
+        },
+        {
+          "address": "Shop 1, 50  Freda Street,Upper Mount Gravatt, QLD 4122",
+          "rent": "$7,500 + Gst Per Month",
+          "size": 239,
+          "type": "Shops & Retail",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-shop-1-50-freda-street-upper-mount-gravatt-qld-4122-505058432",
+          "opportunity": "Upper Mount Gravatt Medical Centre"
+        },
+        {
+          "address": "SHOP 1, 21 Mount Gravatt Capalaba Road, Upper Mount Gravatt, QLD 4122",
+          "rent": "$90,000 per annum",
+          "size": 145,
+          "type": "Medical & Consulting | Offices | Showrooms",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-shop-1-21-mount-gravatt-capalaba-road-upper-mount-gravatt-qld-4122-505045128",
+          "opportunity": "Upper Mount Gravatt Medical Centre"
+        },
+        {
+          "address": "3/1957-1961 Logan Road, Upper Mount Gravatt, QLD 4122",
+          "rent": "$70,040 Gross p/a + GST",
+          "size": 129,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-3-1957-1961-logan-road-upper-mount-gravatt-qld-4122-505007128",
+          "opportunity": "Upper Mount Gravatt Medical Centre"
+        },
+        {
+          "address": "Address available on request, Upper Mount Gravatt, QLD 4122",
+          "rent": "Contact Marketing Agent",
+          "size": 110,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-upper-mount-gravatt-qld-4122-504987100",
+          "opportunity": "Upper Mount Gravatt Medical Centre"
+        },
+        {
+          "address": "Address available on request, Upper Mount Gravatt, QLD 4122",
+          "rent": "Contact Exclusive Agent",
+          "size": 130,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-upper-mount-gravatt-qld-4122-504950348",
+          "opportunity": "Upper Mount Gravatt Medical Centre"
+        },
+        {
+          "address": "7B/50-56 Sanders Street, Upper Mount Gravatt, QLD 4122",
+          "rent": "Contact Agent",
+          "size": 132,
+          "type": "Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-7b-50-56-sanders-street-upper-mount-gravatt-qld-4122-504887644",
+          "opportunity": "Upper Mount Gravatt Medical Centre"
+        },
+        {
+          "address": "2092 Logan Road, Upper Mount Gravatt, QLD 4122",
+          "rent": "Contact Agent",
+          "size": 222,
+          "type": "Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-2092-logan-road-upper-mount-gravatt-qld-4122-504857684",
+          "opportunity": "Upper Mount Gravatt Medical Centre"
+        },
+        {
+          "address": "Address available on request, Upper Mount Gravatt, QLD 4122",
+          "rent": "Contact Marketing Agent",
+          "size": 250,
+          "type": "Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-upper-mount-gravatt-qld-4122-504844072",
+          "opportunity": "Upper Mount Gravatt Medical Centre"
+        },
+        {
+          "address": "D3, 643 Kessels Road, Upper Mount Gravatt, QLD 4122",
+          "rent": "Gross Rent : $8,400^ PCM + GST",
+          "size": 194,
+          "type": "Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-d3-643-kessels-road-upper-mount-gravatt-qld-4122-504809900",
+          "opportunity": "Upper Mount Gravatt Medical Centre"
+        }
+      ]
+    },
+    "SA": {
+      "opportunities_with_listings": 18,
+      "unique_listings": 217,
+      "suitable_listings": 91,
+      "rent_range": "$27 - $200,000",
+      "rent_median": "$48,000",
+      "size_range": "80-480 m\u00b2",
+      "top_properties": [
+        {
+          "address": "4/838 Marion Road, Marion, SA 5043",
+          "rent": "Contact Agent",
+          "size": 266,
+          "type": "Shops & Retail | Medical & Consulting | Showrooms",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-4-838-marion-road-marion-sa-5043-504892592",
+          "opportunity": "Marion Medical Centre"
+        },
+        {
+          "address": "Address available on request,Warradale, SA 5046",
+          "rent": "Competitive rates",
+          "size": 244,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-warradale-sa-5046-502095742",
+          "opportunity": "Marion Medical Centre"
+        },
+        {
+          "address": "Shops 2-4, 397 Diagonal Road, Sturt, SA 5047",
+          "rent": "Contact Agent",
+          "size": 140,
+          "type": "Shops & Retail | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-shops-2-4-397-diagonal-road-sturt-sa-5047-505006316",
+          "opportunity": "Marion Medical Centre"
+        },
+        {
+          "address": "Suites 3 & 6, 455-457 Morphett Road OAKLANDS PARK, Shops 3 & 6, 455-457 Morphett Road, Oaklands Park, SA 5046",
+          "rent": "Contact Agent",
+          "size": 144,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-suites-3-6-455-457-morphett-road-oaklands-park-shops-3-6-455-457-morphett-road-oaklands-park-sa-5046-504907528",
+          "opportunity": "Marion Medical Centre"
+        },
+        {
+          "address": "207b-207c Sturt Road, Seacombe Gardens, SA 5047",
+          "rent": "Contact Agent",
+          "size": 118,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-207b-207c-sturt-road-seacombe-gardens-sa-5047-504975316",
+          "opportunity": "Marion Medical Centre"
+        },
+        {
+          "address": "Address available on request, Warradale, SA 5046",
+          "rent": "Please Call Manuel Paul",
+          "size": 122,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-warradale-sa-5046-502959178",
+          "opportunity": "Marion Medical Centre"
+        },
+        {
+          "address": "1/147 Goodwood Road, Goodwood, SA 5034",
+          "rent": "Contact Agent",
+          "size": 200,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-1-147-goodwood-road-goodwood-sa-5034-505027488",
+          "opportunity": "Coles"
+        },
+        {
+          "address": "456 Goodwood Road, Cumberland Park, SA 5041",
+          "rent": "$79,000 p.a. + GST & Outgoings",
+          "size": 290,
+          "type": "Shops & Retail | Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-456-goodwood-road-cumberland-park-sa-5041-504746776",
+          "opportunity": "Coles"
+        },
+        {
+          "address": "T3 & T6/309-311 Goodwood Road, Kings Park, SA 5034",
+          "rent": "T6: $350/sqm",
+          "size": 245,
+          "type": "Medical & Consulting | Offices",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-t3-t6-309-311-goodwood-road-kings-park-sa-5034-504662436",
+          "opportunity": "Coles"
+        },
+        {
+          "address": "2/9 Charles Street, West Lakes, SA 5021",
+          "rent": "Contact Agent",
+          "size": 237,
+          "type": "Medical & Consulting",
+          "score": 100,
+          "url": "https://www.realcommercial.com.au/for-lease/property-2-9-charles-street-west-lakes-sa-5021-504975228",
+          "opportunity": "Aldi"
+        }
+      ]
+    },
+    "WA": {
+      "opportunities_with_listings": 1,
+      "unique_listings": 30,
+      "suitable_listings": 5,
+      "rent_range": "$200 - $50,000",
+      "rent_median": "$45,000",
+      "size_range": "89-313 m\u00b2",
+      "top_properties": [
+        {
+          "address": "17B Olga Road,Maddington, WA 6109",
+          "rent": "$45,000 P/A Plus GST Plus Outs",
+          "size": 291,
+          "type": "Shops & Retail",
+          "score": 95,
+          "url": "https://www.realcommercial.com.au/for-lease/property-17b-olga-road-maddington-wa-6109-505046496",
+          "opportunity": "Aldi"
+        },
+        {
+          "address": "9/108 Welshpool Road,Welshpool, WA 6106",
+          "rent": "Asking Rent: $200/sqm Net",
+          "size": 313,
+          "type": "Shops & Retail",
+          "score": 95,
+          "url": "https://www.realcommercial.com.au/for-lease/property-9-108-welshpool-road-welshpool-wa-6106-505028552",
+          "opportunity": "Aldi"
+        },
+        {
+          "address": "2/404 Orrong Road,Welshpool, WA 6106",
+          "rent": "$50,000 P.A. excluding GST",
+          "size": 89,
+          "type": "Shops & Retail | Offices | Showrooms",
+          "score": 85,
+          "url": "https://www.realcommercial.com.au/for-lease/property-2-404-orrong-road-welshpool-wa-6106-505043256",
+          "opportunity": "Aldi"
+        },
+        {
+          "address": "9/6 Barcelona Way,Maddington, WA 6109",
+          "rent": "Contact Agent",
+          "size": 130,
+          "type": "Other",
+          "score": 75,
+          "url": "https://www.realcommercial.com.au/for-lease/property-9-6-barcelona-way-maddington-wa-6109-505022728",
+          "opportunity": "Aldi"
+        },
+        {
+          "address": "Unit 4, 163 Wright Street,Kewdale, WA 6105",
+          "rent": "$27,000 + GST",
+          "size": 90,
+          "type": "Offices",
+          "score": 65,
+          "url": "https://www.realcommercial.com.au/for-lease/property-unit-4-163-wright-street-kewdale-wa-6105-505060012",
+          "opportunity": "Aldi"
+        }
+      ]
+    }
+  }
+}
