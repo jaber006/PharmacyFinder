@@ -2,21 +2,16 @@
 """
 Growth Corridor Detection for PharmacyFinder opportunities.
 
-For top opportunities (by composite score), searches for signs of
-population growth using web data.
+Detects whether each opportunity zone is in or near a known growth corridor
+using a curated database of Australian growth areas and heuristics.
 
-Can be run in two modes:
-1. --generate-queries: outputs search queries to a file
-2. --apply-results: reads search results and updates CSVs
-
-Or run with --auto to attempt automated detection using known
-growth area databases and heuristics.
+State-aware matching prevents cross-state false positives (e.g. "Springfield"
+in NSW won't match the QLD Springfield growth area).
 """
 
 import csv
 import os
 import re
-import json
 import argparse
 
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'output')
@@ -24,214 +19,130 @@ STATES = ['ACT', 'NSW', 'NT', 'QLD', 'SA', 'TAS', 'VIC', 'WA']
 
 # Known growth corridors and development areas in Australia
 # Source: various state government planning documents
-KNOWN_GROWTH_AREAS = {
+# Each entry: (name, applicable_states, description)
+# applicable_states restricts matching to the correct state(s)
+KNOWN_GROWTH_AREAS = [
     # NSW
-    'Marsden Park': 'NSW Growth Centre - North West',
-    'Oran Park': 'NSW Growth Centre - South West',
-    'Leppington': 'NSW Growth Centre - South West',
-    'Box Hill': 'NSW Growth Centre - The Hills',
-    'Schofields': 'NSW Growth Centre - North West',
-    'Austral': 'NSW Growth Centre - South West',
-    'Gregory Hills': 'NSW Growth Centre - South West',
-    'Cobbitty': 'NSW Growth Centre - South West',
-    'Wilton': 'NSW Growth Area - Wilton',
-    'Calderwood': 'NSW Growth Area - West Shellharbour',
-    'Tullimbar': 'NSW Growth Area - West Shellharbour',
-    'Spring Farm': 'NSW Growth Area - Greater Macarthur',
-    'Menangle Park': 'NSW Growth Area - Greater Macarthur',
-    'Gilead': 'NSW Growth Area - Greater Macarthur',
-    'Googong': 'NSW Growth Area - Queanbeyan-Palerang',
-    'Huntlee': 'NSW Growth Area - Hunter Valley',
-    'Chisholm': 'NSW Growth Area - Maitland',
+    ('Marsden Park', {'NSW'}, 'NSW Growth Centre - North West'),
+    ('Oran Park', {'NSW'}, 'NSW Growth Centre - South West'),
+    ('Leppington', {'NSW'}, 'NSW Growth Centre - South West'),
+    ('Box Hill', {'NSW'}, 'NSW Growth Centre - The Hills'),
+    ('Schofields', {'NSW'}, 'NSW Growth Centre - North West'),
+    ('Austral', {'NSW'}, 'NSW Growth Centre - South West'),
+    ('Gregory Hills', {'NSW'}, 'NSW Growth Centre - South West'),
+    ('Cobbitty', {'NSW'}, 'NSW Growth Centre - South West'),
+    ('Wilton', {'NSW'}, 'NSW Growth Area - Wilton'),
+    ('Calderwood', {'NSW'}, 'NSW Growth Area - West Shellharbour'),
+    ('Tullimbar', {'NSW'}, 'NSW Growth Area - West Shellharbour'),
+    ('Spring Farm', {'NSW'}, 'NSW Growth Area - Greater Macarthur'),
+    ('Menangle Park', {'NSW'}, 'NSW Growth Area - Greater Macarthur'),
+    ('Gilead', {'NSW'}, 'NSW Growth Area - Greater Macarthur'),
+    ('Googong', {'NSW', 'ACT'}, 'NSW/ACT Growth Area - Googong'),
+    ('Huntlee', {'NSW'}, 'NSW Growth Area - Hunter Valley'),
+    ('Chisholm', {'NSW'}, 'NSW Growth Area - Maitland'),
+    ('Glenmore Park', {'NSW'}, 'NSW Growth Area - Greater Penrith'),
+    ('Jordan Springs', {'NSW'}, 'NSW Growth Area - Greater Penrith'),
+    ('Edmondson Park', {'NSW'}, 'NSW Growth Centre - South West'),
     # VIC
-    'Craigieburn': 'VIC Growth Corridor - Northern',
-    'Mickleham': 'VIC Growth Corridor - Northern',
-    'Kalkallo': 'VIC Growth Corridor - Northern',
-    'Donnybrook': 'VIC Growth Corridor - Northern',
-    'Beveridge': 'VIC Growth Corridor - Northern',
-    'Wallan': 'VIC Growth Corridor - Northern',
-    'Wollert': 'VIC Growth Corridor - Northern',
-    'Clyde': 'VIC Growth Corridor - South East',
-    'Clyde North': 'VIC Growth Corridor - South East',
-    'Officer': 'VIC Growth Corridor - South East',
-    'Pakenham': 'VIC Growth Corridor - South East',
-    'Tarneit': 'VIC Growth Corridor - Western',
-    'Truganina': 'VIC Growth Corridor - Western',
-    'Wyndham Vale': 'VIC Growth Corridor - Western',
-    'Werribee': 'VIC Growth Corridor - Western',
-    'Manor Lakes': 'VIC Growth Corridor - Western',
-    'Melton South': 'VIC Growth Corridor - Western',
-    'Rockbank': 'VIC Growth Corridor - Western',
-    'Aintree': 'VIC Growth Corridor - Western',
-    'Fraser Rise': 'VIC Growth Corridor - Western',
-    'Thornhill Park': 'VIC Growth Corridor - Western',
-    'Armstrong Creek': 'VIC Growth Area - Geelong',
-    'Charlemont': 'VIC Growth Area - Geelong',
-    'Mt Duneed': 'VIC Growth Area - Geelong',
-    'Warragul': 'VIC Growth Area - West Gippsland',
-    'Drouin': 'VIC Growth Area - West Gippsland',
-    'Torquay': 'VIC Growth Area - Surf Coast',
-    'Lara': 'VIC Growth Area - Greater Geelong',
-    'Sunbury': 'VIC Growth Corridor - Northern',
-    'Diggers Rest': 'VIC Growth Corridor - Northern',
+    ('Craigieburn', {'VIC'}, 'VIC Growth Corridor - Northern'),
+    ('Mickleham', {'VIC'}, 'VIC Growth Corridor - Northern'),
+    ('Kalkallo', {'VIC'}, 'VIC Growth Corridor - Northern'),
+    ('Donnybrook', {'VIC'}, 'VIC Growth Corridor - Northern'),
+    ('Beveridge', {'VIC'}, 'VIC Growth Corridor - Northern'),
+    ('Wallan', {'VIC'}, 'VIC Growth Corridor - Northern'),
+    ('Wollert', {'VIC'}, 'VIC Growth Corridor - Northern'),
+    ('Clyde North', {'VIC'}, 'VIC Growth Corridor - South East'),
+    ('Clyde', {'VIC'}, 'VIC Growth Corridor - South East'),
+    ('Officer', {'VIC'}, 'VIC Growth Corridor - South East'),
+    ('Pakenham', {'VIC'}, 'VIC Growth Corridor - South East'),
+    ('Tarneit', {'VIC'}, 'VIC Growth Corridor - Western'),
+    ('Truganina', {'VIC'}, 'VIC Growth Corridor - Western'),
+    ('Wyndham Vale', {'VIC'}, 'VIC Growth Corridor - Western'),
+    ('Werribee', {'VIC'}, 'VIC Growth Corridor - Western'),
+    ('Manor Lakes', {'VIC'}, 'VIC Growth Corridor - Western'),
+    ('Melton South', {'VIC'}, 'VIC Growth Corridor - Western'),
+    ('Rockbank', {'VIC'}, 'VIC Growth Corridor - Western'),
+    ('Aintree', {'VIC'}, 'VIC Growth Corridor - Western'),
+    ('Fraser Rise', {'VIC'}, 'VIC Growth Corridor - Western'),
+    ('Thornhill Park', {'VIC'}, 'VIC Growth Corridor - Western'),
+    ('Armstrong Creek', {'VIC'}, 'VIC Growth Area - Geelong'),
+    ('Charlemont', {'VIC'}, 'VIC Growth Area - Geelong'),
+    ('Mt Duneed', {'VIC'}, 'VIC Growth Area - Geelong'),
+    ('Warragul', {'VIC'}, 'VIC Growth Area - West Gippsland'),
+    ('Drouin', {'VIC'}, 'VIC Growth Area - West Gippsland'),
+    ('Torquay', {'VIC'}, 'VIC Growth Area - Surf Coast'),
+    ('Lara', {'VIC'}, 'VIC Growth Area - Greater Geelong'),
+    ('Sunbury', {'VIC'}, 'VIC Growth Corridor - Northern'),
+    ('Diggers Rest', {'VIC'}, 'VIC Growth Corridor - Northern'),
+    ('Longwarry', {'VIC'}, 'VIC Growth Area - West Gippsland'),
     # QLD
-    'Springfield': 'QLD Growth Area - Greater Springfield',
-    'Yarrabilba': 'QLD Growth Area - Logan',
-    'Flagstone': 'QLD Growth Area - Logan',
-    'Ripley Valley': 'QLD Growth Area - Ipswich',
-    'Caloundra South': 'QLD Growth Area - Sunshine Coast',
-    'Aura': 'QLD Growth Area - Sunshine Coast (Aura)',
-    'Palmview': 'QLD Growth Area - Sunshine Coast',
-    'Pimpama': 'QLD Growth Area - Gold Coast Northern',
-    'Coomera': 'QLD Growth Area - Gold Coast Northern',
-    'Ormeau': 'QLD Growth Area - Gold Coast Northern',
-    'Caboolture West': 'QLD Growth Area - Moreton Bay',
-    'Park Ridge': 'QLD Growth Area - Logan',
-    'Jimboomba': 'QLD Growth Area - Logan',
-    'Redbank Plains': 'QLD Growth Area - Ipswich',
-    'Deebing Heights': 'QLD Growth Area - Ipswich',
-    'Collingwood Park': 'QLD Growth Area - Ipswich',
-    'Bahrs Scrub': 'QLD Growth Area - Logan',
-    'Burpengary East': 'QLD Growth Area - Moreton Bay',
+    ('Springfield', {'QLD'}, 'QLD Growth Area - Greater Springfield'),
+    ('Yarrabilba', {'QLD'}, 'QLD Growth Area - Logan'),
+    ('Flagstone', {'QLD'}, 'QLD Growth Area - Logan'),
+    ('Ripley Valley', {'QLD'}, 'QLD Growth Area - Ipswich'),
+    ('Caloundra South', {'QLD'}, 'QLD Growth Area - Sunshine Coast'),
+    ('Aura', {'QLD'}, 'QLD Growth Area - Sunshine Coast (Aura)'),
+    ('Palmview', {'QLD'}, 'QLD Growth Area - Sunshine Coast'),
+    ('Pimpama', {'QLD'}, 'QLD Growth Area - Gold Coast Northern'),
+    ('Coomera', {'QLD'}, 'QLD Growth Area - Gold Coast Northern'),
+    ('Ormeau', {'QLD'}, 'QLD Growth Area - Gold Coast Northern'),
+    ('Caboolture West', {'QLD'}, 'QLD Growth Area - Moreton Bay'),
+    ('Park Ridge', {'QLD'}, 'QLD Growth Area - Logan'),
+    ('Jimboomba', {'QLD'}, 'QLD Growth Area - Logan'),
+    ('Redbank Plains', {'QLD'}, 'QLD Growth Area - Ipswich'),
+    ('Deebing Heights', {'QLD'}, 'QLD Growth Area - Ipswich'),
+    ('Collingwood Park', {'QLD'}, 'QLD Growth Area - Ipswich'),
+    ('Bahrs Scrub', {'QLD'}, 'QLD Growth Area - Logan'),
+    ('Burpengary East', {'QLD'}, 'QLD Growth Area - Moreton Bay'),
+    ('Merrimac', {'QLD'}, 'QLD Growth Area - Gold Coast'),
     # SA
-    'Mount Barker': 'SA Growth Area - Mount Barker',
-    'Gawler': 'SA Growth Area - Gawler',
-    'Two Wells': 'SA Growth Area - Northern Adelaide',
-    'Angle Vale': 'SA Growth Area - Northern Adelaide',
-    'Seaford': 'SA Growth Area - Onkaparinga',
-    'Aldinga': 'SA Growth Area - Onkaparinga',
-    'Munno Para': 'SA Growth Area - Playford',
-    'Virginia': 'SA Growth Area - Playford',
+    ('Mount Barker', {'SA'}, 'SA Growth Area - Mount Barker'),
+    ('Gawler', {'SA'}, 'SA Growth Area - Gawler'),
+    ('Two Wells', {'SA'}, 'SA Growth Area - Northern Adelaide'),
+    ('Angle Vale', {'SA'}, 'SA Growth Area - Northern Adelaide'),
+    ('Seaford', {'SA'}, 'SA Growth Area - Onkaparinga'),
+    ('Aldinga', {'SA'}, 'SA Growth Area - Onkaparinga'),
+    ('Munno Para', {'SA'}, 'SA Growth Area - Playford'),
+    ('Virginia', {'SA'}, 'SA Growth Area - Playford'),
+    ('Roxby Downs', {'SA'}, 'SA Growth Area - BHP Olympic Dam expansion'),
     # WA
-    'Baldivis': 'WA Growth Area - Rockingham',
-    'Wellard': 'WA Growth Area - Kwinana',
-    'Byford': 'WA Growth Area - Serpentine-Jarrahdale',
-    'Ellenbrook': 'WA Growth Area - Swan',
-    'Brabham': 'WA Growth Area - Swan',
-    'Alkimos': 'WA Growth Area - Wanneroo',
-    'Yanchep': 'WA Growth Area - Wanneroo',
-    'Two Rocks': 'WA Growth Area - Wanneroo',
-    'Harrisdale': 'WA Growth Area - Armadale',
-    'Piara Waters': 'WA Growth Area - Armadale',
-    'Treeby': 'WA Growth Area - Cockburn',
-    'Haynes': 'WA Growth Area - Armadale',
-    'Mandogalup': 'WA Growth Area - Kwinana',
-    'Southern River': 'WA Growth Area - Gosnells',
+    ('Baldivis', {'WA'}, 'WA Growth Area - Rockingham'),
+    ('Wellard', {'WA'}, 'WA Growth Area - Kwinana'),
+    ('Byford', {'WA'}, 'WA Growth Area - Serpentine-Jarrahdale'),
+    ('Ellenbrook', {'WA'}, 'WA Growth Area - Swan'),
+    ('Brabham', {'WA'}, 'WA Growth Area - Swan'),
+    ('Alkimos', {'WA'}, 'WA Growth Area - Wanneroo'),
+    ('Yanchep', {'WA'}, 'WA Growth Area - Wanneroo'),
+    ('Two Rocks', {'WA'}, 'WA Growth Area - Wanneroo'),
+    ('Harrisdale', {'WA'}, 'WA Growth Area - Armadale'),
+    ('Piara Waters', {'WA'}, 'WA Growth Area - Armadale'),
+    ('Treeby', {'WA'}, 'WA Growth Area - Cockburn'),
+    ('Haynes', {'WA'}, 'WA Growth Area - Armadale'),
+    ('Mandogalup', {'WA'}, 'WA Growth Area - Kwinana'),
+    ('Southern River', {'WA'}, 'WA Growth Area - Gosnells'),
     # ACT
-    'Molonglo Valley': 'ACT Growth Area - Molonglo Valley',
-    'Denman Prospect': 'ACT Growth Area - Molonglo Valley',
-    'Whitlam': 'ACT Growth Area - Molonglo Valley',
-    'Ginninderry': 'ACT Growth Area - Ginninderry',
-    'Taylor': 'ACT Growth Area - Gungahlin',
-    'Throsby': 'ACT Growth Area - Gungahlin',
-    'Jacka': 'ACT Growth Area - Gungahlin',
-    'Moncrieff': 'ACT Growth Area - Gungahlin',
-    'Googong': 'ACT/NSW Growth Area - Googong',
+    ('Molonglo Valley', {'ACT'}, 'ACT Growth Area - Molonglo Valley'),
+    ('Denman Prospect', {'ACT'}, 'ACT Growth Area - Molonglo Valley'),
+    ('Whitlam', {'ACT'}, 'ACT Growth Area - Molonglo Valley'),
+    ('Ginninderry', {'ACT'}, 'ACT Growth Area - Ginninderry'),
+    ('Taylor', {'ACT'}, 'ACT Growth Area - Gungahlin'),
+    ('Throsby', {'ACT'}, 'ACT Growth Area - Gungahlin'),
+    ('Jacka', {'ACT'}, 'ACT Growth Area - Gungahlin'),
+    ('Moncrieff', {'ACT'}, 'ACT Growth Area - Gungahlin'),
     # TAS
-    'Kingston': 'TAS Growth Area - Kingborough',
-    'Sorell': 'TAS Growth Area - Sorell',
-    'Brighton': 'TAS Growth Area - Brighton',
-    'Rokeby': 'TAS Growth Area - Clarence',
-    'Howrah': 'TAS Growth Area - Clarence',
-    'Legana': 'TAS Growth Area - West Tamar',
-    'Prospect Vale': 'TAS Growth Area - Meander Valley',
-    # Additional NSW
-    'Edmondson Park': 'NSW Growth Centre - South West',
-    'Gledswood Hills': 'NSW Growth Centre - South West',
-    'Denham Court': 'NSW Growth Centre - South West',
-    'Catherine Field': 'NSW Growth Centre - South West',
-    'Marsden Park': 'NSW Growth Centre - North West',
-    'The Ponds': 'NSW Growth Centre - North West',
-    'Ropes Crossing': 'NSW Growth Centre - West',
-    'Jordan Springs': 'NSW Growth Centre - West',
-    'Glenmore Park': 'NSW Growth Area - Penrith',
-    'Caddens': 'NSW Growth Area - Penrith',
-    'Mulgoa Rise': 'NSW Growth Area - Penrith',
-    'Thornton': 'NSW Growth Area - Hunter',
-    'Heddon Greta': 'NSW Growth Area - Hunter',
-    'Morisset': 'NSW Growth Area - Lake Macquarie',
-    'Warnervale': 'NSW Growth Area - Central Coast',
-    'Hamlyn Terrace': 'NSW Growth Area - Central Coast',
-    'Shell Cove': 'NSW Growth Area - Shellharbour',
-    'Emerald Hills': 'NSW Growth Centre - Leppington',
-    # Additional VIC
-    'Mambourin': 'VIC Growth Corridor - Western',
-    'Deanside': 'VIC Growth Corridor - Western',
-    'Bonnie Brook': 'VIC Growth Corridor - Western',
-    'Cobblebank': 'VIC Growth Area - Melton',
-    'Strathtulloh': 'VIC Growth Area - Melton',
-    'Eynesbury': 'VIC Growth Area - Melton',
-    'Donnybrook': 'VIC Growth Corridor - Northern',
-    'Merrifield': 'VIC Growth Corridor - Northern',
-    'Cloverton': 'VIC Growth Corridor - Northern',
-    'Berwick': 'VIC Growth Area - Casey',
-    'Cranbourne': 'VIC Growth Area - Casey',
-    'Botanic Ridge': 'VIC Growth Area - Casey',
-    'Cardinia': 'VIC Growth Area - Cardinia',
-    'Warragul': 'VIC Growth Area - Baw Baw',
-    'Drouin': 'VIC Growth Area - Baw Baw',
-    'Bacchus Marsh': 'VIC Growth Area - Moorabool',
-    'Mount Duneed': 'VIC Growth Area - Geelong',
-    # Additional QLD
-    'Narangba': 'QLD Growth Area - Moreton Bay',
-    'Mango Hill': 'QLD Growth Area - Moreton Bay',
-    'Griffin': 'QLD Growth Area - Moreton Bay',
-    'Deebing Heights': 'QLD Growth Area - Ipswich',
-    'Bellbird Park': 'QLD Growth Area - Ipswich',
-    'Augustine Heights': 'QLD Growth Area - Ipswich',
-    'South Ripley': 'QLD Growth Area - Ipswich',
-    'Nirimba': 'QLD Growth Area - Ipswich',
-    'Helensvale': 'QLD Growth Area - Gold Coast',
-    'Merrimac': 'QLD Growth Area - Gold Coast',
-    'Coomera': 'QLD Growth Area - Gold Coast',
-    'Upper Coomera': 'QLD Growth Area - Gold Coast',
-    'Pimpama': 'QLD Growth Area - Gold Coast',
-    'Ormeau Hills': 'QLD Growth Area - Gold Coast',
-    'Jimboomba': 'QLD Growth Area - Logan',
-    'Greenbank': 'QLD Growth Area - Logan',
-    'Bahrs Scrub': 'QLD Growth Area - Logan',
-    'Pallara': 'QLD Growth Area - Brisbane South',
-    'Rochedale': 'QLD Growth Area - Brisbane South',
-    'Baringa': 'QLD Growth Area - Sunshine Coast (Aura)',
-    'Nirimba': 'QLD Growth Area - Sunshine Coast',
-    # Additional WA
-    'Wellard': 'WA Growth Area - Kwinana',
-    'Lakelands': 'WA Growth Area - Mandurah',
-    'Meadow Springs': 'WA Growth Area - Mandurah',
-    'Golden Bay': 'WA Growth Area - Rockingham',
-    'Secret Harbour': 'WA Growth Area - Rockingham',
-    'Hammond Park': 'WA Growth Area - Cockburn',
-    'Success': 'WA Growth Area - Cockburn',
-    'Piara Waters': 'WA Growth Area - Armadale',
-    'Harrisdale': 'WA Growth Area - Armadale',
-    'Hilbert': 'WA Growth Area - Armadale',
-    'Caversham': 'WA Growth Area - Swan',
-    'Dayton': 'WA Growth Area - Swan',
-    'Aveley': 'WA Growth Area - Swan',
-    'The Vines': 'WA Growth Area - Swan',
-    'Banksia Grove': 'WA Growth Area - Wanneroo',
-    'Butler': 'WA Growth Area - Wanneroo',
-    'Clarkson': 'WA Growth Area - Wanneroo',
-    'Eglinton': 'WA Growth Area - Wanneroo',
-    # Additional SA
-    'Munno Para West': 'SA Growth Area - Playford',
-    'Eyre': 'SA Growth Area - Playford',
-    'Davoren Park': 'SA Growth Area - Playford',
-    'Blakeview': 'SA Growth Area - Playford',
-    'Craigmore': 'SA Growth Area - Playford',
-    'Riverlea': 'SA Growth Area - Playford',
-    'Seaford Heights': 'SA Growth Area - Onkaparinga',
-    'Aldinga Beach': 'SA Growth Area - Onkaparinga',
-    'Noarlunga': 'SA Growth Area - Onkaparinga',
-    'Mt Barker': 'SA Growth Area - Mount Barker',
-    'Nairne': 'SA Growth Area - Mount Barker',
-    'Roseworthy': 'SA Growth Area - Gawler',
-    'Concordia': 'SA Growth Area - Gawler',
-    # Roxby Downs - Olympic Dam expansion
-    'Roxby Downs': 'SA Growth Area - BHP Olympic Dam expansion',
-}
+    ('Kingston', {'TAS'}, 'TAS Growth Area - Kingborough'),
+    ('Sorell', {'TAS'}, 'TAS Growth Area - Sorell'),
+    ('Brighton', {'TAS'}, 'TAS Growth Area - Brighton'),
+    ('Rokeby', {'TAS'}, 'TAS Growth Area - Clarence'),
+    ('Howrah', {'TAS'}, 'TAS Growth Area - Clarence'),
+    ('Legana', {'TAS'}, 'TAS Growth Area - West Tamar'),
+    ('Prospect Vale', {'TAS'}, 'TAS Growth Area - Meander Valley'),
+    # NT
+    ('Palmerston', {'NT'}, 'NT Growth Area - Palmerston'),
+    ('Zuccoli', {'NT'}, 'NT Growth Area - Palmerston'),
+]
 
-# Population growth keywords — multi-word phrases to reduce false positives
+# Multi-word growth keywords — must be at least 2 words to reduce false positives
 GROWTH_KEYWORDS = [
     'new estate', 'new development', 'land estate',
     'housing estate', 'housing development',
@@ -266,41 +177,46 @@ def detect_growth(opp):
     name = opp.get('POI Name', '').strip()
     address = opp.get('Address', '').strip()
     town = opp.get('Nearest Town', '').strip()
-    evidence = opp.get('Evidence', '').strip()
+    state = opp.get('_state', opp.get('Region', ''))
 
     growth_found = False
     growth_details = []
 
-    # Check against known growth areas (word-boundary matching)
-    for area_name, description in KNOWN_GROWTH_AREAS.items():
-        # Use word boundary regex to avoid false matches like "Park" in "Parking"
+    # Check against known growth areas WITH state filtering
+    for area_name, valid_states, description in KNOWN_GROWTH_AREAS:
+        # Only match if the opportunity is in a valid state for this growth area
+        if state not in valid_states:
+            continue
+
+        # Use word boundary regex to avoid false matches
         pattern = r'\b' + re.escape(area_name.lower()) + r'\b'
-        if (re.search(pattern, address.lower()) or
-            re.search(pattern, town.lower()) or
-            re.search(pattern, name.lower())):
+
+        # Search in address and town (NOT in POI name — "Springfield Shopping Centre"
+        # in a non-Springfield town shouldn't match)
+        if re.search(pattern, address.lower()) or re.search(pattern, town.lower()):
             growth_found = True
             growth_details.append(description)
             break
 
-    # Check for growth-suggestive naming patterns in POI/address
-    combined_text = f"{name} {address} {town}".lower()
+    # Check for growth-suggestive naming patterns in address/town only
+    # (not POI name, to avoid matching store names like "Newtown" or "Greenfield IGA")
+    address_town_text = f"{address} {town}".lower()
     for kw in GROWTH_KEYWORDS:
-        if kw in combined_text and not growth_found:
-            # Only flag if it's a populated area (not remote)
+        if kw in address_town_text and not growth_found:
             pop_10km = float(opp.get('Pop 10km', 0) or 0)
             if pop_10km > 5000:
                 growth_found = True
-                growth_details.append(f"Name suggests new development ({kw})")
+                growth_details.append(f"Address suggests growth ({kw})")
                 break
 
-    # High population + relatively close to pharmacy = likely urban fringe growth
-    pop_10km = float(opp.get('Pop 10km', 0) or 0)
-    nearest_km = float(opp.get('Nearest Pharmacy (km)', 0) or 0)
-    comp_score = float(opp.get('Competition Score', 0) or 0)
+    # Urban fringe heuristic: high population but still gap in pharmacy coverage
+    if not growth_found:
+        pop_10km = float(opp.get('Pop 10km', 0) or 0)
+        nearest_km = float(opp.get('Nearest Pharmacy (km)', 0) or 0)
+        comp_score = float(opp.get('Competition Score', 0) or 0)
 
-    # Urban fringe heuristic: high population but still some distance
-    if pop_10km > 20000 and 1.0 < nearest_km < 5.0 and comp_score < 30:
-        if not growth_found:
+        # High population + pharmacy gap + low competition = likely urban fringe growth
+        if pop_10km > 25000 and 1.5 < nearest_km < 5.0 and comp_score < 20:
             growth_found = True
             growth_details.append(f"Urban fringe: {pop_10km:,.0f} pop, {nearest_km:.1f}km gap, low competition")
 
@@ -324,20 +240,28 @@ def update_csvs_with_growth(opportunities):
         filepath = os.path.join(OUTPUT_DIR, f'population_ranked_{state}.csv')
 
         # Get fieldnames from first opportunity
-        fieldnames = opps[0]['_fieldnames']
+        fieldnames = list(opps[0]['_fieldnames'])
 
         # Add growth columns if not present
         for col in ['Growth Indicator', 'Growth Details']:
             if col not in fieldnames:
                 fieldnames.append(col)
 
+        # Remove old growth columns that we're replacing
+        old_cols = ['Growth Corridor', 'Growth Type', 'Growth Rating',
+                    'Growth Notes', 'Growth Distance (km)']
+        for col in old_cols:
+            if col in fieldnames:
+                fieldnames.remove(col)
+
         # Clean internal keys and write
         with open(filepath, 'w', encoding='utf-8', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
             writer.writeheader()
             for opp in opps:
-                # Remove internal keys
-                row = {k: v for k, v in opp.items() if not k.startswith('_')}
+                # Remove internal keys and old growth columns
+                row = {k: v for k, v in opp.items()
+                       if not k.startswith('_') and k not in old_cols}
                 writer.writerow(row)
 
         growth_count = sum(1 for o in opps if o.get('Growth Indicator') == 'YES')
