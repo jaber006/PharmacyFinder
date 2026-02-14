@@ -17,6 +17,8 @@ class Database:
         """Establish database connection and create tables if needed."""
         self.connection = sqlite3.connect(self.db_path)
         self.connection.row_factory = sqlite3.Row
+        # Use WAL mode for better concurrent read/write handling
+        self.connection.execute("PRAGMA journal_mode=WAL")
         self.create_tables()
 
     def close(self):

@@ -379,6 +379,15 @@ class FindAPharmacyScraper:
 
             # Filter by state if the result has a state field
             result_state = data.get("state", "").upper().strip()
+            # Normalize full state names to abbreviations
+            state_name_map = {
+                'VICTORIA': 'VIC', 'NEW SOUTH WALES': 'NSW',
+                'QUEENSLAND': 'QLD', 'SOUTH AUSTRALIA': 'SA',
+                'WESTERN AUSTRALIA': 'WA', 'TASMANIA': 'TAS',
+                'NORTHERN TERRITORY': 'NT',
+                'AUSTRALIAN CAPITAL TERRITORY': 'ACT',
+            }
+            result_state = state_name_map.get(result_state, result_state)
             if result_state and result_state != region:
                 # Allow results from nearby states (border pharmacies)
                 # but we still store them — they're real pharmacies
