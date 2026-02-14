@@ -56,6 +56,12 @@ FLOOR_AREA_THRESHOLDS = {
 HOSPITAL_BED_COUNT = 150  # Item 135 - "large private hospital" = 150+ beds
 HOSPITAL_BED_COUNT_UNKNOWN_THRESHOLD = 50  # Minimum beds to consider unknown-type hospitals
 
+# Proximity thresholds for "in the complex" checks (Items 132-136)
+PROXIMITY_IN_COMPLEX_KM = 0.05   # 50m — pharmacy must be INSIDE the complex
+PROXIMITY_ADJACENT_KM = 0.20     # 200m — pharmacy is adjacent/nearby
+PROXIMITY_NOTE_IN = 'Note: Pharmacy must be located INSIDE the complex, not just nearby. This distance-based check cannot verify physical containment.'
+PROXIMITY_NOTE_ADJACENT = '⚠️ Adjacent but may not be inside the complex (50-200m). Physical verification required.'
+
 # Major supermarket chains
 MAJOR_SUPERMARKETS = [
     'woolworths',

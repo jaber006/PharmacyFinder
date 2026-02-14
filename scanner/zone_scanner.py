@@ -472,9 +472,14 @@ class ZoneScanner:
 
             lat, lon = centre['latitude'], centre['longitude']
 
-            # Check if pharmacy already inside (within 200 m)
-            if _has_nearby_pharmacy(lat, lon, self._pharmacies, 0.2):
+            # Check if pharmacy already inside (within 50m = "in" the complex)
+            if _has_nearby_pharmacy(lat, lon, self._pharmacies, config.PROXIMITY_IN_COMPLEX_KM):
                 continue
+
+            # Check if pharmacy is adjacent (50-200m) — may be inside but uncertain
+            is_adjacent = _has_nearby_pharmacy(lat, lon, self._pharmacies, config.PROXIMITY_ADJACENT_KM)
+            if is_adjacent:
+                continue  # Likely already has a pharmacy
 
             nearest_pharm, dist_km = _nearest_pharmacy(lat, lon, self._pharmacies)
 
@@ -487,7 +492,8 @@ class ZoneScanner:
                 lat, lon, nearest_pharm, dist_km,
                 rule='Item 132',
                 evidence=(f"Major shopping centre '{centre.get('name','')}' "
-                          f"(GLA {gla:,.0f} sqm{tenant_note}) with no pharmacy within 200 m"),
+                          f"(GLA {gla:,.0f} sqm{tenant_note}) with no pharmacy within 200 m. "
+                          f"{config.PROXIMITY_NOTE_IN}"),
                 confidence=confidence,
                 poi_name=centre.get('name', ''),
                 poi_type='shopping_centre',
@@ -736,8 +742,12 @@ class ZoneScanner:
 
             lat, lon = hosp['latitude'], hosp['longitude']
 
-            if _has_nearby_pharmacy(lat, lon, self._pharmacies, 0.3):
+            # Check if pharmacy already inside the hospital complex
+            if _has_nearby_pharmacy(lat, lon, self._pharmacies, config.PROXIMITY_IN_COMPLEX_KM):
                 continue
+
+            # Check adjacency (50-200m)
+            is_adjacent = _has_nearby_pharmacy(lat, lon, self._pharmacies, config.PROXIMITY_ADJACENT_KM)
 
             nearest_pharm, dist_km = _nearest_pharmacy(lat, lon, self._pharmacies)
 
@@ -756,11 +766,18 @@ class ZoneScanner:
                 confidence = 0.40
                 notes.append(f"Hospital type '{hosp_type}', bed count unknown — requires verification")
 
+            # Adjust for adjacency uncertainty
+            if is_adjacent:
+                confidence = max(confidence - 0.15, 0.30)
+                notes.append(config.PROXIMITY_NOTE_ADJACENT)
+            else:
+                notes.append(config.PROXIMITY_NOTE_IN)
+
             opp = self._make_opportunity(
                 lat, lon, nearest_pharm, dist_km,
                 rule='Item 135',
                 evidence=(f"Hospital '{hosp.get('name','')}' ({beds} beds, type: {hosp_type}) "
-                          f"with no adjacent pharmacy (nearest {format_distance(dist_km)}). "
+                          f"with no pharmacy in complex (nearest {format_distance(dist_km)}). "
                           f"{'; '.join(notes)}"),
                 confidence=confidence,
                 poi_name=hosp.get('name', ''),
@@ -832,7 +849,8 @@ class ZoneScanner:
                           f"{num_gps} GPs ({estimated_fte:.1f} est. FTE)"
                           f"{f', open {hours:.0f}hrs/wk' if hours > 0 else ''}"
                           f" — nearest pharmacy {format_distance(dist_km)}"
-                          f" [source: {source}]"),
+                          f" [source: {source}]. "
+                          f"{config.PROXIMITY_NOTE_IN}"),
                 confidence=confidence,
                 poi_name=mc.get('name', ''),
                 poi_type='medical_centre',
