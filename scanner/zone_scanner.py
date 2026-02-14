@@ -842,12 +842,22 @@ class ZoneScanner:
                 confidence -= 0.15  # Doesn't meet hours requirement
 
             seen_coords.add(grid_key)
+
+            # Build hours note — Item 136 requires 70+ hrs/week
+            if hours >= 70:
+                hours_note = f', open {hours:.0f}hrs/wk (meets 70hr requirement)'
+            elif hours > 0:
+                hours_note = (f', open {hours:.0f}hrs/wk '
+                              f'(⚠️ BELOW 70hr/wk requirement — does not qualify unless hours increase)')
+            else:
+                hours_note = ' (⚠️ operating hours unknown — 70+ hrs/week must be verified for Item 136)'
+
             opp = self._make_opportunity(
                 lat, lon, nearest_pharm, dist_km,
                 rule='Item 136',
                 evidence=(f"Medical centre '{mc.get('name','')}' — "
                           f"{num_gps} GPs ({estimated_fte:.1f} est. FTE)"
-                          f"{f', open {hours:.0f}hrs/wk' if hours > 0 else ''}"
+                          f"{hours_note}"
                           f" — nearest pharmacy {format_distance(dist_km)}"
                           f" [source: {source}]. "
                           f"{config.PROXIMITY_NOTE_IN}"),
@@ -883,7 +893,9 @@ class ZoneScanner:
                 rule='Item 136',
                 evidence=(f"GP cluster ({total_fte:.1f} FTE across {len(nearby_gps)} practices "
                           f"within 200 m): {', '.join(gp_names)}; "
-                          f"no pharmacy within 300 m — requires manual verification"),
+                          f"no pharmacy within 300 m. "
+                          f"⚠️ 70+ hrs/week must be verified for Item 136. "
+                          f"Requires manual verification of FTE and operating hours"),
                 confidence=0.5,  # Lower confidence for cluster proxy
                 poi_name=gp_names[0] if gp_names else '',
                 poi_type='medical_centre',
