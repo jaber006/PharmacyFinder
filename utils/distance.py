@@ -142,28 +142,35 @@ def get_driving_distance(
     Returns:
         Driving distance in kilometers, or None if route not found
     """
-    try:
-        url = f"{osrm_server}/route/v1/driving/{origin_lon},{origin_lat};{dest_lon},{dest_lat}"
-        params = {
-            'overview': 'false',
-            'steps': 'false'
-        }
+    import time as _time
+    
+    for attempt in range(3):
+        try:
+            url = f"{osrm_server}/route/v1/driving/{origin_lon},{origin_lat};{dest_lon},{dest_lat}"
+            params = {
+                'overview': 'false',
+                'steps': 'false'
+            }
 
-        response = requests.get(url, params=params, timeout=10)
-        response.raise_for_status()
+            response = requests.get(url, params=params, timeout=15)
+            response.raise_for_status()
 
-        data = response.json()
+            data = response.json()
 
-        if data.get('code') == 'Ok' and data.get('routes'):
-            # Distance is in meters, convert to kilometers
-            distance_m = data['routes'][0]['distance']
-            return distance_m / 1000.0
-        else:
+            if data.get('code') == 'Ok' and data.get('routes'):
+                # Distance is in meters, convert to kilometers
+                distance_m = data['routes'][0]['distance']
+                return distance_m / 1000.0
+            else:
+                return None
+
+        except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as e:
+            if attempt < 2:
+                _time.sleep(2 * (attempt + 1))
+                continue
             return None
-
-    except Exception as e:
-        print(f"Error getting driving distance: {e}")
-        return None
+        except Exception as e:
+            return None
 
 
 def get_driving_time(
