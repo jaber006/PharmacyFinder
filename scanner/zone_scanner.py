@@ -24,6 +24,7 @@ from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
 from utils.database import Database
+from utils.boundaries import in_state, STATE_BOUNDING_BOXES
 from utils.distance import (
     find_nearest,
     find_within_radius,
@@ -120,7 +121,7 @@ class ZoneScanner:
             reverse_geocode: Reverse-geocode top opportunities to get addresses
             geocode_limit: Max number of opportunities to reverse-geocode
         """
-        self._load_reference_data()
+        self._load_reference_data(region=region)
 
         if verbose:
             self._print_ref_summary()
@@ -198,13 +199,42 @@ class ZoneScanner:
 
     # -- reference data --------------------------------------------
 
-    def _load_reference_data(self):
+    def _load_reference_data(self, region: str = None):
+        # Pharmacies: always load ALL (needed for distance calculations across state borders)
         self._pharmacies = self.db.get_all_pharmacies()
-        self._supermarkets = self.db.get_all_supermarkets()
-        self._gps = self.db.get_all_gps()
-        self._hospitals = self.db.get_all_hospitals()
-        self._shopping_centres = self.db.get_all_shopping_centres()
-        self._medical_centres = self.db.get_all_medical_centres()
+        
+        # Other POIs: filter to target state with buffer for border areas
+        # This prevents POIs in other states from generating false opportunities
+        all_supermarkets = self.db.get_all_supermarkets()
+        all_gps = self.db.get_all_gps()
+        all_hospitals = self.db.get_all_hospitals()
+        all_shopping_centres = self.db.get_all_shopping_centres()
+        all_medical_centres = self.db.get_all_medical_centres()
+        
+        if region and region in STATE_BOUNDING_BOXES:
+            min_lat, max_lat, min_lon, max_lon = STATE_BOUNDING_BOXES[region]
+            # Add 0.5 degree buffer (~55km) for border areas
+            buf = 0.5
+            min_lat -= buf
+            max_lat += buf
+            min_lon -= buf
+            max_lon += buf
+            
+            def _in_bounds(item):
+                lat, lon = item.get('latitude', 0), item.get('longitude', 0)
+                return min_lat <= lat <= max_lat and min_lon <= lon <= max_lon
+            
+            self._supermarkets = [s for s in all_supermarkets if _in_bounds(s)]
+            self._gps = [g for g in all_gps if _in_bounds(g)]
+            self._hospitals = [h for h in all_hospitals if _in_bounds(h)]
+            self._shopping_centres = [c for c in all_shopping_centres if _in_bounds(c)]
+            self._medical_centres = [m for m in all_medical_centres if _in_bounds(m)]
+        else:
+            self._supermarkets = all_supermarkets
+            self._gps = all_gps
+            self._hospitals = all_hospitals
+            self._shopping_centres = all_shopping_centres
+            self._medical_centres = all_medical_centres
 
     def _print_ref_summary(self):
         print(f"\n  Reference data loaded:")
