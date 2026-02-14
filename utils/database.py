@@ -414,20 +414,35 @@ class Database:
         self.connection.commit()
 
     def clear_reference_data(self, keep_findapharmacy: bool = True):
-        """Clear all reference data (pharmacies, GPs, etc.) for refresh.
+        """Clear reference data (GPs, supermarkets, etc.) for refresh.
+        
+        NOTE: Pharmacies are NEVER cleared here — they come from multiple
+        expensive-to-scrape sources (Funnelback, OSM, CW, TWC, Priceline).
+        To clear pharmacies, use clear_pharmacies() explicitly.
         
         Args:
-            keep_findapharmacy: If True, preserve pharmacies from findapharmacy.com.au
+            keep_findapharmacy: Legacy parameter, ignored. Pharmacies are always kept.
         """
         cursor = self.connection.cursor()
-        if keep_findapharmacy:
-            cursor.execute("DELETE FROM pharmacies WHERE source != 'findapharmacy.com.au'")
-        else:
-            cursor.execute("DELETE FROM pharmacies")
+        # Never delete pharmacies during routine reference data refresh
         cursor.execute("DELETE FROM gps")
         cursor.execute("DELETE FROM supermarkets")
         cursor.execute("DELETE FROM hospitals")
         cursor.execute("DELETE FROM shopping_centres")
+        self.connection.commit()
+
+    def clear_pharmacies(self, source: str = None):
+        """Explicitly clear pharmacies — use with caution.
+        
+        Args:
+            source: If provided, only clear pharmacies from this source.
+                    If None, clear ALL pharmacies.
+        """
+        cursor = self.connection.cursor()
+        if source:
+            cursor.execute("DELETE FROM pharmacies WHERE source = ?", (source,))
+        else:
+            cursor.execute("DELETE FROM pharmacies")
         self.connection.commit()
 
     def get_property_by_id(self, property_id: int) -> Optional[Dict]:
