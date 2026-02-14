@@ -135,13 +135,109 @@ KNOWN_GROWTH_AREAS = {
     'Howrah': 'TAS Growth Area - Clarence',
     'Legana': 'TAS Growth Area - West Tamar',
     'Prospect Vale': 'TAS Growth Area - Meander Valley',
+    # Additional NSW
+    'Edmondson Park': 'NSW Growth Centre - South West',
+    'Gledswood Hills': 'NSW Growth Centre - South West',
+    'Denham Court': 'NSW Growth Centre - South West',
+    'Catherine Field': 'NSW Growth Centre - South West',
+    'Marsden Park': 'NSW Growth Centre - North West',
+    'The Ponds': 'NSW Growth Centre - North West',
+    'Ropes Crossing': 'NSW Growth Centre - West',
+    'Jordan Springs': 'NSW Growth Centre - West',
+    'Glenmore Park': 'NSW Growth Area - Penrith',
+    'Caddens': 'NSW Growth Area - Penrith',
+    'Mulgoa Rise': 'NSW Growth Area - Penrith',
+    'Thornton': 'NSW Growth Area - Hunter',
+    'Heddon Greta': 'NSW Growth Area - Hunter',
+    'Morisset': 'NSW Growth Area - Lake Macquarie',
+    'Warnervale': 'NSW Growth Area - Central Coast',
+    'Hamlyn Terrace': 'NSW Growth Area - Central Coast',
+    'Shell Cove': 'NSW Growth Area - Shellharbour',
+    'Emerald Hills': 'NSW Growth Centre - Leppington',
+    # Additional VIC
+    'Mambourin': 'VIC Growth Corridor - Western',
+    'Deanside': 'VIC Growth Corridor - Western',
+    'Bonnie Brook': 'VIC Growth Corridor - Western',
+    'Cobblebank': 'VIC Growth Area - Melton',
+    'Strathtulloh': 'VIC Growth Area - Melton',
+    'Eynesbury': 'VIC Growth Area - Melton',
+    'Donnybrook': 'VIC Growth Corridor - Northern',
+    'Merrifield': 'VIC Growth Corridor - Northern',
+    'Cloverton': 'VIC Growth Corridor - Northern',
+    'Berwick': 'VIC Growth Area - Casey',
+    'Cranbourne': 'VIC Growth Area - Casey',
+    'Botanic Ridge': 'VIC Growth Area - Casey',
+    'Cardinia': 'VIC Growth Area - Cardinia',
+    'Warragul': 'VIC Growth Area - Baw Baw',
+    'Drouin': 'VIC Growth Area - Baw Baw',
+    'Bacchus Marsh': 'VIC Growth Area - Moorabool',
+    'Mount Duneed': 'VIC Growth Area - Geelong',
+    # Additional QLD
+    'Narangba': 'QLD Growth Area - Moreton Bay',
+    'Mango Hill': 'QLD Growth Area - Moreton Bay',
+    'Griffin': 'QLD Growth Area - Moreton Bay',
+    'Deebing Heights': 'QLD Growth Area - Ipswich',
+    'Bellbird Park': 'QLD Growth Area - Ipswich',
+    'Augustine Heights': 'QLD Growth Area - Ipswich',
+    'South Ripley': 'QLD Growth Area - Ipswich',
+    'Nirimba': 'QLD Growth Area - Ipswich',
+    'Helensvale': 'QLD Growth Area - Gold Coast',
+    'Merrimac': 'QLD Growth Area - Gold Coast',
+    'Coomera': 'QLD Growth Area - Gold Coast',
+    'Upper Coomera': 'QLD Growth Area - Gold Coast',
+    'Pimpama': 'QLD Growth Area - Gold Coast',
+    'Ormeau Hills': 'QLD Growth Area - Gold Coast',
+    'Jimboomba': 'QLD Growth Area - Logan',
+    'Greenbank': 'QLD Growth Area - Logan',
+    'Bahrs Scrub': 'QLD Growth Area - Logan',
+    'Pallara': 'QLD Growth Area - Brisbane South',
+    'Rochedale': 'QLD Growth Area - Brisbane South',
+    'Baringa': 'QLD Growth Area - Sunshine Coast (Aura)',
+    'Nirimba': 'QLD Growth Area - Sunshine Coast',
+    # Additional WA
+    'Wellard': 'WA Growth Area - Kwinana',
+    'Lakelands': 'WA Growth Area - Mandurah',
+    'Meadow Springs': 'WA Growth Area - Mandurah',
+    'Golden Bay': 'WA Growth Area - Rockingham',
+    'Secret Harbour': 'WA Growth Area - Rockingham',
+    'Hammond Park': 'WA Growth Area - Cockburn',
+    'Success': 'WA Growth Area - Cockburn',
+    'Piara Waters': 'WA Growth Area - Armadale',
+    'Harrisdale': 'WA Growth Area - Armadale',
+    'Hilbert': 'WA Growth Area - Armadale',
+    'Caversham': 'WA Growth Area - Swan',
+    'Dayton': 'WA Growth Area - Swan',
+    'Aveley': 'WA Growth Area - Swan',
+    'The Vines': 'WA Growth Area - Swan',
+    'Banksia Grove': 'WA Growth Area - Wanneroo',
+    'Butler': 'WA Growth Area - Wanneroo',
+    'Clarkson': 'WA Growth Area - Wanneroo',
+    'Eglinton': 'WA Growth Area - Wanneroo',
+    # Additional SA
+    'Munno Para West': 'SA Growth Area - Playford',
+    'Eyre': 'SA Growth Area - Playford',
+    'Davoren Park': 'SA Growth Area - Playford',
+    'Blakeview': 'SA Growth Area - Playford',
+    'Craigmore': 'SA Growth Area - Playford',
+    'Riverlea': 'SA Growth Area - Playford',
+    'Seaford Heights': 'SA Growth Area - Onkaparinga',
+    'Aldinga Beach': 'SA Growth Area - Onkaparinga',
+    'Noarlunga': 'SA Growth Area - Onkaparinga',
+    'Mt Barker': 'SA Growth Area - Mount Barker',
+    'Nairne': 'SA Growth Area - Mount Barker',
+    'Roseworthy': 'SA Growth Area - Gawler',
+    'Concordia': 'SA Growth Area - Gawler',
+    # Roxby Downs - Olympic Dam expansion
+    'Roxby Downs': 'SA Growth Area - BHP Olympic Dam expansion',
 }
 
-# Population growth keywords to search for in evidence/address
+# Population growth keywords — multi-word phrases to reduce false positives
 GROWTH_KEYWORDS = [
-    'estate', 'development', 'new', 'village', 'springs', 'rise',
-    'heights', 'grove', 'gardens', 'park', 'vale', 'meadows',
-    'lakes', 'waters', 'views', 'landing', 'reach', 'haven',
+    'new estate', 'new development', 'land estate',
+    'housing estate', 'housing development',
+    'master planned', 'masterplanned', 'master plan',
+    'growth area', 'growth corridor', 'greenfield',
+    'land release', 'new community',
 ]
 
 
@@ -175,12 +271,13 @@ def detect_growth(opp):
     growth_found = False
     growth_details = []
 
-    # Check against known growth areas
+    # Check against known growth areas (word-boundary matching)
     for area_name, description in KNOWN_GROWTH_AREAS.items():
-        area_lower = area_name.lower()
-        if (area_lower in address.lower() or
-            area_lower in town.lower() or
-            area_lower in name.lower()):
+        # Use word boundary regex to avoid false matches like "Park" in "Parking"
+        pattern = r'\b' + re.escape(area_name.lower()) + r'\b'
+        if (re.search(pattern, address.lower()) or
+            re.search(pattern, town.lower()) or
+            re.search(pattern, name.lower())):
             growth_found = True
             growth_details.append(description)
             break

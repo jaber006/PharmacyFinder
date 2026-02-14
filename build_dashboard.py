@@ -276,8 +276,8 @@ tr.highlight td {{ background: #eff6ff; }}
         <div class="filter-section">
             <h3>Competition Score</h3>
             <div class="slider-group">
-                <div class="slider-label"><span>Maximum</span><span class="slider-val" id="compVal">999</span></div>
-                <input type="range" id="compSlider" min="0" max="200" step="1" value="200" />
+                <div class="slider-label"><span>Maximum</span><span class="slider-val" id="compVal">1100</span></div>
+                <input type="range" id="compSlider" min="0" max="1100" step="5" value="1100" />
             </div>
         </div>
 
@@ -577,7 +577,7 @@ function applyQuickFilter(type) {{
         document.querySelectorAll('.state-cb-input, .verif-cb, .rule-cb').forEach(c => c.checked = true);
         document.getElementById('popSlider').value = 0;
         document.getElementById('distSlider').value = 0;
-        document.getElementById('compSlider').value = 200;
+        document.getElementById('compSlider').value = 1100;
         document.getElementById('searchBox').value = '';
         updateSliderLabels();
         applyFilters();
