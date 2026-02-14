@@ -252,12 +252,12 @@ class ZoneScanner:
         Scan around every supermarket and GP cluster.
         A location qualifies if it is >= 1.5 km from nearest pharmacy AND
         within 500 m of either:
-          (i)  a supermarket >= 1 000 sqm + a GP >= 1 FTE, or
-          (ii) a supermarket >= 2 500 sqm.
+          (i)  a supermarket >= 1,000 sqm GLA + a GP >= 1 FTE, or
+          (ii) a supermarket >= 2,500 sqm GLA.
 
-        We scan from two angles:
-          A) Start from each supermarket and check pharmacy distance + GP proximity
-          B) Start from each GP and check pharmacy distance + supermarket proximity
+        GLA is estimated by brand classification. Small-format stores
+        (IGA Express/X-press, IGA Everyday) that fall below thresholds
+        are flagged with lower confidence.
         """
         opps: List[Opportunity] = []
         threshold_km = config.RULE_DISTANCES['item_130']  # 1.5
@@ -271,27 +271,33 @@ class ZoneScanner:
             if dist_km < threshold_km:
                 continue  # too close to existing pharmacy
 
-            floor_area = sm.get('floor_area_sqm') or 0
+            gla = sm.get('estimated_gla') or sm.get('floor_area_sqm') or 0
+            brand = sm.get('brand', '')
+            gla_conf = sm.get('gla_confidence', 'low')
 
-            # Option (ii): large supermarket >= 2 500 sqm
-            if floor_area >= 2500:
+            # Option (ii): large supermarket >= 2,500 sqm GLA
+            if gla >= 2500:
                 grid_key = (round(lat, 3), round(lon, 3))
                 if grid_key not in seen_coords:
                     seen_coords.add(grid_key)
+                    confidence = 0.80
+                    if gla_conf == 'low':
+                        confidence = 0.65
                     opp = self._make_opportunity(
                         lat, lon, nearest_pharm, dist_km,
                         rule='Item 130',
-                        evidence=(f"Supermarket '{sm.get('name','')}' ({floor_area:.0f} sqm) "
+                        evidence=(f"Supermarket '{sm.get('name','')}' (est. GLA {gla:.0f} sqm, "
+                                  f"brand: {brand or 'unknown'}) "
                                   f"is {format_distance(dist_km)} from nearest pharmacy"),
-                        confidence=0.8,
+                        confidence=confidence,
                         poi_name=sm.get('name', ''),
                         poi_type='supermarket',
                     )
                     opps.append(opp)
                 continue
 
-            # Option (i): supermarket >= 1 000 sqm + nearby GP >= 1 FTE
-            if floor_area >= 1000:
+            # Option (i): supermarket >= 1,000 sqm GLA + nearby GP >= 1 FTE
+            if gla >= 1000:
                 nearby_gps = find_within_radius(lat, lon, self._gps, 0.5)
                 for gp, gp_dist in nearby_gps:
                     fte = gp.get('fte') or 0
@@ -299,13 +305,26 @@ class ZoneScanner:
                         grid_key = (round(lat, 3), round(lon, 3))
                         if grid_key not in seen_coords:
                             seen_coords.add(grid_key)
+                            confidence = 0.75
+                            gla_note = ''
+                            # Lower confidence for borderline brands
+                            if brand in ('iga_express', 'iga_everyday'):
+                                confidence = 0.55
+                                gla_note = ' ⚠️ small-format store, GLA may not qualify'
+                            elif brand == 'foodworks':
+                                confidence = 0.60
+                                gla_note = ' ⚠️ borderline GLA, requires verification'
+                            elif gla_conf == 'low':
+                                confidence = 0.60
                             opp = self._make_opportunity(
                                 lat, lon, nearest_pharm, dist_km,
                                 rule='Item 130',
-                                evidence=(f"Supermarket '{sm.get('name','')}' ({floor_area:.0f} sqm) + "
+                                evidence=(f"Supermarket '{sm.get('name','')}' (est. GLA {gla:.0f} sqm, "
+                                          f"brand: {brand or 'unknown'}) + "
                                           f"GP '{gp.get('name','')}' ({fte:.1f} FTE) within 500 m; "
-                                          f"{format_distance(dist_km)} from nearest pharmacy"),
-                                confidence=0.75,
+                                          f"{format_distance(dist_km)} from nearest pharmacy"
+                                          f"{gla_note}"),
+                                confidence=confidence,
                                 poi_name=sm.get('name', ''),
                                 poi_type='supermarket',
                             )
@@ -327,19 +346,30 @@ class ZoneScanner:
             if fte < 1.0:
                 continue
 
-            # Check for a supermarket >= 1000 sqm within 500m
+            # Check for a supermarket >= 1,000 sqm GLA within 500m
             nearby_sms = find_within_radius(lat, lon, self._supermarkets, 0.5)
             for sm, sm_dist in nearby_sms:
-                floor_area = sm.get('floor_area_sqm') or 0
-                if floor_area >= 1000:
+                gla = sm.get('estimated_gla') or sm.get('floor_area_sqm') or 0
+                brand = sm.get('brand', '')
+                if gla >= 1000:
                     seen_coords.add(grid_key)
+                    confidence = 0.75
+                    gla_note = ''
+                    if brand in ('iga_express', 'iga_everyday'):
+                        confidence = 0.55
+                        gla_note = ' ⚠️ small-format store, GLA may not qualify'
+                    elif brand == 'foodworks':
+                        confidence = 0.60
+                        gla_note = ' ⚠️ borderline GLA, requires verification'
                     opp = self._make_opportunity(
                         lat, lon, nearest_pharm, dist_km,
                         rule='Item 130',
                         evidence=(f"GP '{gp.get('name','')}' ({fte:.1f} FTE) + "
-                                  f"Supermarket '{sm.get('name','')}' ({floor_area:.0f} sqm) within 500 m; "
-                                  f"{format_distance(dist_km)} from nearest pharmacy"),
-                        confidence=0.75,
+                                  f"Supermarket '{sm.get('name','')}' (est. GLA {gla:.0f} sqm, "
+                                  f"brand: {brand or 'unknown'}) within 500 m; "
+                                  f"{format_distance(dist_km)} from nearest pharmacy"
+                                  f"{gla_note}"),
+                        confidence=confidence,
                         poi_name=gp.get('name', ''),
                         poi_type='gp',
                     )
@@ -452,19 +482,22 @@ class ZoneScanner:
 
     def _scan_item_133(self, region: str) -> List[Opportunity]:
         """
-        Supermarkets >= 1 000 sqm that have no pharmacy adjacent (within 100 m).
+        Item 133 — small shopping centre with supermarket >= 1,000 sqm GLA.
 
-        Note: The actual rule requires the supermarket to be part of a
-        shopping centre complex, but we flag all large supermarkets without
-        adjacent pharmacies as potential opportunities.
+        Supermarkets >= 1,000 sqm GLA that have no pharmacy adjacent (within 100 m).
+        GLA is estimated by brand. Small-format stores (IGA Express, IGA Everyday)
+        are excluded or flagged with lower confidence.
         """
         opps: List[Opportunity] = []
-        min_area = config.FLOOR_AREA_THRESHOLDS['supermarket']
+        min_gla = config.FLOOR_AREA_THRESHOLDS['supermarket']  # 1,000
 
         for sm in self._supermarkets:
             name = sm.get('name', '')
-            floor_area = sm.get('floor_area_sqm') or 0
-            if floor_area < min_area:
+            gla = sm.get('estimated_gla') or sm.get('floor_area_sqm') or 0
+            brand = sm.get('brand', '')
+            gla_conf = sm.get('gla_confidence', 'low')
+
+            if gla < min_gla:
                 continue
 
             lat, lon = sm['latitude'], sm['longitude']
@@ -475,15 +508,35 @@ class ZoneScanner:
 
             nearest_pharm, dist_km = _nearest_pharmacy(lat, lon, self._pharmacies)
 
-            # Higher confidence for known major chains
-            is_major = any(c in name.lower() for c in config.MAJOR_SUPERMARKETS)
-            confidence = 0.75 if is_major else 0.65
+            # Confidence based on brand and GLA reliability
+            is_major = brand in ('woolworths', 'coles')
+            if is_major:
+                confidence = 0.75
+            elif brand in ('aldi', 'drakes', 'harris_farm'):
+                confidence = 0.70
+            elif brand == 'iga':
+                confidence = 0.65
+            elif brand == 'foodworks':
+                confidence = 0.55  # borderline GLA
+            elif brand in ('iga_express', 'iga_everyday'):
+                confidence = 0.45  # likely below 1,000 sqm — flagged
+            else:
+                confidence = 0.55  # unknown brand
+
+            gla_note = ''
+            if brand in ('iga_express', 'iga_everyday'):
+                gla_note = ' ⚠️ small-format store — actual GLA likely below 1,000 sqm, requires verification'
+            elif brand == 'foodworks':
+                gla_note = ' ⚠️ Foodworks GLA varies widely (500-1,500 sqm), requires verification'
+            elif gla_conf == 'low':
+                gla_note = ' ⚠️ GLA estimate is low confidence'
 
             opp = self._make_opportunity(
                 lat, lon, nearest_pharm, dist_km,
                 rule='Item 133',
-                evidence=(f"Supermarket '{name}' ({floor_area:,.0f} sqm) "
-                          f"with no adjacent pharmacy (nearest {format_distance(dist_km)})"),
+                evidence=(f"Supermarket '{name}' (est. GLA {gla:,.0f} sqm, brand: {brand or 'unknown'}) "
+                          f"with no adjacent pharmacy (nearest {format_distance(dist_km)})"
+                          f"{gla_note}"),
                 confidence=confidence,
                 poi_name=name,
                 poi_type='supermarket',
@@ -624,23 +677,79 @@ class ZoneScanner:
 
     def _scan_item_136(self, region: str) -> List[Opportunity]:
         """
-        GP clusters that could constitute a "large medical centre" --
-        >= 8 FTE prescribers within 200 m with no pharmacy <= 300 m.
+        Large medical centres with 8+ FTE prescribers and no pharmacy
+        within 300m.
 
-        Also checks the dedicated medical_centres table.
+        Strategy 1 (primary): Use medical_centres table populated by
+        HotDoc/HealthEngine scrapers — these have actual practitioner counts.
+
+        Strategy 2 (fallback): GP cluster analysis from OSM data.
         """
         opps: List[Opportunity] = []
+        seen_coords: set = set()
 
-        # Strategy 1: look at GP clusters
-        checked_coords: set = set()  # avoid double-checking nearby GPs
+        # --- Strategy 1: medical_centres table (best data) ---
+        for mc in self._medical_centres:
+            num_gps = mc.get('num_gps', 0) or 0
+            fte = mc.get('total_fte', 0) or 0
+            # Use headcount as proxy if FTE not set: avg GP ~0.8 FTE
+            estimated_fte = fte if fte > 0 else num_gps * 0.8
+
+            if estimated_fte < 8.0 and num_gps < 8:
+                continue
+
+            lat, lon = mc['latitude'], mc['longitude']
+            grid_key = (round(lat, 3), round(lon, 3))
+
+            # Check no pharmacy within 100m of the centre (i.e., not co-located)
+            pharmacy_in_centre = _has_nearby_pharmacy(lat, lon, self._pharmacies, 0.1)
+            if pharmacy_in_centre:
+                continue
+
+            # Check nearest pharmacy is >= 300m away
+            nearest_pharm, dist_km = _nearest_pharmacy(lat, lon, self._pharmacies)
+            if nearest_pharm and dist_km < 0.3:
+                continue
+
+            # Determine confidence based on data source
+            source = mc.get('source', '')
+            hours = mc.get('hours_per_week', 0) or 0
+            if source == 'manual_research':
+                confidence = 0.85
+            elif source in ('hotdoc', 'healthengine'):
+                confidence = 0.75
+            else:
+                confidence = 0.65
+            
+            # Boost confidence if hours data confirms 70+ hrs/week
+            if hours >= 70:
+                confidence = min(confidence + 0.1, 0.95)
+            elif hours > 0 and hours < 70:
+                confidence -= 0.15  # Doesn't meet hours requirement
+
+            seen_coords.add(grid_key)
+            opp = self._make_opportunity(
+                lat, lon, nearest_pharm, dist_km,
+                rule='Item 136',
+                evidence=(f"Medical centre '{mc.get('name','')}' — "
+                          f"{num_gps} GPs ({estimated_fte:.1f} est. FTE)"
+                          f"{f', open {hours:.0f}hrs/wk' if hours > 0 else ''}"
+                          f" — nearest pharmacy {format_distance(dist_km)}"
+                          f" [source: {source}]"),
+                confidence=confidence,
+                poi_name=mc.get('name', ''),
+                poi_type='medical_centre',
+            )
+            opps.append(opp)
+
+        # --- Strategy 2: GP cluster fallback (OSM data) ---
         for gp in self._gps:
             lat, lon = gp['latitude'], gp['longitude']
 
-            # Rough dedup -- round to ~100 m grid
             grid_key = (round(lat, 3), round(lon, 3))
-            if grid_key in checked_coords:
+            if grid_key in seen_coords:
                 continue
-            checked_coords.add(grid_key)
+            seen_coords.add(grid_key)
 
             nearby_gps = find_within_radius(lat, lon, self._gps, 0.2)
             total_fte = sum((g[0].get('fte') or 0) for g in nearby_gps)
@@ -648,7 +757,6 @@ class ZoneScanner:
             if total_fte < 8.0:
                 continue
 
-            # Must not already have pharmacy within 300 m
             if _has_nearby_pharmacy(lat, lon, self._pharmacies, 0.3):
                 continue
 
@@ -660,33 +768,9 @@ class ZoneScanner:
                 rule='Item 136',
                 evidence=(f"GP cluster ({total_fte:.1f} FTE across {len(nearby_gps)} practices "
                           f"within 200 m): {', '.join(gp_names)}; "
-                          f"no pharmacy within 300 m -- requires manual verification"),
-                confidence=0.6,
+                          f"no pharmacy within 300 m — requires manual verification"),
+                confidence=0.5,  # Lower confidence for cluster proxy
                 poi_name=gp_names[0] if gp_names else '',
-                poi_type='medical_centre',
-            )
-            opps.append(opp)
-
-        # Strategy 2: dedicated medical_centres table
-        for mc in self._medical_centres:
-            fte = mc.get('total_fte') or 0
-            if fte < 8.0:
-                continue
-
-            lat, lon = mc['latitude'], mc['longitude']
-            if _has_nearby_pharmacy(lat, lon, self._pharmacies, 0.3):
-                continue
-
-            nearest_pharm, dist_km = _nearest_pharmacy(lat, lon, self._pharmacies)
-
-            opp = self._make_opportunity(
-                lat, lon, nearest_pharm, dist_km,
-                rule='Item 136',
-                evidence=(f"Medical centre '{mc.get('name','')}' "
-                          f"({fte:.1f} FTE, {mc.get('num_gps', 0)} GPs) "
-                          f"with no pharmacy within 300 m"),
-                confidence=0.65,
-                poi_name=mc.get('name', ''),
                 poi_type='medical_centre',
             )
             opps.append(opp)

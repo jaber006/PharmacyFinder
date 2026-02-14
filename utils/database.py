@@ -102,10 +102,20 @@ class Database:
                 latitude REAL NOT NULL,
                 longitude REAL NOT NULL,
                 floor_area_sqm REAL,
+                estimated_gla REAL,
+                brand TEXT,
+                gla_confidence TEXT DEFAULT 'estimated',
                 date_scraped TEXT,
                 UNIQUE(address)
             )
         """)
+        # Migrate: add columns if missing
+        for col in ["estimated_gla REAL", "brand TEXT",
+                     "gla_confidence TEXT DEFAULT 'estimated'"]:
+            try:
+                cursor.execute(f"ALTER TABLE supermarkets ADD COLUMN {col}")
+            except sqlite3.OperationalError:
+                pass
 
         # Hospitals table
         cursor.execute("""
@@ -147,11 +157,25 @@ class Database:
                 longitude REAL NOT NULL,
                 num_gps INTEGER DEFAULT 0,
                 total_fte REAL DEFAULT 0,
+                practitioners_json TEXT,
+                hours_per_week REAL DEFAULT 0,
                 source TEXT,
+                state TEXT,
                 date_scraped TEXT,
                 UNIQUE(name, address)
             )
         """)
+
+        # Migrate medical_centres if needed (add new columns)
+        for col in ['practitioners_json TEXT', 'hours_per_week REAL DEFAULT 0', 'state TEXT']:
+            try:
+                col_name = col.split()[0]
+                cursor.execute(f"SELECT {col_name} FROM medical_centres LIMIT 1")
+            except sqlite3.OperationalError:
+                try:
+                    cursor.execute(f"ALTER TABLE medical_centres ADD COLUMN {col}")
+                except sqlite3.OperationalError:
+                    pass
 
         # Opportunity zones table - proactive scanner results
         cursor.execute("""
@@ -268,14 +292,18 @@ class Database:
         cursor = self.connection.cursor()
         cursor.execute("""
             INSERT OR IGNORE INTO supermarkets
-            (name, address, latitude, longitude, floor_area_sqm, date_scraped)
-            VALUES (?, ?, ?, ?, ?, ?)
+            (name, address, latitude, longitude, floor_area_sqm,
+             estimated_gla, brand, gla_confidence, date_scraped)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             supermarket_data.get('name'),
             supermarket_data.get('address'),
             supermarket_data.get('latitude'),
             supermarket_data.get('longitude'),
             supermarket_data.get('floor_area_sqm'),
+            supermarket_data.get('estimated_gla') or supermarket_data.get('floor_area_sqm'),
+            supermarket_data.get('brand', ''),
+            supermarket_data.get('gla_confidence', 'estimated'),
             datetime.now().isoformat()
         ))
         self.connection.commit()
@@ -504,12 +532,25 @@ class Database:
     # -- Medical centre methods ------------------------------------
 
     def insert_medical_centre(self, data: Dict) -> int:
-        """Insert a medical centre."""
+        """Insert or update a medical centre."""
         cursor = self.connection.cursor()
+        practitioners_json = data.get('practitioners_json', '')
+        if isinstance(practitioners_json, (list, dict)):
+            practitioners_json = json.dumps(practitioners_json)
+        
+        # Use INSERT OR REPLACE to update existing entries with better data
         cursor.execute("""
-            INSERT OR IGNORE INTO medical_centres
-            (name, address, latitude, longitude, num_gps, total_fte, source, date_scraped)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO medical_centres
+            (name, address, latitude, longitude, num_gps, total_fte, 
+             practitioners_json, hours_per_week, source, state, date_scraped)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(name, address) DO UPDATE SET
+                num_gps = MAX(num_gps, excluded.num_gps),
+                total_fte = MAX(total_fte, excluded.total_fte),
+                practitioners_json = COALESCE(NULLIF(excluded.practitioners_json, ''), practitioners_json),
+                hours_per_week = MAX(hours_per_week, excluded.hours_per_week),
+                source = CASE WHEN excluded.num_gps > num_gps THEN excluded.source ELSE source END,
+                date_scraped = excluded.date_scraped
         """, (
             data.get('name'),
             data.get('address'),
@@ -517,7 +558,10 @@ class Database:
             data.get('longitude'),
             data.get('num_gps', 0),
             data.get('total_fte', 0),
+            practitioners_json,
+            data.get('hours_per_week', 0),
             data.get('source', ''),
+            data.get('state', ''),
             datetime.now().isoformat(),
         ))
         self.connection.commit()

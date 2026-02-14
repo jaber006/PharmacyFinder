@@ -132,6 +132,7 @@ class SupermarketScraper:
 
             # Estimate floor area for major chains
             floor_area = self._estimate_floor_area(name, brand)
+            brand_class = self._classify_brand(name, brand)
 
             return {
                 'name': name,
@@ -139,6 +140,9 @@ class SupermarketScraper:
                 'latitude': float(lat),
                 'longitude': float(lon),
                 'floor_area_sqm': floor_area,
+                'estimated_gla': floor_area,
+                'brand': brand_class,
+                'gla_confidence': self._gla_confidence(brand_class),
             }
 
         except Exception:
@@ -146,27 +150,77 @@ class SupermarketScraper:
 
     def _estimate_floor_area(self, name: str, brand: str = '') -> Optional[float]:
         """
-        Estimate floor area based on supermarket chain/type.
-        Major supermarkets in Australia typically:
-        - Woolworths: 2,500-4,000 sqm
-        - Coles: 2,500-4,000 sqm
-        - ALDI: 1,200-1,500 sqm
-        - IGA: 500-2,000 sqm
+        Estimate floor area (GLA) based on supermarket chain/type.
+
+        Known typical floor areas from industry data:
+        - Coles: 3,000-4,000 sqm (always qualifies for all thresholds)
+        - Woolworths: 3,000-4,000 sqm (always qualifies)
+        - Aldi: 1,500-1,800 sqm (qualifies >=1,000 but NOT >=2,500)
+        - IGA (full-size): ~1,500 sqm (qualifies >=1,000 but NOT >=2,500)
+        - IGA Express/X-press: 300-500 sqm (may NOT qualify)
+        - IGA Everyday: 500-800 sqm (may NOT qualify for Item 130 w/o GP)
+        - Foodworks: 500-1,500 sqm (borderline)
+        - Drakes: 2,000-3,000 sqm (qualifies)
+        - Harris Farm: 2,000-3,000 sqm (qualifies)
         """
         combined = f"{name} {brand}".lower()
 
         if 'woolworths' in combined or 'woolies' in combined:
-            return 3000.0  # Average Woolworths
+            return 3500.0
         elif 'coles' in combined:
-            return 3000.0  # Average Coles
+            return 3500.0
         elif 'aldi' in combined:
-            return 1300.0  # Average ALDI
-        elif 'iga' in combined:
-            return 1200.0  # Average IGA
+            return 1650.0
+        elif 'drakes' in combined or 'drake' in combined:
+            return 2500.0
         elif 'harris farm' in combined:
-            return 2000.0
+            return 2500.0
+        # IGA sub-brands (check specific variants before generic IGA)
+        elif 'iga express' in combined or 'iga x-press' in combined or 'iga xpress' in combined:
+            return 400.0   # Small format — may not qualify
+        elif 'iga everyday' in combined:
+            return 650.0   # Small format — may not qualify for >=1,000
+        elif 'iga' in combined:
+            return 1500.0  # Full-size IGA
+        elif 'foodworks' in combined:
+            return 1000.0  # Conservative — borderline
         else:
-            return 1500.0  # Conservative default for unknown
+            return 800.0   # Conservative default for unknown/independent
+
+    def _classify_brand(self, name: str, brand: str = '') -> str:
+        """Classify supermarket brand for GLA estimation."""
+        combined = f"{name} {brand}".lower()
+        if 'woolworths' in combined or 'woolies' in combined:
+            return 'woolworths'
+        elif 'coles' in combined:
+            return 'coles'
+        elif 'aldi' in combined:
+            return 'aldi'
+        elif 'drakes' in combined or 'drake' in combined:
+            return 'drakes'
+        elif 'harris farm' in combined:
+            return 'harris_farm'
+        elif 'iga express' in combined or 'iga x-press' in combined or 'iga xpress' in combined:
+            return 'iga_express'
+        elif 'iga everyday' in combined:
+            return 'iga_everyday'
+        elif 'iga' in combined:
+            return 'iga'
+        elif 'foodworks' in combined:
+            return 'foodworks'
+        else:
+            return 'independent'
+
+    def _gla_confidence(self, brand: str) -> str:
+        """Return confidence level for GLA estimate based on brand."""
+        high_confidence = {'woolworths', 'coles', 'aldi'}
+        medium_confidence = {'drakes', 'harris_farm', 'iga', 'iga_express', 'iga_everyday'}
+        if brand in high_confidence:
+            return 'high'
+        elif brand in medium_confidence:
+            return 'medium'
+        else:
+            return 'low'
 
     def add_manual_supermarket(self, name: str, address: str,
                                 floor_area_sqm: Optional[float] = None) -> bool:
