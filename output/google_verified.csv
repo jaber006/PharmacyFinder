@@ -1,0 +1,201 @@
+state,lat,lng,rule,our_confidence,poi_name,nearest_db_pharmacy_km,nearest_db_pharmacy_name,google_pharmacies_found,new_pharmacies,status,verification_method,google_pharmacy_names,db_nearby_names
+TAS,-42.871,147.345,Item 136,95%,Ochre Health Medical Centre Clarence,N/A,N/A,0,0,verified,google_maps,,
+TAS,-42.8704,147.3579,Item 132,85%,Eastlands Shopping Centre,N/A,N/A,0,0,verified,google_maps,,
+TAS,-42.9768,147.3057,Item 132,85%,Channel Court Shopping Centre,0.34,Priceline Pharmacy Kingston,0,0,needs_review,db_only,,Priceline Pharmacy Kingston (0.34km); Kingborough Pharmacy (0.39km); TerryWhite Chemmart Kingston Town (0.42km)
+TAS,-42.126071525,148.290322925,"Item 130, Item 131, Item 133, Item 134",80%,Coles Bay Convenience,N/A,N/A,0,0,verified,google_maps,,
+TAS,-41.456382,147.17792,Item 130,75%,Norwood Medical Centre,1.87,Pharmacy and Co Kings Meadows,4,4,verified,google_maps,Pharmacy + Co Kings Meadows (1.88km); Slade Pharmacy Kings Meadows (1.86km); Meadow Mews Pharmacy (1.98km); Amcal Pharmacy Newstead (2.18km),
+TAS,-41.4547332,147.1761331,"Item 130, Item 133",75%,Norwood IGA,1.86,Slade Pharmacy Kings Meadows,4,4,verified,google_maps,Pharmacy + Co Kings Meadows (1.89km); Slade Pharmacy Kings Meadows (1.84km); Meadow Mews Pharmacy (1.98km); Amcal Pharmacy Newstead (1.94km),
+TAS,-41.068,145.905,Item 136,75%,TAS Family Medical Centre,0.44,Upper Burnie Pharmacy,0,0,needs_review,db_only,,Upper Burnie Pharmacy (0.44km)
+TAS,-42.734751,147.24324395000002,"Item 133, Item 134",75%,Coles,0.31,Priceline Pharmacy Bridgewater,0,0,needs_review,db_only,,Priceline Pharmacy Bridgewater (0.31km)
+TAS,-42.78274725,147.56589225,"Item 133, Item 134",75%,Coles,0.26,Chemist Warehouse Sorell,0,0,needs_review,db_only,,Chemist Warehouse Sorell (0.26km); TerryWhite Chemmart Sorell (0.41km)
+TAS,-41.4407108,147.13653,Item 133,75%,Woolworths,0.23,Chemist Warehouse Launceston,0,0,needs_review,db_only,,Chemist Warehouse Launceston (0.23km); Hatton & Laws Soul Pattinson Pharmacy (0.23km); Chemist Warehouse South Launceston (0.32km)
+TAS,-42.8578725,147.3032616,Item 133,75%,Woolworths,0.21,Chemist Warehouse New Town TAS,0,0,needs_review,db_only,,Chemist Warehouse New Town TAS (0.21km); Chemist Warehouse New Town (0.28km); Friendly Care Advantage New Town (0.35km)
+TAS,-41.4448557,147.1386382,Item 133,75%,Coles,0.18,Chemist Warehouse South Launceston,0,0,needs_review,db_only,,Chemist Warehouse South Launceston (0.18km); Fitzpatrick's Pharmacy (0.35km); Complete Care Pharmacy Health Hub (0.40km)
+TAS,-41.4647153,147.1604867,Item 133,75%,Woolworths,0.16,Slade Pharmacy Kings Meadows,0,0,needs_review,db_only,,Slade Pharmacy Kings Meadows (0.16km); Pharmacy and Co Kings Meadows (0.23km); Meadow Mews Pharmacy (0.28km)
+TAS,-41.4056454,147.1320764,Item 133,75%,Coles,0.14,TerryWhite Chemmart Mowbray,0,0,needs_review,db_only,,TerryWhite Chemmart Mowbray (0.14km); Chemist Warehouse Mowbray (0.18km); Chemist Warehouse Mowbray (0.27km)
+TAS,-42.8319921,147.2745657,Item 133,75%,Coles,0.14,Chemist Warehouse Northgate Shopping Centre,0,0,needs_review,db_only,,Chemist Warehouse Northgate Shopping Centre (0.14km); Chemist Warehouse Glenorchy (0.17km); Blooms the Chemist Glenorchy (0.33km)
+TAS,-42.8960919,147.328783,Item 133,75%,Coles,0.12,TerryWhite Chemmart Sandy Bay,0,0,needs_review,db_only,,TerryWhite Chemmart Sandy Bay (0.12km); Chemist Warehouse Sandy Bay (0.18km)
+TAS,-41.1766608,146.3551924,Item 133,75%,Coles,0.11,Chemist Discount Centre Devonport,0,0,needs_review,db_only,,Chemist Discount Centre Devonport (0.11km); Devonport Pharmacy (0.14km); TerryWhite Chemmart Fourways Devonport (0.37km)
+TAS,-41.069097066666664,145.9010145,"Item 133, Item 134",75%,Woolworths,0.18,Upper Burnie Pharmacy,0,0,needs_review,db_only,,Upper Burnie Pharmacy (0.18km)
+TAS,-42.8653782,147.368848,Item 133,75%,Coles,0.10,Chemist Warehouse Eastlands Shopping Centre,0,0,needs_review,db_only,,Chemist Warehouse Eastlands Shopping Centre (0.10km); Complete Care Pharmacy Rosny Park (0.15km); Rhys Jones Pharmacy (0.23km)
+TAS,-42.48649965,146.7170984,Item 131,70%,Central Highlands General Practice,N/A,N/A,0,0,verified,google_maps,,
+TAS,-40.048726,144.0576882,Item 131,70%,Grassy Supermarket,N/A,N/A,0,0,verified,google_maps,,
+TAS,-42.1224456,148.2845945,Item 131,70%,Supermarket,N/A,N/A,0,0,verified,google_maps,,
+TAS,-40.7625163,145.2950685,"Item 131, Item 133",70%,Stanley IGA,0.11,Good Shepherd Pharmacy,1,0,needs_review,google_maps,Good Shepherd Pharmacy (0.11km),Good Shepherd Pharmacy (0.11km)
+TAS,-42.781,147.2487,Item 134,70%,Claremont Village Shopping Centre,N/A,N/A,0,0,verified,google_maps,,
+TAS,-42.743,147.2309,Item 136,70%,Bridgewater Medical Centre,N/A,N/A,0,0,verified,google_maps,,
+TAS,-42.8463,147.3082,Item 136,70%,Moonah Medical Centre,N/A,N/A,0,0,verified,google_maps,,
+TAS,-42.871,147.362,Item 136,70%,Rosny Park Family Medical Centre,0.61,Bellerive Quay Pharmacy,2,2,verified,google_maps,Chemist Warehouse Eastlands Shopping Centre (0.72km); TerryWhite Chemmart Bellerive (0.61km),
+TAS,-42.8803,147.3845,Item 134,70%,Shoreline Shopping Centre,0.50,Amcal+ Pharmacy Howrah - Wentworth,0,0,needs_review,db_only,,Amcal+ Pharmacy Howrah - Wentworth (0.50km)
+TAS,-42.831,147.282,Item 134,70%,Glenorchy Central,0.42,Priceline Pharmacy Glenorchy,0,0,needs_review,db_only,,Priceline Pharmacy Glenorchy (0.42km)
+TAS,-41.4267,147.1336,Item 134,70%,Northgate Shopping Centre,0.36,Invermay Discount Drug Store,0,0,needs_review,db_only,,Invermay Discount Drug Store (0.36km)
+TAS,-41.4352,147.1452,Item 134,70%,Gateway Shopping Centre (Launceston),0.22,TerryWhite Chemmart Launceston City,0,0,needs_review,db_only,,TerryWhite Chemmart Launceston City (0.22km); Pharmacy and Co Launceston (0.45km)
+TAS,-42.5593001,147.872333,Item 133,65%,Orford Festival IGA Supermarket,N/A,N/A,0,0,verified,google_maps,,
+TAS,-41.2189569,146.344958,Item 133,65%,IGA,N/A,N/A,0,0,verified,google_maps,,
+TAS,-41.4695436,147.0899735,Item 133,65%,Baxter's IGA,N/A,N/A,0,0,verified,google_maps,,
+TAS,-42.7484982,147.2659412,Item 133,65%,IGA,N/A,N/A,0,0,verified,google_maps,,
+TAS,-42.8966766,147.4320085,Item 133,65%,Rokeby IGA,N/A,N/A,0,0,verified,google_maps,,
+TAS,-41.525328,146.8449712,"Item 133, Item 134",65%,IGA,N/A,N/A,0,0,verified,google_maps,,
+TAS,-41.0980218,146.8232761,Item 133,65%,IGA George Town,N/A,N/A,0,0,verified,google_maps,,
+TAS,-42.3007354,147.3697897,Item 133,65%,IGA: Oatlands,0.40,Oatlands Pharmacy,0,0,needs_review,db_only,,Oatlands Pharmacy (0.40km)
+TAS,-41.1129758,146.0716909,Item 133,65%,Lane's IGA,0.35,Complete Care Pharmacy Penguin,0,0,needs_review,db_only,,Complete Care Pharmacy Penguin (0.35km)
+TAS,-40.9897747,145.7194643,Item 133,65%,IGA West End Supermarket,0.35,Healthpoint Pharmacy Wynyard,0,0,needs_review,db_only,,Healthpoint Pharmacy Wynyard (0.35km)
+TAS,-43.0659047,147.255555,Item 133,65%,Baxter's IGA,0.35,Healthpoint Pharmacy Snug,0,0,needs_review,db_only,,Healthpoint Pharmacy Snug (0.35km)
+TAS,-41.32339865,148.2489222,Item 133,65%,Hilly's IGA,0.22,Blooms the Chemist St Helen's,0,0,needs_review,db_only,,Blooms the Chemist St Helen's (0.22km)
+TAS,-42.8751386,147.3704878,Item 133,65%,Salamanca Fresh IGA,0.24,Bellerive Quay Pharmacy,0,0,needs_review,db_only,,Bellerive Quay Pharmacy (0.24km)
+TAS,-41.2991302,146.9521946,Item 133,65%,IGA,0.19,TerryWhite Chemmart Exeter,0,0,needs_review,db_only,,TerryWhite Chemmart Exeter (0.19km)
+TAS,-42.0805434,145.5574234,Item 133,65%,IGA,0.18,Queenstown Medical Union Pharmacy,0,0,needs_review,db_only,,Queenstown Medical Union Pharmacy (0.18km)
+TAS,-41.1584465,146.174394,Item 133,65%,Railway IGA Supermarket,0.15,Priceline Pharmacy Ulverstone,0,0,needs_review,db_only,,Priceline Pharmacy Ulverstone (0.15km); Fullife Pharmacy - Ulverstone (0.34km); Peter Thompson's Pharmacy (0.38km)
+TAS,-43.0988811,147.7427548,Item 133,65%,IGA,0.10,Tasman Pharmacy,0,0,needs_review,db_only,,Tasman Pharmacy (0.10km)
+TAS,-42.9046784,147.4354685,Item 135,55%,The Hobart Clinic,N/A,N/A,0,0,verified,google_maps,,
+TAS,-41.4584509,147.153164,Item 134,55%,DongSheng,N/A,N/A,0,0,verified,google_maps,,
+TAS,-42.8957201,147.3060276,Item 135,55%,Calvary Healthcare Tasmania - St John's Campus,N/A,N/A,1,1,invalidated,google_maps,HPS Pharmacies - South Hobart (0.03km),
+TAS,-41.43,147.1295,Item 134,55%,Meadow Mews Shopping Centre,0.72,Invermay Discount Drug Store,0,0,verified,google_maps,,
+TAS,-41.5699777,147.2513504,Item 134,55%,Jardin Skin Care Apothecary Tonics,0.42,Evandale Pharmacy,0,0,needs_review,db_only,,Evandale Pharmacy (0.42km)
+TAS,-42.9818279,147.2938109,Item 134,55%,Total Tools,0.37,Priceline Pharmacy Kingston,0,0,needs_review,db_only,,Priceline Pharmacy Kingston (0.37km)
+TAS,-42.843114,147.2977798,Item 134,55%,Fantastic Furniture,0.37,Friendly Care Advantage Moonah,0,0,needs_review,db_only,,Friendly Care Advantage Moonah (0.37km)
+TAS,-41.0552718,145.9062296,Item 134,55%,Express Auto Centre,0.35,Bolands Pharmacy,0,0,needs_review,db_only,,Bolands Pharmacy (0.35km); Pharmacy Discount Centre Burnie (0.41km); Burnie Plaza Pharmacy (0.45km)
+TAS,-41.5709107,147.2481399,Item 134,55%,Lake Leather,0.22,Evandale Pharmacy,0,0,needs_review,db_only,,Evandale Pharmacy (0.22km)
+TAS,-42.8659413,147.3035849,Item 135,40%,Calvary Hospital,0.06,HPS Pharmacies Lenah Valley,0,0,needs_review,db_only,,HPS Pharmacies Lenah Valley (0.06km)
+VIC,-37.7474,144.816,Item 136,95%,Sunshine Hospital Medical Centre,N/A,N/A,0,0,verified,google_maps,,
+VIC,-35.2341,149.0178,Item 136,95%,Kippax Medical Centre,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.7446,145.0073,Item 136,95%,Preston Medical Centre,0.68,Direct Chemist Outlet Preston,3,3,verified,google_maps,Direct Chemist Outlet Preston (0.68km); Medipharmacy Compounding (0.61km); Pharmasave Preston Discount Pharmacy (0.69km),
+VIC,-37.8913,144.7471,Item 136,95%,Point Cook Medical Centre,0.66,Priceline Pharmacy Sanctuary Lakes,1,1,verified,google_maps,Priceline Pharmacy Sanctuary Lakes (0.66km),
+VIC,-37.849,144.6958,Item 136,95%,Tarneit Medical Centre,0.62,Tarneit Pharmacy,1,1,verified,google_maps,Tarneit Pharmacy (0.63km),
+VIC,-38.035,145.3513,Item 136,95%,Berwick Medical Centre,0.61,Berwick Pharmacy,2,2,verified,google_maps,Berwick Pharmacy (0.61km); Chemist Discount Centre Berwick (0.67km),
+VIC,-37.6492,145.0259,Item 136,95%,IPN Medical Centre Epping,0.57,Chemist Warehouse Epping Homelife Centre,1,1,verified,google_maps,Chemist Warehouse Epping Homelife Centre (0.57km),
+VIC,-37.6006,144.9464,Item 136,95%,Craigieburn Medical Centre,0.54,Priceline Pharmacy Craigieburn,3,3,verified,google_maps,Super Saver Discount Chemist (0.67km); Direct Chemist Outlet Craigieburn (0.67km); Priceline Pharmacy Craigeburn (0.63km),
+VIC,-35.3402,149.1031,Item 136,95%,Garran Medical Centre,0.48,Capital Chemist Garran,0,0,needs_review,db_only,,Capital Chemist Garran (0.48km)
+VIC,-35.3393,143.5538,Item 136,95%,Swan Hill Medical Centre,0.46,Amcal,0,0,needs_review,db_only,,Amcal (0.46km)
+VIC,-36.7102,142.1984,Item 136,95%,Horsham Medical Centre,0.42,TerryWhite Chemmart Horsham Compounding,0,0,needs_review,db_only,,TerryWhite Chemmart Horsham Compounding (0.42km)
+VIC,-37.738,144.7373,Item 136,95%,Caroline Springs Medical Centre,0.41,TerryWhite Chemmart Caroline Springs,0,0,needs_review,db_only,,TerryWhite Chemmart Caroline Springs (0.41km)
+VIC,-37.8978,144.6629,Item 136,95%,Werribee Medical Centre,0.32,Minh Ha Pharmacist Advice,0,0,needs_review,db_only,,Minh Ha Pharmacist Advice (0.32km); Werribee Discount Chemist (0.46km)
+VIC,-33.4188,149.5792,Item 136,95%,Bathurst Medical Centre,0.31,Moodie's Pharmacy,0,0,needs_review,db_only,,Moodie's Pharmacy (0.31km); Capital Chemist Bathurst (0.33km); Blooms The Chemist Bathurst Armada (0.33km)
+VIC,-38.7020259,145.8204444,Item 131,85%,Venus Bay General Store,N/A,N/A,0,0,verified,google_maps,,
+VIC,-38.7004152,145.8680277,"Item 131, Item 133",85%,IGA,N/A,N/A,0,0,verified,google_maps,,
+VIC,-38.5777296,146.0137354,"Item 131, Item 133",85%,IGA Local Grocer and Liquor,0.06,Meeniyan Pharmacy,1,0,needs_review,google_maps,Meeniyan Pharmacy (0.06km),Meeniyan Pharmacy (0.06km)
+VIC,-36.6366404,142.63177845,Item 131,85%,Rupanyup Doctors Surgery,N/A,N/A,0,0,verified,google_maps,,
+VIC,-38.3098264,142.6416732,Item 131,85%,Kirrae Health Service,N/A,N/A,0,0,verified,google_maps,,
+VIC,-38.2420198,144.1748634,Item 131,85%,Moriac Medical Centre,0.00,Moriac Pharmacy,1,0,needs_review,google_maps,Moriac Pharmacy (0.00km),Moriac Pharmacy (0.00km)
+VIC,-36.6307452,142.6307295,Item 131,85%,Rupanyup Supermarket,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.818838516666666,144.95452115,"Item 132, Item 133, Item 134",85%,Liberty Tower,0.31,Chemist Warehouse Spencer Outlet Centre,0,0,needs_review,db_only,,Chemist Warehouse Spencer Outlet Centre (0.31km); Bourke Place Pharmacy (0.34km); Priceline Pharmacy William Street (0.42km)
+VIC,-37.8778132,145.09243943333334,"Item 132, Item 133, Item 134",85%,Chadstone Lifestyle Precinct,0.22,Chemist Warehouse,0,0,needs_review,db_only,,Chemist Warehouse (0.22km); Advantage Pharmacy Chadstone (0.33km)
+VIC,-37.8146,145.2307,Item 132,85%,Eastland Shopping Centre,0.23,Priceline Pharmacy Ringwood,0,0,needs_review,db_only,,Priceline Pharmacy Ringwood (0.23km); Chemist Warehouse (0.37km); Pharmacy Now (0.40km)
+VIC,-38.3954714,142.628306,Item 131,75%,Allansford Cheese World,N/A,N/A,0,0,verified,google_maps,,
+VIC,-38.6657911,146.4369242,Item 131,75%,Welshpool Supermarket,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.965617,144.7066647,Item 131,75%,Wyndham Harbour Mini Mart,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.42274336666667,144.56392013333334,"Item 130, Item 133",75%,Macedon IGA plus Liquor,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.85772795,144.88246005,"Item 133, Item 134",75%,Woolworths,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.7976134,144.8061424,Item 133,75%,Coles,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.6278019,145.0274063,Item 133,75%,Woolworths,0.05,Pharmacy Select Lyndarum,1,0,needs_review,google_maps,Pharmacy Select Lyndarum (0.05km),Pharmacy Select Lyndarum (0.05km)
+VIC,-37.8311018,144.9307435,Item 133,75%,Woolworths,0.35,Pharmacy Own,1,0,needs_review,google_maps,Pharmacy Own (0.35km),Pharmacy Own (0.35km)
+VIC,-37.80008875,144.9953537,Item 133,75%,Woolworths Metro,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.5997464,143.8398507,"Item 133, Item 134",75%,Coles Sebastopol,N/A,N/A,0,0,verified,google_maps,,
+VIC,-36.3591735,146.3169075,Item 133,75%,Coles,N/A,N/A,0,0,verified,google_maps,,
+VIC,-36.7576168,144.2962722,Item 133,75%,Coles,N/A,N/A,0,0,verified,google_maps,,
+VIC,-38.1092936,145.1265883,Item 133,75%,Woolworths,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.6296479,145.0794343,Item 133,75%,Coles,0.72,Lakes Boulevard Medical Pharmacy,0,0,verified,google_maps,,
+VIC,-37.9276332,145.4452677,Item 133,75%,Woolworths,0.63,Emerald Wellness Pharmacy,2,2,verified,google_maps,Emerald Wellness Pharmacy (0.63km); Emerald Village Pharmacy (0.72km),
+VIC,-37.8323252,144.9708404,Item 133,75%,Woolworths Metro,0.59,Melbourne Boulevard Pharmacy & Health Foods,2,2,verified,google_maps,Melbourne Boulevard Pharmacy (0.60km); Chemist Warehouse Southbank (0.61km),
+VIC,-36.7669138,144.2651965,Item 133,75%,Woolworths,0.56,Golden Square's Pharmacy,1,1,verified,google_maps,PharmaSave Golden Square (0.55km),
+VIC,-38.004827,145.2664991,Item 133,75%,Coles,0.48,Healthfirst Family Pharmacy,0,0,needs_review,db_only,,Healthfirst Family Pharmacy (0.48km)
+VIC,-37.8038373,145.0376993,Item 133,75%,Coles,0.45,Cotham Road Pharmacy,0,0,needs_review,db_only,,Cotham Road Pharmacy (0.45km); Edge Compounding Pharmacy (0.45km)
+VIC,-38.45317710714286,145.23907677857144,"Item 133, Item 134",75%,Woolworths,0.41,TerryWhite Chemmart Phillip Island,0,0,needs_review,db_only,,TerryWhite Chemmart Phillip Island (0.41km); Priceline Pharmacy Cowes (0.49km)
+VIC,-37.7271612,144.8069276,"Item 133, Item 134",75%,Coles,0.39,Keilor Downs Caring Chemist,0,0,needs_review,db_only,,Keilor Downs Caring Chemist (0.39km); Quality Pharmacy Keilor Downs (0.43km)
+VIC,-37.0487286,143.7414417,Item 133,75%,Coles,0.40,Maryborough Pharmacy,0,0,needs_review,db_only,,Maryborough Pharmacy (0.40km); Priceline Pharmacy Maryborough (0.44km)
+VIC,-38.3316698,144.3198144,Item 133,75%,Coles,0.39,Priceline Pharmacy Torquay,0,0,needs_review,db_only,,Priceline Pharmacy Torquay (0.39km); Surfcoast Pharmacy (0.44km)
+VIC,-37.7978511,144.9779798,Item 133,75%,Coles,0.38,Chemist Warehouse,0,0,needs_review,db_only,,Chemist Warehouse (0.38km); Patels Pharmacy (0.46km)
+VIC,-36.549703699999995,145.98959405,Item 133,75%,Woolworths,0.41,Healthsave Pharmacy Benalla,0,0,needs_review,db_only,,Healthsave Pharmacy Benalla (0.41km); Jenny Milner-Marsha Watson Pharmacy (0.48km)
+VIC,-37.889438,145.2936982,Item 133,75%,Woolworths,0.36,Chemist Warehouse,0,0,needs_review,db_only,,Chemist Warehouse (0.36km)
+VIC,-37.758713549999996,145.0686608,"Item 133, Item 134",75%,Woolworths,0.33,Heidelberg Healthcare Pharmacy & Compounding,0,0,needs_review,db_only,,Heidelberg Healthcare Pharmacy & Compounding (0.33km); Chemist Warehouse Heidelberg (0.46km)
+VIC,-38.60380685,145.58636405,"Item 133, Item 134",75%,Coles,0.35,Wonthaggi Pharmacy and Health Hub,0,0,needs_review,db_only,,Wonthaggi Pharmacy and Health Hub (0.35km); Wonthaggi Miners' Friendly Society Dispensary (0.37km)
+VIC,-37.7578952,144.9638489,Item 133,75%,Woolworths Metro,0.35,Amcal,0,0,needs_review,db_only,,Amcal (0.35km); Baraz Wellness Pharmacy (0.44km); Your Discount Pharmacy (0.47km)
+VIC,-36.131069,144.7494176,Item 133,75%,Coles,0.34,Priceline Pharmacy Echuca Square,0,0,needs_review,db_only,,Priceline Pharmacy Echuca Square (0.34km); Echuca Amcal Pharmacy (0.41km)
+VIC,-37.82656035,144.95967430000002,"Item 133, Item 134",75%,Woolworths Metro,0.36,Rays Wellness Melbourne,0,0,needs_review,db_only,,Rays Wellness Melbourne (0.36km)
+VIC,-38.1744441,146.258408,Item 133,75%,Coles,0.29,Soul Pattinson Pharmacy Moe,0,0,needs_review,db_only,,Soul Pattinson Pharmacy Moe (0.29km); Lloyd Street Discount Chemist (0.37km)
+VIC,-37.75626616666667,145.06925973333333,"Item 133, Item 134",75%,Coles,0.28,Heidelberg Healthcare Pharmacy & Compounding,0,0,needs_review,db_only,,Heidelberg Healthcare Pharmacy & Compounding (0.28km); Chemist Warehouse Heidelberg (0.38km)
+VIC,-38.17393285,144.57245295,Item 133,75%,Coles,0.26,Peak Pharmacy Drysdale,0,0,needs_review,db_only,,Peak Pharmacy Drysdale (0.26km); Drysdale Village Pharmacy (0.27km)
+VIC,-36.7272792,146.9589454,Item 133,75%,Woolworths,0.29,Bright Pharmacy,0,0,needs_review,db_only,,Bright Pharmacy (0.29km)
+VIC,-37.0233054,145.1334822,"Item 133, Item 134",75%,Coles,0.29,Chemist Discount Centre Seymour,0,0,needs_review,db_only,,Chemist Discount Centre Seymour (0.29km); Dennis Kilmartin Pharmacy (0.31km)
+VIC,-38.13945305,145.126657175,"Item 133, Item 134",75%,Woolworths,0.34,Frankston Compounding Pharmacy,0,0,needs_review,db_only,,Frankston Compounding Pharmacy (0.34km); Chemist Warehouse (0.34km); Unknown Pharmacy (0.40km)
+VIC,-37.9494484,145.0033694,Item 133,75%,Coles,0.24,Sandringham Amcal Pharmacy,0,0,needs_review,db_only,,Sandringham Amcal Pharmacy (0.24km)
+VIC,-37.8408888,145.2627028,Item 133,75%,Woolworths,0.24,TerryWhite Chemmart Bayswater,0,0,needs_review,db_only,,TerryWhite Chemmart Bayswater (0.24km); Unknown Pharmacy (0.29km); Direct Chemist Outlet Bayswater (0.32km)
+VIC,-37.7145205,145.0073117,Item 133,75%,Coles,0.24,My Chemist,0,0,needs_review,db_only,,My Chemist (0.24km); Discount Drug Stores (0.29km)
+VIC,-34.2108266,142.1396072,Item 133,75%,Coles,0.22,Direct Chemist Outlet Mildura,0,0,needs_review,db_only,,Direct Chemist Outlet Mildura (0.22km); Chemist Warehouse (0.42km)
+VIC,-36.1202037,146.8888404,Item 133,75%,Coles,0.21,TerryWhite Chemmart Wodonga,0,0,needs_review,db_only,,TerryWhite Chemmart Wodonga (0.21km); Chemist Warehouse (0.22km); Elmwood Pharmacy Wodonga (0.49km)
+VIC,-38.0321022,145.3450266,Item 133,75%,Coles,0.20,Berwick Pharmacy,0,0,needs_review,db_only,,Berwick Pharmacy (0.20km); Chemist Discount Centre Berwick (0.33km)
+VIC,-37.9840734,145.0643704,"Item 133, Item 134",75%,Coles,0.20,Chemist Warehouse,0,0,needs_review,db_only,,Chemist Warehouse (0.20km); Good Health Pharmacy (0.24km)
+VIC,-38.3824132,142.518366,Item 133,75%,Woolworths,0.19,Chemist Warehouse Warrnambool,0,0,needs_review,db_only,,Chemist Warehouse Warrnambool (0.19km); Chemist Warehouse (0.27km)
+VIC,-37.9865785,145.2183528,Item 133,75%,Coles,0.18,Priceline Pharmacy Dandenong Plaza Upper,0,0,needs_review,db_only,,Priceline Pharmacy Dandenong Plaza Upper (0.18km); Langton Pharmacy (0.26km); TerryWhite Chemmart Dandenong Central (0.30km)
+VIC,-38.0231208,144.40967535,Item 133,75%,Coles,0.13,Lara Pharmacy,0,0,needs_review,db_only,,Lara Pharmacy (0.13km)
+VIC,-37.8604328,145.0291228,Item 133,75%,Coles,0.18,Amcal Pharmacy Malvern,0,0,needs_review,db_only,,Amcal Pharmacy Malvern (0.18km); Pharmacy NEO Malvern Central (0.27km); The Specialist Centre Pharmacy (0.44km)
+VIC,-37.638387,144.9323564,Item 133,75%,Coles,0.17,Chemist Warehouse,0,0,needs_review,db_only,,Chemist Warehouse (0.17km)
+VIC,-37.5644091,143.8621232,Item 133,75%,Woolworths,0.17,UFS Dispensaries Ballarat (Bridge Mall),0,0,needs_review,db_only,,UFS Dispensaries Ballarat (Bridge Mall) (0.17km); Priceline Pharmacy (0.24km); Eureka Medical Centre Pharmacy (0.32km)
+VIC,-34.1833877,142.159892,Item 133,75%,Coles,0.17,My Chemist,0,0,needs_review,db_only,,My Chemist (0.17km); Priceline Pharmacy Mildura (0.26km); Chemist Warehouse (0.41km)
+VIC,-37.8682575,145.240404,Item 133,75%,Coles,0.16,TerryWhite Chemmart Knox,0,0,needs_review,db_only,,TerryWhite Chemmart Knox (0.16km); Priceline Pharmacy Knox (0.16km); Priceline Pharmacy Knox (0.20km)
+VIC,-37.82538165,144.99385575,"Item 133, Item 134",75%,Coles,0.24,Priceline Pharmacy,0,0,needs_review,db_only,,Priceline Pharmacy (0.24km)
+VIC,-38.06173415,145.3399234,Item 133,75%,Coles,0.14,PharmaSave,0,0,needs_review,db_only,,PharmaSave (0.14km); Eden Rise Pharmacy (0.19km)
+VIC,-37.6889515,144.9599995,Item 133,75%,Coles,0.16,Campbellfield Pharmacy,0,0,needs_review,db_only,,Campbellfield Pharmacy (0.16km); Chemist Warehouse (0.37km)
+VIC,-37.8689178,144.8299879,Item 133,75%,Coles,0.16,Chemist Discount Centre Altona,0,0,needs_review,db_only,,Chemist Discount Centre Altona (0.16km)
+VIC,-37.825797050000006,147.63329099999999,"Item 133, Item 134",75%,Coles,0.25,Complete Care Pharmacy Bairnsdale,0,0,needs_review,db_only,,Complete Care Pharmacy Bairnsdale (0.25km); Priceline Pharmacy Bairnsdale (0.33km)
+VIC,-38.6038483,145.58933833333333,"Item 133, Item 134",75%,Woolworths,0.23,Wonthaggi Pharmacy and Health Hub,0,0,needs_review,db_only,,Wonthaggi Pharmacy and Health Hub (0.23km); Wonthaggi Miners' Friendly Society Dispensary (0.30km)
+VIC,-36.7139538,142.1977247,Item 133,75%,Coles,0.15,Priceline Pharmacy Horsham,0,0,needs_review,db_only,,Priceline Pharmacy Horsham (0.15km); TerryWhite Chemmart Horsham Compounding (0.15km); Horsham Amcal Pharmacy (0.21km)
+VIC,-38.0849951,145.2928351,Item 133,75%,Coles,0.15,Chemist Warehouse,0,0,needs_review,db_only,,Chemist Warehouse (0.15km)
+VIC,-36.5497326,145.9858493,Item 133,75%,Coles,0.15,Healthsave Pharmacy Benalla,0,0,needs_review,db_only,,Healthsave Pharmacy Benalla (0.15km); Jenny Milner-Marsha Watson Pharmacy (0.22km); TerryWhite Chemmart Benalla (0.28km)
+VIC,-37.5336188,143.8252408,Item 133,75%,Woolworths Stocklands,0.14,Priceline Pharmacy Stocklands,0,0,needs_review,db_only,,Priceline Pharmacy Stocklands (0.14km); The Ballarat Pet Pharmacy (0.50km)
+VIC,-38.0185007,145.306709,Item 133,75%,Coles,0.14,Chemist Warehouse Westfield Fountain Gate,0,0,needs_review,db_only,,Chemist Warehouse Westfield Fountain Gate (0.14km); Chemist Warehouse (0.26km); Priceline Pharmacy Fountain Gate (0.26km)
+VIC,-37.742482,144.9658855,Item 133,75%,Coles,0.14,Healthline Pharmacy,0,0,needs_review,db_only,,Healthline Pharmacy (0.14km); Chemist Warehouse (0.14km); Coburg UFS Pharmacy (0.17km)
+VIC,-36.8108831,144.2435224,Item 133,75%,Coles,0.14,Priceline Pharmacy,0,0,needs_review,db_only,,Priceline Pharmacy (0.14km); Priceline Pharmacy Lansell Square (0.26km)
+VIC,-37.8165743,144.89154935,Item 133,75%,Woolworths Metro,0.12,Miles Yarraville Village Pharmacy,0,0,needs_review,db_only,,Miles Yarraville Village Pharmacy (0.12km)
+VIC,-37.5365138,144.9212675,Item 133,75%,Coles,0.14,Chemist Warehouse Merrifield City SC Mickleham,0,0,needs_review,db_only,,Chemist Warehouse Merrifield City SC Mickleham (0.14km)
+VIC,-37.79828895,144.98392465,Item 133,75%,Woolworths Metro Smith Street,0.19,Chemist Warehouse,0,0,needs_review,db_only,,Chemist Warehouse (0.19km); Newton & Leung Pharmacy (0.32km); Chemist Warehouse (0.38km)
+VIC,-38.1999703,144.3168594,Item 133,75%,Coles,0.14,Priceline Pharmacy Waurn Ponds,0,0,needs_review,db_only,,Priceline Pharmacy Waurn Ponds (0.14km); Pharmacy 4 Less Waurn Ponds (0.26km); Amcal (0.29km)
+VIC,-38.2390054,146.3983912,Item 133,75%,Coles,0.13,Chemist Discount Centre Morwell,0,0,needs_review,db_only,,Chemist Discount Centre Morwell (0.13km); Advantage Pharmacy Morwell (0.30km)
+VIC,-37.7140271,144.6022542,Item 133,75%,Coles,0.13,Direct Chemist Outlet Cobblebank,0,0,needs_review,db_only,,Direct Chemist Outlet Cobblebank (0.13km)
+VIC,-38.306299,145.1914173,Item 133,75%,Coles,0.13,Hastings Discount Drug Store,0,0,needs_review,db_only,,Hastings Discount Drug Store (0.13km); TerryWhite Chemmart Hastings (0.19km)
+VIC,-37.9259993,145.1185924,Item 133,75%,Coles,0.12,Direct Chemist Outlet Clayton Central Compounding Pharmacy,0,0,needs_review,db_only,,Direct Chemist Outlet Clayton Central Compounding Pharmacy (0.12km); Hi-Pie Aussie Life (0.17km); Chemist Warehouse (0.22km)
+VIC,-36.7754017,144.3061077,Item 133,75%,Woolworths,0.12,Strathdale Pharmacy,0,0,needs_review,db_only,,Strathdale Pharmacy (0.12km); TerryWhite Chemmart Strathdale (0.20km)
+VIC,-37.9738785,145.0163098,Item 133,75%,Woolworths Metro,0.12,Pharmacy 360 Black Rock,0,0,needs_review,db_only,,Pharmacy 360 Black Rock (0.12km)
+VIC,-38.308946649999996,145.1900536,Item 133,75%,Woolworths,0.16,TerryWhite Chemmart Hastings,0,0,needs_review,db_only,,TerryWhite Chemmart Hastings (0.16km); Hastings Discount Drug Store (0.22km)
+VIC,-36.7612657,144.2826422,Item 133,75%,Coles,0.12,Chemist Discount Centre Bendigo,0,0,needs_review,db_only,,Chemist Discount Centre Bendigo (0.12km); Chemist Warehouse (0.20km); Bendigo UFS Hargreaves Street (0.37km)
+VIC,-37.883705,145.2778081,Item 133,75%,Woolworths,0.12,Elixir Compounding Pharmacy,0,0,needs_review,db_only,,Elixir Compounding Pharmacy (0.12km); PharmaSave (0.21km); TerryWhite Chemmart Mountain Gate (Transitioning) (0.34km)
+VIC,-37.28763,144.94817475000002,Item 133,75%,Coles,0.12,Direct Chemist Outlet Kilmore,0,0,needs_review,db_only,,Direct Chemist Outlet Kilmore (0.12km)
+VIC,-38.0441357,145.3689227,Item 133,75%,Woolworths,0.12,Beaconsfield Pharmacy,0,0,needs_review,db_only,,Beaconsfield Pharmacy (0.12km)
+VIC,-36.1296895,144.751593,Item 133,75%,Woolworths,0.12,Priceline Pharmacy Echuca Square,0,0,needs_review,db_only,,Priceline Pharmacy Echuca Square (0.12km); Echuca Amcal Pharmacy (0.30km); Coburn & Reid Pharmacy (0.33km)
+VIC,-35.9198826,145.6465119,Item 133,75%,Woolworths,0.12,Cobram Discount Drug Store,0,0,needs_review,db_only,,Cobram Discount Drug Store (0.12km); TerryWhite Chemmart Cobram (0.19km)
+VIC,-37.9208945,145.2375525,Item 133,75%,Coles,0.11,Blooms The Chemist,0,0,needs_review,db_only,,Blooms The Chemist (0.11km); Chemist Warehouse (0.25km); Blooms The Chemist Stud Park (0.47km)
+VIC,-37.8768747,145.1645918,Item 133,75%,Coles,0.11,Priceline Pharmacy The Glen,0,0,needs_review,db_only,,Priceline Pharmacy The Glen (0.11km); TerryWhite Chemmart The Glen (0.11km); Chemist Warehouse (0.24km)
+VIC,-37.803235,145.3108152,Item 133,75%,Woolworths,0.11,Kilsyth Pharmacy,0,0,needs_review,db_only,,Kilsyth Pharmacy (0.11km)
+VIC,-38.219185,145.0399321,Item 133,75%,Coles,0.11,Chemist Warehouse,0,0,needs_review,db_only,,Chemist Warehouse (0.11km); Advantage Pharmacy Mornington (0.16km)
+VIC,-38.0686164,145.3007558,Item 133,75%,Coles,0.11,Blooms the Chemist Casey Central,0,0,needs_review,db_only,,Blooms the Chemist Casey Central (0.11km); Blooms The Chemist Casey Central (0.23km)
+VIC,-37.682907,145.0704091,Item 133,75%,Coles,0.11,Priceline Pharmacy University Hill,0,0,needs_review,db_only,,Priceline Pharmacy University Hill (0.11km); Bundoora Medical Centre Pharmacy (0.37km)
+VIC,-37.913326,144.9927645,Item 133,75%,Coles,0.11,Brighton Health Pharmacy,0,0,needs_review,db_only,,Brighton Health Pharmacy (0.11km); Unknown Pharmacy (0.16km); Brighton Discount Chemist (0.24km)
+VIC,-37.811917300000005,145.22921505,Item 133,75%,Woolworths,0.10,Priceline Pharmacy Ringwood,0,0,needs_review,db_only,,Priceline Pharmacy Ringwood (0.10km); Civic Pharmacy (0.34km); Pharmacy Now (0.47km)
+VIC,-37.7771492,145.4590878,Item 133,75%,Woolworths,0.11,Seville Village Pharmacy,0,0,needs_review,db_only,,Seville Village Pharmacy (0.11km)
+VIC,-37.7017311,144.574255,Item 133,75%,Coles,0.11,UFS Dispensaries South Melton,0,0,needs_review,db_only,,UFS Dispensaries South Melton (0.11km)
+VIC,-38.3685746,142.4950598,Item 133,75%,Coles,0.11,Direct Chemist Outlet Northpoint,0,0,needs_review,db_only,,Direct Chemist Outlet Northpoint (0.11km)
+VIC,-37.2485895,144.4520922,Item 133,75%,Woolworths,0.11,TerryWhite Chemmart Kyneton,0,0,needs_review,db_only,,TerryWhite Chemmart Kyneton (0.11km)
+VIC,-38.13418715,145.85485864999998,"Item 133, Item 134",75%,Coles,0.17,Chemist Discount Centre Drouin,0,0,needs_review,db_only,,Chemist Discount Centre Drouin (0.17km); TerryWhite Chemmart Drouin (0.37km)
+VIC,-37.3421575,144.1417141,Item 133,75%,Coles,0.11,Blooms The Chemist Daylesford,0,0,needs_review,db_only,,Blooms The Chemist Daylesford (0.11km)
+VIC,-37.5613944,143.8685176,Item 133,75%,Coles Bakery Hill,0.11,UFS Dispensaries Ballarat (Victoria Street),0,0,needs_review,db_only,,UFS Dispensaries Ballarat (Victoria Street) (0.11km)
+VIC,-37.8057563,145.0309266,Item 133,75%,Woolworths,0.11,Star Pharmacy,0,0,needs_review,db_only,,Star Pharmacy (0.11km); Chemist Warehouse (0.19km)
+VIC,-35.3404775,143.5574889,Item 133,75%,Coles,0.11,Amcal,0,0,needs_review,db_only,,Amcal (0.11km); Marraboor Pharmacy (0.15km); Priceline Pharmacy Swan Hill (0.20km)
+VIC,-38.1458229,144.3360867,Item 133,75%,Woolworths,0.11,TerryWhite Chemmart Geelong West,0,0,needs_review,db_only,,TerryWhite Chemmart Geelong West (0.11km)
+VIC,-37.820028,145.0354654,Item 133,75%,Coles Local,0.11,TerryWhite Chemmart Hawthorn,0,0,needs_review,db_only,,TerryWhite Chemmart Hawthorn (0.11km); Chemist Warehouse (0.11km); Pulse Pharmacy (0.22km)
+VIC,-37.8679128,144.9919849,Item 133,75%,Coles,0.10,Priceline Pharmacy Balaclava,0,0,needs_review,db_only,,Priceline Pharmacy Balaclava (0.10km); Chemist Greenhouse Balaclava (0.15km); Wholesale Pharmacy Balaclava (0.28km)
+VIC,-37.866424,145.0937422,Item 133,75%,Woolworths,0.10,PharmaSave,0,0,needs_review,db_only,,PharmaSave (0.10km); TerryWhite Chemmart Ashwood (0.25km)
+VIC,-37.737145,145.0028388,Item 133,75%,Woolworths,0.10,Amcal Pharmacy Preston,0,0,needs_review,db_only,,Amcal Pharmacy Preston (0.10km); Chemist Warehouse Preston (0.13km); Saltylicious (0.18km)
+VIC,-38.1736001,144.3430639,Item 133,75%,Coles,0.10,Community Care Chemist Belmont,0,0,needs_review,db_only,,Community Care Chemist Belmont (0.10km); Pharmacy 4 Less Belmont (0.16km); Pardeys Eastbrooke Medical Centre Pharmacy (0.26km)
+VIC,-37.5636617,149.151655,Item 131,70%,Cann Valley Bush Nursing Centre,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.5663456,149.1514288,Item 131,70%,Cann River Friendly Grocer,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.558366,149.7534583,Item 131,70%,Mallacoota Medical Centre,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.4614389,147.2508422,Item 131,70%,Dargo General Store,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.248503799999995,141.8410323,Item 131,70%,Balmoral Community Store,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.7123253,142.8392691,Item 131,70%,Lake Bolac Licensed Supermarket,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.9242465,141.2754502,Item 131,70%,Dartmoor & District Bush Nursing Centre,N/A,N/A,0,0,verified,google_maps,,
+VIC,-36.381404,141.2460378,Item 131,70%,Kaniava Hospital,N/A,N/A,0,0,verified,google_maps,,
+VIC,-36.6095617,143.2468538,Item 131,70%,East Wimmera Health Service St Arnaud Campus,N/A,N/A,0,0,verified,google_maps,,
+VIC,-36.670831,142.8698477,Item 131,70%,Marnoo General Store,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.5479311,142.7398878,Item 131,70%,Willaura Supermarket,0.19,Trident Pharmacy Willaura,1,0,needs_review,google_maps,Trident Pharmacy Willaura (0.19km),Trident Pharmacy Willaura (0.19km)
+VIC,-37.1461904,146.4489816,Item 131,70%,Village Grocer,N/A,N/A,0,0,verified,google_maps,,
+VIC,-37.1460735,146.4453481,Item 131,70%,Mt Buller Medical Centre,N/A,N/A,0,0,verified,google_maps,,

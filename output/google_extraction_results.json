@@ -1,0 +1,3049 @@
+[
+  {
+    "index": 1,
+    "state": "TAS",
+    "lat": -42.871,
+    "lng": 147.345,
+    "poi_name": "Ochre Health Medical Centre Clarence",
+    "rules": "Item 136",
+    "search_radius_km": 0.5,
+    "confidence": 95,
+    "pharmacies": [
+      {
+        "name": "Chemist Warehouse Hobart City Centre",
+        "lat": -42.8821596,
+        "lng": 147.32891
+      },
+      {
+        "name": "Blooms the Chemist Hobart",
+        "lat": -42.8799,
+        "lng": 147.3267544
+      },
+      {
+        "name": "Chemist",
+        "lat": -42.8800124,
+        "lng": 147.3266293
+      },
+      {
+        "name": "Chemist Warehouse Hobart",
+        "lat": -42.8818069,
+        "lng": 147.3234554
+      },
+      {
+        "name": "HPS Pharmacies - Hobart",
+        "lat": -42.8808608,
+        "lng": 147.329768
+      },
+      {
+        "name": "Royal Hobart Hospital",
+        "lat": -42.880215,
+        "lng": 147.3298533
+      },
+      {
+        "name": "Good Price Pharmacy Hobart",
+        "lat": -42.8808422,
+        "lng": 147.3286176
+      },
+      {
+        "name": "Priceline Hobart",
+        "lat": -42.8817013,
+        "lng": 147.3275878
+      },
+      {
+        "name": "My Chemist Salamanca",
+        "lat": -42.887241,
+        "lng": 147.3318391
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 59,
+    "state": "VIC",
+    "lat": -37.7474,
+    "lng": 144.816,
+    "poi_name": "Sunshine Hospital Medical Centre",
+    "rules": "Item 136",
+    "search_radius_km": 0.5,
+    "confidence": 95,
+    "pharmacies": [
+      {
+        "name": "Kealba Pharmacy",
+        "lat": -37.7468077,
+        "lng": 144.8293583
+      },
+      {
+        "name": "Chemist Warehouse St Albans",
+        "lat": -37.7445214,
+        "lng": 144.8009041
+      },
+      {
+        "name": "Chemist Warehouse Doncaster",
+        "lat": -37.7876245,
+        "lng": 145.132139
+      },
+      {
+        "name": "Alfrieda Street Pharmacy",
+        "lat": -37.7430816,
+        "lng": 144.8009717
+      },
+      {
+        "name": "Thao Nguyen Pharmacy",
+        "lat": -37.744298,
+        "lng": 144.8014583
+      },
+      {
+        "name": "PRIME PHARMACY (formerly McCrossin & Phan Pharmacy)",
+        "lat": -37.7436711,
+        "lng": 144.8009611
+      },
+      {
+        "name": "Nam Anh Pharmacy",
+        "lat": -37.744243,
+        "lng": 144.798512
+      },
+      {
+        "name": "Chemist Warehouse Keilor East",
+        "lat": -37.7490922,
+        "lng": 144.861734
+      },
+      {
+        "name": "First Response Compounding Pharmacy",
+        "lat": -37.759691,
+        "lng": 144.8156398
+      },
+      {
+        "name": "Pharmacy 777 St Albans",
+        "lat": -37.7435118,
+        "lng": 144.792703
+      }
+    ],
+    "pharmacy_count": 10
+  },
+  {
+    "index": 60,
+    "state": "VIC",
+    "lat": -35.2341,
+    "lng": 149.0178,
+    "poi_name": "Kippax Medical Centre",
+    "rules": "Item 136",
+    "search_radius_km": 0.5,
+    "confidence": 95,
+    "pharmacies": [
+      {
+        "name": "Higgins Advantage Pharmacy",
+        "lat": -35.2316221,
+        "lng": 149.0270603
+      },
+      {
+        "name": "Chemist Discount Centre Belconnen",
+        "lat": -35.239779,
+        "lng": 149.0576356
+      },
+      {
+        "name": "Caremore Pharmacy",
+        "lat": -35.221893,
+        "lng": 149.0195783
+      },
+      {
+        "name": "The Pharmacy on Northbourne",
+        "lat": -35.2782108,
+        "lng": 149.1287572
+      },
+      {
+        "name": "Capital Chemist O'Connor",
+        "lat": -35.2639132,
+        "lng": 149.1226001
+      },
+      {
+        "name": "Hawker Pharmacy",
+        "lat": -35.2431655,
+        "lng": 149.043745
+      },
+      {
+        "name": "TerryWhite Chemmart Charnwood",
+        "lat": -35.2045044,
+        "lng": 149.033623
+      },
+      {
+        "name": "Florey Pharmacy",
+        "lat": -35.2263018,
+        "lng": 149.0544155
+      },
+      {
+        "name": "Amcal Pharmacy Belconnen Mall",
+        "lat": -35.237388,
+        "lng": 149.0652258
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 61,
+    "state": "VIC",
+    "lat": -37.7446,
+    "lng": 145.0073,
+    "poi_name": "Preston Medical Centre",
+    "rules": "Item 136",
+    "search_radius_km": 0.5,
+    "confidence": 95,
+    "pharmacies": [
+      {
+        "name": "Chemist Warehouse Preston",
+        "lat": -37.737763,
+        "lng": 145.0037191
+      },
+      {
+        "name": "Amcal Pharmacy Preston Market",
+        "lat": -37.7379874,
+        "lng": 145.0027549
+      },
+      {
+        "name": "Preston South Pharmacy",
+        "lat": -37.751311,
+        "lng": 145.0025401
+      },
+      {
+        "name": "Direct Chemist Outlet Preston",
+        "lat": -37.7392151,
+        "lng": 145.0035701
+      },
+      {
+        "name": "Medipharmacy Compounding",
+        "lat": -37.7399747,
+        "lng": 145.0034774
+      },
+      {
+        "name": "Pharmasave Preston Discount Pharmacy",
+        "lat": -37.7392088,
+        "lng": 145.0034261
+      },
+      {
+        "name": "Koutsis Spiro Pharmacy",
+        "lat": -37.7524689,
+        "lng": 145.001389
+      },
+      {
+        "name": "Chemist Warehouse Head Office",
+        "lat": -37.7530435,
+        "lng": 145.0211697
+      },
+      {
+        "name": "High Street Preston Pharmacy",
+        "lat": -37.7336202,
+        "lng": 145.005287
+      },
+      {
+        "name": "Direct Chemist Outlet Reservoir",
+        "lat": -37.7244849,
+        "lng": 145.0286633
+      }
+    ],
+    "pharmacy_count": 10
+  },
+  {
+    "index": 62,
+    "state": "VIC",
+    "lat": -37.8913,
+    "lng": 144.7471,
+    "poi_name": "Point Cook Medical Centre",
+    "rules": "Item 136",
+    "search_radius_km": 0.5,
+    "confidence": 95,
+    "pharmacies": [
+      {
+        "name": "Priceline Pharmacy Sanctuary Lakes",
+        "lat": -37.8953338,
+        "lng": 144.7526675
+      },
+      {
+        "name": "Point Cook Pharmacy",
+        "lat": -37.887585,
+        "lng": 144.75551
+      },
+      {
+        "name": "Priceline Pharmacy Point Cook",
+        "lat": -37.8837092,
+        "lng": 144.7349044
+      },
+      {
+        "name": "NeoCare Pharmacy Point Cook (previously PharmaSave)",
+        "lat": -37.8849478,
+        "lng": 144.733244
+      },
+      {
+        "name": "Direct Chemist Outlet Point Cook Town Centre",
+        "lat": -37.8819839,
+        "lng": 144.735366
+      },
+      {
+        "name": "Chemist Warehouse Hoppers Crossing",
+        "lat": -37.8693723,
+        "lng": 144.7333831
+      },
+      {
+        "name": "Chemist Warehouse Doncaster",
+        "lat": -37.7876245,
+        "lng": 145.132139
+      },
+      {
+        "name": "Chemist Warehouse Point Cook",
+        "lat": -37.8931674,
+        "lng": 144.7285495
+      },
+      {
+        "name": "Direct Chemist Outlet Featherbrook Point Cook",
+        "lat": -37.897916,
+        "lng": 144.7271596
+      },
+      {
+        "name": "Direct Chemist Outlet Williams Landing",
+        "lat": -37.8673977,
+        "lng": 144.742818
+      }
+    ],
+    "pharmacy_count": 10
+  },
+  {
+    "index": 63,
+    "state": "VIC",
+    "lat": -37.849,
+    "lng": 144.6958,
+    "poi_name": "Tarneit Medical Centre",
+    "rules": "Item 136",
+    "search_radius_km": 0.5,
+    "confidence": 95,
+    "pharmacies": [
+      {
+        "name": "GoodHealth Compounding Pharmacy",
+        "lat": -37.8508077,
+        "lng": 144.7059672
+      },
+      {
+        "name": "Tarneit Pharmacy",
+        "lat": -37.8473073,
+        "lng": 144.6889989
+      },
+      {
+        "name": "Tarneit Discount Drug Store",
+        "lat": -37.8372014,
+        "lng": 144.6921804
+      },
+      {
+        "name": "Chemist Warehouse Doncaster",
+        "lat": -37.7876245,
+        "lng": 145.132139
+      },
+      {
+        "name": "Chemist Warehouse Wyndham Village Shopping Centre",
+        "lat": -37.8494143,
+        "lng": 144.7044824
+      },
+      {
+        "name": "Direct Chemist Outlet Hogans Corner",
+        "lat": -37.8615778,
+        "lng": 144.6872149
+      },
+      {
+        "name": "Chemist Warehouse Hoppers Crossing",
+        "lat": -37.8693723,
+        "lng": 144.7333831
+      },
+      {
+        "name": "Mansoora Homoeopathic Clinic & Pharmacy",
+        "lat": -37.8457883,
+        "lng": 144.681453
+      },
+      {
+        "name": "Chemist Warehouse Tarneit Gardens SC",
+        "lat": -37.8396805,
+        "lng": 144.6747601
+      },
+      {
+        "name": "MedPlus Pharmacy",
+        "lat": -37.8473339,
+        "lng": 144.6751297
+      }
+    ],
+    "pharmacy_count": 10
+  },
+  {
+    "index": 64,
+    "state": "VIC",
+    "lat": -38.035,
+    "lng": 145.3513,
+    "poi_name": "Berwick Medical Centre",
+    "rules": "Item 136",
+    "search_radius_km": 0.5,
+    "confidence": 95,
+    "pharmacies": [
+      {
+        "name": "Berwick Pharmacy",
+        "lat": -38.030813,
+        "lng": 145.34672
+      },
+      {
+        "name": "Casey Superclinic Pharmacy",
+        "lat": -38.0422524,
+        "lng": 145.3461395
+      },
+      {
+        "name": "Chemist Discount Centre Berwick",
+        "lat": -38.0298615,
+        "lng": 145.3472676
+      },
+      {
+        "name": "Chemist Warehouse Doncaster",
+        "lat": -37.7876245,
+        "lng": 145.132139
+      },
+      {
+        "name": "HPS Pharmacies - Berwick",
+        "lat": -38.0457609,
+        "lng": 145.3450356
+      },
+      {
+        "name": "The Berwick Village Vet",
+        "lat": -38.035136,
+        "lng": 145.34339
+      },
+      {
+        "name": "Beaconsfield Pharmacy",
+        "lat": -38.0454487,
+        "lng": 145.3681753
+      },
+      {
+        "name": "Chemist Warehouse The Avenue Cranbourne North",
+        "lat": -38.0865049,
+        "lng": 145.3168697
+      },
+      {
+        "name": "Eden Rise Pharmacy",
+        "lat": -38.0627806,
+        "lng": 145.3391148
+      },
+      {
+        "name": "Chemist Discount Centre Parkhill",
+        "lat": -38.0138812,
+        "lng": 145.3228016
+      }
+    ],
+    "pharmacy_count": 10
+  },
+  {
+    "index": 65,
+    "state": "VIC",
+    "lat": -37.6492,
+    "lng": 145.0259,
+    "poi_name": "IPN Medical Centre Epping",
+    "rules": "Item 136",
+    "search_radius_km": 0.5,
+    "confidence": 95,
+    "pharmacies": [
+      {
+        "name": "Chemist Warehouse Epping Homelife Centre",
+        "lat": -37.6537068,
+        "lng": 145.0229249
+      },
+      {
+        "name": "Priceline Pharmacy Epping",
+        "lat": -37.6537171,
+        "lng": 145.0191018
+      },
+      {
+        "name": "Epping Plaza Chemmart Pharmacy",
+        "lat": -37.6531314,
+        "lng": 145.0173016
+      },
+      {
+        "name": "Chemist Depot Epping",
+        "lat": -37.653067,
+        "lng": 145.017135
+      },
+      {
+        "name": "Chemist Warehouse",
+        "lat": -37.6553241,
+        "lng": 145.0168388
+      },
+      {
+        "name": "Chemist Warehouse Doncaster",
+        "lat": -37.7876245,
+        "lng": 145.132139
+      },
+      {
+        "name": "Greenbrook Pharmacy",
+        "lat": -37.6462432,
+        "lng": 145.0402289
+      },
+      {
+        "name": "Chemist Warehouse Epping VIC",
+        "lat": -37.6588223,
+        "lng": 145.0296541
+      },
+      {
+        "name": "Wombat Pharmacy Epping",
+        "lat": -37.6496275,
+        "lng": 145.009483
+      },
+      {
+        "name": "Direct Chemist Outlet Lalor",
+        "lat": -37.67278,
+        "lng": 145.016407
+      }
+    ],
+    "pharmacy_count": 10
+  },
+  {
+    "index": 66,
+    "state": "VIC",
+    "lat": -37.6006,
+    "lng": 144.9464,
+    "poi_name": "Craigieburn Medical Centre",
+    "rules": "Item 136",
+    "search_radius_km": 0.5,
+    "confidence": 95,
+    "pharmacies": [
+      {
+        "name": "Chemist Discount Centre Craigieburn - 24 Hour Pharmacy & Compounding",
+        "lat": -37.591926,
+        "lng": 144.914638
+      },
+      {
+        "name": "Super Saver Discount Chemist",
+        "lat": -37.5983461,
+        "lng": 144.9393205
+      },
+      {
+        "name": "Direct Chemist Outlet Craigieburn",
+        "lat": -37.5983461,
+        "lng": 144.9393205
+      },
+      {
+        "name": "Priceline Pharmacy Craigeburn",
+        "lat": -37.5979084,
+        "lng": 144.9401255
+      },
+      {
+        "name": "Chemist Warehouse Doncaster",
+        "lat": -37.7876245,
+        "lng": 145.132139
+      },
+      {
+        "name": "TerryWhite Chemmart Greenvale Lakes",
+        "lat": -37.6159325,
+        "lng": 144.9151686
+      },
+      {
+        "name": "Jackson Court Pharmacy",
+        "lat": -37.78888,
+        "lng": 145.148662
+      },
+      {
+        "name": "Pharmacy Select Aurora Village",
+        "lat": -37.6211799,
+        "lng": 145.0070992
+      },
+      {
+        "name": "Pharmacy Select Highlands",
+        "lat": -37.574919,
+        "lng": 144.9201647
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 73,
+    "state": "VIC",
+    "lat": -38.7020259,
+    "lng": 145.8204444,
+    "poi_name": "Venus Bay General Store",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 85,
+    "pharmacies": [],
+    "pharmacy_count": 0
+  },
+  {
+    "index": 74,
+    "state": "VIC",
+    "lat": -38.7004152,
+    "lng": 145.8680277,
+    "poi_name": "IGA",
+    "rules": "Item 131, Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 85,
+    "pharmacies": [
+      {
+        "name": "IGA Tarwin Lower",
+        "lat": -38.7003866,
+        "lng": 145.8681035
+      },
+      {
+        "name": "Australia Post - Tarwin Lower LPO",
+        "lat": -38.700836,
+        "lng": 145.8684554
+      },
+      {
+        "name": "Venus Bay Pharmacy",
+        "lat": -38.702067,
+        "lng": 145.820274
+      },
+      {
+        "name": "Amcal Chemist Fish Creek (plus general store)",
+        "lat": -38.6926033,
+        "lng": 146.0822147
+      },
+      {
+        "name": "Terry White Chemmart Inverloch",
+        "lat": -38.633764,
+        "lng": 145.72827
+      },
+      {
+        "name": "Phn Gippsland",
+        "lat": -38.6053608,
+        "lng": 145.5912919
+      }
+    ],
+    "pharmacy_count": 6
+  },
+  {
+    "index": 75,
+    "state": "VIC",
+    "lat": -38.5777296,
+    "lng": 146.0137354,
+    "poi_name": "IGA Local Grocer and Liquor",
+    "rules": "Item 131, Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 85,
+    "pharmacies": [
+      {
+        "name": "Meeniyan Pharmacy",
+        "lat": -38.5780227,
+        "lng": 146.0131497
+      },
+      {
+        "name": "IGA Local Grocer Meeniyan Plus Liquor",
+        "lat": -38.5777866,
+        "lng": 146.0137102
+      },
+      {
+        "name": "The Meeniyan Store & Cafe",
+        "lat": -38.5778222,
+        "lng": 146.0135607
+      },
+      {
+        "name": "Shell",
+        "lat": -38.5789437,
+        "lng": 146.01136
+      },
+      {
+        "name": "Amcal+ Pharmacy Leongatha - Nagels",
+        "lat": -38.476914,
+        "lng": 145.946267
+      },
+      {
+        "name": "Amcal Chemist Fish Creek (plus general store)",
+        "lat": -38.6926033,
+        "lng": 146.0822147
+      },
+      {
+        "name": "TerryWhite Chemmart Leongatha Compounding",
+        "lat": -38.4779367,
+        "lng": 145.9466348
+      }
+    ],
+    "pharmacy_count": 7
+  },
+  {
+    "index": 76,
+    "state": "VIC",
+    "lat": -36.6366404,
+    "lng": 142.63177845,
+    "poi_name": "Rupanyup Doctors Surgery",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 85,
+    "pharmacies": [
+      {
+        "name": "Rupanyup IGA",
+        "lat": -36.6308541,
+        "lng": 142.6307085
+      },
+      {
+        "name": "Murtoa Community Pharmacy",
+        "lat": -36.619818,
+        "lng": 142.470791
+      }
+    ],
+    "pharmacy_count": 2
+  },
+  {
+    "index": 77,
+    "state": "VIC",
+    "lat": -38.3098264,
+    "lng": 142.6416732,
+    "poi_name": "Kirrae Health Service",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 85,
+    "pharmacies": [
+      {
+        "name": "Direct Chemist Outlet North Point",
+        "lat": -38.3679172,
+        "lng": 142.4949815
+      },
+      {
+        "name": "Monaghan's Pharmacy",
+        "lat": -38.3800027,
+        "lng": 142.4804768
+      },
+      {
+        "name": "Direct Chemist Outlet Henna Street",
+        "lat": -38.3770629,
+        "lng": 142.4795705
+      },
+      {
+        "name": "Dennington Discount Chemist",
+        "lat": -38.3579532,
+        "lng": 142.4445807
+      },
+      {
+        "name": "Port Fairy Pharmacy",
+        "lat": -38.3848959,
+        "lng": 142.2370247
+      },
+      {
+        "name": "Soulsby & Struth Pharmacy",
+        "lat": -38.3839835,
+        "lng": 142.4832433
+      }
+    ],
+    "pharmacy_count": 6
+  },
+  {
+    "index": 78,
+    "state": "VIC",
+    "lat": -38.2420198,
+    "lng": 144.1748634,
+    "poi_name": "Moriac Medical Centre",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 85,
+    "pharmacies": [
+      {
+        "name": "Moriac Pharmacy",
+        "lat": -38.2420162,
+        "lng": 144.1748589
+      },
+      {
+        "name": "Pharmacy 4 Less Waurn Ponds",
+        "lat": -38.1984192,
+        "lng": 144.3188518
+      },
+      {
+        "name": "Direct Chemist Outlet Warralily",
+        "lat": -38.2300493,
+        "lng": 144.3724959
+      },
+      {
+        "name": "Pharmacy 4 Less Torquay",
+        "lat": -38.3081197,
+        "lng": 144.3298127
+      },
+      {
+        "name": "Direct Chemist Outlet - Charlemont Rise",
+        "lat": -38.214234,
+        "lng": 144.3589473
+      },
+      {
+        "name": "Slade Pharmacy Geelong",
+        "lat": -38.1937184,
+        "lng": 144.303206
+      },
+      {
+        "name": "TerryWhite Chemmart Armstrong Creek",
+        "lat": -38.2269723,
+        "lng": 144.339365
+      },
+      {
+        "name": "Coastal Compounding Pharmacy",
+        "lat": -38.3120774,
+        "lng": 144.3175986
+      }
+    ],
+    "pharmacy_count": 8
+  },
+  {
+    "index": 79,
+    "state": "VIC",
+    "lat": -36.6307452,
+    "lng": 142.6307295,
+    "poi_name": "Rupanyup Supermarket",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 85,
+    "pharmacies": [
+      {
+        "name": "Rupanyup IGA",
+        "lat": -36.6308541,
+        "lng": 142.6307085
+      },
+      {
+        "name": "Murtoa Community Pharmacy",
+        "lat": -36.619818,
+        "lng": 142.470791
+      }
+    ],
+    "pharmacy_count": 2
+  },
+  {
+    "index": 2,
+    "state": "TAS",
+    "lat": -42.8704,
+    "lng": 147.3579,
+    "poi_name": "Eastlands Shopping Centre",
+    "rules": "Item 132",
+    "search_radius_km": 0.5,
+    "confidence": 85,
+    "pharmacies": [
+      {
+        "name": "Chemist Warehouse Eastlands Shopping Centre",
+        "lat": -42.8665893,
+        "lng": 147.3684318
+      },
+      {
+        "name": "TerryWhite Chemmart Bellerive",
+        "lat": -42.8746536,
+        "lng": 147.3675801
+      },
+      {
+        "name": "Complete Care Pharmacy Rosny Park",
+        "lat": -42.8663007,
+        "lng": 147.3701171
+      },
+      {
+        "name": "TerryWhite Chemmart Rosny Park",
+        "lat": -42.8663026,
+        "lng": 147.370117
+      },
+      {
+        "name": "Consultant Pharmacy Services",
+        "lat": -42.8748075,
+        "lng": 147.3683411
+      },
+      {
+        "name": "Chemist Warehouse Rosny",
+        "lat": -42.864052,
+        "lng": 147.3712057
+      },
+      {
+        "name": "Rhys Jones Pharmacy",
+        "lat": -42.8668208,
+        "lng": 147.3708544
+      },
+      {
+        "name": "Chemist Warehouse Hobart City Centre",
+        "lat": -42.8821596,
+        "lng": 147.32891
+      },
+      {
+        "name": "Warrane Pharmacy",
+        "lat": -42.860154,
+        "lng": 147.3769654
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 4,
+    "state": "TAS",
+    "lat": -42.126071525,
+    "lng": 148.290322925,
+    "poi_name": "Coles Bay Convenience",
+    "rules": "Item 130, Item 131, Item 133, Item 134",
+    "search_radius_km": 1.5,
+    "confidence": 80,
+    "pharmacies": [
+      {
+        "name": "Swansea Pharmacy",
+        "lat": -42.123419,
+        "lng": 148.07467
+      }
+    ],
+    "pharmacy_count": 1
+  },
+  {
+    "index": 83,
+    "state": "VIC",
+    "lat": -38.3954714,
+    "lng": 142.628306,
+    "poi_name": "Allansford Cheese World",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Monaghan's Pharmacy",
+        "lat": -38.3800027,
+        "lng": 142.4804768
+      },
+      {
+        "name": "Soulsby & Struth Pharmacy",
+        "lat": -38.3839835,
+        "lng": 142.4832433
+      },
+      {
+        "name": "Chemist Warehouse Warrnambool",
+        "lat": -38.38174,
+        "lng": 142.5203641
+      },
+      {
+        "name": "Direct Chemist Outlet North Point",
+        "lat": -38.3679172,
+        "lng": 142.4949815
+      },
+      {
+        "name": "Blooms The Chemist Warrnambool",
+        "lat": -38.3814837,
+        "lng": 142.4836401
+      },
+      {
+        "name": "Direct Chemist Outlet Henna Street",
+        "lat": -38.3770629,
+        "lng": 142.4795705
+      },
+      {
+        "name": "Chemist Warehouse Warrnambool Central",
+        "lat": -38.3825073,
+        "lng": 142.4842192
+      },
+      {
+        "name": "Direct Chemist Outlet Target Warrnambool",
+        "lat": -38.3822757,
+        "lng": 142.4832481
+      }
+    ],
+    "pharmacy_count": 8
+  },
+  {
+    "index": 85,
+    "state": "VIC",
+    "lat": -37.965617,
+    "lng": 144.7066647,
+    "poi_name": "Wyndham Harbour Mini Mart",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Chemist Warehouse Doncaster",
+        "lat": -37.7876245,
+        "lng": 145.132139
+      },
+      {
+        "name": "Chemist Warehouse Hoppers Crossing",
+        "lat": -37.8693723,
+        "lng": 144.7333831
+      },
+      {
+        "name": "Direct Chemist Outlet Featherbrook Point Cook",
+        "lat": -37.897916,
+        "lng": 144.7271596
+      },
+      {
+        "name": "DISCOUNT ALFRED RD, WERRIBEE PHARMACY",
+        "lat": -37.9203891,
+        "lng": 144.6339176
+      },
+      {
+        "name": "Minh Ha Compounding Pharmacist Advice",
+        "lat": -37.900283,
+        "lng": 144.661098
+      },
+      {
+        "name": "Direct Chemist Outlet Hogans Corner",
+        "lat": -37.8615778,
+        "lng": 144.6872149
+      },
+      {
+        "name": "Werribee Discount Chemist",
+        "lat": -37.9016061,
+        "lng": 144.6611276
+      },
+      {
+        "name": "Heaths Road Pharmacy 777",
+        "lat": -37.8773447,
+        "lng": 144.6778935
+      },
+      {
+        "name": "Choice Pharmacy Mambourin",
+        "lat": -37.8950165,
+        "lng": 144.5994229
+      },
+      {
+        "name": "Priceline Pharmacy Sanctuary Lakes",
+        "lat": -37.8953338,
+        "lng": 144.7526675
+      },
+      {
+        "name": "GoodHealth Compounding Pharmacy",
+        "lat": -37.8508077,
+        "lng": 144.7059672
+      },
+      {
+        "name": "Manor Lakes Pharmacy Select",
+        "lat": -37.8763171,
+        "lng": 144.6142492
+      },
+      {
+        "name": "Direct Chemist Outlet Werribee Village",
+        "lat": -37.8888743,
+        "lng": 144.6612132
+      },
+      {
+        "name": "NeoCare Pharmacy Point Cook (previously PharmaSave)",
+        "lat": -37.8849478,
+        "lng": 144.733244
+      }
+    ],
+    "pharmacy_count": 14
+  },
+  {
+    "index": 86,
+    "state": "VIC",
+    "lat": -37.42274336666667,
+    "lng": 144.56392013333334,
+    "poi_name": "Macedon IGA plus Liquor",
+    "rules": "Item 130, Item 133",
+    "search_radius_km": 1.5,
+    "confidence": 75,
+    "pharmacies": [],
+    "pharmacy_count": 0
+  },
+  {
+    "index": 5,
+    "state": "TAS",
+    "lat": -41.456382,
+    "lng": 147.17792,
+    "poi_name": "Norwood Medical Centre",
+    "rules": "Item 130",
+    "search_radius_km": 1.5,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Pharmacy + Co Kings Meadows",
+        "lat": -41.4669118,
+        "lng": 147.1602955
+      },
+      {
+        "name": "Slade Pharmacy Kings Meadows",
+        "lat": -41.465197,
+        "lng": 147.1589568
+      },
+      {
+        "name": "Meadow Mews Pharmacy",
+        "lat": -41.4668754,
+        "lng": 147.1587126
+      },
+      {
+        "name": "Amcal Pharmacy Newstead",
+        "lat": -41.4414509,
+        "lng": 147.1610529
+      },
+      {
+        "name": "Chemist Warehouse South Launceston",
+        "lat": -41.4432758,
+        "lng": 147.1381926
+      },
+      {
+        "name": "Chemist Warehouse Launceston",
+        "lat": -41.4389707,
+        "lng": 147.1381324
+      },
+      {
+        "name": "Chemist Warehouse Racecourse Launceston",
+        "lat": -41.4296398,
+        "lng": 147.1466333
+      },
+      {
+        "name": "Health Hub Capital Chemist",
+        "lat": -41.4485744,
+        "lng": 147.1403196
+      },
+      {
+        "name": "Fitzpatrick's Pharmacy",
+        "lat": -41.4421686,
+        "lng": 147.1410028
+      },
+      {
+        "name": "TerryWhite Chemmart Launceston",
+        "lat": -41.4343795,
+        "lng": 147.1429974
+      },
+      {
+        "name": "Complete Care Pharmacy Health Hub Launceston",
+        "lat": -41.4482753,
+        "lng": 147.1400835
+      },
+      {
+        "name": "Summerhill Pharmacy",
+        "lat": -41.4665445,
+        "lng": 147.1299029
+      },
+      {
+        "name": "Olde Tudor Pharmacy",
+        "lat": -41.4698818,
+        "lng": 147.1377052
+      }
+    ],
+    "pharmacy_count": 13
+  },
+  {
+    "index": 6,
+    "state": "TAS",
+    "lat": -41.4547332,
+    "lng": 147.1761331,
+    "poi_name": "Norwood IGA",
+    "rules": "Item 130, Item 133",
+    "search_radius_km": 1.5,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Pharmacy + Co Kings Meadows",
+        "lat": -41.4669118,
+        "lng": 147.1602955
+      },
+      {
+        "name": "Slade Pharmacy Kings Meadows",
+        "lat": -41.465197,
+        "lng": 147.1589568
+      },
+      {
+        "name": "Meadow Mews Pharmacy",
+        "lat": -41.4668754,
+        "lng": 147.1587126
+      },
+      {
+        "name": "Amcal Pharmacy Newstead",
+        "lat": -41.4414509,
+        "lng": 147.1610529
+      },
+      {
+        "name": "Chemist Warehouse South Launceston",
+        "lat": -41.4432758,
+        "lng": 147.1381926
+      },
+      {
+        "name": "Chemist Warehouse Launceston",
+        "lat": -41.4389707,
+        "lng": 147.1381324
+      },
+      {
+        "name": "Chemist Warehouse Racecourse Launceston",
+        "lat": -41.4296398,
+        "lng": 147.1466333
+      },
+      {
+        "name": "Health Hub Capital Chemist",
+        "lat": -41.4485744,
+        "lng": 147.1403196
+      },
+      {
+        "name": "TerryWhite Chemmart Launceston",
+        "lat": -41.4343795,
+        "lng": 147.1429974
+      },
+      {
+        "name": "Fitzpatrick's Pharmacy",
+        "lat": -41.4421686,
+        "lng": 147.1410028
+      },
+      {
+        "name": "Complete Care Pharmacy Health Hub Launceston",
+        "lat": -41.4482753,
+        "lng": 147.1400835
+      },
+      {
+        "name": "Olde Tudor Pharmacy",
+        "lat": -41.4698818,
+        "lng": 147.1377052
+      },
+      {
+        "name": "Summerhill Pharmacy",
+        "lat": -41.4665445,
+        "lng": 147.1299029
+      }
+    ],
+    "pharmacy_count": 13
+  },
+  {
+    "index": 87,
+    "state": "VIC",
+    "lat": -37.85772795,
+    "lng": 144.88246005,
+    "poi_name": "Woolworths",
+    "rules": "Item 133, Item 134",
+    "search_radius_km": 0.5,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Chemist Warehouse Doncaster",
+        "lat": -37.7876245,
+        "lng": 145.132139
+      },
+      {
+        "name": "Priceline Pharmacy",
+        "lat": -37.8579733,
+        "lng": 144.8976901
+      },
+      {
+        "name": "National Pharmacies Williamstown",
+        "lat": -37.8576342,
+        "lng": 144.8979544
+      },
+      {
+        "name": "Carnovale Pharmacy",
+        "lat": -37.8129963,
+        "lng": 144.8837912
+      },
+      {
+        "name": "Kofoed Pharmacy",
+        "lat": -37.843747,
+        "lng": 144.884404
+      },
+      {
+        "name": "Newport Discount Pharmacy",
+        "lat": -37.8425012,
+        "lng": 144.8811966
+      },
+      {
+        "name": "HealthSmart Pharmacy VCCC",
+        "lat": -37.799773,
+        "lng": 144.956478
+      },
+      {
+        "name": "Ramsay Pharmacy Altona North",
+        "lat": -37.8365536,
+        "lng": 144.8634831
+      },
+      {
+        "name": "Better U Pharmacy",
+        "lat": -37.8294773,
+        "lng": 144.8846789
+      },
+      {
+        "name": "Pharmacy 4 Less Altona North",
+        "lat": -37.8429005,
+        "lng": 144.8443408
+      }
+    ],
+    "pharmacy_count": 10
+  },
+  {
+    "index": 88,
+    "state": "VIC",
+    "lat": -37.7976134,
+    "lng": 144.8061424,
+    "poi_name": "Coles",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Glengala Road Pharmacy",
+        "lat": -37.7903269,
+        "lng": 144.8175124
+      },
+      {
+        "name": "Sunshine West Pharmacy & Lotto",
+        "lat": -37.7906075,
+        "lng": 144.8172272
+      },
+      {
+        "name": "Chemist Warehouse Doncaster",
+        "lat": -37.7876245,
+        "lng": 145.132139
+      },
+      {
+        "name": "Fitzgerald Rd Pharmacy",
+        "lat": -37.791166,
+        "lng": 144.790812
+      },
+      {
+        "name": "Carnovale Pharmacy",
+        "lat": -37.8129963,
+        "lng": 144.8837912
+      },
+      {
+        "name": "Total Health Pharmacy - Sunshine",
+        "lat": -37.7857084,
+        "lng": 144.8324763
+      },
+      {
+        "name": "Hampshire Pharmacy Compounding",
+        "lat": -37.783368,
+        "lng": 144.832726
+      },
+      {
+        "name": "Devonshire Pharmacy",
+        "lat": -37.785126,
+        "lng": 144.832896
+      },
+      {
+        "name": "Chemist Warehouse Sunshine",
+        "lat": -37.7840972,
+        "lng": 144.8325892
+      },
+      {
+        "name": "TerryWhite Chemmart Sunshine",
+        "lat": -37.7823279,
+        "lng": 144.8335716
+      }
+    ],
+    "pharmacy_count": 10
+  },
+  {
+    "index": 89,
+    "state": "VIC",
+    "lat": -37.6278019,
+    "lng": 145.0274063,
+    "poi_name": "Woolworths",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Chemist Discount Centre Craigieburn - 24 Hour Pharmacy & Compounding",
+        "lat": -37.591926,
+        "lng": 144.914638
+      },
+      {
+        "name": "Pharmacy Select Lyndarum",
+        "lat": -37.628097,
+        "lng": 145.027019
+      },
+      {
+        "name": "Chemist Warehouse Doncaster",
+        "lat": -37.7876245,
+        "lng": 145.132139
+      },
+      {
+        "name": "Pharmacy Select Aurora Village",
+        "lat": -37.6211799,
+        "lng": 145.0070992
+      },
+      {
+        "name": "Greenbrook Pharmacy",
+        "lat": -37.6462432,
+        "lng": 145.0402289
+      },
+      {
+        "name": "Chemist Warehouse Epping Homelife Centre",
+        "lat": -37.6537068,
+        "lng": 145.0229249
+      },
+      {
+        "name": "Chemist Depot Epping",
+        "lat": -37.653067,
+        "lng": 145.017135
+      },
+      {
+        "name": "Priceline Pharmacy Epping",
+        "lat": -37.6537171,
+        "lng": 145.0191018
+      },
+      {
+        "name": "Epping Plaza Chemmart Pharmacy",
+        "lat": -37.6531314,
+        "lng": 145.0173016
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 90,
+    "state": "VIC",
+    "lat": -37.8311018,
+    "lng": 144.9307435,
+    "poi_name": "Woolworths",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Port Melbourne Pharmacy",
+        "lat": -37.8387939,
+        "lng": 144.9418846
+      },
+      {
+        "name": "Beacon Cove Pharmacy",
+        "lat": -37.8364795,
+        "lng": 144.9198178
+      },
+      {
+        "name": "Chemist Warehouse Port Melbourne",
+        "lat": -37.8370936,
+        "lng": 144.943488
+      },
+      {
+        "name": "Pharmacy Own",
+        "lat": -37.8317042,
+        "lng": 144.9346435
+      },
+      {
+        "name": "Bay Street Port Melbourne Pharmacy",
+        "lat": -37.8360933,
+        "lng": 144.944106
+      },
+      {
+        "name": "Priceline",
+        "lat": -37.8396288,
+        "lng": 144.9416671
+      },
+      {
+        "name": "Victoria Harbour Pharmacy",
+        "lat": -37.820482,
+        "lng": 144.9441771
+      },
+      {
+        "name": "Port Bay Street Pharmacy",
+        "lat": -37.8416237,
+        "lng": 144.939223
+      },
+      {
+        "name": "The saint pharmacy skilds",
+        "lat": -37.8348908,
+        "lng": 144.9469004
+      },
+      {
+        "name": "Terry White Chemmart South Melbourne",
+        "lat": -37.8325042,
+        "lng": 144.9605708
+      }
+    ],
+    "pharmacy_count": 10
+  },
+  {
+    "index": 91,
+    "state": "VIC",
+    "lat": -37.80008875,
+    "lng": 144.9953537,
+    "poi_name": "Woolworths Metro",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Chemist Warehouse Collingwood",
+        "lat": -37.801744,
+        "lng": 144.98401
+      },
+      {
+        "name": "Newton & Leung Pharmacy",
+        "lat": -37.8011254,
+        "lng": 144.9839909
+      },
+      {
+        "name": "Chemist Warehouse Fitzroy Smith Street",
+        "lat": -37.7966402,
+        "lng": 144.98452
+      },
+      {
+        "name": "Smith Street Soul Pattinson Chemist",
+        "lat": -37.8042295,
+        "lng": 144.9836129
+      },
+      {
+        "name": "Homoeopathic Supplies",
+        "lat": -37.8000425,
+        "lng": 144.9935204
+      },
+      {
+        "name": "Chemist Warehouse Abbotsford The Hive",
+        "lat": -37.8093711,
+        "lng": 144.9956606
+      },
+      {
+        "name": "cohealth Collingwood",
+        "lat": -37.798982,
+        "lng": 144.9927476
+      },
+      {
+        "name": "Clifton Hill Pharmacy",
+        "lat": -37.788114,
+        "lng": 144.991005
+      },
+      {
+        "name": "Slade Pharmacy East Melbourne - Victoria Parade",
+        "lat": -37.8094213,
+        "lng": 144.9824819
+      },
+      {
+        "name": "Richmond Pharmacy",
+        "lat": -37.8106533,
+        "lng": 144.9993683
+      }
+    ],
+    "pharmacy_count": 10
+  },
+  {
+    "index": 92,
+    "state": "VIC",
+    "lat": -37.5997464,
+    "lng": 143.8398507,
+    "poi_name": "Coles Sebastopol",
+    "rules": "Item 133, Item 134",
+    "search_radius_km": 0.5,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Chemist Warehouse Sebastopol",
+        "lat": -37.591485,
+        "lng": 143.8406884
+      },
+      {
+        "name": "Sebastopol UFS Pharmacy",
+        "lat": -37.585337,
+        "lng": 143.8412804
+      },
+      {
+        "name": "Sturt St UFS Pharmacy",
+        "lat": -37.561374,
+        "lng": 143.8497244
+      },
+      {
+        "name": "Direct Chemist Outlet Delacombe",
+        "lat": -37.5918482,
+        "lng": 143.8044622
+      },
+      {
+        "name": "Delacombe UFS Pharmacy",
+        "lat": -37.5710993,
+        "lng": 143.8254777
+      },
+      {
+        "name": "Bridge Mall UFS Pharmacy",
+        "lat": -37.5625421,
+        "lng": 143.8612296
+      },
+      {
+        "name": "Mt Clear UFS Pharmacy",
+        "lat": -37.6023931,
+        "lng": 143.867834
+      },
+      {
+        "name": "Eureka Pharmacy",
+        "lat": -37.5639557,
+        "lng": 143.8584867
+      },
+      {
+        "name": "Sturt St West UFS Pharmacy",
+        "lat": -37.5601594,
+        "lng": 143.8451988
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 93,
+    "state": "VIC",
+    "lat": -36.3591735,
+    "lng": 146.3169075,
+    "poi_name": "Coles",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Ramsay Pharmacy Ovens Street",
+        "lat": -36.3542981,
+        "lng": 146.3244753
+      },
+      {
+        "name": "Ramsay Pharmacy Wangaratta",
+        "lat": -36.3558036,
+        "lng": 146.3253785
+      },
+      {
+        "name": "Curtis Adams Pharmacy",
+        "lat": -36.3548105,
+        "lng": 146.3263453
+      },
+      {
+        "name": "Robertson's Pharmacy",
+        "lat": -36.3527915,
+        "lng": 146.3050442
+      },
+      {
+        "name": "Northeast Health Wangaratta (NHW)",
+        "lat": -36.3543662,
+        "lng": 146.3142563
+      },
+      {
+        "name": "Chemist Warehouse Wangaratta DC",
+        "lat": -36.3736709,
+        "lng": 146.2883656
+      },
+      {
+        "name": "Milawa Pharmacy",
+        "lat": -36.4492589,
+        "lng": 146.4326805
+      }
+    ],
+    "pharmacy_count": 7
+  },
+  {
+    "index": 94,
+    "state": "VIC",
+    "lat": -36.7576168,
+    "lng": 144.2962722,
+    "poi_name": "Coles",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Bendigo UFS Pharmacies Bridge Street",
+        "lat": -36.7516822,
+        "lng": 144.2839441
+      },
+      {
+        "name": "Emily Roberts Pharmacy",
+        "lat": -36.7646917,
+        "lng": 144.2981758
+      },
+      {
+        "name": "Chemist Warehouse Bendigo",
+        "lat": -36.7630662,
+        "lng": 144.2827791
+      },
+      {
+        "name": "Bendigo UFS Pharmacies View Street - After Hours Pharmacy",
+        "lat": -36.7555311,
+        "lng": 144.2740207
+      },
+      {
+        "name": "Terrywhite Chemmart Bendigo",
+        "lat": -36.7489365,
+        "lng": 144.2819714
+      },
+      {
+        "name": "Chemist Discount Centre Bendigo",
+        "lat": -36.7606847,
+        "lng": 144.2815006
+      },
+      {
+        "name": "Priceline Pharmacy Bendigo Market Place",
+        "lat": -36.765604,
+        "lng": 144.280856
+      },
+      {
+        "name": "Bendigo UFS Pharmacies Hargreaves Street",
+        "lat": -36.7615868,
+        "lng": 144.2783502
+      },
+      {
+        "name": "The Arnold Street Pharmacy",
+        "lat": -36.7481306,
+        "lng": 144.2808764
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 95,
+    "state": "VIC",
+    "lat": -38.1092936,
+    "lng": 145.1265883,
+    "poi_name": "Woolworths",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Pharmasave Seaford Pharmacy",
+        "lat": -38.1025475,
+        "lng": 145.1262336
+      },
+      {
+        "name": "Chemist Warehouse Doncaster",
+        "lat": -37.7876245,
+        "lng": 145.132139
+      },
+      {
+        "name": "Direct Chemist Outlet Belvedere Park",
+        "lat": -38.1124012,
+        "lng": 145.1570297
+      },
+      {
+        "name": "Pines Forest Pharmacy",
+        "lat": -38.1232035,
+        "lng": 145.1478652
+      },
+      {
+        "name": "healthSAVE Carrum Pharmacy",
+        "lat": -38.0761416,
+        "lng": 145.1232976
+      },
+      {
+        "name": "Carruthers Pharmacy",
+        "lat": -38.075071,
+        "lng": 145.121781
+      },
+      {
+        "name": "Amcal+ Frankston",
+        "lat": -38.1468086,
+        "lng": 145.1246709
+      },
+      {
+        "name": "Chemist Discount Centre Patterson Lakes",
+        "lat": -38.0681243,
+        "lng": 145.1429933
+      },
+      {
+        "name": "Nova Pharmacy Carrum Downs",
+        "lat": -38.1007467,
+        "lng": 145.1858926
+      },
+      {
+        "name": "Chemist Warehouse Bayside SC Frankston",
+        "lat": -38.1413332,
+        "lng": 145.1238967
+      }
+    ],
+    "pharmacy_count": 10
+  },
+  {
+    "index": 96,
+    "state": "VIC",
+    "lat": -37.6296479,
+    "lng": 145.0794343,
+    "poi_name": "Coles",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "TerryWhite Chemmart South Morang",
+        "lat": -37.6369862,
+        "lng": 145.0681889
+      },
+      {
+        "name": "Chemist Warehouse Doncaster",
+        "lat": -37.7876245,
+        "lng": 145.132139
+      },
+      {
+        "name": "Amcal Westfield Plenty Valley",
+        "lat": -37.6503034,
+        "lng": 145.0698181
+      },
+      {
+        "name": "Chemist Warehouse Westfield Plenty Valley",
+        "lat": -37.6512028,
+        "lng": 145.0733028
+      },
+      {
+        "name": "Chemist Warehouse Central South Morang SC",
+        "lat": -37.6490133,
+        "lng": 145.0741246
+      },
+      {
+        "name": "Fullife Pharmacy Mill Park",
+        "lat": -37.6661545,
+        "lng": 145.0603967
+      },
+      {
+        "name": "Priceline Plenty Valley",
+        "lat": -37.6510868,
+        "lng": 145.0708754
+      },
+      {
+        "name": "Fullife Pharmacy Rivergum",
+        "lat": -37.6569149,
+        "lng": 145.0810326
+      },
+      {
+        "name": "Fullife Pharmacy Superclinic",
+        "lat": -37.6620076,
+        "lng": 145.0529121
+      },
+      {
+        "name": "Greenbrook Pharmacy",
+        "lat": -37.6462432,
+        "lng": 145.0402289
+      }
+    ],
+    "pharmacy_count": 10
+  },
+  {
+    "index": 97,
+    "state": "VIC",
+    "lat": -37.9276332,
+    "lng": 145.4452677,
+    "poi_name": "Woolworths",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Emerald Wellness Pharmacy",
+        "lat": -37.9323267,
+        "lng": 145.4412184
+      },
+      {
+        "name": "Emerald Village Pharmacy",
+        "lat": -37.932892,
+        "lng": 145.440426
+      },
+      {
+        "name": "Chemist Warehouse Doncaster",
+        "lat": -37.7876245,
+        "lng": 145.132139
+      },
+      {
+        "name": "Emerald Veterinary Clinic",
+        "lat": -37.9295381,
+        "lng": 145.4451206
+      },
+      {
+        "name": "Cockatoo Pharmacy",
+        "lat": -37.9360349,
+        "lng": 145.4922633
+      },
+      {
+        "name": "Jackson Court Pharmacy",
+        "lat": -37.78888,
+        "lng": 145.148662
+      },
+      {
+        "name": "Monbulk Pharmacy",
+        "lat": -37.8744435,
+        "lng": 145.4065528
+      },
+      {
+        "name": "Doncaster Pharmacy",
+        "lat": -37.7892242,
+        "lng": 145.1586575
+      },
+      {
+        "name": "Amcal Dontown",
+        "lat": -37.7862882,
+        "lng": 145.1261694
+      },
+      {
+        "name": "Chemist Warehouse Tunstall Square",
+        "lat": -37.7907055,
+        "lng": 145.1720249
+      }
+    ],
+    "pharmacy_count": 10
+  },
+  {
+    "index": 84,
+    "state": "VIC",
+    "lat": -38.6657911,
+    "lng": 146.4369242,
+    "poi_name": "Welshpool Supermarket",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Toora Pharmacy",
+        "lat": -38.6639813,
+        "lng": 146.3240227
+      },
+      {
+        "name": "Amcal Chemist Fish Creek (plus general store)",
+        "lat": -38.6926033,
+        "lng": 146.0822147
+      }
+    ],
+    "pharmacy_count": 2
+  },
+  {
+    "index": 98,
+    "state": "VIC",
+    "lat": -37.8323252,
+    "lng": 144.9708404,
+    "poi_name": "Woolworths Metro",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "Melbourne Boulevard Pharmacy",
+        "lat": -37.8359339,
+        "lng": 144.9758861
+      },
+      {
+        "name": "Chemist Warehouse South Melbourne",
+        "lat": -37.8338023,
+        "lng": 144.9606628
+      },
+      {
+        "name": "Chemist Warehouse Southbank",
+        "lat": -37.8287748,
+        "lng": 144.965485
+      },
+      {
+        "name": "Royal South Melbourne Pharmacy",
+        "lat": -37.8332076,
+        "lng": 144.9604679
+      },
+      {
+        "name": "Terry White Chemmart South Melbourne",
+        "lat": -37.8325042,
+        "lng": 144.9605708
+      },
+      {
+        "name": "La Feuille Pharmacy",
+        "lat": -37.833258,
+        "lng": 144.960973
+      },
+      {
+        "name": "Botanical Pharmacy South Yarra",
+        "lat": -37.83422,
+        "lng": 144.9822177
+      },
+      {
+        "name": "South Melbourne Pharmacy",
+        "lat": -37.8308903,
+        "lng": 144.957144
+      },
+      {
+        "name": "RAYS Wellness Melbourne | Specialty Wellness & Lifestyle Pharmacy",
+        "lat": -37.8297618,
+        "lng": 144.9593355
+      },
+      {
+        "name": "South Melbourne Compounding",
+        "lat": -37.8306704,
+        "lng": 144.9568911
+      }
+    ],
+    "pharmacy_count": 10
+  },
+  {
+    "index": 99,
+    "state": "VIC",
+    "lat": -36.7669138,
+    "lng": 144.2651965,
+    "poi_name": "Woolworths",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 75,
+    "pharmacies": [
+      {
+        "name": "PharmaSave Golden Square",
+        "lat": -36.7710919,
+        "lng": 144.2618538
+      },
+      {
+        "name": "Bendigo UFS Pharmacies View Street - After Hours Pharmacy",
+        "lat": -36.7555311,
+        "lng": 144.2740207
+      },
+      {
+        "name": "Bendigo UFS Pharmacies Hargreaves Street",
+        "lat": -36.7615868,
+        "lng": 144.2783502
+      },
+      {
+        "name": "Chemist Warehouse Bendigo",
+        "lat": -36.7630662,
+        "lng": 144.2827791
+      },
+      {
+        "name": "Priceline Pharmacy Bendigo Market Place",
+        "lat": -36.765604,
+        "lng": 144.280856
+      },
+      {
+        "name": "Chemist Discount Centre Bendigo",
+        "lat": -36.7606847,
+        "lng": 144.2815006
+      },
+      {
+        "name": "Bendigo UFS Pharmacies Bridge Street",
+        "lat": -36.7516822,
+        "lng": 144.2839441
+      },
+      {
+        "name": "Chemist Warehouse Long Gully",
+        "lat": -36.7458588,
+        "lng": 144.2583308
+      },
+      {
+        "name": "Vanstan's Pharmacy Bendigo",
+        "lat": -36.7752151,
+        "lng": 144.2923693
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 188,
+    "state": "VIC",
+    "lat": -37.5636617,
+    "lng": 149.151655,
+    "poi_name": "Cann Valley Bush Nursing Centre",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [],
+    "pharmacy_count": 0
+  },
+  {
+    "index": 189,
+    "state": "VIC",
+    "lat": -37.5663456,
+    "lng": 149.1514288,
+    "poi_name": "Cann River Friendly Grocer",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [],
+    "pharmacy_count": 0
+  },
+  {
+    "index": 190,
+    "state": "VIC",
+    "lat": -37.558366,
+    "lng": 149.7534583,
+    "poi_name": "Mallacoota Medical Centre",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [],
+    "pharmacy_count": 0
+  },
+  {
+    "index": 191,
+    "state": "VIC",
+    "lat": -37.4614389,
+    "lng": 147.2508422,
+    "poi_name": "Dargo General Store",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [
+      {
+        "name": "Dargo General Store",
+        "lat": -37.4613889,
+        "lng": 147.2508333
+      }
+    ],
+    "pharmacy_count": 1
+  },
+  {
+    "index": 192,
+    "state": "VIC",
+    "lat": -37.248503799999995,
+    "lng": 141.8410323,
+    "poi_name": "Balmoral Community Store",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [],
+    "pharmacy_count": 0
+  },
+  {
+    "index": 193,
+    "state": "VIC",
+    "lat": -37.7123253,
+    "lng": 142.8392691,
+    "poi_name": "Lake Bolac Licensed Supermarket",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [
+      {
+        "name": "Trident Pharmacy Willaura",
+        "lat": -37.5466473,
+        "lng": 142.7413084
+      }
+    ],
+    "pharmacy_count": 1
+  },
+  {
+    "index": 194,
+    "state": "VIC",
+    "lat": -37.9242465,
+    "lng": 141.2754502,
+    "poi_name": "Dartmoor & District Bush Nursing Centre",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [
+      {
+        "name": "South Portland Pharmacy",
+        "lat": -38.359383,
+        "lng": 141.615861
+      }
+    ],
+    "pharmacy_count": 1
+  },
+  {
+    "index": 195,
+    "state": "VIC",
+    "lat": -36.381404,
+    "lng": 141.2460378,
+    "poi_name": "Kaniava Hospital",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [],
+    "pharmacy_count": 0
+  },
+  {
+    "index": 196,
+    "state": "VIC",
+    "lat": -36.6095617,
+    "lng": 143.2468538,
+    "poi_name": "East Wimmera Health Service St Arnaud Campus",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [],
+    "pharmacy_count": 0
+  },
+  {
+    "index": 197,
+    "state": "VIC",
+    "lat": -36.670831,
+    "lng": 142.8698477,
+    "poi_name": "Marnoo General Store",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [],
+    "pharmacy_count": 0
+  },
+  {
+    "index": 198,
+    "state": "VIC",
+    "lat": -37.5479311,
+    "lng": 142.7398878,
+    "poi_name": "Willaura Supermarket",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [
+      {
+        "name": "Trident Pharmacy Willaura",
+        "lat": -37.5466473,
+        "lng": 142.7413084
+      },
+      {
+        "name": "UFS Pharmacies",
+        "lat": -37.5466473,
+        "lng": 142.7413084
+      }
+    ],
+    "pharmacy_count": 2
+  },
+  {
+    "index": 199,
+    "state": "VIC",
+    "lat": -37.1461904,
+    "lng": 146.4489816,
+    "poi_name": "Village Grocer",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [
+      {
+        "name": "Mansfield Pharmacy (Cathy Henry & Adam Hardi)",
+        "lat": -37.0521308,
+        "lng": 146.0905665
+      }
+    ],
+    "pharmacy_count": 1
+  },
+  {
+    "index": 200,
+    "state": "VIC",
+    "lat": -37.1460735,
+    "lng": 146.4453481,
+    "poi_name": "Mt Buller Medical Centre",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [
+      {
+        "name": "Mansfield Pharmacy (Cathy Henry & Adam Hardi)",
+        "lat": -37.0521308,
+        "lng": 146.0905665
+      }
+    ],
+    "pharmacy_count": 1
+  },
+  {
+    "index": 20,
+    "state": "TAS",
+    "lat": -42.48649965,
+    "lng": 146.7170984,
+    "poi_name": "Central Highlands General Practice",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [
+      {
+        "name": "Blooms The Chemist New Norfolk",
+        "lat": -42.7811461,
+        "lng": 147.0615875
+      },
+      {
+        "name": "Central Highlands Pharmacy",
+        "lat": -42.3841771,
+        "lng": 147.0064671
+      }
+    ],
+    "pharmacy_count": 2
+  },
+  {
+    "index": 21,
+    "state": "TAS",
+    "lat": -40.048726,
+    "lng": 144.0576882,
+    "poi_name": "Grassy Supermarket",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [],
+    "pharmacy_count": 0
+  },
+  {
+    "index": 22,
+    "state": "TAS",
+    "lat": -42.1224456,
+    "lng": 148.2845945,
+    "poi_name": "Supermarket",
+    "rules": "Item 131",
+    "search_radius_km": 1.0,
+    "confidence": 70,
+    "pharmacies": [
+      {
+        "name": "Coles Bay Convenience - General Store And Post Office",
+        "lat": -42.126171,
+        "lng": 148.290294
+      },
+      {
+        "name": "Swansea Pharmacy",
+        "lat": -42.123419,
+        "lng": 148.07467
+      }
+    ],
+    "pharmacy_count": 2
+  },
+  {
+    "index": 23,
+    "state": "TAS",
+    "lat": -40.7625163,
+    "lng": 145.2950685,
+    "poi_name": "Stanley IGA",
+    "rules": "Item 131, Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 70,
+    "pharmacies": [
+      {
+        "name": "Good Shepherd Pharmacy",
+        "lat": -40.7618828,
+        "lng": 145.2960922
+      },
+      {
+        "name": "TerryWhite Chemmart Smithton",
+        "lat": -40.839557,
+        "lng": 145.1248269
+      }
+    ],
+    "pharmacy_count": 2
+  },
+  {
+    "index": 24,
+    "state": "TAS",
+    "lat": -42.781,
+    "lng": 147.2487,
+    "poi_name": "Claremont Village Shopping Centre",
+    "rules": "Item 134",
+    "search_radius_km": 0.5,
+    "confidence": 70,
+    "pharmacies": [
+      {
+        "name": "Claremont Pharmacy",
+        "lat": -42.791228,
+        "lng": 147.2542441
+      },
+      {
+        "name": "Advantage Pharmacy Claremont Plaza",
+        "lat": -42.7908634,
+        "lng": 147.255125
+      },
+      {
+        "name": "Priceline Pharmacy Bridgewater",
+        "lat": -42.7384407,
+        "lng": 147.2449361
+      },
+      {
+        "name": "Chigwell Pharmacy",
+        "lat": -42.8113702,
+        "lng": 147.2418028
+      },
+      {
+        "name": "Guardian Pharmacy Montrose - Rosetta",
+        "lat": -42.8255276,
+        "lng": 147.2657797
+      },
+      {
+        "name": "Priceline Pharmacy Glenorchy",
+        "lat": -42.8335174,
+        "lng": 147.2781136
+      },
+      {
+        "name": "Blooms The Chemist Glenorchy",
+        "lat": -42.8346398,
+        "lng": 147.2763972
+      },
+      {
+        "name": "Brighton Pharmacy",
+        "lat": -42.6986299,
+        "lng": 147.2527482
+      },
+      {
+        "name": "North Hobart Pharmacy",
+        "lat": -42.8740373,
+        "lng": 147.3162273
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 25,
+    "state": "TAS",
+    "lat": -42.743,
+    "lng": 147.2309,
+    "poi_name": "Bridgewater Medical Centre",
+    "rules": "Item 136",
+    "search_radius_km": 0.5,
+    "confidence": 70,
+    "pharmacies": [
+      {
+        "name": "Priceline Pharmacy Bridgewater",
+        "lat": -42.7384407,
+        "lng": 147.2449361
+      },
+      {
+        "name": "Brighton Pharmacy",
+        "lat": -42.6986299,
+        "lng": 147.2527482
+      },
+      {
+        "name": "Claremont Pharmacy",
+        "lat": -42.791228,
+        "lng": 147.2542441
+      },
+      {
+        "name": "Advantage Pharmacy Claremont Plaza",
+        "lat": -42.7908634,
+        "lng": 147.255125
+      },
+      {
+        "name": "Chigwell Pharmacy",
+        "lat": -42.8113702,
+        "lng": 147.2418028
+      },
+      {
+        "name": "Guardian Pharmacy Montrose - Rosetta",
+        "lat": -42.8255276,
+        "lng": 147.2657797
+      },
+      {
+        "name": "Priceline Pharmacy Glenorchy",
+        "lat": -42.8335174,
+        "lng": 147.2781136
+      },
+      {
+        "name": "Blooms The Chemist Glenorchy",
+        "lat": -42.8346398,
+        "lng": 147.2763972
+      },
+      {
+        "name": "Amcal Pharmacy Derwent Park",
+        "lat": -42.8365983,
+        "lng": 147.2871926
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 26,
+    "state": "TAS",
+    "lat": -42.8463,
+    "lng": 147.3082,
+    "poi_name": "Moonah Medical Centre",
+    "rules": "Item 136",
+    "search_radius_km": 0.5,
+    "confidence": 70,
+    "pharmacies": [
+      {
+        "name": "Chemist Warehouse Moonah",
+        "lat": -42.8470286,
+        "lng": 147.2950362
+      },
+      {
+        "name": "Friendly Care Advantage Pharmacy Moonah",
+        "lat": -42.8459323,
+        "lng": 147.2955984
+      },
+      {
+        "name": "Symbion Pharmacy Services Pty Ltd",
+        "lat": -42.8486073,
+        "lng": 147.3051688
+      },
+      {
+        "name": "Chemist Warehouse New Town TAS",
+        "lat": -42.8559824,
+        "lng": 147.3058762
+      },
+      {
+        "name": "Amcal Pharmacy Derwent Park",
+        "lat": -42.8365983,
+        "lng": 147.2871926
+      },
+      {
+        "name": "Chemist Warehouse Glenorchy",
+        "lat": -42.8344303,
+        "lng": 147.2776141
+      },
+      {
+        "name": "Friendly Care Advantage Pharmacy New Town",
+        "lat": -42.8598952,
+        "lng": 147.3067726
+      },
+      {
+        "name": "Slade Pharmacy New Town",
+        "lat": -42.866942,
+        "lng": 147.3109665
+      },
+      {
+        "name": "Guardian Pharmacy Lenah Valley - Augusta Rd",
+        "lat": -42.8655966,
+        "lng": 147.2952524
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 27,
+    "state": "TAS",
+    "lat": -42.871,
+    "lng": 147.362,
+    "poi_name": "Rosny Park Family Medical Centre",
+    "rules": "Item 136",
+    "search_radius_km": 0.5,
+    "confidence": 70,
+    "pharmacies": [
+      {
+        "name": "Chemist Warehouse Eastlands Shopping Centre",
+        "lat": -42.8665893,
+        "lng": 147.3684318
+      },
+      {
+        "name": "TerryWhite Chemmart Rosny Park",
+        "lat": -42.8663026,
+        "lng": 147.370117
+      },
+      {
+        "name": "Complete Care Pharmacy Rosny Park",
+        "lat": -42.8663007,
+        "lng": 147.3701171
+      },
+      {
+        "name": "TerryWhite Chemmart Bellerive",
+        "lat": -42.8746536,
+        "lng": 147.3675801
+      },
+      {
+        "name": "Chemist Warehouse Rosny",
+        "lat": -42.864052,
+        "lng": 147.3712057
+      },
+      {
+        "name": "Rhys Jones Pharmacy",
+        "lat": -42.8668208,
+        "lng": 147.3708544
+      },
+      {
+        "name": "Consultant Pharmacy Services",
+        "lat": -42.8748075,
+        "lng": 147.3683411
+      },
+      {
+        "name": "Warrane Pharmacy",
+        "lat": -42.860154,
+        "lng": 147.3769654
+      },
+      {
+        "name": "Chemist Warehouse Hobart City Centre",
+        "lat": -42.8821596,
+        "lng": 147.32891
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 32,
+    "state": "TAS",
+    "lat": -42.5593001,
+    "lng": 147.872333,
+    "poi_name": "Orford Festival IGA Supermarket",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 65,
+    "pharmacies": [
+      {
+        "name": "Triabunna Pharmacy",
+        "lat": -42.5081831,
+        "lng": 147.9137111
+      },
+      {
+        "name": "TerryWhite Chemmart Dodges Ferry",
+        "lat": -42.8581262,
+        "lng": 147.6171891
+      }
+    ],
+    "pharmacy_count": 2
+  },
+  {
+    "index": 33,
+    "state": "TAS",
+    "lat": -41.2189569,
+    "lng": 146.344958,
+    "poi_name": "IGA",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 65,
+    "pharmacies": [
+      {
+        "name": "Chemist Discount Centre Devonport",
+        "lat": -41.1769554,
+        "lng": 146.3562084
+      },
+      {
+        "name": "Valley Road Pharmacy",
+        "lat": -41.1867715,
+        "lng": 146.3433647
+      },
+      {
+        "name": "Good Price Pharmacy Warehouse Devonport",
+        "lat": -41.1801923,
+        "lng": 146.3602728
+      },
+      {
+        "name": "Mersey Advantage Pharmacy",
+        "lat": -41.17925,
+        "lng": 146.370001
+      },
+      {
+        "name": "Devonport Pharmacy",
+        "lat": -41.1755752,
+        "lng": 146.3562168
+      },
+      {
+        "name": "TerryWhite Chemmart Steele Street",
+        "lat": -41.180176,
+        "lng": 146.3491887
+      },
+      {
+        "name": "TerryWhite Chemmart Fourways Devonport",
+        "lat": -41.1757668,
+        "lng": 146.3509394
+      },
+      {
+        "name": "TerryWhite Chemmart Latrobe",
+        "lat": -41.2348762,
+        "lng": 146.4076404
+      }
+    ],
+    "pharmacy_count": 8
+  },
+  {
+    "index": 34,
+    "state": "TAS",
+    "lat": -41.4695436,
+    "lng": 147.0899735,
+    "poi_name": "Baxter's IGA",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 65,
+    "pharmacies": [
+      {
+        "name": "TerryWhite Chemmart Prospect Vale",
+        "lat": -41.4802962,
+        "lng": 147.1250144
+      },
+      {
+        "name": "Summerhill Pharmacy",
+        "lat": -41.4665445,
+        "lng": 147.1299029
+      },
+      {
+        "name": "HPS Pharmacies - Wellington",
+        "lat": -41.4430028,
+        "lng": 147.1387558
+      },
+      {
+        "name": "Trevallyn Pharmacy",
+        "lat": -41.4352037,
+        "lng": 147.1197784
+      },
+      {
+        "name": "Pharmacy + Co Kings Meadows",
+        "lat": -41.4669118,
+        "lng": 147.1602955
+      },
+      {
+        "name": "Olde Tudor Pharmacy",
+        "lat": -41.4698818,
+        "lng": 147.1377052
+      },
+      {
+        "name": "TerryWhite Chemmart Launceston",
+        "lat": -41.4343795,
+        "lng": 147.1429974
+      },
+      {
+        "name": "Complete Care Pharmacy Health Hub Launceston",
+        "lat": -41.4482753,
+        "lng": 147.1400835
+      },
+      {
+        "name": "Fitzpatrick's Pharmacy",
+        "lat": -41.4421686,
+        "lng": 147.1410028
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 35,
+    "state": "TAS",
+    "lat": -42.7484982,
+    "lng": 147.2659412,
+    "poi_name": "IGA",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 65,
+    "pharmacies": [
+      {
+        "name": "Priceline Pharmacy Bridgewater",
+        "lat": -42.7384407,
+        "lng": 147.2449361
+      },
+      {
+        "name": "Claremont Pharmacy",
+        "lat": -42.791228,
+        "lng": 147.2542441
+      },
+      {
+        "name": "Brighton Pharmacy",
+        "lat": -42.6986299,
+        "lng": 147.2527482
+      },
+      {
+        "name": "Advantage Pharmacy Claremont Plaza",
+        "lat": -42.7908634,
+        "lng": 147.255125
+      },
+      {
+        "name": "Chigwell Pharmacy",
+        "lat": -42.8113702,
+        "lng": 147.2418028
+      },
+      {
+        "name": "Guardian Pharmacy Montrose - Rosetta",
+        "lat": -42.8255276,
+        "lng": 147.2657797
+      },
+      {
+        "name": "Blooms The Chemist Glenorchy",
+        "lat": -42.8346398,
+        "lng": 147.2763972
+      },
+      {
+        "name": "Risdon Vale Pharmacy",
+        "lat": -42.812836,
+        "lng": 147.3518795
+      },
+      {
+        "name": "Amcal Pharmacy Derwent Park",
+        "lat": -42.8365983,
+        "lng": 147.2871926
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 36,
+    "state": "TAS",
+    "lat": -42.8966766,
+    "lng": 147.4320085,
+    "poi_name": "Rokeby IGA",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 65,
+    "pharmacies": [
+      {
+        "name": "Rokeby Discount Drug Store",
+        "lat": -42.9017131,
+        "lng": 147.4474931
+      },
+      {
+        "name": "Priceline Pharmacy Glebe Hill Village",
+        "lat": -42.8876515,
+        "lng": 147.4270718
+      },
+      {
+        "name": "Amcal Pharmacy Howrah - Shoreline",
+        "lat": -42.8802914,
+        "lng": 147.4071343
+      },
+      {
+        "name": "Lauderdale Pharmacy",
+        "lat": -42.9085192,
+        "lng": 147.4836774
+      },
+      {
+        "name": "Priceline Hobart",
+        "lat": -42.8817013,
+        "lng": 147.3275878
+      },
+      {
+        "name": "Vet-To-You",
+        "lat": -42.8823402,
+        "lng": 147.3285564
+      },
+      {
+        "name": "HPS Pharmacies - Hobart",
+        "lat": -42.8808608,
+        "lng": 147.329768
+      },
+      {
+        "name": "Amcal Pharmacy Howrah - Wentworth",
+        "lat": -42.8761046,
+        "lng": 147.3890238
+      },
+      {
+        "name": "Warrane Pharmacy",
+        "lat": -42.860154,
+        "lng": 147.3769654
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 37,
+    "state": "TAS",
+    "lat": -41.525328,
+    "lng": 146.8449712,
+    "poi_name": "IGA",
+    "rules": "Item 133, Item 134",
+    "search_radius_km": 0.5,
+    "confidence": 65,
+    "pharmacies": [
+      {
+        "name": "Westbury Pharmacy - a Soul Pattinson Chemist",
+        "lat": -41.526307,
+        "lng": 146.834527
+      },
+      {
+        "name": "Chemist Warehouse Launceston",
+        "lat": -41.4389707,
+        "lng": 147.1381324
+      },
+      {
+        "name": "Terry White Chemmart Riverside",
+        "lat": -41.4133605,
+        "lng": 147.1012413
+      },
+      {
+        "name": "TerryWhite Chemmart Prospect Vale",
+        "lat": -41.4802962,
+        "lng": 147.1250144
+      },
+      {
+        "name": "Summerhill Pharmacy",
+        "lat": -41.4665445,
+        "lng": 147.1299029
+      }
+    ],
+    "pharmacy_count": 5
+  },
+  {
+    "index": 38,
+    "state": "TAS",
+    "lat": -41.0980218,
+    "lng": 146.8232761,
+    "poi_name": "IGA George Town",
+    "rules": "Item 133",
+    "search_radius_km": 0.5,
+    "confidence": 65,
+    "pharmacies": [
+      {
+        "name": "Your Pharmacy",
+        "lat": -41.1067231,
+        "lng": 146.8241396
+      },
+      {
+        "name": "Amcal Pharmacy George Town",
+        "lat": -41.1058582,
+        "lng": 146.8256835
+      },
+      {
+        "name": "Hicksy's Hardware Garden & Landscape Supplies",
+        "lat": -41.1107008,
+        "lng": 146.8374631
+      },
+      {
+        "name": "West Tamar Pharmacy",
+        "lat": -41.1996977,
+        "lng": 146.8159131
+      }
+    ],
+    "pharmacy_count": 4
+  },
+  {
+    "index": 49,
+    "state": "TAS",
+    "lat": -42.9046784,
+    "lng": 147.4354685,
+    "poi_name": "The Hobart Clinic",
+    "rules": "Item 135",
+    "search_radius_km": 0.5,
+    "confidence": 55,
+    "pharmacies": [
+      {
+        "name": "Rokeby Discount Drug Store",
+        "lat": -42.9017131,
+        "lng": 147.4474931
+      },
+      {
+        "name": "Priceline Pharmacy Glebe Hill Village",
+        "lat": -42.8876515,
+        "lng": 147.4270718
+      },
+      {
+        "name": "Amcal Pharmacy Howrah - Shoreline",
+        "lat": -42.8802914,
+        "lng": 147.4071343
+      },
+      {
+        "name": "Lauderdale Pharmacy",
+        "lat": -42.9085192,
+        "lng": 147.4836774
+      },
+      {
+        "name": "Amcal Pharmacy Howrah - Wentworth",
+        "lat": -42.8761046,
+        "lng": 147.3890238
+      },
+      {
+        "name": "North Hobart Pharmacy",
+        "lat": -42.8740373,
+        "lng": 147.3162273
+      },
+      {
+        "name": "Good Price Pharmacy Hobart",
+        "lat": -42.8808422,
+        "lng": 147.3286176
+      },
+      {
+        "name": "Warrane Pharmacy",
+        "lat": -42.860154,
+        "lng": 147.3769654
+      },
+      {
+        "name": "Complete Care Pharmacy Rosny Park",
+        "lat": -42.8663007,
+        "lng": 147.3701171
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 50,
+    "state": "TAS",
+    "lat": -41.4584509,
+    "lng": 147.153164,
+    "poi_name": "DongSheng",
+    "rules": "Item 134",
+    "search_radius_km": 0.5,
+    "confidence": 55,
+    "pharmacies": [
+      {
+        "name": "Slade Pharmacy Kings Meadows",
+        "lat": -41.465197,
+        "lng": 147.1589568
+      },
+      {
+        "name": "Pharmacy + Co Kings Meadows",
+        "lat": -41.4669118,
+        "lng": 147.1602955
+      },
+      {
+        "name": "Meadow Mews Pharmacy",
+        "lat": -41.4668754,
+        "lng": 147.1587126
+      },
+      {
+        "name": "Health Hub Capital Chemist",
+        "lat": -41.4485744,
+        "lng": 147.1403196
+      },
+      {
+        "name": "Complete Care Pharmacy Health Hub Launceston",
+        "lat": -41.4482753,
+        "lng": 147.1400835
+      },
+      {
+        "name": "Chemist Warehouse South Launceston",
+        "lat": -41.4432758,
+        "lng": 147.1381926
+      },
+      {
+        "name": "Summerhill Pharmacy",
+        "lat": -41.4665445,
+        "lng": 147.1299029
+      },
+      {
+        "name": "Olde Tudor Pharmacy",
+        "lat": -41.4698818,
+        "lng": 147.1377052
+      },
+      {
+        "name": "Chemist Warehouse Launceston",
+        "lat": -41.4389707,
+        "lng": 147.1381324
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 51,
+    "state": "TAS",
+    "lat": -42.8957201,
+    "lng": 147.3060276,
+    "poi_name": "Calvary Healthcare Tasmania - St John's Campus",
+    "rules": "Item 135",
+    "search_radius_km": 0.5,
+    "confidence": 55,
+    "pharmacies": [
+      {
+        "name": "Complete Care Pharmacy South Hobart",
+        "lat": -42.8928519,
+        "lng": 147.3156735
+      },
+      {
+        "name": "HPS Pharmacies - South Hobart",
+        "lat": -42.8957227,
+        "lng": 147.3063954
+      },
+      {
+        "name": "Davey Street Discount Pharmacy",
+        "lat": -42.8910311,
+        "lng": 147.3207504
+      },
+      {
+        "name": "Chemist Warehouse Sandy Bay",
+        "lat": -42.8951905,
+        "lng": 147.3270287
+      },
+      {
+        "name": "Chemist Warehouse Hobart",
+        "lat": -42.8818069,
+        "lng": 147.3234554
+      },
+      {
+        "name": "Chemist Warehouse Hobart City Centre",
+        "lat": -42.8821596,
+        "lng": 147.32891
+      },
+      {
+        "name": "Capital Chemist Hobart",
+        "lat": -42.8853918,
+        "lng": 147.3228335
+      },
+      {
+        "name": "Blooms the Chemist Hobart",
+        "lat": -42.8799,
+        "lng": 147.3267544
+      },
+      {
+        "name": "Chemist Warehouse Salamanca",
+        "lat": -42.8876131,
+        "lng": 147.3316797
+      }
+    ],
+    "pharmacy_count": 9
+  },
+  {
+    "index": 52,
+    "state": "TAS",
+    "lat": -41.43,
+    "lng": 147.1295,
+    "poi_name": "Meadow Mews Shopping Centre",
+    "rules": "Item 134",
+    "search_radius_km": 0.5,
+    "confidence": 55,
+    "pharmacies": [
+      {
+        "name": "Trevallyn Pharmacy",
+        "lat": -41.4352037,
+        "lng": 147.1197784
+      },
+      {
+        "name": "Pharmacy + Co Launceston",
+        "lat": -41.4364934,
+        "lng": 147.1400595
+      },
+      {
+        "name": "Chemist Warehouse Launceston",
+        "lat": -41.4389707,
+        "lng": 147.1381324
+      },
+      {
+        "name": "TerryWhite Chemmart Launceston",
+        "lat": -41.4343795,
+        "lng": 147.1429974
+      },
+      {
+        "name": "Hatton & Laws Pharmacy Launceston",
+        "lat": -41.4385607,
+        "lng": 147.1377409
+      },
+      {
+        "name": "Chemist Warehouse Racecourse Launceston",
+        "lat": -41.4296398,
+        "lng": 147.1466333
+      },
+      {
+        "name": "Priceline Launceston",
+        "lat": -41.4379683,
+        "lng": 147.1379647
+      },
+      {
+        "name": "Chemist Warehouse South Launceston",
+        "lat": -41.4432758,
+        "lng": 147.1381926
+      },
+      {
+        "name": "Fitzpatrick's Pharmacy",
+        "lat": -41.4421686,
+        "lng": 147.1410028
+      }
+    ],
+    "pharmacy_count": 9
+  }
+]

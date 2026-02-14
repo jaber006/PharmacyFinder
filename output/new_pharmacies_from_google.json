@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Medipharmacy Compounding",
+    "lat": -37.7399747,
+    "lng": 145.0034774,
+    "source": "google_maps_verification",
+    "opportunity_index": 61,
+    "state": "VIC"
+  },
+  {
+    "name": "Meeniyan Pharmacy",
+    "lat": -38.5780227,
+    "lng": 146.0131497,
+    "source": "google_maps_verification",
+    "opportunity_index": 75,
+    "state": "VIC"
+  },
+  {
+    "name": "Moriac Pharmacy",
+    "lat": -38.2420162,
+    "lng": 144.1748589,
+    "source": "google_maps_verification",
+    "opportunity_index": 78,
+    "state": "VIC"
+  },
+  {
+    "name": "Consultant Pharmacy Services",
+    "lat": -42.8748075,
+    "lng": 147.3683411,
+    "source": "google_maps_verification",
+    "opportunity_index": 2,
+    "state": "TAS"
+  },
+  {
+    "name": "Pharmacy Select Lyndarum",
+    "lat": -37.628097,
+    "lng": 145.027019,
+    "source": "google_maps_verification",
+    "opportunity_index": 89,
+    "state": "VIC"
+  },
+  {
+    "name": "Pharmacy Own",
+    "lat": -37.8317042,
+    "lng": 144.9346435,
+    "source": "google_maps_verification",
+    "opportunity_index": 90,
+    "state": "VIC"
+  },
+  {
+    "name": "La Feuille Pharmacy",
+    "lat": -37.833258,
+    "lng": 144.960973,
+    "source": "google_maps_verification",
+    "opportunity_index": 98,
+    "state": "VIC"
+  },
+  {
+    "name": "Trident Pharmacy Willaura",
+    "lat": -37.5466473,
+    "lng": 142.7413084,
+    "source": "google_maps_verification",
+    "opportunity_index": 198,
+    "state": "VIC"
+  },
+  {
+    "name": "Good Shepherd Pharmacy",
+    "lat": -40.7618828,
+    "lng": 145.2960922,
+    "source": "google_maps_verification",
+    "opportunity_index": 23,
+    "state": "TAS"
+  },
+  {
+    "name": "Symbion Pharmacy Services Pty Ltd",
+    "lat": -42.8486073,
+    "lng": 147.3051688,
+    "source": "google_maps_verification",
+    "opportunity_index": 26,
+    "state": "TAS"
+  },
+  {
+    "name": "Consultant Pharmacy Services",
+    "lat": -42.8748075,
+    "lng": 147.3683411,
+    "source": "google_maps_verification",
+    "opportunity_index": 27,
+    "state": "TAS"
+  }
+]
