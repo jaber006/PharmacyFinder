@@ -23,37 +23,60 @@ OSRM_SERVER = "http://router.project-osrm.org"
 
 # Distance thresholds (in kilometers) for each rule item
 RULE_DISTANCES = {
-    'item_130': 1.5,      # New pharmacy - at least 1.5km from nearest pharmacy
-    'item_130_supermarket': 0.5,  # Item 130 - supermarket/GP must be within 500m
-    'item_131': 10.0,     # New pharmacy (rural) - at least 10km from nearest pharmacy
-    'item_134a': 90.0,    # Very remote location - 90km from nearest pharmacy
+    'item_130': 1.5,      # Item 130: >= 1.5km straight line from nearest pharmacy
+    'item_130_supermarket': 0.5,  # Item 130: supermarket/GP must be within 500m straight line
+    'item_131': 10.0,     # Item 131: >= 10km by shortest lawful access route from nearest
+    'item_132_nearest': 0.2,   # Item 132(a)(ii): >= 200m straight line from nearest pharmacy
+    'item_132_other': 10.0,    # Item 132(a)(iii): >= 10km route from any OTHER pharmacy
+    'item_133': 0.5,      # Item 133(b): >= 500m straight line (excl. large centres/hospitals)
+    # Item 134: NO minimum distance
+    # Item 134A: NO minimum distance
+    # Item 135: NO minimum distance
+    'item_136': 0.3,      # Item 136(c): >= 300m straight line (excl. large centres/hospitals)
 }
 
 # FTE (Full-Time Equivalent) thresholds
 FTE_REQUIREMENTS = {
-    'item_130_gp': 1.0,   # Item 130 option (i): 1 FTE GP within 500m (with 1,000sqm supermarket)
-    'item_132_gp': 4.0,   # Item 132: 4 FTE GPs in same town
-    'item_136_prescribers': 8.0,   # Item 136: 8 FTE PBS prescribers total
-    'item_136_medical': 7.0,       # Item 136: of which 7 must be medical practitioners
+    'item_130_gp': 1.0,   # Item 130(b)(i): 1 FTE prescribing medical practitioner
+    'item_132_gp': 4.0,   # Item 132(b)(i): 4 FTE prescribing medical practitioners in town
+    'item_136_prescribers': 8.0,   # Item 136(d): 8 FTE PBS prescribers total
+    'item_136_medical': 7.0,       # Item 136(d): of which at least 7 must be medical practitioners
 }
 
 # Hours per week calculation
 HOURS_PER_WEEK_FULL_TIME = 38.0
 MINIMUM_HOURS_FOR_GP = 20.0
 
-# Shopping centre and supermarket thresholds (in square meters)
-GLA_THRESHOLDS = {
-    'major_centre': 15000,     # Item 132 - Major shopping centre >= 15,000 sqm
-    'small_centre_min': 5000,  # Item 134 - Small centre >= 5,000 sqm
-    'small_centre_max': 15000, # Item 134 - Small centre <= 15,000 sqm
+# Shopping centre thresholds (from handbook definitions)
+SHOPPING_CENTRE_THRESHOLDS = {
+    # Small shopping centre (Item 133)
+    'small_centre_gla': 5000,       # Centre GLA >= 5,000sqm
+    'small_centre_tenants': 15,     # >= 15 other commercial establishments
+    'supermarket_gla': 2500,        # Supermarket GLA >= 2,500sqm (applies to all centre items)
+    'item_133_distance_km': 0.5,    # 500m from nearest pharmacy (excl. large centres/hospitals)
+
+    # Large shopping centre (Items 134, 134A)
+    'large_centre_gla': 5000,       # Centre GLA >= 5,000sqm (same as small)
+    'large_centre_tenants': 50,     # >= 50 other commercial establishments
+
+    # Item 134A additional pharmacy thresholds
+    'item_134a_tier1_tenants': 100,  # 100-199 tenants: max 1 existing pharmacy
+    'item_134a_tier2_tenants': 200,  # 200+ tenants: max 2 existing pharmacies
 }
 
+# Supermarket GLA thresholds (individual supermarket checks)
 FLOOR_AREA_THRESHOLDS = {
-    'supermarket': 1000,  # Item 133 - Supermarket >= 1,000 sqm
+    'supermarket_item_130_small': 1000,  # Item 130(b)(i): >= 1,000sqm with 1 FTE GP
+    'supermarket_item_130_large': 2500,  # Item 130(b)(ii): >= 2,500sqm alone
+    'supermarket_in_centre': 2500,       # Items 133/134/134A: supermarket in centre >= 2,500sqm
+    'item_132_combined': 2500,           # Item 132(b)(ii): 1-2 supermarkets combined >= 2,500sqm
 }
 
-# Hospital requirements
-HOSPITAL_BED_COUNT = 150  # Item 135 - "large private hospital" = 150+ beds
+# Hospital requirements - Item 135
+# "Large private hospital" = can admit >= 150 patients at any one time per licence
+# Note: "admit" means admitted as private patient (incl. same-day), NOT outpatients
+HOSPITAL_ADMISSION_CAPACITY = 150  # Item 135: >= 150 patients admission capacity
+HOSPITAL_BED_COUNT = 150  # Legacy alias — same value, bed_count is our DB proxy for admission capacity
 HOSPITAL_BED_COUNT_UNKNOWN_THRESHOLD = 50  # Minimum beds to consider unknown-type hospitals
 
 # Proximity thresholds for "in the complex" checks (Items 132-136)
@@ -140,14 +163,14 @@ MAP_CONFIG = {
 
 # Rule item colors for map markers
 RULE_COLORS = {
-    'Item 130': 'blue',       # 4km remote
-    'Item 131': 'green',      # GP proximity
-    'Item 132': 'purple',     # Major shopping centre
-    'Item 133': 'orange',     # Supermarket
-    'Item 134': 'pink',       # Small shopping centre
-    'Item 134A': 'darkblue',  # 90km very remote
-    'Item 135': 'red',        # Hospital
-    'Item 136': 'darkgreen',  # Medical centre
+    'Item 130': 'blue',       # New pharmacy (1.5km + supermarket/GP)
+    'Item 131': 'green',      # New pharmacy (10km rural)
+    'Item 132': 'purple',     # New additional pharmacy in town (10km from others)
+    'Item 133': 'orange',     # Small shopping centre (15+ tenants)
+    'Item 134': 'pink',       # Large shopping centre - no pharmacy (50+ tenants)
+    'Item 134A': 'darkblue',  # Large shopping centre - with pharmacy (100+/200+ tenants)
+    'Item 135': 'red',        # Large private hospital (150+ patients)
+    'Item 136': 'darkgreen',  # Large medical centre (8 FTE prescribers)
 }
 
 # Logging configuration

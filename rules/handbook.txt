@@ -1,0 +1,2682 @@
+ 
+ 
+Pharmacy Location Rules 
+Applicant's Handbook 
+For applications for approval to supply pharmaceutical benefits to be considered by the 
+Australian Community Pharmacy Authority 
+January 2024 V1.9 
+ 
+i 
+TITLE: Pharmacy Locations Rules - Applicant’s Handbook 
+ISBN: 978-1-76007-384-8 
+PUBLICATIONS APPROVAL NUMBER: 12330 
+© 2018 Commonwealth of Australia as represented by the Department of Health and Aged Care 
+This work is copyright. You may copy, print, download, display and reproduce the whole or part of 
+this work in unaltered form for your own personal use or, if you are part of an organisation, for 
+internal use within your organisation, but only if you or your organisation: 
+a) do not use the copy or reproduction for any commercial purpose, and 
+b) retain this copyright notice and all disclaimer notices as part of that copy or reproduction. 
+Apart from rights as permitted by the Copyright Act 1968 (Cth) or allowed by this copyright notice, all 
+other rights are reserved, including (but not limited to) all commercial rights. 
+Requests and inquiries concerning reproduction and other rights to use are to be sent to the 
+Communication and Change Branch, Department of Health and Aged Care, GPO Box 9848, 
+Canberra ACT 2601 or by e-mail to copyright@health.gov.au. 
+DISCLAIMER 
+This Handbook is a general guide for pharmacists seeking to relocate an existing pharmacy or 
+establish a new pharmacy approved to supply pharmaceutical benefits under section 90 of the 
+National Health Act 1953 (Act). It should not be used as a basis for legal interpretations or as a 
+definitive reference on the roles and responsibilities of all parties. 
+For more precise information, please consult section 90 and Division 4B of the Act, the 
+determinations made under section 99L of the Act and the explanatory statements to those 
+determinations. 
+The Australian Community Pharmacy Authority and the Commonwealth Government accept no 
+responsibility arising from the use of, or reliance on, this publication. 
+ 
+ 
+ii 
+ 
+Contents 
+Introduction ..................................................................................................................................... 1 
+Contact Information ........................................................................................................................ 2 
+Background ..................................................................................................................................... 3 
+Approval to supply pharmaceutical benefits .................................................................................. 3 
+The Australian Community Pharmacy Authority ............................................................................ 3 
+The Pharmacy Location Rules ...................................................................................................... 4 
+The Application Process ................................................................................................................ 5 
+1. 
+When a pharmacist must apply for approval to supply pharmaceutical benefits ............. 5 
+2. 
+When is an application referred to the Authority............................................................. 5 
+3. 
+Submitting an application ............................................................................................... 6 
+4. 
+Representation and authorisation .................................................................................. 7 
+5. 
+Different types of applications ........................................................................................ 7 
+6. 
+Quality of evidence ........................................................................................................ 7 
+7. 
+Processing an application .............................................................................................. 8 
+8. 
+Opportunity for nearby pharmacists to provide comment ............................................... 8 
+9. 
+Length of the application process .................................................................................. 9 
+10. 
+Requests for additional information by the Authority .................................................... 10 
+11. 
+Notice of the Authority’s meeting outcomes ................................................................. 10 
+12. 
+Reasons for decisions ................................................................................................. 10 
+13. 
+Review of decisions ..................................................................................................... 11 
+14. 
+Obtaining approval after a recommendation by the Authority ....................................... 11 
+The Pharmacy Location Rules ..................................................................................................... 12 
+Relocating an existing pharmacy ................................................................................................ 12 
+Establishing a new pharmacy ...................................................................................................... 12 
+Lodging an application ................................................................................................................ 13 
+General requirements for all applications ................................................................................... 14 
+ 
+iii 
+Identification of particular premises ......................................................................................... 14 
+Evidence that the proposed premises are not approved premises ........................................ 14 
+Evidence of legal right to occupy the proposed premises ...................................................... 15 
+Evidence of council approval to use the proposed premises for the purposes of 
+operating a pharmacy ....................................................................................................... 16 
+Evidence that the proposed premises would be accessible by the public ............................ 17 
+Proposed premises will be ready to trade within 6 months of a recommendation being 
+made by the Authority ...................................................................................................... 17 
+Proposed premises are not accessible from a supermarket ................................................... 17 
+Applications involving the relocation of an existing pharmacy ................................................ 19 
+Rule 121: Expansion or contraction ................................................................................................ 21 
+Requirements ............................................................................................................................. 21 
+Item 122: Relocation within a designated complex .......................................................................... 22 
+Requirements ............................................................................................................................. 22 
+Item 123: Relocation within the same town (10 km) ........................................................................ 24 
+Requirements ............................................................................................................................. 24 
+Item 124: Relocation up to 1 km ..................................................................................................... 26 
+Requirements ............................................................................................................................. 26 
+Item 125: Relocation of 1 to 1.5 km ................................................................................................. 29 
+Requirements ............................................................................................................................. 29 
+ 
+ 
+ 
+iv 
+Applications to establish a new pharmacy ................................................................................. 32 
+Item 130: New pharmacy (at least 1.5 km) .................................................................................. 33 
+Requirements ...................................................................................................................... 33 
+Item 131: New pharmacy (at least 10 km) ................................................................................... 36 
+Requirements ...................................................................................................................... 36 
+Item 132: New additional pharmacy (at least 10 km) ................................................................... 38 
+Requirements ...................................................................................................................... 38 
+Item 133: New pharmacy in a designated complex (small shopping centre) .................................... 42 
+Requirements ...................................................................................................................... 42 
+Item 134: New pharmacy in a designated complex (large shopping centre with no approved 
+premises) .................................................................................................................................... 45 
+Requirements ...................................................................................................................... 45 
+Item 134A: New additional pharmacy in a designated complex (large shopping centre with 
+approved premises) .................................................................................................................... 47 
+Requirements ...................................................................................................................... 47 
+Item 135: New pharmacy in a designated complex (large private hospital) .................................... 50 
+Requirements ...................................................................................................................... 50 
+Item 136: New pharmacy in a designated complex (large medical centre) .................................. 52 
+Requirements ...................................................................................................................... 52 
+Glossary  .................................................................................................................................... 56 
+ 
+ 
+ 
+1 
+Introduction 
+The purpose of this Handbook is to provide information and guidance to pharmacists who 
+are considering or submitting an application to establish a new pharmacy or relocate an 
+existing pharmacy approved to supply pharmaceutical benefits. The requirements for 
+approval are outlined in the Pharmacy Location Rules (Rules), determined by the Minister for 
+Health and Aged Care (Minister) on 18 September 2018. 
+The Handbook provides information about:  
+• 
+the Rules and the Australian Community Pharmacy Authority (Authority)  
+• 
+the application process, including the requirements that must be satisfied 
+• 
+examples of the types of information and supporting documents that may be provided 
+for an application 
+• 
+contact details for further assistance. 
+The Handbook is divided into the following sections: 
+Background: general information about the Rules and the Authority. 
+Application and approval process: information about when it is necessary to seek 
+approval, how to make an application and how an approval is granted. 
+The Pharmacy Location Rules: sets out the requirements of each of the items in the Rules 
+and the types of evidence that might address the requirements. 
+Glossary: definitions for terminology used within the Rules. 
+The Handbook will be revised and updated as necessary. Please refer to the Authority’s 
+webpage for updates relating to the Handbook, the Authority and the Rules. 
+ 
+2 
+Contact Information 
+Department of Health and Aged Care 
+For questions about section 90 approvals, contact the PBS Approved Suppliers Team: 
+Email: pbsapprovedsuppliers@health.gov.au  
+Phone: 1800 316 389 (PBS Approved Suppliers Information Line) 
+Please note, the PBS Approved Suppliers Information Line provides general advice only. If 
+you have a question about an email sent to you by the Team or about your application to 
+establish a new pharmacy or relocate an existing pharmacy approved to supply 
+pharmaceutical benefits, please email pbsapprovedsuppliers@health.gov.au 
+For further information, forms and guides, visit www.health.gov.au/pbsapprovedsuppliers 
+Australian Community Pharmacy Authority 
+For questions about the Rules or applications for approval: 
+Email: acpamail@health.gov.au 
+Phone: 1800 316 389 (PBS Approved Suppliers Information Line) 
+For further information about the Authority, including its meeting schedule, visit 
+www.health.gov.au/acpa 
+Important: The Department of Health and Aged Care (department) can provide only general 
+information regarding the Rules. It cannot advise applicants on specific details including, but 
+not limited to, which item of the Rules to apply under, if a particular scenario is possible 
+under the Rules, or if particular evidence would be accepted, as these factors are for the 
+Authority to determine. 
+ 
+ 
+3 
+Background 
+Approval to supply pharmaceutical benefits 
+Pharmaceutical benefits are drugs or medicinal preparations for which benefits will be paid 
+by the Australian Government. Under section 90 of the National Health Act 1953 (Act), the 
+Secretary of the department has the power to approve a pharmacist to supply 
+pharmaceutical benefits at particular premises. 
+The Secretary’s power is delegated to officers within the department. Any references in this 
+Handbook to the Secretary mean the delegate in the department. 
+The Secretary can generally only approve a pharmacist if the Authority has recommended 
+approval and the pharmacist is permitted under the relevant State or Territory law to carry on 
+business as a pharmacist. 
+The Secretary does not require a recommendation from the Authority to make decisions on 
+other matters relating to pharmacy approvals, including applications for a change of 
+pharmacy ownership or to expand or contract the size of a pharmacy premises. 
+Note: Under section 94 of the Act, the Minister (or their delegate) has the power to approve 
+a hospital authority to supply pharmaceutical benefits to patients receiving treatment in or at 
+the hospital of which the hospital authority is the governing body or proprietor. Applications 
+for a section 94 approval are not subject to the Rules and therefore are not considered by 
+the Authority. 
+An approval granted under section 94 is identified by a 6 digit alphanumeric reference 
+commencing with the letter ‘H’, while an approval under section 90 is identified by a 6 digit 
+alphanumeric reference, with 5 numbers followed by a letter. 
+The Australian Community Pharmacy Authority 
+The Authority is established under the Act to consider applications for approval to supply 
+pharmaceutical benefits at particular premises, as referred by the Secretary, and to make 
+recommendations to the Secretary as to whether a pharmacist should be approved. In 
+making its recommendations, the Authority must comply with the Rules determined by the 
+Minister under section 99L of the Act. 
+Membership 
+The Authority consists of the following part-time members: 
+ a Chair 
+ 2 pharmacists chosen from 4 pharmacists nominated by the Pharmacy Guild of 
+Australia 
+ one pharmacist chosen from 2 pharmacists nominated by the Pharmaceutical 
+Society of Australia 
+ an officer of the department 
+ a person who, in the Minister’s opinion, is an appropriate person to represent the 
+interests of consumers. 
+All members, other than the officer of the department, are appointed by the Minister. 
+Meeting dates 
+The Authority usually meets 10 times a year to consider applications. The meeting schedule 
+is available at www.health.gov.au/acpa. 
+ 
+ 
+4 
+Secretariat support 
+The department provides secretariat services to the Authority. The Authority’s Secretariat is 
+the liaison between pharmacists and the Authority, and its duties include: 
+• 
+checking applications are valid 
+• 
+forwarding valid applications to the Authority for consideration 
+• 
+seeking comments from pharmacists in the area of a proposed pharmacy, where 
+relevant 
+• 
+providing general information about the Rules and the application process to any 
+interested persons 
+• 
+communicating the Authority’s recommendations to the Secretary and applicants. 
+The Pharmacy Location Rules 
+The Rules relate to establishing a new pharmacy or relocating an existing pharmacy approved 
+to supply pharmaceutical benefits under section 90 of the Act. The Rules are agreed by the 
+Australian Government and the Pharmacy Guild of Australia. 
+The Rules are legislated under the National Health (Australian Community Pharmacy Authority 
+Rules) Determination 2018 (PB 46 of 2018) (Rules), made under section 99L of the Act. 
+The Rules set out location-based criteria which must be met for the Authority to recommend 
+approval of a pharmacist. The Authority cannot override the requirements of the Rules. That 
+is, it can only recommend an application be approved if it is satisfied all requirements of the 
+item of the Rules, under which the application was made, have been met. 
+The Rules are consistent with the aim of the National Medicines Policy1 to ensure equitable, 
+timely, safe and affordable access to a high-quality and reliable supply of medicines and 
+medicines related services for all Australians. 
+ 
+ 
+1 National Medicines Policy 2022, Commonwealth of Australia as represented by the Department of 
+Health and Aged Care 2022 
+ 
+5 
+The Application Process 
+1. When a pharmacist must apply for approval to supply pharmaceutical 
+benefits 
+Whether taking on a new partner for an existing pharmacy, looking to relocate an existing 
+pharmacy or opening a new pharmacy approved to supply pharmaceutical benefits, a 
+pharmacist must apply for approval under section 90 of the Act. 
+A pharmacist MUST apply for approval: 
+• 
+to open a new pharmacy 
+• 
+to relocate an existing pharmacy 
+• 
+to expand or contract the size of an existing pharmacy 
+• 
+to change the ownership of an existing pharmacy. 
+If a pharmacist does not obtain approval for any of the above, they may not be eligible for 
+payments from the Australian Government for the supply of pharmaceutical benefits and any 
+payments received may need to be returned. 
+A pharmacist MUST advise the department of changes that are relevant to the approval, 
+including: 
+• 
+a change to the pharmacist(s) registration as a pharmacist 
+• 
+a change to the status of the approval issued by the relevant state or territory 
+pharmacy approval authority 
+• 
+a change to any of the directors of an approved company 
+• 
+a change to trading name 
+• 
+if the location of the approved premises has not changed but there is a change to the 
+recognised address of the pharmacy, for example, as a result of the Council 
+renumbering premises. 
+A pharmacist DOES NOT need to apply for approval: 
+• 
+to make internal changes to an existing pharmacy 
+• 
+to alter the public access points of an existing pharmacy, or 
+• 
+if pharmaceutical benefits will not be supplied from the pharmacy. 
+2. When is an application referred to the Authority 
+This Handbook deals only with applications that are referred to the Authority, that is, 
+applications seeking approval to establish a new pharmacy, to relocate an existing pharmacy 
+or, in limited circumstances, to expand or contract the size of an existing pharmacy. 
+Applications seeking approval to expand or contract the size of a pharmacy are not referred 
+to the Authority unless the Secretary considers it appropriate to do so. The application would 
+then be considered by the Authority against the relevant requirements of the Rules. 
+All other applications for approval under section 90 of the Act are dealt with by the Secretary 
+and are not considered against the requirements of the Rules. 
+Pharmacists should contact the department by emailing pbsapprovedsuppliers@health.gov.au 
+if they are not sure whether they need approval for a change to their pharmacy. 
+ 
+ 
+6 
+3. Submitting an application 
+Under the National Health (Pharmaceutical Benefits) Regulations 2017 an application for 
+approval to supply pharmaceutical benefits must be made using the approved 
+application form. 
+The ‘approved application form’ for pharmacists seeking approval to supply pharmaceutical 
+benefits at particular premises by establishing a new pharmacy or relocating an existing 
+approved pharmacy is found in the PBS Approved Suppliers Portal (Portal) at 
+https://pbsapprovedsuppliers.health.gov.au/ and by selecting the relevant application type. 
+All required information must be completed in the online form and all documents must be 
+uploaded as attachments before submitting the application in the Portal. 
+Information on how to submit an application in the Portal is available on the PBS Approved 
+Suppliers website at www.health.gov.au/pbsapprovedsuppliers 
+Full payment of the application fee is required to allow the application to be progressed. 
+NOTE: All required documents must be provided at the time of submitting the 
+application in the Portal. 
+Information received after an application has been submitted will not be accepted and will 
+not be considered by the Authority. 
+If, after submitting an application, an applicant would like the Authority to consider additional 
+information, a new and complete application must be submitted through the Portal. The new 
+application will not replace the original application and payment of the application fee is 
+required. If the applicant does not want the Authority to consider the original application, a 
+request to withdraw the original application must be made to the department in writing by 
+emailing acpamail@health.gov.au. If payment for the original application has been made, 
+and the application is withdrawn, no refund is payable. If the department does not receive a 
+request to withdraw the original application, it will be considered by the Authority. The 
+Authority will not consider the new application at the same meeting as the original 
+application regardless of whether it was received by the cut-off date for that meeting. 
+Before submitting an application, applicants are encouraged to read this Handbook and the 
+guides on using the Portal. 
+When submitting an application: 
+• 
+make sure the correct item of the Rules has been selected 
+• 
+upload the relevant documents and supporting evidence for each requirement 
+• 
+ensure the declaration and, if applicable, authorisation forms, have been completed 
+and signed by all relevant parties. If the application involves another pharmacist’s 
+existing pharmacy approval, that is, the application involves a relocation with a 
+change of ownership, a Current Owner(s) Declaration, signed by each of the 
+approved pharmacists, must also be provided. 
+Application fee 
+The current fee for applications assessed by the Authority is published on the PBS Approved 
+Suppliers website. 
+The application fee is in accordance with the Australian Government Charging Framework 
+and as outlined in the department’s Cost Recovery Implementation Statement (CRIS) for the 
+pharmacy approvals process. 
+ 
+ 
+7 
+4. Representation and authorisation 
+The Secretariat or the department will only discuss an application with the authorised 
+contact person. 
+If another person, other than the applicant(s), is authorised to represent the applicant(s), the 
+relevant section of the application must be completed. 
+If an application is being submitted on behalf of the applicant(s) or multiple authorised 
+persons, the ‘Appointment of a representative to prepare and submit an application’ form 
+must be completed and uploaded with the application. The registered PBS Approved 
+Suppliers Portal user must be an authorised person or representative. 
+5. Different types of applications 
+Each item of the Rules sets out different requirements that must be met for the Authority to 
+recommend approval. It is the applicant’s responsibility to select the item to apply under that 
+best suits their situation. The application must also include evidence addressing the specific 
+requirements of the selected item of the Rules. 
+Please refer to the Pharmacy Location Rules section for specific items of the Rules. 
+6. Quality of evidence 
+The Authority must be satisfied all requirements applicable to the selected item of the 
+Rules are met. Applicants are advised to provide clear, current and relevant evidence for 
+each requirement. 
+It is the applicant’s responsibility to summarise and draw conclusions from the information 
+provided and clearly identify how the relevant requirements of the Rules are met by the 
+evidence. It is not the Authority’s responsibility to examine large volumes of information and 
+identify how it satisfies the requirements. 
+Including a covering letter or a summary of the application that describes and references the 
+documents provided against each requirement is recommended. Any circumstances of the 
+application that might be relevant should be outlined. 
+As a guide: 
+• 
+check references to applicant/s’ names, addresses etc., are consistent across 
+documents and attachments 
+• 
+check all documents are legible and of high resolution 
+• 
+check supporting letters, statements etc., are signed and dated 
+• 
+clearly label and date any attachments, maps or photographs 
+• 
+maps should be clearly scaled and the source cited 
+• 
+ensure any survey reports 
+o have been undertaken by a licenced or registered surveyor 
+o are on the surveyor’s letterhead 
+o are signed and dated by the surveyor 
+o have been undertaken in accordance with the requirements. 
+• 
+ensure any statutory declarations are on a Commonwealth of Australia statutory 
+declaration template2 and signed in the presence of an authorised witness. 
+ 
+2 As an application for a pharmacy approval is made to a Commonwealth Department, statutory declarations should be made on a Commonwealth of Australia statutory 
+declaration template and signed in the presence of an authorised witness. Information on Commonwealth statutory declarations, including templates and information on 
+authorised witnesses, is available from the Attorney-General’s Department’s website at www.ag.gov.au. 
+ 
+8 
+Important – Accuracy of information 
+Information provided in the application must be accurate and current. Giving false or 
+misleading information is a serious offence under Division 137 of the Criminal Code Act 1995, 
+the maximum penalty for which is imprisonment for 12 months. 
+If the Authority or the department suspects evidence provided is misleading or may be 
+fraudulent, the application will be referred for possible investigation. 
+7. Processing an application 
+After receiving an application through the Portal and payment in full has been confirmed, the 
+Secretariat will check the application is valid. 
+If the application is not valid, the application will be returned to the submitter via the  
+PBS Approved Suppliers Portal. An email will be sent to the authorised contact person 
+detailing the reasons why the application is invalid and has been returned for resubmission. 
+Resubmitted applications will not incur another fee, and the submission date and time will be 
+recorded as the date and time the application is resubmitted. 
+The department cannot advise an applicant as to whether all the required documents have 
+been provided. This will be for the Authority to determine. 
+If the application is valid, the application will be issued with a registration number and 
+referred to the Authority. 
+8. Opportunity for nearby pharmacists to provide comment 
+For applications to establish a new pharmacy, the Authority will generally seek written 
+comments from pharmacists in the surrounding area of the proposed premises. This practice 
+allows pharmacists to comment on whether, in their opinion, the proposed pharmacy would 
+meet the requirements of the Rules. It is also valuable for the Authority to obtain comments 
+from persons, other than the applicant, who are familiar with the area. 
+Where the applicant has clearly stated the application does not meet a particular 
+requirement of the Rules, for example, the relevant distance requirement, comments will not 
+be invited. This is not intended to pre-empt the Authority’s decision; the application will still 
+be considered by the Authority for a recommendation to be made. 
+The Authority does not write to surrounding pharmacists to provide comment on applications 
+to relocate an existing pharmacy, as to do so would require identifying the pharmacy to be 
+relocated. This would constitute a breach of the secrecy provisions of section 135A of the 
+Act, under which it is a criminal offence for an officer of the department to disclose 
+information that has been provided to the department under a provision of the Act. 
+As not all pharmacists in the area will be contacted, invited pharmacists are encouraged to 
+inform other local pharmacists who may also submit comments. Nearby pharmacists will 
+generally be given 2 weeks to respond. 
+Any comments must be made in writing to the Authority, should be substantiated with 
+evidence, and should relate to the relevant criteria of the Rules. The Authority is unable to 
+consider issues that are not within the Rules. 
+When providing comment, pharmacists should observe their obligations regarding the 
+collection, use or disclosure of personal and/or health information of individuals. These 
+include ethical and legal obligations to protect the privacy of customers who have a right to 
+expect their information will be held in confidence unless information is required to be 
+released by law. There is no requirement for such information to be released in relation to 
+commenting on an application for approval to supply pharmaceutical benefits.  
+ 
+9 
+Personal details of patients and customers including names, addresses and Medicare 
+numbers must not be provided or must be redacted, for example, if sending information 
+relating to the supply of medicines includes a copy of the customer’s prescription or 
+dispensing label, all personal details must be redacted. 
+Pharmacists should note that giving false or misleading information is a serious offence 
+under Division 137 of the Criminal Code 1995, the maximum penalty for which is 
+imprisonment for 12 months. 
+After making a recommendation, the Authority will write to any pharmacist that provided 
+comments on an application to advise the outcome. If an Authority recommendation is 
+subsequently the subject of an appeal to the Administrative Appeals Tribunal (AAT) or a 
+Federal Court, the Authority will advise pharmacists who provided comment on the application. 
+Details of comments, including the pharmacist that made the comments, will not be disclosed 
+to the applicant or any other party. However, it is important to note that if the Authority’s 
+recommendation is the subject of a review by the AAT or a Federal Court, the comments 
+provided on that application will be released to the applicant and the AAT or court. 
+Any comments provided on an application may be required to be released under the 
+Freedom of Information Act 1982. 
+9. Length of the application process 
+The Authority generally meets 10 times each year to consider applications. Meeting and 
+lodgement dates for applications are on the Authority’s webpage. These dates are subject to 
+change and applicants should consult the website for the most current meeting and 
+application lodgement dates. 
+The cut-off date for lodgement of applications is approximately 5 weeks before the meeting. 
+This allows time for the Secretariat to process the applications, invite nearby pharmacists to 
+comment (where appropriate), and distribute the applications to Authority members for pre-
+meeting assessment. Each application is formally considered at the meeting before a 
+recommendation to the delegate is made. 
+The Secretariat does not have discretion to accept a late application received after the cut-
+off date for a meeting or to accept additional information provided by or on behalf of an 
+applicant after the application has been registered. 
+In considering an application, the Authority might find certain information needs to be 
+clarified or additional information is necessary. In this case, the Authority may defer making 
+a recommendation until a subsequent meeting and request, in writing, that the applicant or 
+another party provide the requested information by a specified date. 
+If more than one application is received for a particular area, the Authority will generally 
+consider applications in the order in which they have been received by the department, and 
+not at the same meeting. Also, the Authority will only consider the next application for a 
+particular area once it has made a recommendation on the first application for that area. This 
+means there may be a delay before a second application for a particular area is considered. 
+It is recommended applicants allow sufficient time between submitting their application and 
+their proposed commencement date in case of delays. 
+Applicants are cautioned against using a ‘just in time’ approach for applying for approval. As 
+the Authority must be satisfied that all requirements applicable to the item of the Rules are 
+met, it is not uncommon for the Authority to defer its decision to the next scheduled meeting 
+to allow further evidence to be sought. Alternatively, the Authority may recommend the 
+application not be approved. 
+ 
+ 
+10 
+10. 
+Requests for additional information by the Authority 
+If the Authority defers making a recommendation, the Authority will email the applicant 
+requesting additional information to be provided by a specified date. The applicant should only 
+provide information that directly responds to the Authority’s request. Applicants should also be 
+aware that information provided after the specified date may result in the Authority further 
+deferring its consideration of the application or recommending the application not be approved. 
+11. 
+Notice of the Authority’s meeting outcomes 
+Where the Authority has made a recommendation to approve or not approve an application, 
+the delegate will be notified. The delegate is responsible for granting approvals and may 
+reject an application even if the Authority has recommended it for approval. 
+The timeframes listed below are intended to ensure procedural fairness for all parties. They 
+may vary depending on the number of applications considered at a meeting. 
+Meeting outcomes will be published on the PBS Approved Suppliers Portal within 5 working 
+days, after which applicants will be notified as follows: 
+• 
+deferred applications: the Secretariat will advise applicants of the Authority’s 
+reason for deferral generally within 5 working days after the meeting 
+• 
+recommended applications: the department will advise applicants of the Authority’s 
+recommendation and the further requirements for obtaining approval from the 
+delegate generally within 5 working days after the meeting 
+• 
+not recommended applications: the Secretariat will advise applicants of the 
+Authority’s decision, reasons for that decision, and their rights of review generally 
+within 10 working days after the meeting. 
+Pharmacist(s) who provided comments to the Authority will be advised of the Authority’s 
+decision after all applicants have been notified. Please note: 
+• 
+the Secretariat will not advise nearby pharmacists or their authorised representative 
+of the Authority’s decisions any earlier than 10 working days after a meeting 
+• 
+due to the secrecy provisions of the Act the Secretariat is unable to provide 
+information to a third party about the reasons for a decision, or any details relating to 
+the applicant or the application 
+• 
+the Secretariat does not advise nearby pharmacists if the Authority has deferred 
+making a recommendation on an application. 
+12. 
+Reasons for decisions 
+Where the Authority recommends an application not be approved, the applicant may request 
+a statement of reasons outlining the reasons for the Authority’s decision. However, in most 
+instances, the letter provided to the Applicant to outline the reasons for the Authority’s 
+decision will be considered sufficient by the Authority. 
+Third parties who believe they are aggrieved by a decision of the Authority to recommend 
+that an application be approved, may be entitled to request a statement of reasons outlining 
+the reasons for the Authority’s decision. 
+A request for a statement of reasons must be made, in writing, to the Authority within 
+28 days of receiving the notice of the Authority’s recommendation. On receipt of a request, 
+the Authority has 28 days to provide the statement of reasons to the applicant or third party. 
+ 
+11 
+13. 
+Review of decisions 
+Administrative Appeals Tribunal 
+Applicants that were not recommended for approval by the Authority may be entitled to seek a 
+review by the Administrative Appeals Tribunal (AAT). They will have 28 days from the date 
+they received notice of the Authority’s recommendation to not approve, to seek a review of the 
+decision. If the applicant requested and received a statement of reasons, they have 28 days, 
+from the date they received the statement of reasons, to seek a review of the decision. 
+There are fees associated with seeking a review. For further information, contact the AAT in 
+your State or Territory. It is also recommended applicants seek independent legal advice 
+before proceeding. Information about the AAT is available on the AAT's website. 
+Third parties are generally not entitled to seek a review by the AAT in relation to a 
+recommendation by the Authority. If a third party believes they are aggrieved by a decision, it 
+is recommended they seek independent legal advice to discuss their options. 
+Federal Court 
+Third parties who believe they are aggrieved by a decision of the Authority to recommend an 
+application be approved may be entitled to seek a review of the decision by the Federal 
+Court. Timeframes for seeking a review and fees apply. For further information, contact the 
+Federal Court in your State or Territory. It is also recommended independent legal advice is 
+sought before proceeding. 
+Ministerial discretion to approve 
+Under subsection 90A(2) of the Act the Minister has a discretionary power to approve a 
+pharmacist to supply pharmaceutical benefits at particular premises. This discretionary 
+power is only available in certain circumstances. 
+This is not an alternative to applying for approval under section 90 of the Act and may only 
+be sought after an application has been considered by the Authority and rejected by the 
+delegate in the department. For information about this discretionary power, please refer to 
+the guidelines on the department’s website. 
+14. 
+Obtaining approval after a recommendation by the Authority 
+A recommendation from the Authority to approve an application is not an approval. 
+The applicant must obtain approval from the delegate who is responsible for issuing and 
+cancelling approvals. The delegate may reject the application even if approval has been 
+recommended by the Authority. 
+ 
+ 
+12 
+The Pharmacy Location Rules 
+The Rules are divided into 2 general types – relocating an existing pharmacy and 
+establishing a new pharmacy. 
+Relocating an existing pharmacy 
+An existing pharmacy approval is required to relocate a pharmacy under these items of the 
+Rules. A pharmacist will need to relocate either their own approval or, by agreement, 
+another pharmacist’s approval. 
+An existing pharmacy is ‘relocated’ by cancelling the approval at the existing premises for 
+approval to be granted at another site. An application to relocate an existing pharmacy must, 
+therefore, demonstrate that either the applicant or another pharmacist has requested their 
+approval be cancelled before the approval under consideration is granted. 
+A pharmacist seeking to relocate an existing approved pharmacy must decide which item of 
+the Rules, listed below, is most appropriate to their circumstances. 
+Item 121: Expansion or contraction (not usually referred to the Authority) 
+Item 122: Relocation within a designated complex 
+Item 123: Relocation within the same town (10 km) 
+Item 124: Relocation up to 1 km 
+Item 125: Relocation of 1 to 1.5 km 
+Establishing a new pharmacy 
+An existing pharmacy approval is not required when making an application to establish a 
+new pharmacy. 
+A pharmacist seeking to establish a new approved pharmacy must decide which item of the 
+Rules, listed below, is most appropriate to their circumstances. 
+Item 130: New pharmacy (at least 1.5 km) 
+Item 131: New pharmacy (at least 10 km) 
+Item 132: New additional pharmacy (at least 10 km) 
+Item 133: New pharmacy in a designated complex (small shopping centre) 
+Item 134: New pharmacy in a designated complex (large shopping centre with no approved 
+premises) 
+Item 134A: New additional pharmacy in a designated complex (large shopping centre with 
+approved premises) 
+Item 135: New pharmacy in a designated complex (large private hospital) 
+Item 136: New pharmacy in a designated complex (large medical centre) 
+ 
+ 
+13 
+Lodging an application 
+The Authority must be satisfied that all criteria applicable to the selected item of the Rules 
+are met. Applicants should provide evidence for each requirement and clearly identify how 
+the evidence addresses the requirement. 
+Following these points will assist in having an application processed as promptly as possible: 
+• 
+refer to the guides to assist with navigating the PBS Approved Suppliers Portal 
+• 
+fully complete the online application and all required forms. For example, the 
+declaration and appointment of a representative form (if required), must be signed by 
+all relevant persons. If the application involves another pharmacist’s existing 
+pharmacy approval (for an application for relocation with change of ownership), each 
+approved pharmacist must also sign the current owner form, which must be uploaded 
+with your application 
+• 
+do not include a reference to a trust in the applicant details. From 11 December 2020, 
+trusts are no longer considered or referenced when assessing and approving 
+applications. If the Authority recommends approval of an application, evidence of the 
+relevant state or territory pharmacy board approval is still required prior to the 
+delegate considering whether to grant approval. The delegate will confirm the details 
+on the relevant pharmacy board approval match the details on the application, except 
+for any reference to trusts on the pharmacy board approval 
+• 
+select the correct item of the Rules and upload relevant documents for each 
+requirement. Documents can be uploaded up until you have reached the 
+Declarations page, as outlined in the online user guide. No further documents can be 
+uploaded once you are on the Declarations page 
+• 
+include a covering letter or a summary of the application to clearly describe the 
+documents provided and any circumstances of the application that might be relevant 
+• 
+label supporting documents including any attachments, maps, reports and/or 
+photographs 
+o maps must be clearly scaled and the source cited 
+o survey reports must be undertaken by a licenced or registered surveyor, be 
+on the surveyor’s letterhead, signed and dated by the surveyor, and include a 
+statement that the measurement has been undertaken in accordance with the 
+requirements outlined in this Handbook 
+o photographs must include the date the photograph was taken. 
+• 
+provide statutory declarations on a Commonwealth of Australia statutory declaration 
+template3 and ensure it has been signed in the presence of an authorised witness. 
+It is important to note that it is the applicant’s responsibility to summarise and draw 
+conclusions from the material provided, clearly identifying how the relevant requirements of 
+the Rules are met by the evidence. It is not the Authority’s responsibility to examine large 
+volumes of information and identify how it satisfies the requirements. 
+ 
+ 
+3 As an application for a pharmacy approval is made to a Commonwealth Department, statutory declarations 
+should be made on a Commonwealth of Australia statutory declaration template and signed in the presence of an 
+authorised witness. Information on Commonwealth statutory declarations, including templates and information on 
+authorised witnesses, is available from the Attorney-General’s Department’s website at www.ag.gov.au. 
+ 
+14 
+General requirements for all applications 
+Part 2, Section 10 of the Rules sets out the circumstances when the Authority must 
+recommend that an applicant be approved, including the general requirements that apply to 
+every application, regardless of whether the application involves the cancellation of an 
+existing approval or not. Every application for approval, whether it is for the establishment of 
+a new pharmacy or the relocation of an existing pharmacy, must satisfy the Authority that 
+each of the general requirements is met. 
+This section explains the general requirements which all applications must meet. 
+Identification of particular premises 
+The Authority is required to have a clear understanding of the location of the proposed 
+premises. Therefore, it is important to ensure the proposed premises are clearly identified 
+and accurately and consistently described, including full details of specific street names, 
+numbers and suburbs as well as any relevant shop, floor, suite or lot numbers. 
+In addition, applicants should ensure the address details on any evidence provided 
+corresponds to the address nominated as the proposed premises on the application for 
+approval to supply pharmaceutical benefits. If the proposed premises are known as more 
+than one address, evidence must be provided to demonstrate that this is the case. 
+A scaled, drafted (not hand drawn sketch) site and floor plan of the proposed premises 
+should be provided, clearly identifying the required details. Any adjacent or adjoining 
+premises should also be identified. 
+Evidence that the proposed premises are not approved premises 
+Part 2, Section 10, subsection 3(a) of the Rules requires that the Authority is satisfied 
+that at all relevant times the proposed premises are not approved premises. 
+The meaning of approved premises includes premises: 
+ in relation to which an approval granted under section 90 of the Act is in force 
+(this, in most cases, includes deactivated approvals), or 
+ in relation to which the Authority has recommended an applicant be approved 
+under section 90 of the Act and the Secretary has not yet made a decision on the 
+application. 
+The Applicant should provide a statement as to whether the proposed premises are 
+occupied, and if so, by what type of business. When referring an application to the Authority, 
+the department will provide information to the Authority in relation to this requirement. 
+ 
+15 
+Evidence of legal right to occupy the proposed premises 
+Part 2, Section 10, subsection 3(b) of the Rules requires that the Authority is satisfied 
+the applicant has, at all relevant times, a legal right to occupy the proposed premises 
+(whether the right is to occupy the premises on the day the application is made or 
+after that day). 
+To support this requirement, the application must include evidence demonstrating the 
+applicant has a legal right to occupy the proposed premises on the date the application is 
+lodged, and on the date on which the Authority makes a recommendation in respect of the 
+application. Such evidence may include a lease or agreement to lease, or a licence 
+agreement, which includes agreed terms, a commencement date, and which has been 
+executed (signed) and dated by all relevant parties, for example, the lessor and lessee. 
+Please note, a copy of 
+• 
+an unsigned lease or agreement to lease, or 
+• 
+a lease or agreement to lease that indicates or states that it is non-binding  
+is not sufficient to demonstrate legal right and may result in the Authority 
+recommending the application not be approved. 
+If more than one pharmacist is making the application, evidence must be provided to 
+demonstrate legal right is applicable to all applicants, that is, the lease or agreement to 
+lease, or licence agreement includes all applicants named in the application. 
+Leasing premises 
+If the proposed premises are to be leased by the applicant, the application should include 
+a complete copy of the fully executed lease. Alternatively, other evidence may be sufficient 
+if it demonstrates an agreement has been reached between the lessee and lessor on the 
+terms and conditions of the lease, and which has been signed by both parties to indicate 
+offer and acceptance. 
+Sub-leasing premises 
+In the case of a sub-lease, evidence is also required to demonstrate the sub-lease is permitted 
+under the terms of the head lease or the head lessor has consented to the sub-lease. 
+Purchasing premises 
+If the proposed premises are owned or are being purchased by the applicant, the application 
+should include a copy of the title deed and/or relevant sales contract including any conditions 
+to which it may be subject. 
+Leasing or purchasing premises in a company name 
+If the applicant is leasing or buying the proposed premises in the name of a company and 
+that company is not the applicant, evidence must be provided to demonstrate that 
+agreement has been reached between the directors of the company and the applicant on the 
+terms and conditions for the use of the premises by the applicant, for example a sublease 
+between the company and the applicant. 
+Similarly, if the applicant is a company, and the proposed premises are owned or leased by 
+a director of the company in an individual capacity, evidence must be provided to 
+demonstrate that agreement has been reached between the individual(s) and the applicant 
+on the terms and conditions for the use of the premises by the applicant, for example, a 
+sublease between the individual(s) and the applicant. 
+Leasing arrangements involving trusts 
+Where a trust is involved, evidence must be provided of the relationship between the trust 
+and the applicant (such as the trust deed for the Trust). 
+ 
+ 
+16 
+Evidence of council approval to use the proposed premises for the purposes 
+of operating a pharmacy 
+Part 2, Section 10, subsection 3(c) of the Rules requires that the Authority is satisfied 
+that at all relevant times the proposed premises could be used for the operation of a 
+pharmacy under applicable local government and State or Territory laws relating to 
+land development. 
+The application must include evidence to demonstrate the proposed premises could be used 
+for the purposes of operating a pharmacy. That is, the relevant government authority, such 
+as the local council, permits a pharmacy to operate at the proposed premises. 
+Please note: 
+• 
+this is not the same as an approval to operate a pharmacy business at particular 
+premises granted by the relevant pharmacy approval authority 
+• 
+approval by the landlord within the lease to operate a pharmacy is not sufficient 
+evidence to support this item. 
+This requirement would be satisfied if planning approval for the proposed pharmacy has 
+been obtained or, if this is not necessary in the State or Territory where the pharmacy would 
+be located, the proposed premises are on land that is zoned to enable the operation of a 
+pharmacy. An application to obtain building works approval or a certificate of occupancy, or 
+similar, is not required to satisfy this requirement. However, it may be needed for compliance 
+with the requirement that the proposed premises will be ready to trade within 6 months 
+depending on the operation of applicable State or Territory land development laws. 
+The type of evidence required will vary depending on the location of the proposed premises 
+and the requirements of the relevant local council. Examples include: 
+• 
+evidence that relevant government or local Council planning approval for a pharmacy 
+to operate at the proposed premises has been obtained, such as a decision notice 
+approving a development application to vary or change the use of the proposed 
+premises for the purpose of operating a pharmacy. (Please note, the lodgement of a 
+development application on which a decision has not yet been made is not sufficient 
+evidence to satisfy this Item) 
+• 
+evidence the land is suitably zoned to allow the operation of a pharmacy. This may 
+include a letter from the local council confirming the proposed premises are able to 
+be used for the purpose of operating a pharmacy without the need for a development 
+application, or print outs from the relevant council website of the Property Planning 
+Report for the proposed premises including all relevant schedules to the Report 
+• 
+evidence the relevant government authority has approved the site for a mix of retail 
+shops and services that includes a pharmacy where the proposed premises are 
+located within a shopping centre. 
+Applicants should provide succinct, clear information, rather than ‘dumping’ large volumes of 
+Council zoning information in an application, as it can be difficult for members of the 
+Authority to determine the relevant sections of the information and how it might relate to an 
+application. Applicants should also not refer the Authority to other sources or websites to 
+obtain Council documents. 
+ 
+ 
+17 
+Evidence the proposed premises would be accessible by the public 
+Part 2, Section 10, subsection 3(d) of the Rules requires that the Authority is satisfied 
+the proposed premises would be accessible by the public. 
+Evidence is required to demonstrate the proposed premises will be accessible by the public, 
+not just certain classes of the public. For example, the local council may approve premises 
+for the purpose of operating a medical centre and ancillary pharmacy or dispensary, with a 
+restriction that the pharmacy or dispensary can only be used by patients of the medical 
+centre. This would not satisfy the requirements of this item of the Rules as it does not 
+support the purpose of the Pharmaceutical Benefits Scheme, which is to ensure that 
+pharmaceutical benefits are available to the community and not restricted to certain 
+members of the public. For this reason, where an ‘ancillary’ pharmacy or dispensary has 
+been approved by the relevant council, applicants are required to provide evidence that the 
+council allows the pharmacy or dispensary to service the public and not be limited to only 
+patients of the medical centre or private hospital. 
+Proposed premises will be ready to trade within 6 months of a 
+recommendation being made by the Authority 
+Part 2, Section 10, subsection 3(e) of the Rules requires that the Authority is satisfied 
+that within 6 months after the day on which the Authority makes a recommendation in 
+relation to the application, the applicant will be able to begin operating a pharmacy at 
+the proposed premises. 
+An applicant must demonstrate they will be ready to begin operating a pharmacy at the 
+proposed premises within 6 months of the date the Authority makes its recommendation. 
+The intention of this provision is to improve timely access to the supply of pharmaceutical 
+benefits by ensuring pharmaceutical benefits will be supplied to the relevant community 
+within 6 months of the Authority recommending approval of an applicant. It is also intended 
+to prevent applications being made prematurely. 
+It is not unreasonable for the Authority to expect that, at the least, quotes have been 
+obtained that include anticipated timeframes for completion of works and any anticipated 
+delays with sourcing building materials and/or tradespeople. 
+Evidence addressing this requirement should include: 
+• 
+plans that have already been approved by the relevant local council 
+• 
+a formal building or fit-out schedule that indicates works will be completed by a 
+certain date and a quote and / or contract for the works to be undertaken 
+• 
+dated photographs demonstrating the status of the proposed premises. 
+Proposed premises are not accessible from a supermarket 
+Part 2, Section 10, subsection 3(f) of the Rules requires that the Authority is satisfied 
+that the proposed premises will not be directly accessible by the public from within a 
+supermarket. 
+The Rules defines a supermarket as meaning a retail store the primary business of which is 
+the sale of a range of food, beverages, groceries and other domestic goods. 
+It is intended to mean a retail store, usually self-service, the primary business of which is the 
+retail sale of a range of food, beverages, groceries and other domestic goods which can be 
+purchased in a single transaction, and in which a person could do their weekly shopping for 
+fresh food (e.g. dairy, meat, bread), pantry items, cleaning products, personal care items and  
+ 
+18 
+other household staples (e.g. laundry pegs, plastic food wrap). Reference to the primary 
+business means the definition would not expand to a department or variety store that has a 
+deli or café section, nor does it include a petrol station or market (retail/wholesale) selling a 
+range of produce. 
+Where the primary business of the retail store is the sale of liquor or petrol, that retail store is 
+not a supermarket. A liquor store can be included as part of a supermarket where items from 
+the liquor store can be purchased along with items from the supermarket in a single 
+transaction, or where a liquor aisle is contained within the supermarket footprint. 
+Evidence to address this requirement may include a plan of the proposed premises and any 
+adjacent or joining shops, which highlights the public access points to the proposed 
+pharmacy and information about the type of adjacent or joining shops. 
+ 
+ 
+19 
+Applications involving the relocation of an existing 
+pharmacy 
+This part of the Handbook sets out the requirements that must be met for all applications to 
+relocate an existing pharmacy, including the types of evidence which might be provided to 
+demonstrate the requirements are met, and any restrictions associated with an approval 
+granted under each item of the Rules. 
+Schedule 1, Part 1 of the Rules sets out the requirements for applications involving the 
+relocation of an existing pharmacy. 
+Below are the provisions in the Rules for relocating an existing pharmacy: 
+Item 121: Expansion or contraction (not usually referred to the Authority) 
+Item 122: Relocation within a designated complex 
+Item 123: Relocation within the same town (10 km) 
+Item 124: Relocation up to 1 km 
+Item 125: Relocation of 1 to 1.5 km 
+The Handbook outlines the requirements that apply to all applications to relocate an existing 
+pharmacy. It provides that the Authority must be satisfied: 
+• 
+an approved pharmacist has requested that their approval be cancelled immediately 
+before approval in respect of the subject application is granted, and 
+• 
+that, on the day the application is made, one or more approvals in respect of the 
+existing premises, have been in force continuously for at least 5 years immediately 
+before the day the application is made. 
+If one or more approvals in respect of the existing premises have been in force for a 
+continuous period of less than 5 years, an applicant must provide evidence to demonstrate 
+the circumstances meet one of the exceptions specified in the Rules. 
+The exceptions are described below 
+• 
+the proposed premises are located within the same designated complex in which the 
+existing premises are located, and the application is made under Item 122 Relocation 
+within a designated complex, or 
+• 
+the existing premises are the only approved premises in a particular town and the 
+proposed premises are located within the same town as the existing premises and 
+the application is made under Item 123 Relocation within the same town (10 km), or 
+• 
+the purpose of the application is to allow the pharmacy operated by the applicant at 
+the existing premises to move to the proposed premises while the existing premises 
+are renovated or refurbished and the application is not made under Item 125, or 
+• 
+the proposed premises are renovated or refurbished premises that are the same, or 
+substantially the same, premises previously occupied by the pharmacy operated by 
+the applicant or by the previous owner of the pharmacy and the application is not 
+made under Item 125, or 
+ 
+ 
+20 
+• 
+because of a disaster or exceptional circumstances pharmaceutical benefits are unable 
+to be supplied at the existing premises, and will not be able to be supplied at the 
+existing premises in the future, and the application is not made under Item 125, or 
+• 
+the existing approval was granted following an application for an expansion or 
+contraction of the premises and the existing and previous approvals at those 
+premises have been in force continuously for a total of at least 5 years, or 
+• 
+the application is for the expansion or contraction of approved premises and the 
+application has been referred to the Authority. 
+Schedule 2, Part 2 of the Rules specifies the restrictions that apply to certain applications to 
+relocate an existing approval. It is important to note that some of the restrictions under 
+previous Rules continue to apply for the period specified in the restriction. 
+When referring an application to the Authority, the department will provide information to the 
+Authority in relation to any relevant restrictions. 
+ 
+ 
+21 
+Rule 121: Expansion or contraction 
+The delegate can approve or reject applications for an expansion or contraction in the size of 
+a pharmacy without a recommendation by the Authority. However, the delegate has the 
+discretion to refer such an application to the Authority if they consider it should be assessed 
+against the Rules. For example, the delegate may refer an application to the Authority if they 
+are not satisfied the expanded or contracted premises will not be directly accessible from 
+within a supermarket. 
+Requirements 
+An application for an expansion or contraction must meet all requirements listed below. 
+ the application is for an expansion or contraction of pharmacy premises, in which 
+the proposed premises will occupy any of the space occupied by the existing 
+premises, and 
+ the application has been referred to the Authority. 
+Evidence required 
+A floor plan highlighting the existing premises and the premises to be occupied following the 
+expansion or contraction of the pharmacy must be provided. 
+General requirements 
+Please note, it is important to clearly identify the proposed premises that is the subject of an 
+application, as well as the existing premises. Evidence must also be provided in support of 
+each of the requirements below: 
+• 
+at all relevant times, the proposed premises are not approved premises.  
+(Note: Where there is a physical difference between the proposed expanded or 
+contracted premises and the existing approved premises, the proposed premises are 
+not deemed to be the approved premises for the purpose of this Rule) 
+• 
+the applicant has, at all relevant times, a legal right to occupy the proposed premises 
+(whether the right is to occupy the premises on the day the application is made or 
+after that day) 
+• 
+at all relevant times, the proposed premises could be used for the purpose of 
+operating a pharmacy under applicable local government and State or Territory laws 
+relating to land development 
+• 
+the proposed premises would be accessible by the public 
+• 
+within 6 months after the day on which the Authority makes a recommendation in 
+relation to the application, the applicant will be able to begin operating a pharmacy at 
+the proposed premises 
+• 
+the proposed premises will not be directly accessible by the public from within a 
+supermarket. 
+The evidence required for the above is outlined under ‘General Requirements for all 
+applications’ section. 
+Note: An expansion or contraction of pharmacy premises is described in subsection 90(3AE) 
+of the Act. It applies where an existing pharmacy is expanding or contracting its premises, 
+and the expanded or contracted premises occupy any of the space occupied by the existing 
+pharmacy premises. This does not include proposed and existing premises that share only a 
+common wall - this would constitute a relocation (see Items 122, 124 or 125). 
+ 
+ 
+22 
+Item 122: Relocation within a designated complex 
+Requirements 
+An application made under this item of the Rules must meet all requirements, including all 
+the general requirements, listed below. 
+The proposed premises are in the same designated complex* as the existing 
+premises. 
+* Please refer to the Glossary for the definition of ‘designated complex’. 
+Evidence required 
+A designated complex is defined in the Rules to include a ‘small shopping centre’, a ‘large 
+shopping centre’, a ‘large medical centre’, or a ‘large private hospital’. Each of these are also 
+defined in the Rules. 
+Evidence is required to demonstrate that both the proposed premises and the existing 
+(current) premises are located within a designated complex. 
+Evidence could include a floor plan of the complex, clearly marking the location of the 
+existing and the proposed premises, and a statutory declaration (made on a Commonwealth 
+of Australia statutory declaration template) from the centre management of the shopping 
+centre, the governing body of the large private hospital or large medical centre, confirming 
+the designated complex meets the definition of a small shopping centre, a large shopping 
+centre, a large medical centre, or a large private hospital, by providing relevant details, for 
+example, information regarding the size of the shopping centre and the number of 
+commercial establishments within the centre. 
+Single management, for a small shopping centre, a large shopping centre, or a large medical 
+centre means: 
+ an arrangement in which a single entity, or 2 or more entities working cooperatively 
+under an agreement, is responsible for marketing, maintenance and administration for 
+the centre as a whole, and 
+ does not include independent owners or tenants of premises in a building or centre that 
+cooperate on particular occasions, or that cooperate in relation to some, but not all, of 
+the matters mentioned in paragraph (a) in relation to the building or the centre. 
+If the existing and proposed premises are located within a private hospital and an applicant 
+is unsure as to whether the private hospital meets the required definition, they should 
+contact the governing body of the hospital for advice. 
+A common reason for applications not meeting the requirements of Item 122 has been that 
+the existing and the proposed premises have not been in a designated complex as defined 
+by the Rules. 
+If the small shopping centre or large shopping centre or large medical centre or large private 
+hospital does not meet the definition in the Rules, the Authority is unable to recommend 
+approval under this item. In such cases, applicants may wish to consider applying under 
+Item 124. 
+ 
+ 
+23 
+General requirements 
+Please note, it is important to clearly identify the proposed premises that are the subject of an 
+application. Evidence must also be provided in support of each of the requirements below: 
+• 
+at all relevant times, the proposed premises are not approved premises 
+• 
+the applicant has, at all relevant times, a legal right to occupy the proposed premises 
+(whether the right is to occupy the premises on the day the application is made or 
+after that day) 
+• 
+at all relevant times, the proposed premises could be used for the purpose of 
+operating a pharmacy under applicable local government and State or Territory laws 
+relating to land development 
+• 
+the proposed premises would be accessible by the public 
+• 
+within 6 months after the day on which the Authority makes a recommendation in 
+relation to the application, the applicant will be able to begin operating a pharmacy at 
+the proposed premises 
+• 
+the proposed premises will not be directly accessible by the public from within a 
+supermarket. 
+The evidence required for the above is outlined under ‘General Requirements for all 
+applications’ section. 
+ 
+ 
+24 
+Item 123: Relocation within the same town (10 km) 
+Requirements 
+An application made under this item of the Rules must meet all requirements, including all 
+the general requirements, listed below. 
+ the proposed premises are in the same town as the existing premises, and 
+ the proposed premises are at least 10 km, by the shortest lawful access route, 
+from the nearest approved premises, other than the existing premises. 
+Evidence required for item 123(a) 
+A map highlighting the location and addresses of the existing premises and the proposed 
+premises is required to demonstrate that both premises are located within the same town. 
+‘Same town’ is intended to mean where 2 towns share the same name, as well as the same 
+postcode. The name of a town, in respect of particular premises, means the physical locality 
+of those premises assigned by the local planning authority/council. Two towns that are close 
+to one another and share the same postcode but not the same name, are not considered to 
+be in the ‘same town’. 
+Evidence required for item 123(b) 
+The shortest lawful access route is one generally available to be taken between premises 
+that could reasonably be used by average persons travelling that route. It can be by car, 
+walking, or other legal means of travel, or a combination of these. The route can include 
+walking through public land such as parks and reserves, however, the route must be one 
+available to most members of the public rather than one catering to persons or groups with 
+specialised needs. 
+The measurement of the shortest lawful access route must follow the shortest lawful access 
+route between the 2 premises, from the centre, at ground level, of the public entrance of the 
+first premises to the centre, at ground level, of the public entrance of the second premises. If 
+there is more than one public access door for either or both the premises, the measurement 
+must be taken from the public access door nearest to the other premises, that is, the 
+shortest measurement that can be taken. 
+If the distance separating the nearest approved pharmacy and the proposed premises is 
+substantially greater than 10 km, it may be sufficient to provide a clearly scaled map, 
+highlighting the location and addresses of the 2 premises and the approximate shortest 
+lawful access route distance using the scale on the map as the basis. 
+If the distance between the nearest approved pharmacy and the proposed premises is near 
+to the required distance, applicants should provide a report from a licenced or registered 
+surveyor showing the measurement of the shortest lawful access route distance. Any 
+surveyor’s report should include: 
+• 
+the surveyor’s licence or registration number 
+• 
+a clearly scaled map 
+• 
+a description of the methodology and equipment used in the measurement 
+• 
+the shortest lawful access route distance measured 
+• 
+the margin for error in the measurement 
+• 
+detailed information about the public access doors to each of the premises, and 
+• 
+confirmation that the measurement has been undertaken from the mid-point at 
+ground level of the public access door of each of the premises. 
+ 
+25 
+General requirements 
+Please note, it is important to clearly identify the proposed premises that are the subject of an 
+application. Evidence must also be provided in support of each of the requirements below: 
+• 
+at all relevant times, the proposed premises are not approved premises 
+• 
+the applicant has, at all relevant times, a legal right to occupy the proposed premises 
+(whether the right is to occupy the premises on the day the application is made or 
+after that day) 
+• 
+at all relevant times, the proposed premises could be used for the purpose of 
+operating a pharmacy under applicable local government and State or Territory laws 
+relating to land development 
+• 
+the proposed premises would be accessible by the public 
+• 
+within 6 months after the day on which the Authority makes a recommendation in 
+relation to the application, the applicant will be able to begin operating a pharmacy at 
+the proposed premises 
+• 
+the proposed premises will not be directly accessible by the public from within a 
+supermarket. 
+The evidence required for the above is outlined under ‘General Requirements for all 
+applications’ section. 
+ 
+ 
+26 
+Item 124: Relocation up to 1 km 
+Requirements 
+An application made under this item of the Rules must meet all requirements, including all 
+the general requirements, listed below. 
+ 
+the proposed premises are no more than 1 km, in a straight line, from the 
+existing premises, and 
+ 
+one of the following applies: 
+(i) 
+the existing premises are not in a designated complex 
+(ii) 
+the existing premises are in a large shopping centre and the proposed 
+premises are at least 300 m, in a straight line, from all approved premises 
+not in the large shopping centre 
+(iii) the existing premises are in a small shopping centre, a large medical 
+centre or a large private hospital and the proposed premises are at least 
+500 m, in a straight line, from all approved premises not in the small 
+shopping centre, large medical centre or large private hospital. 
+Evidence required for item 124(a) 
+The Rules specify that the straight line distance must be taken from the mid-point at ground 
+level of the public access door of each of the premises. If there is more than one public 
+access door for either or both of the premises, the measurement must be taken from the 
+public access door nearest to the other premises, that is, the shortest measurement that can 
+be taken. 
+If the distance separating the existing premises and the proposed premises is substantially 
+less than 1 km, it may be sufficient to provide a scaled map, highlighting and clearly 
+identifying the locations of the 2 premises, and the approximate straight line distance using 
+the scale on the map as the basis. 
+If the distance between the existing premises and the proposed premises is near to the 
+required distance, applicants should provide a report from a licenced or registered surveyor, 
+of the measurement of the straight line distance between the 2 premises. Any surveyor’s 
+report should include: 
+• 
+the surveyor’s licence or registration number 
+• 
+a clearly scaled map 
+• 
+a description of the methodology and equipment used in the measurement 
+• 
+the straight line distance measured 
+• 
+the margin for error in the measurement 
+• 
+detailed information about the public access doors to each of the premises. and 
+• 
+confirmation that the measurement has been undertaken from the mid-point at 
+ground level of the public access door of each of the premises. 
+ 
+ 
+27 
+Evidence required for item 124(b) 
+(i) 
+If the existing pharmacy premises, which are the subject of the relocation 
+application, are not in a designated complex (small shopping centre, large 
+shopping centre, large medical centre or large private hospital) evidence 
+must be provided to demonstrate that this is the case. 
+This may include a photograph of the existing and adjoining premises, or a 
+letter from the manager/owner of the building in which the premises are 
+located, confirming the premises are not located within a designated complex 
+(small shopping centre, large shopping centre, large medical centre or large 
+private hospital). 
+(ii) 
+If the existing pharmacy premises, which are the subject of the relocation 
+application, are within a large shopping centre, evidence that the proposed 
+premises are at least 300 m, by straight line, from all other approved 
+pharmacies other than those located within that same large shopping 
+centre, is required. 
+(iii) If the existing premises, which are the subject of the relocation application, 
+are in a small shopping centre, a large medical centre or a large private 
+hospital, evidence that the proposed premises are at least 500 m, in a 
+straight line, from all approved premises not in the same small shopping 
+centre, large medical centre or large private hospital, is required. 
+Please refer to the evidence required for requirement item 124(a) (above). If the 
+distance separating the approved premises not located within the same large 
+shopping centre, small shopping centre, large medical centre or large private 
+hospital in which the existing premises that are the subject of the relocation 
+application, are located, and the proposed premises is substantially more than 
+the minimum distance requirement, it may be sufficient to provide a scaled map, 
+highlighting and clearly identifying the relevant premises (the existing premises, 
+the proposed premises, and the nearest approved premises if relevant) and the 
+approximate straight line distance between the relevant premises using the scale 
+on the map as the basis. However, if the distance is near to the minimum distance 
+requirement, a surveyor’s report should be provided (see item 124(a) above). 
+General requirements 
+Please note, it is important to clearly identify the proposed premises that are the subject of an 
+application. Evidence must also be provided in support of each of the requirements below: 
+• 
+at all relevant times, the proposed premises are not approved premises 
+• 
+the applicant has, at all relevant times, a legal right to occupy the proposed premises 
+(whether the right is to occupy the premises on the day the application is made or 
+after that day) 
+• 
+at all relevant times, the proposed premises could be used for the purpose of 
+operating a pharmacy under applicable local government and State or Territory laws 
+relating to land development 
+• 
+the proposed premises would be accessible by the public 
+• 
+within 6 months after the day on which the Authority makes a recommendation in 
+relation to the application, the applicant will be able to begin operating a pharmacy at 
+the proposed premises 
+• 
+the proposed premises will not be directly accessible by the public from within a 
+supermarket. 
+The evidence required for the above is outlined under ‘General Requirements for all 
+applications’ section. 
+ 
+ 
+28 
+Restrictions 
+Applicants wishing to relocate an existing approval that was originally granted under an item 
+associated with a new rural approval under the previous Rules or following an application 
+under Item 131 or 132 (new pharmacy (at least 10 km) or a new additional pharmacy  
+(at least 10 km), must demonstrate the proposed premises are within the same town in 
+which the approval was originally granted. 
+Applicants wishing to relocate an existing approval that was originally granted under Item 
+133, 134, or 134A, and for which the application to relocate is made within 10 years after the 
+day the approval was granted as a result of an application under Item 133, 134 or 134A, 
+must satisfy the Authority that there are exceptional circumstances if the proposed premises 
+are not located within the same facility in which the approval was originally granted. 
+Applicants wishing to relocate an existing approval that was originally granted under  
+Item 130, within the 5 years prior to the date of application, may only relocate to proposed 
+premises that are not more than 1 km, by straight line, from those original premises. 
+ 
+29 
+Item 125: Relocation of 1 to 1.5 km 
+Requirements 
+An application made under this item of the Rules must meet all requirements, including all 
+the general requirements, listed below. 
+(a) 
+the proposed premises are more than 1 km, but no more than 1.5 km, in a 
+straight line, from the existing premises, and 
+(b) 
+one of the following applies: 
+(i) 
+the existing premises are not in a designated complex and the proposed 
+premises are at least 300 m, in a straight line, from the nearest approved 
+premises 
+(ii) 
+the existing premises are in a large shopping centre and the proposed 
+premises are at least 300 m, in a straight line, from the nearest approved 
+premises 
+(iii) the existing premises are in a small shopping centre, a large medical 
+centre or a large private hospital and the proposed premises are at least 
+500 m, in a straight line, from the nearest approved premises. 
+Evidence required for item 125(a) 
+The Rules specify that the straight line distance must be taken from the mid-point at ground 
+level of the public access door of each of the premises. If there is more than one public 
+access door for either or both of the premises, the measurement must be taken from the 
+public access door nearest to the other premises, that is, the shortest measurement that can 
+be taken. 
+If the distance separating the existing premises and the proposed premises is substantially 
+more than 1 km or substantially less than 1.5 km, it may be sufficient to provide a scaled 
+map, highlighting and clearly identifying the locations of the 2 premises, and the approximate 
+straight line distance using the scale on the map as the basis. 
+If the distance between the existing premises and the proposed premises is near to the 
+required distance, applicants should provide a report from a licenced or registered surveyor, 
+of the measurement of the straight line distance between the 2 premises. Any surveyor’s 
+report should include: 
+• 
+the surveyor’s licence or registration number 
+• 
+a clearly scaled map 
+• 
+a description of the methodology and equipment used in the measurement 
+• 
+the straight line distance measured 
+• 
+the margin for error in the measurement 
+• 
+detailed information about the public access doors to each of the premises, and 
+• 
+confirmation that the measurement has been undertaken from the mid-point at 
+ground level of the public access door of each of the premises. 
+ 
+ 
+ 
+30 
+Evidence required for item 125(b) 
+(i) 
+If the existing pharmacy premises, which are the subject of the relocation 
+application, are not in a designated complex (small shopping centre, large 
+shopping centre, large medical centre or large private hospital) evidence 
+must be provided to demonstrate that this is the case. 
+This may include a photograph of the existing and adjoining premises, or a 
+letter from the manager/owner of the building in which the premises are 
+located, confirming the premises are not located within a designated complex 
+(small shopping centre, large shopping centre, large medical centre or large 
+private hospital). 
+(ii) 
+If the existing pharmacy premises, which are the subject of the relocation 
+application, are within a large shopping centre, evidence that the proposed 
+premises are at least 300 m, in a straight line, from the nearest approved 
+premises, is required. 
+(iii) If the existing premises, which are the subject of the relocation application, 
+are in a small shopping centre, a large medical centre or a large private 
+hospital, evidence that the proposed premises are at least 500 m, in a 
+straight line, from the nearest approved premises, is required. 
+Please refer to the evidence required for requirement (a) (above). If the distance 
+separating the approved premises not located within the same large shopping 
+centre, small shopping centre, large medical centre or large private hospital in 
+which the existing premises which are the subject of the relocation application, 
+are located, and the proposed premises is substantially more than the minimum 
+distance requirement, it may be sufficient to provide a scaled map, highlighting 
+and clearly identifying the 2 premises and the approximate straight line distance 
+using the scale on the map as the basis. However, if the distance is near to the 
+minimum distance requirement, a surveyor’s report should be provided (see (a) 
+above). 
+General requirements 
+Please note, it is important to clearly identify the proposed premises that are the subject of an 
+application. Evidence must also be provided in support of each of the requirements below: 
+• 
+at all relevant times, the proposed premises are not approved premises 
+• 
+the applicant has, at all relevant times, a legal right to occupy the proposed premises 
+(whether the right is to occupy the premises on the day the application is made or 
+after that day) 
+• 
+at all relevant times, the proposed premises could be used for the purpose of 
+operating a pharmacy under applicable local government and State or Territory laws 
+relating to land development 
+• 
+the proposed premises would be accessible by the public 
+• 
+within 6 months after the day on which the Authority makes a recommendation in 
+relation to the application, the applicant will be able to begin operating a pharmacy at 
+the proposed premises 
+• 
+the proposed premises will not be directly accessible by the public from within a 
+supermarket. 
+The evidence required for the above is outlined under ‘General Requirements for all 
+applications’ section. 
+ 
+ 
+31 
+Restrictions 
+Applicants wishing to relocate an existing approval originally granted under an item 
+associated with a new rural approval under the previous Rules or following an application 
+under Item 131 or 132 (new pharmacy at least 10 km) or a new additional pharmacy (at least 
+10 km), must demonstrate the proposed premises are within the same town in which the 
+approval was originally granted. 
+Applicants wishing to relocate an existing approval originally granted under Item 133, 134, or 
+134A, and for which the application to relocate is made within 10 years after the day the 
+approval was granted as a result of an application under Item 133, 134 or 134A, must satisfy 
+the Authority there are exceptional circumstances if the proposed premises are not located 
+within the same facility in which the approval was originally granted. 
+Applicants wishing to relocate an existing approval originally granted under Item 130, within 
+the 5 years prior to the date of application, may only relocate to proposed premises that are 
+not more than 1 km, by straight line, from those original premises. 
+ 
+ 
+32 
+Applications to establish a new pharmacy 
+This part of the Handbook sets out the requirements that must be met for all applications to 
+establish a new pharmacy, including the types of evidence that might be provided to 
+demonstrate the requirements are met, and any restrictions associated with an approval 
+granted under each item of the Rules. 
+Schedule 1 Part 2 of the Rules sets out the requirements that must be met for all 
+applications to establish a new pharmacy. 
+Below are the provisions in the Rules for establishing a new approval: 
+Item 130: New pharmacy (at least 1.5 km) 
+Item 131: New pharmacy (at least 10 km) 
+Item 132: New additional pharmacy (at least 10 km) 
+Item 133: New pharmacy in a designated complex (small shopping centre) 
+Item 134: New pharmacy in a designated complex (large shopping centre with no approved 
+premises) 
+Item 134A: New pharmacy in a designated complex (large shopping centre with approved 
+premises) 
+Item 135: New pharmacy in a designated complex (large private hospital) 
+Item 136: New pharmacy in a designated complex (large medical centre) 
+ 
+ 
+33 
+Item 130: New pharmacy (at least 1.5 km) 
+Requirements 
+An application made under this item of the Rules must meet all requirements, including all 
+the general requirements, listed below. 
+(a) 
+the proposed premises are at least 1.5 km, in a straight line, from the nearest 
+approved premises, and 
+(b) 
+the Authority is satisfied that, at all relevant times* there is, within 500 m, in a 
+straight line from the proposed premises, either: 
+(i) 
+both the equivalent of at least one full time* prescribing medical practitioner; 
+and a supermarket with a gross leasable area* of at least 1,000 m2, or 
+(ii) 
+a supermarket that has a gross leasable area of at least 2,500 m2. 
+*Please refer to the Glossary for the definition of ‘all relevant times’, ‘full-time’, and  
+‘gross leasable area’. 
+Evidence required for item 130(a) 
+The Rules specify that the straight line measurement must be taken from the mid-point at 
+ground level of the public access door of each of the premises. If there is more than one 
+public access door for either or both of the premises, the measurement must be taken from 
+the public access door nearest to the other premises, that is, the shortest measurement that 
+can be taken. 
+If the distance separating the nearest approved pharmacy and the proposed premises is 
+substantially greater than 1.5 km, it may be sufficient to provide a scaled map, highlighting 
+and clearly identifying the location of the 2 premises and the approximate straight line 
+distance using the scale on the map as the basis. 
+If the distance between the nearest approved pharmacy and the proposed premises is near 
+to the required distance, applicants should provide a report from a licenced or registered 
+surveyor, of the measurement of the straight line distance between the 2 premises. Any 
+surveyor’s report should include: 
+• 
+the surveyor’s licence or registration number 
+• 
+a clearly scaled map 
+• 
+a description of the methodology and equipment used in the measurement 
+• 
+the straight line distance measured 
+• 
+the margin for error in the measurement 
+• 
+detailed information about the public access doors to each of the premises, and 
+• 
+confirmation that the measurement has been undertaken from the mid-point at 
+ground level of the public access door of each of the premises. 
+ 
+ 
+34 
+Evidence required for item 130(b) 
+(i) both the equivalent of at least one full time prescribing medical practitioner; 
+and a supermarket with a gross leasable area of at least 1,000 m2, or 
+(ii) a supermarket that has a gross leasable area of at least 2,500 m2. 
+When claiming that a full-time prescribing medical practitioner and a supermarket 
+with a gross leasable area of at least 1,000 m2 is within 500 m, in a straight line 
+from the proposed premises, evidence must be provided, which could include: 
+• 
+a statement or statutory declaration (made on a Commonwealth of Australia 
+statutory declaration template) from the relevant medical practitioner or 
+practice manager stating the hours the medical practice operates, the hours 
+the medical practitioner(s) is available for appointments and for the issuing of 
+prescriptions for pharmaceutical benefits, in addition to a practice information 
+sheet and provider number(s) for the medical practitioner(s), and 
+• 
+a clearly scaled map highlighting and clearly identifying the locations of the 
+proposed premises and the medical practitioner’s premises and / or 
+supermarket and a statement of the distance between the premises using the 
+scale on the map as the basis, and 
+• 
+evidence of the gross leasable area of the supermarket, sourced from the 
+relevant local Council (or relevant approval authority), or other public document 
+such as retail strategies, activity centre strategies prepared by local 
+governments or state government departments, or from proprietary databases. 
+When claiming that a supermarket with a gross leasable area of at least 2,500 m2 
+is within 500 m, in a straight line from the proposed premises, evidence must be 
+provided, which could include: 
+• 
+a clearly scaled map highlighting and clearly identifying the locations of the 
+proposed premises and the supermarket and a statement of the distance 
+between the premises using the scale on the map as the basis, and 
+• 
+evidence of the gross leasable area of the supermarket, sourced from the 
+relevant local Council (or relevant approval authority), or other public document 
+such as retail strategies, activity centre strategies prepared by local 
+governments or state government departments, or from proprietary databases. 
+Note: gross leasable area of a supermarket is intended to mean the total floor area of the 
+supermarket and includes space approved by council (or the relevant development authority) 
+to conduct a supermarket business, including supermarket trading floor area and minimal 
+back of house (typically no more than 25-30% of the total floor area). It does not include 
+portable storage units, such as shipping containers, used for the purpose of storing 
+supermarket items; or separate tenancies rented by the supermarket proprietors to store 
+supermarket items, unless those tenancies are approved for the purpose of operating a 
+supermarket business. 
+It is not sufficient to provide evidence stating the gross leasable area is greater than the 
+required size of either 1,000 m2 or 2,500 m2. The actual gross leasable area, that is, the total 
+floor area of the supermarket, excluding loading docks and car parks, should be stated, and 
+supported by the evidence outlined above. 
+As outlined in requirement item 130(a) above, the Rules specify that the straight line 
+measurement must be taken from the midpoint at ground level of the public access door of 
+each of the premises. If there is more than one public access door for either or both of the 
+premises, the measurement must be taken from the public access door nearest to the other 
+premises, that is, the shortest measurement that can be taken. 
+ 
+ 
+35 
+If the distance between the proposed premises and the medical practitioner’s premises and/or 
+supermarket is near to the required distance, applicants should provide a surveyor’s report of 
+the measurement of the straight line distance as outlined in requirement item 130(a) above. 
+General requirements 
+Please note, it is important to clearly identify the proposed premises that are the subject of an 
+application. Evidence must also be provided in support of each of the requirements below: 
+• 
+at all relevant times, the proposed premises are not approved premises 
+• 
+the applicant has, at all relevant times, a legal right to occupy the proposed premises 
+(whether the right is to occupy the premises on the day the application is made or 
+after that day) 
+• 
+at all relevant times, the proposed premises could be used for the purpose of 
+operating a pharmacy under applicable local government and State or Territory laws 
+relating to land development 
+• 
+the proposed premises would be accessible by the public 
+• 
+within 6 months after the day on which the Authority makes a recommendation in 
+relation to the application, the applicant will be able to begin operating a pharmacy at 
+the proposed premises 
+• 
+the proposed premises will not be directly accessible by the public from within a 
+supermarket. 
+The evidence required for the above is outlined under ‘General Requirements for all 
+applications’ section. 
+Restrictions 
+To ensure new approvals granted to address community need remain in that area of need, 
+an approval granted following an application made under Item 130 must stay within a 1 km 
+radius of the premises in respect of which the approval was originally granted, for a period of 
+5 years. 
+ 
+ 
+36 
+Item 131: New pharmacy (at least 10 km) 
+Requirements 
+An application made under this item of the Rules must meet the requirement, including all 
+the general requirements, listed below. 
+The proposed premises are at least 10 km, by the shortest lawful access route, from 
+the nearest approved premises. 
+Evidence required 
+The shortest lawful access route is one generally available to be taken between premises 
+that could reasonably be used by average persons travelling that route. It can be by car, 
+walking, or other legal means of travel, or a combination of these. The route can include 
+walking through public land such as parks and reserves; however, the route must be one 
+available to most members of the public rather than one catering to persons or groups with 
+specialised needs. 
+The measurement of the shortest lawful access route must follow the shortest lawful access 
+route between the 2 premises, from the centre, at ground level, of the public entrance of the 
+first premises to the centre, at ground level, of the public entrance of the second premises. If 
+there is more than one public access door for either or both premises, the measurement 
+must be taken from the public access door nearest to the other premises, that is, the 
+shortest measurement that can be taken. 
+If the distance separating the nearest approved pharmacy and the proposed premises is 
+substantially greater than 10 km, it may be sufficient to provide a clearly scaled map, 
+highlighting the location and addresses of the 2 premises and the approximate shortest 
+lawful access route distance using the scale on the map as the basis. 
+If the distance between the nearest approved pharmacy and the proposed premises is 
+near to the required distance, applicants should provide a report from a licenced or 
+registered surveyor, of the measurement of the shortest lawful access route distance 
+between the 2 premises. 
+Any surveyor’s report should include: 
+• 
+the surveyor’s licence or registration number 
+• 
+a clearly scaled map 
+• 
+a description of the methodology and equipment used in the measurement 
+• 
+the shortest lawful access route distance measured 
+• 
+the margin for error in the measurement 
+• 
+detailed information about the public access doors to each of the premises, and 
+• 
+confirmation that the measurement has been undertaken from the mid-point at 
+ground level of the public access door of each of the premises. 
+ 
+ 
+37 
+General requirements 
+Please note, it is important to clearly identify the proposed premises that are the subject of an 
+application. Evidence must also be provided in support of each of the requirements below: 
+• 
+at all relevant times, the proposed premises are not approved premises 
+• 
+the applicant has, at all relevant times, a legal right to occupy the proposed premises 
+(whether the right is to occupy the premises on the day the application is made or 
+after that day) 
+• 
+at all relevant times, the proposed premises could be used for the purpose of 
+operating a pharmacy under applicable local government and State or Territory laws 
+relating to land development 
+• 
+the proposed premises would be accessible by the public 
+• 
+within 6 months after the day on which the Authority makes a recommendation in 
+relation to the application, the applicant will be able to begin operating a pharmacy at 
+the proposed premises 
+• 
+the proposed premises will not be directly accessible by the public from within a 
+supermarket. 
+The evidence required for the above is outlined under ‘General Requirements for all 
+applications’ section. 
+Restrictions 
+A pharmacy that was originally approved as the result of an application made under  
+Item 131 cannot under any circumstances relocate from the town in which the approval was 
+originally granted. The pharmacy may only be relocated within the same town. 
+ 
+38 
+Item 132: New additional pharmacy (at least 10 km) 
+Requirements 
+An application made under this item of the Rules must meet the requirements, including all 
+the general requirements, listed below. 
+(a) 
+the proposed premises are: 
+(i) 
+in the same town as an approved premises, and 
+(ii) 
+at least 200 m, in a straight line, from the nearest approved premises, and 
+(iii) at least 10 km, by the shortest lawful access route, from any approved 
+premises other than the approved premises mentioned at (ii) above, and 
+(b) 
+the Authority is satisfied that, at all relevant times*, in the same town as the 
+proposed premises are: 
+(i) 
+the equivalent of at least 4 full-time* prescribing medical practitioners* 
+practising, and 
+(ii) 
+one or 2 supermarkets that have a combined total gross leasable area* of 
+at least 2,500 m2. 
+*Please refer to the Glossary for the definition of 'all relevant times', ‘full-time’, ‘prescribing 
+medical practitioner’ and ‘gross leasable area’. 
+Evidence required for item 132(a) 
+The proposed premises are: 
+(i) 
+in the same town as an approved premises, and 
+(ii) 
+at least 200 m, in a straight line, from the nearest approved premises 
+A map highlighting and clearly identifying the location and addresses of the 
+existing approved premises within the town, and the proposed premises is 
+required to demonstrate that both premises are located within the same town. 
+The Rules specify that the straight line measurement must be taken from the mid-
+point at ground level of the public access door of each of the premises. If there is 
+more than one public access door for either or both of the premises, the 
+measurement must be taken from the public access door nearest to the other 
+premises, that is, the shortest measurement that can be taken. 
+If the distance separating the nearest approved pharmacy and the proposed 
+premises is substantially greater than 200 m, it may be sufficient to provide a 
+scaled map, highlighting and clearly identifying the location and addresses of the 2 
+premises and the approximate straight line distance using the scale on the map as 
+the basis. 
+If the distance between the nearest approved pharmacy and the proposed 
+premises is near to the required distance, applicants should provide a report from 
+a licenced or registered surveyor, of the measurement of the straight line distance 
+between the 2 premises. Any surveyor’s report should include: 
+• 
+the surveyor’s licence or registration number 
+• 
+a clearly scaled map 
+• 
+a description of the methodology and equipment used in the measurement 
+ 
+39 
+• 
+the straight line distance measured 
+• 
+the margin for error in the measurement 
+• 
+detailed information about the public access doors to each of the premises, and 
+• 
+confirmation that the measurement has been undertaken from the mid-point 
+at ground level of the public access door of each of the premises. 
+Note: when counting the number of approved premises in the town (item 132(a)(i)), 
+if approved premises have been recommended to be relocated to new premises, 
+but have not yet been approved, the new premises are not counted as approved 
+premises, but are included for distance measurements. 
+(iii) at least 10 km, by the shortest lawful access route, from any approved 
+premises other than the approved premises mentioned at (ii) above 
+A map highlighting and clearly identifying the location and addresses of the 
+proposed premises and the next nearest approved premises is required. 
+The shortest lawful access route is one generally available to be taken between 
+premises that could reasonably be used by average persons travelling that route. 
+It can be by car, walking, or other legal means of travel, or a combination of these. 
+The route can include walking through public land such as parks and reserves, 
+however, the route must be one available to most members of the public rather 
+than one catering to persons or groups with specialised needs. The measurement 
+of the shortest lawful access route must follow the shortest lawful access route 
+between the 2 premises, from the centre, at ground level, of the public entrance of 
+the first premises to the centre, at ground level, of the public entrance of the second 
+premises. If there is more than one public access door for either or both of the 
+premises, the measurement must be taken from the public access door nearest to 
+the other premises, that is, the shortest measurement that can be taken. 
+If the distance separating the nearest approved pharmacy and the proposed 
+premises is substantially greater than 10 km, it may be sufficient to provide a 
+scaled map, highlighting and clearly identifying the location of the 2 premises and 
+the approximate shortest lawful access route distance using the scale on the map 
+as the basis 
+If the distance between the nearest approved pharmacy and the proposed 
+premises is near to the required distance, applicants should provide a report from 
+a licenced or registered surveyor, of the measurement of the shortest lawful 
+access route distance between the 2 premises. 
+Any surveyor’s report should include: 
+• 
+the surveyor’s licence or registration number 
+• 
+a clearly scaled map 
+• 
+a description of the methodology and equipment used in the measurement 
+• 
+the shortest lawful access route distance measured 
+• 
+the margin for error in the measurement 
+• 
+detailed information about the public access doors to each of the premises, and 
+• 
+confirmation that the measurement has been undertaken from the mid-point at 
+ground level of the public access door of each of the premises. 
+ 
+40 
+Evidence required for item 132(b) 
+The Authority is satisfied that, at all relevant times*, in the same town as the 
+proposed premises are: 
+(i) 
+the equivalent of at least 4 full-time prescribing medical practitioners 
+practising, and 
+(ii) 
+one or 2 supermarkets that have a combined total gross leasable area of 
+at least 2,500 m2. 
+When claiming that, on the day the application was made, and the day the 
+Authority considers the application, in the same town as the proposed premises 
+are at least the equivalent of four full-time prescribing medical practitioners 
+practising, and one or 2 supermarkets with a combined total gross leasable area 
+of at least 2,500 m2, evidence must be provided, which could include: 
+• 
+a statutory declaration (made on a Commonwealth of Australia statutory 
+declaration template) from the relevant medical practitioners or practice 
+manager stating the hours the medical practice operates, the hours the 
+medical practitioner(s) are available for appointments and for the issuing of 
+prescriptions for pharmaceutical benefits, in addition to a practice information 
+sheet and provider number(s) for the medical practitioner(s). The statutory 
+declaration should also state whether or not the time includes times spent 
+consulting at other medical centres not within the same town, working at a 
+hospital on rostered duties, attending nursing homes and undertaking 
+administration work for the medical centre or practice, and 
+• 
+a clearly scaled map highlighting and clearly identifying the locations of the 
+proposed premises and the medical practitioner’s premises and the 
+supermarket(s) and a statement of the distance between the premises using 
+the scale on the map as the basis, and 
+• 
+evidence sourced from the relevant local Council (or relevant approval 
+authority), or other public document such as retail strategies, activity centre 
+strategies prepared by local governments or state government departments, 
+or from proprietary databases, to demonstrate the gross leasable area of the 
+supermarket or of the combined total gross leasable area of the 2 
+supermarkets in the same town as the proposed premises. 
+It is not sufficient to provide evidence stating the gross leasable area is greater 
+than 2,500 m2. The actual gross leasable area, that is, the total floor area of the 
+supermarket, excluding loading docks and car parks, should be stated, and 
+supported by the evidence outlined above. 
+The gross leasable area of a supermarket is intended to mean the total floor area 
+of the supermarket, and includes space approved by council (or the relevant 
+development authority) to conduct a supermarket business, including 
+supermarket trading floor area and minimal back of house (typically no more than 
+25-30% of the total floor area). It does not include portable storage units, such as 
+shipping containers, used for the purpose of storing supermarket items; or 
+separate tenancies rented by the supermarket proprietors to store supermarket 
+items, unless those tenancies are approved for the purpose of operating a 
+supermarket business. 
+The Authority will not be satisfied if a medical practitioner lives in the relevant 
+town but operates their medical practice outside that town. The medical 
+practitioner must be practising in the same town as the proposed premises. 
+ 
+41 
+General requirements 
+Please note, it is important to clearly identify the proposed premises that are the subject of an 
+application. Evidence must also be provided in support of each of the requirements below: 
+• 
+at all relevant times, the proposed premises are not approved premises 
+• 
+the applicant has, at all relevant times, a legal right to occupy the proposed premises 
+(whether the right is to occupy the premises on the day the application is made or 
+after that day) 
+• 
+at all relevant times, the proposed premises could be used for the purpose of 
+operating a pharmacy under applicable local government and State or Territory laws 
+relating to land development 
+• 
+the proposed premises would be accessible by the public 
+• 
+within 6 months after the day on which the Authority makes a recommendation in 
+relation to the application, the applicant will be able to begin operating a pharmacy at 
+the proposed premises 
+• 
+the proposed premises will not be directly accessible by the public from within a 
+supermarket. 
+The evidence required for the above is outlined under ‘General Requirements for all 
+applications’ section. 
+Restrictions 
+A pharmacy that was originally approved as the result of an application made under  
+Item 132 cannot under any circumstances relocate from the town in which the approval was 
+originally granted. The pharmacy may only be relocated within the same town. 
+ 
+42 
+Item 133: New pharmacy in a designated complex (small shopping centre) 
+Requirements 
+An application made under this item of the Rules must meet the requirements, including all 
+the general requirements, listed below. 
+The proposed premises: 
+(a) 
+are in a small shopping centre*, and 
+(b) 
+are at least 500 m, in a straight line, from the nearest approved premises, 
+other than approved premises in a large shopping centre or private 
+hospital, and 
+(c) 
+there are no approved premises in the small shopping centre. 
+*Please refer to the Glossary for the definition of ‘small shopping centre’. 
+Evidence required for item 133(a) 
+A floor plan of the shopping centre should be provided in addition to a statutory declaration 
+(made on a Commonwealth of Australia statutory declaration template) from the shopping 
+centre manager to confirm the shopping centre: 
+• 
+is under single management*. That is, one or more managers working cooperatively 
+under an agreement are responsible for marketing, maintenance and administration 
+for the centre as a whole, and 
+• 
+has a gross leasable area*, meaning the total floor area of the shopping centre 
+excluding loading docks and car parks, of at least 5,000 m2, and 
+• 
+contains a supermarket that has a gross leasable area of at least 2,500 m2, and 
+• 
+contains at least 15 other commercial establishments* (note that a current tenancy 
+schedule listing the name and type of each tenancy, and its leasing and trading 
+status should be provided), and 
+• 
+has customer parking facilities. 
+*Please refer to the Glossary for the definition of ‘single management’, ‘gross leasable area’, 
+and ‘commercial establishment’. 
+Single management, for a small shopping centre, means: 
+• 
+an arrangement in which a single entity, or 2 or more entities working cooperatively 
+under an agreement, are responsible for marketing, maintenance and administration 
+for the centre as a whole, and 
+• 
+does not include independent owners or tenants of premises in a building or centre 
+that cooperate on particular occasions, or that cooperate in relation to some, but not 
+all, of the matters mentioned above in relation to the building or the centre. 
+The gross leasable area of a supermarket is intended to mean the total floor area of the 
+supermarket and includes space approved by council (or the relevant development authority) 
+to conduct a supermarket business, including supermarket trading floor area and minimal 
+back of house (typically no more than 25-30% of the total floor area). It does not include 
+portable storage units, such as shipping containers, used for the purpose of storing 
+supermarket items; or separate tenancies rented by the supermarket proprietors to store 
+supermarket items, unless those tenancies are approved for the purpose of operating a 
+supermarket business. 
+ 
+43 
+It is not sufficient to provide evidence stating the gross leasable area is greater than  
+2,500 m2. The actual gross leasable area, that is the total floor area of the supermarket, 
+excluding loading docks and car parks, should be stated and supported by evidence sourced 
+from the relevant local Council (or relevant approval authority) or other public document such 
+as retail strategies, activity centre strategies prepared by local governments or state 
+government departments or from proprietary databases, to demonstrate the gross leasable 
+area of the supermarket. 
+In considering an application to establish a pharmacy in a small shopping centre, the 
+Authority need not be satisfied the requisite number of commercial establishments are 
+operating within that centre. Rather, the Authority must be satisfied the centre is, or is likely 
+to be, occupied by the requisite number of commercial establishments. The term likely to be 
+occupied by is intended to include premises in a shopping centre where a lease has been 
+entered into to operate such a business and that business has not yet commenced operating 
+at those premises. A vacant tenancy at premises in a shopping centre that is not occupied 
+and/or leased is not considered a ‘commercial establishment'. 
+Evidence required for item 133(b) 
+The Rules specify that the straight line measurement must be taken from the mid-point at 
+ground level of the public access door of each of the premises. If there is more than one 
+public access door for either or both of the premises, the measurement must be taken from 
+the public access door nearest to the other premises, that is, the shortest measurement that 
+can be taken. 
+If the distance separating the nearest approved pharmacy and the proposed premises is 
+substantially greater than 500 m, it may be sufficient to provide a scaled map, highlighting 
+the location and addresses of the 2 premises and the approximate straight line distance 
+using the scale on the map as the basis. 
+If the distance between the nearest approved pharmacy and the proposed premises is near 
+to the required distance, applicants should provide a report from a licenced or registered 
+surveyor, of the measurement of the straight line distance between the 2 premises. Any 
+surveyor’s report should include: 
+• 
+the surveyor’s licence or registration number 
+• 
+a clearly scaled map 
+• 
+a description of the methodology and equipment used in the measurement 
+• 
+the straight line distance measured 
+• 
+the margin for error in the measurement 
+• 
+detailed information about the public access doors to each of the premises, and 
+• 
+confirmation that the measurement has been undertaken from the mid-point at 
+ground level of the public access door of each of the premises. 
+If any approved premises are within 500 m by straight line of the proposed premises and the 
+applicant is claiming that they are in a large shopping centre or private hospital, the applicant 
+must provide supporting evidence to demonstrate that this is the case. 
+ 
+ 
+44 
+Evidence required for item 133(c) 
+The statutory declaration from the shopping centre manager should include information to 
+confirm whether there are any other pharmacies within the centre. 
+General requirements 
+Please note, it is important to clearly identify the proposed premises that are the subject of an 
+application. Evidence must also be provided in support of each of the requirements below. 
+• 
+at all relevant times, the proposed premises are not approved premises 
+• 
+the applicant has, at all relevant times, a legal right to occupy the proposed premises 
+(whether the right is to occupy the premises on the day the application is made or 
+after that day) 
+• 
+at all relevant times, the proposed premises could be used for the purpose of 
+operating a pharmacy under applicable local government and State or Territory laws 
+relating to land development 
+• 
+the proposed premises would be accessible by the public 
+• 
+within 6 months after the day on which the Authority makes a recommendation in 
+relation to the application, the applicant will be able to begin operating a pharmacy at 
+the proposed premises 
+• 
+the proposed premises will not be directly accessible by the public from within a 
+supermarket. 
+The evidence required for the above is outlined under ‘General Requirements for all 
+applications’ section. 
+Restrictions 
+Applicants wishing to relocate a pharmacy that was originally approved as the result of an 
+application made under Item 133 and for which the application to relocate is made within  
+10 years after the day the approval was granted as a result of an application under Item 133, 
+must satisfy the Authority that there are exceptional circumstances if the proposed premises 
+are not located within the same shopping centre in which the approval was originally granted. 
+While the pharmacy may move within the same shopping centre, it must not do so unless an 
+application has been made against the relevant requirements of the Rules and is 
+subsequently approved. 
+ 
+ 
+45 
+Item 134: New pharmacy in a designated complex (large shopping 
+centre with no approved premises) 
+Requirements 
+An application made under this item of the Rules must meet the requirements, including all 
+the general requirements, listed below. 
+(a) 
+the proposed premises are in a large shopping centre*, and 
+(b) 
+there are no approved premises in the large shopping centre. 
+*Please refer to the Glossary for the definition of ‘large shopping centre’. 
+Evidence required for items 134(a) and (b) 
+A floor plan of the shopping centre should be provided in addition to a statutory declaration 
+(made on a Commonwealth of Australia statutory declaration template) from the shopping 
+centre manager to confirm the shopping centre: 
+• 
+is under single management*. That is, one or more managers working cooperatively 
+under an agreement are responsible for marketing, maintenance and administration 
+for the centre as a whole, and 
+• 
+has a gross leasable area*, meaning the total floor area of the shopping centre 
+excluding loading docks and car parks, of at least 5,000 m2, and 
+• 
+contains a supermarket that has a gross leasable area of at least 2,500 m2, and 
+• 
+contains at least 50 other commercial establishments* (note that a current tenancy 
+schedule listing the name and type of each tenancy and its leasing and trading 
+status should be provided), and 
+• 
+has customer parking facilities. 
+*Please refer to the Glossary for the definition of ‘single management’, ‘gross leasable area’, 
+and ‘commercial establishment’. 
+Single management, for a large shopping centre, means: 
+• 
+an arrangement in which a single entity, or 2 or more entities working cooperatively 
+under an agreement, are responsible for marketing, maintenance and administration 
+for the centre as a whole, and 
+• 
+does not include independent owners or tenants of premises in a building or centre 
+that cooperate on particular occasions, or that cooperate in relation to some, but not 
+all, of the matters mentioned above in relation to the building or the centre. 
+The gross leasable area of a supermarket is intended to mean the total floor area of the 
+supermarket and includes space approved by council (or the relevant development authority) 
+to conduct a supermarket business, including supermarket trading floor area and minimal 
+back of house (typically no more than 25-30% of the total floor area). It does not include 
+portable storage units, such as shipping containers, used for the purpose of storing 
+supermarket items; or separate tenancies rented by the supermarket proprietors to store 
+supermarket items, unless those tenancies are approved for the purpose of operating a 
+supermarket business. 
+It is not sufficient to provide evidence stating the gross leasable area is greater than  
+2,500 m2. The actual gross leasable area, that is the total floor area of the supermarket, 
+excluding loading docks and car parks, should be stated, and supported by evidence 
+sourced from the relevant local Council (or relevant approval authority), or other public  
+ 
+46 
+document such as retail strategies, activity centre strategies prepared by local governments 
+or state government departments, or from proprietary databases, to demonstrate the gross 
+leasable area of the supermarket. 
+In considering an application to establish a pharmacy in a large shopping centre, the 
+Authority need not be satisfied that the requisite number of commercial establishments are 
+operating within that centre. Rather, the Authority must be satisfied that the centre is, or is 
+likely to be, occupied by the requisite number of commercial establishments. The term likely 
+to be occupied by is intended to include premises in a shopping centre where a lease has 
+been entered into to operate such a business and that business has not yet commenced 
+operating at those premises. A vacant tenancy at premises in a shopping centre that is not 
+occupied and/or leased is not considered a ‘commercial establishment’. 
+Evidence required for item 134(b) 
+The statutory declaration from the shopping centre manager should include information to 
+confirm whether there are any other pharmacies within the centre. 
+Note: When counting the number of approved premises, if approved premises in the large 
+shopping centre have been recommended to be relocated to new premises in the large 
+shopping centre but have not yet been approved, the new premises are not counted as 
+approved premises. 
+General requirements 
+Please note, it is important to clearly identify the proposed premises that are the subject of an 
+application. Evidence must also be provided in support of each of the requirements below: 
+• 
+at all relevant times, the proposed premises are not approved premises 
+• 
+the applicant has, at all relevant times, a legal right to occupy the proposed premises 
+(whether the right is to occupy the premises on the day the application is made or 
+after that day) 
+• 
+at all relevant times, the proposed premises could be used for the purpose of 
+operating a pharmacy under applicable local government and State or Territory laws 
+relating to land development 
+• 
+the proposed premises would be accessible by the public 
+• 
+within 6 months after the day on which the Authority makes a recommendation in 
+relation to the application, the applicant will be able to begin operating a pharmacy at 
+the proposed premises 
+• 
+the proposed premises will not be directly accessible by the public from within a 
+supermarket. 
+The evidence required for the above is outlined under ‘General Requirements for all 
+applications’ section. 
+Restrictions 
+Applicants wishing to relocate a pharmacy that was originally approved as the result of an 
+application made under Item 134 and for which the application to relocate is made within  
+10 years after the day the approval was granted as a result of an application under Item 134, 
+must satisfy the Authority that there are exceptional circumstances if the proposed premises 
+are not located within the same shopping centre in which the approval was originally granted. 
+While the pharmacy may move within the same shopping centre, it must not do so unless an 
+application has been made against the relevant requirements of the Rules and is 
+subsequently approved. 
+ 
+ 
+47 
+Item 134A: New additional pharmacy in a designated complex (large 
+shopping centre with approved premises) 
+Requirements 
+An application made under this item of the Rules must meet the requirements, including all 
+the general requirements, listed below. 
+(a) 
+the proposed premises are in a large shopping centre*, and 
+(b) 
+if the large shopping centre contains: 
+(i) 
+at least 100, but fewer than 200, commercial establishments* – there is only 
+one approved premises in the large shopping centre, or 
+(ii) 
+at least 200 commercial establishments – there are at least one but no 
+more than 2 approved premises in the large shopping centre, and 
+(c) 
+no approved premises have relocated out of the large shopping centre in the 12 
+months immediately before the day the application was made. 
+*Please refer to the Glossary for the definition of ‘large shopping centre’ and ‘commercial 
+establishment’. 
+Evidence required 
+A floor plan of the shopping centre should be provided in addition to a statutory declaration 
+(made on a Commonwealth of Australia statutory declaration template) from the shopping 
+centre manager to confirm the shopping centre: 
+• 
+is under single management*. That is, one or more managers working cooperatively 
+under an agreement are responsible for marketing, maintenance and administration 
+for the centre as a whole, and 
+• 
+has a gross leasable area*, meaning the total floor area of the shopping centre 
+excluding loading docks and car parks, of at least 5,000 m2, and 
+• 
+contains a supermarket that has a gross leasable area of at least 2,500 m2, and 
+• 
+contains at least 50 other commercial establishments (note that a current tenancy 
+schedule listing the name and type of each tenancy, and its leasing and trading 
+status should be provided), and 
+• 
+has customer parking facilities. 
+*Please refer to the Glossary for the definition of ‘single management’ and ‘gross leasable area’. 
+Single management, for a large shopping centre, means: 
+• 
+an arrangement in which a single entity, or 2 or more entities working cooperatively 
+under an agreement, are responsible for marketing, maintenance and administration 
+for the centre as a whole, and 
+• 
+does not include independent owners or tenants of premises in a building or centre 
+that cooperate on particular occasions, or that cooperate in relation to some, but not 
+all, of the matters mentioned above in relation to the building or the centre. 
+The gross leasable area of a supermarket means the total floor area of the supermarket, and 
+includes space approved by council (or the relevant development authority) to conduct a 
+supermarket business, including supermarket trading floor area and minimal back of house 
+(typically no more than 25-30% of the total floor area). It does not include portable storage 
+units, such as shipping containers, used for the purpose of storing supermarket items; or  
+ 
+48 
+separate tenancies rented by the supermarket proprietors to store supermarket items, unless 
+those tenancies are approved for the purpose of operating a supermarket business. 
+It is not sufficient to provide evidence stating the gross leasable area is greater than  
+2,500 m2. The actual gross leasable area, that is the total floor area of the supermarket, 
+excluding loading docks and car parks, should be stated, and supported by evidence 
+sourced from the relevant local Council (or relevant approval authority), or other public 
+document such as retail strategies, activity centre strategies prepared by local governments 
+or state government departments, or from proprietary databases, to demonstrate the gross 
+leasable area of the supermarket 
+In considering an application to establish a pharmacy in a large shopping centre, the 
+Authority need not be satisfied the requisite number of commercial establishments are 
+operating within that centre. Rather, the Authority must be satisfied the centre is, or is likely 
+to be, occupied by the requisite number of commercial establishments. The term likely to be 
+occupied by is intended to include premises in a shopping centre where a lease has been 
+entered into to operate such a business and that business has not yet commenced operating 
+at those premises. A vacant tenancy at premises in a shopping centre that is not occupied 
+and/or leased is not considered a ‘commercial establishment’. 
+The statutory declaration from the shopping centre manager should include information to 
+the number of pharmacies currently within the centre, and if known, whether any pharmacies 
+have relocated out of the large shopping centre in the previous 12 months. 
+The Authority’s Secretariat will also provide the Authority with information on this item. 
+Note: When counting the number of approved premises, if approved premises in the large 
+shopping centre have been recommended to be relocated to new premises in the large 
+shopping centre but have not yet been approved, the new premises are not counted as 
+approved premises. 
+General requirements 
+Please note, it is important to clearly identify the proposed premises that are the subject of an 
+application. Evidence must also be provided in support of each of the requirements below: 
+• 
+at all relevant times, the proposed premises are not approved premises 
+• 
+the applicant has, at all relevant times, a legal right to occupy the proposed premises 
+(whether the right is to occupy the premises on the day the application is made or 
+after that day) 
+• 
+at all relevant times, the proposed premises could be used for the purpose of 
+operating a pharmacy under applicable local government and State or Territory laws 
+relating to land development 
+• 
+the proposed premises would be accessible by the public 
+• 
+within 6 months after the day on which the Authority makes a recommendation in 
+relation to the application, the applicant will be able to begin operating a pharmacy at 
+the proposed premises 
+• 
+the proposed premises will not be directly accessible by the public from within a 
+supermarket. 
+The evidence required for the above is outlined under ‘General Requirements for all 
+applications’ section. 
+ 
+ 
+49 
+Restrictions 
+Applicants wishing to relocate a pharmacy that was originally approved as the result of an 
+application made under Item 134A and for which the application to relocate is made within 
+10 years after the day the approval was granted as a result of an application under  
+Item 134A, must satisfy the Authority that there are exceptional circumstances if the 
+proposed premises are not located within the same shopping centre in which the approval 
+was originally granted. 
+While the pharmacy may move within the same shopping centre, it must not do so unless an 
+application has been made against the relevant requirements of the Rules and is 
+subsequently approved. 
+ 
+ 
+50 
+Item 135: New pharmacy in a designated complex (large private hospital) 
+Requirements 
+An application made under this item of the Rules must meet the requirements, including all 
+the general requirements, listed below. 
+(a) 
+the proposed premises are in a large private hospital*, and 
+(b) 
+there are no approved pharmacies in the large private hospital. 
+*Please refer to the Glossary for the definition of ‘large private hospital’. 
+Evidence required 
+Applicants should provide a letter or, preferably, a statutory declaration (made on a 
+Commonwealth of Australia statutory declaration template) from the management of the 
+private hospital to confirm it meets the definition of ‘large private hospital’ as defined in the 
+glossary to mean a private hospital that can admit at least 150 patients at any one time in 
+accordance with the private hospital’s licence or registration under the law of the State or 
+Territory in which the private hospital is located. This should also confirm whether there is 
+currently a pharmacy located within the private hospital. 
+A floor plan of the private hospital clearly identifying the location of the proposed premises, and a 
+copy of the private hospital’s license or registration certificate to confirm the number of patients 
+that can be admitted at any one time under State/Territory law, should also be provided. 
+‘Admit’ is intended to mean where a patient is admitted to hospital for treatment as a private 
+patient and includes same day admitted patients, as well as overnight admitted patients. 
+That is, not patients attending the hospital for general treatment as outpatients. 
+General requirements 
+Please note, it is important to clearly identify the proposed premises that are the subject of an 
+application. Evidence must also be provided in support of each of the requirements below: 
+• 
+at all relevant times, the proposed premises are not approved premises 
+• 
+the applicant has, at all relevant times, a legal right to occupy the proposed premises 
+(whether the right is to occupy the premises on the day the application is made or 
+after that day) 
+• 
+at all relevant times, the proposed premises could be used for the purpose of 
+operating a pharmacy under applicable local government and State or Territory laws 
+relating to land development 
+• 
+the proposed premises would be accessible by the public 
+• 
+within 6 months after the day on which the Authority makes a recommendation in 
+relation to the application, the applicant will be able to begin operating a pharmacy at 
+the proposed premises 
+• 
+the proposed premises will not be directly accessible by the public from within a 
+supermarket. 
+The evidence required for the above is outlined under ‘General Requirements for all 
+applications’ section. 
+ 
+ 
+51 
+Restrictions 
+Applicants wishing to relocate a pharmacy that was originally approved as the result of an 
+application made under Item 135 must satisfy the Authority that there are exceptional 
+circumstances if the proposed premises are not located within the same private hospital in 
+which the approval was originally granted. 
+While the pharmacy may move within the same private hospital, it must not do so unless an 
+application has been made against the relevant requirements of the Rules and is 
+subsequently approved. 
+ 
+ 
+52 
+Item 136: New pharmacy in a designated complex (large medical centre) 
+Requirements 
+An application made under this item of the Rules must meet the requirements, including all 
+the general requirements, listed below. 
+(a) 
+the proposed premises are in a large medical centre*, and 
+(b) 
+there are no approved premises in the large medical centre, and 
+(c) 
+if the large medical centre is: 
+(i) 
+in a small shopping centre, a large shopping centre or a private hospital – 
+the proposed premises are at least 300 m, in a straight line, from any 
+approved premises, other than approved premises in a different large 
+shopping centre or private hospital, or 
+(ii) 
+not in a small shopping centre, a large shopping centre or a private 
+hospital – the proposed premises are at least 300 m, in a straight line, 
+from the nearest approved premises, other than an approved premises in 
+a large shopping centre or private hospital, and 
+(d) 
+the Authority is satisfied that, during the 2 months before the day on which the 
+application is made and until the day the application is considered by the 
+Authority, the number of PBS prescribers* at the medical centre is equivalent to 
+at least 8 full-time* PBS prescribers, of which at least 7 PBS prescribers must be 
+prescribing medical practitioners*, and 
+(e) 
+the Authority is satisfied that the applicant will make all reasonable attempts to 
+ensure that the operating hours of the proposed premises will meet the needs of 
+the patients of the medical centre. 
+*Please refer to the Glossary for the definition of ‘large medical centre’, ‘full-time’,  
+‘PBS prescriber’, and ‘prescribing medical practitioner’. 
+Evidence required for items 136(a) and (b) 
+Applicants should provide a statutory declaration (made on a Commonwealth of Australia 
+statutory declaration template) from the manager or owner of the medical centre to confirm: 
+• 
+the centre is under single management, that is, one or more managers working 
+cooperatively under an agreement are responsible for marketing, maintenance and 
+administration for the centre as a whole 
+• 
+the opening hours of the centre on each of the days the centre is open, and 
+• 
+the hours during which an appointment with a prescribing medical practitioner, for a 
+general practice consultation, may be made on each of the days that the centre is open. 
+Single management for a large medical centre means: 
+• 
+an arrangement in which a single entity, or 2 or more entities working cooperatively 
+under an agreement, are responsible for marketing, maintenance and administration 
+for the centre as a whole, and 
+• 
+does not include independent owners or tenants of premises in a building or centre 
+that cooperate on particular occasions, or that cooperate in relation to some, but not 
+all, of the matters mentioned above in relation to the building or the centre. 
+A floor plan of the medical centre clearly identifying the location of the proposed premises 
+should be provided. 
+ 
+ 
+53 
+Having a pharmacy in a large medical centre is primarily intended to meet the needs of 
+medical centre patients. A large medical centre must open for at least 70 hours each week, 
+and irrespective of the hours the medical centre operates or the number of medical 
+practitioners rostered on during those hours, general practice services must be provided at 
+the medical centre for at least 70 hours each week. If the medical centre closes for an hour 
+over lunch time then that hour is not counted towards the time the medical centre is 
+providing general practice services, as patients are unable to obtain a consultation with a 
+medical practitioner during that hour. Where more than one medical practitioner’s hours 
+overlap, the total hours the medical centre is open and providing general practice services is 
+not the combined hours of the medical practitioners, it is instead the total hours the centre is 
+providing general practice services. 
+The statutory declaration (as referred to above) should also confirm whether there is an 
+approved pharmacy currently located within the medical centre. 
+Evidence required for item 136(c) 
+The Rules specify that the straight line measurement must be taken from the mid-point at 
+ground level of the public access door of each of the premises. If there is more than one 
+public access door for either or both of the premises, the measurement must be taken from 
+the public access door nearest to the other premises, that is, the shortest measurement that 
+can be taken. 
+If the distance separating the nearest approved pharmacy and the proposed premises is 
+substantially greater than 300 m, it may be sufficient to provide a scaled map, highlighting 
+the location and addresses of the 2 premises and the approximate straight line distance 
+using the scale on the map as the basis. 
+If the distance between the nearest approved pharmacy and the proposed premises is near 
+to the required distance, applicants should provide a report from a licenced or registered 
+surveyor, of the measurement of the straight line distance between the 2 premises. Any 
+surveyor’s report should include: 
+• 
+the surveyor’s licence or registration number 
+• 
+a clearly scaled map 
+• 
+a description of the methodology and equipment used in the measurement 
+• 
+the straight line distance measured 
+• 
+the margin for error in the measurement 
+• 
+detailed information about the public access doors to each of the premises, and 
+• 
+confirmation that the measurement has been undertaken from the mid-point at 
+ground level of the public access door of each of the premises. 
+Often applicants do not provide evidence to allow the Authority to determine whether there 
+are any pharmacies within 300 m, by straight line, of the proposed premises, and if so, 
+whether any such pharmacies are in a large shopping centre, or a private hospital. In 
+circumstances where there is an existing approved pharmacy within 300 m, by straight line, 
+of the proposed premises, applicants should provide sufficient evidence to demonstrate the 
+existing approved pharmacy is in a large shopping centre, or a private hospital. It is not 
+sufficient to simply make a statement that this is the case. 
+ 
+ 
+54 
+Evidence required for item 136(d) 
+Evidence could include a statutory declaration (made on a Commonwealth of Australia 
+statutory declaration template) from the owner or manager of the medical centre confirming 
+the hours the medical centre operates and the hours that each PBS prescriber practises, 
+copies of any advertisements regarding the hours the medical centre operates, and a 
+practice information sheet. In addition, copies of rosters or timesheets of the actual times 
+and total number of hours worked by each PBS prescriber for every week of the 2 months 
+before the day on which the application was made should be provided. A summary of the 
+information on the rosters or timesheets should also be provided. The start and finish times 
+for each prescriber should be included on the roster or timesheets, including the times of any 
+breaks, and should be of the actual times the prescribers were available at that medical 
+centre rather than anticipated roster times. 
+The statutory declaration should also confirm whether any of the rostered time includes time 
+spent consulting at other medical centres, working at a hospital (rostered duties), attending 
+nursing homes and undertaking administration work for the medical centre/practice, such as 
+staff rosters, which is not counted towards the time spent practising at the medical 
+centre/practice. 
+The minimum number of hours required to meet the equivalent of at least 8 full-time PBS 
+prescribers, of which at least 7 PBS prescribers must be prescribing medical practitioners, is 
+304 hours a week, of which a maximum of 38 hours a week can be attributed for the 
+provision of services at the medical centre by a PBS prescriber, as defined in section 84(1) 
+of the Act, other than a medical practitioner. That is, services provided by a participating 
+dental practitioner, an authorised optometrist, midwife or nurse practitioner. 
+The Authority does consider public holidays and leave arrangements for PBS prescribers, for 
+example, sick leave, annual leave. For public holidays, the rosters should reflect only the 
+actual hours worked rather than the usual hours, noting the Authority will accept reduced 
+hours due to public holidays. 
+It is recommended applicants provide information on the arrangements the medical centre 
+has in place to cover the planned and unplanned leave of its prescribing medical 
+practitioners, for example, whether locum prescribing medical practitioners are arranged. 
+Please note, while the Authority will allow some leave when considering whether the 
+requirements of item 136(d) have been met, advice on the level of leave that would be 
+accepted by the Authority is unable to be provided. 
+With regards to the use of telehealth, time spent conducting telehealth consultations can 
+only be claimed for times that the general practitioner was physically at the medical centre 
+when conducting the telehealth consultation and the telehealth consultation was provided to 
+a patient of the medical centre who would ordinarily attend the medical centre. Any 
+telehealth consultations that do not meet these requirements must not be included in the 
+totalling of fulltime equivalent hours for the purposes of item 136(d). 
+Please note, the Secretariat, on behalf of the Authority, will contact the medical centre 
+directly in the lead up to the meeting to request further information in relation to the actual 
+and rostered hours worked from the day the application was made and up until the day the 
+Authority considers the application. If the application is deferred to allow further evidence to 
+be sought, this process will be repeated. 
+Full-time PBS prescriber (including medical practitioner) means providing the services of a 
+PBS prescriber for 38 hours in a week. For example, for a medical practitioner, time spent 
+consulting with patients at their home or in hospital is included when calculating the hours 
+that a medical practitioner practises at a medical centre. Time spent consulting at other 
+medical centres, working at a hospital (rostered duties), attending nursing homes and 
+ 
+55 
+undertaking administration work for the medical centre/practice, such as staff rosters, is not 
+counted towards the time spent practising at the medical centre/practice. 
+The equivalent of a full-time PBS prescriber means any number of PBS prescribers who 
+provide the equivalent services of one full-time PBS prescriber. For example, if one part-time 
+PBS prescriber practises 20 hours each week and another practises 18 hours each week, 
+then they will be considered the equivalent of one full-time PBS prescriber (i.e. their 
+combined practice hours equal 38 hours). Similarly, if one PBS prescriber practises 57 hours 
+each week then they are considered the equivalent of one and half full-time PBS prescribers. 
+Evidence required for item 136(e) 
+Evidence addressing this requirement might include evidence of an agreement between the 
+applicant and the management of the medical centre which indicates that the proposed 
+pharmacy’s hours will largely reflect those of the medical centre, or that the applicant will 
+endeavour to open the pharmacy outside of normal hours if there is sufficient need. 
+General requirements 
+Please note, it is important to clearly identify the proposed premises that are the subject of an 
+application. Evidence must also be provided in support of each of the requirements below: 
+• 
+at all relevant times, the proposed premises are not approved premises 
+• 
+the applicant has, at all relevant times, a legal right to occupy the proposed premises 
+(whether the right is to occupy the premises on the day the application is made or 
+after that day) 
+• 
+at all relevant times, the proposed premises could be used for the purpose of 
+operating a pharmacy under applicable local government and State or Territory laws 
+relating to land development 
+• 
+the proposed premises would be accessible by the public 
+• 
+within 6 months after the day on which the Authority makes a recommendation in 
+relation to the application, the applicant will be able to begin operating a pharmacy at 
+the proposed premises  
+• 
+the proposed premises will not be directly accessible by the public from within a 
+supermarket. 
+The evidence required for the above is outlined under ‘General Requirements for all 
+applications’ section. 
+Restrictions 
+Applicants wishing to relocate a pharmacy that was originally approved as the result of an 
+application made under Item 136 must satisfy the Authority that there are exceptional 
+circumstances if the proposed premises are not located within the same medical centre in 
+which the approval was originally granted. 
+While the pharmacy may move within the same medical centre, it must not do so unless an 
+application has been made against the relevant requirements of the Rules and is 
+subsequently approved. 
+ 
+ 
+ 
+56 
+Glossary 
+Term 
+Definition 
+Act 
+National Health Act 1953 
+all relevant times 
+(a) on the day on which the application was made, and 
+(b) the day on which the application is considered by the Authority. 
+Application 
+An application under section 90 of the Act that is referred to the 
+Authority 
+approved 
+premises 
+(a) premises in relation to which an approval granted under section 
+90 of the Act is in force, and which are not redundant (see 
+redundant premises), or 
+(b) premises in relation to which the Authority has recommended an 
+applicant be approved under section 90 of the Act 
+Authority 
+Australian Community Pharmacy Authority 
+commercial 
+establishment 
+Premises in a small shopping centre or a large shopping centre 
+occupied or likely to be occupied by a: 
+(a) shop where goods, food or beverages are sold retail, or 
+(b) bar, café, restaurant or takeaway, or 
+(c) business that provides services to customers 
+Commercial establishment does not include: 
+(a) commercial office space, or 
+(b) premises occupied by an accountant, analyst, architect, 
+engineer, lawyer, planner, stockbroker or surveyor, unless the 
+premises are occupied by a shopfront, or 
+(c) premises occupied by a real estate agent or an insurance 
+company, agent or broker, unless the premises are occupied as 
+a shopfront for the real estate agent or insurance company, or 
+(d) a council office or government or statutory corporation office or 
+shopfront, other than an Australia Post shopfront, an 
+Australian Broadcasting Corporation shop or a Medicare or 
+Centrelink shopfront, or 
+(e) a car wash or car parking facilities, or 
+(f) a library, or 
+(g) a kindergarten or preschool, or 
+(h) a child care centre or child minding facility, unless the centre or 
+facility is available exclusively for use by customers of the 
+small shopping centre or the large shopping centre while the 
+customers are shopping at the small shopping centre or the 
+large shopping centre, or 
+(i) a storeroom or storage area, or 
+(j) a temporary selling point, or 
+(k) an automatic teller machine or automatic dispensing machine 
+ 
+57 
+Term 
+Definition 
+In working out the number of commercial establishments in a 
+shopping centre: 
+(a) 2 or more commercial establishments occupied by, or likely to 
+be occupied by, one business, are counted as one commercial 
+establishment, and 
+(b) the maximum number of shopfronts for accountants, analysts, 
+architects, engineers, lawyers, planners, stockbrokers or 
+surveyors that can be counted towards the total number of 
+commercial establishments in a shopping centre is: 
+i. for a small shopping centre – one, or 
+ii. for a large shopping centre – 2 
+designated 
+complex 
+(a) a small shopping centre, or 
+(b) a large shopping centre, or 
+(c) a large medical centre, or 
+(d) a large private hospital 
+full-time 
+(a) for a prescribing medical practitioner - providing the services of a 
+prescribing medical practitioner for 38 hours in a week, or 
+(b) for a PBS prescriber - providing the services of a PBS prescriber 
+for 38 hours in a week 
+gross leasable 
+area 
+(a) for a group of shops and associated facilities – the total floor area 
+of the small shopping centre or the large shopping centre 
+excluding loading docks and car parks, and 
+(b) for a supermarket – the total floor area of the supermarket, 
+excluding loading docks and car parks 
+large medical 
+centre 
+A medical centre that: 
+(a) is under single management, and 
+(b) operates for at least 70 hours each week, and 
+(c) has one or more prescribing medical practitioners at the centre 
+for at least 70 of the hours each week that the medical centre 
+operates 
+large private 
+hospital 
+A private hospital that can admit at least 150 patients at any one time 
+in accordance with the private hospital’s license or registration under 
+the law of the State or Territory in which the private hospital is located 
+large shopping 
+centre 
+A group of shops and associated facilities that: 
+(a) is under single management, and 
+(b) has a gross leasable area of at least 5,000 m2, and 
+(c) contains a supermarket that occupies a gross leasable area of 
+at least 2,500 m2, and 
+(d) contains at least 50 other commercial establishments, and 
+(e) has customer parking facilities 
+ 
+58 
+Term 
+Definition 
+PBS prescriber 
+Has the same meaning as in Part VII of the Act: a medical 
+practitioner, or a participating dental practitioner, or an authorised 
+optometrist, or an authorised midwife, or an authorised nurse 
+practitioner 
+pharmaceutical 
+benefit 
+Has the same meaning as in Part VII of the Act 
+pharmacy 
+Has the meaning given by subsection 90 (3AB) of the Act: a business 
+in the course of the carrying on of which pharmaceutical benefits are 
+supplied 
+Pharmacy 
+Location Rules 
+National Health (Australian Community Pharmacy Authority Rules) 
+Determination 2018 
+prescribing 
+medical 
+practitioner 
+A medical practitioner who provides general practice services to the 
+community in which he or she practises, including the issuing of 
+prescriptions for pharmaceutical benefits 
+private hospital 
+Is defined in subsection 3(1) of the Health Insurance Act 1973 and 
+means a hospital in respect of which there is in force a statement 
+under subsection 121-5(8) of the Private Health Insurance Act 2007 
+that the hospital is a private hospital 
+proposed 
+premises 
+The premises at which an applicant proposes to supply 
+pharmaceutical benefits 
+redundant 
+premises 
+Premises to which all the following apply: 
+(a) the premises are existing premises in relation to an application 
+(b) the Authority has recommended that the applicant who made 
+the application be approved under section 90 of the Act in 
+relation to the proposed premises 
+(c) the pharmacist approved in relation to the existing premises 
+has requested, in writing, that if the applicant is to be approved 
+in relation to the proposed premises, the existing approval will 
+be cancelled immediately before the approval in relation to the 
+proposed premises is granted 
+(d) the pharmacist approved in relation to the existing premises 
+has ceased to carry on business as a pharmacist at the 
+approved premises 
+(e) the Secretary: 
+(i) is aware of the cessation and of the reason for it; 
+(ii) has agreed to cancel the existing approval only in 
+accordance with a request of the kind mentioned in 
+paragraph (c) 
+ 
+59 
+Term 
+Definition 
+same town 
+(a) in relation to approved premises – proposed premises are in the 
+same town as approved premises if the proposed premises are in 
+the same town and postcode as the approved premises, and 
+(b) in relation to existing premises – proposed premises are in the 
+same town as existing premises if the proposed premises are in 
+the same town and postcode as the existing premises 
+single 
+management 
+For a small shopping centre, a large shopping centre or a large 
+medical centre: 
+(a) means an arrangement in which a single entity, or 2 or more 
+entities working cooperatively under an agreement, are 
+responsible for marketing, maintenance and administration for 
+the centre as a whole, and 
+(b) does not include independent owners or tenants of premises 
+of a building or centre that cooperate: 
+(i) on particular occasions, or 
+(ii) in relation to some but not all of the matters mentioned 
+in subparagraph (a) in relation to the building or centre 
+small shopping 
+centre 
+A group of shops and associated facilities that: 
+(a) is under single management, and 
+(b) has a gross leasable area of at least 5,000 m2, and 
+(c) contains a supermarket that occupies a gross leasable area of 
+at least 2,500 m2, and 
+(d) contains at least 15 other commercial establishments, and 
+(e) has customer parking facilities 
+supermarket 
+A retail store the primary business of which is the sale of a range of 
+food, beverages, groceries and other domestic goods 
+ 
+
