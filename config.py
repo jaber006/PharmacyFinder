@@ -171,6 +171,30 @@ RULE_COLORS = {
     'Item 134A': 'darkblue',  # Large shopping centre - with pharmacy (100+/200+ tenants)
     'Item 135': 'red',        # Large private hospital (150+ patients)
     'Item 136': 'darkgreen',  # Large medical centre (8 FTE prescribers)
+    'Ministerial': 'cadetblue',  # Ministerial opportunity (community need)
+}
+
+# Ministerial opportunity scoring weights
+MINISTERIAL_SCORING = {
+    'weight_population': 0.25,
+    'weight_distance': 0.20,
+    'weight_gp_presence': 0.15,
+    'weight_near_miss': 0.20,
+    'weight_pharmacy_density': 0.15,
+    'weight_growth': 0.05,
+    'min_score_threshold': 25,  # Minimum score to qualify as ministerial opportunity
+}
+
+# Ministerial near-miss thresholds
+MINISTERIAL_NEAR_MISS = {
+    'item_130_min_km': 1.0,
+    'item_130_max_km': 1.49,
+    'item_131_min_km': 7.0,
+    'item_131_max_km': 9.99,
+    'item_133_min_m': 300,
+    'item_133_max_m': 499,
+    'item_136_min_m': 200,
+    'item_136_max_m': 299,
 }
 
 # Logging configuration

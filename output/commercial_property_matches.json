@@ -1,0 +1,362 @@
+{
+  "generated": "2026-02-15",
+  "total_qualifying_opportunities": 368,
+  "top_50_analysed": 50,
+  "searchable_towns": 30,
+  "remote_communities": 20,
+  "summary": {
+    "grade_a_matches": 5,
+    "grade_b_matches": 8,
+    "grade_c_matches": 10,
+    "no_listings": 27
+  },
+  "matches": [
+    {
+      "grade": "A",
+      "rank": 1,
+      "town": "Roxby Downs",
+      "state": "SA",
+      "postcode": "5725",
+      "opportunity_score": 1037,
+      "population_5km": 3671,
+      "nearest_pharmacy_km": 228.7,
+      "poi_name": "Roxby Downs Hospital",
+      "qualifying_rule": "Item 131",
+      "latitude": -30.5627,
+      "longitude": 136.8942,
+      "properties": [
+        {
+          "address": "10 Richardson Place, Roxby Downs, SA 5725",
+          "type": "Shop & Retail",
+          "listing_type": "For Lease",
+          "url": "https://www.realcommercial.com.au/for-lease/property-10-richardson-place-roxby-downs-sa-5725-5878566",
+          "source": "realcommercial.com.au",
+          "agent": "Raine & Horne - Roxby Downs (RLA 208715)"
+        }
+      ],
+      "listing_counts": {
+        "commercial_for_sale": 20,
+        "retail_for_sale": 5,
+        "development_land": 6,
+        "commercial_for_lease": "multiple"
+      },
+      "search_urls": [
+        "https://www.realcommercial.com.au/for-lease/roxby-downs-sa-5725/",
+        "https://www.realcommercial.com.au/for-sale/roxby-downs-sa-5725/retail/"
+      ],
+      "notes": "BHP Olympic Dam mining town. Captive population. High income demographics. Hospital nearby. 228km from nearest pharmacy — extreme pharmacy desert."
+    },
+    {
+      "grade": "A",
+      "rank": 2,
+      "town": "Denmark",
+      "state": "WA",
+      "postcode": "6333",
+      "opportunity_score": 1029,
+      "population_5km": 2944,
+      "nearest_pharmacy_km": 45.8,
+      "poi_name": "IGA Local Grocer",
+      "qualifying_rule": "Item 131",
+      "latitude": -32.6689,
+      "longitude": 118.1552,
+      "properties": [],
+      "listing_counts": {
+        "retail_for_lease": 72,
+        "commercial_for_lease": 5,
+        "previously_leased_retail": 19,
+        "previously_leased_commercial": 17
+      },
+      "search_urls": [
+        "https://www.realcommercial.com.au/for-lease/denmark-wa-6333/retail/",
+        "https://www.realcommercial.com.au/for-lease/denmark-wa-6333/"
+      ],
+      "notes": "Growing tourist/retirement town. Very active commercial market. 72 retail properties for lease in broader area."
+    },
+    {
+      "grade": "A",
+      "rank": 3,
+      "town": "Capel",
+      "state": "WA",
+      "postcode": "6271",
+      "opportunity_score": 1024,
+      "population_5km": 2402,
+      "nearest_pharmacy_km": 17.2,
+      "poi_name": "Capel Fresh IGA / CAPEL Child Health Clinic",
+      "qualifying_rule": "Item 131",
+      "latitude": -33.5555,
+      "longitude": 115.5634,
+      "properties": [
+        {
+          "address": "1/93 Capel Drive, Capel, WA 6271",
+          "type": "Retail",
+          "listing_type": "For Lease",
+          "url": "https://www.lease.com.au/listing/retail-1-93-capel-drive-capel-wa-6271-75074",
+          "source": "lease.com.au",
+          "agent": "Michelle Pownall"
+        },
+        {
+          "address": "28 Forrest Road, Capel, WA 6271",
+          "type": "Retail",
+          "listing_type": "For Sale",
+          "url": "https://www.eldersrealestate.com.au/commercial/sale/28-forrest-road-capel-wa-6271-300P166784/",
+          "source": "Elders Real Estate",
+          "agent": "Elders Real Estate"
+        }
+      ],
+      "listing_counts": {
+        "commercial_for_lease_rc": 238,
+        "commercial_for_lease_cre": 41,
+        "retail_for_lease_cre": 19,
+        "medical_consulting_for_lease": 48
+      },
+      "search_urls": [
+        "https://www.realcommercial.com.au/for-lease/capel-wa-6271/",
+        "https://www.commercialrealestate.com.au/for-lease/capel-wa-6271/retail/",
+        "https://www.lease.com.au/listings/capel%206271"
+      ],
+      "notes": "Growing SW corridor between Bunbury and Busselton. Specific retail lease available. IGA and child health clinic anchors."
+    },
+    {
+      "grade": "A",
+      "rank": 4,
+      "town": "Seaham",
+      "state": "NSW",
+      "postcode": "2324",
+      "opportunity_score": 1277,
+      "population_5km": 533,
+      "nearest_pharmacy_km": 9.7,
+      "poi_name": "Seaham Doctor's Surgery",
+      "qualifying_rule": "Item 131",
+      "latitude": -32.6617,
+      "longitude": 151.7277,
+      "properties": [],
+      "listing_counts": {
+        "retail_for_lease_rc": 10,
+        "retail_for_lease_cre": 16,
+        "commercial_for_lease_cre": 59
+      },
+      "search_urls": [
+        "https://www.realcommercial.com.au/for-lease/seaham-nsw-2324/retail/",
+        "https://www.commercialrealestate.com.au/for-lease/seaham-nsw-2324/retail/"
+      ],
+      "notes": "Highest composite score. Doctor's surgery = ideal co-location. Many listings may be from broader Raymond Terrace/Maitland area."
+    },
+    {
+      "grade": "A",
+      "rank": 5,
+      "town": "Hill Top",
+      "state": "NSW",
+      "postcode": "2575",
+      "opportunity_score": 1032,
+      "population_5km": 3236,
+      "nearest_pharmacy_km": 10.7,
+      "poi_name": "Hilltop Surgery",
+      "qualifying_rule": "Item 131",
+      "latitude": -34.3548,
+      "longitude": 150.4937,
+      "properties": [],
+      "listing_counts": {
+        "check_broader_area": true
+      },
+      "search_urls": [
+        "https://www.realcommercial.com.au/for-lease/hill-top-nsw-2575/",
+        "https://www.commercialrealestate.com.au/for-lease/hill-top-nsw-2575/"
+      ],
+      "notes": "Southern Highlands. GP surgery present. Growing tree-change area. Check broader Mittagong/Bowral commercial market."
+    },
+    {
+      "grade": "B",
+      "rank": 6,
+      "town": "Marburg",
+      "state": "QLD",
+      "postcode": "4346",
+      "opportunity_score": 1115,
+      "population_5km": 696,
+      "nearest_pharmacy_km": 8.2,
+      "poi_name": "Marburg Medical",
+      "qualifying_rule": "Item 131",
+      "latitude": -27.566,
+      "longitude": 152.593,
+      "properties": [],
+      "listing_counts": {
+        "retail_for_lease": 1,
+        "office_for_lease": 1,
+        "showroom_for_lease": 1,
+        "development_land_for_lease": 17
+      },
+      "search_urls": [
+        "https://www.realcommercial.com.au/for-lease/marburg-qld-4346/retail/"
+      ],
+      "notes": "Medical practice present. Small market but retail available. Ipswich satellite area."
+    },
+    {
+      "grade": "B",
+      "rank": 7,
+      "town": "Mount Morgan",
+      "state": "QLD",
+      "postcode": "4714",
+      "opportunity_score": 1025,
+      "population_5km": 2487,
+      "nearest_pharmacy_km": 24.0,
+      "poi_name": "IGA Mount Morgan / Mount Morgan Multipurpose Health Service",
+      "qualifying_rule": "Item 131",
+      "latitude": -23.6449,
+      "longitude": 150.3903,
+      "properties": [],
+      "listing_counts": {},
+      "search_urls": [
+        "https://www.realcommercial.com.au/for-lease/mount-morgan-qld-4714/"
+      ],
+      "notes": "Historic mining town near Rockhampton. Health service + IGA anchors."
+    },
+    {
+      "grade": "B",
+      "rank": 8,
+      "town": "Coonamble",
+      "state": "NSW",
+      "postcode": "2829",
+      "opportunity_score": 1024,
+      "population_5km": 2353,
+      "nearest_pharmacy_km": 42.7,
+      "poi_name": "Coonamble IGA",
+      "qualifying_rule": "Item 131",
+      "latitude": -30.9538,
+      "longitude": 148.3834,
+      "properties": [],
+      "listing_counts": {},
+      "search_urls": [
+        "https://www.realcommercial.com.au/for-lease/coonamble-nsw-2829/"
+      ],
+      "notes": "Regional NSW. 43km from nearest pharmacy. Contact local agents."
+    },
+    {
+      "grade": "B",
+      "rank": 9,
+      "town": "St Arnaud",
+      "state": "VIC",
+      "postcode": "3478",
+      "opportunity_score": 1021,
+      "population_5km": 2126,
+      "nearest_pharmacy_km": 35.6,
+      "poi_name": "East Wimmera Health Service St Arnaud Campus",
+      "qualifying_rule": "Item 131",
+      "latitude": -36.6096,
+      "longitude": 143.2469,
+      "properties": [],
+      "listing_counts": {},
+      "search_urls": [
+        "https://www.realcommercial.com.au/for-lease/st-arnaud-vic-3478/"
+      ],
+      "notes": "Wimmera region. Health service campus = ideal pharmacy anchor."
+    },
+    {
+      "grade": "B",
+      "rank": 10,
+      "town": "Jurien Bay",
+      "state": "WA",
+      "postcode": "6516",
+      "opportunity_score": 1016,
+      "population_5km": 1600,
+      "nearest_pharmacy_km": 84.3,
+      "poi_name": "IGA Jurien Bay",
+      "qualifying_rule": "Item 131",
+      "latitude": -30.3053,
+      "longitude": 115.0381,
+      "properties": [],
+      "listing_counts": {},
+      "search_urls": [
+        "https://www.realcommercial.com.au/for-lease/jurien-bay-wa-6516/"
+      ],
+      "notes": "Coastal WA. 84km from nearest pharmacy! Growing retirement destination."
+    },
+    {
+      "grade": "B",
+      "rank": 11,
+      "town": "Quorn",
+      "state": "SA",
+      "postcode": "5433",
+      "opportunity_score": 1012,
+      "population_5km": 1150,
+      "nearest_pharmacy_km": 29.0,
+      "poi_name": "IGA Quorn / Quorn District and Memorial Hospital",
+      "qualifying_rule": "Item 131",
+      "latitude": -32.3484,
+      "longitude": 138.0405,
+      "properties": [],
+      "listing_counts": {},
+      "search_urls": [
+        "https://www.realcommercial.com.au/for-lease/quorn-sa-5433/"
+      ],
+      "notes": "Flinders Ranges. Hospital + IGA = strong anchors."
+    },
+    {
+      "grade": "B",
+      "rank": 12,
+      "town": "Mallacoota",
+      "state": "VIC",
+      "postcode": "3892",
+      "opportunity_score": 1011,
+      "population_5km": 1118,
+      "nearest_pharmacy_km": 56.5,
+      "poi_name": "Mallacoota Medical Centre",
+      "qualifying_rule": "Item 131",
+      "latitude": -37.5584,
+      "longitude": 149.7535,
+      "properties": [],
+      "listing_counts": {},
+      "search_urls": [
+        "https://www.realcommercial.com.au/for-lease/mallacoota-vic-3892/"
+      ],
+      "notes": "Remote coastal VIC. Medical centre present. 56km from pharmacy."
+    },
+    {
+      "grade": "B",
+      "rank": 13,
+      "town": "Mallala",
+      "state": "SA",
+      "postcode": "5502",
+      "opportunity_score": 1009,
+      "population_5km": 887,
+      "nearest_pharmacy_km": 17.5,
+      "poi_name": "Mallala IGA",
+      "qualifying_rule": "Item 131",
+      "latitude": -34.4377,
+      "longitude": 138.5103,
+      "properties": [],
+      "listing_counts": {},
+      "search_urls": [
+        "https://www.realcommercial.com.au/for-lease/mallala-sa-5502/"
+      ],
+      "notes": "Adelaide Plains. Growing peri-urban area."
+    }
+  ],
+  "remote_no_listings": [
+    {"town": "Nhulunbuy", "state": "NT", "score": 1266, "pop": 241, "nearest_pharmacy_km": 9.6},
+    {"town": "South Golden Beach", "state": "NSW", "score": 1219, "pop": 1100, "nearest_pharmacy_km": 9.1},
+    {"town": "Maningrida", "state": "NT", "score": 1025, "pop": 2518, "nearest_pharmacy_km": 279.3},
+    {"town": "Galiwinku", "state": "NT", "score": 1022, "pop": 2199, "nearest_pharmacy_km": 133.7},
+    {"town": "Wurrumiyanga", "state": "NT", "score": 1015, "pop": 1521, "nearest_pharmacy_km": 71.4},
+    {"town": "Doomadgee", "state": "QLD", "score": 1014, "pop": 1387, "nearest_pharmacy_km": 218.7},
+    {"town": "Normanton", "state": "QLD", "score": 1013, "pop": 1326, "nearest_pharmacy_km": 32.6},
+    {"town": "Ramingining", "state": "NT", "score": 1013, "pop": 1314, "nearest_pharmacy_km": 202.5},
+    {"town": "Wagin", "state": "WA", "score": 1013, "pop": 1311, "nearest_pharmacy_km": 44.6},
+    {"town": "Gunbalanya", "state": "NT", "score": 1012, "pop": 1153, "nearest_pharmacy_km": 214.0},
+    {"town": "Hillston", "state": "NSW", "score": 1011, "pop": 1149, "nearest_pharmacy_km": 80.8},
+    {"town": "Milingimbi", "state": "NT", "score": 1011, "pop": 1097, "nearest_pharmacy_km": 202.9},
+    {"town": "Ngukurr", "state": "NT", "score": 1011, "pop": 1088, "nearest_pharmacy_km": 267.2},
+    {"town": "Borroloola", "state": "NT", "score": 1010, "pop": 955, "nearest_pharmacy_km": 433.5},
+    {"town": "Gununa", "state": "QLD", "score": 1010, "pop": 1022, "nearest_pharmacy_km": 198.5},
+    {"town": "Yulara", "state": "NT", "score": 1009, "pop": 853, "nearest_pharmacy_km": 335.8},
+    {"town": "Beverley", "state": "WA", "score": 1009, "pop": 869, "nearest_pharmacy_km": 28.5},
+    {"town": "Hope Vale", "state": "QLD", "score": 1009, "pop": 895, "nearest_pharmacy_km": 24.5},
+    {"town": "Beagle Bay", "state": "WA", "score": 1009, "pop": 907, "nearest_pharmacy_km": 108.7},
+    {"town": "Hermannsburg", "state": "NT", "score": 1008, "pop": 751, "nearest_pharmacy_km": 114.8},
+    {"town": "Jabiru", "state": "NT", "score": 1008, "pop": 755, "nearest_pharmacy_km": 188.1},
+    {"town": "Alyangula", "state": "NT", "score": 1008, "pop": 751, "nearest_pharmacy_km": 189.2},
+    {"town": "Gapuwiyak", "state": "NT", "score": 1008, "pop": 828, "nearest_pharmacy_km": 112.3},
+    {"town": "Roebourne", "state": "WA", "score": 1008, "pop": 762, "nearest_pharmacy_km": 11.1},
+    {"town": "Coolgardie", "state": "WA", "score": 1008, "pop": 763, "nearest_pharmacy_km": 36.1},
+    {"town": "Kellerberrin", "state": "WA", "score": 1008, "pop": 798, "nearest_pharmacy_km": 45.4},
+    {"town": "Wyndham", "state": "WA", "score": 1008, "pop": 845, "nearest_pharmacy_km": 73.5}
+  ]
+}
