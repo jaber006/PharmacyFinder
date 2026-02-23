@@ -1,0 +1,199 @@
+{
+  "date": "2026-02-24T00:01:08.153650",
+  "json_source": "C:\\Users\\MJ\\Documents\\GitHub\\PharmacyFinder\\output\\national_pharmacies_2026-02-23.json",
+  "dry_run": false,
+  "before": 5310,
+  "after": 5322,
+  "added": 12,
+  "updated": 332,
+  "unchanged": 3944,
+  "removed_from_index": 31,
+  "removed_list": [
+    {
+      "id": 255,
+      "name": "Priceline Pharmacy Adelaide City",
+      "suburb": "ADELAIDE",
+      "state": "SA"
+    },
+    {
+      "id": 256,
+      "name": "Star Discount Chemist Hutt Street",
+      "suburb": "ADELAIDE",
+      "state": "SA"
+    },
+    {
+      "id": 265,
+      "name": "South Road Pharmacy",
+      "suburb": "MILE END",
+      "state": "SA"
+    },
+    {
+      "id": 273,
+      "name": "TerryWhite Chemmart Malvern",
+      "suburb": "MALVERN",
+      "state": "SA"
+    },
+    {
+      "id": 290,
+      "name": "Star Discount Chemist Collinswood",
+      "suburb": "COLLINSWOOD",
+      "state": "SA"
+    },
+    {
+      "id": 299,
+      "name": "Prospect Medical Centre Pharmacist Advice",
+      "suburb": "PROSPECT",
+      "state": "SA"
+    },
+    {
+      "id": 304,
+      "name": "Prospect Pharmacy",
+      "suburb": "PROSPECT",
+      "state": "SA"
+    },
+    {
+      "id": 305,
+      "name": "Edward Street Allcare Pharmacy",
+      "suburb": "MELROSE PARK",
+      "state": "SA"
+    },
+    {
+      "id": 309,
+      "name": "Priceline Pharmacy Northpark",
+      "suburb": "PROSPECT",
+      "state": "SA"
+    },
+    {
+      "id": 313,
+      "name": "Croydon FamilyCare Pharmacy",
+      "suburb": "CROYDON PARK",
+      "state": "SA"
+    },
+    {
+      "id": 314,
+      "name": "Star Discount Chemist Magill",
+      "suburb": "MAGILL",
+      "state": "SA"
+    },
+    {
+      "id": 325,
+      "name": "TerryWhite Chemmart Morphettville",
+      "suburb": "GLENELG EAST",
+      "state": "SA"
+    },
+    {
+      "id": 341,
+      "name": "Windsor Village Pharmacy",
+      "suburb": "PARADISE",
+      "state": "SA"
+    },
+    {
+      "id": 354,
+      "name": "Pennington Guardian Pharmacy",
+      "suburb": "PENNINGTON",
+      "state": "SA"
+    },
+    {
+      "id": 355,
+      "name": "Star Discount Chemist - Glenelg",
+      "suburb": "GLENELG SOUTH",
+      "state": "SA"
+    },
+    {
+      "id": 359,
+      "name": "TerryWhite Chemmart Grange",
+      "suburb": "GRANGE",
+      "state": "SA"
+    },
+    {
+      "id": 362,
+      "name": "United Chemists Marion Domain",
+      "suburb": "OAKLANDS PARK",
+      "state": "SA"
+    },
+    {
+      "id": 364,
+      "name": "Pharmasave Alberton Pharmacy",
+      "suburb": "ALBERTON",
+      "state": "SA"
+    },
+    {
+      "id": 372,
+      "name": "West Lakes Amcal Pharmacy",
+      "suburb": "WEST LAKES",
+      "state": "SA"
+    },
+    {
+      "id": 373,
+      "name": "Holden Hill Amcal Pharmacy",
+      "suburb": "HOLDEN HILL",
+      "state": "SA"
+    },
+    {
+      "id": 375,
+      "name": "TerryWhite Chemmart Brighton Day & Night",
+      "suburb": "BRIGHTON",
+      "state": "SA"
+    },
+    {
+      "id": 376,
+      "name": "TerryWhite Chemmart Brighton South",
+      "suburb": "SOUTH BRIGHTON",
+      "state": "SA"
+    },
+    {
+      "id": 408,
+      "name": "Edgecombe Chemist",
+      "suburb": "FAIRVIEW PARK",
+      "state": "SA"
+    },
+    {
+      "id": 485,
+      "name": "TerryWhite Chemmart Hayborough Pharmacy",
+      "suburb": "HAYBOROUGH",
+      "state": "SA"
+    },
+    {
+      "id": 491,
+      "name": "The Barossa Pharmacist in the Mall",
+      "suburb": "NURIOOTPA",
+      "state": "SA"
+    },
+    {
+      "id": 507,
+      "name": "United Chemists Yorketown",
+      "suburb": "YORKETOWN",
+      "state": "SA"
+    },
+    {
+      "id": 553,
+      "name": "Ceduna Pharmacy",
+      "suburb": "CEDUNA",
+      "state": "SA"
+    },
+    {
+      "id": 1988,
+      "name": "Star Discount Chemist Mt Gambier",
+      "suburb": "MOUNT GAMBIER",
+      "state": "SA"
+    },
+    {
+      "id": 1993,
+      "name": "Gambier City Pharmacy",
+      "suburb": "MOUNT GAMBIER",
+      "state": "SA"
+    },
+    {
+      "id": 2155,
+      "name": "Ferny Grove Discount Drug Store",
+      "suburb": "FERNY GROVE",
+      "state": "QLD"
+    },
+    {
+      "id": 4279,
+      "name": "Blackbutt Pharmacy",
+      "suburb": "BLACKBUTT",
+      "state": "QLD"
+    }
+  ]
+}
