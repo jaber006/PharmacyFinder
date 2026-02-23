@@ -23,10 +23,10 @@ DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pharmacy_fin
 AUS_AVG_RATIO = 4500
 
 # Minimum population to consider (10km radius)
-MIN_POP_10KM = 5000
+MIN_POP_10KM = 500
 
 # Minimum ratio to flag as opportunity
-MIN_RATIO = 4000
+MIN_RATIO = 500
 
 
 def score_opportunities():
@@ -51,11 +51,10 @@ def score_opportunities():
         if pop < MIN_POP_10KM:
             continue
         
-        # Skip 0 pharmacy areas (usually means remote/no one there)
-        # UNLESS it's a growth corridor
+        # For 0 pharmacy areas: only include if verified (deep verify already filtered junk)
         if pharmacies == 0:
-            growth = opp.get('growth_indicator') or ''
-            if not growth:
+            verification = opp.get('verification') or ''
+            if verification != 'VERIFIED':
                 continue
         
         # --- CORE METRIC: People per pharmacy ---

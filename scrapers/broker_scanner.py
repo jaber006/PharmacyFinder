@@ -3,7 +3,7 @@ Pharmacy Broker Scanner
 ========================
 Scans 12 Australian pharmacy broker websites for current listings.
 Stores results in SQLite, detects new/active/removed listings,
-and generates markdown alert reports.
+and generates markdown reports.
 
 Usage:
     from scrapers.broker_scanner import BrokerScanner
@@ -14,6 +14,8 @@ Usage:
 import sqlite3
 import re
 import os
+import sys
+import io
 import json
 import logging
 import hashlib
@@ -21,8 +23,17 @@ from datetime import datetime, date
 from pathlib import Path
 from typing import List, Dict, Optional, Tuple
 from urllib.parse import urljoin, urlparse
-import subprocess
-import sys
+import time
+
+# Fix Windows console encoding
+if sys.platform == 'win32':
+    try:
+        if hasattr(sys.stdout, 'encoding') and sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
+            sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+        if hasattr(sys.stderr, 'encoding') and sys.stderr.encoding and sys.stderr.encoding.lower() != 'utf-8':
+            sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+    except (AttributeError, TypeError, ValueError):
+        pass
 
 # Setup logging
 logging.basicConfig(
@@ -39,93 +50,130 @@ OUTPUT_DIR = PROJECT_DIR / 'output'
 
 
 # =============================================================================
-# Web fetcher — uses Node.js clawdbot web_fetch or falls back to requests
+# Web fetcher — uses requests + beautifulsoup
 # =============================================================================
 
-def web_fetch(url: str, max_chars: int = 30000) -> Optional[str]:
-    """
-    Fetch URL content as readable markdown text.
-    Uses the 'requests' library with readability-like extraction,
-    or falls back to raw HTML parsing.
-    """
+def _get_session():
+    """Get a requests session with browser-like headers."""
+    import requests
+    session = requests.Session()
+    session.headers.update({
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-AU,en;q=0.9',
+    })
+    return session
+
+
+def web_fetch(url: str, max_chars: int = 50000) -> Optional[str]:
+    """Fetch URL and return text extracted from HTML."""
     try:
         import requests
         from bs4 import BeautifulSoup
     except ImportError:
-        logger.warning("requests/bs4 not available, trying urllib")
-        try:
-            import urllib.request
-            req = urllib.request.Request(url, headers={
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-            })
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                html = resp.read().decode('utf-8', errors='replace')
-                # Basic HTML to text
-                from html.parser import HTMLParser
-                class TextExtractor(HTMLParser):
-                    def __init__(self):
-                        super().__init__()
-                        self.text_parts = []
-                    def handle_data(self, data):
-                        self.text_parts.append(data)
-                extractor = TextExtractor()
-                extractor.feed(html)
-                text = ' '.join(extractor.text_parts)
-                return text[:max_chars] if text else None
-        except Exception as e:
-            logger.error(f"urllib fetch failed for {url}: {e}")
-            return None
-
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'en-AU,en;q=0.9',
-    }
+        logger.error("requests and beautifulsoup4 are required: pip install requests beautifulsoup4")
+        return None
 
     try:
-        resp = requests.get(url, headers=headers, timeout=15, allow_redirects=True)
+        session = _get_session()
+        resp = session.get(url, timeout=20, allow_redirects=True)
         resp.raise_for_status()
-        html = resp.text
-
-        soup = BeautifulSoup(html, 'html.parser')
-        # Remove script/style
-        for tag in soup(['script', 'style', 'nav', 'footer', 'header']):
+        soup = BeautifulSoup(resp.text, 'html.parser')
+        for tag in soup(['script', 'style']):
             tag.decompose()
         text = soup.get_text(separator='\n', strip=True)
         return text[:max_chars] if text else None
-
     except Exception as e:
         logger.error(f"Fetch failed for {url}: {e}")
         return None
 
 
-def web_fetch_html(url: str) -> Optional[str]:
+def web_fetch_html(url: str, timeout: int = 20) -> Optional[str]:
     """Fetch raw HTML from a URL."""
     try:
         import requests
     except ImportError:
-        try:
-            import urllib.request
-            req = urllib.request.Request(url, headers={
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-            })
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                return resp.read().decode('utf-8', errors='replace')
-        except Exception as e:
-            logger.error(f"urllib HTML fetch failed for {url}: {e}")
-            return None
+        return None
 
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    }
     try:
-        resp = requests.get(url, headers=headers, timeout=15, allow_redirects=True)
+        session = _get_session()
+        resp = session.get(url, timeout=timeout, allow_redirects=True)
         resp.raise_for_status()
         return resp.text
     except Exception as e:
         logger.error(f"HTML fetch failed for {url}: {e}")
         return None
+
+
+def web_fetch_markdown(url: str, max_chars: int = 50000) -> Optional[str]:
+    """Fetch URL and return readable markdown using html2text if available, else plain text."""
+    try:
+        import requests
+        from bs4 import BeautifulSoup
+    except ImportError:
+        return None
+
+    try:
+        session = _get_session()
+        resp = session.get(url, timeout=20, allow_redirects=True)
+        resp.raise_for_status()
+
+        try:
+            import html2text
+            h = html2text.HTML2Text()
+            h.ignore_links = False
+            h.ignore_images = True
+            h.body_width = 0
+            text = h.handle(resp.text)
+        except ImportError:
+            soup = BeautifulSoup(resp.text, 'html.parser')
+            for tag in soup(['script', 'style']):
+                tag.decompose()
+            # Preserve links
+            for a in soup.find_all('a', href=True):
+                a.string = f"[{a.get_text(strip=True)}]({a['href']})"
+            text = soup.get_text(separator='\n', strip=True)
+
+        return text[:max_chars] if text else None
+    except Exception as e:
+        logger.error(f"Markdown fetch failed for {url}: {e}")
+        return None
+
+
+# =============================================================================
+# Australian state detection
+# =============================================================================
+
+AU_STATE_KEYWORDS = [
+    ('TAS', ['tasmania', 'hobart', 'launceston', 'devonport', 'burnie',
+             'north west coast tas', 'central highlands tas']),
+    ('NT',  ['northern territory', 'darwin', 'alice springs']),
+    ('ACT', ['australian capital territory', 'canberra']),
+    ('NSW', ['new south wales', 'nsw', 'sydney', 'newcastle', 'hunter',
+             'inner west', 'north western', 'northshore', 'wollongong',
+             'central west', 'central tablelands', 'riverina', 'mid north coast',
+             'eastern suburbs', 'north sydney', 'tambo western']),
+    ('VIC', ['victoria', 'vic', 'melbourne', 'mornington', 'south-east vic',
+             'gippsland', 'geelong', 'ballarat', 'bendigo', 'drysdale',
+             'eltham', 'truganina', 'gisborne']),
+    ('QLD', ['queensland', 'qld', 'brisbane', 'sunshine coast', 'gold coast',
+             'noosa', 'bowen basin', 'north of brisbane', 'cairns', 'townsville',
+             'outback qld', 'rural town qld']),
+    ('WA',  ['western australia', 'perth', 'pilbara', 'south east western australia']),
+    ('SA',  ['south australia', 'adelaide']),
+]
+
+
+def detect_au_state(text: str) -> str:
+    """Detect Australian state from text. Returns state code or empty string."""
+    if not text:
+        return ''
+    text_lower = text.lower()
+    for state_code, keywords in AU_STATE_KEYWORDS:
+        for kw in keywords:
+            if kw in text_lower:
+                return state_code
+    return ''
 
 
 # =============================================================================
@@ -149,7 +197,6 @@ class Listing:
 
     @property
     def price_bucket(self) -> str:
-        """Classify price into bucket."""
         amount = self._parse_price()
         if amount is None:
             return 'Unknown'
@@ -165,34 +212,25 @@ class Listing:
             return '$5M+'
 
     def _parse_price(self) -> Optional[float]:
-        """Extract numeric price value."""
         if not self.price:
             return None
         text = self.price.lower().replace(',', '').replace('$', '')
-        # Handle "Xm" or "X.Xm"
         m = re.search(r'(\d+\.?\d*)\s*m(?:il|illion)?', text)
         if m:
             return float(m.group(1)) * 1_000_000
-        # Handle "Xk"
         m = re.search(r'(\d+\.?\d*)\s*k', text)
         if m:
             return float(m.group(1)) * 1_000
-        # Plain number
         m = re.search(r'(\d[\d.]+)', text)
         if m:
-            val = float(m.group(1))
-            # If looks like raw number > 1000, probably dollars
-            return val
+            return float(m.group(1))
         return None
 
     @property
     def tags(self) -> List[str]:
-        """Extract relevant tags from title + description."""
         tags = []
         combined = (self.title + ' ' + self.description).lower()
-        if 'medical cent' in combined or 'medical practice' in combined or 'doctor' in combined:
-            tags.append('medical_centre')
-        if 'freehold' in combined:
+        if any(w in combined for w in ['freehold']):
             tags.append('freehold')
         if any(w in combined for w in ['regional', 'rural', 'country', 'single pharmacy town',
                                         'single town', 'one pharmacy town']):
@@ -204,14 +242,16 @@ class Listing:
             tags.append('under_offer')
         if 'sold' in combined and 'settled' in combined:
             tags.append('sold')
+        if any(w in combined for w in ['medical cent', 'doctor', 'gp']):
+            tags.append('medical_nearby')
+        if any(w in combined for w in ['compounding']):
+            tags.append('compounding')
         return tags
 
     @property
     def unique_key(self) -> str:
-        """Generate a unique key for deduplication."""
         if self.url:
             return self.url
-        # Fallback: hash of source + title
         return hashlib.md5(f"{self.source}:{self.title}".encode()).hexdigest()
 
 
@@ -222,307 +262,302 @@ class Listing:
 class BrokerScraper:
     """Base class for broker scrapers."""
     name = "Unknown"
+    site_url = ""
 
     def scrape(self) -> List[Listing]:
-        """Override in subclass. Returns list of Listing objects."""
         raise NotImplementedError
 
 
+# ---------------------------------------------------------------------------
+# 1. Practice4Sale — well-structured HTML, paginated, best source
+# ---------------------------------------------------------------------------
 class Practice4SaleScraper(BrokerScraper):
-    """practice4sale.com.au - pharmacy aggregator with paginated results."""
     name = "Practice4Sale"
+    site_url = "https://www.practice4sale.com.au"
 
     def scrape(self) -> List[Listing]:
+        from bs4 import BeautifulSoup
         listings = []
-        base_url = "https://www.practice4sale.com.au"
+        base = self.site_url
 
-        for page in range(1, 10):  # Max 10 pages
+        for page in range(1, 10):
             if page == 1:
-                url = f"{base_url}/practice-for-sale/pharmacy/"
+                url = f"{base}/practice-for-sale/pharmacy/"
             else:
-                url = f"{base_url}/pharmacy-practice-for-sale/{page}/"
+                url = f"{base}/pharmacy-practice-for-sale/{page}/"
 
-            text = web_fetch(url, max_chars=50000)
-            if not text:
+            html = web_fetch_html(url)
+            if not html:
                 break
 
-            # Check if page has listings
-            if 'We found 0' in text or 'Next Last' not in text and page > 1:
-                if page > 1:
-                    break
+            soup = BeautifulSoup(html, 'html.parser')
+            articles = soup.find_all('article')
+            if not articles:
+                break
 
-            # Parse listings using regex on the text
-            # Pattern: title links followed by broker link and description
-            # Looking for ## [Title](URL) patterns
-            lines = text.split('\n')
-            current_title = None
-            current_url = None
-            current_desc = []
-
-            for line in lines:
-                line = line.strip()
-                if not line:
+            found_any = False
+            for article in articles:
+                # Find main listing link
+                link = article.find('a', href=lambda h: h and '/practice/pharmacy/' in h)
+                if not link:
+                    continue
+                title = link.get_text(strip=True)
+                if not title or title == 'View Details':
                     continue
 
-                # Match ## [Title](/practice/pharmacy/...)
-                title_match = re.match(r'##\s*\[(.+?)\]\((/practice/pharmacy/.+?)\)', line)
-                if title_match:
-                    # Save previous listing
-                    if current_title:
-                        self._add_listing(listings, current_title, current_url, ' '.join(current_desc))
+                found_any = True
+                href = link['href']
+                full_url = base + href if href.startswith('/') else href
 
-                    current_title = title_match.group(1)
-                    current_url = base_url + title_match.group(2)
-                    current_desc = []
-                    continue
+                # Get article text for parsing
+                article_text = article.get_text(separator=' | ', strip=True)
 
-                # Skip navigation, broker links, ads
-                if current_title and not line.startswith('[') and not line.startswith('First') \
-                        and not line.startswith('Advertisement') and not line.startswith('We found'):
-                    # Check for "Under Offer" / "Under Contract" status markers
-                    if line in ('Under Offer', 'Under Contract'):
-                        current_desc.append(f'[{line}]')
-                    elif not line.startswith('/') and len(line) > 10:
-                        current_desc.append(line)
+                # Extract description - find the paragraph that isn't the title or metadata
+                desc = ''
+                for p in article.find_all(['p', 'div']):
+                    p_text = p.get_text(strip=True)
+                    if len(p_text) > 30 and p_text != title and 'View Details' not in p_text:
+                        desc = p_text
+                        break
+                if not desc:
+                    # Fallback: get text between title and metadata
+                    desc = self._extract_desc_from_text(article_text, title)
 
-            # Save last listing
-            if current_title:
-                self._add_listing(listings, current_title, current_url, ' '.join(current_desc))
+                # Detect status
+                status_text = ''
+                if 'Under Offer' in article_text:
+                    status_text = 'Under Offer'
+                elif 'Under Contract' in article_text:
+                    status_text = 'Under Contract'
+                elif 'SUBMISSIONS CLOSED' in article_text.upper():
+                    status_text = 'Submissions Closed'
 
-            # Check if there are more pages
-            if f'[{page + 1}]' not in text and f'/{page + 1}/' not in text:
+                # Detect state
+                combined = title + ' ' + desc + ' ' + article_text
+                state = detect_au_state(combined)
+
+                # Extract price
+                price = ''
+                pm = re.search(r'\$[\d,]+(?:\.\d+)?\s*(?:[mkMK](?:illion)?)?', combined)
+                if pm:
+                    price = pm.group(0)
+
+                # Extract location from title
+                location = title
+
+                display_title = title
+                if status_text:
+                    display_title += f" [{status_text}]"
+
+                listings.append(Listing(
+                    source=self.name,
+                    title=display_title,
+                    price=price,
+                    location=location,
+                    state=state,
+                    url=full_url,
+                    description=desc[:500]
+                ))
+
+            if not found_any:
+                break
+
+            # Check for next page link
+            if 'Next' not in html and f'/{page + 1}/' not in html:
                 break
 
         logger.info(f"Practice4Sale: found {len(listings)} listings")
         return listings
 
-    def _add_listing(self, listings: list, title: str, url: str, desc: str):
-        """Parse a listing and add it."""
-        location, state = self._extract_location(title, desc)
-        price = self._extract_price(title, desc)
-
-        listings.append(Listing(
-            source=self.name,
-            title=title,
-            price=price,
-            location=location,
-            state=state,
-            url=url,
-            description=desc[:500]
-        ))
-
-    def _extract_location(self, title: str, desc: str) -> Tuple[str, str]:
-        """Extract location and state from title/description."""
-        combined = title + ' ' + desc
-
-        state_map = {
-            'NSW': ['nsw', 'new south wales', 'sydney', 'newcastle', 'hunter', 'inner west'],
-            'VIC': ['vic', 'victoria', 'melbourne', 'mornington'],
-            'QLD': ['qld', 'queensland', 'brisbane', 'sunshine coast', 'gold coast', 'noosa', 'bowen basin'],
-            'WA': ['wa', 'western australia', 'perth', 'pilbara'],
-            'SA': ['sa', 'south australia', 'adelaide'],
-            'TAS': ['tas', 'tasmania', 'hobart'],
-            'NT': ['nt', 'northern territory', 'darwin'],
-            'ACT': ['act', 'canberra'],
-        }
-
-        state = ''
-        for st, keywords in state_map.items():
-            for kw in keywords:
-                if kw in combined.lower():
-                    state = st
-                    break
-            if state:
-                break
-
-        # Location is roughly the title
-        location = title
-        return location, state
-
-    def _extract_price(self, title: str, desc: str) -> str:
-        """Extract price from text."""
-        combined = title + ' ' + desc
-        # Look for dollar amounts
-        price_patterns = [
-            r'\$[\d,]+\.?\d*\s*[mkMK]?(?:illion)?',
-            r'Price[:\s]+\$[\d,]+',
-            r'turnover[:\s]+\$[\d,]+\.?\d*\s*[mkMK]?',
-        ]
-        for pattern in price_patterns:
-            m = re.search(pattern, combined, re.IGNORECASE)
-            if m:
-                return m.group(0)
-        return ''
+    def _extract_desc_from_text(self, article_text: str, title: str) -> str:
+        parts = article_text.split('|')
+        desc_parts = []
+        for part in parts:
+            part = part.strip()
+            if len(part) < 20:
+                continue
+            if part == title or 'View Details' in part:
+                continue
+            if re.match(r'^(New South Wales|Victoria|Queensland|Western Australia|South Australia|'
+                        r'Tasmania|Northern Territory|ACT)\s*>', part):
+                continue
+            desc_parts.append(part)
+        return ' '.join(desc_parts[:2])
 
 
+# ---------------------------------------------------------------------------
+# 2. SRPBS (Sue Raven) — Weebly site with structured headings
+# ---------------------------------------------------------------------------
 class SRPBSScraper(BrokerScraper):
-    """srpbs.com.au - SR Pharmacy Business Sales (Weebly site)."""
     name = "SRPBS"
+    site_url = "https://www.srpbs.com.au"
 
     def scrape(self) -> List[Listing]:
+        from bs4 import BeautifulSoup
         listings = []
-        url = "https://www.srpbs.com.au/pharmaciesforsale-902532.html"
-        text = web_fetch(url, max_chars=30000)
-        if not text:
+        url = f"{self.site_url}/pharmaciesforsale-902532.html"
+
+        html = web_fetch_html(url)
+        if not html:
             logger.warning("SRPBS: could not fetch listings page")
             return listings
 
-        # Parse the structured listings
-        # Format: ## SR73XXX Region State\n Key Details\n ...\n Price $XXX
-        blocks = re.split(r'(?=##\s+SR\d+)', text)
+        soup = BeautifulSoup(html, 'html.parser')
 
-        for block in blocks:
-            if not block.strip():
+        # Find all headings with SR reference numbers
+        for heading in soup.find_all(['h2', 'h3']):
+            heading_text = heading.get_text(strip=True)
+            ref_match = re.match(r'(SR\d+)\s+(.+)', heading_text)
+            if not ref_match:
                 continue
 
-            # Skip sold & settled entries
-            if 'Sold & Settled' in block or 'SOLD AND SETTLED' in block:
-                # Still record them but mark appropriately
-                pass
+            ref = ref_match.group(1)
+            location_part = ref_match.group(2).strip()
 
-            # Extract reference and title
-            header_match = re.match(r'##\s+(SR\d+)\s+(.+?)(?:\s*-\s*(.+))?\n', block)
-            if not header_match:
-                continue
+            # Check status
+            status = ''
+            is_sold = False
+            if re.search(r'Sold\s*[&]\s*Settled|SOLD', location_part, re.IGNORECASE):
+                is_sold = True
+                status = 'Sold'
+                # Clean location - remove "- Sold & Settled DATE"
+                location_part = re.sub(r'\s*-?\s*Sold.*$', '', location_part, flags=re.IGNORECASE).strip()
 
-            ref = header_match.group(1)
-            location_text = header_match.group(2).strip()
-            status_text = header_match.group(3).strip() if header_match.group(3) else ''
-
-            # Extract price
+            # Collect content after heading until next heading
+            content_parts = []
             price = ''
-            price_match = re.search(r'Price\s+(?:Guide\s+)?\$[\d,]+(?:\s*(?:to|[-–])\s*\$[\d,]+)?(?:\s*000)?', block)
-            if price_match:
-                price = price_match.group(0)
-
-            # Extract state
-            state = ''
-            state_patterns = {
-                'QLD': ['qld', 'queensland'],
-                'NSW': ['nsw', 'new south wales', 'hunter', 'riverina'],
-                'VIC': ['vic', 'victoria'],
-                'TAS': ['tas', 'tasmania', 'hobart'],
-                'SA': ['sa', 'south australia'],
-                'WA': ['wa', 'western australia'],
-                'NT': ['nt', 'northern territory'],
-            }
-            for st, kws in state_patterns.items():
-                for kw in kws:
-                    if kw in location_text.lower() or kw in block.lower():
-                        state = st
-                        break
-                if state:
+            for sib in heading.find_next_siblings():
+                if sib.name and sib.name in ['h2', 'h3']:
                     break
+                text = sib.get_text(strip=True)
+                if text:
+                    content_parts.append(text)
+                    # Look for price
+                    pm = re.search(r'(?:Price\s*(?:Guide\s*)?)\$[\d,]+(?:\s*(?:to|[-])\s*\$[\d,]+)?', text)
+                    if pm:
+                        price = pm.group(0)
+                    elif not price:
+                        pm2 = re.search(r'\$[\d,]+(?:\s*(?:to|[-])\s*\$[\d,]+)?', text)
+                        if pm2:
+                            price = pm2.group(0)
 
-            title = f"{ref} - {location_text}"
-            if 'Sold' in status_text:
-                title += f" [{status_text}]"
+            combined_text = heading_text + ' ' + ' '.join(content_parts)
+            state = detect_au_state(combined_text)
 
-            # Get description (bullet points)
-            desc_lines = []
-            for line in block.split('\n'):
-                line = line.strip()
-                if line.startswith('-') or line.startswith('•'):
-                    desc_lines.append(line.lstrip('-•').strip())
-                elif 'Key Details' in line or 'key Details' in line:
-                    continue
+            # Skip sold-and-settled listings in the "SOLD AND SETTLED" section
+            # but include active ones even if they mention sold in context
+            if is_sold:
+                title = f"{ref} - {location_part} [SOLD]"
+            else:
+                title = f"{ref} - {location_part}"
+
+            description = '; '.join(content_parts)
 
             listings.append(Listing(
                 source=self.name,
                 title=title,
                 price=price,
-                location=location_text,
+                location=location_part,
                 state=state,
                 url=url + f"#{ref}",
-                description='; '.join(desc_lines)[:500]
+                description=description[:500]
             ))
 
         logger.info(f"SRPBS: found {len(listings)} listings")
         return listings
 
 
+# ---------------------------------------------------------------------------
+# 3. Agile BB — Wix site with text-based listings
+# ---------------------------------------------------------------------------
 class AgileBBScraper(BrokerScraper):
-    """agilebb.com.au - Agile Business Brokers (Wix site)."""
     name = "Agile BB"
+    site_url = "https://www.agilebb.com.au"
+
+    # Valid ref codes are 2-3 uppercase letters (e.g. PU, PL, LL, LP, LN, PP, LT, AHH)
+    VALID_REF_PATTERN = re.compile(r'^[A-Z]{2,4}$')
+
+    # Nav/menu items to skip
+    NAV_WORDS = {'ABOUT', 'BLOG', 'CONTACT', 'SERVICE', 'SERVICES', 'HOME',
+                 'SELL', 'BUY', 'SOLD', 'TESTIMONIALS', 'PHARMACY', 'PHARMACIES',
+                 'CONFIDENTIALITY', 'AGREEMENT', 'FORM', 'BELOW', 'VICTORIAN',
+                 'SYDNEY', 'NEWCASTLE', 'REGIONAL', 'NEW', 'LISTINGS'}
 
     def scrape(self) -> List[Listing]:
         listings = []
-        url = "https://www.agilebb.com.au/pharmacies-for-sale"
+        url = f"{self.site_url}/pharmacies-for-sale"
         text = web_fetch(url, max_chars=30000)
         if not text:
             logger.warning("Agile BB: could not fetch listings page")
             return listings
 
-        # Parse the text content
-        # Links like [Ref XX: Description](URL)
+        # Get markdown version for links
+        md_text = web_fetch_markdown(url, max_chars=30000) or text
+
+        seen_refs = set()
+
+        # Extract linked listings: [Ref XX: Description](url)
         link_pattern = re.compile(
-            r'\[(?:Ref\s+)?(\w+):\s*(.+?)\]\((https?://www\.agilebb\.com\.au/[^\)]+)\)'
+            r'\[(?:Ref\s+)?(\w{2,4}):\s*(.+?)\]\((https?://www\.agilebb\.com\.au/pharmacy[^\)]*)\)'
         )
 
-        for match in link_pattern.finditer(text):
-            ref = match.group(1)
+        for match in link_pattern.finditer(md_text):
+            ref = match.group(1).strip().upper()
             desc = match.group(2).strip()
-            listing_url = match.group(3)
+            listing_url = match.group(3).strip()
 
-            # Extract state from description
-            state = ''
-            location = desc
-            state_keywords = {
-                'NSW': ['nsw', 'sydney', 'newcastle', 'mid north coast', 'central west', 'eastern suburbs', 'north sydney'],
-                'VIC': ['vic', 'victoria', 'melbourne'],
-                'QLD': ['qld', 'queensland'],
-            }
-            for st, kws in state_keywords.items():
-                for kw in kws:
-                    if kw in desc.lower():
-                        state = st
-                        break
-                if state:
-                    break
+            if not self.VALID_REF_PATTERN.match(ref):
+                continue
+            if ref in seen_refs:
+                continue
+            if ref in self.NAV_WORDS:
+                continue
+            # Desc must be substantial pharmacy description
+            if len(desc) < 10:
+                continue
+            seen_refs.add(ref)
 
-            title = f"Ref {ref}: {desc}"
+            state = detect_au_state(desc)
+            status = self._detect_status(md_text, ref)
+
+            title = f"Ref {ref}: {desc}{status}"
 
             listings.append(Listing(
                 source=self.name,
                 title=title,
                 price='',
-                location=location,
+                location=desc,
                 state=state,
                 url=listing_url,
                 description=desc
             ))
 
-        # Also parse plain text refs (Ref XX: Description without links)
+        # Also parse plain text refs: "Ref XX: Description"
+        # Only match refs that look like valid listing codes
         plain_pattern = re.compile(
-            r'Ref\s+(\w+):\s*(?:UNDER OFFER\s+)?(?:NEW LISTING:\s+)?(.+?)(?:\n|$)'
+            r'Ref\s+([A-Z]{2,4}):\s*(?:UNDER OFFER\s*)?(?:NEW LISTING:?\s*)?(.+?)(?:\n|$)',
+            re.IGNORECASE
         )
-        existing_refs = {l.title.split(':')[0].replace('Ref ', '').strip() for l in listings}
 
         for match in plain_pattern.finditer(text):
-            ref = match.group(1)
-            if ref in existing_refs:
+            ref = match.group(1).strip().upper()
+            if ref in seen_refs:
                 continue
-            desc = match.group(2).strip()
-            if not desc or len(desc) < 5:
+            if not self.VALID_REF_PATTERN.match(ref):
+                continue
+            if ref in self.NAV_WORDS:
                 continue
 
-            state = ''
-            state_keywords = {
-                'NSW': ['nsw', 'sydney', 'newcastle', 'mid north coast', 'central west', 'eastern suburbs', 'north sydney'],
-                'VIC': ['vic', 'victoria', 'melbourne'],
-                'QLD': ['qld', 'queensland'],
-            }
-            for st, kws in state_keywords.items():
-                for kw in kws:
-                    if kw in desc.lower():
-                        state = st
-                        break
-                if state:
-                    break
+            desc = match.group(2).strip().rstrip('.')
+            if not desc or len(desc) < 15:
+                continue
+            # Skip if desc looks like navigation
+            if any(nav in desc.upper() for nav in ['CLICK', 'FILL IN', 'PASSWORD', 'AGREEMENT']):
+                continue
 
-            status = ''
-            if 'UNDER OFFER' in text[max(0, match.start()-20):match.end()]:
-                status = ' [Under Offer]'
+            seen_refs.add(ref)
+            state = detect_au_state(desc)
+            status = self._detect_status(text, ref)
 
             title = f"Ref {ref}: {desc}{status}"
 
@@ -539,417 +574,416 @@ class AgileBBScraper(BrokerScraper):
         logger.info(f"Agile BB: found {len(listings)} listings")
         return listings
 
-
-class APGroupScraper(BrokerScraper):
-    """apgroup.com.au - AP Group (requires registration for full listings)."""
-    name = "AP Group"
-
-    def scrape(self) -> List[Listing]:
-        listings = []
-        # AP Group requires login to see listings
-        # Try the main buy page and any public content
-        urls_to_try = [
-            "https://www.apgroup.com.au/buy",
-            "https://www.apgroup.com.au/pharmacies",
-            "https://www.apgroup.com.au/listings",
-            "https://www.apgroup.com.au/pharmacy-for-sale",
-        ]
-
-        for url in urls_to_try:
-            text = web_fetch(url, max_chars=15000)
-            if text and 'pharmacy' in text.lower() and 'Page not found' not in text:
-                # Try to extract any listing info
-                self._parse_text(text, url, listings)
-                break
-
-        if not listings:
-            logger.info("AP Group: requires registration to view listings (no public listings found)")
-
-        return listings
-
-    def _parse_text(self, text: str, url: str, listings: list):
-        """Try to extract listing info from page text."""
-        # Look for patterns that might indicate listings
-        pass
+    def _detect_status(self, text: str, ref: str) -> str:
+        """Detect listing status from surrounding text context."""
+        idx = text.upper().find(f'REF {ref}')
+        if idx < 0:
+            idx = text.upper().find(ref)
+        if idx < 0:
+            return ''
+        context = text[max(0, idx-80):idx+200].upper()
+        if 'UNDER OFFER' in context:
+            return ' [Under Offer]'
+        if 'ON HOLD' in context:
+            return ' [On Hold]'
+        return ''
 
 
-class APBScraper(BrokerScraper):
-    """apb.net.au - Australian Pharmacy Brokers."""
-    name = "APB"
+# ---------------------------------------------------------------------------
+# 4. BusinessForSale.com.au — marketplace search
+# ---------------------------------------------------------------------------
+class BusinessForSaleScraper(BrokerScraper):
+    name = "BusinessForSale"
+    site_url = "https://www.businessforsale.com.au"
 
     def scrape(self) -> List[Listing]:
+        """
+        BusinessForSale.com.au pharmacy category (/for-sale/pharmacy) only contains
+        "Wanted to buy" ads as of Feb 2026. The general search doesn't filter by keyword
+        server-side. No pharmacy-for-sale listings are available via static scraping.
+        """
         listings = []
 
-        # Try various listing page URLs
-        urls_to_try = [
-            "https://www.apb.net.au/index.php?page=pharmacies-for-sale",
-            "https://www.apb.net.au/index.php?page=listings",
-            "https://www.apb.net.au/index.php?page=for-sale",
-            "https://www.apb.net.au/pharmacies-for-sale",
-        ]
-
-        for url in urls_to_try:
-            text = web_fetch(url, max_chars=15000)
-            if text and '404' not in text and 'Not Found' not in text:
-                self._parse_page(text, url, listings)
-                if listings:
-                    break
-
-        if not listings:
-            logger.info("APB: no public listings page found (contact broker directly)")
-
-        return listings
-
-    def _parse_page(self, text: str, url: str, listings: list):
-        """Parse APB page for listings."""
-        # Look for pharmacy listing patterns
-        lines = text.split('\n')
-        for i, line in enumerate(lines):
-            if re.search(r'pharmacy|chemist', line, re.IGNORECASE) and \
-               re.search(r'\$[\d,]+|for sale|listing', line, re.IGNORECASE):
-                price_match = re.search(r'\$[\d,]+\.?\d*\s*[mkMK]?', line)
-                price = price_match.group(0) if price_match else ''
-                listings.append(Listing(
-                    source=self.name,
-                    title=line[:200],
-                    price=price,
-                    url=url,
-                    description=line[:500]
-                ))
-
-
-class AroCRMScraper(BrokerScraper):
-    """
-    Base scraper for Aro Business Broker CRM sites.
-    Used by: iattain.com.au, wisharts.com.au, rxpharmacybrokers.com.au
-    These sites use a JS framework that loads listings via API.
-    """
-    name = "AroCRM"
-    base_url = ""
-    listings_path = ""
-
-    def scrape(self) -> List[Listing]:
-        listings = []
-
-        # Aro CRM sites load data via JS API calls
-        # Try the direct API endpoint
-        api_urls = [
-            f"{self.base_url}/api/v1/listings?type=sale&category=pharmacy",
-            f"{self.base_url}/api/listings",
-        ]
-
-        # Also try scraping the HTML page which sometimes has data embedded
-        page_url = f"{self.base_url}{self.listings_path}"
-        html = web_fetch_html(page_url)
-
+        # Check the pharmacy category page
+        html = web_fetch_html(f"{self.site_url}/for-sale/pharmacy?type=business")
         if html:
-            # Look for JSON data embedded in the page
-            json_patterns = [
-                r'window\.__INITIAL_STATE__\s*=\s*(\{.+?\});',
-                r'var\s+listings\s*=\s*(\[.+?\]);',
-                r'"properties"\s*:\s*(\[.+?\])',
-            ]
-            for pattern in json_patterns:
-                m = re.search(pattern, html, re.DOTALL)
-                if m:
-                    try:
-                        data = json.loads(m.group(1))
-                        self._parse_json_listings(data, listings)
-                    except json.JSONDecodeError:
-                        pass
-
-            # Also try to extract from the HTML structure
-            self._parse_html_listings(html, listings)
-
-        # Try the text version too
-        if not listings:
-            text = web_fetch(page_url, max_chars=30000)
-            if text:
-                self._parse_text_listings(text, listings)
-
-        logger.info(f"{self.name}: found {len(listings)} listings")
-        return listings
-
-    def _parse_json_listings(self, data: any, listings: list):
-        """Parse JSON listing data from Aro CRM."""
-        items = data if isinstance(data, list) else data.get('items', data.get('listings', []))
-        for item in items:
-            if isinstance(item, dict):
-                title = item.get('title', item.get('address', item.get('name', '')))
-                price = item.get('display_price', item.get('price', ''))
-                location = item.get('suburb', item.get('location', ''))
-                state = item.get('state', '')
-                url = item.get('link', item.get('url', ''))
-                desc = item.get('desc_preview', item.get('description', ''))
-
-                if url and not url.startswith('http'):
-                    url = self.base_url + url
-
-                listings.append(Listing(
-                    source=self.name,
-                    title=str(title),
-                    price=str(price),
-                    location=str(location),
-                    state=str(state),
-                    url=str(url),
-                    description=str(desc)[:500]
-                ))
-
-    def _parse_html_listings(self, html: str, listings: list):
-        """Parse HTML for listing content."""
-        try:
             from bs4 import BeautifulSoup
             soup = BeautifulSoup(html, 'html.parser')
+            text = soup.get_text(separator='\n', strip=True)
 
-            # Aro CRM typically uses property-card or listing-card classes
-            cards = soup.select('.property-card, .listing-card, .property-item, [class*="listing"]')
-            for card in cards:
-                title_el = card.select_one('h2, h3, .title, .property-title')
-                price_el = card.select_one('.price, .display-price, [class*="price"]')
-                link_el = card.select_one('a[href*="/property/"], a[href*="/listing/"]')
-                desc_el = card.select_one('.description, .desc, p')
+            # Parse listing blocks
+            listing_urls = re.findall(
+                r'(https://www\.businessforsale\.com\.au/australia/[^\s\n]+)', text
+            )
 
-                if title_el:
-                    title = title_el.get_text(strip=True)
-                    price = price_el.get_text(strip=True) if price_el else ''
-                    url = link_el['href'] if link_el and link_el.has_attr('href') else ''
-                    desc = desc_el.get_text(strip=True) if desc_el else ''
+            for listing_url in listing_urls:
+                idx = text.find(listing_url.replace(self.site_url, ''))
+                if idx < 0:
+                    idx = text.find(listing_url)
+                if idx < 0:
+                    continue
 
-                    if url and not url.startswith('http'):
-                        url = self.base_url + url
+                block = text[max(0, idx-100):idx+600]
 
+                # Skip "Wanted" listings
+                if 'Wanted' in block or 'SEEKING' in block.upper():
+                    continue
+
+                # Only include pharmacy-related
+                if not re.search(r'pharmac|chemist', block, re.IGNORECASE):
+                    continue
+
+                # Parse title/price/location from block
+                lines = [l.strip() for l in block.split('\n') if l.strip() and len(l.strip()) > 3]
+                title = ''
+                price = ''
+                location = ''
+
+                for line in lines:
+                    if line.startswith('http') or line in ('FEATURED', 'NEW', 'EXCLUSIVE', 'Healthcare', 'Wanted'):
+                        continue
+                    loc_match = re.match(r'^([A-Za-z\s&,\'-]+?)\s+(NSW|VIC|QLD|WA|SA|TAS|NT|ACT)$', line)
+                    if loc_match and not location:
+                        location = line
+                        continue
+                    if re.match(r'^\$[\d,]+', line) and not price:
+                        price = line
+                        continue
+                    if not title and len(line) > 15:
+                        title = line
+
+                if title:
+                    state = ''
+                    sm = re.search(r'(NSW|VIC|QLD|WA|SA|TAS|NT|ACT)', location)
+                    if sm:
+                        state = sm.group(1)
                     listings.append(Listing(
                         source=self.name,
-                        title=title,
+                        title=title[:200],
                         price=price,
-                        url=url,
-                        description=desc[:500]
-                    ))
-        except ImportError:
-            pass
-
-    def _parse_text_listings(self, text: str, listings: list):
-        """Fallback: parse text content for any listing patterns."""
-        # Aro sites often show "No properties were found" when empty
-        if 'No properties were found' in text:
-            logger.info(f"{self.name}: no current listings")
-            return
-
-        # Look for price + location patterns
-        blocks = re.split(r'\n\n+', text)
-        for block in blocks:
-            if re.search(r'\$[\d,]+|for sale|pharmacy', block, re.IGNORECASE):
-                price_match = re.search(r'\$[\d,]+\.?\d*\s*[mkMK]?', block)
-                price = price_match.group(0) if price_match else ''
-                first_line = block.split('\n')[0].strip()
-                if len(first_line) > 5 and len(first_line) < 200:
-                    listings.append(Listing(
-                        source=self.name,
-                        title=first_line,
-                        price=price,
-                        url=self.base_url + self.listings_path,
-                        description=block[:500]
+                        location=location,
+                        state=state or detect_au_state(title + ' ' + location),
+                        url=listing_url,
+                        description=title[:500]
                     ))
 
+        if not listings:
+            logger.info("BusinessForSale: pharmacy category only has 'Wanted' ads; no for-sale listings found")
 
-class IAttainScraper(AroCRMScraper):
-    """iattain.com.au - Attain (Aro CRM platform)."""
-    name = "Attain"
-    base_url = "https://www.iattain.com.au"
-    listings_path = "/pharmacies-for-sale/"
+        return listings
 
 
-class WishartsScraper(AroCRMScraper):
-    """wisharts.com.au - Wisharts Pharmacy Brokers (Aro CRM platform)."""
-    name = "Wisharts"
-    base_url = "https://www.wisharts.com.au"
-    listings_path = "/pharmacy-business-for-sale/"
+# ---------------------------------------------------------------------------
+# 5. AP Group — requires login, we can only note it
+# ---------------------------------------------------------------------------
+class APGroupScraper(BrokerScraper):
+    name = "AP Group"
+    site_url = "https://www.apgroup.com.au"
+
+    def scrape(self) -> List[Listing]:
+        # AP Group requires registration to view listings
+        # Try to see if any public content reveals listing count
+        text = web_fetch(f"{self.site_url}/", max_chars=10000)
+        if text:
+            # Look for any mention of how many listings they have
+            count_match = re.search(r'(\d+)\s+(?:pharmacies?|listings?)\s+(?:for sale|available)', 
+                                    text, re.IGNORECASE)
+            if count_match:
+                logger.info(f"AP Group: mentions {count_match.group(0)} (login required)")
+            else:
+                logger.info("AP Group: requires login/registration to view listings")
+        else:
+            logger.info("AP Group: site unreachable or requires login")
+        return []
 
 
-class RxPharmacyScraper(AroCRMScraper):
-    """rxpharmacybrokers.com.au - Rx Pharmacy Brokers (Aro CRM platform)."""
-    name = "Rx Pharmacy Brokers"
-    base_url = "https://www.rxpharmacybrokers.com.au"
-    listings_path = "/buying/"
-
-
-class BusinessForSaleScraper(BrokerScraper):
-    """businessforsale.com.au - Business For Sale marketplace."""
-    name = "BusinessForSale"
+# ---------------------------------------------------------------------------
+# 6. APB (Australian Pharmacy Brokers) — no public listings page
+# ---------------------------------------------------------------------------
+class APBScraper(BrokerScraper):
+    name = "APB"
+    site_url = "https://www.apb.net.au"
 
     def scrape(self) -> List[Listing]:
         listings = []
 
-        # Try multiple URL patterns
-        urls_to_try = [
-            "https://www.businessforsale.com.au/businesses-for-sale/search/pharmacies-in-australia",
-            "https://www.businessforsale.com.au/businesses-for-sale/pharmacies",
-            "https://www.businessforsale.com.au/businesses/pharmacy",
-            "https://www.businessforsale.com.au/search?q=pharmacy&category=all&location=australia",
+        # Try the buying page
+        urls = [
+            f"{self.site_url}/index.php?page=buying-a-pharmacy",
+            f"{self.site_url}",
         ]
 
-        for url in urls_to_try:
-            text = web_fetch(url, max_chars=30000)
-            if text and 'Sorry, this page has been removed' not in text and '404' not in text:
-                self._parse_listings(text, url, listings)
-                if listings:
+        for url in urls:
+            text = web_fetch(url, max_chars=15000)
+            if text:
+                # APB doesn't list publicly — they ask buyers to register/contact
+                if 'contact' in text.lower() or 'register' in text.lower():
+                    logger.info("APB: no public listings (contact Chris Hodgkinson for listings)")
                     break
 
+        return listings
+
+
+# ---------------------------------------------------------------------------
+# 7. Attain (iattain.com.au) — Aro CRM, JS-loaded listings
+# ---------------------------------------------------------------------------
+class AttainScraper(BrokerScraper):
+    name = "Attain"
+    site_url = "https://www.iattain.com.au"
+
+    def scrape(self) -> List[Listing]:
+        listings = []
+
+        # Aro CRM loads listings via JavaScript API — static fetch shows templates
+        # Try the main page which may have embedded data or listing counts
+        html = web_fetch_html(f"{self.site_url}/pharmacies-for-sale/")
+        if html:
+            # Check for embedded JSON data
+            json_match = re.search(r'(?:listingData|__INITIAL_STATE__|listings)\s*[=:]\s*(\[[\s\S]*?\])', html)
+            if json_match:
+                try:
+                    data = json.loads(json_match.group(1))
+                    for item in data:
+                        if isinstance(item, dict):
+                            listings.append(Listing(
+                                source=self.name,
+                                title=item.get('title', item.get('display_title', '')),
+                                price=str(item.get('display_price', item.get('price', ''))),
+                                location=item.get('suburb', ''),
+                                state=item.get('state', ''),
+                                url=item.get('link', item.get('url', '')),
+                                description=str(item.get('desc_preview', ''))[:500]
+                            ))
+                except (json.JSONDecodeError, TypeError):
+                    pass
+
+            # Check if the template shows "No properties were found"
+            if 'No properties were found' in (html or '') or not listings:
+                # Try state-specific pages mentioned on their 404 page
+                state_pages = [
+                    '/pharmacies-for-sale-in-nsw/',
+                    '/pharmacies-for-sale-in-vic/',
+                    '/pharmacies-for-sale-in-qld/',
+                    '/pharmacies-for-sale-in-wa/',
+                    '/pharmacies-for-sale-in-sa/',
+                    '/pharmacies-for-sale-in-tas/',
+                ]
+                for sp in state_pages:
+                    state_html = web_fetch_html(f"{self.site_url}{sp}")
+                    if state_html and 'property-card' in state_html:
+                        # Parse property cards
+                        self._parse_aro_html(state_html, listings)
+
         if not listings:
-            logger.info("BusinessForSale: could not find correct pharmacy listings URL (site may have changed structure)")
+            logger.info("Attain: Aro CRM site — listings load via JS, not accessible via static fetch")
 
         return listings
 
-    def _parse_listings(self, text: str, base_url: str, listings: list):
-        """Parse businessforsale.com.au listing format."""
-        # Look for listing blocks
-        blocks = re.split(r'\n\n+', text)
-        for block in blocks:
-            if 'pharmacy' in block.lower() and len(block) > 20:
-                price_match = re.search(r'\$[\d,]+\.?\d*\s*[mkMK]?', block)
-                price = price_match.group(0) if price_match else ''
-                first_line = block.split('\n')[0].strip()
-
-                if len(first_line) > 5:
-                    listings.append(Listing(
-                        source=self.name,
-                        title=first_line,
-                        price=price,
-                        url=base_url,
-                        description=block[:500]
-                    ))
+    def _parse_aro_html(self, html: str, listings: list):
+        from bs4 import BeautifulSoup
+        soup = BeautifulSoup(html, 'html.parser')
+        cards = soup.select('.property-card, .listing-card, [class*="listing"]')
+        for card in cards:
+            title_el = card.select_one('h2, h3, .title')
+            if title_el:
+                listings.append(Listing(
+                    source=self.name,
+                    title=title_el.get_text(strip=True),
+                    url=self.site_url
+                ))
 
 
+# ---------------------------------------------------------------------------
+# 8. Wisharts — Aro CRM, currently no listings
+# ---------------------------------------------------------------------------
+class WishartsScraper(BrokerScraper):
+    name = "Wisharts"
+    site_url = "https://www.wisharts.com.au"
+
+    def scrape(self) -> List[Listing]:
+        listings = []
+        html = web_fetch_html(f"{self.site_url}/pharmacy-business-for-sale/")
+        if html:
+            # Aro CRM — check for embedded data
+            json_match = re.search(r'(?:listingData|properties)\s*[=:]\s*(\[[\s\S]*?\])', html)
+            if json_match:
+                try:
+                    data = json.loads(json_match.group(1))
+                    for item in data:
+                        if isinstance(item, dict):
+                            title = item.get('display_title', item.get('title', ''))
+                            if title:
+                                listings.append(Listing(
+                                    source=self.name,
+                                    title=title,
+                                    price=str(item.get('display_price', '')),
+                                    location=item.get('suburb', ''),
+                                    state=item.get('state', ''),
+                                    url=self.site_url + str(item.get('link', '')),
+                                    description=str(item.get('desc_preview', ''))[:500]
+                                ))
+                except (json.JSONDecodeError, TypeError):
+                    pass
+
+            if 'No properties were found' in (html or ''):
+                logger.info("Wisharts: Aro CRM site shows 'No properties found' (all listings may be confidential)")
+        else:
+            logger.info("Wisharts: could not reach site")
+
+        return listings
+
+
+# ---------------------------------------------------------------------------
+# 9. VPB (Victorian Pharmacy Brokers) — connection issues
+# ---------------------------------------------------------------------------
 class VPBScraper(BrokerScraper):
-    """vpb.com.au - Victorian Pharmacy Brokers."""
     name = "VPB"
+    site_url = "https://www.vpb.com.au"
 
     def scrape(self) -> List[Listing]:
         listings = []
 
-        urls_to_try = [
-            "https://www.vpb.com.au",
-            "https://vpb.com.au",
-            "https://www.vpb.com.au/pharmacies-for-sale",
-            "https://www.vpb.com.au/listings",
-        ]
-
-        for url in urls_to_try:
+        # Try with and without www
+        for url in [self.site_url, "https://vpb.com.au"]:
             text = web_fetch(url, max_chars=15000)
             if text and len(text) > 100:
-                self._parse_page(text, url, listings)
+                # Parse for pharmacy listings
+                blocks = re.split(r'\n\n+', text)
+                for block in blocks:
+                    if re.search(r'pharmacy|chemist|for sale', block, re.IGNORECASE) and len(block) > 30:
+                        price = ''
+                        pm = re.search(r'\$[\d,]+\.?\d*\s*[mkMK]?', block)
+                        if pm:
+                            price = pm.group(0)
+                        title = block.split('\n')[0].strip()[:200]
+                        listings.append(Listing(
+                            source=self.name,
+                            title=title,
+                            price=price,
+                            location='Victoria',
+                            state='VIC',
+                            url=url,
+                            description=block[:500]
+                        ))
                 break
 
         if not listings:
-            logger.info("VPB: site unreachable or no public listings")
+            logger.info("VPB: site unreachable (connection timeout)")
 
         return listings
 
-    def _parse_page(self, text: str, url: str, listings: list):
-        """Parse VPB page."""
-        # Look for pharmacy listing patterns
-        blocks = re.split(r'\n\n+', text)
-        for block in blocks:
-            if re.search(r'pharmacy|chemist|for sale', block, re.IGNORECASE) and len(block) > 20:
-                price_match = re.search(r'\$[\d,]+\.?\d*\s*[mkMK]?', block)
-                price = price_match.group(0) if price_match else ''
-                first_line = block.split('\n')[0].strip()
-                if len(first_line) > 5 and len(first_line) < 200:
-                    listings.append(Listing(
-                        source=self.name,
-                        title=first_line,
-                        price=price,
-                        location='Victoria',
-                        state='VIC',
-                        url=url,
-                        description=block[:500]
-                    ))
 
-
+# ---------------------------------------------------------------------------
+# 10. Statewide Business Advisors — connection issues
+# ---------------------------------------------------------------------------
 class StatewideBAScraper(BrokerScraper):
-    """statewideba.com.au - Statewide Business Advisors."""
     name = "Statewide BA"
+    site_url = "https://www.statewideba.com.au"
 
     def scrape(self) -> List[Listing]:
         listings = []
 
-        urls_to_try = [
-            "https://www.statewideba.com.au",
-            "https://statewideba.com.au",
-            "https://www.statewideba.com.au/pharmacies-for-sale",
-            "https://www.statewideba.com.au/listings",
-        ]
-
-        for url in urls_to_try:
+        for url in [self.site_url, "https://statewideba.com.au"]:
             text = web_fetch(url, max_chars=15000)
             if text and len(text) > 100:
-                self._parse_page(text, url, listings)
+                blocks = re.split(r'\n\n+', text)
+                for block in blocks:
+                    if re.search(r'pharmacy|chemist', block, re.IGNORECASE) and len(block) > 30:
+                        price = ''
+                        pm = re.search(r'\$[\d,]+\.?\d*\s*[mkMK]?', block)
+                        if pm:
+                            price = pm.group(0)
+                        title = block.split('\n')[0].strip()[:200]
+                        state = detect_au_state(title + ' ' + block)
+                        listings.append(Listing(
+                            source=self.name,
+                            title=title,
+                            price=price,
+                            state=state,
+                            url=url,
+                            description=block[:500]
+                        ))
                 break
 
         if not listings:
-            logger.info("Statewide BA: site unreachable or no public listings")
+            logger.info("Statewide BA: site unreachable (connection timeout)")
 
         return listings
 
-    def _parse_page(self, text: str, url: str, listings: list):
-        """Parse Statewide page for pharmacy listings."""
-        blocks = re.split(r'\n\n+', text)
-        for block in blocks:
-            if re.search(r'pharmacy|chemist', block, re.IGNORECASE) and len(block) > 20:
-                price_match = re.search(r'\$[\d,]+\.?\d*\s*[mkMK]?', block)
-                price = price_match.group(0) if price_match else ''
-                first_line = block.split('\n')[0].strip()
-                if len(first_line) > 5 and len(first_line) < 200:
-                    listings.append(Listing(
-                        source=self.name,
-                        title=first_line,
-                        price=price,
-                        url=url,
-                        description=block[:500]
-                    ))
 
-
+# ---------------------------------------------------------------------------
+# 11. Mint Business Brokers — connection issues
+# ---------------------------------------------------------------------------
 class MintBusinessBrokersScraper(BrokerScraper):
-    """mintbusinessbrokers.com.au - Mint Business Brokers."""
     name = "Mint Business Brokers"
+    site_url = "https://www.mintbusinessbrokers.com.au"
 
     def scrape(self) -> List[Listing]:
         listings = []
 
-        urls_to_try = [
-            "https://www.mintbusinessbrokers.com.au",
-            "https://mintbusinessbrokers.com.au",
-            "https://www.mintbusinessbrokers.com.au/pharmacies-for-sale",
-            "https://www.mintbusinessbrokers.com.au/listings",
-        ]
-
-        for url in urls_to_try:
+        for url in [self.site_url, "https://mintbusinessbrokers.com.au"]:
             text = web_fetch(url, max_chars=15000)
             if text and len(text) > 100:
-                self._parse_page(text, url, listings)
+                blocks = re.split(r'\n\n+', text)
+                for block in blocks:
+                    if re.search(r'pharmacy|chemist', block, re.IGNORECASE) and len(block) > 30:
+                        price = ''
+                        pm = re.search(r'\$[\d,]+\.?\d*\s*[mkMK]?', block)
+                        if pm:
+                            price = pm.group(0)
+                        title = block.split('\n')[0].strip()[:200]
+                        state = detect_au_state(title + ' ' + block)
+                        listings.append(Listing(
+                            source=self.name,
+                            title=title,
+                            price=price,
+                            state=state,
+                            url=url,
+                            description=block[:500]
+                        ))
                 break
 
         if not listings:
-            logger.info("Mint Business Brokers: site unreachable or no public listings")
+            logger.info("Mint Business Brokers: site unreachable (connection timeout)")
 
         return listings
 
-    def _parse_page(self, text: str, url: str, listings: list):
-        """Parse Mint page for pharmacy listings."""
-        blocks = re.split(r'\n\n+', text)
-        for block in blocks:
-            if re.search(r'pharmacy|chemist', block, re.IGNORECASE) and len(block) > 20:
-                price_match = re.search(r'\$[\d,]+\.?\d*\s*[mkMK]?', block)
-                price = price_match.group(0) if price_match else ''
-                first_line = block.split('\n')[0].strip()
-                if len(first_line) > 5 and len(first_line) < 200:
-                    listings.append(Listing(
-                        source=self.name,
-                        title=first_line,
-                        price=price,
-                        url=url,
-                        description=block[:500]
-                    ))
+
+# ---------------------------------------------------------------------------
+# 12. Rx Pharmacy Brokers — Aro CRM, currently no listings
+# ---------------------------------------------------------------------------
+class RxPharmacyScraper(BrokerScraper):
+    name = "Rx Pharmacy"
+    site_url = "https://www.rxpharmacybrokers.com.au"
+
+    def scrape(self) -> List[Listing]:
+        listings = []
+
+        # Try various listing page paths
+        for path in ['/pharmacies-for-sale', '/for-sale', '/buying', '']:
+            html = web_fetch_html(f"{self.site_url}{path}")
+            if html and '404' not in html[:500]:
+                # Check for Aro CRM data
+                json_match = re.search(r'(?:listingData|properties)\s*[=:]\s*(\[[\s\S]*?\])', html)
+                if json_match:
+                    try:
+                        data = json.loads(json_match.group(1))
+                        for item in data:
+                            if isinstance(item, dict):
+                                listings.append(Listing(
+                                    source=self.name,
+                                    title=item.get('display_title', item.get('title', '')),
+                                    price=str(item.get('display_price', '')),
+                                    url=self.site_url + str(item.get('link', ''))
+                                ))
+                    except (json.JSONDecodeError, TypeError):
+                        pass
+
+                if 'No properties were found' in html:
+                    logger.info("Rx Pharmacy: Aro CRM site shows 'No properties found'")
+                    break
+
+        return listings
 
 
 # =============================================================================
@@ -964,7 +998,6 @@ class ListingDatabase:
         self._init_db()
 
     def _init_db(self):
-        """Create the broker_listings table if it doesn't exist."""
         conn = sqlite3.connect(self.db_path)
         try:
             conn.execute('''
@@ -985,6 +1018,7 @@ class ListingDatabase:
                     notified INTEGER DEFAULT 0
                 )
             ''')
+            # Create url index only if url is not empty (for uniqueness)
             conn.execute('''
                 CREATE INDEX IF NOT EXISTS idx_broker_listings_url
                 ON broker_listings(url)
@@ -1002,10 +1036,7 @@ class ListingDatabase:
             conn.close()
 
     def process_listings(self, listings: List[Listing]) -> Dict:
-        """
-        Process scraped listings against the database.
-        Returns dict with 'new', 'active', 'removed' counts and new listing details.
-        """
+        """Process scraped listings against the database."""
         today = date.today().isoformat()
         conn = sqlite3.connect(self.db_path)
         conn.row_factory = sqlite3.Row
@@ -1028,7 +1059,6 @@ class ListingDatabase:
                 seen_keys.add(key)
 
                 if key in existing:
-                    # Existing listing — update last_seen, mark ACTIVE
                     conn.execute(
                         "UPDATE broker_listings SET last_seen = ?, status = 'ACTIVE', "
                         "price = COALESCE(NULLIF(?, ''), price), "
@@ -1041,9 +1071,8 @@ class ListingDatabase:
                     )
                     stats['active'] += 1
                 else:
-                    # New listing
                     conn.execute(
-                        "INSERT INTO broker_listings "
+                        "INSERT OR IGNORE INTO broker_listings "
                         "(source, title, price, location, state, url, description, "
                         "price_bucket, tags, first_seen, last_seen, status, notified) "
                         "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'NEW', 0)",
@@ -1055,7 +1084,7 @@ class ListingDatabase:
                     stats['new'] += 1
                     new_listings.append(listing)
 
-            # Mark removed listings (were active but not in current scan)
+            # Mark removed listings
             for key, row in existing.items():
                 if key not in seen_keys:
                     conn.execute(
@@ -1072,9 +1101,9 @@ class ListingDatabase:
                 "SELECT source, status, COUNT(*) as cnt FROM broker_listings "
                 "WHERE status IN ('NEW', 'ACTIVE') GROUP BY source, status"
             ):
-                source = row['source'] if isinstance(row, dict) else row[0]
-                status = row['status'] if isinstance(row, dict) else row[1]
-                cnt = row['cnt'] if isinstance(row, dict) else row[2]
+                source = row[0]
+                status = row[1]
+                cnt = row[2]
                 if source not in source_summary:
                     source_summary[source] = {'NEW': 0, 'ACTIVE': 0}
                 source_summary[source][status] = cnt
@@ -1084,12 +1113,10 @@ class ListingDatabase:
                 'new_listings': new_listings,
                 'source_summary': source_summary,
             }
-
         finally:
             conn.close()
 
     def get_all_active(self) -> List[Dict]:
-        """Get all active/new listings."""
         conn = sqlite3.connect(self.db_path)
         conn.row_factory = sqlite3.Row
         try:
@@ -1101,38 +1128,24 @@ class ListingDatabase:
         finally:
             conn.close()
 
-    def mark_notified(self, listing_ids: List[int]):
-        """Mark listings as notified."""
-        conn = sqlite3.connect(self.db_path)
-        try:
-            conn.executemany(
-                "UPDATE broker_listings SET notified = 1 WHERE id = ?",
-                [(lid,) for lid in listing_ids]
-            )
-            conn.commit()
-        finally:
-            conn.close()
-
 
 # =============================================================================
 # Report generator
 # =============================================================================
 
 class ReportGenerator:
-    """Generates markdown reports for scan results."""
-
     def __init__(self, output_dir: Path = OUTPUT_DIR):
         self.output_dir = output_dir
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-    def generate_report(self, results: Dict, scan_errors: Dict[str, str]) -> str:
-        """Generate a markdown report and save to file. Returns file path."""
+    def generate_report(self, results: Dict, scan_errors: Dict[str, str],
+                        broker_notes: Dict[str, str] = None) -> str:
         today = date.today().isoformat()
         filename = f"broker_scan_{today}.md"
         filepath = self.output_dir / filename
 
         lines = []
-        lines.append(f"# Pharmacy Broker Scan Report — {today}")
+        lines.append(f"# Pharmacy Broker Scan Report - {today}")
         lines.append(f"\n_Generated at {datetime.now().strftime('%Y-%m-%d %H:%M:%S AEST')}_\n")
 
         stats = results['stats']
@@ -1155,35 +1168,38 @@ class ReportGenerator:
             total = new + active
             lines.append(f"| {source} | {new} | {active} | {total} |")
 
+        total_new = stats['new']
+        total_active = stats['active']
         total_all = sum(s.get('NEW', 0) + s.get('ACTIVE', 0) for s in source_summary.values())
-        lines.append(f"| **TOTAL** | **{stats['new']}** | **{stats['active']}** | **{total_all}** |")
+        lines.append(f"| **TOTAL** | **{total_new}** | **{total_active}** | **{total_all}** |")
 
         # New listings detail
         new_listings = results.get('new_listings', [])
         if new_listings:
-            lines.append("\n## 🆕 New Listings\n")
-
-            for listing in new_listings:
-                lines.append(f"### {listing.title}")
-                lines.append(f"- **Source**: {listing.source}")
-                if listing.price:
-                    lines.append(f"- **Price**: {listing.price} ({listing.price_bucket})")
-                if listing.location:
-                    lines.append(f"- **Location**: {listing.location}")
-                if listing.state:
-                    lines.append(f"- **State**: {listing.state}")
-                if listing.tags:
-                    lines.append(f"- **Tags**: {', '.join(listing.tags)}")
-                if listing.url:
-                    lines.append(f"- **URL**: {listing.url}")
-                if listing.description:
-                    lines.append(f"- **Description**: {listing.description[:300]}")
-                lines.append("")
-        else:
             lines.append("\n## New Listings\n")
-            lines.append("_No new listings found since last scan._\n")
 
-        # Errors
+            # Highlight Tasmania listings
+            tas_listings = [l for l in new_listings if l.state == 'TAS']
+            if tas_listings:
+                lines.append("### 🏝️ Tasmania Listings (Priority)\n")
+                for listing in tas_listings:
+                    self._format_listing(listing, lines)
+
+            # Then all others by state
+            other_listings = [l for l in new_listings if l.state != 'TAS']
+            if other_listings:
+                if tas_listings:
+                    lines.append("### Other States\n")
+                for listing in sorted(other_listings, key=lambda l: (l.state or 'ZZZ', l.source)):
+                    self._format_listing(listing, lines)
+
+        # Broker notes (login required, unreachable, etc.)
+        if broker_notes:
+            lines.append("\n## Broker Notes\n")
+            for broker, note in sorted(broker_notes.items()):
+                lines.append(f"- **{broker}**: {note}")
+
+        # Scan errors
         if scan_errors:
             lines.append("\n## Scan Errors\n")
             for source, error in scan_errors.items():
@@ -1191,11 +1207,27 @@ class ReportGenerator:
 
         report_text = '\n'.join(lines)
 
-        # Write to file
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(report_text)
 
         return str(filepath)
+
+    def _format_listing(self, listing: Listing, lines: list):
+        lines.append(f"#### {listing.title}")
+        lines.append(f"- **Source**: {listing.source}")
+        if listing.price:
+            lines.append(f"- **Price**: {listing.price} ({listing.price_bucket})")
+        if listing.location:
+            lines.append(f"- **Location**: {listing.location}")
+        if listing.state:
+            lines.append(f"- **State**: {listing.state}")
+        if listing.tags:
+            lines.append(f"- **Tags**: {', '.join(listing.tags)}")
+        if listing.url:
+            lines.append(f"- **URL**: {listing.url}")
+        if listing.description:
+            lines.append(f"- {listing.description[:300]}")
+        lines.append("")
 
 
 # =============================================================================
@@ -1203,28 +1235,21 @@ class ReportGenerator:
 # =============================================================================
 
 class BrokerScanner:
-    """
-    Main scanner that orchestrates all broker scrapers.
+    """Main scanner that orchestrates all broker scrapers."""
 
-    Usage:
-        scanner = BrokerScanner()
-        results = scanner.run_full_scan()
-    """
-
-    # All broker scrapers
     SCRAPERS = [
         Practice4SaleScraper,
         SRPBSScraper,
         AgileBBScraper,
-        IAttainScraper,
-        WishartsScraper,
-        RxPharmacyScraper,
+        BusinessForSaleScraper,
         APGroupScraper,
         APBScraper,
-        BusinessForSaleScraper,
+        AttainScraper,
+        WishartsScraper,
         VPBScraper,
         StatewideBAScraper,
         MintBusinessBrokersScraper,
+        RxPharmacyScraper,
     ]
 
     def __init__(self, db_path: Path = DB_PATH):
@@ -1232,16 +1257,6 @@ class BrokerScanner:
         self.report_gen = ReportGenerator()
 
     def run_full_scan(self, verbose: bool = True) -> Dict:
-        """
-        Run a full scan of all broker sites.
-
-        Returns dict with:
-            - stats: {new, active, removed, total_scraped}
-            - new_listings: list of new Listing objects
-            - source_summary: dict of counts by source
-            - report_path: path to generated report
-            - errors: dict of source -> error message
-        """
         if verbose:
             print("=" * 60)
             print("  PHARMACY BROKER SCANNER")
@@ -1251,28 +1266,32 @@ class BrokerScanner:
 
         all_listings = []
         scan_errors = {}
+        broker_notes = {}
 
         for scraper_cls in self.SCRAPERS:
             scraper = scraper_cls()
             source_name = scraper.name
 
             if verbose:
-                print(f"  Scanning {source_name}...", end=' ', flush=True)
+                print(f"  [{source_name:<25}] Scanning...", end=' ', flush=True)
 
             try:
                 listings = scraper.scrape()
                 all_listings.extend(listings)
                 if verbose:
-                    print(f"OK ({len(listings)} listings)")
+                    if listings:
+                        print(f"OK ({len(listings)} listings)")
+                    else:
+                        print(f"OK (0 listings)")
             except Exception as e:
                 error_msg = str(e)
                 scan_errors[source_name] = error_msg
                 logger.error(f"Error scanning {source_name}: {e}", exc_info=True)
                 if verbose:
-                    print(f"FAIL: {error_msg[:80]}")
+                    print(f"FAIL: {error_msg[:60]}")
 
         if verbose:
-            print(f"\n  Total scraped: {len(all_listings)} listings from {len(self.SCRAPERS)} brokers")
+            print(f"\n  Total scraped: {len(all_listings)} listings")
             print("  Processing against database...", end=' ', flush=True)
 
         # Process against database
@@ -1283,7 +1302,7 @@ class BrokerScanner:
             print("done")
 
         # Generate report
-        report_path = self.report_gen.generate_report(results, scan_errors)
+        report_path = self.report_gen.generate_report(results, scan_errors, broker_notes)
         results['report_path'] = report_path
 
         if verbose:
@@ -1292,7 +1311,6 @@ class BrokerScanner:
         return results
 
     def _print_summary(self, results: Dict):
-        """Print a nice summary to console."""
         stats = results['stats']
         print()
         print("=" * 60)
@@ -1304,7 +1322,6 @@ class BrokerScanner:
         print(f"  Total scraped:    {stats['total_scraped']}")
         print()
 
-        # Source breakdown
         source_summary = results.get('source_summary', {})
         if source_summary:
             print("  BY BROKER:")
@@ -1312,39 +1329,48 @@ class BrokerScanner:
                 counts = source_summary[source]
                 total = counts.get('NEW', 0) + counts.get('ACTIVE', 0)
                 new = counts.get('NEW', 0)
-                marker = " [NEW]" if new > 0 else ""
+                marker = " *NEW*" if new > 0 else ""
                 print(f"    {source:<25} {total:>3} listings{marker}")
             print()
 
-        # New listings
         new_listings = results.get('new_listings', [])
         if new_listings:
-            print("  ** NEW LISTINGS **")
+            print("  NEW LISTINGS:")
             print("  " + "-" * 56)
-            for listing in new_listings:
-                print(f"    [{listing.source}] {listing.title[:50]}")
-                if listing.price:
-                    print(f"      Price: {listing.price} ({listing.price_bucket})")
-                if listing.state:
-                    print(f"      State: {listing.state}")
-                if listing.tags:
-                    print(f"      Tags:  {', '.join(listing.tags)}")
-                print()
 
-        # Errors
+            # Tasmania first
+            tas = [l for l in new_listings if l.state == 'TAS']
+            if tas:
+                print("  ** TASMANIA (PRIORITY) **")
+                for listing in tas:
+                    self._print_listing(listing)
+
+            # Others
+            for listing in sorted(new_listings, key=lambda l: (l.state or 'ZZZ', l.source)):
+                if listing.state == 'TAS':
+                    continue
+                self._print_listing(listing)
+
         if results.get('errors'):
-            print("  ERRORS:")
+            print("\n  ERRORS:")
             for source, error in results['errors'].items():
                 print(f"    {source}: {error[:60]}")
-            print()
 
-        print(f"  Report saved: {results.get('report_path', 'N/A')}")
+        print(f"\n  Report saved: {results.get('report_path', 'N/A')}")
         print("=" * 60)
 
+    def _print_listing(self, listing: Listing):
+        print(f"    [{listing.source}] {listing.title[:55]}")
+        details = []
+        if listing.price:
+            details.append(f"Price: {listing.price}")
+        if listing.state:
+            details.append(f"State: {listing.state}")
+        if listing.location and listing.location != listing.title:
+            details.append(f"Loc: {listing.location[:40]}")
+        if details:
+            print(f"      {' | '.join(details)}")
 
-# =============================================================================
-# CLI entry point
-# =============================================================================
 
 if __name__ == '__main__':
     scanner = BrokerScanner()

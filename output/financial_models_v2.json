@@ -1,0 +1,544 @@
+[
+  {
+    "opportunity": {
+      "name": "IGA",
+      "state": "NT",
+      "address": "IGA, Yulara Drive, Yulara, Northern Territory, Australia",
+      "lat": -43.1585571,
+      "lng": 147.0750318,
+      "rules": "Item 132",
+      "score": 100,
+      "ratio": 122207,
+      "pop_10km": 122207,
+      "pharmacies_10km": 1,
+      "nearest_pharmacy_km": 0.22,
+      "nearest_pharmacy": "Cygnet Pharmacy"
+    },
+    "location_research": {
+      "actual_location": "Cygnet, Tasmania (coords mismatch — scored as NT)",
+      "description": "Small heritage town in Huon Valley, ~50km south of Hobart. Tourism + agriculture economy. Only 1 existing pharmacy (Cygnet Pharmacy). IGA supermarket anchors the small town centre.",
+      "area_type": "rural_town",
+      "growth_outlook": "stable",
+      "nearby_amenities": "IGA supermarket, post office, cafes, Huon Valley Hub",
+      "competition_notes": "Only Cygnet Pharmacy at 219m. Next is Huonville ~15km.",
+      "demographic_notes": "Aging population, retirees, tourism workers. High PBS demand per capita."
+    },
+    "setup_costs": {
+      "fitout": 250000,
+      "stock": 80000,
+      "pbs_approval": 5000,
+      "working_capital": 84000,
+      "total_establishment": 419000
+    },
+    "script_analysis": {
+      "mature_scripts_per_day": 59.2,
+      "benchmark": "below_breakeven",
+      "local_pop": 1700,
+      "effective_catchment": 3400.0,
+      "catchment_pop": 5000,
+      "market_share": 0.575,
+      "method": "item_132_town",
+      "area_multiplier": 0.85,
+      "mature_scripts_day": 59.2,
+      "year1_avg_scripts_day": 35.5,
+      "year2_avg_scripts_day": 50.3,
+      "year3_avg_scripts_day": 59.2
+    },
+    "revenue": {
+      "year1": {
+        "scripts_per_day": 35.5,
+        "annual_script_revenue": 324041,
+        "front_of_shop_revenue": 189024,
+        "clinical_services_revenue": 27003,
+        "total_annual_revenue": 540069
+      },
+      "year2": {
+        "scripts_per_day": 50.3,
+        "annual_script_revenue": 459058,
+        "front_of_shop_revenue": 267784,
+        "clinical_services_revenue": 38255,
+        "total_annual_revenue": 765097
+      },
+      "year3_mature": {
+        "scripts_per_day": 59.2,
+        "annual_script_revenue": 540069,
+        "front_of_shop_revenue": 315040,
+        "clinical_services_revenue": 45006,
+        "total_annual_revenue": 900115
+      }
+    },
+    "operating_costs": {
+      "year1": {
+        "cogs": 378048,
+        "annual_rent": 18000,
+        "wages": 226250,
+        "pharmacist_cost": 109250,
+        "retail_staff_count": 1,
+        "regional_loading": 1.15,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 294250,
+        "total_costs": 672298
+      },
+      "year2": {
+        "cogs": 535568,
+        "annual_rent": 18000,
+        "wages": 281250,
+        "pharmacist_cost": 109250,
+        "retail_staff_count": 2,
+        "regional_loading": 1.15,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 349250,
+        "total_costs": 884818
+      },
+      "year3_mature": {
+        "cogs": 630080,
+        "annual_rent": 18000,
+        "wages": 281250,
+        "pharmacist_cost": 109250,
+        "retail_staff_count": 2,
+        "regional_loading": 1.15,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 349250,
+        "total_costs": 979330
+      }
+    },
+    "profitability": {
+      "year1": {
+        "gross_profit": 162021,
+        "gross_margin_pct": 30.0,
+        "ebitda": -132229,
+        "ebitda_margin_pct": -24.5,
+        "profitable": false
+      },
+      "year2": {
+        "gross_profit": 229529,
+        "gross_margin_pct": 30.0,
+        "ebitda": -119721,
+        "ebitda_margin_pct": -15.6,
+        "profitable": false
+      },
+      "year3_mature": {
+        "gross_profit": 270034,
+        "gross_margin_pct": 30.0,
+        "ebitda": -79215,
+        "ebitda_margin_pct": -8.8,
+        "profitable": false
+      }
+    },
+    "break_even": {
+      "break_even_months": 84,
+      "cumulative_profit_year1": -551229,
+      "cumulative_profit_year2": -670950,
+      "cumulative_profit_year3": -750165,
+      "cumulative_profit_year5": -883706
+    },
+    "exit_value": {
+      "exit_value_12m": 540069,
+      "roi_12m_pct": 28.9,
+      "exit_value_24m": 1147646,
+      "roi_24m_pct": 173.9,
+      "exit_value_36m": 1800230,
+      "roi_36m_pct": 329.6
+    },
+    "risk_assessment": {
+      "competition_risk": 2,
+      "competition_note": "Very low competition — only 1 pharmacies in 10km. Nearest pharmacy very close (220m)",
+      "location_risk": 4,
+      "location_note": "Regional/rural location (stable growth). Population dependency risk.",
+      "regulatory_risk": 2,
+      "regulatory_note": "Item 132 (new town pharmacy) — well-established pathway, lower risk",
+      "operational_risk": 4,
+      "operational_note": "Regional location — pharmacist recruitment very difficult, supply chain challenges",
+      "overall_risk": 2.9,
+      "risk_rating": "MEDIUM"
+    },
+    "summary": {
+      "total_investment": 419000,
+      "mature_annual_revenue": 900115,
+      "mature_ebitda": -79215,
+      "break_even_months": 84,
+      "exit_value_36m": 1800230,
+      "roi_36m_pct": 329.6,
+      "overall_risk": 2.9,
+      "risk_rating": "MEDIUM",
+      "scripts_per_day_mature": 59.2,
+      "recommendation": "PASS — Below break-even threshold. Not recommended without significant additional factors."
+    }
+  },
+  {
+    "opportunity": {
+      "name": "Supa IGA Gordonvale",
+      "state": "QLD",
+      "address": "",
+      "lat": -17.0930134,
+      "lng": 145.7916302,
+      "rules": "Item 132",
+      "score": 77.8,
+      "ratio": 9010,
+      "pop_10km": 18020,
+      "pharmacies_10km": 2,
+      "nearest_pharmacy_km": 1.92,
+      "nearest_pharmacy": "Gordonvale Discount Drug Store"
+    },
+    "location_research": {
+      "actual_location": "Gordonvale, Cairns QLD",
+      "description": "Rural sugar town 23km south of Cairns. Population ~7,000. Supa IGA is the main supermarket. Only 2 pharmacies in 10km.",
+      "area_type": "regional_town",
+      "growth_outlook": "moderate",
+      "nearby_amenities": "Supa IGA, Gordonvale State School, mill, post office, Gordonvale Medical Centre",
+      "competition_notes": "Only Gordonvale Discount Drug Store at 1.92km. Next in Cairns suburbs.",
+      "demographic_notes": "Working class, agriculture/mining, families. Growing slowly with Cairns southern corridor development."
+    },
+    "setup_costs": {
+      "fitout": 280000,
+      "stock": 90000,
+      "pbs_approval": 6000,
+      "working_capital": 84000,
+      "total_establishment": 460000
+    },
+    "script_analysis": {
+      "mature_scripts_per_day": 153.6,
+      "benchmark": "healthy_profit",
+      "local_pop": 6944,
+      "effective_catchment": 13888.0,
+      "catchment_pop": 18020,
+      "market_share": 0.345,
+      "method": "item_132_town",
+      "area_multiplier": 0.9,
+      "mature_scripts_day": 153.6,
+      "year1_avg_scripts_day": 92.2,
+      "year2_avg_scripts_day": 130.5,
+      "year3_avg_scripts_day": 153.6
+    },
+    "revenue": {
+      "year1": {
+        "scripts_per_day": 92.2,
+        "annual_script_revenue": 840884,
+        "front_of_shop_revenue": 490515,
+        "clinical_services_revenue": 70074,
+        "total_annual_revenue": 1401473
+      },
+      "year2": {
+        "scripts_per_day": 130.5,
+        "annual_script_revenue": 1191252,
+        "front_of_shop_revenue": 694897,
+        "clinical_services_revenue": 99271,
+        "total_annual_revenue": 1985420
+      },
+      "year3_mature": {
+        "scripts_per_day": 153.6,
+        "annual_script_revenue": 1401473,
+        "front_of_shop_revenue": 817526,
+        "clinical_services_revenue": 116789,
+        "total_annual_revenue": 2335788
+      }
+    },
+    "operating_costs": {
+      "year1": {
+        "cogs": 981031,
+        "annual_rent": 25000,
+        "wages": 336250,
+        "pharmacist_cost": 109250,
+        "retail_staff_count": 3,
+        "regional_loading": 1.15,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 411250,
+        "total_costs": 1392281
+      },
+      "year2": {
+        "cogs": 1389794,
+        "annual_rent": 25000,
+        "wages": 391250,
+        "pharmacist_cost": 109250,
+        "retail_staff_count": 4,
+        "regional_loading": 1.15,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 466250,
+        "total_costs": 1856044
+      },
+      "year3_mature": {
+        "cogs": 1635052,
+        "annual_rent": 25000,
+        "wages": 555500,
+        "pharmacist_cost": 218500,
+        "retail_staff_count": 5,
+        "regional_loading": 1.15,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 630500,
+        "total_costs": 2265552
+      }
+    },
+    "profitability": {
+      "year1": {
+        "gross_profit": 420442,
+        "gross_margin_pct": 30.0,
+        "ebitda": 9192,
+        "ebitda_margin_pct": 0.7,
+        "profitable": true
+      },
+      "year2": {
+        "gross_profit": 595626,
+        "gross_margin_pct": 30.0,
+        "ebitda": 129376,
+        "ebitda_margin_pct": 6.5,
+        "profitable": true
+      },
+      "year3_mature": {
+        "gross_profit": 700736,
+        "gross_margin_pct": 30.0,
+        "ebitda": 70236,
+        "ebitda_margin_pct": 3.0,
+        "profitable": true
+      }
+    },
+    "break_even": {
+      "break_even_months": 64,
+      "cumulative_profit_year1": -450808,
+      "cumulative_profit_year2": -321432,
+      "cumulative_profit_year3": -251196,
+      "cumulative_profit_year5": -37836
+    },
+    "exit_value": {
+      "exit_value_12m": 1401473,
+      "roi_12m_pct": 204.7,
+      "exit_value_24m": 2978130,
+      "roi_24m_pct": 547.4,
+      "exit_value_36m": 4671576,
+      "roi_36m_pct": 915.6
+    },
+    "risk_assessment": {
+      "competition_risk": 1,
+      "competition_note": "Very low competition — only 2 pharmacies in 10km. Nearest pharmacy 1.9km away (good buffer)",
+      "location_risk": 4,
+      "location_note": "Regional/rural location (moderate growth). Population dependency risk.",
+      "regulatory_risk": 2,
+      "regulatory_note": "Item 132 (new town pharmacy) — well-established pathway, lower risk",
+      "operational_risk": 4,
+      "operational_note": "Regional location — pharmacist recruitment very difficult, supply chain challenges",
+      "overall_risk": 2.6,
+      "risk_rating": "MEDIUM"
+    },
+    "summary": {
+      "total_investment": 460000,
+      "mature_annual_revenue": 2335788,
+      "mature_ebitda": 70236,
+      "break_even_months": 64,
+      "exit_value_36m": 4671576,
+      "roi_36m_pct": 915.6,
+      "overall_risk": 2.6,
+      "risk_rating": "MEDIUM",
+      "scripts_per_day_mature": 153.6,
+      "recommendation": "BUY — Healthy profit potential with manageable risk. Solid business case."
+    }
+  },
+  {
+    "opportunity": {
+      "name": "Gladstone Medical Centre",
+      "state": "QLD",
+      "address": "Young Street, Gladstone Ports - Port Central, Barney Point, Gladstone, Gladstone Regional, Queensland, 4680, Australia",
+      "lat": -23.8571249,
+      "lng": 151.243877,
+      "rules": "Item 136",
+      "score": 59.8,
+      "ratio": 4958,
+      "pop_10km": 34703,
+      "pharmacies_10km": 7,
+      "nearest_pharmacy_km": 0.58,
+      "nearest_pharmacy": "GP Discount Pharmacy Gladstone"
+    },
+    "location_research": {
+      "actual_location": "Gladstone, QLD",
+      "description": "Industrial port city, 517km NW of Brisbane. Major LNG/resources hub. Population ~45,000. Medical centre at 19 Tank Street.",
+      "area_type": "regional_city",
+      "growth_outlook": "moderate",
+      "nearby_amenities": "Gladstone CBD, Gladstone Hospital, Stockland Gladstone, port",
+      "competition_notes": "Nearest: GP Discount Pharmacy 583m. 7 pharmacies in 10km — reasonable for regional city.",
+      "demographic_notes": "Workers (port, LNG, mining), families. Boom-bust cycles affect population. High turnover."
+    },
+    "setup_costs": {
+      "fitout": 300000,
+      "stock": 100000,
+      "pbs_approval": 7000,
+      "working_capital": 105000,
+      "total_establishment": 512000
+    },
+    "script_analysis": {
+      "mature_scripts_per_day": 113.5,
+      "benchmark": "breakeven_plus",
+      "gp_driven_scripts": 67.2,
+      "local_walk_in_scripts": 46.3,
+      "capture_rate": 0.4,
+      "method": "item_136_medical_centre",
+      "area_multiplier": 1.0,
+      "mature_scripts_day": 113.5,
+      "year1_avg_scripts_day": 68.1,
+      "year2_avg_scripts_day": 96.5,
+      "year3_avg_scripts_day": 113.5
+    },
+    "revenue": {
+      "year1": {
+        "scripts_per_day": 68.1,
+        "annual_script_revenue": 621686,
+        "front_of_shop_revenue": 362650,
+        "clinical_services_revenue": 51807,
+        "total_annual_revenue": 1036143
+      },
+      "year2": {
+        "scripts_per_day": 96.5,
+        "annual_script_revenue": 880721,
+        "front_of_shop_revenue": 513754,
+        "clinical_services_revenue": 73393,
+        "total_annual_revenue": 1467869
+      },
+      "year3_mature": {
+        "scripts_per_day": 113.5,
+        "annual_script_revenue": 1036143,
+        "front_of_shop_revenue": 604417,
+        "clinical_services_revenue": 86345,
+        "total_annual_revenue": 1726905
+      }
+    },
+    "operating_costs": {
+      "year1": {
+        "cogs": 725300,
+        "annual_rent": 32000,
+        "wages": 274600,
+        "pharmacist_cost": 102600,
+        "retail_staff_count": 2,
+        "regional_loading": 1.08,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 356600,
+        "total_costs": 1081900
+      },
+      "year2": {
+        "cogs": 1027508,
+        "annual_rent": 32000,
+        "wages": 329600,
+        "pharmacist_cost": 102600,
+        "retail_staff_count": 3,
+        "regional_loading": 1.08,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 411600,
+        "total_costs": 1439108
+      },
+      "year3_mature": {
+        "cogs": 1208834,
+        "annual_rent": 32000,
+        "wages": 329600,
+        "pharmacist_cost": 102600,
+        "retail_staff_count": 3,
+        "regional_loading": 1.08,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 411600,
+        "total_costs": 1620434
+      }
+    },
+    "profitability": {
+      "year1": {
+        "gross_profit": 310843,
+        "gross_margin_pct": 30.0,
+        "ebitda": -45757,
+        "ebitda_margin_pct": -4.4,
+        "profitable": false
+      },
+      "year2": {
+        "gross_profit": 440361,
+        "gross_margin_pct": 30.0,
+        "ebitda": 28761,
+        "ebitda_margin_pct": 2.0,
+        "profitable": true
+      },
+      "year3_mature": {
+        "gross_profit": 518072,
+        "gross_margin_pct": 30.0,
+        "ebitda": 106471,
+        "ebitda_margin_pct": 6.2,
+        "profitable": true
+      }
+    },
+    "break_even": {
+      "break_even_months": 73,
+      "cumulative_profit_year1": -557757,
+      "cumulative_profit_year2": -528996,
+      "cumulative_profit_year3": -422525,
+      "cumulative_profit_year5": -154053
+    },
+    "exit_value": {
+      "exit_value_12m": 1036143,
+      "roi_12m_pct": 102.4,
+      "exit_value_24m": 2201804,
+      "roi_24m_pct": 330.0,
+      "exit_value_36m": 3453810,
+      "roi_36m_pct": 574.6
+    },
+    "risk_assessment": {
+      "competition_risk": 2,
+      "competition_note": "Low competition — 7 pharmacies in 10km",
+      "location_risk": 3,
+      "location_note": "Regional City area with moderate growth outlook.",
+      "regulatory_risk": 3,
+      "regulatory_note": "Item 136 (8 GPs) — meets threshold but borderline FTE after part-time adjustment",
+      "operational_risk": 3,
+      "operational_note": "Regional city — moderate recruitment difficulty, adequate supply chain. High demand for pharmacists in area.",
+      "overall_risk": 2.7,
+      "risk_rating": "MEDIUM"
+    },
+    "summary": {
+      "total_investment": 512000,
+      "mature_annual_revenue": 1726905,
+      "mature_ebitda": 106471,
+      "break_even_months": 73,
+      "exit_value_36m": 3453810,
+      "roi_36m_pct": 574.6,
+      "overall_risk": 2.7,
+      "risk_rating": "MEDIUM",
+      "scripts_per_day_mature": 113.5,
+      "recommendation": "CONSIDER — Viable opportunity but moderate returns. Proceed with due diligence."
+    }
+  }
+]
