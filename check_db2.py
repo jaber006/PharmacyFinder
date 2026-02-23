@@ -1,0 +1,21 @@
+import sqlite3, os, glob
+
+# Find all DB files
+db_files = glob.glob(r'C:\Users\MJ\Documents\GitHub\PharmacyFinder\**\*.db', recursive=True)
+db_files += glob.glob(r'C:\Users\MJ\Documents\GitHub\PharmacyFinder\*.db')
+print(f"DB files found: {db_files}")
+
+for db in set(db_files):
+    print(f"\n=== {db} ===")
+    conn = sqlite3.connect(db)
+    c = conn.cursor()
+    c.execute("SELECT name FROM sqlite_master WHERE type='table'")
+    tables = [r[0] for r in c.fetchall()]
+    print(f"Tables: {tables}")
+    for t in tables:
+        c.execute(f"SELECT COUNT(*) FROM [{t}]")
+        count = c.fetchone()[0]
+        c.execute(f"PRAGMA table_info([{t}])")
+        cols = [r[1] for r in c.fetchall()]
+        print(f"  {t}: {count} rows, cols={cols}")
+    conn.close()

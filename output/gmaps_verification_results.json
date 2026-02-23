@@ -1,0 +1,2381 @@
+{
+  "timestamp": "2026-02-15T12:38:02.027668",
+  "fixed": 147,
+  "ok": 22,
+  "failed": 2,
+  "results": [
+    {
+      "id": 120,
+      "name": "Belconnen Medical Centre",
+      "status": "FIXED",
+      "state": "ACT",
+      "old": [
+        -35.239,
+        149.0643
+      ],
+      "new": [
+        -35.2418398,
+        149.0600077
+      ],
+      "offset_m": 502
+    },
+    {
+      "id": 119,
+      "name": "Canberra City Medical Centre",
+      "status": "FIXED",
+      "state": "ACT",
+      "old": [
+        -35.2779,
+        149.1309
+      ],
+      "new": [
+        -35.2755592,
+        149.1297956
+      ],
+      "offset_m": 279
+    },
+    {
+      "id": 173,
+      "name": "Dickson Medical Centre",
+      "status": "FIXED",
+      "state": "ACT",
+      "old": [
+        -35.2492235,
+        149.1394001
+      ],
+      "new": [
+        -35.2497823,
+        149.1371338
+      ],
+      "offset_m": 215
+    },
+    {
+      "id": 172,
+      "name": "Garran Medical Centre",
+      "status": "FIXED",
+      "state": "ACT",
+      "old": [
+        -35.3402,
+        149.1031
+      ],
+      "new": [
+        -35.34206,
+        149.1080017
+      ],
+      "offset_m": 490
+    },
+    {
+      "id": 123,
+      "name": "Gungahlin Medical Centre",
+      "status": "OK",
+      "state": "ACT",
+      "offset_m": 101
+    },
+    {
+      "id": 174,
+      "name": "Kippax Medical Centre",
+      "status": "FIXED",
+      "state": "ACT",
+      "old": [
+        -35.2341,
+        149.0178
+      ],
+      "new": [
+        -35.2218852,
+        149.0198099
+      ],
+      "offset_m": 1370
+    },
+    {
+      "id": 122,
+      "name": "Tuggeranong Medical Centre",
+      "status": "FIXED",
+      "state": "ACT",
+      "old": [
+        -35.4152,
+        149.0669
+      ],
+      "new": [
+        -35.4169013,
+        149.0685303
+      ],
+      "offset_m": 240
+    },
+    {
+      "id": 121,
+      "name": "Woden Medical Centre",
+      "status": "FIXED",
+      "state": "ACT",
+      "old": [
+        -35.3414076,
+        149.0858099
+      ],
+      "new": [
+        -35.3564995,
+        149.0959794
+      ],
+      "offset_m": 1915
+    },
+    {
+      "id": 52,
+      "name": "Albury Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -36.0812,
+        146.9153
+      ],
+      "new": [
+        -36.0693417,
+        146.9245518
+      ],
+      "offset_m": 1559
+    },
+    {
+      "id": 140,
+      "name": "Auburn Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.8528924,
+        151.0338499
+      ],
+      "new": [
+        -33.8548209,
+        151.0324733
+      ],
+      "offset_m": 249
+    },
+    {
+      "id": 41,
+      "name": "Bankstown Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.9158452,
+        151.0338634
+      ],
+      "new": [
+        -33.9170624,
+        151.0364837
+      ],
+      "offset_m": 277
+    },
+    {
+      "id": 176,
+      "name": "Bathurst Medical Centre",
+      "status": "OK",
+      "state": "NSW",
+      "offset_m": 69
+    },
+    {
+      "id": 35,
+      "name": "Blacktown Medical Centre",
+      "status": "OK",
+      "state": "NSW",
+      "offset_m": 135
+    },
+    {
+      "id": 54,
+      "name": "Camden Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -34.0543672,
+        150.7049798
+      ],
+      "new": [
+        -34.0655702,
+        150.7048927
+      ],
+      "offset_m": 1246
+    },
+    {
+      "id": 11,
+      "name": "Campbelltown Medical & Dental Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -34.065,
+        150.8143
+      ],
+      "new": [
+        -34.0713725,
+        150.8059732
+      ],
+      "offset_m": 1044
+    },
+    {
+      "id": 179,
+      "name": "Cessnock Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -32.834,
+        151.3561
+      ],
+      "new": [
+        -32.8361969,
+        151.3499242
+      ],
+      "offset_m": 627
+    },
+    {
+      "id": 43,
+      "name": "Chatswood Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.796,
+        151.1807
+      ],
+      "new": [
+        -33.7960211,
+        151.185033
+      ],
+      "offset_m": 400
+    },
+    {
+      "id": 48,
+      "name": "Coffs Harbour Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -30.3005768,
+        153.1139858
+      ],
+      "new": [
+        -30.2969083,
+        153.1152197
+      ],
+      "offset_m": 425
+    },
+    {
+      "id": 145,
+      "name": "Dee Why Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.7573585,
+        151.2818128
+      ],
+      "new": [
+        -33.7535092,
+        151.2862506
+      ],
+      "offset_m": 593
+    },
+    {
+      "id": 49,
+      "name": "Dubbo Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -32.246221,
+        148.6040196
+      ],
+      "new": [
+        -32.2535252,
+        148.6039158
+      ],
+      "offset_m": 812
+    },
+    {
+      "id": 141,
+      "name": "Fairfield Medical Centre",
+      "status": "OK",
+      "state": "NSW",
+      "offset_m": 80
+    },
+    {
+      "id": 40,
+      "name": "Gosford Family Medical Practice",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.4270622,
+        151.3426878
+      ],
+      "new": [
+        -33.4301528,
+        151.335346
+      ],
+      "offset_m": 763
+    },
+    {
+      "id": 137,
+      "name": "Greenway Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.3075,
+        151.4135
+      ],
+      "new": [
+        -33.3064502,
+        151.4251047
+      ],
+      "offset_m": 1085
+    },
+    {
+      "id": 44,
+      "name": "Hornsby Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.7027642,
+        151.1025824
+      ],
+      "new": [
+        -33.7044218,
+        151.105371
+      ],
+      "offset_m": 317
+    },
+    {
+      "id": 42,
+      "name": "Hurstville Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.9624858,
+        151.1127581
+      ],
+      "new": [
+        -33.965844,
+        151.1031611
+      ],
+      "offset_m": 961
+    },
+    {
+      "id": 180,
+      "name": "Lake Macquarie Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -32.9612,
+        151.6915
+      ],
+      "new": [
+        -32.9820602,
+        151.6703278
+      ],
+      "offset_m": 3047
+    },
+    {
+      "id": 175,
+      "name": "Lismore Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -28.8176156,
+        153.2726455
+      ],
+      "new": [
+        -28.8050127,
+        153.2816266
+      ],
+      "offset_m": 1652
+    },
+    {
+      "id": 139,
+      "name": "Liverpool Health Hub",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.9170372,
+        150.9259763
+      ],
+      "new": [
+        -33.9193724,
+        150.9273695
+      ],
+      "offset_m": 290
+    },
+    {
+      "id": 36,
+      "name": "Liverpool Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.9278085,
+        150.9189677
+      ],
+      "new": [
+        -33.9226993,
+        150.9235811
+      ],
+      "offset_m": 710
+    },
+    {
+      "id": 51,
+      "name": "Maitland Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -32.7323,
+        151.5553
+      ],
+      "new": [
+        -32.729126,
+        151.5498219
+      ],
+      "offset_m": 622
+    },
+    {
+      "id": 45,
+      "name": "MyHealth Medical Centre Bondi Junction",
+      "status": "OK",
+      "state": "NSW",
+      "offset_m": 59
+    },
+    {
+      "id": 34,
+      "name": "MyHealth Medical Centre Sydney CBD",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.8751,
+        151.2064
+      ],
+      "new": [
+        -33.8711307,
+        151.20519
+      ],
+      "offset_m": 455
+    },
+    {
+      "id": 38,
+      "name": "Newcastle Family Medical Practice",
+      "status": "OK",
+      "state": "NSW",
+      "offset_m": 191
+    },
+    {
+      "id": 138,
+      "name": "Norwest Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.7314808,
+        150.9702129
+      ],
+      "new": [
+        -33.7383364,
+        150.9579421
+      ],
+      "offset_m": 1367
+    },
+    {
+      "id": 177,
+      "name": "Nowra Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -34.8738004,
+        150.5970635
+      ],
+      "new": [
+        -34.8811892,
+        150.6038176
+      ],
+      "offset_m": 1027
+    },
+    {
+      "id": 130,
+      "name": "Ochre Health Broken Hill",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -31.965,
+        141.4511111
+      ],
+      "new": [
+        -32.3528306,
+        141.6269671
+      ],
+      "offset_m": 46193
+    },
+    {
+      "id": 50,
+      "name": "Orange Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.2868054,
+        149.1008359
+      ],
+      "new": [
+        -33.2974113,
+        149.0959509
+      ],
+      "offset_m": 1264
+    },
+    {
+      "id": 37,
+      "name": "Penrith Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.7512,
+        150.6942
+      ],
+      "new": [
+        -33.7528349,
+        150.7005606
+      ],
+      "offset_m": 616
+    },
+    {
+      "id": 53,
+      "name": "Port Macquarie Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -31.4332763,
+        152.9091671
+      ],
+      "new": [
+        -32.6038635,
+        152.0188098
+      ],
+      "offset_m": 154881
+    },
+    {
+      "id": 178,
+      "name": "Queanbeyan Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -35.3475849,
+        149.2300793
+      ],
+      "new": [
+        -35.3499074,
+        149.2324384
+      ],
+      "offset_m": 335
+    },
+    {
+      "id": 143,
+      "name": "Ryde Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.8123514,
+        151.1051422
+      ],
+      "new": [
+        -33.8041289,
+        151.1053596
+      ],
+      "offset_m": 915
+    },
+    {
+      "id": 181,
+      "name": "Shellharbour Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -34.5703028,
+        150.8223349
+      ],
+      "new": [
+        -34.5636281,
+        150.8336293
+      ],
+      "offset_m": 1273
+    },
+    {
+      "id": 33,
+      "name": "SmartClinics Parramatta",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.8148,
+        151.0019
+      ],
+      "new": [
+        -30.6259693,
+        152.0264702
+      ],
+      "offset_m": 367441
+    },
+    {
+      "id": 142,
+      "name": "Strathfield Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.8720057,
+        151.0975709
+      ],
+      "new": [
+        -33.8775963,
+        151.0907029
+      ],
+      "offset_m": 888
+    },
+    {
+      "id": 144,
+      "name": "Sutherland Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -34.0313278,
+        151.0664224
+      ],
+      "new": [
+        -34.0323395,
+        151.0587058
+      ],
+      "offset_m": 720
+    },
+    {
+      "id": 9,
+      "name": "Sydney CBD Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.8762,
+        151.2056
+      ],
+      "new": [
+        -33.8710709,
+        151.2067517
+      ],
+      "offset_m": 580
+    },
+    {
+      "id": 46,
+      "name": "Tamworth Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -31.0925198,
+        150.9315297
+      ],
+      "new": [
+        -31.087677,
+        150.9264963
+      ],
+      "offset_m": 721
+    },
+    {
+      "id": 47,
+      "name": "Wagga Wagga Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -35.1101,
+        147.3688
+      ],
+      "new": [
+        -35.1186008,
+        147.3686645
+      ],
+      "offset_m": 945
+    },
+    {
+      "id": 10,
+      "name": "Westmead Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -33.8062,
+        150.9873
+      ],
+      "new": [
+        -33.8080577,
+        150.984248
+      ],
+      "offset_m": 350
+    },
+    {
+      "id": 39,
+      "name": "Wollongong Medical Centre",
+      "status": "FIXED",
+      "state": "NSW",
+      "old": [
+        -34.4260495,
+        150.9009743
+      ],
+      "new": [
+        -34.4245496,
+        150.8893653
+      ],
+      "offset_m": 1078
+    },
+    {
+      "id": 118,
+      "name": "Alice Springs Medical Centre",
+      "status": "FIXED",
+      "state": "NT",
+      "old": [
+        -23.7016272,
+        133.8816876
+      ],
+      "new": [
+        -23.7033641,
+        133.880111
+      ],
+      "offset_m": 251
+    },
+    {
+      "id": 117,
+      "name": "Casuarina Medical Centre",
+      "status": "OK",
+      "state": "NT",
+      "offset_m": 154
+    },
+    {
+      "id": 115,
+      "name": "Darwin Medical Centre",
+      "status": "OK",
+      "state": "NT",
+      "offset_m": 124
+    },
+    {
+      "id": 116,
+      "name": "Palmerston Medical Centre",
+      "status": "FIXED",
+      "state": "NT",
+      "old": [
+        -12.4931694,
+        130.9750906
+      ],
+      "new": [
+        -12.4816395,
+        130.9874104
+      ],
+      "offset_m": 1853
+    },
+    {
+      "id": 132,
+      "name": "Browns Plains Family Practice",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.6618514,
+        153.0458067
+      ],
+      "new": [
+        -27.6653743,
+        153.0448582
+      ],
+      "offset_m": 403
+    },
+    {
+      "id": 86,
+      "name": "Bundaberg Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -24.8646303,
+        152.3502797
+      ],
+      "new": [
+        -24.8796107,
+        152.3465476
+      ],
+      "offset_m": 1708
+    },
+    {
+      "id": 89,
+      "name": "Caboolture Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.0758586,
+        152.9278511
+      ],
+      "new": [
+        -27.0805447,
+        152.9458116
+      ],
+      "offset_m": 1853
+    },
+    {
+      "id": 15,
+      "name": "Cairns Central Medical Centre",
+      "status": "OK",
+      "state": "QLD",
+      "offset_m": 75
+    },
+    {
+      "id": 158,
+      "name": "Calamvale Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.6115743,
+        153.0605293
+      ],
+      "new": [
+        -27.6219271,
+        153.0491192
+      ],
+      "offset_m": 1609
+    },
+    {
+      "id": 159,
+      "name": "Chermside Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.3782065,
+        153.0287942
+      ],
+      "new": [
+        -27.3844951,
+        153.0286446
+      ],
+      "offset_m": 699
+    },
+    {
+      "id": 184,
+      "name": "Emerald Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -23.5182324,
+        148.1569179
+      ],
+      "new": [
+        -30.7236525,
+        146.8050297
+      ],
+      "offset_m": 812275
+    },
+    {
+      "id": 135,
+      "name": "GP Super Clinic Redcliffe",
+      "status": "OK",
+      "state": "QLD",
+      "offset_m": 39
+    },
+    {
+      "id": 136,
+      "name": "GP Super Clinic Wynnum",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.444442,
+        153.1741587
+      ],
+      "new": [
+        -27.4476363,
+        153.1647158
+      ],
+      "offset_m": 997
+    },
+    {
+      "id": 182,
+      "name": "Gladstone Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -23.8479533,
+        151.2612009
+      ],
+      "new": [
+        -23.8571249,
+        151.243877
+      ],
+      "offset_m": 2036
+    },
+    {
+      "id": 81,
+      "name": "Gold Coast Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.9719229,
+        153.4151327
+      ],
+      "new": [
+        -27.9580572,
+        153.3999417
+      ],
+      "offset_m": 2145
+    },
+    {
+      "id": 87,
+      "name": "Hervey Bay Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -25.2902841,
+        152.8378673
+      ],
+      "new": [
+        -25.2925471,
+        152.8300259
+      ],
+      "offset_m": 828
+    },
+    {
+      "id": 131,
+      "name": "Inala Primary Care",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.6005083,
+        152.9748581
+      ],
+      "new": [
+        -27.6005992,
+        152.9712219
+      ],
+      "offset_m": 358
+    },
+    {
+      "id": 133,
+      "name": "Ipswich Medical Centre",
+      "status": "OK",
+      "state": "QLD",
+      "offset_m": 31
+    },
+    {
+      "id": 88,
+      "name": "Logan Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.6415216,
+        153.1052721
+      ],
+      "new": [
+        -27.6410157,
+        153.1130138
+      ],
+      "offset_m": 765
+    },
+    {
+      "id": 85,
+      "name": "Mackay Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -21.1414,
+        149.1865
+      ],
+      "new": [
+        -21.1390199,
+        149.1766818
+      ],
+      "offset_m": 1052
+    },
+    {
+      "id": 161,
+      "name": "Morayfield Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.1036441,
+        152.9496869
+      ],
+      "new": [
+        -27.1005086,
+        152.9488233
+      ],
+      "offset_m": 359
+    },
+    {
+      "id": 183,
+      "name": "Mount Isa Medical Centre",
+      "status": "OK",
+      "state": "QLD",
+      "offset_m": 187
+    },
+    {
+      "id": 91,
+      "name": "Nambour Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -26.6254896,
+        152.9588668
+      ],
+      "new": [
+        -26.6288706,
+        152.9599306
+      ],
+      "offset_m": 391
+    },
+    {
+      "id": 157,
+      "name": "North Lakes Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.2386159,
+        153.0184005
+      ],
+      "new": [
+        -27.2295122,
+        153.0107916
+      ],
+      "offset_m": 1261
+    },
+    {
+      "id": 90,
+      "name": "Redcliffe Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.2270271,
+        153.1149481
+      ],
+      "new": [
+        -27.2289074,
+        153.1014202
+      ],
+      "offset_m": 1354
+    },
+    {
+      "id": 84,
+      "name": "Rockhampton Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -23.3790992,
+        150.5060064
+      ],
+      "new": [
+        -23.3738847,
+        150.5084704
+      ],
+      "offset_m": 632
+    },
+    {
+      "id": 78,
+      "name": "SmartClinics Brisbane CBD",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.4689765,
+        153.0249924
+      ],
+      "new": [
+        -27.4728094,
+        153.0191684
+      ],
+      "offset_m": 715
+    },
+    {
+      "id": 80,
+      "name": "SmartClinics Ipswich",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.6164715,
+        152.7651346
+      ],
+      "new": [
+        -27.6189503,
+        152.7607471
+      ],
+      "offset_m": 513
+    },
+    {
+      "id": 79,
+      "name": "SmartClinics Southport",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.9720829,
+        153.4060515
+      ],
+      "new": [
+        -27.96133,
+        153.3859113
+      ],
+      "offset_m": 2311
+    },
+    {
+      "id": 14,
+      "name": "SmartClinics Toowoomba",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.5895426,
+        151.9528969
+      ],
+      "new": [
+        -22.2581282,
+        148.8569828
+      ],
+      "offset_m": 669914
+    },
+    {
+      "id": 156,
+      "name": "Springfield Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.688555,
+        152.9131933
+      ],
+      "new": [
+        -27.6707719,
+        152.9087553
+      ],
+      "offset_m": 2025
+    },
+    {
+      "id": 83,
+      "name": "Sunshine Coast Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -26.8031058,
+        153.12594
+      ],
+      "new": [
+        -26.8112875,
+        153.1264956
+      ],
+      "offset_m": 911
+    },
+    {
+      "id": 82,
+      "name": "Townsville Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -19.271691,
+        146.8022547
+      ],
+      "new": [
+        -19.2660711,
+        146.7962356
+      ],
+      "offset_m": 889
+    },
+    {
+      "id": 160,
+      "name": "Upper Mount Gravatt Medical Centre",
+      "status": "FIXED",
+      "state": "QLD",
+      "old": [
+        -27.5608299,
+        153.0836256
+      ],
+      "new": [
+        -27.5483872,
+        153.0809917
+      ],
+      "offset_m": 1408
+    },
+    {
+      "id": 16,
+      "name": "Adelaide Medical Centre",
+      "status": "FIXED",
+      "state": "SA",
+      "old": [
+        -34.926023,
+        138.6063397
+      ],
+      "new": [
+        -34.9076225,
+        138.5782584
+      ],
+      "offset_m": 3277
+    },
+    {
+      "id": 95,
+      "name": "Elizabeth Medical Centre",
+      "status": "OK",
+      "state": "SA",
+      "offset_m": 137
+    },
+    {
+      "id": 100,
+      "name": "Gawler Medical Centre",
+      "status": "FIXED",
+      "state": "SA",
+      "old": [
+        -34.6037934,
+        138.749661
+      ],
+      "new": [
+        -34.6019799,
+        138.7491069
+      ],
+      "offset_m": 208
+    },
+    {
+      "id": 98,
+      "name": "Marion Medical Centre",
+      "status": "FIXED",
+      "state": "SA",
+      "old": [
+        -34.9934381,
+        138.5568679
+      ],
+      "new": [
+        -35.0113317,
+        138.5494989
+      ],
+      "offset_m": 2100
+    },
+    {
+      "id": 96,
+      "name": "Modbury Medical Centre",
+      "status": "FIXED",
+      "state": "SA",
+      "old": [
+        -34.8278857,
+        138.6933637
+      ],
+      "new": [
+        -34.8317012,
+        138.6875939
+      ],
+      "offset_m": 676
+    },
+    {
+      "id": 169,
+      "name": "Morphett Vale Medical Centre",
+      "status": "FIXED",
+      "state": "SA",
+      "old": [
+        -35.1272,
+        138.5249
+      ],
+      "new": [
+        -35.1211453,
+        138.523865
+      ],
+      "offset_m": 680
+    },
+    {
+      "id": 99,
+      "name": "Mount Barker Medical Centre",
+      "status": "FIXED",
+      "state": "SA",
+      "old": [
+        -35.0671016,
+        138.8604051
+      ],
+      "new": [
+        -35.0738412,
+        138.8629347
+      ],
+      "offset_m": 784
+    },
+    {
+      "id": 101,
+      "name": "Mount Gambier Medical Centre",
+      "status": "FIXED",
+      "state": "SA",
+      "old": [
+        -37.8339862,
+        140.7906619
+      ],
+      "new": [
+        -37.8188056,
+        140.782541
+      ],
+      "offset_m": 1833
+    },
+    {
+      "id": 97,
+      "name": "Noarlunga Medical Centre",
+      "status": "FIXED",
+      "state": "SA",
+      "old": [
+        -35.1399,
+        138.5122
+      ],
+      "new": [
+        -35.1392391,
+        138.4992785
+      ],
+      "offset_m": 1177
+    },
+    {
+      "id": 102,
+      "name": "Port Augusta Medical Centre",
+      "status": "FIXED",
+      "state": "SA",
+      "old": [
+        -32.4842,
+        137.7724014
+      ],
+      "new": [
+        -32.4937798,
+        137.7620771
+      ],
+      "offset_m": 1440
+    },
+    {
+      "id": 167,
+      "name": "Prospect Medical Centre",
+      "status": "FAILED",
+      "state": "SA",
+      "address": "120 Prospect Road, Prospect SA 5082"
+    },
+    {
+      "id": 94,
+      "name": "Salisbury Medical Centre",
+      "status": "FIXED",
+      "state": "SA",
+      "old": [
+        -34.761267,
+        138.6485653
+      ],
+      "new": [
+        -34.7626761,
+        138.6438259
+      ],
+      "offset_m": 460
+    },
+    {
+      "id": 93,
+      "name": "SmartClinics Adelaide",
+      "status": "FIXED",
+      "state": "SA",
+      "old": [
+        -34.9246417,
+        138.6027283
+      ],
+      "new": [
+        -34.9157186,
+        138.6000975
+      ],
+      "offset_m": 1021
+    },
+    {
+      "id": 168,
+      "name": "Tea Tree Gully Medical Centre",
+      "status": "FIXED",
+      "state": "SA",
+      "old": [
+        -34.8278857,
+        138.6933637
+      ],
+      "new": [
+        -34.8273371,
+        138.7018721
+      ],
+      "offset_m": 779
+    },
+    {
+      "id": 171,
+      "name": "Unley Medical Centre",
+      "status": "FIXED",
+      "state": "SA",
+      "old": [
+        -34.9593556,
+        138.6081549
+      ],
+      "new": [
+        -34.9505964,
+        138.6038789
+      ],
+      "offset_m": 1049
+    },
+    {
+      "id": 103,
+      "name": "Whyalla Medical Centre",
+      "status": "FIXED",
+      "state": "SA",
+      "old": [
+        -33.0352643,
+        137.5864772
+      ],
+      "new": [
+        -33.0371836,
+        137.5727108
+      ],
+      "offset_m": 1301
+    },
+    {
+      "id": 170,
+      "name": "Woodville Medical Centre",
+      "status": "FIXED",
+      "state": "SA",
+      "old": [
+        -34.8760955,
+        138.5286224
+      ],
+      "new": [
+        -34.8820093,
+        138.5336414
+      ],
+      "offset_m": 801
+    },
+    {
+      "id": 27,
+      "name": "Bridgewater Medical Centre",
+      "status": "FIXED",
+      "state": "TAS",
+      "old": [
+        -42.743,
+        147.2309
+      ],
+      "new": [
+        -42.7376299,
+        147.2452359
+      ],
+      "offset_m": 1314
+    },
+    {
+      "id": 3,
+      "name": "Calvary St Luke's Medical Centre",
+      "status": "FIXED",
+      "state": "TAS",
+      "old": [
+        -41.4377732,
+        147.1498519
+      ],
+      "new": [
+        -41.4339239,
+        147.1495684
+      ],
+      "offset_m": 429
+    },
+    {
+      "id": 20,
+      "name": "Calvary St Lukes Medical Centre",
+      "status": "FIXED",
+      "state": "TAS",
+      "old": [
+        -41.4377732,
+        147.1498519
+      ],
+      "new": [
+        -41.4339239,
+        147.1495684
+      ],
+      "offset_m": 429
+    },
+    {
+      "id": 6,
+      "name": "Devonport Medical Centre",
+      "status": "FIXED",
+      "state": "TAS",
+      "old": [
+        -41.1804295,
+        146.3603246
+      ],
+      "new": [
+        -41.1810493,
+        146.357125
+      ],
+      "offset_m": 276
+    },
+    {
+      "id": 5,
+      "name": "GP Plus Super Clinic Kingston",
+      "status": "FIXED",
+      "state": "TAS",
+      "old": [
+        -42.9917417,
+        147.3002636
+      ],
+      "new": [
+        -42.9749107,
+        147.310366
+      ],
+      "offset_m": 2044
+    },
+    {
+      "id": 8,
+      "name": "Glenorchy City Medical",
+      "status": "OK",
+      "state": "TAS",
+      "offset_m": 110
+    },
+    {
+      "id": 4,
+      "name": "Hobart City Doctors",
+      "status": "FIXED",
+      "state": "TAS",
+      "old": [
+        -42.8860449,
+        147.3239317
+      ],
+      "new": [
+        -42.883993,
+        147.3266864
+      ],
+      "offset_m": 320
+    },
+    {
+      "id": 29,
+      "name": "Moonah Medical Centre",
+      "status": "FIXED",
+      "state": "TAS",
+      "old": [
+        -42.8486697,
+        147.3092736
+      ],
+      "new": [
+        -42.8482813,
+        147.2962055
+      ],
+      "offset_m": 1066
+    },
+    {
+      "id": 2,
+      "name": "MyHealth Launceston",
+      "status": "FIXED",
+      "state": "TAS",
+      "old": [
+        -41.432481,
+        147.1457086
+      ],
+      "new": [
+        -41.4441995,
+        147.138159
+      ],
+      "offset_m": 1447
+    },
+    {
+      "id": 129,
+      "name": "Ochre Health Medical Centre Clarence",
+      "status": "FIXED",
+      "state": "TAS",
+      "old": [
+        -42.8782506,
+        147.3948487
+      ],
+      "new": [
+        -42.8381629,
+        147.2891256
+      ],
+      "offset_m": 9702
+    },
+    {
+      "id": 128,
+      "name": "Ochre Health Medical Centre Launceston",
+      "status": "FIXED",
+      "state": "TAS",
+      "old": [
+        -41.4495162,
+        147.1377949
+      ],
+      "new": [
+        -41.4441995,
+        147.138159
+      ],
+      "offset_m": 592
+    },
+    {
+      "id": 26,
+      "name": "Rosny Park Family Medical Centre",
+      "status": "OK",
+      "state": "TAS",
+      "offset_m": 120
+    },
+    {
+      "id": 28,
+      "name": "Sandy Bay Medical Centre",
+      "status": "FIXED",
+      "state": "TAS",
+      "old": [
+        -42.9130725,
+        147.3549648
+      ],
+      "new": [
+        -42.9039212,
+        147.341003
+      ],
+      "offset_m": 1526
+    },
+    {
+      "id": 1,
+      "name": "TAS Family Medical Centre",
+      "status": "FIXED",
+      "state": "TAS",
+      "old": [
+        -41.0627153,
+        145.9077191
+      ],
+      "new": [
+        -41.0629677,
+        145.9141737
+      ],
+      "offset_m": 542
+    },
+    {
+      "id": 7,
+      "name": "Ulverstone Medical Centre",
+      "status": "FIXED",
+      "state": "TAS",
+      "old": [
+        -41.1583994,
+        146.1716065
+      ],
+      "new": [
+        -41.155505,
+        146.1709294
+      ],
+      "offset_m": 327
+    },
+    {
+      "id": 62,
+      "name": "Ballarat Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.5599079,
+        143.8612769
+      ],
+      "new": [
+        -37.5924102,
+        143.8358807
+      ],
+      "offset_m": 4251
+    },
+    {
+      "id": 63,
+      "name": "Bendigo Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -36.803879,
+        144.2312613
+      ],
+      "new": [
+        -36.7358243,
+        144.2917026
+      ],
+      "offset_m": 9287
+    },
+    {
+      "id": 151,
+      "name": "Berwick Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -38.0315065,
+        145.345579
+      ],
+      "new": [
+        -38.0412662,
+        145.3444622
+      ],
+      "offset_m": 1090
+    },
+    {
+      "id": 150,
+      "name": "Caroline Springs Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.738,
+        144.7373
+      ],
+      "new": [
+        -37.7446626,
+        144.7442226
+      ],
+      "offset_m": 959
+    },
+    {
+      "id": 146,
+      "name": "Casey Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -38.0485754,
+        145.2608431
+      ],
+      "new": [
+        -38.0860681,
+        145.2438
+      ],
+      "offset_m": 4428
+    },
+    {
+      "id": 68,
+      "name": "Craigieburn Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.5930944,
+        144.9136344
+      ],
+      "new": [
+        -37.5945544,
+        144.9179905
+      ],
+      "offset_m": 417
+    },
+    {
+      "id": 59,
+      "name": "Dandenong Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.989985,
+        145.213915
+      ],
+      "new": [
+        -37.9897249,
+        145.2095229
+      ],
+      "offset_m": 386
+    },
+    {
+      "id": 155,
+      "name": "Deer Park Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.7707,
+        144.7722
+      ],
+      "new": [
+        -37.7645886,
+        144.765839
+      ],
+      "offset_m": 880
+    },
+    {
+      "id": 152,
+      "name": "Endeavour Hills Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.9730596,
+        145.2430817
+      ],
+      "new": [
+        -37.9713655,
+        145.2681537
+      ],
+      "offset_m": 2206
+    },
+    {
+      "id": 66,
+      "name": "Footscray Medical Centre",
+      "status": "OK",
+      "state": "VIC",
+      "offset_m": 115
+    },
+    {
+      "id": 60,
+      "name": "Frankston Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -38.1472158,
+        145.1243394
+      ],
+      "new": [
+        -38.1459244,
+        145.128672
+      ],
+      "offset_m": 405
+    },
+    {
+      "id": 134,
+      "name": "GP Super Clinic Ballan",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.5996,
+        144.2284
+      ],
+      "new": [
+        -37.6000547,
+        144.2206207
+      ],
+      "offset_m": 687
+    },
+    {
+      "id": 61,
+      "name": "Geelong Medical Group",
+      "status": "OK",
+      "state": "VIC",
+      "offset_m": 97
+    },
+    {
+      "id": 65,
+      "name": "Heidelberg Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.7561458,
+        145.0713843
+      ],
+      "new": [
+        -37.7525614,
+        145.0564801
+      ],
+      "offset_m": 1370
+    },
+    {
+      "id": 187,
+      "name": "Horsham Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -36.7157697,
+        142.1973897
+      ],
+      "new": [
+        -36.7183312,
+        142.198459
+      ],
+      "offset_m": 300
+    },
+    {
+      "id": 125,
+      "name": "IPN Medical Centre Broadmeadows",
+      "status": "OK",
+      "state": "VIC",
+      "offset_m": 33
+    },
+    {
+      "id": 127,
+      "name": "IPN Medical Centre Chadstone",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.8866,
+        145.0822
+      ],
+      "new": [
+        -37.8883935,
+        145.0815902
+      ],
+      "offset_m": 206
+    },
+    {
+      "id": 126,
+      "name": "IPN Medical Centre Epping",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.6536625,
+        145.0189831
+      ],
+      "new": [
+        -37.7218751,
+        144.9921649
+      ],
+      "offset_m": 7944
+    },
+    {
+      "id": 124,
+      "name": "IPN Medical Centre Werribee Plaza",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.8891968,
+        144.693403
+      ],
+      "new": [
+        -37.8984158,
+        144.6571085
+      ],
+      "offset_m": 3346
+    },
+    {
+      "id": 12,
+      "name": "Melbourne CBD Medical",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.8148,
+        144.9687
+      ],
+      "new": [
+        -37.8158059,
+        144.9653111
+      ],
+      "offset_m": 318
+    },
+    {
+      "id": 70,
+      "name": "Melton Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.6905377,
+        144.6040323
+      ],
+      "new": [
+        -37.6835628,
+        144.578961
+      ],
+      "offset_m": 2339
+    },
+    {
+      "id": 75,
+      "name": "Mildura Medical Centre",
+      "status": "OK",
+      "state": "VIC",
+      "offset_m": 104
+    },
+    {
+      "id": 58,
+      "name": "MyHealth Medical Centre Box Hill",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.8175,
+        145.1219
+      ],
+      "new": [
+        -37.8195968,
+        145.1208813
+      ],
+      "offset_m": 250
+    },
+    {
+      "id": 149,
+      "name": "Narre Warren Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -38.0235433,
+        145.3064626
+      ],
+      "new": [
+        -38.0185059,
+        145.3089723
+      ],
+      "offset_m": 602
+    },
+    {
+      "id": 69,
+      "name": "Pakenham Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -38.0716,
+        145.486
+      ],
+      "new": [
+        -38.0743205,
+        145.4797301
+      ],
+      "offset_m": 627
+    },
+    {
+      "id": 147,
+      "name": "Point Cook Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.8834223,
+        144.7374509
+      ],
+      "new": [
+        -37.8854155,
+        144.7380928
+      ],
+      "offset_m": 229
+    },
+    {
+      "id": 154,
+      "name": "Preston Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.7415828,
+        145.0035901
+      ],
+      "new": [
+        -37.7397546,
+        145.0049941
+      ],
+      "offset_m": 238
+    },
+    {
+      "id": 153,
+      "name": "Reservoir Medical Centre",
+      "status": "OK",
+      "state": "VIC",
+      "offset_m": 96
+    },
+    {
+      "id": 67,
+      "name": "Ringwood Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.8139,
+        145.2294
+      ],
+      "new": [
+        -37.8126562,
+        145.23719
+      ],
+      "offset_m": 698
+    },
+    {
+      "id": 72,
+      "name": "Shepparton Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -36.3798409,
+        145.3980457
+      ],
+      "new": [
+        -36.3724376,
+        145.4039757
+      ],
+      "offset_m": 980
+    },
+    {
+      "id": 57,
+      "name": "SmartClinics Melbourne Central",
+      "status": "OK",
+      "state": "VIC",
+      "offset_m": 168
+    },
+    {
+      "id": 71,
+      "name": "Sunbury Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.5802433,
+        144.7304527
+      ],
+      "new": [
+        -37.5847652,
+        144.7311703
+      ],
+      "offset_m": 507
+    },
+    {
+      "id": 13,
+      "name": "Sunshine Hospital Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.7587502,
+        144.7991098
+      ],
+      "new": [
+        -37.7602073,
+        144.816728
+      ],
+      "offset_m": 1557
+    },
+    {
+      "id": 186,
+      "name": "Swan Hill Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -35.3485245,
+        143.56193
+      ],
+      "new": [
+        -35.3394657,
+        143.5578118
+      ],
+      "offset_m": 1074
+    },
+    {
+      "id": 148,
+      "name": "Tarneit Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.8600332,
+        144.6667357
+      ],
+      "new": [
+        -37.8491364,
+        144.6734411
+      ],
+      "offset_m": 1347
+    },
+    {
+      "id": 73,
+      "name": "Traralgon Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -38.1921834,
+        146.5359258
+      ],
+      "new": [
+        -38.195678,
+        146.5360143
+      ],
+      "offset_m": 389
+    },
+    {
+      "id": 74,
+      "name": "Warrnambool Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -38.3804905,
+        142.4766286
+      ],
+      "new": [
+        -38.3816776,
+        142.4835258
+      ],
+      "offset_m": 616
+    },
+    {
+      "id": 64,
+      "name": "Werribee Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -37.902657,
+        144.6584629
+      ],
+      "new": [
+        -37.8984158,
+        144.665934
+      ],
+      "offset_m": 808
+    },
+    {
+      "id": 185,
+      "name": "Wodonga Medical Centre",
+      "status": "FIXED",
+      "state": "VIC",
+      "old": [
+        -36.1213,
+        146.8889
+      ],
+      "new": [
+        -36.1191031,
+        146.8884867
+      ],
+      "offset_m": 247
+    },
+    {
+      "id": 108,
+      "name": "Armadale Medical Centre",
+      "status": "FIXED",
+      "state": "WA",
+      "old": [
+        -32.1500767,
+        116.0204414
+      ],
+      "new": [
+        -32.1448815,
+        116.0027658
+      ],
+      "offset_m": 1762
+    },
+    {
+      "id": 165,
+      "name": "Baldivis Medical Centre",
+      "status": "OK",
+      "state": "WA",
+      "offset_m": 197
+    },
+    {
+      "id": 112,
+      "name": "Bunbury Medical Centre",
+      "status": "FAILED",
+      "state": "WA",
+      "address": "2 Blair Street, Bunbury WA 6230"
+    },
+    {
+      "id": 164,
+      "name": "Canning Vale Medical Centre",
+      "status": "FIXED",
+      "state": "WA",
+      "old": [
+        -32.0859308,
+        115.9143913
+      ],
+      "new": [
+        -32.0838537,
+        115.9197265
+      ],
+      "offset_m": 553
+    },
+    {
+      "id": 163,
+      "name": "Ellenbrook Medical Centre",
+      "status": "FIXED",
+      "state": "WA",
+      "old": [
+        -31.784719,
+        115.9654835
+      ],
+      "new": [
+        -31.7791173,
+        115.9748254
+      ],
+      "offset_m": 1081
+    },
+    {
+      "id": 110,
+      "name": "Fremantle Medical Centre",
+      "status": "FIXED",
+      "state": "WA",
+      "old": [
+        -32.0503182,
+        115.7487259
+      ],
+      "new": [
+        -32.054857,
+        115.7640883
+      ],
+      "offset_m": 1533
+    },
+    {
+      "id": 113,
+      "name": "Geraldton Medical Centre",
+      "status": "FIXED",
+      "state": "WA",
+      "old": [
+        -28.7822487,
+        114.6148472
+      ],
+      "new": [
+        -28.761058,
+        114.6150308
+      ],
+      "offset_m": 2356
+    },
+    {
+      "id": 106,
+      "name": "Joondalup Health Campus Medical Centre",
+      "status": "FIXED",
+      "state": "WA",
+      "old": [
+        -31.7411785,
+        115.7531333
+      ],
+      "new": [
+        -31.7385814,
+        115.7737867
+      ],
+      "offset_m": 1974
+    },
+    {
+      "id": 111,
+      "name": "Mandurah Medical Centre",
+      "status": "FIXED",
+      "state": "WA",
+      "old": [
+        -32.5395945,
+        115.7563395
+      ],
+      "new": [
+        -32.5356548,
+        115.7328766
+      ],
+      "offset_m": 2243
+    },
+    {
+      "id": 109,
+      "name": "Midland Medical Centre",
+      "status": "FIXED",
+      "state": "WA",
+      "old": [
+        -31.8885793,
+        116.0122913
+      ],
+      "new": [
+        -31.8914383,
+        116.0046919
+      ],
+      "offset_m": 785
+    },
+    {
+      "id": 162,
+      "name": "Murdoch Medical Centre",
+      "status": "FIXED",
+      "state": "WA",
+      "old": [
+        -32.0691968,
+        115.8447691
+      ],
+      "new": [
+        -32.2971739,
+        115.8014883
+      ],
+      "offset_m": 25675
+    },
+    {
+      "id": 17,
+      "name": "Perth City Medical",
+      "status": "FIXED",
+      "state": "WA",
+      "old": [
+        -31.9557156,
+        115.8636291
+      ],
+      "new": [
+        -31.9539199,
+        115.8575075
+      ],
+      "offset_m": 611
+    },
+    {
+      "id": 107,
+      "name": "Rockingham Medical Centre",
+      "status": "FIXED",
+      "state": "WA",
+      "old": [
+        -32.2866772,
+        115.746116
+      ],
+      "new": [
+        -32.2887022,
+        115.7460145
+      ],
+      "offset_m": 225
+    },
+    {
+      "id": 105,
+      "name": "SmartClinics Perth CBD",
+      "status": "FIXED",
+      "state": "WA",
+      "old": [
+        -31.9553419,
+        115.8575621
+      ],
+      "new": [
+        -31.9250335,
+        115.8740301
+      ],
+      "offset_m": 3711
+    },
+    {
+      "id": 166,
+      "name": "Success Medical Centre",
+      "status": "FIXED",
+      "state": "WA",
+      "old": [
+        -32.1529591,
+        115.8531311
+      ],
+      "new": [
+        -32.1294243,
+        115.8544523
+      ],
+      "offset_m": 2620
+    },
+    {
+      "id": 114,
+      "name": "Wanneroo Medical Centre",
+      "status": "FIXED",
+      "state": "WA",
+      "old": [
+        -31.7527835,
+        115.8048485
+      ],
+      "new": [
+        -31.7428306,
+        115.7956677
+      ],
+      "offset_m": 1407
+    }
+  ]
+}

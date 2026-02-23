@@ -1,0 +1,3290 @@
+{
+  "Roxby Downs_SA": {
+    "town": "Roxby Downs",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 839631.1,
+    "max_pharmacy_dist": 228.7214189653733,
+    "max_pop": 3671
+  },
+  "Maningrida_NT": {
+    "town": "Maningrida",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 703201.9,
+    "max_pharmacy_dist": 279.2720394019876,
+    "max_pop": 2518
+  },
+  "Borroloola_NT": {
+    "town": "Borroloola",
+    "state": "NT",
+    "opp_count": 2,
+    "max_score": 414193.0,
+    "max_pharmacy_dist": 433.7085831049612,
+    "max_pop": 955
+  },
+  "Warburton_WA": {
+    "town": "Warburton",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 307157.0,
+    "max_pharmacy_dist": 601.0878832588435,
+    "max_pop": 511
+  },
+  "Doomadgee_QLD": {
+    "town": "Doomadgee",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 303295.3,
+    "max_pharmacy_dist": 218.66509516353173,
+    "max_pop": 1387
+  },
+  "Galiwinku_NT": {
+    "town": "Galiwinku",
+    "state": "NT",
+    "opp_count": 2,
+    "max_score": 295061.8,
+    "max_pharmacy_dist": 134.18396031215923,
+    "max_pop": 2199
+  },
+  "Ngukurr_NT": {
+    "town": "Ngukurr",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 290691.8,
+    "max_pharmacy_dist": 267.17707712889415,
+    "max_pop": 1088
+  },
+  "Yulara_NT": {
+    "town": "Yulara",
+    "state": "NT",
+    "opp_count": 2,
+    "max_score": 286480.1,
+    "max_pharmacy_dist": 335.84564593130847,
+    "max_pop": 853
+  },
+  "Ramingining_NT": {
+    "town": "Ramingining",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 266098.1,
+    "max_pharmacy_dist": 202.5093443984803,
+    "max_pop": 1314
+  },
+  "Gunbalanya_NT": {
+    "town": "Gunbalanya",
+    "state": "NT",
+    "opp_count": 2,
+    "max_score": 246776.6,
+    "max_pharmacy_dist": 214.02739618130812,
+    "max_pop": 1153
+  },
+  "Milingimbi_NT": {
+    "town": "Milingimbi",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 222559.4,
+    "max_pharmacy_dist": 202.87957380077876,
+    "max_pop": 1097
+  },
+  "Lajamanu_NT": {
+    "town": "Lajamanu",
+    "state": "NT",
+    "opp_count": 2,
+    "max_score": 205310.2,
+    "max_pharmacy_dist": 313.93113899060893,
+    "max_pop": 653
+  },
+  "Gununa_QLD": {
+    "town": "Gununa",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 202826.1,
+    "max_pharmacy_dist": 198.4564232379794,
+    "max_pop": 1022
+  },
+  "Yuendumu_NT": {
+    "town": "Yuendumu",
+    "state": "NT",
+    "opp_count": 2,
+    "max_score": 196632.8,
+    "max_pharmacy_dist": 265.72235645018935,
+    "max_pop": 740
+  },
+  "Kintore_NT": {
+    "town": "Kintore",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 193053.0,
+    "max_pharmacy_dist": 459.6478303156801,
+    "max_pop": 420
+  },
+  "Angurugu_NT": {
+    "town": "Angurugu",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 179204.8,
+    "max_pharmacy_dist": 202.94811105713518,
+    "max_pop": 883
+  },
+  "Numbulwar_NT": {
+    "town": "Numbulwar",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 176120.2,
+    "max_pharmacy_dist": 258.6168817676915,
+    "max_pop": 681
+  },
+  "Kalkarindji_NT": {
+    "town": "Kalkarindji",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 157689.3,
+    "max_pharmacy_dist": 289.8707710649027,
+    "max_pop": 544
+  },
+  "Amata_SA": {
+    "town": "Amata",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 149980.6,
+    "max_pharmacy_dist": 381.63382827095967,
+    "max_pop": 393
+  },
+  "Unknown_NT": {
+    "town": "Unknown",
+    "state": "NT",
+    "opp_count": 48,
+    "max_score": 148770.0,
+    "max_pharmacy_dist": 503.15352531268326,
+    "max_pop": 600
+  },
+  "Unknown_WA": {
+    "town": "Unknown",
+    "state": "WA",
+    "opp_count": 32,
+    "max_score": 145542.8,
+    "max_pharmacy_dist": 584.4734271398402,
+    "max_pop": 1500
+  },
+  "Alyangula_NT": {
+    "town": "Alyangula",
+    "state": "NT",
+    "opp_count": 2,
+    "max_score": 142442.2,
+    "max_pharmacy_dist": 189.6653530572574,
+    "max_pop": 751
+  },
+  "Jabiru_NT": {
+    "town": "Jabiru",
+    "state": "NT",
+    "opp_count": 2,
+    "max_score": 142355.2,
+    "max_pharmacy_dist": 188.55357876393538,
+    "max_pop": 755
+  },
+  "Minyerri_NT": {
+    "town": "Minyerri",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 138190.0,
+    "max_pharmacy_dist": 212.60097831906398,
+    "max_pop": 650
+  },
+  "Warruwi_NT": {
+    "town": "Warruwi",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 116320.3,
+    "max_pharmacy_dist": 269.2647174312841,
+    "max_pop": 432
+  },
+  "Ampilatwatja_NT": {
+    "town": "Ampilatwatja",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 109135.4,
+    "max_pharmacy_dist": 248.59803228067565,
+    "max_pop": 439
+  },
+  "Wurrumiyanga_NT": {
+    "town": "Wurrumiyanga",
+    "state": "NT",
+    "opp_count": 2,
+    "max_score": 108797.1,
+    "max_pharmacy_dist": 71.53070348541961,
+    "max_pop": 1521
+  },
+  "Balgo_WA": {
+    "town": "Balgo",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 101857.6,
+    "max_pharmacy_dist": 215.79808943813418,
+    "max_pop": 472
+  },
+  "Mount Magnet_WA": {
+    "town": "Mount Magnet",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 101272.3,
+    "max_pharmacy_dist": 175.82185677188195,
+    "max_pop": 576
+  },
+  "Beagle Bay_WA": {
+    "town": "Beagle Bay",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 98554.6,
+    "max_pharmacy_dist": 108.66237749282071,
+    "max_pop": 907
+  },
+  "Gapuwiyak_NT": {
+    "town": "Gapuwiyak",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 93009.2,
+    "max_pharmacy_dist": 112.33059419057862,
+    "max_pop": 828
+  },
+  "Papunya_NT": {
+    "town": "Papunya",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 90832.4,
+    "max_pharmacy_dist": 207.37661029577788,
+    "max_pop": 438
+  },
+  "Unknown_NSW": {
+    "town": "Unknown",
+    "state": "NSW",
+    "opp_count": 37,
+    "max_score": 89945.0,
+    "max_pharmacy_dist": 270.09206941355126,
+    "max_pop": 500
+  },
+  "Hermannsburg_NT": {
+    "town": "Hermannsburg",
+    "state": "NT",
+    "opp_count": 2,
+    "max_score": 86229.8,
+    "max_pharmacy_dist": 115.28242328962858,
+    "max_pop": 751
+  },
+  "Umbakumba_NT": {
+    "town": "Umbakumba",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 78097.4,
+    "max_pharmacy_dist": 186.38779578326165,
+    "max_pop": 419
+  },
+  "Pannawonica_WA": {
+    "town": "Pannawonica",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 76089.8,
+    "max_pharmacy_dist": 111.08123494387983,
+    "max_pop": 685
+  },
+  "St Arnaud_VIC": {
+    "town": "St Arnaud",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 75728.1,
+    "max_pharmacy_dist": 35.62043310511105,
+    "max_pop": 2126
+  },
+  "Unknown_QLD": {
+    "town": "Unknown",
+    "state": "QLD",
+    "opp_count": 48,
+    "max_score": 74545.0,
+    "max_pharmacy_dist": 496.5303406618587,
+    "max_pop": 1600
+  },
+  "Palumpa_NT": {
+    "town": "Palumpa",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 72851.0,
+    "max_pharmacy_dist": 200.14107190717687,
+    "max_pop": 364
+  },
+  "Mallacoota_VIC": {
+    "town": "Mallacoota",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 63133.5,
+    "max_pharmacy_dist": 56.472304176937165,
+    "max_pop": 1118
+  },
+  "Wyndham_WA": {
+    "town": "Wyndham",
+    "state": "WA",
+    "opp_count": 2,
+    "max_score": 62386.3,
+    "max_pharmacy_dist": 73.83467455329452,
+    "max_pop": 845
+  },
+  "Alpurrurulam_NT": {
+    "town": "Alpurrurulam",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 60543.0,
+    "max_pharmacy_dist": 172.9751707166825,
+    "max_pop": 350
+  },
+  "Ali Curung_NT": {
+    "town": "Ali Curung",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 60250.5,
+    "max_pharmacy_dist": 152.91603623035712,
+    "max_pop": 394
+  },
+  "Mount Morgan_QLD": {
+    "town": "Mount Morgan",
+    "state": "QLD",
+    "opp_count": 2,
+    "max_score": 59862.1,
+    "max_pharmacy_dist": 24.073017441667186,
+    "max_pop": 2487
+  },
+  "Bidyadanga_WA": {
+    "town": "Bidyadanga",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 55404.0,
+    "max_pharmacy_dist": 93.43429165136979,
+    "max_pop": 593
+  },
+  "Laverton_WA": {
+    "town": "Laverton",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 54776.3,
+    "max_pharmacy_dist": 108.03666229905005,
+    "max_pop": 507
+  },
+  "Ardyaloon_WA": {
+    "town": "Ardyaloon",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 52610.1,
+    "max_pharmacy_dist": 113.13648087665875,
+    "max_pop": 465
+  },
+  "Capel_WA": {
+    "town": "Capel",
+    "state": "WA",
+    "opp_count": 2,
+    "max_score": 50983.2,
+    "max_pharmacy_dist": 17.464834485439255,
+    "max_pop": 2402
+  },
+  "Beswick_NT": {
+    "town": "Beswick",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 49809.8,
+    "max_pharmacy_dist": 91.89855036246206,
+    "max_pop": 542
+  },
+  "Leinster_WA": {
+    "town": "Leinster",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 49110.3,
+    "max_pharmacy_dist": 124.32799394700024,
+    "max_pop": 395
+  },
+  "Milikapiti_NT": {
+    "town": "Milikapiti",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 44037.2,
+    "max_pharmacy_dist": 106.36588889631653,
+    "max_pop": 414
+  },
+  "Mataranka_NT": {
+    "town": "Mataranka",
+    "state": "NT",
+    "opp_count": 3,
+    "max_score": 42939.1,
+    "max_pharmacy_dist": 100.5586794226122,
+    "max_pop": 427
+  },
+  "Daly River_NT": {
+    "town": "Daly River",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 42549.5,
+    "max_pharmacy_dist": 121.57040178132952,
+    "max_pop": 350
+  },
+  "Menindee_NSW": {
+    "town": "Menindee",
+    "state": "NSW",
+    "opp_count": 2,
+    "max_score": 38687.8,
+    "max_pharmacy_dist": 101.81254191079387,
+    "max_pop": 380
+  },
+  "Unknown_SA": {
+    "town": "Unknown",
+    "state": "SA",
+    "opp_count": 16,
+    "max_score": 38093.8,
+    "max_pharmacy_dist": 371.5258604217573,
+    "max_pop": 608
+  },
+  "Pirlangimpi_NT": {
+    "town": "Pirlangimpi",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 37108.0,
+    "max_pharmacy_dist": 117.06131354361787,
+    "max_pop": 317
+  },
+  "Santa Teresa_NT": {
+    "town": "Santa Teresa",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 36252.4,
+    "max_pharmacy_dist": 60.11759975209482,
+    "max_pop": 603
+  },
+  "Glenden_QLD": {
+    "town": "Glenden",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 34172.3,
+    "max_pharmacy_dist": 71.64291077876366,
+    "max_pop": 477
+  },
+  "Quorn_SA": {
+    "town": "Quorn",
+    "state": "SA",
+    "opp_count": 2,
+    "max_score": 34120.5,
+    "max_pharmacy_dist": 29.667461876762466,
+    "max_pop": 1150
+  },
+  "Pine Creek_NT": {
+    "town": "Pine Creek",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 33453.3,
+    "max_pharmacy_dist": 85.34191628781942,
+    "max_pop": 392
+  },
+  "Wongan Hills_WA": {
+    "town": "Wongan Hills",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 33364.5,
+    "max_pharmacy_dist": 46.01772154281447,
+    "max_pop": 725
+  },
+  "Coffin Bay_SA": {
+    "town": "Coffin Bay",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 30305.2,
+    "max_pharmacy_dist": 37.735144885136535,
+    "max_pop": 667
+  },
+  "Unknown_VIC": {
+    "town": "Unknown",
+    "state": "VIC",
+    "opp_count": 31,
+    "max_score": 28748.2,
+    "max_pharmacy_dist": 63.35342032191647,
+    "max_pop": 744
+  },
+  "Coolgardie_WA": {
+    "town": "Coolgardie",
+    "state": "WA",
+    "opp_count": 2,
+    "max_score": 28063.1,
+    "max_pharmacy_dist": 36.7847843409391,
+    "max_pop": 763
+  },
+  "Hill Top_NSW": {
+    "town": "Hill Top",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 28024.3,
+    "max_pharmacy_dist": 22.9317,
+    "max_pop": 3236
+  },
+  "Mullewa_WA": {
+    "town": "Mullewa",
+    "state": "WA",
+    "opp_count": 2,
+    "max_score": 26654.2,
+    "max_pharmacy_dist": 85.43201714405046,
+    "max_pop": 312
+  },
+  "Trangie_NSW": {
+    "town": "Trangie",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 25605.1,
+    "max_pharmacy_dist": 33.342800035086654,
+    "max_pop": 768
+  },
+  "Eugowra_NSW": {
+    "town": "Eugowra",
+    "state": "NSW",
+    "opp_count": 2,
+    "max_score": 25063.3,
+    "max_pharmacy_dist": 31.291987457984074,
+    "max_pop": 801
+  },
+  "Kaniva_VIC": {
+    "town": "Kaniva",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 24970.5,
+    "max_pharmacy_dist": 36.55664056313164,
+    "max_pop": 683
+  },
+  "Baradine_NSW": {
+    "town": "Baradine",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 24401.0,
+    "max_pharmacy_dist": 41.63692280124128,
+    "max_pop": 586
+  },
+  "South Golden Beach_NSW": {
+    "town": "South Golden Beach",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 23991.6,
+    "max_pharmacy_dist": 11.4505,
+    "max_pop": 1100
+  },
+  "Hyden_WA": {
+    "town": "Hyden",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 23151.6,
+    "max_pharmacy_dist": 61.41395589953614,
+    "max_pop": 377
+  },
+  "Hope Vale_QLD": {
+    "town": "Hope Vale",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 21927.5,
+    "max_pharmacy_dist": 24.497244268831075,
+    "max_pop": 895
+  },
+  "Barunga_NT": {
+    "town": "Barunga",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 21884.8,
+    "max_pharmacy_dist": 64.93937587393552,
+    "max_pop": 337
+  },
+  "Nundle_NSW": {
+    "town": "Nundle",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 17081.6,
+    "max_pharmacy_dist": 41.26395565177477,
+    "max_pop": 414
+  },
+  "Comboyne_NSW": {
+    "town": "Comboyne",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 16933.8,
+    "max_pharmacy_dist": 27.4861283346018,
+    "max_pop": 616
+  },
+  "Nhulunbuy_NT": {
+    "town": "Nhulunbuy",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 16359.0,
+    "max_pharmacy_dist": 13.9893,
+    "max_pop": 241
+  },
+  "Lismore_VIC": {
+    "town": "Lismore",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 15246.4,
+    "max_pharmacy_dist": 29.723374273972553,
+    "max_pop": 321
+  },
+  "Inverloch_VIC": {
+    "town": "Inverloch",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 15057.3,
+    "max_pharmacy_dist": 25.6552,
+    "max_pop": 199
+  },
+  "Millaa Millaa_QLD": {
+    "town": "Millaa Millaa",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 14719.9,
+    "max_pharmacy_dist": 17.421335515934274,
+    "max_pop": 414
+  },
+  "Batchelor_NT": {
+    "town": "Batchelor",
+    "state": "NT",
+    "opp_count": 2,
+    "max_score": 14201.9,
+    "max_pharmacy_dist": 38.27522417904134,
+    "max_pop": 371
+  },
+  "Woodstock_NSW": {
+    "town": "Woodstock",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 13828.3,
+    "max_pharmacy_dist": 17.457305699870997,
+    "max_pop": 792
+  },
+  "Penshurst_VIC": {
+    "town": "Penshurst",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 12697.3,
+    "max_pharmacy_dist": 25.859635812168055,
+    "max_pop": 491
+  },
+  "Unknown_TAS": {
+    "town": "Unknown",
+    "state": "TAS",
+    "opp_count": 5,
+    "max_score": 10970.0,
+    "max_pharmacy_dist": 26.33810340584815,
+    "max_pop": 500
+  },
+  "Cervantes_WA": {
+    "town": "Cervantes",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 10780.8,
+    "max_pharmacy_dist": 22.46150459360623,
+    "max_pop": 480
+  },
+  "Docklands_VIC": {
+    "town": "Docklands",
+    "state": "VIC",
+    "opp_count": 5,
+    "max_score": 10618.9,
+    "max_pharmacy_dist": 31.66519121032738,
+    "max_pop": 4408329
+  },
+  "Brookton_WA": {
+    "town": "Brookton",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 10475.1,
+    "max_pharmacy_dist": 19.689690403365347,
+    "max_pop": 532
+  },
+  "Bundarra_NSW": {
+    "town": "Bundarra",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 10000.8,
+    "max_pharmacy_dist": 26.739209029583826,
+    "max_pop": 374
+  },
+  "Natimuk_VIC": {
+    "town": "Natimuk",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 9838.8,
+    "max_pharmacy_dist": 23.36761357304924,
+    "max_pop": 421
+  },
+  "Seaham_NSW": {
+    "town": "Seaham",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 8645.0,
+    "max_pharmacy_dist": 14.230799999999999,
+    "max_pop": 533
+  },
+  "Kulnura_NSW": {
+    "town": "Kulnura",
+    "state": "NSW",
+    "opp_count": 2,
+    "max_score": 8606.9,
+    "max_pharmacy_dist": 20.637513814390395,
+    "max_pop": 225
+  },
+  "Manly_NSW": {
+    "town": "Manly",
+    "state": "NSW",
+    "opp_count": 2,
+    "max_score": 8599.9,
+    "max_pharmacy_dist": 0.7743860156529804,
+    "max_pop": 3779142
+  },
+  "Stanley_TAS": {
+    "town": "Stanley",
+    "state": "TAS",
+    "opp_count": 1,
+    "max_score": 8411.8,
+    "max_pharmacy_dist": 16.693852657406165,
+    "max_pop": 504
+  },
+  "Dowerin_WA": {
+    "town": "Dowerin",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 8036.1,
+    "max_pharmacy_dist": 22.50631112205375,
+    "max_pop": 357
+  },
+  "Macedon_VIC": {
+    "town": "Macedon",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 7842.8,
+    "max_pharmacy_dist": 7.259243951389138,
+    "max_pop": 2926
+  },
+  "Amity Point_QLD": {
+    "town": "Amity Point",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 7835.0,
+    "max_pharmacy_dist": 15.669480959260435,
+    "max_pop": 500
+  },
+  "Marburg_QLD": {
+    "town": "Marburg",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 7513.3,
+    "max_pharmacy_dist": 11.2069,
+    "max_pop": 696
+  },
+  "Harrietville_VIC": {
+    "town": "Harrietville",
+    "state": "VIC",
+    "opp_count": 2,
+    "max_score": 6834.0,
+    "max_pharmacy_dist": 26.796778731889265,
+    "max_pop": 128
+  },
+  "Northcliffe_WA": {
+    "town": "Northcliffe",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 6783.0,
+    "max_pharmacy_dist": 22.61411717805762,
+    "max_pop": 300
+  },
+  "Carnamah_WA": {
+    "town": "Carnamah",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 6556.3,
+    "max_pharmacy_dist": 20.87689262121651,
+    "max_pop": 314
+  },
+  "Yirrkala_NT": {
+    "town": "Yirrkala",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 6405.8,
+    "max_pharmacy_dist": 19.498,
+    "max_pop": 657
+  },
+  "Baranduda_VIC": {
+    "town": "Baranduda",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 6355.2,
+    "max_pharmacy_dist": 5.748749795356014,
+    "max_pop": 1950
+  },
+  "Salisbury_QLD": {
+    "town": "Salisbury",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 5527.9,
+    "max_pharmacy_dist": 1.2377042061319152,
+    "max_pop": 1525329
+  },
+  "Roebourne_WA": {
+    "town": "Roebourne",
+    "state": "WA",
+    "opp_count": 2,
+    "max_score": 5525.3,
+    "max_pharmacy_dist": 13.161200000000001,
+    "max_pop": 762
+  },
+  "Allansford_VIC": {
+    "town": "Allansford",
+    "state": "VIC",
+    "opp_count": 2,
+    "max_score": 5448.6,
+    "max_pharmacy_dist": 15.7216,
+    "max_pop": 737
+  },
+  "Falls Creek_VIC": {
+    "town": "Falls Creek",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 5222.7,
+    "max_pharmacy_dist": 16.272866369429618,
+    "max_pop": 321
+  },
+  "Alice Springs_NT": {
+    "town": "Alice Springs",
+    "state": "NT",
+    "opp_count": 2,
+    "max_score": 5217.2,
+    "max_pharmacy_dist": 3.515527372891527,
+    "max_pop": 26255
+  },
+  "Wynnum West_QLD": {
+    "town": "Wynnum West",
+    "state": "QLD",
+    "opp_count": 2,
+    "max_score": 5084.1,
+    "max_pharmacy_dist": 0.8190547565615977,
+    "max_pop": 1233182
+  },
+  "Woden_ACT": {
+    "town": "Woden",
+    "state": "ACT",
+    "opp_count": 5,
+    "max_score": 4903.0,
+    "max_pharmacy_dist": 1.322633920295233,
+    "max_pop": 515288
+  },
+  "Elwood_VIC": {
+    "town": "Elwood",
+    "state": "VIC",
+    "opp_count": 8,
+    "max_score": 4858.6,
+    "max_pharmacy_dist": 1.0090378728097784,
+    "max_pop": 4492086
+  },
+  "Weston Creek_ACT": {
+    "town": "Weston Creek",
+    "state": "ACT",
+    "opp_count": 1,
+    "max_score": 4844.2,
+    "max_pharmacy_dist": 1.0508217044135602,
+    "max_pop": 268114
+  },
+  "Chatswood_NSW": {
+    "town": "Chatswood",
+    "state": "NSW",
+    "opp_count": 6,
+    "max_score": 4769.2,
+    "max_pharmacy_dist": 0.8982344096990091,
+    "max_pop": 4606892
+  },
+  "Gladstone_SA": {
+    "town": "Gladstone",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 4266.1,
+    "max_pharmacy_dist": 11.530299999999999,
+    "max_pop": 623
+  },
+  "Alexander Heights_WA": {
+    "town": "Alexander Heights",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 4255.8,
+    "max_pharmacy_dist": 1.0801608493453339,
+    "max_pop": 859999
+  },
+  "Thornlie_WA": {
+    "town": "Thornlie",
+    "state": "WA",
+    "opp_count": 2,
+    "max_score": 3933.2,
+    "max_pharmacy_dist": 0.8904338634562119,
+    "max_pop": 926997
+  },
+  "Forrestfield_WA": {
+    "town": "Forrestfield",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 3897.1,
+    "max_pharmacy_dist": 0.7290883645076702,
+    "max_pop": 802597
+  },
+  "Canberra_ACT": {
+    "town": "Canberra",
+    "state": "ACT",
+    "opp_count": 8,
+    "max_score": 3833.9,
+    "max_pharmacy_dist": 1.4237830647543148,
+    "max_pop": 313336
+  },
+  "Woy Woy_NSW": {
+    "town": "Woy Woy",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 3663.4,
+    "max_pharmacy_dist": 0.8527432978247806,
+    "max_pop": 198874
+  },
+  "Wagait Beach_NT": {
+    "town": "Wagait Beach",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 3642.3,
+    "max_pharmacy_dist": 17.097492582436846,
+    "max_pop": 213
+  },
+  "Parramatta_NSW": {
+    "town": "Parramatta",
+    "state": "NSW",
+    "opp_count": 10,
+    "max_score": 3578.6,
+    "max_pharmacy_dist": 1.4735330446604389,
+    "max_pop": 3219769
+  },
+  "Murdoch_WA": {
+    "town": "Murdoch",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 3562.6,
+    "max_pharmacy_dist": 0.7622385437996093,
+    "max_pop": 1096273
+  },
+  "Jamberoo_NSW": {
+    "town": "Jamberoo",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 3416.1,
+    "max_pharmacy_dist": 7.12921608082707,
+    "max_pop": 1529
+  },
+  "Narooma_NSW": {
+    "town": "Narooma",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 3392.7,
+    "max_pharmacy_dist": 5.524477620292372,
+    "max_pop": 600
+  },
+  "The Narrows_NT": {
+    "town": "The Narrows",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 3242.6,
+    "max_pharmacy_dist": 1.988601084820913,
+    "max_pop": 122207
+  },
+  "Watsonia_VIC": {
+    "town": "Watsonia",
+    "state": "VIC",
+    "opp_count": 2,
+    "max_score": 3209.4,
+    "max_pharmacy_dist": 0.5963662468808844,
+    "max_pop": 2864917
+  },
+  "Orford_TAS": {
+    "town": "Orford",
+    "state": "TAS",
+    "opp_count": 1,
+    "max_score": 3193.5,
+    "max_pharmacy_dist": 6.625214859750964,
+    "max_pop": 723
+  },
+  "Black Forest_SA": {
+    "town": "Black Forest",
+    "state": "SA",
+    "opp_count": 2,
+    "max_score": 3101.5,
+    "max_pharmacy_dist": 1.6490020116802668,
+    "max_pop": 719429
+  },
+  "Kotara_NSW": {
+    "town": "Kotara",
+    "state": "NSW",
+    "opp_count": 8,
+    "max_score": 3012.5,
+    "max_pharmacy_dist": 1.6589725319202284,
+    "max_pop": 218442
+  },
+  "Meeniyan_VIC": {
+    "town": "Meeniyan",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 2985.8,
+    "max_pharmacy_dist": 15.9484,
+    "max_pop": 602
+  },
+  "Kalgoorlie_WA": {
+    "town": "Kalgoorlie",
+    "state": "WA",
+    "opp_count": 2,
+    "max_score": 2948.3,
+    "max_pharmacy_dist": 2.8385689856350163,
+    "max_pop": 29168
+  },
+  "Katherine_NT": {
+    "town": "Katherine",
+    "state": "NT",
+    "opp_count": 2,
+    "max_score": 2940.0,
+    "max_pharmacy_dist": 17.637400000000003,
+    "max_pop": 500
+  },
+  "Rupanyup_VIC": {
+    "town": "Rupanyup",
+    "state": "VIC",
+    "opp_count": 2,
+    "max_score": 2811.6,
+    "max_pharmacy_dist": 15.9348,
+    "max_pop": 353
+  },
+  "Sutherland_NSW": {
+    "town": "Sutherland",
+    "state": "NSW",
+    "opp_count": 12,
+    "max_score": 2773.4,
+    "max_pharmacy_dist": 2.460452637739269,
+    "max_pop": 3221665
+  },
+  "Wagga Wagga_NSW": {
+    "town": "Wagga Wagga",
+    "state": "NSW",
+    "opp_count": 4,
+    "max_score": 2755.3,
+    "max_pharmacy_dist": 1.8304005882041001,
+    "max_pop": 49786
+  },
+  "Orange_NSW": {
+    "town": "Orange",
+    "state": "NSW",
+    "opp_count": 3,
+    "max_score": 2648.4,
+    "max_pharmacy_dist": 1.9815168828767276,
+    "max_pop": 40127
+  },
+  "Gordonvale_QLD": {
+    "town": "Gordonvale",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 2562.8,
+    "max_pharmacy_dist": 1.9206280975954193,
+    "max_pop": 6611
+  },
+  "Coffs Harbour_NSW": {
+    "town": "Coffs Harbour",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 2557.1,
+    "max_pharmacy_dist": 2.0238308125767,
+    "max_pop": 51269
+  },
+  "Broome_WA": {
+    "town": "Broome",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 2521.5,
+    "max_pharmacy_dist": 1.7194510397208254,
+    "max_pop": 14660
+  },
+  "Fannie Bay_NT": {
+    "town": "Fannie Bay",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 2423.6,
+    "max_pharmacy_dist": 336.28240947823366,
+    "max_pop": 122207
+  },
+  "Sydney_NSW": {
+    "town": "Sydney",
+    "state": "NSW",
+    "opp_count": 20,
+    "max_score": 2407.3,
+    "max_pharmacy_dist": 0.6754285933685953,
+    "max_pop": 4737501
+  },
+  "Gold Coast_QLD": {
+    "town": "Gold Coast",
+    "state": "QLD",
+    "opp_count": 5,
+    "max_score": 2404.6,
+    "max_pharmacy_dist": 1.0934142792098578,
+    "max_pop": 587320
+  },
+  "Paringa_SA": {
+    "town": "Paringa",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 2390.9,
+    "max_pharmacy_dist": 3.1324687520672416,
+    "max_pop": 5729
+  },
+  "Dubbo_NSW": {
+    "town": "Dubbo",
+    "state": "NSW",
+    "opp_count": 2,
+    "max_score": 2380.1,
+    "max_pharmacy_dist": 2.0242080245035066,
+    "max_pop": 38883
+  },
+  "Albury_NSW": {
+    "town": "Albury",
+    "state": "NSW",
+    "opp_count": 5,
+    "max_score": 2358.1,
+    "max_pharmacy_dist": 2.5659531848945702,
+    "max_pop": 53677
+  },
+  "Wollongong_NSW": {
+    "town": "Wollongong",
+    "state": "NSW",
+    "opp_count": 4,
+    "max_score": 2002.7,
+    "max_pharmacy_dist": 0.8887264870152551,
+    "max_pop": 157079
+  },
+  "Lithgow_NSW": {
+    "town": "Lithgow",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 1940.8,
+    "max_pharmacy_dist": 2.5962273626384382,
+    "max_pop": 11197
+  },
+  "Toora_VIC": {
+    "town": "Toora",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 1897.5,
+    "max_pharmacy_dist": 10.6989,
+    "max_pop": 100
+  },
+  "Launceston_TAS": {
+    "town": "Launceston",
+    "state": "TAS",
+    "opp_count": 6,
+    "max_score": 1780.7,
+    "max_pharmacy_dist": 1.8677317667612934,
+    "max_pop": 80943
+  },
+  "Hobart_TAS": {
+    "town": "Hobart",
+    "state": "TAS",
+    "opp_count": 13,
+    "max_score": 1770.6,
+    "max_pharmacy_dist": 1.6517896521185385,
+    "max_pop": 196379
+  },
+  "Nambour_QLD": {
+    "town": "Nambour",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 1751.1,
+    "max_pharmacy_dist": 0.9828186855438269,
+    "max_pop": 20918
+  },
+  "Magill_SA": {
+    "town": "Magill",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 1747.8,
+    "max_pharmacy_dist": 0.8819302711707531,
+    "max_pop": 787986
+  },
+  "Cannington_WA": {
+    "town": "Cannington",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 1696.3,
+    "max_pharmacy_dist": 0.3577949722763057,
+    "max_pop": 1208939
+  },
+  "Maitland_NSW": {
+    "town": "Maitland",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 1671.5,
+    "max_pharmacy_dist": 1.1086815437329791,
+    "max_pop": 89597
+  },
+  "Bunbury_WA": {
+    "town": "Bunbury",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 1589.6,
+    "max_pharmacy_dist": 1.3559980129896327,
+    "max_pop": 75196
+  },
+  "Forster_NSW": {
+    "town": "Forster",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 1566.4,
+    "max_pharmacy_dist": 0.9661787996012344,
+    "max_pop": 26930
+  },
+  "Sunshine Coast_QLD": {
+    "town": "Sunshine Coast",
+    "state": "QLD",
+    "opp_count": 2,
+    "max_score": 1562.5,
+    "max_pharmacy_dist": 0.8439670564216635,
+    "max_pop": 157079
+  },
+  "Daglish_WA": {
+    "town": "Daglish",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 1532.2,
+    "max_pharmacy_dist": 1.0066531584320686,
+    "max_pop": 2007487
+  },
+  "Wilson_WA": {
+    "town": "Wilson",
+    "state": "WA",
+    "opp_count": 3,
+    "max_score": 1453.4,
+    "max_pharmacy_dist": 0.9933875715302761,
+    "max_pop": 2019354
+  },
+  "Whyalla_SA": {
+    "town": "Whyalla",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 1431.8,
+    "max_pharmacy_dist": 0.9580377384923298,
+    "max_pop": 12042
+  },
+  "Red Hill_QLD": {
+    "town": "Red Hill",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 1417.9,
+    "max_pharmacy_dist": 1.0237009384768516,
+    "max_pop": 196349
+  },
+  "Robertson_QLD": {
+    "town": "Robertson",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 1413.3,
+    "max_pharmacy_dist": 0.3259991901187753,
+    "max_pop": 1466779
+  },
+  "Tuggeranong_ACT": {
+    "town": "Tuggeranong",
+    "state": "ACT",
+    "opp_count": 2,
+    "max_score": 1382.8,
+    "max_pharmacy_dist": 0.9375234935514437,
+    "max_pop": 86900
+  },
+  "Kalinga_QLD": {
+    "town": "Kalinga",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 1376.8,
+    "max_pharmacy_dist": 0.8754254014317202,
+    "max_pop": 2079870
+  },
+  "Bendigo_VIC": {
+    "town": "Bendigo",
+    "state": "VIC",
+    "opp_count": 3,
+    "max_score": 1288.3,
+    "max_pharmacy_dist": 0.9580151668443652,
+    "max_pop": 100649
+  },
+  "Grange_SA": {
+    "town": "Grange",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 1274.5,
+    "max_pharmacy_dist": 0.7381596293912075,
+    "max_pop": 922043
+  },
+  "Moriac_VIC": {
+    "town": "Moriac",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 1262.5,
+    "max_pharmacy_dist": 15.6766,
+    "max_pop": 691
+  },
+  "Sunnybank_QLD": {
+    "town": "Sunnybank",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 1215.1,
+    "max_pharmacy_dist": 0.28695375360834124,
+    "max_pop": 1345085
+  },
+  "Ballarat_VIC": {
+    "town": "Ballarat",
+    "state": "VIC",
+    "opp_count": 6,
+    "max_score": 1159.6,
+    "max_pharmacy_dist": 0.9262159214143585,
+    "max_pop": 105435
+  },
+  "Townsville_QLD": {
+    "town": "Townsville",
+    "state": "QLD",
+    "opp_count": 2,
+    "max_score": 1105.5,
+    "max_pharmacy_dist": 0.8428781153866205,
+    "max_pop": 157079
+  },
+  "Cleveland_QLD": {
+    "town": "Cleveland",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 1103.2,
+    "max_pharmacy_dist": 0.6866602135820803,
+    "max_pop": 172930
+  },
+  "Wishart_QLD": {
+    "town": "Wishart",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 1091.2,
+    "max_pharmacy_dist": 0.2552100943817983,
+    "max_pop": 1371519
+  },
+  "Geelong_VIC": {
+    "town": "Geelong",
+    "state": "VIC",
+    "opp_count": 6,
+    "max_score": 1080.4,
+    "max_pharmacy_dist": 0.8628004872760747,
+    "max_pop": 167234
+  },
+  "Golden Beach_QLD": {
+    "town": "Golden Beach",
+    "state": "QLD",
+    "opp_count": 4,
+    "max_score": 1052.1,
+    "max_pharmacy_dist": 0.6415246021040271,
+    "max_pop": 65666
+  },
+  "Wagaman_NT": {
+    "town": "Wagaman",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 1025.9,
+    "max_pharmacy_dist": 0.5217526850618045,
+    "max_pop": 12931
+  },
+  "Melbourne_VIC": {
+    "town": "Melbourne",
+    "state": "VIC",
+    "opp_count": 13,
+    "max_score": 1004.6,
+    "max_pharmacy_dist": 1.322825247456064,
+    "max_pop": 4556347
+  },
+  "Piccadilly_WA": {
+    "town": "Piccadilly",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 993.9,
+    "max_pharmacy_dist": 0.9158808890115211,
+    "max_pop": 29168
+  },
+  "Carina Heights_QLD": {
+    "town": "Carina Heights",
+    "state": "QLD",
+    "opp_count": 2,
+    "max_score": 963.4,
+    "max_pharmacy_dist": 0.6106857063728228,
+    "max_pop": 1946834
+  },
+  "Brisbane_QLD": {
+    "town": "Brisbane",
+    "state": "QLD",
+    "opp_count": 4,
+    "max_score": 904.7,
+    "max_pharmacy_dist": 0.6948272023124836,
+    "max_pop": 196349
+  },
+  "St Morris_SA": {
+    "town": "St Morris",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 904.2,
+    "max_pharmacy_dist": 0.5567937669284359,
+    "max_pop": 196349
+  },
+  "Maryborough_QLD": {
+    "town": "Maryborough",
+    "state": "QLD",
+    "opp_count": 2,
+    "max_score": 886.7,
+    "max_pharmacy_dist": 1.6518410443459668,
+    "max_pop": 22237
+  },
+  "Bedford_WA": {
+    "town": "Bedford",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 868.5,
+    "max_pharmacy_dist": 0.613203551007044,
+    "max_pop": 1961792
+  },
+  "West End_QLD": {
+    "town": "West End",
+    "state": "QLD",
+    "opp_count": 3,
+    "max_score": 832.6,
+    "max_pharmacy_dist": 0.6031054825504052,
+    "max_pop": 196349
+  },
+  "Shepparton_VIC": {
+    "town": "Shepparton",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 815.1,
+    "max_pharmacy_dist": 0.8299962198058782,
+    "max_pop": 34915
+  },
+  "Darwin_NT": {
+    "town": "Darwin",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 814.7,
+    "max_pharmacy_dist": 0.38361372342144345,
+    "max_pop": 122207
+  },
+  "Port Augusta_SA": {
+    "town": "Port Augusta",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 796.4,
+    "max_pharmacy_dist": 0.68944571649799,
+    "max_pop": 12930
+  },
+  "Adelaide_SA": {
+    "town": "Adelaide",
+    "state": "SA",
+    "opp_count": 4,
+    "max_score": 779.5,
+    "max_pharmacy_dist": 0.5327744301735668,
+    "max_pop": 196349
+  },
+  "Armidale_NSW": {
+    "town": "Armidale",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 754.8,
+    "max_pharmacy_dist": 0.8465848000468111,
+    "max_pop": 21312
+  },
+  "McDowall_QLD": {
+    "town": "McDowall",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 722.6,
+    "max_pharmacy_dist": 0.43407240607992204,
+    "max_pop": 1783567
+  },
+  "North Sydney_NSW": {
+    "town": "North Sydney",
+    "state": "NSW",
+    "opp_count": 3,
+    "max_score": 711.9,
+    "max_pharmacy_dist": 0.5874799501260268,
+    "max_pop": 4741886
+  },
+  "Innaloo_WA": {
+    "town": "Innaloo",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 695.9,
+    "max_pharmacy_dist": 0.399428446880176,
+    "max_pop": 1503008
+  },
+  "Newcastle_NSW": {
+    "town": "Newcastle",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 675.8,
+    "max_pharmacy_dist": 0.3453181245333359,
+    "max_pop": 157079
+  },
+  "Howden_TAS": {
+    "town": "Howden",
+    "state": "TAS",
+    "opp_count": 2,
+    "max_score": 674.1,
+    "max_pharmacy_dist": 0.3673437331186068,
+    "max_pop": 1706
+  },
+  "Firle_SA": {
+    "town": "Firle",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 658.4,
+    "max_pharmacy_dist": 0.24289063489487736,
+    "max_pop": 441097
+  },
+  "George Town_TAS": {
+    "town": "George Town",
+    "state": "TAS",
+    "opp_count": 1,
+    "max_score": 627.1,
+    "max_pharmacy_dist": 0.836328095462022,
+    "max_pop": 5115
+  },
+  "Hawthorne_QLD": {
+    "town": "Hawthorne",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 622.9,
+    "max_pharmacy_dist": 0.4633618072789019,
+    "max_pop": 196349
+  },
+  "Cairns City_QLD": {
+    "town": "Cairns City",
+    "state": "QLD",
+    "opp_count": 2,
+    "max_score": 620.4,
+    "max_pharmacy_dist": 0.31679235509230685,
+    "max_pop": 153181
+  },
+  "Coorparoo_QLD": {
+    "town": "Coorparoo",
+    "state": "QLD",
+    "opp_count": 2,
+    "max_score": 618.8,
+    "max_pharmacy_dist": 0.44966754119231117,
+    "max_pop": 2270475
+  },
+  "Reservoir_VIC": {
+    "town": "Reservoir",
+    "state": "VIC",
+    "opp_count": 4,
+    "max_score": 600.4,
+    "max_pharmacy_dist": 0.6828202037084554,
+    "max_pop": 4306947
+  },
+  "Emerald_QLD": {
+    "town": "Emerald",
+    "state": "QLD",
+    "opp_count": 2,
+    "max_score": 598.8,
+    "max_pharmacy_dist": 0.6837927672868849,
+    "max_pop": 14089
+  },
+  "Griffith_NSW": {
+    "town": "Griffith",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 575.0,
+    "max_pharmacy_dist": 0.4726183180975156,
+    "max_pop": 20799
+  },
+  "Nowra_NSW": {
+    "town": "Nowra",
+    "state": "NSW",
+    "opp_count": 2,
+    "max_score": 571.0,
+    "max_pharmacy_dist": 0.6223657420617791,
+    "max_pop": 40521
+  },
+  "Palmwoods_QLD": {
+    "town": "Palmwoods",
+    "state": "QLD",
+    "opp_count": 2,
+    "max_score": 558.5,
+    "max_pharmacy_dist": 0.3007819606300211,
+    "max_pop": 104821
+  },
+  "Maryville_NSW": {
+    "town": "Maryville",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 551.4,
+    "max_pharmacy_dist": 0.2822197183505588,
+    "max_pop": 141473
+  },
+  "Gladstone_QLD": {
+    "town": "Gladstone",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 550.5,
+    "max_pharmacy_dist": 0.45957460359946944,
+    "max_pop": 34703
+  },
+  "Chelmer_QLD": {
+    "town": "Chelmer",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 543.1,
+    "max_pharmacy_dist": 0.35464290267336507,
+    "max_pop": 2161990
+  },
+  "Broken Hill_NSW": {
+    "town": "Broken Hill",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 539.5,
+    "max_pharmacy_dist": 0.5060384511527706,
+    "max_pop": 17456
+  },
+  "South West Rocks_NSW": {
+    "town": "South West Rocks",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 520.6,
+    "max_pharmacy_dist": 0.9876125094798193,
+    "max_pop": 6443
+  },
+  "Bowen_QLD": {
+    "town": "Bowen",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 510.6,
+    "max_pharmacy_dist": 0.34577131354909635,
+    "max_pop": 10212
+  },
+  "Colac_VIC": {
+    "town": "Colac",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 502.4,
+    "max_pharmacy_dist": 0.585764023752363,
+    "max_pop": 12348
+  },
+  "East Perth_WA": {
+    "town": "East Perth",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 498.2,
+    "max_pharmacy_dist": 0.3816054758576226,
+    "max_pop": 196349
+  },
+  "Penguin_TAS": {
+    "town": "Penguin",
+    "state": "TAS",
+    "opp_count": 1,
+    "max_score": 476.6,
+    "max_pharmacy_dist": 0.3540366381803131,
+    "max_pop": 3961
+  },
+  "Mermaid Beach_QLD": {
+    "town": "Mermaid Beach",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 472.6,
+    "max_pharmacy_dist": 0.2095161512966103,
+    "max_pop": 196349
+  },
+  "North Adelaide_SA": {
+    "town": "North Adelaide",
+    "state": "SA",
+    "opp_count": 2,
+    "max_score": 457.4,
+    "max_pharmacy_dist": 0.3183760765493744,
+    "max_pop": 1145652
+  },
+  "Horsham_VIC": {
+    "town": "Horsham",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 456.1,
+    "max_pharmacy_dist": 0.42038984877661995,
+    "max_pop": 16289
+  },
+  "Swan Hill_VIC": {
+    "town": "Swan Hill",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 454.5,
+    "max_pharmacy_dist": 0.4618717498208406,
+    "max_pop": 10869
+  },
+  "Bathurst_NSW": {
+    "town": "Bathurst",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 413.6,
+    "max_pharmacy_dist": 0.3066791154602998,
+    "max_pop": 36330
+  },
+  "Heathcote_VIC": {
+    "town": "Heathcote",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 401.1,
+    "max_pharmacy_dist": 0.8748777284668878,
+    "max_pop": 1844
+  },
+  "Wooloowin_QLD": {
+    "town": "Wooloowin",
+    "state": "QLD",
+    "opp_count": 2,
+    "max_score": 381.3,
+    "max_pharmacy_dist": 0.27301916673643467,
+    "max_pop": 2283951
+  },
+  "Burnie_TAS": {
+    "town": "Burnie",
+    "state": "TAS",
+    "opp_count": 3,
+    "max_score": 374.0,
+    "max_pharmacy_dist": 0.43892277651049727,
+    "max_pop": 20367
+  },
+  "Warrnambool_VIC": {
+    "town": "Warrnambool",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 364.4,
+    "max_pharmacy_dist": 0.3365545452757722,
+    "max_pop": 32894
+  },
+  "Bundaberg North_QLD": {
+    "town": "Bundaberg North",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 363.9,
+    "max_pharmacy_dist": 0.4711260160777342,
+    "max_pop": 52370
+  },
+  "Toowoomba_QLD": {
+    "town": "Toowoomba",
+    "state": "QLD",
+    "opp_count": 2,
+    "max_score": 360.9,
+    "max_pharmacy_dist": 0.37524659736089566,
+    "max_pop": 108398
+  },
+  "Robina_QLD": {
+    "town": "Robina",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 355.3,
+    "max_pharmacy_dist": 0.13045150975528072,
+    "max_pop": 343449
+  },
+  "Geraldton_WA": {
+    "town": "Geraldton",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 351.6,
+    "max_pharmacy_dist": 0.35682825131195073,
+    "max_pop": 32717
+  },
+  "Normanton_QLD": {
+    "town": "Normanton",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 348.1,
+    "max_pharmacy_dist": 1.0460652517363895,
+    "max_pop": 1326
+  },
+  "Northbridge_WA": {
+    "town": "Northbridge",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 338.4,
+    "max_pharmacy_dist": 0.2572277320071545,
+    "max_pop": 196349
+  },
+  "Avenell Heights_QLD": {
+    "town": "Avenell Heights",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 318.1,
+    "max_pharmacy_dist": 0.41156703853486076,
+    "max_pop": 52470
+  },
+  "Coonamble_NSW": {
+    "town": "Coonamble",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 317.7,
+    "max_pharmacy_dist": 0.5441674648431858,
+    "max_pop": 2353
+  },
+  "Kalbarri_WA": {
+    "town": "Kalbarri",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 301.6,
+    "max_pharmacy_dist": 0.9455915135614332,
+    "max_pop": 1270
+  },
+  "Warwick_QLD": {
+    "town": "Warwick",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 296.3,
+    "max_pharmacy_dist": 0.42322056012506076,
+    "max_pop": 14110
+  },
+  "Tiwi_NT": {
+    "town": "Tiwi",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 294.4,
+    "max_pharmacy_dist": 0.24389425921760632,
+    "max_pop": 7896
+  },
+  "Hahndorf_SA": {
+    "town": "Hahndorf",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 282.5,
+    "max_pharmacy_dist": 0.26134426989483056,
+    "max_pop": 20653
+  },
+  "Mapleton_QLD": {
+    "town": "Mapleton",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 280.7,
+    "max_pharmacy_dist": 0.2961326688804144,
+    "max_pop": 2006
+  },
+  "Rainbow Beach_QLD": {
+    "town": "Rainbow Beach",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 271.1,
+    "max_pharmacy_dist": 0.5510469984708878,
+    "max_pop": 1176
+  },
+  "Tamworth_NSW": {
+    "town": "Tamworth",
+    "state": "NSW",
+    "opp_count": 2,
+    "max_score": 270.6,
+    "max_pharmacy_dist": 0.3164265930239135,
+    "max_pop": 35515
+  },
+  "Gawler_SA": {
+    "town": "Gawler",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 253.9,
+    "max_pharmacy_dist": 0.3275609399102341,
+    "max_pop": 28562
+  },
+  "Parkes_NSW": {
+    "town": "Parkes",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 252.8,
+    "max_pharmacy_dist": 0.17533217075363913,
+    "max_pop": 9832
+  },
+  "Penrith_NSW": {
+    "town": "Penrith",
+    "state": "NSW",
+    "opp_count": 3,
+    "max_score": 240.4,
+    "max_pharmacy_dist": 0.21256701963797517,
+    "max_pop": 158179
+  },
+  "Blacktown_NSW": {
+    "town": "Blacktown",
+    "state": "NSW",
+    "opp_count": 3,
+    "max_score": 235.3,
+    "max_pharmacy_dist": 0.8209661225620346,
+    "max_pop": 30518
+  },
+  "Kingston SE_SA": {
+    "town": "Kingston SE",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 221.0,
+    "max_pharmacy_dist": 0.5359580112549317,
+    "max_pop": 1637
+  },
+  "Bomaderry_NSW": {
+    "town": "Bomaderry",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 207.1,
+    "max_pharmacy_dist": 0.23216055321615334,
+    "max_pop": 40521
+  },
+  "Wynyard_TAS": {
+    "town": "Wynyard",
+    "state": "TAS",
+    "opp_count": 1,
+    "max_score": 202.2,
+    "max_pharmacy_dist": 0.3493692385331196,
+    "max_pop": 5487
+  },
+  "Milton_NSW": {
+    "town": "Milton",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 200.3,
+    "max_pharmacy_dist": 0.174578978174577,
+    "max_pop": 8413
+  },
+  "Balmoral_QLD": {
+    "town": "Balmoral",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 196.1,
+    "max_pharmacy_dist": 0.13401137021239815,
+    "max_pop": 2211281
+  },
+  "Miles_QLD": {
+    "town": "Miles",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 195.6,
+    "max_pharmacy_dist": 0.5775387195093948,
+    "max_pop": 1349
+  },
+  "Melton_VIC": {
+    "town": "Melton",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 193.2,
+    "max_pharmacy_dist": 0.1422330003399919,
+    "max_pop": 76346
+  },
+  "Clifton_QLD": {
+    "town": "Clifton",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 189.2,
+    "max_pharmacy_dist": 0.5867663780733667,
+    "max_pop": 1299
+  },
+  "Mahomets Flats_WA": {
+    "town": "Mahomets Flats",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 188.4,
+    "max_pharmacy_dist": 0.19221443647117722,
+    "max_pop": 32717
+  },
+  "Maylands_WA": {
+    "town": "Maylands",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 188.0,
+    "max_pharmacy_dist": 0.1444004704756576,
+    "max_pop": 196349
+  },
+  "Moss Vale_NSW": {
+    "town": "Moss Vale",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 178.3,
+    "max_pharmacy_dist": 0.6598629705885253,
+    "max_pop": 1100
+  },
+  "Lorne_VIC": {
+    "town": "Lorne",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 172.2,
+    "max_pharmacy_dist": 0.6908196377660206,
+    "max_pop": 1248
+  },
+  "Gympie_QLD": {
+    "town": "Gympie",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 163.7,
+    "max_pharmacy_dist": 0.2380020281671178,
+    "max_pop": 19435
+  },
+  "Gerringong_NSW": {
+    "town": "Gerringong",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 162.0,
+    "max_pharmacy_dist": 0.1075905507628413,
+    "max_pop": 5118
+  },
+  "Jurien Bay_WA": {
+    "town": "Jurien Bay",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 160.0,
+    "max_pharmacy_dist": 0.40429981743926674,
+    "max_pop": 1600
+  },
+  "Collaroy_NSW": {
+    "town": "Collaroy",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 158.1,
+    "max_pharmacy_dist": 0.6540909099957556,
+    "max_pop": 39747
+  },
+  "Kilcoy_QLD": {
+    "town": "Kilcoy",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 158.0,
+    "max_pharmacy_dist": 0.2522975964332844,
+    "max_pop": 2433
+  },
+  "Hay_NSW": {
+    "town": "Hay",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 155.8,
+    "max_pharmacy_dist": 0.2737505908186372,
+    "max_pop": 2308
+  },
+  "Mount Barker_SA": {
+    "town": "Mount Barker",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 145.6,
+    "max_pharmacy_dist": 0.19923006079076577,
+    "max_pop": 21908
+  },
+  "Norwood_SA": {
+    "town": "Norwood",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 145.6,
+    "max_pharmacy_dist": 0.05155411183113571,
+    "max_pop": 196349
+  },
+  "Kununurra_WA": {
+    "town": "Kununurra",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 144.6,
+    "max_pharmacy_dist": 0.23164105187991785,
+    "max_pop": 4715
+  },
+  "Thirlmere_NSW": {
+    "town": "Thirlmere",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 141.5,
+    "max_pharmacy_dist": 0.15915780024085804,
+    "max_pop": 12103
+  },
+  "Port Macquarie_NSW": {
+    "town": "Port Macquarie",
+    "state": "NSW",
+    "opp_count": 2,
+    "max_score": 139.5,
+    "max_pharmacy_dist": 0.15187390525218208,
+    "max_pop": 47893
+  },
+  "Loxton_SA": {
+    "town": "Loxton",
+    "state": "SA",
+    "opp_count": 2,
+    "max_score": 138.2,
+    "max_pharmacy_dist": 0.23606129756307268,
+    "max_pop": 3947
+  },
+  "Berri_SA": {
+    "town": "Berri",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 137.6,
+    "max_pharmacy_dist": 0.3796288458091848,
+    "max_pop": 4287
+  },
+  "Millmerran_QLD": {
+    "town": "Millmerran",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 137.1,
+    "max_pharmacy_dist": 0.40273613434080147,
+    "max_pop": 1371
+  },
+  "Yarrawonga_VIC": {
+    "town": "Yarrawonga",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 136.1,
+    "max_pharmacy_dist": 0.23376512820277184,
+    "max_pop": 8580
+  },
+  "Ulverstone_TAS": {
+    "town": "Ulverstone",
+    "state": "TAS",
+    "opp_count": 1,
+    "max_score": 130.7,
+    "max_pharmacy_dist": 0.1453592373525562,
+    "max_pop": 12823
+  },
+  "Spring Hill_QLD": {
+    "town": "Spring Hill",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 130.6,
+    "max_pharmacy_dist": 0.10467400598149534,
+    "max_pop": 196349
+  },
+  "Evandale_TAS": {
+    "town": "Evandale",
+    "state": "TAS",
+    "opp_count": 2,
+    "max_score": 129.8,
+    "max_pharmacy_dist": 0.418839490146046,
+    "max_pop": 1558
+  },
+  "Condobolin_NSW": {
+    "town": "Condobolin",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 129.0,
+    "max_pharmacy_dist": 0.20388100046271376,
+    "max_pop": 2579
+  },
+  "Holbrook_NSW": {
+    "town": "Holbrook",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 128.2,
+    "max_pharmacy_dist": 0.40530197231628606,
+    "max_pop": 1251
+  },
+  "Gayndah_QLD": {
+    "town": "Gayndah",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 127.1,
+    "max_pharmacy_dist": 0.30163807216178196,
+    "max_pop": 1695
+  },
+  "Werribee_VIC": {
+    "town": "Werribee",
+    "state": "VIC",
+    "opp_count": 7,
+    "max_score": 127.1,
+    "max_pharmacy_dist": 10.2819,
+    "max_pop": 44088
+  },
+  "Gatton_QLD": {
+    "town": "Gatton",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 125.5,
+    "max_pharmacy_dist": 0.2106944741676007,
+    "max_pop": 6852
+  },
+  "Mackay_QLD": {
+    "town": "Mackay",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 125.3,
+    "max_pharmacy_dist": 0.12248445863874152,
+    "max_pop": 80455
+  },
+  "Bargo_NSW": {
+    "town": "Bargo",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 124.2,
+    "max_pharmacy_dist": 0.1052193988183006,
+    "max_pop": 4016
+  },
+  "Apollo Bay_VIC": {
+    "town": "Apollo Bay",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 123.3,
+    "max_pharmacy_dist": 0.3147864876217705,
+    "max_pop": 1591
+  },
+  "Biloela_QLD": {
+    "town": "Biloela",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 119.0,
+    "max_pharmacy_dist": 0.2133052876533128,
+    "max_pop": 5667
+  },
+  "Denmark_WA": {
+    "town": "Denmark",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 117.8,
+    "max_pharmacy_dist": 45.818326669898795,
+    "max_pop": 2944
+  },
+  "Stanthorpe_QLD": {
+    "town": "Stanthorpe",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 117.2,
+    "max_pharmacy_dist": 0.239520152315991,
+    "max_pop": 5373
+  },
+  "St Helens_TAS": {
+    "town": "St Helens",
+    "state": "TAS",
+    "opp_count": 1,
+    "max_score": 113.9,
+    "max_pharmacy_dist": 0.27009223501490176,
+    "max_pop": 2073
+  },
+  "Dungog_NSW": {
+    "town": "Dungog",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 113.4,
+    "max_pharmacy_dist": 0.16563121306532191,
+    "max_pop": 2669
+  },
+  "Crows Nest_QLD": {
+    "town": "Crows Nest",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 112.9,
+    "max_pharmacy_dist": 0.24040522410375184,
+    "max_pop": 1808
+  },
+  "Nhill_VIC": {
+    "town": "Nhill",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 112.1,
+    "max_pharmacy_dist": 0.22578055003239267,
+    "max_pop": 1949
+  },
+  "Hawks Nest_NSW": {
+    "town": "Hawks Nest",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 109.9,
+    "max_pharmacy_dist": 0.1215707637587593,
+    "max_pop": 10342
+  },
+  "Iluka_NSW": {
+    "town": "Iluka",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 108.2,
+    "max_pharmacy_dist": 0.13819811639325438,
+    "max_pop": 8506
+  },
+  "Robe_SA": {
+    "town": "Robe",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 106.9,
+    "max_pharmacy_dist": 0.37022326358788743,
+    "max_pop": 1156
+  },
+  "Bourke_NSW": {
+    "town": "Bourke",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 106.8,
+    "max_pharmacy_dist": 0.20551516563829264,
+    "max_pop": 2035
+  },
+  "Cowes_VIC": {
+    "town": "Cowes",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 106.0,
+    "max_pharmacy_dist": 0.11577985939641143,
+    "max_pop": 7218
+  },
+  "Kuranda_QLD": {
+    "town": "Kuranda",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 105.6,
+    "max_pharmacy_dist": 0.11213250786471743,
+    "max_pop": 6912
+  },
+  "Cooktown_QLD": {
+    "town": "Cooktown",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 103.8,
+    "max_pharmacy_dist": 0.261370387261382,
+    "max_pop": 1797
+  },
+  "Finley_NSW": {
+    "town": "Finley",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 102.5,
+    "max_pharmacy_dist": 0.22171960519513925,
+    "max_pop": 1864
+  },
+  "Roma_QLD": {
+    "town": "Roma",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 102.5,
+    "max_pharmacy_dist": 0.11441445467399394,
+    "max_pop": 6522
+  },
+  "Cobar_NSW": {
+    "town": "Cobar",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 101.1,
+    "max_pharmacy_dist": 0.11749547362283921,
+    "max_pop": 3369
+  },
+  "Warracknabeal_VIC": {
+    "town": "Warracknabeal",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 100.2,
+    "max_pharmacy_dist": 0.17563970691663833,
+    "max_pop": 2227
+  },
+  "East Toowoomba_QLD": {
+    "town": "East Toowoomba",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 97.1,
+    "max_pharmacy_dist": 0.07137853257772875,
+    "max_pop": 108398
+  },
+  "Wauchope_NSW": {
+    "town": "Wauchope",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 96.9,
+    "max_pharmacy_dist": 0.16024217856431225,
+    "max_pop": 8482
+  },
+  "Tin Can Bay_QLD": {
+    "town": "Tin Can Bay",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 94.9,
+    "max_pharmacy_dist": 0.2185544935506508,
+    "max_pop": 2274
+  },
+  "Mount Compass_SA": {
+    "town": "Mount Compass",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 93.7,
+    "max_pharmacy_dist": 0.2186422774216244,
+    "max_pop": 1232
+  },
+  "Clermont_QLD": {
+    "town": "Clermont",
+    "state": "QLD",
+    "opp_count": 2,
+    "max_score": 93.6,
+    "max_pharmacy_dist": 0.17939655274240762,
+    "max_pop": 2079
+  },
+  "Kerang_VIC": {
+    "town": "Kerang",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 93.6,
+    "max_pharmacy_dist": 0.19315713757385358,
+    "max_pop": 3696
+  },
+  "Castlemaine_VIC": {
+    "town": "Castlemaine",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 93.2,
+    "max_pharmacy_dist": 0.12109486486230252,
+    "max_pop": 10577
+  },
+  "Tongala_VIC": {
+    "town": "Tongala",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 90.7,
+    "max_pharmacy_dist": 0.2766994055502625,
+    "max_pop": 1331
+  },
+  "Blayney_NSW": {
+    "town": "Blayney",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 89.9,
+    "max_pharmacy_dist": 0.11903439763756431,
+    "max_pop": 2997
+  },
+  "Cooroy_QLD": {
+    "town": "Cooroy",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 89.7,
+    "max_pharmacy_dist": 0.2854103463389512,
+    "max_pop": 3485
+  },
+  "Gray_NT": {
+    "town": "Gray",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 86.9,
+    "max_pharmacy_dist": 0.4777003931555441,
+    "max_pop": 9567
+  },
+  "Kandos_NSW": {
+    "town": "Kandos",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 86.9,
+    "max_pharmacy_dist": 0.18286662594666167,
+    "max_pop": 1308
+  },
+  "Murwillumbah_NSW": {
+    "town": "Murwillumbah",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 85.3,
+    "max_pharmacy_dist": 0.10022948831936225,
+    "max_pop": 11712
+  },
+  "Kingscote_SA": {
+    "town": "Kingscote",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 80.9,
+    "max_pharmacy_dist": 0.1942853293451328,
+    "max_pop": 1915
+  },
+  "Windaroo_QLD": {
+    "town": "Windaroo",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 79.3,
+    "max_pharmacy_dist": 1.4069828891266336,
+    "max_pop": 3962
+  },
+  "Snug_TAS": {
+    "town": "Snug",
+    "state": "TAS",
+    "opp_count": 1,
+    "max_score": 79.1,
+    "max_pharmacy_dist": 3.140738095250037,
+    "max_pop": 4415
+  },
+  "Waroona_WA": {
+    "town": "Waroona",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 76.1,
+    "max_pharmacy_dist": 0.13065400336595145,
+    "max_pop": 2633
+  },
+  "The Vines_WA": {
+    "town": "The Vines",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 75.7,
+    "max_pharmacy_dist": 1.6209103837769792,
+    "max_pop": 3177
+  },
+  "Brassall_QLD": {
+    "town": "Brassall",
+    "state": "QLD",
+    "opp_count": 2,
+    "max_score": 75.2,
+    "max_pharmacy_dist": 0.9154528196430195,
+    "max_pop": 6249
+  },
+  "Nyngan_NSW": {
+    "town": "Nyngan",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 74.8,
+    "max_pharmacy_dist": 0.17012937418466353,
+    "max_pop": 1761
+  },
+  "Robinvale_VIC": {
+    "town": "Robinvale",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 73.2,
+    "max_pharmacy_dist": 0.11648176834737242,
+    "max_pop": 2441
+  },
+  "Kurrajong_NSW": {
+    "town": "Kurrajong",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 72.1,
+    "max_pharmacy_dist": 2.2429970791851725,
+    "max_pop": 844
+  },
+  "Lismore_NSW": {
+    "town": "Lismore",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 71.3,
+    "max_pharmacy_dist": 0.09665305085685427,
+    "max_pop": 28516
+  },
+  "Success_WA": {
+    "town": "Success",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 70.0,
+    "max_pharmacy_dist": 1.4282878399898513,
+    "max_pop": 9373
+  },
+  "Shellharbour_NSW": {
+    "town": "Shellharbour",
+    "state": "NSW",
+    "opp_count": 2,
+    "max_score": 69.5,
+    "max_pharmacy_dist": 0.5833419218134414,
+    "max_pop": 3135
+  },
+  "Laidley_QLD": {
+    "town": "Laidley",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 68.1,
+    "max_pharmacy_dist": 0.12275842096849177,
+    "max_pop": 3976
+  },
+  "Mornington_VIC": {
+    "town": "Mornington",
+    "state": "VIC",
+    "opp_count": 2,
+    "max_score": 66.1,
+    "max_pharmacy_dist": 0.6284374433156042,
+    "max_pop": 24301
+  },
+  "Tully_QLD": {
+    "town": "Tully",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 64.3,
+    "max_pharmacy_dist": 0.2002042528092326,
+    "max_pop": 2252
+  },
+  "Brookwater_QLD": {
+    "town": "Brookwater",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 62.9,
+    "max_pharmacy_dist": 0.8076866691742708,
+    "max_pop": 4495
+  },
+  "Corowa_NSW": {
+    "town": "Corowa",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 62.8,
+    "max_pharmacy_dist": 0.1510096397323796,
+    "max_pop": 5444
+  },
+  "Narrandera_NSW": {
+    "town": "Narrandera",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 62.1,
+    "max_pharmacy_dist": 0.1158053425093416,
+    "max_pop": 3883
+  },
+  "Terang_VIC": {
+    "town": "Terang",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 61.2,
+    "max_pharmacy_dist": 0.11163119518412197,
+    "max_pop": 2020
+  },
+  "Trentham_VIC": {
+    "town": "Trentham",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 60.4,
+    "max_pharmacy_dist": 0.1295118026538519,
+    "max_pop": 1427
+  },
+  "Wagin_WA": {
+    "town": "Wagin",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 59.0,
+    "max_pharmacy_dist": 0.18313326604662775,
+    "max_pop": 1311
+  },
+  "Corryong_VIC": {
+    "town": "Corryong",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 56.3,
+    "max_pharmacy_dist": 0.1857978415346171,
+    "max_pop": 1186
+  },
+  "Oatlands_TAS": {
+    "town": "Oatlands",
+    "state": "TAS",
+    "opp_count": 1,
+    "max_score": 56.2,
+    "max_pharmacy_dist": 0.4033486643504135,
+    "max_pop": 562
+  },
+  "Rushworth_VIC": {
+    "town": "Rushworth",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 53.5,
+    "max_pharmacy_dist": 0.2151777000643855,
+    "max_pop": 972
+  },
+  "Toodyay_WA": {
+    "town": "Toodyay",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 52.4,
+    "max_pharmacy_dist": 0.22080587595833448,
+    "max_pop": 953
+  },
+  "Hillston_NSW": {
+    "town": "Hillston",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 51.7,
+    "max_pharmacy_dist": 0.17704660164117209,
+    "max_pop": 1149
+  },
+  "Gulgong_NSW": {
+    "town": "Gulgong",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 51.4,
+    "max_pharmacy_dist": 0.10017967869554309,
+    "max_pop": 2057
+  },
+  "Dorrigo_NSW": {
+    "town": "Dorrigo",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 50.5,
+    "max_pharmacy_dist": 0.14825704574462514,
+    "max_pop": 1346
+  },
+  "Bindoon_WA": {
+    "town": "Bindoon",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 49.9,
+    "max_pharmacy_dist": 0.1853201836772827,
+    "max_pop": 1183
+  },
+  "Denman_NSW": {
+    "town": "Denman",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 49.4,
+    "max_pharmacy_dist": 0.11855562816682051,
+    "max_pop": 1647
+  },
+  "Auburn_SA": {
+    "town": "Auburn",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 47.2,
+    "max_pharmacy_dist": 0.23542230697443636,
+    "max_pop": 470
+  },
+  "Liverpool_NSW": {
+    "town": "Liverpool",
+    "state": "NSW",
+    "opp_count": 4,
+    "max_score": 46.2,
+    "max_pharmacy_dist": 0.9399573848265778,
+    "max_pop": 24095
+  },
+  "Kimba_SA": {
+    "town": "Kimba",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 44.1,
+    "max_pharmacy_dist": 0.28565354372533697,
+    "max_pop": 608
+  },
+  "Ouyen_VIC": {
+    "town": "Ouyen",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 43.4,
+    "max_pharmacy_dist": 0.16616635292660215,
+    "max_pop": 1022
+  },
+  "Cobden_VIC": {
+    "town": "Cobden",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 42.7,
+    "max_pharmacy_dist": 0.15524959570976576,
+    "max_pop": 1603
+  },
+  "Bingara_NSW": {
+    "town": "Bingara",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 41.1,
+    "max_pharmacy_dist": 0.15970098190811208,
+    "max_pop": 1028
+  },
+  "Coonabarabran_NSW": {
+    "town": "Coonabarabran",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 40.9,
+    "max_pharmacy_dist": 0.12377829854276098,
+    "max_pop": 2387
+  },
+  "Red Cliffs_VIC": {
+    "town": "Red Cliffs",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 40.5,
+    "max_pharmacy_dist": 0.1380466837390247,
+    "max_pop": 3136
+  },
+  "Calamvale_QLD": {
+    "town": "Calamvale",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 39.5,
+    "max_pharmacy_dist": 0.6929951261752622,
+    "max_pop": 19605
+  },
+  "Cunnamulla_QLD": {
+    "town": "Cunnamulla",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 39.3,
+    "max_pharmacy_dist": 0.144644730088052,
+    "max_pop": 1124
+  },
+  "Koroit_VIC": {
+    "town": "Koroit",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 36.7,
+    "max_pharmacy_dist": 0.17734054675845223,
+    "max_pop": 1997
+  },
+  "Warialda_NSW": {
+    "town": "Warialda",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 36.7,
+    "max_pharmacy_dist": 0.1346942595974776,
+    "max_pop": 1130
+  },
+  "Currumbin_QLD": {
+    "town": "Currumbin",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 35.1,
+    "max_pharmacy_dist": 0.9272706590164537,
+    "max_pop": 5940
+  },
+  "Angle Vale_SA": {
+    "town": "Angle Vale",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 32.6,
+    "max_pharmacy_dist": 0.12440429203407237,
+    "max_pop": 4088
+  },
+  "McLaren Vale_SA": {
+    "town": "McLaren Vale",
+    "state": "SA",
+    "opp_count": 3,
+    "max_score": 32.0,
+    "max_pharmacy_dist": 0.95588981699096,
+    "max_pop": 0
+  },
+  "Epping_VIC": {
+    "town": "Epping",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 31.8,
+    "max_pharmacy_dist": 0.5654529642053512,
+    "max_pop": 20945
+  },
+  "Barham_NSW": {
+    "town": "Barham",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 30.2,
+    "max_pharmacy_dist": 0.11501106749570376,
+    "max_pop": 1134
+  },
+  "Queanbeyan_NSW": {
+    "town": "Queanbeyan",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 27.9,
+    "max_pharmacy_dist": 0.47544815292400305,
+    "max_pop": 0
+  },
+  "Nannup_WA": {
+    "town": "Nannup",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 26.9,
+    "max_pharmacy_dist": 0.2000380789713935,
+    "max_pop": 538
+  },
+  "Mallala_SA": {
+    "town": "Mallala",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 26.5,
+    "max_pharmacy_dist": 0.12185504493337167,
+    "max_pop": 887
+  },
+  "Kellerberrin_WA": {
+    "town": "Kellerberrin",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 25.9,
+    "max_pharmacy_dist": 0.13121243131251323,
+    "max_pop": 798
+  },
+  "Barooga_NSW": {
+    "town": "Barooga",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 25.0,
+    "max_pharmacy_dist": 0.14967901790858995,
+    "max_pop": 1752
+  },
+  "Canungra_QLD": {
+    "town": "Canungra",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 24.3,
+    "max_pharmacy_dist": 46.21512416402047,
+    "max_pop": 793
+  },
+  "Beverley_WA": {
+    "town": "Beverley",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 23.9,
+    "max_pharmacy_dist": 0.10607303352623874,
+    "max_pop": 869
+  },
+  "Hopetoun_WA": {
+    "town": "Hopetoun",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 23.5,
+    "max_pharmacy_dist": 0.12076186666472034,
+    "max_pop": 783
+  },
+  "Wanneroo_WA": {
+    "town": "Wanneroo",
+    "state": "WA",
+    "opp_count": 2,
+    "max_score": 21.6,
+    "max_pharmacy_dist": 2.0541857712167566,
+    "max_pop": 11945
+  },
+  "Northampton_WA": {
+    "town": "Northampton",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 20.5,
+    "max_pharmacy_dist": 19.59215262591463,
+    "max_pop": 821
+  },
+  "Point Turton_SA": {
+    "town": "Point Turton",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 19.5,
+    "max_pharmacy_dist": 0.15217230230796988,
+    "max_pop": 194
+  },
+  "Laura_SA": {
+    "town": "Laura",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 19.0,
+    "max_pharmacy_dist": 0.7621453768275791,
+    "max_pop": 522
+  },
+  "Farrar_NT": {
+    "town": "Farrar",
+    "state": "NT",
+    "opp_count": 1,
+    "max_score": 17.8,
+    "max_pharmacy_dist": 0.13918935256294293,
+    "max_pop": 6261
+  },
+  "Penfield_SA": {
+    "town": "Penfield",
+    "state": "SA",
+    "opp_count": 3,
+    "max_score": 17.6,
+    "max_pharmacy_dist": 0.6072024139953073,
+    "max_pop": 0
+  },
+  "South Fremantle_WA": {
+    "town": "South Fremantle",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 16.1,
+    "max_pharmacy_dist": 0.55801919555292,
+    "max_pop": 6166
+  },
+  "Lockhart_NSW": {
+    "town": "Lockhart",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 15.6,
+    "max_pharmacy_dist": 0.15053006279440698,
+    "max_pop": 830
+  },
+  "Thomastown_VIC": {
+    "town": "Thomastown",
+    "state": "VIC",
+    "opp_count": 2,
+    "max_score": 14.7,
+    "max_pharmacy_dist": 0.3336682700723326,
+    "max_pop": 23563
+  },
+  "Morawa_WA": {
+    "town": "Morawa",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 14.4,
+    "max_pharmacy_dist": 0.13226271144683419,
+    "max_pop": 443
+  },
+  "Gnowangerup_WA": {
+    "town": "Gnowangerup",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 14.2,
+    "max_pharmacy_dist": 0.10216795215361907,
+    "max_pop": 568
+  },
+  "Camden Park_NSW": {
+    "town": "Camden Park",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 13.7,
+    "max_pharmacy_dist": 0.726218917972167,
+    "max_pop": 0
+  },
+  "Kallaroo_WA": {
+    "town": "Kallaroo",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 13.7,
+    "max_pharmacy_dist": 1.0302199324247838,
+    "max_pop": 3089
+  },
+  "Hornsby_NSW": {
+    "town": "Hornsby",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 13.2,
+    "max_pharmacy_dist": 0.12806870404902868,
+    "max_pop": 22168
+  },
+  "Southern Cross_WA": {
+    "town": "Southern Cross",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 13.1,
+    "max_pharmacy_dist": 0.10307787383340197,
+    "max_pop": 523
+  },
+  "Lalor_VIC": {
+    "town": "Lalor",
+    "state": "VIC",
+    "opp_count": 2,
+    "max_score": 11.7,
+    "max_pharmacy_dist": 0.36430911607051825,
+    "max_pop": 13369
+  },
+  "Menangle Park_NSW": {
+    "town": "Menangle Park",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 11.5,
+    "max_pharmacy_dist": 0.35528071183790233,
+    "max_pop": 0
+  },
+  "Middle Swan_WA": {
+    "town": "Middle Swan",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 11.1,
+    "max_pharmacy_dist": 1.8110408106173406,
+    "max_pop": 1040
+  },
+  "Goodna_QLD": {
+    "town": "Goodna",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 6.6,
+    "max_pharmacy_dist": 0.11684674698329924,
+    "max_pop": 11170
+  },
+  "Raceview_QLD": {
+    "town": "Raceview",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 6.3,
+    "max_pharmacy_dist": 0.24720483267980756,
+    "max_pop": 0
+  },
+  "Griffin_QLD": {
+    "town": "Griffin",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 5.6,
+    "max_pharmacy_dist": 0.8285449163685732,
+    "max_pop": 1500
+  },
+  "Nar Nar Goon_VIC": {
+    "town": "Nar Nar Goon",
+    "state": "VIC",
+    "opp_count": 2,
+    "max_score": 5.3,
+    "max_pharmacy_dist": 0.5522610591378572,
+    "max_pop": 0
+  },
+  "Tamborine_QLD": {
+    "town": "Tamborine",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 5.0,
+    "max_pharmacy_dist": 0.17657728864531236,
+    "max_pop": 0
+  },
+  "Duncraig_WA": {
+    "town": "Duncraig",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 3.4,
+    "max_pharmacy_dist": 0.05283066776789214,
+    "max_pop": 12051
+  },
+  "Yatala_QLD": {
+    "town": "Yatala",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 3.1,
+    "max_pharmacy_dist": 0.7524868925994026,
+    "max_pop": 545
+  },
+  "Tugun_QLD": {
+    "town": "Tugun",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 2.4,
+    "max_pharmacy_dist": 0.0803673246384298,
+    "max_pop": 3647
+  },
+  "Bald Hills_QLD": {
+    "town": "Bald Hills",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 2.3,
+    "max_pharmacy_dist": 0.24643321255583517,
+    "max_pop": 2903
+  },
+  "Midvale_WA": {
+    "town": "Midvale",
+    "state": "WA",
+    "opp_count": 2,
+    "max_score": 1.9,
+    "max_pharmacy_dist": 1.5308247202644836,
+    "max_pop": 1188
+  },
+  "Hillcrest_QLD": {
+    "town": "Hillcrest",
+    "state": "QLD",
+    "opp_count": 2,
+    "max_score": 1.4,
+    "max_pharmacy_dist": 0.5409086069001156,
+    "max_pop": 3413
+  },
+  "One Tree Hill_SA": {
+    "town": "One Tree Hill",
+    "state": "SA",
+    "opp_count": 1,
+    "max_score": 0.3,
+    "max_pharmacy_dist": 0.19637055224521643,
+    "max_pop": 0
+  },
+  "Cannons Creek_VIC": {
+    "town": "Cannons Creek",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 1.6778214698925298,
+    "max_pop": 0
+  },
+  "Coodanup_WA": {
+    "town": "Coodanup",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 0.7680447564157906,
+    "max_pop": 0
+  },
+  "Cooloongup_WA": {
+    "town": "Cooloongup",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 1.796417618188892,
+    "max_pop": 0
+  },
+  "Coomera_QLD": {
+    "town": "Coomera",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 1.833276106158348,
+    "max_pop": 0
+  },
+  "Elanora Heights_NSW": {
+    "town": "Elanora Heights",
+    "state": "NSW",
+    "opp_count": 1,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 1.1287077936180923,
+    "max_pop": 0
+  },
+  "Emerald_VIC": {
+    "town": "Emerald",
+    "state": "VIC",
+    "opp_count": 3,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 3.534983132297983,
+    "max_pop": 0
+  },
+  "Eumundi_QLD": {
+    "town": "Eumundi",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 0.5252603852288488,
+    "max_pop": 0
+  },
+  "Greensborough_VIC": {
+    "town": "Greensborough",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 0.6226317773428448,
+    "max_pop": 0
+  },
+  "Hillman_WA": {
+    "town": "Hillman",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 0.19402841920611164,
+    "max_pop": 0
+  },
+  "Huntingdale_WA": {
+    "town": "Huntingdale",
+    "state": "WA",
+    "opp_count": 3,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 2.331574520119019,
+    "max_pop": 0
+  },
+  "Loganholme_QLD": {
+    "town": "Loganholme",
+    "state": "QLD",
+    "opp_count": 1,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 0.20685567156962992,
+    "max_pop": 0
+  },
+  "New Norfolk_TAS": {
+    "town": "New Norfolk",
+    "state": "TAS",
+    "opp_count": 1,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 1.0867082669542345,
+    "max_pop": 0
+  },
+  "Newport_QLD": {
+    "town": "Newport",
+    "state": "QLD",
+    "opp_count": 3,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 1.3144756160462538,
+    "max_pop": 0
+  },
+  "Piara Waters_WA": {
+    "town": "Piara Waters",
+    "state": "WA",
+    "opp_count": 1,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 0.27309492711820005,
+    "max_pop": 0
+  },
+  "Richmond_TAS": {
+    "town": "Richmond",
+    "state": "TAS",
+    "opp_count": 1,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 0.1861891714646998,
+    "max_pop": 0
+  },
+  "Rockbank_VIC": {
+    "town": "Rockbank",
+    "state": "VIC",
+    "opp_count": 2,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 20.8607,
+    "max_pop": 0
+  },
+  "Seville_VIC": {
+    "town": "Seville",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 0.9052999397365312,
+    "max_pop": 0
+  },
+  "Wollert_VIC": {
+    "town": "Wollert",
+    "state": "VIC",
+    "opp_count": 1,
+    "max_score": 0.0,
+    "max_pharmacy_dist": 0.54386668198653,
+    "max_pop": 0
+  }
+}

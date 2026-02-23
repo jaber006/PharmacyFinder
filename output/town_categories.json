@@ -1,0 +1,3250 @@
+{
+  "categories": {
+    "major_city": [
+      "Albury_NSW",
+      "Alice Springs_NT",
+      "Coffs Harbour_NSW",
+      "Docklands_VIC",
+      "Dubbo_NSW",
+      "Fannie Bay_NT",
+      "Kalgoorlie_WA",
+      "Sutherland_NSW",
+      "Werribee_VIC"
+    ],
+    "large_town": [
+      "Lithgow_NSW",
+      "Paringa_SA",
+      "Wanneroo_WA"
+    ],
+    "medium_town": [
+      "Capel_WA",
+      "Denmark_WA",
+      "Galiwinku_NT",
+      "Hill Top_NSW",
+      "Macedon_VIC",
+      "Maningrida_NT",
+      "Mount Morgan_QLD",
+      "Roxby Downs_SA",
+      "Snug_TAS",
+      "St Arnaud_VIC"
+    ],
+    "small_town": [
+      "Allansford_VIC",
+      "Alyangula_NT",
+      "Angurugu_NT",
+      "Baradine_NSW",
+      "Baranduda_VIC",
+      "Beagle Bay_WA",
+      "Beswick_NT",
+      "Bidyadanga_WA",
+      "Borroloola_NT",
+      "Brookton_WA",
+      "Canungra_QLD",
+      "Coffin Bay_SA",
+      "Comboyne_NSW",
+      "Coolgardie_WA",
+      "Doomadgee_QLD",
+      "Eugowra_NSW",
+      "Gapuwiyak_NT",
+      "Gladstone_SA",
+      "Gunbalanya_NT",
+      "Gununa_QLD",
+      "Hermannsburg_NT",
+      "Hope Vale_QLD",
+      "Jabiru_NT",
+      "Jamberoo_NSW",
+      "Kalkarindji_NT",
+      "Kaniva_VIC",
+      "Kurrajong_NSW",
+      "Lajamanu_NT",
+      "Laverton_WA",
+      "Mallacoota_VIC",
+      "Marburg_QLD",
+      "Meeniyan_VIC",
+      "Milingimbi_NT",
+      "Minyerri_NT",
+      "Moriac_VIC",
+      "Mount Magnet_WA",
+      "Narooma_NSW",
+      "Ngukurr_NT",
+      "Northampton_WA",
+      "Numbulwar_NT",
+      "Orford_TAS",
+      "Pannawonica_WA",
+      "Quorn_SA",
+      "Ramingining_NT",
+      "Roebourne_WA",
+      "Santa Teresa_NT",
+      "Seaham_NSW",
+      "South Golden Beach_NSW",
+      "Stanley_TAS",
+      "Trangie_NSW",
+      "Warburton_WA",
+      "Wongan Hills_WA",
+      "Woodstock_NSW",
+      "Wurrumiyanga_NT",
+      "Wyndham_WA",
+      "Yirrkala_NT",
+      "Yuendumu_NT",
+      "Yulara_NT"
+    ],
+    "remote": [
+      "Ali Curung_NT",
+      "Alpurrurulam_NT",
+      "Amata_SA",
+      "Amity Point_QLD",
+      "Ampilatwatja_NT",
+      "Ardyaloon_WA",
+      "Balgo_WA",
+      "Barunga_NT",
+      "Batchelor_NT",
+      "Bundarra_NSW",
+      "Carnamah_WA",
+      "Cervantes_WA",
+      "Daly River_NT",
+      "Dowerin_WA",
+      "Emerald_VIC",
+      "Falls Creek_VIC",
+      "Glenden_QLD",
+      "Harrietville_VIC",
+      "Huntingdale_WA",
+      "Hyden_WA",
+      "Inverloch_VIC",
+      "Katherine_NT",
+      "Kintore_NT",
+      "Kulnura_NSW",
+      "Leinster_WA",
+      "Lismore_VIC",
+      "Mataranka_NT",
+      "Menindee_NSW",
+      "Milikapiti_NT",
+      "Millaa Millaa_QLD",
+      "Mullewa_WA",
+      "Natimuk_VIC",
+      "Nhulunbuy_NT",
+      "Northcliffe_WA",
+      "Nundle_NSW",
+      "Palumpa_NT",
+      "Papunya_NT",
+      "Penshurst_VIC",
+      "Pine Creek_NT",
+      "Pirlangimpi_NT",
+      "Rockbank_VIC",
+      "Rupanyup_VIC",
+      "Toora_VIC",
+      "Umbakumba_NT",
+      "Wagait Beach_NT",
+      "Warruwi_NT"
+    ],
+    "close_pharmacy": [
+      "Adelaide_SA",
+      "Alexander Heights_WA",
+      "Angle Vale_SA",
+      "Apollo Bay_VIC",
+      "Armidale_NSW",
+      "Auburn_SA",
+      "Avenell Heights_QLD",
+      "Bald Hills_QLD",
+      "Ballarat_VIC",
+      "Balmoral_QLD",
+      "Bargo_NSW",
+      "Barham_NSW",
+      "Barooga_NSW",
+      "Bathurst_NSW",
+      "Bedford_WA",
+      "Bendigo_VIC",
+      "Berri_SA",
+      "Beverley_WA",
+      "Biloela_QLD",
+      "Bindoon_WA",
+      "Bingara_NSW",
+      "Black Forest_SA",
+      "Blacktown_NSW",
+      "Blayney_NSW",
+      "Bomaderry_NSW",
+      "Bourke_NSW",
+      "Bowen_QLD",
+      "Brassall_QLD",
+      "Brisbane_QLD",
+      "Broken Hill_NSW",
+      "Brookwater_QLD",
+      "Broome_WA",
+      "Bunbury_WA",
+      "Bundaberg North_QLD",
+      "Burnie_TAS",
+      "Cairns City_QLD",
+      "Calamvale_QLD",
+      "Camden Park_NSW",
+      "Canberra_ACT",
+      "Cannington_WA",
+      "Cannons Creek_VIC",
+      "Carina Heights_QLD",
+      "Castlemaine_VIC",
+      "Chatswood_NSW",
+      "Chelmer_QLD",
+      "Clermont_QLD",
+      "Cleveland_QLD",
+      "Clifton_QLD",
+      "Cobar_NSW",
+      "Cobden_VIC",
+      "Colac_VIC",
+      "Collaroy_NSW",
+      "Condobolin_NSW",
+      "Coodanup_WA",
+      "Cooktown_QLD",
+      "Cooloongup_WA",
+      "Coomera_QLD",
+      "Coonabarabran_NSW",
+      "Coonamble_NSW",
+      "Cooroy_QLD",
+      "Coorparoo_QLD",
+      "Corowa_NSW",
+      "Corryong_VIC",
+      "Cowes_VIC",
+      "Crows Nest_QLD",
+      "Cunnamulla_QLD",
+      "Currumbin_QLD",
+      "Daglish_WA",
+      "Darwin_NT",
+      "Denman_NSW",
+      "Dorrigo_NSW",
+      "Duncraig_WA",
+      "Dungog_NSW",
+      "East Perth_WA",
+      "East Toowoomba_QLD",
+      "Elanora Heights_NSW",
+      "Elwood_VIC",
+      "Emerald_QLD",
+      "Epping_VIC",
+      "Eumundi_QLD",
+      "Evandale_TAS",
+      "Farrar_NT",
+      "Finley_NSW",
+      "Firle_SA",
+      "Forrestfield_WA",
+      "Forster_NSW",
+      "Gatton_QLD",
+      "Gawler_SA",
+      "Gayndah_QLD",
+      "Geelong_VIC",
+      "George Town_TAS",
+      "Geraldton_WA",
+      "Gerringong_NSW",
+      "Gladstone_QLD",
+      "Gnowangerup_WA",
+      "Gold Coast_QLD",
+      "Golden Beach_QLD",
+      "Goodna_QLD",
+      "Gordonvale_QLD",
+      "Grange_SA",
+      "Gray_NT",
+      "Greensborough_VIC",
+      "Griffin_QLD",
+      "Griffith_NSW",
+      "Gulgong_NSW",
+      "Gympie_QLD",
+      "Hahndorf_SA",
+      "Hawks Nest_NSW",
+      "Hawthorne_QLD",
+      "Hay_NSW",
+      "Heathcote_VIC",
+      "Hillcrest_QLD",
+      "Hillman_WA",
+      "Hillston_NSW",
+      "Hobart_TAS",
+      "Holbrook_NSW",
+      "Hopetoun_WA",
+      "Hornsby_NSW",
+      "Horsham_VIC",
+      "Howden_TAS",
+      "Iluka_NSW",
+      "Innaloo_WA",
+      "Jurien Bay_WA",
+      "Kalbarri_WA",
+      "Kalinga_QLD",
+      "Kallaroo_WA",
+      "Kandos_NSW",
+      "Kellerberrin_WA",
+      "Kerang_VIC",
+      "Kilcoy_QLD",
+      "Kimba_SA",
+      "Kingscote_SA",
+      "Kingston SE_SA",
+      "Koroit_VIC",
+      "Kotara_NSW",
+      "Kununurra_WA",
+      "Kuranda_QLD",
+      "Laidley_QLD",
+      "Lalor_VIC",
+      "Launceston_TAS",
+      "Laura_SA",
+      "Lismore_NSW",
+      "Liverpool_NSW",
+      "Lockhart_NSW",
+      "Loganholme_QLD",
+      "Lorne_VIC",
+      "Loxton_SA",
+      "Mackay_QLD",
+      "Magill_SA",
+      "Mahomets Flats_WA",
+      "Maitland_NSW",
+      "Mallala_SA",
+      "Manly_NSW",
+      "Mapleton_QLD",
+      "Maryborough_QLD",
+      "Maryville_NSW",
+      "Maylands_WA",
+      "McDowall_QLD",
+      "McLaren Vale_SA",
+      "Melbourne_VIC",
+      "Melton_VIC",
+      "Menangle Park_NSW",
+      "Mermaid Beach_QLD",
+      "Middle Swan_WA",
+      "Midvale_WA",
+      "Miles_QLD",
+      "Millmerran_QLD",
+      "Milton_NSW",
+      "Morawa_WA",
+      "Mornington_VIC",
+      "Moss Vale_NSW",
+      "Mount Barker_SA",
+      "Mount Compass_SA",
+      "Murdoch_WA",
+      "Murwillumbah_NSW",
+      "Nambour_QLD",
+      "Nannup_WA",
+      "Nar Nar Goon_VIC",
+      "Narrandera_NSW",
+      "New Norfolk_TAS",
+      "Newcastle_NSW",
+      "Newport_QLD",
+      "Nhill_VIC",
+      "Normanton_QLD",
+      "North Adelaide_SA",
+      "North Sydney_NSW",
+      "Northbridge_WA",
+      "Norwood_SA",
+      "Nowra_NSW",
+      "Nyngan_NSW",
+      "Oatlands_TAS",
+      "One Tree Hill_SA",
+      "Orange_NSW",
+      "Ouyen_VIC",
+      "Palmwoods_QLD",
+      "Parkes_NSW",
+      "Parramatta_NSW",
+      "Penfield_SA",
+      "Penguin_TAS",
+      "Penrith_NSW",
+      "Piara Waters_WA",
+      "Piccadilly_WA",
+      "Point Turton_SA",
+      "Port Augusta_SA",
+      "Port Macquarie_NSW",
+      "Queanbeyan_NSW",
+      "Raceview_QLD",
+      "Rainbow Beach_QLD",
+      "Red Cliffs_VIC",
+      "Red Hill_QLD",
+      "Reservoir_VIC",
+      "Richmond_TAS",
+      "Robe_SA",
+      "Robertson_QLD",
+      "Robina_QLD",
+      "Robinvale_VIC",
+      "Roma_QLD",
+      "Rushworth_VIC",
+      "Salisbury_QLD",
+      "Seville_VIC",
+      "Shellharbour_NSW",
+      "Shepparton_VIC",
+      "South Fremantle_WA",
+      "South West Rocks_NSW",
+      "Southern Cross_WA",
+      "Spring Hill_QLD",
+      "St Helens_TAS",
+      "St Morris_SA",
+      "Stanthorpe_QLD",
+      "Success_WA",
+      "Sunnybank_QLD",
+      "Sunshine Coast_QLD",
+      "Swan Hill_VIC",
+      "Sydney_NSW",
+      "Tamborine_QLD",
+      "Tamworth_NSW",
+      "Terang_VIC",
+      "The Narrows_NT",
+      "The Vines_WA",
+      "Thirlmere_NSW",
+      "Thomastown_VIC",
+      "Thornlie_WA",
+      "Tin Can Bay_QLD",
+      "Tiwi_NT",
+      "Tongala_VIC",
+      "Toodyay_WA",
+      "Toowoomba_QLD",
+      "Townsville_QLD",
+      "Trentham_VIC",
+      "Tuggeranong_ACT",
+      "Tugun_QLD",
+      "Tully_QLD",
+      "Ulverstone_TAS",
+      "Wagaman_NT",
+      "Wagga Wagga_NSW",
+      "Wagin_WA",
+      "Warialda_NSW",
+      "Waroona_WA",
+      "Warracknabeal_VIC",
+      "Warrnambool_VIC",
+      "Warwick_QLD",
+      "Watsonia_VIC",
+      "Wauchope_NSW",
+      "West End_QLD",
+      "Weston Creek_ACT",
+      "Whyalla_SA",
+      "Wilson_WA",
+      "Windaroo_QLD",
+      "Wishart_QLD",
+      "Woden_ACT",
+      "Wollert_VIC",
+      "Wollongong_NSW",
+      "Wooloowin_QLD",
+      "Woy Woy_NSW",
+      "Wynnum West_QLD",
+      "Wynyard_TAS",
+      "Yarrawonga_VIC",
+      "Yatala_QLD"
+    ]
+  },
+  "details": {
+    "Roxby Downs_SA": {
+      "town": "Roxby Downs",
+      "state": "SA",
+      "nearest_pharmacy_km": 228.7214189653733,
+      "population": 3671,
+      "opp_count": 1
+    },
+    "Maningrida_NT": {
+      "town": "Maningrida",
+      "state": "NT",
+      "nearest_pharmacy_km": 279.2720394019876,
+      "population": 2518,
+      "opp_count": 1
+    },
+    "Borroloola_NT": {
+      "town": "Borroloola",
+      "state": "NT",
+      "nearest_pharmacy_km": 433.7085831049612,
+      "population": 955,
+      "opp_count": 2
+    },
+    "Warburton_WA": {
+      "town": "Warburton",
+      "state": "WA",
+      "nearest_pharmacy_km": 601.0878832588435,
+      "population": 511,
+      "opp_count": 1
+    },
+    "Doomadgee_QLD": {
+      "town": "Doomadgee",
+      "state": "QLD",
+      "nearest_pharmacy_km": 218.66509516353173,
+      "population": 1387,
+      "opp_count": 1
+    },
+    "Galiwinku_NT": {
+      "town": "Galiwinku",
+      "state": "NT",
+      "nearest_pharmacy_km": 134.18396031215923,
+      "population": 2199,
+      "opp_count": 2
+    },
+    "Ngukurr_NT": {
+      "town": "Ngukurr",
+      "state": "NT",
+      "nearest_pharmacy_km": 267.17707712889415,
+      "population": 1088,
+      "opp_count": 1
+    },
+    "Yulara_NT": {
+      "town": "Yulara",
+      "state": "NT",
+      "nearest_pharmacy_km": 335.84564593130847,
+      "population": 853,
+      "opp_count": 2
+    },
+    "Ramingining_NT": {
+      "town": "Ramingining",
+      "state": "NT",
+      "nearest_pharmacy_km": 202.5093443984803,
+      "population": 1314,
+      "opp_count": 1
+    },
+    "Gunbalanya_NT": {
+      "town": "Gunbalanya",
+      "state": "NT",
+      "nearest_pharmacy_km": 214.02739618130812,
+      "population": 1153,
+      "opp_count": 2
+    },
+    "Milingimbi_NT": {
+      "town": "Milingimbi",
+      "state": "NT",
+      "nearest_pharmacy_km": 202.87957380077876,
+      "population": 1097,
+      "opp_count": 1
+    },
+    "Lajamanu_NT": {
+      "town": "Lajamanu",
+      "state": "NT",
+      "nearest_pharmacy_km": 313.93113899060893,
+      "population": 653,
+      "opp_count": 2
+    },
+    "Gununa_QLD": {
+      "town": "Gununa",
+      "state": "QLD",
+      "nearest_pharmacy_km": 198.4564232379794,
+      "population": 1022,
+      "opp_count": 1
+    },
+    "Yuendumu_NT": {
+      "town": "Yuendumu",
+      "state": "NT",
+      "nearest_pharmacy_km": 265.72235645018935,
+      "population": 740,
+      "opp_count": 2
+    },
+    "Kintore_NT": {
+      "town": "Kintore",
+      "state": "NT",
+      "nearest_pharmacy_km": 459.6478303156801,
+      "population": 420,
+      "opp_count": 1
+    },
+    "Angurugu_NT": {
+      "town": "Angurugu",
+      "state": "NT",
+      "nearest_pharmacy_km": 202.94811105713518,
+      "population": 883,
+      "opp_count": 1
+    },
+    "Numbulwar_NT": {
+      "town": "Numbulwar",
+      "state": "NT",
+      "nearest_pharmacy_km": 258.6168817676915,
+      "population": 681,
+      "opp_count": 1
+    },
+    "Kalkarindji_NT": {
+      "town": "Kalkarindji",
+      "state": "NT",
+      "nearest_pharmacy_km": 289.8707710649027,
+      "population": 544,
+      "opp_count": 1
+    },
+    "Amata_SA": {
+      "town": "Amata",
+      "state": "SA",
+      "nearest_pharmacy_km": 381.63382827095967,
+      "population": 393,
+      "opp_count": 1
+    },
+    "Alyangula_NT": {
+      "town": "Alyangula",
+      "state": "NT",
+      "nearest_pharmacy_km": 189.6653530572574,
+      "population": 751,
+      "opp_count": 2
+    },
+    "Jabiru_NT": {
+      "town": "Jabiru",
+      "state": "NT",
+      "nearest_pharmacy_km": 188.55357876393538,
+      "population": 755,
+      "opp_count": 2
+    },
+    "Minyerri_NT": {
+      "town": "Minyerri",
+      "state": "NT",
+      "nearest_pharmacy_km": 212.60097831906398,
+      "population": 650,
+      "opp_count": 1
+    },
+    "Warruwi_NT": {
+      "town": "Warruwi",
+      "state": "NT",
+      "nearest_pharmacy_km": 269.2647174312841,
+      "population": 432,
+      "opp_count": 1
+    },
+    "Ampilatwatja_NT": {
+      "town": "Ampilatwatja",
+      "state": "NT",
+      "nearest_pharmacy_km": 248.59803228067565,
+      "population": 439,
+      "opp_count": 1
+    },
+    "Wurrumiyanga_NT": {
+      "town": "Wurrumiyanga",
+      "state": "NT",
+      "nearest_pharmacy_km": 71.53070348541961,
+      "population": 1521,
+      "opp_count": 2
+    },
+    "Balgo_WA": {
+      "town": "Balgo",
+      "state": "WA",
+      "nearest_pharmacy_km": 215.79808943813418,
+      "population": 472,
+      "opp_count": 1
+    },
+    "Mount Magnet_WA": {
+      "town": "Mount Magnet",
+      "state": "WA",
+      "nearest_pharmacy_km": 175.82185677188195,
+      "population": 576,
+      "opp_count": 1
+    },
+    "Beagle Bay_WA": {
+      "town": "Beagle Bay",
+      "state": "WA",
+      "nearest_pharmacy_km": 108.66237749282071,
+      "population": 907,
+      "opp_count": 1
+    },
+    "Gapuwiyak_NT": {
+      "town": "Gapuwiyak",
+      "state": "NT",
+      "nearest_pharmacy_km": 112.33059419057862,
+      "population": 828,
+      "opp_count": 1
+    },
+    "Papunya_NT": {
+      "town": "Papunya",
+      "state": "NT",
+      "nearest_pharmacy_km": 207.37661029577788,
+      "population": 438,
+      "opp_count": 1
+    },
+    "Hermannsburg_NT": {
+      "town": "Hermannsburg",
+      "state": "NT",
+      "nearest_pharmacy_km": 115.28242328962858,
+      "population": 751,
+      "opp_count": 2
+    },
+    "Umbakumba_NT": {
+      "town": "Umbakumba",
+      "state": "NT",
+      "nearest_pharmacy_km": 186.38779578326165,
+      "population": 419,
+      "opp_count": 1
+    },
+    "Pannawonica_WA": {
+      "town": "Pannawonica",
+      "state": "WA",
+      "nearest_pharmacy_km": 111.08123494387983,
+      "population": 685,
+      "opp_count": 1
+    },
+    "St Arnaud_VIC": {
+      "town": "St Arnaud",
+      "state": "VIC",
+      "nearest_pharmacy_km": 35.62043310511105,
+      "population": 2126,
+      "opp_count": 1
+    },
+    "Palumpa_NT": {
+      "town": "Palumpa",
+      "state": "NT",
+      "nearest_pharmacy_km": 200.14107190717687,
+      "population": 364,
+      "opp_count": 1
+    },
+    "Mallacoota_VIC": {
+      "town": "Mallacoota",
+      "state": "VIC",
+      "nearest_pharmacy_km": 56.472304176937165,
+      "population": 1118,
+      "opp_count": 1
+    },
+    "Wyndham_WA": {
+      "town": "Wyndham",
+      "state": "WA",
+      "nearest_pharmacy_km": 73.83467455329452,
+      "population": 845,
+      "opp_count": 2
+    },
+    "Alpurrurulam_NT": {
+      "town": "Alpurrurulam",
+      "state": "NT",
+      "nearest_pharmacy_km": 172.9751707166825,
+      "population": 350,
+      "opp_count": 1
+    },
+    "Ali Curung_NT": {
+      "town": "Ali Curung",
+      "state": "NT",
+      "nearest_pharmacy_km": 152.91603623035712,
+      "population": 394,
+      "opp_count": 1
+    },
+    "Mount Morgan_QLD": {
+      "town": "Mount Morgan",
+      "state": "QLD",
+      "nearest_pharmacy_km": 24.073017441667186,
+      "population": 2487,
+      "opp_count": 2
+    },
+    "Bidyadanga_WA": {
+      "town": "Bidyadanga",
+      "state": "WA",
+      "nearest_pharmacy_km": 93.43429165136979,
+      "population": 593,
+      "opp_count": 1
+    },
+    "Laverton_WA": {
+      "town": "Laverton",
+      "state": "WA",
+      "nearest_pharmacy_km": 108.03666229905005,
+      "population": 507,
+      "opp_count": 1
+    },
+    "Ardyaloon_WA": {
+      "town": "Ardyaloon",
+      "state": "WA",
+      "nearest_pharmacy_km": 113.13648087665875,
+      "population": 465,
+      "opp_count": 1
+    },
+    "Capel_WA": {
+      "town": "Capel",
+      "state": "WA",
+      "nearest_pharmacy_km": 17.464834485439255,
+      "population": 2402,
+      "opp_count": 2
+    },
+    "Beswick_NT": {
+      "town": "Beswick",
+      "state": "NT",
+      "nearest_pharmacy_km": 91.89855036246206,
+      "population": 542,
+      "opp_count": 1
+    },
+    "Leinster_WA": {
+      "town": "Leinster",
+      "state": "WA",
+      "nearest_pharmacy_km": 124.32799394700024,
+      "population": 395,
+      "opp_count": 1
+    },
+    "Milikapiti_NT": {
+      "town": "Milikapiti",
+      "state": "NT",
+      "nearest_pharmacy_km": 106.36588889631653,
+      "population": 414,
+      "opp_count": 1
+    },
+    "Mataranka_NT": {
+      "town": "Mataranka",
+      "state": "NT",
+      "nearest_pharmacy_km": 100.5586794226122,
+      "population": 427,
+      "opp_count": 3
+    },
+    "Daly River_NT": {
+      "town": "Daly River",
+      "state": "NT",
+      "nearest_pharmacy_km": 121.57040178132952,
+      "population": 350,
+      "opp_count": 1
+    },
+    "Menindee_NSW": {
+      "town": "Menindee",
+      "state": "NSW",
+      "nearest_pharmacy_km": 101.81254191079387,
+      "population": 380,
+      "opp_count": 2
+    },
+    "Pirlangimpi_NT": {
+      "town": "Pirlangimpi",
+      "state": "NT",
+      "nearest_pharmacy_km": 117.06131354361787,
+      "population": 317,
+      "opp_count": 1
+    },
+    "Santa Teresa_NT": {
+      "town": "Santa Teresa",
+      "state": "NT",
+      "nearest_pharmacy_km": 60.11759975209482,
+      "population": 603,
+      "opp_count": 1
+    },
+    "Glenden_QLD": {
+      "town": "Glenden",
+      "state": "QLD",
+      "nearest_pharmacy_km": 71.64291077876366,
+      "population": 477,
+      "opp_count": 1
+    },
+    "Quorn_SA": {
+      "town": "Quorn",
+      "state": "SA",
+      "nearest_pharmacy_km": 29.667461876762466,
+      "population": 1150,
+      "opp_count": 2
+    },
+    "Pine Creek_NT": {
+      "town": "Pine Creek",
+      "state": "NT",
+      "nearest_pharmacy_km": 85.34191628781942,
+      "population": 392,
+      "opp_count": 1
+    },
+    "Wongan Hills_WA": {
+      "town": "Wongan Hills",
+      "state": "WA",
+      "nearest_pharmacy_km": 46.01772154281447,
+      "population": 725,
+      "opp_count": 1
+    },
+    "Coffin Bay_SA": {
+      "town": "Coffin Bay",
+      "state": "SA",
+      "nearest_pharmacy_km": 37.735144885136535,
+      "population": 667,
+      "opp_count": 1
+    },
+    "Coolgardie_WA": {
+      "town": "Coolgardie",
+      "state": "WA",
+      "nearest_pharmacy_km": 36.7847843409391,
+      "population": 763,
+      "opp_count": 2
+    },
+    "Hill Top_NSW": {
+      "town": "Hill Top",
+      "state": "NSW",
+      "nearest_pharmacy_km": 22.9317,
+      "population": 3236,
+      "opp_count": 1
+    },
+    "Mullewa_WA": {
+      "town": "Mullewa",
+      "state": "WA",
+      "nearest_pharmacy_km": 85.43201714405046,
+      "population": 312,
+      "opp_count": 2
+    },
+    "Trangie_NSW": {
+      "town": "Trangie",
+      "state": "NSW",
+      "nearest_pharmacy_km": 33.342800035086654,
+      "population": 768,
+      "opp_count": 1
+    },
+    "Eugowra_NSW": {
+      "town": "Eugowra",
+      "state": "NSW",
+      "nearest_pharmacy_km": 31.291987457984074,
+      "population": 801,
+      "opp_count": 2
+    },
+    "Kaniva_VIC": {
+      "town": "Kaniva",
+      "state": "VIC",
+      "nearest_pharmacy_km": 36.55664056313164,
+      "population": 683,
+      "opp_count": 1
+    },
+    "Baradine_NSW": {
+      "town": "Baradine",
+      "state": "NSW",
+      "nearest_pharmacy_km": 41.63692280124128,
+      "population": 586,
+      "opp_count": 1
+    },
+    "South Golden Beach_NSW": {
+      "town": "South Golden Beach",
+      "state": "NSW",
+      "nearest_pharmacy_km": 11.4505,
+      "population": 1100,
+      "opp_count": 1
+    },
+    "Hyden_WA": {
+      "town": "Hyden",
+      "state": "WA",
+      "nearest_pharmacy_km": 61.41395589953614,
+      "population": 377,
+      "opp_count": 1
+    },
+    "Hope Vale_QLD": {
+      "town": "Hope Vale",
+      "state": "QLD",
+      "nearest_pharmacy_km": 24.497244268831075,
+      "population": 895,
+      "opp_count": 1
+    },
+    "Barunga_NT": {
+      "town": "Barunga",
+      "state": "NT",
+      "nearest_pharmacy_km": 64.93937587393552,
+      "population": 337,
+      "opp_count": 1
+    },
+    "Nundle_NSW": {
+      "town": "Nundle",
+      "state": "NSW",
+      "nearest_pharmacy_km": 41.26395565177477,
+      "population": 414,
+      "opp_count": 1
+    },
+    "Comboyne_NSW": {
+      "town": "Comboyne",
+      "state": "NSW",
+      "nearest_pharmacy_km": 27.4861283346018,
+      "population": 616,
+      "opp_count": 1
+    },
+    "Nhulunbuy_NT": {
+      "town": "Nhulunbuy",
+      "state": "NT",
+      "nearest_pharmacy_km": 13.9893,
+      "population": 241,
+      "opp_count": 1
+    },
+    "Lismore_VIC": {
+      "town": "Lismore",
+      "state": "VIC",
+      "nearest_pharmacy_km": 29.723374273972553,
+      "population": 321,
+      "opp_count": 1
+    },
+    "Inverloch_VIC": {
+      "town": "Inverloch",
+      "state": "VIC",
+      "nearest_pharmacy_km": 25.6552,
+      "population": 199,
+      "opp_count": 1
+    },
+    "Millaa Millaa_QLD": {
+      "town": "Millaa Millaa",
+      "state": "QLD",
+      "nearest_pharmacy_km": 17.421335515934274,
+      "population": 414,
+      "opp_count": 1
+    },
+    "Batchelor_NT": {
+      "town": "Batchelor",
+      "state": "NT",
+      "nearest_pharmacy_km": 38.27522417904134,
+      "population": 371,
+      "opp_count": 2
+    },
+    "Woodstock_NSW": {
+      "town": "Woodstock",
+      "state": "NSW",
+      "nearest_pharmacy_km": 17.457305699870997,
+      "population": 792,
+      "opp_count": 1
+    },
+    "Penshurst_VIC": {
+      "town": "Penshurst",
+      "state": "VIC",
+      "nearest_pharmacy_km": 25.859635812168055,
+      "population": 491,
+      "opp_count": 1
+    },
+    "Cervantes_WA": {
+      "town": "Cervantes",
+      "state": "WA",
+      "nearest_pharmacy_km": 22.46150459360623,
+      "population": 480,
+      "opp_count": 1
+    },
+    "Docklands_VIC": {
+      "town": "Docklands",
+      "state": "VIC",
+      "nearest_pharmacy_km": 31.66519121032738,
+      "population": 4408329,
+      "opp_count": 5
+    },
+    "Brookton_WA": {
+      "town": "Brookton",
+      "state": "WA",
+      "nearest_pharmacy_km": 19.689690403365347,
+      "population": 532,
+      "opp_count": 1
+    },
+    "Bundarra_NSW": {
+      "town": "Bundarra",
+      "state": "NSW",
+      "nearest_pharmacy_km": 26.739209029583826,
+      "population": 374,
+      "opp_count": 1
+    },
+    "Natimuk_VIC": {
+      "town": "Natimuk",
+      "state": "VIC",
+      "nearest_pharmacy_km": 23.36761357304924,
+      "population": 421,
+      "opp_count": 1
+    },
+    "Seaham_NSW": {
+      "town": "Seaham",
+      "state": "NSW",
+      "nearest_pharmacy_km": 14.230799999999999,
+      "population": 533,
+      "opp_count": 1
+    },
+    "Kulnura_NSW": {
+      "town": "Kulnura",
+      "state": "NSW",
+      "nearest_pharmacy_km": 20.637513814390395,
+      "population": 225,
+      "opp_count": 2
+    },
+    "Manly_NSW": {
+      "town": "Manly",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.7743860156529804,
+      "population": 3779142,
+      "opp_count": 2
+    },
+    "Stanley_TAS": {
+      "town": "Stanley",
+      "state": "TAS",
+      "nearest_pharmacy_km": 16.693852657406165,
+      "population": 504,
+      "opp_count": 1
+    },
+    "Dowerin_WA": {
+      "town": "Dowerin",
+      "state": "WA",
+      "nearest_pharmacy_km": 22.50631112205375,
+      "population": 357,
+      "opp_count": 1
+    },
+    "Macedon_VIC": {
+      "town": "Macedon",
+      "state": "VIC",
+      "nearest_pharmacy_km": 7.259243951389138,
+      "population": 2926,
+      "opp_count": 1
+    },
+    "Amity Point_QLD": {
+      "town": "Amity Point",
+      "state": "QLD",
+      "nearest_pharmacy_km": 15.669480959260435,
+      "population": 500,
+      "opp_count": 1
+    },
+    "Marburg_QLD": {
+      "town": "Marburg",
+      "state": "QLD",
+      "nearest_pharmacy_km": 11.2069,
+      "population": 696,
+      "opp_count": 1
+    },
+    "Harrietville_VIC": {
+      "town": "Harrietville",
+      "state": "VIC",
+      "nearest_pharmacy_km": 26.796778731889265,
+      "population": 128,
+      "opp_count": 2
+    },
+    "Northcliffe_WA": {
+      "town": "Northcliffe",
+      "state": "WA",
+      "nearest_pharmacy_km": 22.61411717805762,
+      "population": 300,
+      "opp_count": 1
+    },
+    "Carnamah_WA": {
+      "town": "Carnamah",
+      "state": "WA",
+      "nearest_pharmacy_km": 20.87689262121651,
+      "population": 314,
+      "opp_count": 1
+    },
+    "Yirrkala_NT": {
+      "town": "Yirrkala",
+      "state": "NT",
+      "nearest_pharmacy_km": 19.498,
+      "population": 657,
+      "opp_count": 1
+    },
+    "Baranduda_VIC": {
+      "town": "Baranduda",
+      "state": "VIC",
+      "nearest_pharmacy_km": 5.748749795356014,
+      "population": 1950,
+      "opp_count": 1
+    },
+    "Salisbury_QLD": {
+      "town": "Salisbury",
+      "state": "QLD",
+      "nearest_pharmacy_km": 1.2377042061319152,
+      "population": 1525329,
+      "opp_count": 1
+    },
+    "Roebourne_WA": {
+      "town": "Roebourne",
+      "state": "WA",
+      "nearest_pharmacy_km": 13.161200000000001,
+      "population": 762,
+      "opp_count": 2
+    },
+    "Allansford_VIC": {
+      "town": "Allansford",
+      "state": "VIC",
+      "nearest_pharmacy_km": 15.7216,
+      "population": 737,
+      "opp_count": 2
+    },
+    "Falls Creek_VIC": {
+      "town": "Falls Creek",
+      "state": "VIC",
+      "nearest_pharmacy_km": 16.272866369429618,
+      "population": 321,
+      "opp_count": 1
+    },
+    "Alice Springs_NT": {
+      "town": "Alice Springs",
+      "state": "NT",
+      "nearest_pharmacy_km": 3.515527372891527,
+      "population": 26255,
+      "opp_count": 2
+    },
+    "Wynnum West_QLD": {
+      "town": "Wynnum West",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.8190547565615977,
+      "population": 1233182,
+      "opp_count": 2
+    },
+    "Woden_ACT": {
+      "town": "Woden",
+      "state": "ACT",
+      "nearest_pharmacy_km": 1.322633920295233,
+      "population": 515288,
+      "opp_count": 5
+    },
+    "Elwood_VIC": {
+      "town": "Elwood",
+      "state": "VIC",
+      "nearest_pharmacy_km": 1.0090378728097784,
+      "population": 4492086,
+      "opp_count": 8
+    },
+    "Weston Creek_ACT": {
+      "town": "Weston Creek",
+      "state": "ACT",
+      "nearest_pharmacy_km": 1.0508217044135602,
+      "population": 268114,
+      "opp_count": 1
+    },
+    "Chatswood_NSW": {
+      "town": "Chatswood",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.8982344096990091,
+      "population": 4606892,
+      "opp_count": 6
+    },
+    "Gladstone_SA": {
+      "town": "Gladstone",
+      "state": "SA",
+      "nearest_pharmacy_km": 11.530299999999999,
+      "population": 623,
+      "opp_count": 1
+    },
+    "Alexander Heights_WA": {
+      "town": "Alexander Heights",
+      "state": "WA",
+      "nearest_pharmacy_km": 1.0801608493453339,
+      "population": 859999,
+      "opp_count": 1
+    },
+    "Thornlie_WA": {
+      "town": "Thornlie",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.8904338634562119,
+      "population": 926997,
+      "opp_count": 2
+    },
+    "Forrestfield_WA": {
+      "town": "Forrestfield",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.7290883645076702,
+      "population": 802597,
+      "opp_count": 1
+    },
+    "Canberra_ACT": {
+      "town": "Canberra",
+      "state": "ACT",
+      "nearest_pharmacy_km": 1.4237830647543148,
+      "population": 313336,
+      "opp_count": 8
+    },
+    "Woy Woy_NSW": {
+      "town": "Woy Woy",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.8527432978247806,
+      "population": 198874,
+      "opp_count": 1
+    },
+    "Wagait Beach_NT": {
+      "town": "Wagait Beach",
+      "state": "NT",
+      "nearest_pharmacy_km": 17.097492582436846,
+      "population": 213,
+      "opp_count": 1
+    },
+    "Parramatta_NSW": {
+      "town": "Parramatta",
+      "state": "NSW",
+      "nearest_pharmacy_km": 1.4735330446604389,
+      "population": 3219769,
+      "opp_count": 10
+    },
+    "Murdoch_WA": {
+      "town": "Murdoch",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.7622385437996093,
+      "population": 1096273,
+      "opp_count": 1
+    },
+    "Jamberoo_NSW": {
+      "town": "Jamberoo",
+      "state": "NSW",
+      "nearest_pharmacy_km": 7.12921608082707,
+      "population": 1529,
+      "opp_count": 1
+    },
+    "Narooma_NSW": {
+      "town": "Narooma",
+      "state": "NSW",
+      "nearest_pharmacy_km": 5.524477620292372,
+      "population": 600,
+      "opp_count": 1
+    },
+    "The Narrows_NT": {
+      "town": "The Narrows",
+      "state": "NT",
+      "nearest_pharmacy_km": 1.988601084820913,
+      "population": 122207,
+      "opp_count": 1
+    },
+    "Watsonia_VIC": {
+      "town": "Watsonia",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.5963662468808844,
+      "population": 2864917,
+      "opp_count": 2
+    },
+    "Orford_TAS": {
+      "town": "Orford",
+      "state": "TAS",
+      "nearest_pharmacy_km": 6.625214859750964,
+      "population": 723,
+      "opp_count": 1
+    },
+    "Black Forest_SA": {
+      "town": "Black Forest",
+      "state": "SA",
+      "nearest_pharmacy_km": 1.6490020116802668,
+      "population": 719429,
+      "opp_count": 2
+    },
+    "Kotara_NSW": {
+      "town": "Kotara",
+      "state": "NSW",
+      "nearest_pharmacy_km": 1.6589725319202284,
+      "population": 218442,
+      "opp_count": 8
+    },
+    "Meeniyan_VIC": {
+      "town": "Meeniyan",
+      "state": "VIC",
+      "nearest_pharmacy_km": 15.9484,
+      "population": 602,
+      "opp_count": 1
+    },
+    "Kalgoorlie_WA": {
+      "town": "Kalgoorlie",
+      "state": "WA",
+      "nearest_pharmacy_km": 2.8385689856350163,
+      "population": 29168,
+      "opp_count": 2
+    },
+    "Katherine_NT": {
+      "town": "Katherine",
+      "state": "NT",
+      "nearest_pharmacy_km": 17.637400000000003,
+      "population": 500,
+      "opp_count": 2
+    },
+    "Rupanyup_VIC": {
+      "town": "Rupanyup",
+      "state": "VIC",
+      "nearest_pharmacy_km": 15.9348,
+      "population": 353,
+      "opp_count": 2
+    },
+    "Sutherland_NSW": {
+      "town": "Sutherland",
+      "state": "NSW",
+      "nearest_pharmacy_km": 2.460452637739269,
+      "population": 3221665,
+      "opp_count": 12
+    },
+    "Wagga Wagga_NSW": {
+      "town": "Wagga Wagga",
+      "state": "NSW",
+      "nearest_pharmacy_km": 1.8304005882041001,
+      "population": 49786,
+      "opp_count": 4
+    },
+    "Orange_NSW": {
+      "town": "Orange",
+      "state": "NSW",
+      "nearest_pharmacy_km": 1.9815168828767276,
+      "population": 40127,
+      "opp_count": 3
+    },
+    "Gordonvale_QLD": {
+      "town": "Gordonvale",
+      "state": "QLD",
+      "nearest_pharmacy_km": 1.9206280975954193,
+      "population": 6611,
+      "opp_count": 1
+    },
+    "Coffs Harbour_NSW": {
+      "town": "Coffs Harbour",
+      "state": "NSW",
+      "nearest_pharmacy_km": 2.0238308125767,
+      "population": 51269,
+      "opp_count": 1
+    },
+    "Broome_WA": {
+      "town": "Broome",
+      "state": "WA",
+      "nearest_pharmacy_km": 1.7194510397208254,
+      "population": 14660,
+      "opp_count": 1
+    },
+    "Fannie Bay_NT": {
+      "town": "Fannie Bay",
+      "state": "NT",
+      "nearest_pharmacy_km": 336.28240947823366,
+      "population": 122207,
+      "opp_count": 1
+    },
+    "Sydney_NSW": {
+      "town": "Sydney",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.6754285933685953,
+      "population": 4737501,
+      "opp_count": 20
+    },
+    "Gold Coast_QLD": {
+      "town": "Gold Coast",
+      "state": "QLD",
+      "nearest_pharmacy_km": 1.0934142792098578,
+      "population": 587320,
+      "opp_count": 5
+    },
+    "Paringa_SA": {
+      "town": "Paringa",
+      "state": "SA",
+      "nearest_pharmacy_km": 3.1324687520672416,
+      "population": 5729,
+      "opp_count": 1
+    },
+    "Dubbo_NSW": {
+      "town": "Dubbo",
+      "state": "NSW",
+      "nearest_pharmacy_km": 2.0242080245035066,
+      "population": 38883,
+      "opp_count": 2
+    },
+    "Albury_NSW": {
+      "town": "Albury",
+      "state": "NSW",
+      "nearest_pharmacy_km": 2.5659531848945702,
+      "population": 53677,
+      "opp_count": 5
+    },
+    "Wollongong_NSW": {
+      "town": "Wollongong",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.8887264870152551,
+      "population": 157079,
+      "opp_count": 4
+    },
+    "Lithgow_NSW": {
+      "town": "Lithgow",
+      "state": "NSW",
+      "nearest_pharmacy_km": 2.5962273626384382,
+      "population": 11197,
+      "opp_count": 1
+    },
+    "Toora_VIC": {
+      "town": "Toora",
+      "state": "VIC",
+      "nearest_pharmacy_km": 10.6989,
+      "population": 100,
+      "opp_count": 1
+    },
+    "Launceston_TAS": {
+      "town": "Launceston",
+      "state": "TAS",
+      "nearest_pharmacy_km": 1.8677317667612934,
+      "population": 80943,
+      "opp_count": 6
+    },
+    "Hobart_TAS": {
+      "town": "Hobart",
+      "state": "TAS",
+      "nearest_pharmacy_km": 1.6517896521185385,
+      "population": 196379,
+      "opp_count": 13
+    },
+    "Nambour_QLD": {
+      "town": "Nambour",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.9828186855438269,
+      "population": 20918,
+      "opp_count": 1
+    },
+    "Magill_SA": {
+      "town": "Magill",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.8819302711707531,
+      "population": 787986,
+      "opp_count": 1
+    },
+    "Cannington_WA": {
+      "town": "Cannington",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.3577949722763057,
+      "population": 1208939,
+      "opp_count": 1
+    },
+    "Maitland_NSW": {
+      "town": "Maitland",
+      "state": "NSW",
+      "nearest_pharmacy_km": 1.1086815437329791,
+      "population": 89597,
+      "opp_count": 1
+    },
+    "Bunbury_WA": {
+      "town": "Bunbury",
+      "state": "WA",
+      "nearest_pharmacy_km": 1.3559980129896327,
+      "population": 75196,
+      "opp_count": 1
+    },
+    "Forster_NSW": {
+      "town": "Forster",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.9661787996012344,
+      "population": 26930,
+      "opp_count": 1
+    },
+    "Sunshine Coast_QLD": {
+      "town": "Sunshine Coast",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.8439670564216635,
+      "population": 157079,
+      "opp_count": 2
+    },
+    "Daglish_WA": {
+      "town": "Daglish",
+      "state": "WA",
+      "nearest_pharmacy_km": 1.0066531584320686,
+      "population": 2007487,
+      "opp_count": 1
+    },
+    "Wilson_WA": {
+      "town": "Wilson",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.9933875715302761,
+      "population": 2019354,
+      "opp_count": 3
+    },
+    "Whyalla_SA": {
+      "town": "Whyalla",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.9580377384923298,
+      "population": 12042,
+      "opp_count": 1
+    },
+    "Red Hill_QLD": {
+      "town": "Red Hill",
+      "state": "QLD",
+      "nearest_pharmacy_km": 1.0237009384768516,
+      "population": 196349,
+      "opp_count": 1
+    },
+    "Robertson_QLD": {
+      "town": "Robertson",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.3259991901187753,
+      "population": 1466779,
+      "opp_count": 1
+    },
+    "Tuggeranong_ACT": {
+      "town": "Tuggeranong",
+      "state": "ACT",
+      "nearest_pharmacy_km": 0.9375234935514437,
+      "population": 86900,
+      "opp_count": 2
+    },
+    "Kalinga_QLD": {
+      "town": "Kalinga",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.8754254014317202,
+      "population": 2079870,
+      "opp_count": 1
+    },
+    "Bendigo_VIC": {
+      "town": "Bendigo",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.9580151668443652,
+      "population": 100649,
+      "opp_count": 3
+    },
+    "Grange_SA": {
+      "town": "Grange",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.7381596293912075,
+      "population": 922043,
+      "opp_count": 1
+    },
+    "Moriac_VIC": {
+      "town": "Moriac",
+      "state": "VIC",
+      "nearest_pharmacy_km": 15.6766,
+      "population": 691,
+      "opp_count": 1
+    },
+    "Sunnybank_QLD": {
+      "town": "Sunnybank",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.28695375360834124,
+      "population": 1345085,
+      "opp_count": 1
+    },
+    "Ballarat_VIC": {
+      "town": "Ballarat",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.9262159214143585,
+      "population": 105435,
+      "opp_count": 6
+    },
+    "Townsville_QLD": {
+      "town": "Townsville",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.8428781153866205,
+      "population": 157079,
+      "opp_count": 2
+    },
+    "Cleveland_QLD": {
+      "town": "Cleveland",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.6866602135820803,
+      "population": 172930,
+      "opp_count": 1
+    },
+    "Wishart_QLD": {
+      "town": "Wishart",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.2552100943817983,
+      "population": 1371519,
+      "opp_count": 1
+    },
+    "Geelong_VIC": {
+      "town": "Geelong",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.8628004872760747,
+      "population": 167234,
+      "opp_count": 6
+    },
+    "Golden Beach_QLD": {
+      "town": "Golden Beach",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.6415246021040271,
+      "population": 65666,
+      "opp_count": 4
+    },
+    "Wagaman_NT": {
+      "town": "Wagaman",
+      "state": "NT",
+      "nearest_pharmacy_km": 0.5217526850618045,
+      "population": 12931,
+      "opp_count": 1
+    },
+    "Melbourne_VIC": {
+      "town": "Melbourne",
+      "state": "VIC",
+      "nearest_pharmacy_km": 1.322825247456064,
+      "population": 4556347,
+      "opp_count": 13
+    },
+    "Piccadilly_WA": {
+      "town": "Piccadilly",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.9158808890115211,
+      "population": 29168,
+      "opp_count": 1
+    },
+    "Carina Heights_QLD": {
+      "town": "Carina Heights",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.6106857063728228,
+      "population": 1946834,
+      "opp_count": 2
+    },
+    "Brisbane_QLD": {
+      "town": "Brisbane",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.6948272023124836,
+      "population": 196349,
+      "opp_count": 4
+    },
+    "St Morris_SA": {
+      "town": "St Morris",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.5567937669284359,
+      "population": 196349,
+      "opp_count": 1
+    },
+    "Maryborough_QLD": {
+      "town": "Maryborough",
+      "state": "QLD",
+      "nearest_pharmacy_km": 1.6518410443459668,
+      "population": 22237,
+      "opp_count": 2
+    },
+    "Bedford_WA": {
+      "town": "Bedford",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.613203551007044,
+      "population": 1961792,
+      "opp_count": 1
+    },
+    "West End_QLD": {
+      "town": "West End",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.6031054825504052,
+      "population": 196349,
+      "opp_count": 3
+    },
+    "Shepparton_VIC": {
+      "town": "Shepparton",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.8299962198058782,
+      "population": 34915,
+      "opp_count": 1
+    },
+    "Darwin_NT": {
+      "town": "Darwin",
+      "state": "NT",
+      "nearest_pharmacy_km": 0.38361372342144345,
+      "population": 122207,
+      "opp_count": 1
+    },
+    "Port Augusta_SA": {
+      "town": "Port Augusta",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.68944571649799,
+      "population": 12930,
+      "opp_count": 1
+    },
+    "Adelaide_SA": {
+      "town": "Adelaide",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.5327744301735668,
+      "population": 196349,
+      "opp_count": 4
+    },
+    "Armidale_NSW": {
+      "town": "Armidale",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.8465848000468111,
+      "population": 21312,
+      "opp_count": 1
+    },
+    "McDowall_QLD": {
+      "town": "McDowall",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.43407240607992204,
+      "population": 1783567,
+      "opp_count": 1
+    },
+    "North Sydney_NSW": {
+      "town": "North Sydney",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.5874799501260268,
+      "population": 4741886,
+      "opp_count": 3
+    },
+    "Innaloo_WA": {
+      "town": "Innaloo",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.399428446880176,
+      "population": 1503008,
+      "opp_count": 1
+    },
+    "Newcastle_NSW": {
+      "town": "Newcastle",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.3453181245333359,
+      "population": 157079,
+      "opp_count": 1
+    },
+    "Howden_TAS": {
+      "town": "Howden",
+      "state": "TAS",
+      "nearest_pharmacy_km": 0.3673437331186068,
+      "population": 1706,
+      "opp_count": 2
+    },
+    "Firle_SA": {
+      "town": "Firle",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.24289063489487736,
+      "population": 441097,
+      "opp_count": 1
+    },
+    "George Town_TAS": {
+      "town": "George Town",
+      "state": "TAS",
+      "nearest_pharmacy_km": 0.836328095462022,
+      "population": 5115,
+      "opp_count": 1
+    },
+    "Hawthorne_QLD": {
+      "town": "Hawthorne",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.4633618072789019,
+      "population": 196349,
+      "opp_count": 1
+    },
+    "Cairns City_QLD": {
+      "town": "Cairns City",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.31679235509230685,
+      "population": 153181,
+      "opp_count": 2
+    },
+    "Coorparoo_QLD": {
+      "town": "Coorparoo",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.44966754119231117,
+      "population": 2270475,
+      "opp_count": 2
+    },
+    "Reservoir_VIC": {
+      "town": "Reservoir",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.6828202037084554,
+      "population": 4306947,
+      "opp_count": 4
+    },
+    "Emerald_QLD": {
+      "town": "Emerald",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.6837927672868849,
+      "population": 14089,
+      "opp_count": 2
+    },
+    "Griffith_NSW": {
+      "town": "Griffith",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.4726183180975156,
+      "population": 20799,
+      "opp_count": 1
+    },
+    "Nowra_NSW": {
+      "town": "Nowra",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.6223657420617791,
+      "population": 40521,
+      "opp_count": 2
+    },
+    "Palmwoods_QLD": {
+      "town": "Palmwoods",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.3007819606300211,
+      "population": 104821,
+      "opp_count": 2
+    },
+    "Maryville_NSW": {
+      "town": "Maryville",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.2822197183505588,
+      "population": 141473,
+      "opp_count": 1
+    },
+    "Gladstone_QLD": {
+      "town": "Gladstone",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.45957460359946944,
+      "population": 34703,
+      "opp_count": 1
+    },
+    "Chelmer_QLD": {
+      "town": "Chelmer",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.35464290267336507,
+      "population": 2161990,
+      "opp_count": 1
+    },
+    "Broken Hill_NSW": {
+      "town": "Broken Hill",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.5060384511527706,
+      "population": 17456,
+      "opp_count": 1
+    },
+    "South West Rocks_NSW": {
+      "town": "South West Rocks",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.9876125094798193,
+      "population": 6443,
+      "opp_count": 1
+    },
+    "Bowen_QLD": {
+      "town": "Bowen",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.34577131354909635,
+      "population": 10212,
+      "opp_count": 1
+    },
+    "Colac_VIC": {
+      "town": "Colac",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.585764023752363,
+      "population": 12348,
+      "opp_count": 1
+    },
+    "East Perth_WA": {
+      "town": "East Perth",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.3816054758576226,
+      "population": 196349,
+      "opp_count": 1
+    },
+    "Penguin_TAS": {
+      "town": "Penguin",
+      "state": "TAS",
+      "nearest_pharmacy_km": 0.3540366381803131,
+      "population": 3961,
+      "opp_count": 1
+    },
+    "Mermaid Beach_QLD": {
+      "town": "Mermaid Beach",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.2095161512966103,
+      "population": 196349,
+      "opp_count": 1
+    },
+    "North Adelaide_SA": {
+      "town": "North Adelaide",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.3183760765493744,
+      "population": 1145652,
+      "opp_count": 2
+    },
+    "Horsham_VIC": {
+      "town": "Horsham",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.42038984877661995,
+      "population": 16289,
+      "opp_count": 1
+    },
+    "Swan Hill_VIC": {
+      "town": "Swan Hill",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.4618717498208406,
+      "population": 10869,
+      "opp_count": 1
+    },
+    "Bathurst_NSW": {
+      "town": "Bathurst",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.3066791154602998,
+      "population": 36330,
+      "opp_count": 1
+    },
+    "Heathcote_VIC": {
+      "town": "Heathcote",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.8748777284668878,
+      "population": 1844,
+      "opp_count": 1
+    },
+    "Wooloowin_QLD": {
+      "town": "Wooloowin",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.27301916673643467,
+      "population": 2283951,
+      "opp_count": 2
+    },
+    "Burnie_TAS": {
+      "town": "Burnie",
+      "state": "TAS",
+      "nearest_pharmacy_km": 0.43892277651049727,
+      "population": 20367,
+      "opp_count": 3
+    },
+    "Warrnambool_VIC": {
+      "town": "Warrnambool",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.3365545452757722,
+      "population": 32894,
+      "opp_count": 1
+    },
+    "Bundaberg North_QLD": {
+      "town": "Bundaberg North",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.4711260160777342,
+      "population": 52370,
+      "opp_count": 1
+    },
+    "Toowoomba_QLD": {
+      "town": "Toowoomba",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.37524659736089566,
+      "population": 108398,
+      "opp_count": 2
+    },
+    "Robina_QLD": {
+      "town": "Robina",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.13045150975528072,
+      "population": 343449,
+      "opp_count": 1
+    },
+    "Geraldton_WA": {
+      "town": "Geraldton",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.35682825131195073,
+      "population": 32717,
+      "opp_count": 1
+    },
+    "Normanton_QLD": {
+      "town": "Normanton",
+      "state": "QLD",
+      "nearest_pharmacy_km": 1.0460652517363895,
+      "population": 1326,
+      "opp_count": 1
+    },
+    "Northbridge_WA": {
+      "town": "Northbridge",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.2572277320071545,
+      "population": 196349,
+      "opp_count": 1
+    },
+    "Avenell Heights_QLD": {
+      "town": "Avenell Heights",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.41156703853486076,
+      "population": 52470,
+      "opp_count": 1
+    },
+    "Coonamble_NSW": {
+      "town": "Coonamble",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.5441674648431858,
+      "population": 2353,
+      "opp_count": 1
+    },
+    "Kalbarri_WA": {
+      "town": "Kalbarri",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.9455915135614332,
+      "population": 1270,
+      "opp_count": 1
+    },
+    "Warwick_QLD": {
+      "town": "Warwick",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.42322056012506076,
+      "population": 14110,
+      "opp_count": 1
+    },
+    "Tiwi_NT": {
+      "town": "Tiwi",
+      "state": "NT",
+      "nearest_pharmacy_km": 0.24389425921760632,
+      "population": 7896,
+      "opp_count": 1
+    },
+    "Hahndorf_SA": {
+      "town": "Hahndorf",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.26134426989483056,
+      "population": 20653,
+      "opp_count": 1
+    },
+    "Mapleton_QLD": {
+      "town": "Mapleton",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.2961326688804144,
+      "population": 2006,
+      "opp_count": 1
+    },
+    "Rainbow Beach_QLD": {
+      "town": "Rainbow Beach",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.5510469984708878,
+      "population": 1176,
+      "opp_count": 1
+    },
+    "Tamworth_NSW": {
+      "town": "Tamworth",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.3164265930239135,
+      "population": 35515,
+      "opp_count": 2
+    },
+    "Gawler_SA": {
+      "town": "Gawler",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.3275609399102341,
+      "population": 28562,
+      "opp_count": 1
+    },
+    "Parkes_NSW": {
+      "town": "Parkes",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.17533217075363913,
+      "population": 9832,
+      "opp_count": 1
+    },
+    "Penrith_NSW": {
+      "town": "Penrith",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.21256701963797517,
+      "population": 158179,
+      "opp_count": 3
+    },
+    "Blacktown_NSW": {
+      "town": "Blacktown",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.8209661225620346,
+      "population": 30518,
+      "opp_count": 3
+    },
+    "Kingston SE_SA": {
+      "town": "Kingston SE",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.5359580112549317,
+      "population": 1637,
+      "opp_count": 1
+    },
+    "Bomaderry_NSW": {
+      "town": "Bomaderry",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.23216055321615334,
+      "population": 40521,
+      "opp_count": 1
+    },
+    "Wynyard_TAS": {
+      "town": "Wynyard",
+      "state": "TAS",
+      "nearest_pharmacy_km": 0.3493692385331196,
+      "population": 5487,
+      "opp_count": 1
+    },
+    "Milton_NSW": {
+      "town": "Milton",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.174578978174577,
+      "population": 8413,
+      "opp_count": 1
+    },
+    "Balmoral_QLD": {
+      "town": "Balmoral",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.13401137021239815,
+      "population": 2211281,
+      "opp_count": 1
+    },
+    "Miles_QLD": {
+      "town": "Miles",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.5775387195093948,
+      "population": 1349,
+      "opp_count": 1
+    },
+    "Melton_VIC": {
+      "town": "Melton",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.1422330003399919,
+      "population": 76346,
+      "opp_count": 1
+    },
+    "Clifton_QLD": {
+      "town": "Clifton",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.5867663780733667,
+      "population": 1299,
+      "opp_count": 1
+    },
+    "Mahomets Flats_WA": {
+      "town": "Mahomets Flats",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.19221443647117722,
+      "population": 32717,
+      "opp_count": 1
+    },
+    "Maylands_WA": {
+      "town": "Maylands",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.1444004704756576,
+      "population": 196349,
+      "opp_count": 1
+    },
+    "Moss Vale_NSW": {
+      "town": "Moss Vale",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.6598629705885253,
+      "population": 1100,
+      "opp_count": 1
+    },
+    "Lorne_VIC": {
+      "town": "Lorne",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.6908196377660206,
+      "population": 1248,
+      "opp_count": 1
+    },
+    "Gympie_QLD": {
+      "town": "Gympie",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.2380020281671178,
+      "population": 19435,
+      "opp_count": 1
+    },
+    "Gerringong_NSW": {
+      "town": "Gerringong",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.1075905507628413,
+      "population": 5118,
+      "opp_count": 1
+    },
+    "Jurien Bay_WA": {
+      "town": "Jurien Bay",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.40429981743926674,
+      "population": 1600,
+      "opp_count": 1
+    },
+    "Collaroy_NSW": {
+      "town": "Collaroy",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.6540909099957556,
+      "population": 39747,
+      "opp_count": 1
+    },
+    "Kilcoy_QLD": {
+      "town": "Kilcoy",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.2522975964332844,
+      "population": 2433,
+      "opp_count": 1
+    },
+    "Hay_NSW": {
+      "town": "Hay",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.2737505908186372,
+      "population": 2308,
+      "opp_count": 1
+    },
+    "Mount Barker_SA": {
+      "town": "Mount Barker",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.19923006079076577,
+      "population": 21908,
+      "opp_count": 1
+    },
+    "Norwood_SA": {
+      "town": "Norwood",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.05155411183113571,
+      "population": 196349,
+      "opp_count": 1
+    },
+    "Kununurra_WA": {
+      "town": "Kununurra",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.23164105187991785,
+      "population": 4715,
+      "opp_count": 1
+    },
+    "Thirlmere_NSW": {
+      "town": "Thirlmere",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.15915780024085804,
+      "population": 12103,
+      "opp_count": 1
+    },
+    "Port Macquarie_NSW": {
+      "town": "Port Macquarie",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.15187390525218208,
+      "population": 47893,
+      "opp_count": 2
+    },
+    "Loxton_SA": {
+      "town": "Loxton",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.23606129756307268,
+      "population": 3947,
+      "opp_count": 2
+    },
+    "Berri_SA": {
+      "town": "Berri",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.3796288458091848,
+      "population": 4287,
+      "opp_count": 1
+    },
+    "Millmerran_QLD": {
+      "town": "Millmerran",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.40273613434080147,
+      "population": 1371,
+      "opp_count": 1
+    },
+    "Yarrawonga_VIC": {
+      "town": "Yarrawonga",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.23376512820277184,
+      "population": 8580,
+      "opp_count": 1
+    },
+    "Ulverstone_TAS": {
+      "town": "Ulverstone",
+      "state": "TAS",
+      "nearest_pharmacy_km": 0.1453592373525562,
+      "population": 12823,
+      "opp_count": 1
+    },
+    "Spring Hill_QLD": {
+      "town": "Spring Hill",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.10467400598149534,
+      "population": 196349,
+      "opp_count": 1
+    },
+    "Evandale_TAS": {
+      "town": "Evandale",
+      "state": "TAS",
+      "nearest_pharmacy_km": 0.418839490146046,
+      "population": 1558,
+      "opp_count": 2
+    },
+    "Condobolin_NSW": {
+      "town": "Condobolin",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.20388100046271376,
+      "population": 2579,
+      "opp_count": 1
+    },
+    "Holbrook_NSW": {
+      "town": "Holbrook",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.40530197231628606,
+      "population": 1251,
+      "opp_count": 1
+    },
+    "Gayndah_QLD": {
+      "town": "Gayndah",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.30163807216178196,
+      "population": 1695,
+      "opp_count": 1
+    },
+    "Werribee_VIC": {
+      "town": "Werribee",
+      "state": "VIC",
+      "nearest_pharmacy_km": 10.2819,
+      "population": 44088,
+      "opp_count": 7
+    },
+    "Gatton_QLD": {
+      "town": "Gatton",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.2106944741676007,
+      "population": 6852,
+      "opp_count": 1
+    },
+    "Mackay_QLD": {
+      "town": "Mackay",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.12248445863874152,
+      "population": 80455,
+      "opp_count": 1
+    },
+    "Bargo_NSW": {
+      "town": "Bargo",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.1052193988183006,
+      "population": 4016,
+      "opp_count": 1
+    },
+    "Apollo Bay_VIC": {
+      "town": "Apollo Bay",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.3147864876217705,
+      "population": 1591,
+      "opp_count": 1
+    },
+    "Biloela_QLD": {
+      "town": "Biloela",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.2133052876533128,
+      "population": 5667,
+      "opp_count": 1
+    },
+    "Denmark_WA": {
+      "town": "Denmark",
+      "state": "WA",
+      "nearest_pharmacy_km": 45.818326669898795,
+      "population": 2944,
+      "opp_count": 1
+    },
+    "Stanthorpe_QLD": {
+      "town": "Stanthorpe",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.239520152315991,
+      "population": 5373,
+      "opp_count": 1
+    },
+    "St Helens_TAS": {
+      "town": "St Helens",
+      "state": "TAS",
+      "nearest_pharmacy_km": 0.27009223501490176,
+      "population": 2073,
+      "opp_count": 1
+    },
+    "Dungog_NSW": {
+      "town": "Dungog",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.16563121306532191,
+      "population": 2669,
+      "opp_count": 1
+    },
+    "Crows Nest_QLD": {
+      "town": "Crows Nest",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.24040522410375184,
+      "population": 1808,
+      "opp_count": 1
+    },
+    "Nhill_VIC": {
+      "town": "Nhill",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.22578055003239267,
+      "population": 1949,
+      "opp_count": 1
+    },
+    "Hawks Nest_NSW": {
+      "town": "Hawks Nest",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.1215707637587593,
+      "population": 10342,
+      "opp_count": 1
+    },
+    "Iluka_NSW": {
+      "town": "Iluka",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.13819811639325438,
+      "population": 8506,
+      "opp_count": 1
+    },
+    "Robe_SA": {
+      "town": "Robe",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.37022326358788743,
+      "population": 1156,
+      "opp_count": 1
+    },
+    "Bourke_NSW": {
+      "town": "Bourke",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.20551516563829264,
+      "population": 2035,
+      "opp_count": 1
+    },
+    "Cowes_VIC": {
+      "town": "Cowes",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.11577985939641143,
+      "population": 7218,
+      "opp_count": 1
+    },
+    "Kuranda_QLD": {
+      "town": "Kuranda",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.11213250786471743,
+      "population": 6912,
+      "opp_count": 1
+    },
+    "Cooktown_QLD": {
+      "town": "Cooktown",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.261370387261382,
+      "population": 1797,
+      "opp_count": 1
+    },
+    "Finley_NSW": {
+      "town": "Finley",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.22171960519513925,
+      "population": 1864,
+      "opp_count": 1
+    },
+    "Roma_QLD": {
+      "town": "Roma",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.11441445467399394,
+      "population": 6522,
+      "opp_count": 1
+    },
+    "Cobar_NSW": {
+      "town": "Cobar",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.11749547362283921,
+      "population": 3369,
+      "opp_count": 1
+    },
+    "Warracknabeal_VIC": {
+      "town": "Warracknabeal",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.17563970691663833,
+      "population": 2227,
+      "opp_count": 1
+    },
+    "East Toowoomba_QLD": {
+      "town": "East Toowoomba",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.07137853257772875,
+      "population": 108398,
+      "opp_count": 1
+    },
+    "Wauchope_NSW": {
+      "town": "Wauchope",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.16024217856431225,
+      "population": 8482,
+      "opp_count": 1
+    },
+    "Tin Can Bay_QLD": {
+      "town": "Tin Can Bay",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.2185544935506508,
+      "population": 2274,
+      "opp_count": 1
+    },
+    "Mount Compass_SA": {
+      "town": "Mount Compass",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.2186422774216244,
+      "population": 1232,
+      "opp_count": 1
+    },
+    "Clermont_QLD": {
+      "town": "Clermont",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.17939655274240762,
+      "population": 2079,
+      "opp_count": 2
+    },
+    "Kerang_VIC": {
+      "town": "Kerang",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.19315713757385358,
+      "population": 3696,
+      "opp_count": 1
+    },
+    "Castlemaine_VIC": {
+      "town": "Castlemaine",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.12109486486230252,
+      "population": 10577,
+      "opp_count": 1
+    },
+    "Tongala_VIC": {
+      "town": "Tongala",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.2766994055502625,
+      "population": 1331,
+      "opp_count": 1
+    },
+    "Blayney_NSW": {
+      "town": "Blayney",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.11903439763756431,
+      "population": 2997,
+      "opp_count": 1
+    },
+    "Cooroy_QLD": {
+      "town": "Cooroy",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.2854103463389512,
+      "population": 3485,
+      "opp_count": 1
+    },
+    "Gray_NT": {
+      "town": "Gray",
+      "state": "NT",
+      "nearest_pharmacy_km": 0.4777003931555441,
+      "population": 9567,
+      "opp_count": 1
+    },
+    "Kandos_NSW": {
+      "town": "Kandos",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.18286662594666167,
+      "population": 1308,
+      "opp_count": 1
+    },
+    "Murwillumbah_NSW": {
+      "town": "Murwillumbah",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.10022948831936225,
+      "population": 11712,
+      "opp_count": 1
+    },
+    "Kingscote_SA": {
+      "town": "Kingscote",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.1942853293451328,
+      "population": 1915,
+      "opp_count": 1
+    },
+    "Windaroo_QLD": {
+      "town": "Windaroo",
+      "state": "QLD",
+      "nearest_pharmacy_km": 1.4069828891266336,
+      "population": 3962,
+      "opp_count": 1
+    },
+    "Snug_TAS": {
+      "town": "Snug",
+      "state": "TAS",
+      "nearest_pharmacy_km": 3.140738095250037,
+      "population": 4415,
+      "opp_count": 1
+    },
+    "Waroona_WA": {
+      "town": "Waroona",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.13065400336595145,
+      "population": 2633,
+      "opp_count": 1
+    },
+    "The Vines_WA": {
+      "town": "The Vines",
+      "state": "WA",
+      "nearest_pharmacy_km": 1.6209103837769792,
+      "population": 3177,
+      "opp_count": 1
+    },
+    "Brassall_QLD": {
+      "town": "Brassall",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.9154528196430195,
+      "population": 6249,
+      "opp_count": 2
+    },
+    "Nyngan_NSW": {
+      "town": "Nyngan",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.17012937418466353,
+      "population": 1761,
+      "opp_count": 1
+    },
+    "Robinvale_VIC": {
+      "town": "Robinvale",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.11648176834737242,
+      "population": 2441,
+      "opp_count": 1
+    },
+    "Kurrajong_NSW": {
+      "town": "Kurrajong",
+      "state": "NSW",
+      "nearest_pharmacy_km": 2.2429970791851725,
+      "population": 844,
+      "opp_count": 1
+    },
+    "Lismore_NSW": {
+      "town": "Lismore",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.09665305085685427,
+      "population": 28516,
+      "opp_count": 1
+    },
+    "Success_WA": {
+      "town": "Success",
+      "state": "WA",
+      "nearest_pharmacy_km": 1.4282878399898513,
+      "population": 9373,
+      "opp_count": 1
+    },
+    "Shellharbour_NSW": {
+      "town": "Shellharbour",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.5833419218134414,
+      "population": 3135,
+      "opp_count": 2
+    },
+    "Laidley_QLD": {
+      "town": "Laidley",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.12275842096849177,
+      "population": 3976,
+      "opp_count": 1
+    },
+    "Mornington_VIC": {
+      "town": "Mornington",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.6284374433156042,
+      "population": 24301,
+      "opp_count": 2
+    },
+    "Tully_QLD": {
+      "town": "Tully",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.2002042528092326,
+      "population": 2252,
+      "opp_count": 1
+    },
+    "Brookwater_QLD": {
+      "town": "Brookwater",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.8076866691742708,
+      "population": 4495,
+      "opp_count": 1
+    },
+    "Corowa_NSW": {
+      "town": "Corowa",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.1510096397323796,
+      "population": 5444,
+      "opp_count": 1
+    },
+    "Narrandera_NSW": {
+      "town": "Narrandera",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.1158053425093416,
+      "population": 3883,
+      "opp_count": 1
+    },
+    "Terang_VIC": {
+      "town": "Terang",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.11163119518412197,
+      "population": 2020,
+      "opp_count": 1
+    },
+    "Trentham_VIC": {
+      "town": "Trentham",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.1295118026538519,
+      "population": 1427,
+      "opp_count": 1
+    },
+    "Wagin_WA": {
+      "town": "Wagin",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.18313326604662775,
+      "population": 1311,
+      "opp_count": 1
+    },
+    "Corryong_VIC": {
+      "town": "Corryong",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.1857978415346171,
+      "population": 1186,
+      "opp_count": 1
+    },
+    "Oatlands_TAS": {
+      "town": "Oatlands",
+      "state": "TAS",
+      "nearest_pharmacy_km": 0.4033486643504135,
+      "population": 562,
+      "opp_count": 1
+    },
+    "Rushworth_VIC": {
+      "town": "Rushworth",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.2151777000643855,
+      "population": 972,
+      "opp_count": 1
+    },
+    "Toodyay_WA": {
+      "town": "Toodyay",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.22080587595833448,
+      "population": 953,
+      "opp_count": 1
+    },
+    "Hillston_NSW": {
+      "town": "Hillston",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.17704660164117209,
+      "population": 1149,
+      "opp_count": 1
+    },
+    "Gulgong_NSW": {
+      "town": "Gulgong",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.10017967869554309,
+      "population": 2057,
+      "opp_count": 1
+    },
+    "Dorrigo_NSW": {
+      "town": "Dorrigo",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.14825704574462514,
+      "population": 1346,
+      "opp_count": 1
+    },
+    "Bindoon_WA": {
+      "town": "Bindoon",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.1853201836772827,
+      "population": 1183,
+      "opp_count": 1
+    },
+    "Denman_NSW": {
+      "town": "Denman",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.11855562816682051,
+      "population": 1647,
+      "opp_count": 1
+    },
+    "Auburn_SA": {
+      "town": "Auburn",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.23542230697443636,
+      "population": 470,
+      "opp_count": 1
+    },
+    "Liverpool_NSW": {
+      "town": "Liverpool",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.9399573848265778,
+      "population": 24095,
+      "opp_count": 4
+    },
+    "Kimba_SA": {
+      "town": "Kimba",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.28565354372533697,
+      "population": 608,
+      "opp_count": 1
+    },
+    "Ouyen_VIC": {
+      "town": "Ouyen",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.16616635292660215,
+      "population": 1022,
+      "opp_count": 1
+    },
+    "Cobden_VIC": {
+      "town": "Cobden",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.15524959570976576,
+      "population": 1603,
+      "opp_count": 1
+    },
+    "Bingara_NSW": {
+      "town": "Bingara",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.15970098190811208,
+      "population": 1028,
+      "opp_count": 1
+    },
+    "Coonabarabran_NSW": {
+      "town": "Coonabarabran",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.12377829854276098,
+      "population": 2387,
+      "opp_count": 1
+    },
+    "Red Cliffs_VIC": {
+      "town": "Red Cliffs",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.1380466837390247,
+      "population": 3136,
+      "opp_count": 1
+    },
+    "Calamvale_QLD": {
+      "town": "Calamvale",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.6929951261752622,
+      "population": 19605,
+      "opp_count": 1
+    },
+    "Cunnamulla_QLD": {
+      "town": "Cunnamulla",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.144644730088052,
+      "population": 1124,
+      "opp_count": 1
+    },
+    "Koroit_VIC": {
+      "town": "Koroit",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.17734054675845223,
+      "population": 1997,
+      "opp_count": 1
+    },
+    "Warialda_NSW": {
+      "town": "Warialda",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.1346942595974776,
+      "population": 1130,
+      "opp_count": 1
+    },
+    "Currumbin_QLD": {
+      "town": "Currumbin",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.9272706590164537,
+      "population": 5940,
+      "opp_count": 1
+    },
+    "Angle Vale_SA": {
+      "town": "Angle Vale",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.12440429203407237,
+      "population": 4088,
+      "opp_count": 1
+    },
+    "McLaren Vale_SA": {
+      "town": "McLaren Vale",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.95588981699096,
+      "population": 0,
+      "opp_count": 3
+    },
+    "Epping_VIC": {
+      "town": "Epping",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.5654529642053512,
+      "population": 20945,
+      "opp_count": 1
+    },
+    "Barham_NSW": {
+      "town": "Barham",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.11501106749570376,
+      "population": 1134,
+      "opp_count": 1
+    },
+    "Queanbeyan_NSW": {
+      "town": "Queanbeyan",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.47544815292400305,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Nannup_WA": {
+      "town": "Nannup",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.2000380789713935,
+      "population": 538,
+      "opp_count": 1
+    },
+    "Mallala_SA": {
+      "town": "Mallala",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.12185504493337167,
+      "population": 887,
+      "opp_count": 1
+    },
+    "Kellerberrin_WA": {
+      "town": "Kellerberrin",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.13121243131251323,
+      "population": 798,
+      "opp_count": 1
+    },
+    "Barooga_NSW": {
+      "town": "Barooga",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.14967901790858995,
+      "population": 1752,
+      "opp_count": 1
+    },
+    "Canungra_QLD": {
+      "town": "Canungra",
+      "state": "QLD",
+      "nearest_pharmacy_km": 46.21512416402047,
+      "population": 793,
+      "opp_count": 1
+    },
+    "Beverley_WA": {
+      "town": "Beverley",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.10607303352623874,
+      "population": 869,
+      "opp_count": 1
+    },
+    "Hopetoun_WA": {
+      "town": "Hopetoun",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.12076186666472034,
+      "population": 783,
+      "opp_count": 1
+    },
+    "Wanneroo_WA": {
+      "town": "Wanneroo",
+      "state": "WA",
+      "nearest_pharmacy_km": 2.0541857712167566,
+      "population": 11945,
+      "opp_count": 2
+    },
+    "Northampton_WA": {
+      "town": "Northampton",
+      "state": "WA",
+      "nearest_pharmacy_km": 19.59215262591463,
+      "population": 821,
+      "opp_count": 1
+    },
+    "Point Turton_SA": {
+      "town": "Point Turton",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.15217230230796988,
+      "population": 194,
+      "opp_count": 1
+    },
+    "Laura_SA": {
+      "town": "Laura",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.7621453768275791,
+      "population": 522,
+      "opp_count": 1
+    },
+    "Farrar_NT": {
+      "town": "Farrar",
+      "state": "NT",
+      "nearest_pharmacy_km": 0.13918935256294293,
+      "population": 6261,
+      "opp_count": 1
+    },
+    "Penfield_SA": {
+      "town": "Penfield",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.6072024139953073,
+      "population": 0,
+      "opp_count": 3
+    },
+    "South Fremantle_WA": {
+      "town": "South Fremantle",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.55801919555292,
+      "population": 6166,
+      "opp_count": 1
+    },
+    "Lockhart_NSW": {
+      "town": "Lockhart",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.15053006279440698,
+      "population": 830,
+      "opp_count": 1
+    },
+    "Thomastown_VIC": {
+      "town": "Thomastown",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.3336682700723326,
+      "population": 23563,
+      "opp_count": 2
+    },
+    "Morawa_WA": {
+      "town": "Morawa",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.13226271144683419,
+      "population": 443,
+      "opp_count": 1
+    },
+    "Gnowangerup_WA": {
+      "town": "Gnowangerup",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.10216795215361907,
+      "population": 568,
+      "opp_count": 1
+    },
+    "Camden Park_NSW": {
+      "town": "Camden Park",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.726218917972167,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Kallaroo_WA": {
+      "town": "Kallaroo",
+      "state": "WA",
+      "nearest_pharmacy_km": 1.0302199324247838,
+      "population": 3089,
+      "opp_count": 1
+    },
+    "Hornsby_NSW": {
+      "town": "Hornsby",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.12806870404902868,
+      "population": 22168,
+      "opp_count": 1
+    },
+    "Southern Cross_WA": {
+      "town": "Southern Cross",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.10307787383340197,
+      "population": 523,
+      "opp_count": 1
+    },
+    "Lalor_VIC": {
+      "town": "Lalor",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.36430911607051825,
+      "population": 13369,
+      "opp_count": 2
+    },
+    "Menangle Park_NSW": {
+      "town": "Menangle Park",
+      "state": "NSW",
+      "nearest_pharmacy_km": 0.35528071183790233,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Middle Swan_WA": {
+      "town": "Middle Swan",
+      "state": "WA",
+      "nearest_pharmacy_km": 1.8110408106173406,
+      "population": 1040,
+      "opp_count": 1
+    },
+    "Goodna_QLD": {
+      "town": "Goodna",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.11684674698329924,
+      "population": 11170,
+      "opp_count": 1
+    },
+    "Raceview_QLD": {
+      "town": "Raceview",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.24720483267980756,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Griffin_QLD": {
+      "town": "Griffin",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.8285449163685732,
+      "population": 1500,
+      "opp_count": 1
+    },
+    "Nar Nar Goon_VIC": {
+      "town": "Nar Nar Goon",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.5522610591378572,
+      "population": 0,
+      "opp_count": 2
+    },
+    "Tamborine_QLD": {
+      "town": "Tamborine",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.17657728864531236,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Duncraig_WA": {
+      "town": "Duncraig",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.05283066776789214,
+      "population": 12051,
+      "opp_count": 1
+    },
+    "Yatala_QLD": {
+      "town": "Yatala",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.7524868925994026,
+      "population": 545,
+      "opp_count": 1
+    },
+    "Tugun_QLD": {
+      "town": "Tugun",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.0803673246384298,
+      "population": 3647,
+      "opp_count": 1
+    },
+    "Bald Hills_QLD": {
+      "town": "Bald Hills",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.24643321255583517,
+      "population": 2903,
+      "opp_count": 1
+    },
+    "Midvale_WA": {
+      "town": "Midvale",
+      "state": "WA",
+      "nearest_pharmacy_km": 1.5308247202644836,
+      "population": 1188,
+      "opp_count": 2
+    },
+    "Hillcrest_QLD": {
+      "town": "Hillcrest",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.5409086069001156,
+      "population": 3413,
+      "opp_count": 2
+    },
+    "One Tree Hill_SA": {
+      "town": "One Tree Hill",
+      "state": "SA",
+      "nearest_pharmacy_km": 0.19637055224521643,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Cannons Creek_VIC": {
+      "town": "Cannons Creek",
+      "state": "VIC",
+      "nearest_pharmacy_km": 1.6778214698925298,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Coodanup_WA": {
+      "town": "Coodanup",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.7680447564157906,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Cooloongup_WA": {
+      "town": "Cooloongup",
+      "state": "WA",
+      "nearest_pharmacy_km": 1.796417618188892,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Coomera_QLD": {
+      "town": "Coomera",
+      "state": "QLD",
+      "nearest_pharmacy_km": 1.833276106158348,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Elanora Heights_NSW": {
+      "town": "Elanora Heights",
+      "state": "NSW",
+      "nearest_pharmacy_km": 1.1287077936180923,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Emerald_VIC": {
+      "town": "Emerald",
+      "state": "VIC",
+      "nearest_pharmacy_km": 3.534983132297983,
+      "population": 0,
+      "opp_count": 3
+    },
+    "Eumundi_QLD": {
+      "town": "Eumundi",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.5252603852288488,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Greensborough_VIC": {
+      "town": "Greensborough",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.6226317773428448,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Hillman_WA": {
+      "town": "Hillman",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.19402841920611164,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Huntingdale_WA": {
+      "town": "Huntingdale",
+      "state": "WA",
+      "nearest_pharmacy_km": 2.331574520119019,
+      "population": 0,
+      "opp_count": 3
+    },
+    "Loganholme_QLD": {
+      "town": "Loganholme",
+      "state": "QLD",
+      "nearest_pharmacy_km": 0.20685567156962992,
+      "population": 0,
+      "opp_count": 1
+    },
+    "New Norfolk_TAS": {
+      "town": "New Norfolk",
+      "state": "TAS",
+      "nearest_pharmacy_km": 1.0867082669542345,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Newport_QLD": {
+      "town": "Newport",
+      "state": "QLD",
+      "nearest_pharmacy_km": 1.3144756160462538,
+      "population": 0,
+      "opp_count": 3
+    },
+    "Piara Waters_WA": {
+      "town": "Piara Waters",
+      "state": "WA",
+      "nearest_pharmacy_km": 0.27309492711820005,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Richmond_TAS": {
+      "town": "Richmond",
+      "state": "TAS",
+      "nearest_pharmacy_km": 0.1861891714646998,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Rockbank_VIC": {
+      "town": "Rockbank",
+      "state": "VIC",
+      "nearest_pharmacy_km": 20.8607,
+      "population": 0,
+      "opp_count": 2
+    },
+    "Seville_VIC": {
+      "town": "Seville",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.9052999397365312,
+      "population": 0,
+      "opp_count": 1
+    },
+    "Wollert_VIC": {
+      "town": "Wollert",
+      "state": "VIC",
+      "nearest_pharmacy_km": 0.54386668198653,
+      "population": 0,
+      "opp_count": 1
+    }
+  }
+}

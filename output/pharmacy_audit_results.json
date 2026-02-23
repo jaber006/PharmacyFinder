@@ -1,0 +1,302 @@
+[
+  {
+    "name": "Collaroy Plateau Pharmacy",
+    "status": "BAD",
+    "offset_m": 238,
+    "source": "priceline.com.au",
+    "state": "NSW",
+    "db": [
+      -33.7276924,
+      151.2867934
+    ],
+    "google": [
+      -33.7276924,
+      151.2842185
+    ]
+  },
+  {
+    "name": "Chemist Warehouse",
+    "status": "BAD",
+    "offset_m": 358034,
+    "source": "OpenStreetMap",
+    "state": "NSW",
+    "db": [
+      -33.9421809,
+      151.2408942
+    ],
+    "google": [
+      -35.8546064,
+      148.0820129
+    ]
+  },
+  {
+    "name": "Whittlesea Amcal Pharmacy",
+    "status": "OK",
+    "offset_m": 17,
+    "source": "findapharmacy.com.au",
+    "state": "VIC",
+    "db": [
+      -37.5119148,
+      145.1176734
+    ],
+    "google": [
+      -37.5119646,
+      145.11786
+    ]
+  },
+  {
+    "name": "Clontarf Discount Drug Store",
+    "status": "OK",
+    "offset_m": 127,
+    "source": "findapharmacy.com.au",
+    "state": "QLD",
+    "db": [
+      -27.2601541,
+      153.0797514
+    ],
+    "google": [
+      -27.2612894,
+      153.0796176
+    ]
+  },
+  {
+    "name": "Cincotta Discount Chemist",
+    "status": "BAD",
+    "offset_m": 196363,
+    "source": "OpenStreetMap",
+    "state": "NSW",
+    "db": [
+      -33.89895,
+      151.173714
+    ],
+    "google": [
+      -33.0856889,
+      149.2940333
+    ]
+  },
+  {
+    "name": "Goulburn Health Hub Pharmacy",
+    "status": "OK",
+    "offset_m": 118,
+    "source": "findapharmacy.com.au",
+    "state": "NSW",
+    "db": [
+      -34.73136,
+      149.74344
+    ],
+    "google": [
+      -34.7303528,
+      149.7430312
+    ]
+  },
+  {
+    "name": "Picton Discount Drug Store",
+    "status": "OK",
+    "offset_m": 65,
+    "source": "findapharmacy.com.au",
+    "state": "NSW",
+    "db": [
+      -34.1688709,
+      150.6131877
+    ],
+    "google": [
+      -34.1683657,
+      150.6135346
+    ]
+  },
+  {
+    "name": "Townsville Chempro Chemist",
+    "status": "BAD",
+    "offset_m": 205,
+    "source": "findapharmacy.com.au",
+    "state": "QLD",
+    "db": [
+      -19.276048,
+      146.7576465
+    ],
+    "google": [
+      -19.2744895,
+      146.7586863
+    ]
+  },
+  {
+    "name": "Midway Family Pharmacy",
+    "status": "OK",
+    "offset_m": 3,
+    "source": "findapharmacy.com.au",
+    "state": "NSW",
+    "db": [
+      -33.7952667,
+      151.1026755
+    ],
+    "google": [
+      -33.7952953,
+      151.1026713
+    ]
+  },
+  {
+    "name": "TerryWhite Chemmart Caboolture North",
+    "status": "OK",
+    "offset_m": 53,
+    "source": "findapharmacy.com.au",
+    "state": "QLD",
+    "db": [
+      -27.0785565,
+      152.9651897
+    ],
+    "google": [
+      -27.078255,
+      152.96477
+    ]
+  },
+  {
+    "name": "Charman Road Pharmacy",
+    "status": "OK",
+    "offset_m": 11,
+    "source": "findapharmacy.com.au",
+    "state": "VIC",
+    "db": [
+      -37.966334,
+      145.055737
+    ],
+    "google": [
+      -37.9662974,
+      145.0556224
+    ]
+  },
+  {
+    "name": "Quirindi Pharmacy",
+    "status": "OK",
+    "offset_m": 35,
+    "source": "findapharmacy.com.au",
+    "state": "NSW",
+    "db": [
+      -31.5052157,
+      150.6798284
+    ],
+    "google": [
+      -31.5054826,
+      150.6800141
+    ]
+  },
+  {
+    "name": "Buff Point Pharmacy",
+    "status": "OK",
+    "offset_m": 12,
+    "source": "findapharmacy.com.au",
+    "state": "NSW",
+    "db": [
+      -33.2323861,
+      151.5387068
+    ],
+    "google": [
+      -33.2324114,
+      151.5388331
+    ]
+  },
+  {
+    "name": "Halls Gap Fair Price Chemist",
+    "status": "OK",
+    "offset_m": 0,
+    "source": "findapharmacy.com.au",
+    "state": "VIC",
+    "db": [
+      -37.1385892,
+      142.5198841
+    ],
+    "google": [
+      -37.1385892,
+      142.5198841
+    ]
+  },
+  {
+    "name": "Kangaroo Flat Community Pharmacy",
+    "status": "BAD",
+    "offset_m": 454,
+    "source": "findapharmacy.com.au",
+    "state": "VIC",
+    "db": [
+      -36.7956769,
+      144.2438401
+    ],
+    "google": [
+      -36.7996604,
+      144.2427426
+    ]
+  },
+  {
+    "name": "TerryWhite Chemmart Bassendean",
+    "status": "OK",
+    "offset_m": 50,
+    "source": "findapharmacy.com.au",
+    "state": "WA",
+    "db": [
+      -31.9035411,
+      115.9532322
+    ],
+    "google": [
+      -31.903955,
+      115.9534448
+    ]
+  },
+  {
+    "name": "Kilcunda Discount Chemist",
+    "status": "OK",
+    "offset_m": 0,
+    "source": "friendliespharmacy.com.au",
+    "state": "VIC",
+    "db": [
+      -38.5497022,
+      145.4769984
+    ],
+    "google": [
+      -38.5497022,
+      145.4769984
+    ]
+  },
+  {
+    "name": "Minchinbury Pharmacy",
+    "status": "OK",
+    "offset_m": 0,
+    "source": "findapharmacy.com.au",
+    "state": "NSW",
+    "db": [
+      -33.7874434,
+      150.8324257
+    ],
+    "google": [
+      -33.7874434,
+      150.8324257
+    ]
+  },
+  {
+    "name": "Rockdale Pharmacy",
+    "status": "OK",
+    "offset_m": 21,
+    "source": "findapharmacy.com.au",
+    "state": "NSW",
+    "db": [
+      -33.9518926,
+      151.1359512
+    ],
+    "google": [
+      -33.9519583,
+      151.1361624
+    ]
+  },
+  {
+    "name": "UFS Dispensaries Ballarat (Bridge Mall)",
+    "status": "OK",
+    "offset_m": 86,
+    "source": "findapharmacy.com.au",
+    "state": "VIC",
+    "db": [
+      -37.5628583,
+      143.8621151
+    ],
+    "google": [
+      -37.5625421,
+      143.8612296
+    ]
+  }
+]
