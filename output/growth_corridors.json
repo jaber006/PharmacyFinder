@@ -1,0 +1,1735 @@
+{
+  "generated": "2026-02-23T23:59:03.704221",
+  "total_corridors": 32,
+  "corridors": [
+    {
+      "name": "Fraser Rise - Plumpton (Western Melbourne)",
+      "state": "VIC",
+      "suburbs": [
+        "Fraser Rise",
+        "Plumpton",
+        "Bonnie Brook",
+        "Deanside"
+      ],
+      "current_pop_2024": 20730,
+      "growth_rate_annual_pct": 26.3,
+      "pop_3yr_projection": 41764,
+      "pop_5yr_projection": 66621,
+      "pop_buildout": 45000,
+      "planned_dwellings": 15000,
+      "pharmacy_count": 0,
+      "pharmacies": [],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": null,
+      "ratio_3yr": null,
+      "ratio_5yr": null,
+      "pharmacies_needed_now": 5,
+      "pharmacies_needed_3yr": 10,
+      "pharmacies_needed_5yr": 16,
+      "pharmacies_needed_buildout": 11,
+      "opportunity_score": 80.4,
+      "urgency": "CRITICAL - No pharmacy exists",
+      "key_developments": "Multiple housing estates under rapid development. Fraser Rise gazetted 2017, population grew from 0 to 9,097 (2021) to ~21,000 (2024). Wiyal Primary School opened 2026. Springside West Secondary College operating.",
+      "new_infrastructure": "New primary school (Wiyal) opened 2026. Bus services confirmed in 2025/26 budget. No major shopping centre announced yet - potential gap.",
+      "opportunity_notes": "EXTREMELY HIGH GROWTH. Only 2 pharmacies (Thornhill Park + Aintree) serving 20,000+ people. Ratio ~10,000:1. New shopping centre needed urgently.",
+      "sources": [
+        "ABS Regional Population 2023-24",
+        "Wikipedia: Fraser Rise"
+      ],
+      "lat_centre": -37.7,
+      "lng_centre": 144.70499999999998
+    },
+    {
+      "name": "Taylor - Throsby (Gungahlin, Canberra)",
+      "state": "ACT",
+      "suburbs": [
+        "Taylor",
+        "Throsby",
+        "Jacka",
+        "Moncrieff"
+      ],
+      "current_pop_2024": 4766,
+      "growth_rate_annual_pct": 28.7,
+      "pop_3yr_projection": 10159,
+      "pop_5yr_projection": 16828,
+      "pop_buildout": 18000,
+      "planned_dwellings": 6000,
+      "pharmacy_count": 0,
+      "pharmacies": [],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": null,
+      "ratio_3yr": null,
+      "ratio_5yr": null,
+      "pharmacies_needed_now": 1,
+      "pharmacies_needed_3yr": 2,
+      "pharmacies_needed_5yr": 4,
+      "pharmacies_needed_buildout": 4,
+      "opportunity_score": 75.7,
+      "urgency": "CRITICAL - No pharmacy exists",
+      "key_developments": "FASTEST growing area in ALL of Australia (28.7%). Taylor grew from ~3,700 to 4,766 (29%). Largest natural increase in ACT. Largest internal migration gain in ACT.",
+      "new_infrastructure": "Taylor Primary School. New community centre. Shopping planned.",
+      "opportunity_notes": "Fastest growth rate in Australia but very small base. Check Gungahlin pharmacy coverage. ACT has different pharmacy regulations.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -35.129999999999995,
+      "lng_centre": 149.12
+    },
+    {
+      "name": "Box Hill - Nelson (North West Sydney)",
+      "state": "NSW",
+      "suburbs": [
+        "Box Hill",
+        "Nelson",
+        "The Ponds",
+        "Rouse Hill"
+      ],
+      "current_pop_2024": 22420,
+      "growth_rate_annual_pct": 22.0,
+      "pop_3yr_projection": 40711,
+      "pop_5yr_projection": 60594,
+      "pop_buildout": 50000,
+      "planned_dwellings": 18000,
+      "pharmacy_count": 1,
+      "pharmacies": [
+        {
+          "name": "Priceline Pharmacy Gables",
+          "address": "P20 Stockland Gables Shopping Centre, 2 Lakefront Cr, Gables, NSW, 2765"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 22420.0,
+      "ratio_3yr": 40711.0,
+      "ratio_5yr": 60594.0,
+      "pharmacies_needed_now": 4,
+      "pharmacies_needed_3yr": 9,
+      "pharmacies_needed_5yr": 14,
+      "pharmacies_needed_buildout": 11,
+      "opportunity_score": 75.5,
+      "urgency": "VERY HIGH - Severely underserved",
+      "key_developments": "Third-fastest growing area in Australia. Box Hill-Nelson SA2 grew by 4,042 people (22%) in 2023-24. Part of Hills Shire growth area.",
+      "new_infrastructure": "Box Hill town centre under development. North West Metro extension nearby. New schools opening.",
+      "opportunity_notes": "Massive growth but only ~2 pharmacies in Box Hill itself. Very high priority.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -33.65,
+      "lng_centre": 150.91
+    },
+    {
+      "name": "Mickleham - Kalkallo - Beveridge (Northern Melbourne)",
+      "state": "VIC",
+      "suburbs": [
+        "Mickleham",
+        "Kalkallo",
+        "Beveridge",
+        "Donnybrook",
+        "Wollert"
+      ],
+      "current_pop_2024": 52000,
+      "growth_rate_annual_pct": 15.0,
+      "pop_3yr_projection": 79085,
+      "pop_5yr_projection": 104590,
+      "pop_buildout": 120000,
+      "planned_dwellings": 40000,
+      "pharmacy_count": 2,
+      "pharmacies": [
+        {
+          "name": "Chemist Warehouse Merrifield City SC Mickleham",
+          "address": "Shop MM02 Merrifield City Shopping Centre 250 to 270 Donnybrook Road, Mickleham, VIC, 3064"
+        },
+        {
+          "name": "Chemist Warehouse Kalkallo",
+          "address": "Shop 20, Kallo Town Centre, Kalkallo, VIC, 3064"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 26000.0,
+      "ratio_3yr": 39542.0,
+      "ratio_5yr": 52295.0,
+      "pharmacies_needed_now": 11,
+      "pharmacies_needed_3yr": 17,
+      "pharmacies_needed_5yr": 24,
+      "pharmacies_needed_buildout": 28,
+      "opportunity_score": 74.0,
+      "urgency": "VERY HIGH - Severely underserved",
+      "key_developments": "Mickleham grew from 3,142 (2016) to 17,452 (2021) to ~30,000 (2024) - forecasted 30,091 by 2026. Beveridge InterCity planned as major new town centre. Merrifield City SC opened. Kallo Town Centre opened.",
+      "new_infrastructure": "Merrifield City Shopping Centre (with CW pharmacy). Kallo Town Centre (with CW pharmacy). Beveridge InterCity town centre planned (NO pharmacy yet). Multiple schools open/planned.",
+      "opportunity_notes": "Only 4 pharmacies for ~52,000 people = 13,000:1 ratio. Beveridge and Wallan expansion areas still underserved. Beveridge InterCity town centre = prime target.",
+      "sources": [
+        "ABS Regional Population 2023-24",
+        "Wikipedia: Mickleham, Beveridge",
+        "id Community forecasts"
+      ],
+      "lat_centre": -37.510000000000005,
+      "lng_centre": 144.92000000000002
+    },
+    {
+      "name": "Tarneit North (Western Melbourne)",
+      "state": "VIC",
+      "suburbs": [
+        "Tarneit",
+        "Truganina",
+        "Manor Lakes"
+      ],
+      "current_pop_2024": 13485,
+      "growth_rate_annual_pct": 20.3,
+      "pop_3yr_projection": 23477,
+      "pop_5yr_projection": 33976,
+      "pop_buildout": 36000,
+      "planned_dwellings": 12000,
+      "pharmacy_count": 0,
+      "pharmacies": [],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": null,
+      "ratio_3yr": null,
+      "ratio_5yr": null,
+      "pharmacies_needed_now": 3,
+      "pharmacies_needed_3yr": 5,
+      "pharmacies_needed_5yr": 8,
+      "pharmacies_needed_buildout": 9,
+      "opportunity_score": 73.0,
+      "urgency": "CRITICAL - No pharmacy exists",
+      "key_developments": "Tarneit North SA2 grew 20.3% in 2023-24. Part of Wyndham LGA, one of Australias fastest growing municipalities.",
+      "new_infrastructure": "Multiple planned community centres. Train station at Tarneit. New school sites.",
+      "opportunity_notes": "Very high growth rate. Northern Tarneit especially underserved.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -37.79,
+      "lng_centre": 144.67000000000002
+    },
+    {
+      "name": "Rockbank - Mount Cottrell (Western Melbourne)",
+      "state": "VIC",
+      "suburbs": [
+        "Rockbank",
+        "Mount Cottrell",
+        "Mount Atkinson",
+        "Fieldstone"
+      ],
+      "current_pop_2024": 31389,
+      "growth_rate_annual_pct": 15.2,
+      "pop_3yr_projection": 47988,
+      "pop_5yr_projection": 63685,
+      "pop_buildout": 75000,
+      "planned_dwellings": 25000,
+      "pharmacy_count": 1,
+      "pharmacies": [
+        {
+          "name": "TerryWhite Chemmart Woodlea",
+          "address": "Shop T14, 2 Lim Way, Aintree, VIC, 3336"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 31389.0,
+      "ratio_3yr": 47988.0,
+      "ratio_5yr": 63685.0,
+      "pharmacies_needed_now": 6,
+      "pharmacies_needed_3yr": 10,
+      "pharmacies_needed_5yr": 14,
+      "pharmacies_needed_buildout": 17,
+      "opportunity_score": 70.5,
+      "urgency": "VERY HIGH - Severely underserved",
+      "key_developments": "Massive greenfield development west of Melbourne. Rockbank railway station upgraded 2019. Multiple estates under construction. Mount Atkinson PSP (Precinct Structure Plan) approved.",
+      "new_infrastructure": "Rockbank station upgraded. Mount Atkinson town centre planned. Multiple school sites designated.",
+      "opportunity_notes": "Second-fastest growth in Melbourne (4,100 new people in one year). Adjacent to Fraser Rise corridor.",
+      "sources": [
+        "ABS Regional Population 2023-24",
+        "Wikipedia: Rockbank"
+      ],
+      "lat_centre": -37.74,
+      "lng_centre": 144.665
+    },
+    {
+      "name": "Marsden Park - Shanes Park (North West Sydney)",
+      "state": "NSW",
+      "suburbs": [
+        "Marsden Park",
+        "Shanes Park",
+        "Schofields"
+      ],
+      "current_pop_2024": 27263,
+      "growth_rate_annual_pct": 14.7,
+      "pop_3yr_projection": 41139,
+      "pop_5yr_projection": 54124,
+      "pop_buildout": 42000,
+      "planned_dwellings": 15000,
+      "pharmacy_count": 2,
+      "pharmacies": [
+        {
+          "name": "Medicines R Us Chemist - Marsden Park",
+          "address": "Our Medical 1- 2/9 Hollinsworth Road, MARSDEN PARK, NSW, 2765"
+        },
+        {
+          "name": "TerryWhite Chemmart",
+          "address": "Schofields, NSW"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 13632.0,
+      "ratio_3yr": 20570.0,
+      "ratio_5yr": 27062.0,
+      "pharmacies_needed_now": 4,
+      "pharmacies_needed_3yr": 8,
+      "pharmacies_needed_5yr": 11,
+      "pharmacies_needed_buildout": 8,
+      "opportunity_score": 64.2,
+      "urgency": "HIGH - Significantly underserved",
+      "key_developments": "Part of North West Growth Centre. Grew by 3,497 people in 2023-24. Elara housing estate is major development.",
+      "new_infrastructure": "Marsden Park town centre expanding. Elara Village shopping. Multiple schools.",
+      "opportunity_notes": "Only 2 pharmacies for 27,000+ people = ~13,500:1 ratio. CRITICAL GAP.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -33.7,
+      "lng_centre": 150.85
+    },
+    {
+      "name": "Ripley Valley (Ipswich)",
+      "state": "QLD",
+      "suburbs": [
+        "Ripley",
+        "South Ripley",
+        "Deebing Heights",
+        "White Rock"
+      ],
+      "current_pop_2024": 22000,
+      "growth_rate_annual_pct": 15.0,
+      "pop_3yr_projection": 33459,
+      "pop_5yr_projection": 44249,
+      "pop_buildout": 120000,
+      "planned_dwellings": 50000,
+      "pharmacy_count": 2,
+      "pharmacies": [
+        {
+          "name": "Ripley Chempro Chemist",
+          "address": "T19 Ripley Town Centre. 20 Main Street, RIPLEY, QLD, 4306"
+        },
+        {
+          "name": "TerryWhite Chemmart Winston Glades",
+          "address": "Shop 1 Winston Glades Shopping Centre, 259 Ash Street, FLINDERS VIEW, QLD, 4305"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 11000.0,
+      "ratio_3yr": 16730.0,
+      "ratio_5yr": 22124.0,
+      "pharmacies_needed_now": 3,
+      "pharmacies_needed_3yr": 6,
+      "pharmacies_needed_5yr": 9,
+      "pharmacies_needed_buildout": 28,
+      "opportunity_score": 63.4,
+      "urgency": "HIGH - Significantly underserved",
+      "key_developments": "Australias LARGEST planned community. Ripley grew 15% in 2023-24 (2,700 people). Ripley Town Centre opened 2018 (9,000sqm). Ecco Ripley masterplan for 120,000 people.",
+      "new_infrastructure": "Ripley Town Centre with medical centre and supermarket. Ripley Central State School opened 2023. More town centres planned for South Ripley.",
+      "opportunity_notes": "Only 1 pharmacy (Ripley Chempro) for ~22,000 people = 22,000:1 ratio! Building to 120,000. EXTREME OPPORTUNITY. South Ripley town centre needs pharmacy.",
+      "sources": [
+        "ABS Regional Population 2023-24",
+        "Wikipedia: Ripley QLD"
+      ],
+      "lat_centre": -27.685,
+      "lng_centre": 152.79
+    },
+    {
+      "name": "Clyde North - South (South East Melbourne)",
+      "state": "VIC",
+      "suburbs": [
+        "Clyde North",
+        "Clyde",
+        "Officer",
+        "Officer South"
+      ],
+      "current_pop_2024": 24609,
+      "growth_rate_annual_pct": 19.0,
+      "pop_3yr_projection": 41470,
+      "pop_5yr_projection": 58725,
+      "pop_buildout": 60000,
+      "planned_dwellings": 20000,
+      "pharmacy_count": 6,
+      "pharmacies": [
+        {
+          "name": "Beaconsfield Pharmacy",
+          "address": "Shop 18 Beaconsfield Shopping Plaza, 55 Old Princes Highway, BEACONSFIELD, VIC, 3807"
+        },
+        {
+          "name": "TerryWhite Chemmart Officer",
+          "address": "340 Princes Highway, OFFICER, VIC, 3809"
+        },
+        {
+          "name": "Casey Superclinic Pharmacy",
+          "address": "50 Kangan Drive, BERWICK, VIC, 3806"
+        },
+        {
+          "name": "HPS Pharmacies Berwick",
+          "address": "Ground Floor, St John of God Hospital Berwick, 75 Kangan Drive, BERWICK, VIC, 3806"
+        },
+        {
+          "name": "Centre Square Pharmacy",
+          "address": "B2102, Level 1, One Centre Square, 43 Siding Avenue, OFFICER, VIC, 3809"
+        },
+        {
+          "name": "Priceline Pharmacy Clyde North",
+          "address": "5/21 St Germain Boulevard, CLYDE NORTH, VIC, 3978"
+        }
+      ],
+      "medical_centres": 1,
+      "shopping_centres": 0,
+      "current_ratio": 4102.0,
+      "ratio_3yr": 6912.0,
+      "ratio_5yr": 9788.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 4,
+      "pharmacies_needed_5yr": 8,
+      "pharmacies_needed_buildout": 9,
+      "opportunity_score": 60.9,
+      "urgency": "FUTURE - Will become underserved in 3-5 years",
+      "key_developments": "Clyde North South SA2 grew by 3,932 people (19%) in 2023-24. Third-largest absolute growth in Melbourne. Multiple estates: Berwick Waters, Edgebrook, Aspect.",
+      "new_infrastructure": "Officer town centre expanding. Selandra Rise community hub. Multiple schools.",
+      "opportunity_notes": "6 pharmacies for ~45,000+ across corridor. Better than north/west but southern Clyde still has gaps.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -38.07,
+      "lng_centre": 145.38
+    },
+    {
+      "name": "Yarrabilba (Logan)",
+      "state": "QLD",
+      "suburbs": [
+        "Yarrabilba",
+        "Kairabah"
+      ],
+      "current_pop_2024": 16000,
+      "growth_rate_annual_pct": 12.0,
+      "pop_3yr_projection": 22478,
+      "pop_5yr_projection": 28197,
+      "pop_buildout": 50000,
+      "planned_dwellings": 20000,
+      "pharmacy_count": 2,
+      "pharmacies": [
+        {
+          "name": "Pharmacy Xpress Logan Village",
+          "address": "Shop 3, 2 North Street, LOGAN VILLAGE, QLD, 4207"
+        },
+        {
+          "name": "TerryWhite Chemmart Yarrabilba",
+          "address": "Shop 5-6, 24 Waldron Street, YARRABILBA, QLD, 4207"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 8000.0,
+      "ratio_3yr": 11239.0,
+      "ratio_5yr": 14098.0,
+      "pharmacies_needed_now": 2,
+      "pharmacies_needed_3yr": 3,
+      "pharmacies_needed_5yr": 5,
+      "pharmacies_needed_buildout": 10,
+      "opportunity_score": 54.2,
+      "urgency": "MODERATE - Below recommended ratio",
+      "key_developments": "Planned city for 50,000 people. Grew from 3,580 (2016) to 10,240 (2021). 10 neighbourhoods. Multiple schools. Kairabah incorporated into Yarrabilba 2025.",
+      "new_infrastructure": "Yarrabilba Town Centre shopping. St Clares Catholic School (2017). Yarrabilba State School (2018). Secondary College (2020). San Damiano College (2021).",
+      "opportunity_notes": "Only 1 pharmacy (TWC Yarrabilba) for ~16,000 people = 16,000:1 ratio. Building to 50,000. CRITICAL.",
+      "sources": [
+        "Wikipedia: Yarrabilba",
+        "ABS Census"
+      ],
+      "lat_centre": -27.8,
+      "lng_centre": 153.10500000000002
+    },
+    {
+      "name": "Mount Barker (Adelaide Hills)",
+      "state": "SA",
+      "suburbs": [
+        "Mount Barker",
+        "Littlehampton",
+        "Nairne"
+      ],
+      "current_pop_2024": 46000,
+      "growth_rate_annual_pct": 5.0,
+      "pop_3yr_projection": 53250,
+      "pop_5yr_projection": 58708,
+      "pop_buildout": 60000,
+      "planned_dwellings": 10000,
+      "pharmacy_count": 6,
+      "pharmacies": [
+        {
+          "name": "TerryWhite Chemmart Mt Barker Central",
+          "address": "Shop 21-22 Mt Barker Central Shopping Centre, Mclaren Street, MOUNT BARKER, SA, 5251"
+        },
+        {
+          "name": "TerryWhite Chemmart Mt Barker Gawler Street",
+          "address": "45 Gawler Street, MOUNT BARKER, SA, 5251"
+        },
+        {
+          "name": "TerryWhite Chemmart Mt Barker Village",
+          "address": "Shop 1/2 Victoria Crescent, Mt Barker Village Shopping Centre, MOUNT BARKER, SA, 5251"
+        },
+        {
+          "name": "TerryWhite Chemmart Summit Health Centre",
+          "address": "85 Wellington Road, MOUNT BARKER, SA, 5251"
+        },
+        {
+          "name": "TerryWhite Chemmart Mt Barker South",
+          "address": "Shop 2 Mt Barker Shopping Centre, 239 Wellington Road, MT BARKER, SA, 5251"
+        },
+        {
+          "name": "Amcal",
+          "address": "485, Heysen Boulevard, Mount Barker, SA, 5251"
+        }
+      ],
+      "medical_centres": 1,
+      "shopping_centres": 0,
+      "current_ratio": 7667.0,
+      "ratio_3yr": 8875.0,
+      "ratio_5yr": 9785.0,
+      "pharmacies_needed_now": 5,
+      "pharmacies_needed_3yr": 7,
+      "pharmacies_needed_5yr": 8,
+      "pharmacies_needed_buildout": 9,
+      "opportunity_score": 52.2,
+      "urgency": "MODERATE - Below recommended ratio",
+      "key_developments": "Second-largest growth in SA (1,100 people). One of Australias fastest growing regional cities. Population doubled in 15 years.",
+      "new_infrastructure": "Mount Barker Central Shopping Centre. Multiple medical centres. New schools.",
+      "opportunity_notes": "Already 6 pharmacies = 7,700:1 ratio. More competitive but still room for growth.",
+      "sources": [
+        "ABS Regional Population 2023-24",
+        "Wikipedia: Mount Barker SA"
+      ],
+      "lat_centre": -35.075,
+      "lng_centre": 138.86
+    },
+    {
+      "name": "Oran Park - Gregory Hills - Catherine Field (South West Sydney)",
+      "state": "NSW",
+      "suburbs": [
+        "Oran Park",
+        "Gregory Hills",
+        "Catherine Field",
+        "Spring Farm"
+      ],
+      "current_pop_2024": 42000,
+      "growth_rate_annual_pct": 8.0,
+      "pop_3yr_projection": 52907,
+      "pop_5yr_projection": 61711,
+      "pop_buildout": 60000,
+      "planned_dwellings": 22000,
+      "pharmacy_count": 9,
+      "pharmacies": [
+        {
+          "name": "Austral Pharmacy",
+          "address": "Corner Edmondson & Tenth Avenues, AUSTRAL, NSW, 2179"
+        },
+        {
+          "name": "Leppington Pharmacy",
+          "address": "Shop 3, 1469 Camden Valley Way, LEPPINGTON, NSW, 2179"
+        },
+        {
+          "name": "Leppington Village Pharmacy",
+          "address": "Shop T5 Leppington Village, 108-116 Ingleburn Road, LEPPINGTON, NSW, 2179"
+        },
+        {
+          "name": "Raby Family Chemist",
+          "address": "Shop 1 138 Thunderbolt Drive, RABY, NSW, 2566"
+        },
+        {
+          "name": "Oran Park Discount Chemist",
+          "address": "Oran Park Podium Shop 12N, 351 Oran Park Drive, ORAN PARK, NSW, 2570"
+        },
+        {
+          "name": "Chemist Warehouse",
+          "address": "5, Emerald Hills Boulevard, NSW"
+        },
+        {
+          "name": "TerryWhite Chemmart Willowdale Compounding",
+          "address": "8/5 Willowdale Drive, Denham Court, NSW, 2565"
+        },
+        {
+          "name": "TerryWhite Chemmart Bringelly",
+          "address": "Shop 1, 45-51 Wentworth Road, Bringelly, NSW, 2556"
+        },
+        {
+          "name": "Priceline Pharmacy Oran Park",
+          "address": "SHOP 7E, ORAN PARK PODIUM, 351 ORAN PARK DRIVE, ORAN PARK, NSW, 2570"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 4667.0,
+      "ratio_3yr": 5879.0,
+      "ratio_5yr": 6857.0,
+      "pharmacies_needed_now": 1,
+      "pharmacies_needed_3yr": 4,
+      "pharmacies_needed_5yr": 6,
+      "pharmacies_needed_buildout": 6,
+      "opportunity_score": 50.4,
+      "urgency": "FUTURE - Will become underserved in 3-5 years",
+      "key_developments": "More mature growth corridor. Oran Park Town Centre well-established with Coles, Woolworths, Aldi. Gregory Hills has town centre.",
+      "new_infrastructure": "Oran Park Town Centre. Gregory Hills Corporate Park. Multiple schools.",
+      "opportunity_notes": "Already 6 pharmacies so more competitive. But Catherine Field and Spring Farm expanding.",
+      "sources": [
+        "Camden Council growth data"
+      ],
+      "lat_centre": -33.975,
+      "lng_centre": 150.77499999999998
+    },
+    {
+      "name": "Byford - Mundijong (South East Perth)",
+      "state": "WA",
+      "suburbs": [
+        "Byford",
+        "Mundijong",
+        "Whitby"
+      ],
+      "current_pop_2024": 30000,
+      "growth_rate_annual_pct": 6.0,
+      "pop_3yr_projection": 35730,
+      "pop_5yr_projection": 40146,
+      "pop_buildout": 50000,
+      "planned_dwellings": 12000,
+      "pharmacy_count": 5,
+      "pharmacies": [
+        {
+          "name": "Byford Glades 7 Day Pharmacy",
+          "address": "Shop E, Lakeside Plaza Shopping Centre, Lot 878 Mead Street, BYFORD, WA, 6122"
+        },
+        {
+          "name": "Priceline Pharmacy Byford",
+          "address": "Shop 2, Byford Village S/C, 20 Abernethy Road, BYFORD, WA, 6122"
+        },
+        {
+          "name": "Pharmacy 777 Byford",
+          "address": "Shop T18, Byford Market Place, 34 Abernethy Road, BYFORD, WA, 6122"
+        },
+        {
+          "name": "Byford Pharmacy",
+          "address": "The Byford Centre, 837 South West Highway, BYFORD, WA, 6122"
+        },
+        {
+          "name": "Priceline Pharmacy Byford",
+          "address": "SHOP 2, BYFORD VILLAGE SHOPPING CENTRE, 20 ABERNATHY ROAD, BYFORD, WA, 6122"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 6000.0,
+      "ratio_3yr": 7146.0,
+      "ratio_5yr": 8029.0,
+      "pharmacies_needed_now": 2,
+      "pharmacies_needed_3yr": 3,
+      "pharmacies_needed_5yr": 5,
+      "pharmacies_needed_buildout": 7,
+      "opportunity_score": 46.0,
+      "urgency": "FUTURE - Will become underserved in 3-5 years",
+      "key_developments": "Established growth area. Byford town centre well developed. Mundijong-Whitby district structure plan for 20,000+ new dwellings.",
+      "new_infrastructure": "Byford shopping centres. METRONET Byford extension (opens 2024). Mundijong town centre planned.",
+      "opportunity_notes": "5-6 pharmacies already. Competitive. Mundijong town centre could be opportunity.",
+      "sources": [
+        "Serpentine-Jarrahdale Shire planning docs"
+      ],
+      "lat_centre": -32.230000000000004,
+      "lng_centre": 116.0
+    },
+    {
+      "name": "Denman Prospect - Whitlam (Molonglo Valley, Canberra)",
+      "state": "ACT",
+      "suburbs": [
+        "Denman Prospect",
+        "Whitlam",
+        "Molonglo"
+      ],
+      "current_pop_2024": 7000,
+      "growth_rate_annual_pct": 17.0,
+      "pop_3yr_projection": 11211,
+      "pop_5yr_projection": 15347,
+      "pop_buildout": 30000,
+      "planned_dwellings": 10000,
+      "pharmacy_count": 1,
+      "pharmacies": [
+        {
+          "name": "Capital Chemist Denman Prospect",
+          "address": "Tenancy 24, Denman Village Shops, 3 Felstead Vista, DENMAN PROSPECT, ACT, 2611"
+        }
+      ],
+      "medical_centres": 1,
+      "shopping_centres": 0,
+      "current_ratio": 7000.0,
+      "ratio_3yr": 11211.0,
+      "ratio_5yr": 15347.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 1,
+      "pharmacies_needed_5yr": 2,
+      "pharmacies_needed_buildout": 6,
+      "opportunity_score": 44.4,
+      "urgency": "MODERATE - Below recommended ratio",
+      "key_developments": "Denman Prospect grew 700 people (17%). Molonglo Valley is Canberras largest greenfield development. Building new suburbs from scratch.",
+      "new_infrastructure": "Molonglo commercial centre planned. New schools. Group Centre planned.",
+      "opportunity_notes": "Fast growth. Check pharmacy presence. Molonglo Group Centre = pharmacy target.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -35.28,
+      "lng_centre": 149.05
+    },
+    {
+      "name": "Legana (West Tamar, Launceston)",
+      "state": "TAS",
+      "suburbs": [
+        "Legana",
+        "Grindelwald",
+        "Rosevears"
+      ],
+      "current_pop_2024": 6000,
+      "growth_rate_annual_pct": 4.0,
+      "pop_3yr_projection": 6749,
+      "pop_5yr_projection": 7299,
+      "pop_buildout": 12000,
+      "planned_dwellings": 2000,
+      "pharmacy_count": 0,
+      "pharmacies": [],
+      "medical_centres": 0,
+      "shopping_centres": 3,
+      "current_ratio": null,
+      "ratio_3yr": null,
+      "ratio_5yr": null,
+      "pharmacies_needed_now": 1,
+      "pharmacies_needed_3yr": 1,
+      "pharmacies_needed_5yr": 1,
+      "pharmacies_needed_buildout": 3,
+      "opportunity_score": 42.2,
+      "urgency": "CRITICAL - No pharmacy exists",
+      "key_developments": "Growing residential area 12km north of Launceston. New primary school opened 2024 (350 students). Community sports precinct built. West Tamar Highway being upgraded to 2 lanes each direction by end 2026.",
+      "new_infrastructure": "Legana Marketplace (anchored by Woolworths). New primary school (2024). Community sports precinct. Highway upgrade.",
+      "opportunity_notes": "ZERO pharmacies in Legana! Nearest pharmacy is ~12km away at Riverside/Windsor. Wikipedia mentions a \"chemist\" at Legana Marketplace but NO pharmacy in our database. Population ~6,000 and growing. New school = young families = pharmacy demand. MJs BACKYARD. If the chemist mention is outdated/closed, this is a TOP PRIORITY MONOPOLY POSITION.",
+      "sources": [
+        "Wikipedia: Legana TAS"
+      ],
+      "lat_centre": -41.370000000000005,
+      "lng_centre": 147.04000000000002
+    },
+    {
+      "name": "Munno Para West - Angle Vale (Northern Adelaide)",
+      "state": "SA",
+      "suburbs": [
+        "Munno Para West",
+        "Angle Vale",
+        "Munno Para"
+      ],
+      "current_pop_2024": 21000,
+      "growth_rate_annual_pct": 11.0,
+      "pop_3yr_projection": 28720,
+      "pop_5yr_projection": 35386,
+      "pop_buildout": 35000,
+      "planned_dwellings": 12000,
+      "pharmacy_count": 4,
+      "pharmacies": [
+        {
+          "name": "TerryWhite Chemmart Unihealth",
+          "address": "250-252 Curtis Road, Unihealth Playford GP Superclinic, MUNNO PARA WEST, SA, 5115"
+        },
+        {
+          "name": "TerryWhite Chemmart Playford",
+          "address": "Shop 1&2 Playford Town Centre, 297 Peachey Road, MUNNO PARA, SA, 5115"
+        },
+        {
+          "name": "TerryWhite Chemmart Angle Vale",
+          "address": "Shop 5 Angle Vale Village Shopping Centre, 121-129 Heaslip Road, ANGLE VALE, SA, 5117"
+        },
+        {
+          "name": "TerryWhite Chemmart Angle Vale",
+          "address": "Shop 5&6, Angle Vale Shopping Centre, 121-129 Heaslip Road, Angle Vale, SA, 5117"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 5250.0,
+      "ratio_3yr": 7180.0,
+      "ratio_5yr": 8846.0,
+      "pharmacies_needed_now": 1,
+      "pharmacies_needed_3yr": 3,
+      "pharmacies_needed_5yr": 4,
+      "pharmacies_needed_buildout": 4,
+      "opportunity_score": 41.2,
+      "urgency": "FUTURE - Will become underserved in 3-5 years",
+      "key_developments": "LARGEST growth in SA (2,100 people). Largest natural increase in SA. Largest net internal migration gain in SA. Triple crown of SA growth.",
+      "new_infrastructure": "Angle Vale Village Shopping Centre. New schools.",
+      "opportunity_notes": "Angle Vale has TWC pharmacy. But growth rate suggests more needed. Munno Para West expanding.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -34.64,
+      "lng_centre": 138.66
+    },
+    {
+      "name": "Greenbank - North Maclean (Logan)",
+      "state": "QLD",
+      "suburbs": [
+        "Greenbank",
+        "North Maclean",
+        "New Beith"
+      ],
+      "current_pop_2024": 12000,
+      "growth_rate_annual_pct": 13.0,
+      "pop_3yr_projection": 17314,
+      "pop_5yr_projection": 22109,
+      "pop_buildout": 25000,
+      "planned_dwellings": 8000,
+      "pharmacy_count": 2,
+      "pharmacies": [
+        {
+          "name": "Priceline Pharmacy Park Ridge",
+          "address": "Shop 4, 3732 Mt Lindesay Highway, PARK RIDGE, QLD, 4125"
+        },
+        {
+          "name": "Priceline Pharmacy Park Ridge",
+          "address": "SHOP 4, PARK RIDGE TOWN CENTRE, 3732 MT LINDSAY HIGHWAY, PARK RIDGE, QLD, 4125"
+        }
+      ],
+      "medical_centres": 1,
+      "shopping_centres": 0,
+      "current_ratio": 6000.0,
+      "ratio_3yr": 8657.0,
+      "ratio_5yr": 11054.0,
+      "pharmacies_needed_now": 1,
+      "pharmacies_needed_3yr": 2,
+      "pharmacies_needed_5yr": 3,
+      "pharmacies_needed_buildout": 4,
+      "opportunity_score": 40.4,
+      "urgency": "FUTURE - Will become underserved in 3-5 years",
+      "key_developments": "Third-highest growth rate in QLD at 13%. Part of Logan citys southern expansion.",
+      "new_infrastructure": "Greenbank Shopping Centre. New school sites.",
+      "opportunity_notes": "Check pharmacy coverage. Likely gap in North Maclean area.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -27.715,
+      "lng_centre": 153.015
+    },
+    {
+      "name": "Greater Flagstone (Logan)",
+      "state": "QLD",
+      "suburbs": [
+        "Flagstone",
+        "Flinders Lakes",
+        "Monarch Glen",
+        "Silverbark Ridge",
+        "Riverbend",
+        "Glenlogan"
+      ],
+      "current_pop_2024": 14000,
+      "growth_rate_annual_pct": 10.0,
+      "pop_3yr_projection": 18634,
+      "pop_5yr_projection": 22547,
+      "pop_buildout": 120000,
+      "planned_dwellings": 50000,
+      "pharmacy_count": 3,
+      "pharmacies": [
+        {
+          "name": "Watsons Chemists Flagstone",
+          "address": "Shop 6-7, 6-24 Gates Road, FLAGSTONE, QLD, 4280"
+        },
+        {
+          "name": "TerryWhite Chemmart Flagstone Central",
+          "address": "Tenancy 8, 1-21 Bushman Drive, FLAGSTONE, QLD, 4280"
+        },
+        {
+          "name": "TerryWhite Chemmart Flagstone Central",
+          "address": "Shop 8, Flagstone Central Shopping Centre, 1-21 Bushman Drive, Flagstone, QLD, 4280"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 4667.0,
+      "ratio_3yr": 6211.0,
+      "ratio_5yr": 7516.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 1,
+      "pharmacies_needed_5yr": 2,
+      "pharmacies_needed_buildout": 27,
+      "opportunity_score": 34.8,
+      "urgency": "FUTURE - Will become underserved in 3-5 years",
+      "key_developments": "PDA declared 2010 for 50,000 dwellings and 120,000 people over 30-40 years. Flagstone Town Centre operational. New school (St Bonaventures) opened 2026.",
+      "new_infrastructure": "Flagstone Town Centre. Flagstone State Community College. St Bonaventures College (2026). Future train station planned.",
+      "opportunity_notes": "2-3 pharmacies for ~14,000. Reasonable now but building to 120,000 \u2014 massive long-term opportunity.",
+      "sources": [
+        "Wikipedia: Flagstone QLD"
+      ],
+      "lat_centre": -27.8,
+      "lng_centre": 152.94
+    },
+    {
+      "name": "Virginia - Waterloo Corner (Northern Adelaide)",
+      "state": "SA",
+      "suburbs": [
+        "Virginia",
+        "Waterloo Corner",
+        "Buckland Park"
+      ],
+      "current_pop_2024": 5000,
+      "growth_rate_annual_pct": 14.0,
+      "pop_3yr_projection": 7407,
+      "pop_5yr_projection": 9627,
+      "pop_buildout": 40000,
+      "planned_dwellings": 15000,
+      "pharmacy_count": 1,
+      "pharmacies": [
+        {
+          "name": "Virginia Discount Chemist",
+          "address": "Shop 14, 18 Old Port Wakefield Road, VIRGINIA, SA, 5120"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 5000.0,
+      "ratio_3yr": 7407.0,
+      "ratio_5yr": 9627.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 0,
+      "pharmacies_needed_5yr": 1,
+      "pharmacies_needed_buildout": 9,
+      "opportunity_score": 33.0,
+      "urgency": "FUTURE - Will become underserved in 3-5 years",
+      "key_developments": "HIGHEST growth rate in SA (14%). Buckland Park is massive greenfield development north of Adelaide for 30,000+ people.",
+      "new_infrastructure": "Buckland Park masterplan includes town centre, schools. Minimal infrastructure currently.",
+      "opportunity_notes": "Only 1 pharmacy (Virginia) for the area. Buckland Park development = major future opportunity when town centre built.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -34.64,
+      "lng_centre": 138.57
+    },
+    {
+      "name": "Austral - Greendale (South West Sydney)",
+      "state": "NSW",
+      "suburbs": [
+        "Austral",
+        "Greendale",
+        "Leppington"
+      ],
+      "current_pop_2024": 12000,
+      "growth_rate_annual_pct": 16.0,
+      "pop_3yr_projection": 18730,
+      "pop_5yr_projection": 25204,
+      "pop_buildout": 55000,
+      "planned_dwellings": 20000,
+      "pharmacy_count": 4,
+      "pharmacies": [
+        {
+          "name": "Priceline Pharmacy Carnes Hill",
+          "address": "Shop B09 Carnes Hill Marketplace, Kurrajong Road, CARNES HILL, NSW, 2171"
+        },
+        {
+          "name": "West Hoxton Pharmacy",
+          "address": "Shop 7, Corner Edmondson & 15th Avenue, AUSTRAL, NSW, 2179"
+        },
+        {
+          "name": "Austral Pharmacy",
+          "address": "Corner Edmondson & Tenth Avenues, AUSTRAL, NSW, 2179"
+        },
+        {
+          "name": "Priceline Pharmacy Carnes Hill",
+          "address": "SHOP B09,, CNR COWPASTURE & KURRAJONG ROADS, HORNINGSEA PARK, NSW, 2171"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 3000.0,
+      "ratio_3yr": 4682.0,
+      "ratio_5yr": 6301.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 0,
+      "pharmacies_needed_5yr": 2,
+      "pharmacies_needed_buildout": 9,
+      "opportunity_score": 30.4,
+      "urgency": "FUTURE - Will become underserved in 3-5 years",
+      "key_developments": "Austral-Greendale grew 16% in 2023-24, tied with Googong for highest NSW growth rate. Part of South West Growth Centre. Leppington station opened 2015.",
+      "new_infrastructure": "Leppington town centre under development. Edmondson Park town centre nearby.",
+      "opportunity_notes": "Rapidly growing. Leppington has 2 pharmacies but Austral has none.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -33.915,
+      "lng_centre": 150.82
+    },
+    {
+      "name": "Two Wells - Lewiston (Northern Adelaide Plains)",
+      "state": "SA",
+      "suburbs": [
+        "Two Wells",
+        "Lewiston"
+      ],
+      "current_pop_2024": 7000,
+      "growth_rate_annual_pct": 10.0,
+      "pop_3yr_projection": 9317,
+      "pop_5yr_projection": 11273,
+      "pop_buildout": 18000,
+      "planned_dwellings": 6000,
+      "pharmacy_count": 1,
+      "pharmacies": [
+        {
+          "name": "TerryWhite Chemmart Two Wells",
+          "address": "86 Old Port Wakefield Road, TWO WELLS, SA, 5501"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 7000.0,
+      "ratio_3yr": 9317.0,
+      "ratio_5yr": 11273.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 1,
+      "pharmacies_needed_5yr": 1,
+      "pharmacies_needed_buildout": 3,
+      "opportunity_score": 30.4,
+      "urgency": "MODERATE - Below recommended ratio",
+      "key_developments": "Two Wells grew from 1,926 (2016) to 2,947 (2021) and continuing. Multiple housing estates. Northern Expressway improved access.",
+      "new_infrastructure": "Two Wells shopping area. New school planned.",
+      "opportunity_notes": "1 pharmacy (TWC Two Wells) serving the area. Will need more as population grows.",
+      "sources": [
+        "Wikipedia: Two Wells SA"
+      ],
+      "lat_centre": -34.59,
+      "lng_centre": 138.51999999999998
+    },
+    {
+      "name": "Alkimos - Eglinton (North West Perth)",
+      "state": "WA",
+      "suburbs": [
+        "Alkimos",
+        "Eglinton"
+      ],
+      "current_pop_2024": 20000,
+      "growth_rate_annual_pct": 12.0,
+      "pop_3yr_projection": 28098,
+      "pop_5yr_projection": 35246,
+      "pop_buildout": 55000,
+      "planned_dwellings": 22000,
+      "pharmacy_count": 6,
+      "pharmacies": [
+        {
+          "name": "Alkimos Beach Pharmacy",
+          "address": "Tenancy 12 The Gateway Shopping Precinct Alkimos Beach, 1 Graceful Blvd, ALKIMOS, WA, 6038"
+        },
+        {
+          "name": "Clinicare Pharmacy Alkimos",
+          "address": "Unit 1, 3 Bulwark Avenue, ALKIMOS, WA, 6038"
+        },
+        {
+          "name": "Pharmacy 777 Yanchep Village Compounding",
+          "address": "Shop 10, Yanchep Village Shopping Centre, 2 Peony Blvd, YANCHEP, WA, 6035"
+        },
+        {
+          "name": "Pharmacy 777 Yanchep",
+          "address": "Shops T16-18, Yanchep Central Shopping Centre, 1 Peony Boulevard, YANCHEP, WA, 6035"
+        },
+        {
+          "name": "Yanchep Community Pharmacy",
+          "address": "Shop 3, 5 Village Row, YANCHEP, WA, 6035"
+        },
+        {
+          "name": "Yanchep Beach Pharmacy",
+          "address": "Unit 5, 105 Lindsay Beach Boulevard, YANCHEP, WA, 6035"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 3333.0,
+      "ratio_3yr": 4683.0,
+      "ratio_5yr": 5874.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 1,
+      "pharmacies_needed_5yr": 2,
+      "pharmacies_needed_buildout": 7,
+      "opportunity_score": 28.0,
+      "urgency": "LOW - Adequately served currently",
+      "key_developments": "LARGEST growth in WA (2,100 people). Planned satellite city. 55,000 people planned. Alkimos grew from 0 to 10,203 (2021). 3 public primary schools already.",
+      "new_infrastructure": "Alkimos Beach shopping precinct. Alkimos Trinity Village (Coles). Alkimos Central major town centre planned. Future Alkimos train station on METRONET.",
+      "opportunity_notes": "4 pharmacies in corridor including Alkimos/Yanchep area. Building to 55k. Alkimos Central town centre = pharmacy opportunity when built.",
+      "sources": [
+        "ABS Regional Population 2023-24",
+        "Wikipedia: Alkimos WA"
+      ],
+      "lat_centre": -31.57,
+      "lng_centre": 115.67
+    },
+    {
+      "name": "Chambers Flat - Logan Reserve (Logan)",
+      "state": "QLD",
+      "suburbs": [
+        "Chambers Flat",
+        "Logan Reserve",
+        "Park Ridge"
+      ],
+      "current_pop_2024": 15000,
+      "growth_rate_annual_pct": 19.0,
+      "pop_3yr_projection": 25277,
+      "pop_5yr_projection": 35795,
+      "pop_buildout": 35000,
+      "planned_dwellings": 12000,
+      "pharmacy_count": 10,
+      "pharmacies": [
+        {
+          "name": "Holmview Discount Drug Store",
+          "address": "Shop 2 Holmview Central Shopping Centre, 318-322 Logan River Road, HOLMVIEW, QLD, 4207"
+        },
+        {
+          "name": "Mount Warren Park Chempro Chemist",
+          "address": "Shop 6&7/20-30 Mt Warren Boulevard, MOUNT WARREN PARK, QLD, 4207"
+        },
+        {
+          "name": "Beenleigh Mall Chempro Chemist",
+          "address": "Shop 14&15 The Mall, Beenleigh, Main Street, BEENLEIGH, QLD, 4207"
+        },
+        {
+          "name": "Beenleigh Central Chempro Chemist",
+          "address": "151 George Street, BEENLEIGH, QLD, 4207"
+        },
+        {
+          "name": "Beenleigh Marketplace Chempro Chemist",
+          "address": "Shop 22 Beenleigh Marketplace, 114-118 George Street, BEENLEIGH, QLD, 4207"
+        },
+        {
+          "name": "Eagleby Chempro Chemist",
+          "address": "Shop 13-14 Eagleby Shopping Centre, Riverhills Road, EAGLEBY, QLD, 4207"
+        },
+        {
+          "name": "TerryWhite Chemmart Beenleigh",
+          "address": "Shop 1, 204 Main Street, BEENLEIGH, QLD, 4207"
+        },
+        {
+          "name": "Bannockburn Chempro Chemist",
+          "address": "Shops 5/1, BANNOCKBURN RD, BANNOCKBURN, QLD, 4207"
+        },
+        {
+          "name": "Pharmacy Xpress Logan Village",
+          "address": "Shop 3, 2 North Street, LOGAN VILLAGE, QLD, 4207"
+        },
+        {
+          "name": "Chempro Chemist",
+          "address": ""
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 1500.0,
+      "ratio_3yr": 2528.0,
+      "ratio_5yr": 3580.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 0,
+      "pharmacies_needed_5yr": 0,
+      "pharmacies_needed_buildout": 0,
+      "opportunity_score": 26.0,
+      "urgency": "LOW - Adequately served currently",
+      "key_developments": "Highest growth rate in QLD at 19%. Part of Logan growth area. Multiple estates under development.",
+      "new_infrastructure": "Park Ridge Town Centre planned. New schools opening.",
+      "opportunity_notes": "Highest QLD growth rate. Check for pharmacy presence - likely underserved.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -27.740000000000002,
+      "lng_centre": 153.16
+    },
+    {
+      "name": "Armstrong Creek - Charlemont (Geelong)",
+      "state": "VIC",
+      "suburbs": [
+        "Armstrong Creek",
+        "Charlemont",
+        "Mount Duneed"
+      ],
+      "current_pop_2024": 18000,
+      "growth_rate_annual_pct": 10.0,
+      "pop_3yr_projection": 23958,
+      "pop_5yr_projection": 28989,
+      "pop_buildout": 65000,
+      "planned_dwellings": 22000,
+      "pharmacy_count": 5,
+      "pharmacies": [
+        {
+          "name": "Grove Plaza Pharmacy",
+          "address": "146 Torquay Road, GROVEDALE, VIC, 3216"
+        },
+        {
+          "name": "The Cottage Pharmacy",
+          "address": "222 Torquay Road, GROVEDALE, VIC, 3216"
+        },
+        {
+          "name": "Direct Chemist Outlet Charlemont Rise",
+          "address": "Tenancy 17, Charlemont Rise Charlemont Rise Shopping Centre, Cnr Horseshow Bend Rd & Precint Rd, CHARLEMONT, VIC, 3217"
+        },
+        {
+          "name": "TerryWhite Chemmart Armstrong Creek",
+          "address": "Tenancy 11 & 13, Armstrong Creek Town Centre, 500 - 540 Torquay Road, ARMSTRONG CREEK, VIC, 3217"
+        },
+        {
+          "name": "Direct Chemist Outlet Warralily",
+          "address": "Shop 6, Warralily Village Shopping Centre, Barwon Heads Road, ARMSTRONG CREEK, VIC, 3217"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 3600.0,
+      "ratio_3yr": 4792.0,
+      "ratio_5yr": 5798.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 0,
+      "pharmacies_needed_5yr": 2,
+      "pharmacies_needed_buildout": 11,
+      "opportunity_score": 25.6,
+      "urgency": "LOW - Adequately served currently",
+      "key_developments": "Major growth area south of Geelong. Multiple estates including The Village, Warralily, Ashbury.",
+      "new_infrastructure": "Armstrong Creek Town Centre with Coles/Woolworths. Medical centres establishing.",
+      "opportunity_notes": "Geelong is Victorias fastest-growing regional city. Armstrong Creek will triple in size.",
+      "sources": [
+        "City of Greater Geelong planning documents"
+      ],
+      "lat_centre": -38.215,
+      "lng_centre": 144.365
+    },
+    {
+      "name": "Schofields East (North West Sydney)",
+      "state": "NSW",
+      "suburbs": [
+        "Schofields",
+        "Tallawong",
+        "Rouse Hill"
+      ],
+      "current_pop_2024": 15000,
+      "growth_rate_annual_pct": 12.0,
+      "pop_3yr_projection": 21073,
+      "pop_5yr_projection": 26435,
+      "pop_buildout": 25000,
+      "planned_dwellings": 8000,
+      "pharmacy_count": 8,
+      "pharmacies": [
+        {
+          "name": "Terrywhite Chemmart Rouse Hill",
+          "address": "GR002, 10-14 Market Lane, Rouse Hill Town Centre, ROUSE HILL, NSW, 2155"
+        },
+        {
+          "name": "TerryWhite Chemmart Stanhope Gardens",
+          "address": "Shop 9-11A Stanhope Village, 2 Sentry Drive, STANHOPE GARDENS, NSW, 2768"
+        },
+        {
+          "name": "Rouse Hill Soul Pattinson Chemist",
+          "address": "Shop 8 Rouse Hill Shopping Village, 18-24 Adelphi Street, ROUSE HILL, NSW, 2155"
+        },
+        {
+          "name": "Priceline Pharmacy The Ponds",
+          "address": "Shop T24 The Ponds Shopping Centre, The Ponds Boulevarde & Riverbank Drive, THE PONDS, NSW, 2769"
+        },
+        {
+          "name": "TerryWhite Chemmart",
+          "address": "Schofields, NSW"
+        },
+        {
+          "name": "Priceline Pharmacy The Ponds",
+          "address": "TENANCY 24, THE PONDS SHOPPING CENTRE, CNR THE PONDS BOULEVARD & RIVERBANK DRIVE, THE PONDS, NSW, 2769"
+        },
+        {
+          "name": "Priceline Rouse Hill",
+          "address": "SHOP GR17, ROUSE HILL TOWN CENTRE, MARKET LANE, ROUSE HILL, NSW, 2155"
+        },
+        {
+          "name": "TerryWhite Chemmart Rouse Hill",
+          "address": "G002/10-14 Market Ln, Rouse Hill NSW 2155, Australia"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 1875.0,
+      "ratio_3yr": 2634.0,
+      "ratio_5yr": 3304.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 0,
+      "pharmacies_needed_5yr": 0,
+      "pharmacies_needed_buildout": 0,
+      "opportunity_score": 19.0,
+      "urgency": "LOW - Adequately served currently",
+      "key_developments": "Schofields East grew by 2,700 people in 2023-24. Near Tallawong Metro station. Major new transit-oriented development.",
+      "new_infrastructure": "Tallawong Metro station. New town centre development.",
+      "opportunity_notes": "Metro station area likely to have retail. Check for pharmacy tenancy.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -33.7,
+      "lng_centre": 150.9
+    },
+    {
+      "name": "Caloundra West - Baringa (Sunshine Coast)",
+      "state": "QLD",
+      "suburbs": [
+        "Caloundra West",
+        "Baringa",
+        "Nirimba",
+        "Aura"
+      ],
+      "current_pop_2024": 18000,
+      "growth_rate_annual_pct": 8.0,
+      "pop_3yr_projection": 22674,
+      "pop_5yr_projection": 26447,
+      "pop_buildout": 50000,
+      "planned_dwellings": 20000,
+      "pharmacy_count": 15,
+      "pharmacies": [
+        {
+          "name": "TerryWhite Chemmart Parklands",
+          "address": "Shop 3 Parklands Shopping Centre, 238 Parklands Boulevard, MERIDAN PLAINS, QLD, 4551"
+        },
+        {
+          "name": "Little Mountain Pharmacy",
+          "address": "Shop 1, 36 Village Way, LITTLE MOUNTAIN, QLD, 4551"
+        },
+        {
+          "name": "WholeLife Pharmacy & Healthfoods - Currimundi",
+          "address": "Shop 14-15, Currimundi Markets, 750 Nicklin Way, CURRIMUNDI, QLD, 4551"
+        },
+        {
+          "name": "Pharmacy for Life Dicky Beach",
+          "address": "3/6 Beerburrum Street, DICKY BEACH, QLD, 4551"
+        },
+        {
+          "name": "TerryWhite Chemmart Bellvista",
+          "address": "Shop 4, 2 Rawson Street, CALOUNDRA WEST, QLD, 4551"
+        },
+        {
+          "name": "Caloundra Chempro Chemist",
+          "address": "2 Caloundra Road, CALOUNDRA, QLD, 4551"
+        },
+        {
+          "name": "Ace Pharmacy Baringa",
+          "address": "Shop E005/1 Edwards Terrace, BARINGA, QLD, 4551"
+        },
+        {
+          "name": "TerryWhite Chemmart Caloundra North",
+          "address": "Caloundra Shopping Centre, Shop 16, 47 Bowman Road, CALOUNDRA, QLD, 4551"
+        },
+        {
+          "name": "TerryWhite Chemmart Caloundra South",
+          "address": "Shops 2&3 Woolworths Caloundra Centre, 26 Bowman Road, CALOUNDRA, QLD, 4551"
+        },
+        {
+          "name": "Star Discount Chemist Caloundra",
+          "address": "2/20 KALINGA ST, CALOUNDRA, QLD, 4551"
+        },
+        {
+          "name": "Direct Chemist Outlet Caloundra",
+          "address": "Shop 13-15 Caloundra Village, 1 Ormuz Avenue, CALOUNDRA, QLD, 4551"
+        },
+        {
+          "name": "Priceline Pharmacy Caloundra",
+          "address": "66 Bulcock Street, CALOUNDRA, QLD, 4551"
+        },
+        {
+          "name": "Star Discount Chemist Golden Beach",
+          "address": "Shop 1 2 and 3, 44 Landsborough Parade, GOLDEN BEACH, QLD, 4551"
+        },
+        {
+          "name": "Pelican Waters Pharmacy",
+          "address": "Shop 8 Pelican Waters Shopping Village, 44 Pelican Waters Boulevard, PELICAN WATERS, QLD, 4551"
+        },
+        {
+          "name": "Star Discount Chemist Caloundra",
+          "address": "45 Bulcock Street, Caloundra Qld 4551"
+        }
+      ],
+      "medical_centres": 1,
+      "shopping_centres": 0,
+      "current_ratio": 1200.0,
+      "ratio_3yr": 1512.0,
+      "ratio_5yr": 1763.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 0,
+      "pharmacies_needed_5yr": 0,
+      "pharmacies_needed_buildout": 0,
+      "opportunity_score": 18.6,
+      "urgency": "LOW - Adequately served currently",
+      "key_developments": "Caloundra West-Baringa had LARGEST growth outside capital cities (2,500 people). Aura masterplanned community by Stockland. New town centre Baringa.",
+      "new_infrastructure": "Baringa Town Centre. Multiple schools (Baringa SS 2018, Nirimba SS 2021). Sunshine Coast University Hospital nearby.",
+      "opportunity_notes": "Only 2 pharmacies for 18,000 people. Growing fast. Regional - less competition. Good opportunity.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -26.810000000000002,
+      "lng_centre": 153.10000000000002
+    },
+    {
+      "name": "Baldivis North (South Perth)",
+      "state": "WA",
+      "suburbs": [
+        "Baldivis",
+        "Wellard South"
+      ],
+      "current_pop_2024": 16000,
+      "growth_rate_annual_pct": 11.0,
+      "pop_3yr_projection": 21882,
+      "pop_5yr_projection": 26960,
+      "pop_buildout": 25000,
+      "planned_dwellings": 8000,
+      "pharmacy_count": 8,
+      "pharmacies": [
+        {
+          "name": "Pharmacy 777 Baldivis",
+          "address": "Shop 9 Stargate Baldivis, 114 Amazon Drive, Baldivis, WA, 6171"
+        },
+        {
+          "name": "Blooms The Chemist Baldivis",
+          "address": "Shop 43, Stockland Baldivis, Safety Bay Road, BALDIVIS, WA, 6171"
+        },
+        {
+          "name": "Blooms The Chemist Baldivis Stockland",
+          "address": "Shop 17 Stockland Baldivis, Safety Bay Road, BALDIVIS, WA, 6171"
+        },
+        {
+          "name": "Baldivis Square Pharmacy",
+          "address": "Tenancy 15 Baldivis Square, 61 Makybe Dr, BALDIVIS, WA, 6171"
+        },
+        {
+          "name": "Baldivis Pharmacy",
+          "address": "Tenancy 2, 2 Wattlebird Way, BALDIVIS, WA, 6171"
+        },
+        {
+          "name": "Warnbro Pharmacy",
+          "address": "Shop 23, Warnbro Central, Warnbro Sound Avenue, WARNBRO, WA, 6169"
+        },
+        {
+          "name": "Palm Springs Pharmacy",
+          "address": "3/3 Halliburton Avenue, WARNBRO, WA, 6169"
+        },
+        {
+          "name": "Blooms The Chemist Baldivis (Woolworths/Aldi entry)",
+          "address": "Shop 43 Stockland Centre Safety Bay Road, Baldivis WA 6171"
+        }
+      ],
+      "medical_centres": 3,
+      "shopping_centres": 0,
+      "current_ratio": 2000.0,
+      "ratio_3yr": 2735.0,
+      "ratio_5yr": 3370.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 0,
+      "pharmacies_needed_5yr": 0,
+      "pharmacies_needed_buildout": 0,
+      "opportunity_score": 17.2,
+      "urgency": "LOW - Adequately served currently",
+      "key_developments": "Baldivis North grew 1,500 people (11%). Part of Rockingham LGA. Multiple estates.",
+      "new_infrastructure": "Baldivis District Centre. New schools.",
+      "opportunity_notes": "Multiple pharmacies in Baldivis proper but northern expansion may have gaps.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -32.33,
+      "lng_centre": 115.80000000000001
+    },
+    {
+      "name": "Brabham - Henley Brook (North East Perth)",
+      "state": "WA",
+      "suburbs": [
+        "Brabham",
+        "Henley Brook",
+        "Dayton"
+      ],
+      "current_pop_2024": 15000,
+      "growth_rate_annual_pct": 11.0,
+      "pop_3yr_projection": 20514,
+      "pop_5yr_projection": 25275,
+      "pop_buildout": 24000,
+      "planned_dwellings": 8000,
+      "pharmacy_count": 9,
+      "pharmacies": [
+        {
+          "name": "TerryWhite Chemmart Woodlake Village",
+          "address": "Shops 4 & 5, Woodlake Village Shopping Centre, 20 Sunray Cir, ELLENBROOK, WA, 6069"
+        },
+        {
+          "name": "Pharmacy 777 Aveley",
+          "address": "Shop 10 Vale Town Centre, Swanleigh Parade, AVELEY, WA, 6069"
+        },
+        {
+          "name": "Optimal Pharmacy Plus Ellenbrook",
+          "address": "Shop 59 Ellenbrook Central, 204 Pinaster Parade, ELLENBROOK, WA, 6069"
+        },
+        {
+          "name": "Zest Pharmacy Ellenbrook",
+          "address": "Shop T11 Ellenbrook Central, Main Street, ELLENBROOK, WA, 6069"
+        },
+        {
+          "name": "Clinicare Pharmacy Ellenbrook",
+          "address": "Shop 8, 150 Coolamon Boulevard, ELLENBROOK, WA, 6069"
+        },
+        {
+          "name": "TerryWhite Chemmart Aveley",
+          "address": "Shop 7, Aveley Shopping Centre, 311 Millhouse Road, AVELEY, WA, 6069"
+        },
+        {
+          "name": "TerryWhite Chemmart Brooklane",
+          "address": "t14 Brooklane shopping centre, 80 Maffina Pde, ELLENBROOK, WA, 6069"
+        },
+        {
+          "name": "Chemist Warehouse Ellenbrook Home Co",
+          "address": "Tenancy T8, HomeCo Ellenbrook, 151 The Promenade, Ellenbrook WA 6069, Ellenbrook, WA, 6069"
+        },
+        {
+          "name": "Priceline Ellenbrook",
+          "address": "SHOP T35, ELLENBROOK CENTRAL SHOPPING CENTRE, 11 MAIN STREET, ELLENBROOK, WA, 6069"
+        }
+      ],
+      "medical_centres": 1,
+      "shopping_centres": 0,
+      "current_ratio": 1667.0,
+      "ratio_3yr": 2279.0,
+      "ratio_5yr": 2808.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 0,
+      "pharmacies_needed_5yr": 0,
+      "pharmacies_needed_buildout": 0,
+      "opportunity_score": 17.0,
+      "urgency": "LOW - Adequately served currently",
+      "key_developments": "Grew 1,500 people (11%) in 2023-24. Ellenbrook extension area. Part of Swan LGA.",
+      "new_infrastructure": "METRONET Ellenbrook line (opens 2025/26). New train stations at Brabham/Henley Brook.",
+      "opportunity_notes": "New METRONET train stations = retail opportunity. Check for pharmacy in new station precincts.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -31.79,
+      "lng_centre": 115.96000000000001
+    },
+    {
+      "name": "Sorell - Richmond (East Hobart)",
+      "state": "TAS",
+      "suburbs": [
+        "Sorell",
+        "Midway Point",
+        "Orielton"
+      ],
+      "current_pop_2024": 10000,
+      "growth_rate_annual_pct": 2.0,
+      "pop_3yr_projection": 10612,
+      "pop_5yr_projection": 11040,
+      "pop_buildout": 15000,
+      "planned_dwellings": 2000,
+      "pharmacy_count": 2,
+      "pharmacies": [
+        {
+          "name": "Chemist Warehouse Sorell",
+          "address": "2 Gordon Street, SORELL, TAS, 7172"
+        },
+        {
+          "name": "TerryWhite Chemmart Sorell",
+          "address": "31 Gordon Street, SORELL, TAS, 7172"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 5,
+      "current_ratio": 5000.0,
+      "ratio_3yr": 5306.0,
+      "ratio_5yr": 5520.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 0,
+      "pharmacies_needed_5yr": 0,
+      "pharmacies_needed_buildout": 1,
+      "opportunity_score": 17.0,
+      "urgency": "LOW - Adequately served currently",
+      "key_developments": "Sorell-Richmond grew 200 people (highest internal migration in Hobart). Sorell is major growth town east of Hobart.",
+      "new_infrastructure": "Sorell Plaza shopping centre.",
+      "opportunity_notes": "Check pharmacy presence in Sorell. Growing but slow.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -42.76,
+      "lng_centre": 147.57
+    },
+    {
+      "name": "Yanchep - Two Rocks (Far North Perth)",
+      "state": "WA",
+      "suburbs": [
+        "Yanchep",
+        "Two Rocks"
+      ],
+      "current_pop_2024": 16000,
+      "growth_rate_annual_pct": 8.0,
+      "pop_3yr_projection": 20155,
+      "pop_5yr_projection": 23509,
+      "pop_buildout": 200000,
+      "planned_dwellings": 40000,
+      "pharmacy_count": 4,
+      "pharmacies": [
+        {
+          "name": "Pharmacy 777 Yanchep Village Compounding",
+          "address": "Shop 10, Yanchep Village Shopping Centre, 2 Peony Blvd, YANCHEP, WA, 6035"
+        },
+        {
+          "name": "Pharmacy 777 Yanchep",
+          "address": "Shops T16-18, Yanchep Central Shopping Centre, 1 Peony Boulevard, YANCHEP, WA, 6035"
+        },
+        {
+          "name": "Yanchep Community Pharmacy",
+          "address": "Shop 3, 5 Village Row, YANCHEP, WA, 6035"
+        },
+        {
+          "name": "Yanchep Beach Pharmacy",
+          "address": "Unit 5, 105 Lindsay Beach Boulevard, YANCHEP, WA, 6035"
+        }
+      ],
+      "medical_centres": 0,
+      "shopping_centres": 0,
+      "current_ratio": 4000.0,
+      "ratio_3yr": 5039.0,
+      "ratio_5yr": 5877.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 1,
+      "pharmacies_needed_5yr": 1,
+      "pharmacies_needed_buildout": 46,
+      "opportunity_score": 15.2,
+      "urgency": "LOW - Adequately served currently",
+      "key_developments": "Future satellite city of 200,000+. Currently 11,022 (2021). Multiple estates. Yanchep lagoon development.",
+      "new_infrastructure": "Yanchep Village Shopping Centre. Yanchep Central Shopping Centre. METRONET extension planned. Future major hospital site.",
+      "opportunity_notes": "Already 5 pharmacies. Well-served for now but massive future growth. Long-term hold.",
+      "sources": [
+        "Wikipedia: Yanchep WA",
+        "WA Directions 2031"
+      ],
+      "lat_centre": -31.53,
+      "lng_centre": 115.65
+    },
+    {
+      "name": "Kingston - Huntingfield (South Hobart)",
+      "state": "TAS",
+      "suburbs": [
+        "Kingston",
+        "Huntingfield",
+        "Kingston Beach"
+      ],
+      "current_pop_2024": 18000,
+      "growth_rate_annual_pct": 2.0,
+      "pop_3yr_projection": 19101,
+      "pop_5yr_projection": 19873,
+      "pop_buildout": 25000,
+      "planned_dwellings": 3000,
+      "pharmacy_count": 7,
+      "pharmacies": [
+        {
+          "name": "Kingborough Pharmacy",
+          "address": "11 John Street, KINGSTON, TAS, 7050"
+        },
+        {
+          "name": "TerryWhite Chemmart Kingston Plaza",
+          "address": "Shop 8 - 9 Kingston Plaza, 20 Channel Highway, KINGSTON, TAS, 7050"
+        },
+        {
+          "name": "Good Price Pharmacy Warehouse Kingston",
+          "address": "Shop 3 Kingston Gateway, 14 Channel Highway, KINGSTON, TAS, 7050"
+        },
+        {
+          "name": "Priceline Pharmacy Kingston",
+          "address": "Shop 30 Channel Court Shopping Centre, 29 Channel Highway, KINGSTON, TAS, 7050"
+        },
+        {
+          "name": "TerryWhite Chemmart Kingston Town",
+          "address": "Shop 10-15b Kingston Town Shopping Centre, 37-59 Maranoa Road, KINGSTON, TAS, 7050"
+        },
+        {
+          "name": "TerryWhite Chemmart Kingston Plaza",
+          "address": "Shops 8 and 9, Kingston Plaza Shopping Centre, 20 Channel Highway, Kingston, TAS, 7050"
+        },
+        {
+          "name": "Priceline Pharmacy Kingston",
+          "address": "SHOP 30, CHANNEL COURT SHOPPING CENTRE, CHANNEL HIGHWAY, KINGSTON, TAS, 7050"
+        }
+      ],
+      "medical_centres": 1,
+      "shopping_centres": 8,
+      "current_ratio": 2571.0,
+      "ratio_3yr": 2729.0,
+      "ratio_5yr": 2839.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 0,
+      "pharmacies_needed_5yr": 0,
+      "pharmacies_needed_buildout": 0,
+      "opportunity_score": 11.6,
+      "urgency": "LOW - Adequately served currently",
+      "key_developments": "Kingston-Huntingfield grew 220 people in 2023-24. Huntingfield development for 450 lots. Kingston bypass road opened.",
+      "new_infrastructure": "Channel Court Shopping Centre. Kingston Health Centre. Kingston bypass.",
+      "opportunity_notes": "Already 7 pharmacies. Well-served. Low priority.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -42.96,
+      "lng_centre": 147.32
+    },
+    {
+      "name": "Rokeby (Eastern Shore Hobart)",
+      "state": "TAS",
+      "suburbs": [
+        "Rokeby",
+        "Howrah",
+        "Clarendon Vale"
+      ],
+      "current_pop_2024": 9000,
+      "growth_rate_annual_pct": 2.7,
+      "pop_3yr_projection": 9748,
+      "pop_5yr_projection": 10282,
+      "pop_buildout": 12000,
+      "planned_dwellings": 1500,
+      "pharmacy_count": 5,
+      "pharmacies": [
+        {
+          "name": "Wentworth Pharmacy",
+          "address": "178 Clarence Street, HOWRAH, TAS, 7018"
+        },
+        {
+          "name": "Shoreline Amcal Pharmacy",
+          "address": "Shop 20 Shoreline Shopping Centre, 6 Shoreline Drive, HOWRAH, TAS, 7018"
+        },
+        {
+          "name": "Priceline Pharmacy Glebe Hill Village",
+          "address": "T2 Glebe Hill Village Shopping Centre, Cnr Pass Road And Rokeby Road, HOWRAH, TAS, 7018"
+        },
+        {
+          "name": "Amcal+ Pharmacy Howrah - Shoreline",
+          "address": "6 Shoreline Drive, Shoreline Shopping Centre, Howrah TAS 7018"
+        },
+        {
+          "name": "Amcal+ Pharmacy Howrah - Wentworth",
+          "address": "178 Clarence Street, Howrah TAS 7018"
+        }
+      ],
+      "medical_centres": 1,
+      "shopping_centres": 8,
+      "current_ratio": 1800.0,
+      "ratio_3yr": 1950.0,
+      "ratio_5yr": 2056.0,
+      "pharmacies_needed_now": 0,
+      "pharmacies_needed_3yr": 0,
+      "pharmacies_needed_5yr": 0,
+      "pharmacies_needed_buildout": 0,
+      "opportunity_score": 10.5,
+      "urgency": "LOW - Adequately served currently",
+      "key_developments": "HIGHEST growth rate in Hobart (2.7%). LARGEST growth in Hobart (230 people). Eastern shore expansion.",
+      "new_infrastructure": "Shoreline Shopping Centre. Eastlands Shopping Centre nearby.",
+      "opportunity_notes": "Check pharmacy presence. Highest Hobart growth rate.",
+      "sources": [
+        "ABS Regional Population 2023-24"
+      ],
+      "lat_centre": -42.875,
+      "lng_centre": 147.415
+    }
+  ],
+  "summary": {
+    "total_current_pop": 606662,
+    "total_pop_5yr": 1110797,
+    "total_pharmacies": 131,
+    "total_pharmacies_needed_5yr": 153,
+    "critical_corridors": 4,
+    "high_urgency": 5
+  }
+}

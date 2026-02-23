@@ -486,17 +486,36 @@ class AgileBBScraper(BrokerScraper):
     def scrape(self) -> List[Listing]:
         listings = []
         url = f"{self.site_url}/pharmacies-for-sale"
-        text = web_fetch(url, max_chars=30000)
-        if not text:
+
+        # Fetch raw HTML and build clean text ourselves
+        html = web_fetch_html(url)
+        if not html:
             logger.warning("Agile BB: could not fetch listings page")
             return listings
 
-        # Get markdown version for links
-        md_text = web_fetch_markdown(url, max_chars=30000) or text
+        from bs4 import BeautifulSoup
+        soup = BeautifulSoup(html, 'html.parser')
+        for tag in soup(['script', 'style']):
+            tag.decompose()
+
+        # Get text with newlines, then clean up zero-width chars
+        raw_text = soup.get_text(separator='\n', strip=True)
+        # Remove zero-width spaces and nbsp
+        raw_text = re.sub(r'[\u200b\u200c\u200d\ufeff]', '', raw_text)
+        raw_text = raw_text.replace('\xa0', ' ')
+
+        # The Wix site sometimes splits "Ref XX:" and its description across lines.
+        # Join lines: if a line starts with "Ref XX:" and has no description,
+        # concatenate the next non-empty lines until another Ref or section header.
+        lines = [l.strip() for l in raw_text.split('\n') if l.strip()]
+        joined_text = self._join_ref_lines(lines)
+
+        # Get markdown for extracting links
+        md_text = web_fetch_markdown(url, max_chars=30000) or ''
 
         seen_refs = set()
 
-        # Extract linked listings: [Ref XX: Description](url)
+        # Extract linked listings from markdown: [Ref XX: Description](url)
         link_pattern = re.compile(
             r'\[(?:Ref\s+)?(\w{2,4}):\s*(.+?)\]\((https?://www\.agilebb\.com\.au/pharmacy[^\)]*)\)'
         )
@@ -508,17 +527,14 @@ class AgileBBScraper(BrokerScraper):
 
             if not self.VALID_REF_PATTERN.match(ref):
                 continue
-            if ref in seen_refs:
+            if ref in seen_refs or ref in self.NAV_WORDS:
                 continue
-            if ref in self.NAV_WORDS:
-                continue
-            # Desc must be substantial pharmacy description
             if len(desc) < 10:
                 continue
             seen_refs.add(ref)
 
             state = detect_au_state(desc)
-            status = self._detect_status(md_text, ref)
+            status = self._detect_status(joined_text, ref)
 
             title = f"Ref {ref}: {desc}{status}"
 
@@ -532,32 +548,31 @@ class AgileBBScraper(BrokerScraper):
                 description=desc
             ))
 
-        # Also parse plain text refs: "Ref XX: Description"
-        # Only match refs that look like valid listing codes
+        # Parse plain text refs from the joined text
         plain_pattern = re.compile(
-            r'Ref\s+([A-Z]{2,4}):\s*(?:UNDER OFFER\s*)?(?:NEW LISTING:?\s*)?(.+?)(?:\n|$)',
+            r'Ref\s+([A-Z]{2,4}):\s*(?:UNDER OFFER\s*)?(?:NEW LISTING:?\s*)?(.+)',
             re.IGNORECASE
         )
 
-        for match in plain_pattern.finditer(text):
+        for match in plain_pattern.finditer(joined_text):
             ref = match.group(1).strip().upper()
-            if ref in seen_refs:
+            if ref in seen_refs or ref in self.NAV_WORDS:
                 continue
             if not self.VALID_REF_PATTERN.match(ref):
                 continue
-            if ref in self.NAV_WORDS:
-                continue
 
             desc = match.group(2).strip().rstrip('.')
-            if not desc or len(desc) < 15:
+            desc = re.sub(r'[\u200b\u200c\u200d\ufeff\xa0]', ' ', desc).strip()
+            if not desc or len(desc) < 10:
                 continue
-            # Skip if desc looks like navigation
-            if any(nav in desc.upper() for nav in ['CLICK', 'FILL IN', 'PASSWORD', 'AGREEMENT']):
+            if any(nav in desc.upper() for nav in ['CLICK', 'FILL IN', 'PASSWORD',
+                                                    'AGREEMENT', 'CONFIDENTIALITY',
+                                                    'REFERENCE NUMBER']):
                 continue
 
             seen_refs.add(ref)
             state = detect_au_state(desc)
-            status = self._detect_status(text, ref)
+            status = self._detect_status(joined_text, ref)
 
             title = f"Ref {ref}: {desc}{status}"
 
@@ -573,6 +588,52 @@ class AgileBBScraper(BrokerScraper):
 
         logger.info(f"Agile BB: found {len(listings)} listings")
         return listings
+
+    def _join_ref_lines(self, lines: List[str]) -> str:
+        """
+        Join multi-line Ref entries from Wix.
+        e.g. "Ref LN:", "Iconic:-", "In Sydney's..." -> "Ref LN: Iconic:- In Sydney's..."
+        """
+        result = []
+        i = 0
+        while i < len(lines):
+            line = lines[i]
+            # Check if this is a "Ref XX:" line with no/short description after the colon
+            ref_match = re.match(r'^((?:ON HOLD\s+)?(?:UNDER OFFER\s+)?Ref\s+[A-Z]{2,4}:)\s*(.*)', 
+                                 line, re.IGNORECASE)
+            if ref_match:
+                ref_prefix = ref_match.group(1)
+                rest = ref_match.group(2).strip()
+
+                # If description is short/empty, grab following lines
+                if len(rest) < 15:
+                    parts = [rest] if rest else []
+                    j = i + 1
+                    while j < len(lines):
+                        next_line = lines[j].strip()
+                        # Stop at next Ref, section header, or "To find out more"
+                        if re.match(r'^(?:ON HOLD\s+)?(?:UNDER OFFER\s+)?Ref\s+[A-Z]', next_line, re.IGNORECASE):
+                            break
+                        if re.match(r'^(VICTORIAN|SYDNEY|NSW|QUEENSLAND|WESTERN|SOUTH|NORTHERN|ACT)', 
+                                    next_line, re.IGNORECASE):
+                            break
+                        if next_line.lower().startswith('to find out') or next_line.lower().startswith('you can'):
+                            break
+                        if not next_line:
+                            break
+                        parts.append(next_line)
+                        j += 1
+                    combined = ' '.join(parts).strip()
+                    result.append(f"{ref_prefix} {combined}")
+                    i = j
+                    continue
+                else:
+                    result.append(line)
+            else:
+                result.append(line)
+            i += 1
+
+        return '\n'.join(result)
 
     def _detect_status(self, text: str, ref: str) -> str:
         """Detect listing status from surrounding text context."""

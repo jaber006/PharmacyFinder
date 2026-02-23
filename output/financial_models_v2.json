@@ -182,13 +182,733 @@
   },
   {
     "opportunity": {
+      "name": "Murdoch Medical Centre",
+      "state": "WA",
+      "address": "90, South Street, Murdoch, City of Melville, Western Australia, 6150, Australia",
+      "lat": -32.2971739,
+      "lng": 115.8014883,
+      "rules": "Item 136",
+      "score": 100,
+      "ratio": 52417,
+      "pop_10km": 1729748,
+      "pharmacies_10km": 33,
+      "nearest_pharmacy_km": 0.69,
+      "nearest_pharmacy": "Good Price Pharmacy Warehouse Baldivis"
+    },
+    "location_research": {
+      "actual_location": "Murdoch, Perth WA",
+      "description": "Major medical hub in southern Perth. Home to Fiona Stanley Hospital, St John of God Murdoch, Murdoch University. High-traffic medical precinct.",
+      "area_type": "metro_medical_hub",
+      "growth_outlook": "strong",
+      "nearby_amenities": "Fiona Stanley Hospital, St John of God, Murdoch University, Murdoch Station, Murdoch Drive retail strip",
+      "competition_notes": "Nearest pharmacy 694m (Good Price Pharmacy Warehouse Baldivis — but this seems wrong, Baldivis is 20km away). 33 pharmacies in 10km.",
+      "demographic_notes": "University students, hospital workers, affluent surrounding suburbs (Bateman, Winthrop, Bull Creek)."
+    },
+    "setup_costs": {
+      "fitout": 400000,
+      "stock": 120000,
+      "pbs_approval": 10000,
+      "working_capital": 135000,
+      "total_establishment": 665000
+    },
+    "script_analysis": {
+      "mature_scripts_per_day": 114.7,
+      "benchmark": "breakeven_plus",
+      "gp_driven_scripts": 84.0,
+      "local_walk_in_scripts": 15.7,
+      "capture_rate": 0.4,
+      "method": "item_136_medical_centre",
+      "area_multiplier": 1.15,
+      "mature_scripts_day": 114.7,
+      "year1_avg_scripts_day": 68.8,
+      "year2_avg_scripts_day": 97.5,
+      "year3_avg_scripts_day": 114.7
+    },
+    "revenue": {
+      "year1": {
+        "scripts_per_day": 68.8,
+        "annual_script_revenue": 627819,
+        "front_of_shop_revenue": 366228,
+        "clinical_services_revenue": 52318,
+        "total_annual_revenue": 1046365
+      },
+      "year2": {
+        "scripts_per_day": 97.5,
+        "annual_script_revenue": 889410,
+        "front_of_shop_revenue": 518822,
+        "clinical_services_revenue": 74117,
+        "total_annual_revenue": 1482350
+      },
+      "year3_mature": {
+        "scripts_per_day": 114.7,
+        "annual_script_revenue": 1046365,
+        "front_of_shop_revenue": 610379,
+        "clinical_services_revenue": 87197,
+        "total_annual_revenue": 1743941
+      }
+    },
+    "operating_costs": {
+      "year1": {
+        "cogs": 732456,
+        "annual_rent": 66000,
+        "wages": 267000,
+        "pharmacist_cost": 95000,
+        "retail_staff_count": 2,
+        "regional_loading": 1.0,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 383000,
+        "total_costs": 1115456
+      },
+      "year2": {
+        "cogs": 1037645,
+        "annual_rent": 66000,
+        "wages": 322000,
+        "pharmacist_cost": 95000,
+        "retail_staff_count": 3,
+        "regional_loading": 1.0,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 438000,
+        "total_costs": 1475645
+      },
+      "year3_mature": {
+        "cogs": 1220759,
+        "annual_rent": 66000,
+        "wages": 322000,
+        "pharmacist_cost": 95000,
+        "retail_staff_count": 3,
+        "regional_loading": 1.0,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 438000,
+        "total_costs": 1658759
+      }
+    },
+    "profitability": {
+      "year1": {
+        "gross_profit": 313910,
+        "gross_margin_pct": 30.0,
+        "ebitda": -69091,
+        "ebitda_margin_pct": -6.6,
+        "profitable": false
+      },
+      "year2": {
+        "gross_profit": 444705,
+        "gross_margin_pct": 30.0,
+        "ebitda": 6705,
+        "ebitda_margin_pct": 0.5,
+        "profitable": true
+      },
+      "year3_mature": {
+        "gross_profit": 523182,
+        "gross_margin_pct": 30.0,
+        "ebitda": 85182,
+        "ebitda_margin_pct": 4.9,
+        "profitable": true
+      }
+    },
+    "break_even": {
+      "break_even_months": 84,
+      "cumulative_profit_year1": -734091,
+      "cumulative_profit_year2": -727386,
+      "cumulative_profit_year3": -642204,
+      "cumulative_profit_year5": -416435
+    },
+    "exit_value": {
+      "exit_value_12m": 1046365,
+      "roi_12m_pct": 57.3,
+      "exit_value_24m": 2223525,
+      "roi_24m_pct": 234.4,
+      "exit_value_36m": 3487882,
+      "roi_36m_pct": 424.5
+    },
+    "risk_assessment": {
+      "competition_risk": 4,
+      "competition_note": "High competition — 33 pharmacies in 10km",
+      "location_risk": 1,
+      "location_note": "Major medical precinct (strong growth). Highly resilient location.",
+      "regulatory_risk": 2,
+      "regulatory_note": "Item 136 (large medical centre, 10 GPs) — strong case with clear FTE threshold",
+      "operational_risk": 2,
+      "operational_note": "Metro area — good pharmacist supply, reliable supply chain. High demand for pharmacists in area.",
+      "overall_risk": 2.4,
+      "risk_rating": "MEDIUM"
+    },
+    "summary": {
+      "total_investment": 665000,
+      "mature_annual_revenue": 1743941,
+      "mature_ebitda": 85182,
+      "break_even_months": 84,
+      "exit_value_36m": 3487882,
+      "roi_36m_pct": 424.5,
+      "overall_risk": 2.4,
+      "risk_rating": "MEDIUM",
+      "scripts_per_day_mature": 114.7,
+      "recommendation": "CONSIDER — Viable opportunity but moderate returns. Proceed with due diligence."
+    }
+  },
+  {
+    "opportunity": {
+      "name": "GP Super Clinic Wynnum",
+      "state": "QLD",
+      "address": "18, Chandos Street, Wynnum West, Wynnum, Brisbane, Queensland, 4178, Australia",
+      "lat": -27.4476363,
+      "lng": 153.1647158,
+      "rules": "Item 136",
+      "score": 100,
+      "ratio": 44764,
+      "pop_10km": 1745792,
+      "pharmacies_10km": 39,
+      "nearest_pharmacy_km": 0.73,
+      "nearest_pharmacy": "Wynnum Day & Night Chempro Chemist"
+    },
+    "location_research": {
+      "actual_location": "Wynnum, Brisbane QLD",
+      "description": "Coastal suburb 20km east of Brisbane CBD. Popular residential area on Moreton Bay. GP Super Clinic at 95 Edith Street.",
+      "area_type": "metro_suburban",
+      "growth_outlook": "moderate",
+      "nearby_amenities": "Wynnum Central shopping strip, Wynnum Plaza, train station, foreshore/jetty, schools",
+      "competition_notes": "Nearest: Wynnum Day & Night Chempro 731m. 39 pharmacies in 10km.",
+      "demographic_notes": "Families, older residents, bayside lifestyle. Growing cafe culture."
+    },
+    "setup_costs": {
+      "fitout": 350000,
+      "stock": 100000,
+      "pbs_approval": 8000,
+      "working_capital": 105000,
+      "total_establishment": 563000
+    },
+    "script_analysis": {
+      "mature_scripts_per_day": 80.6,
+      "benchmark": "breakeven_plus",
+      "gp_driven_scripts": 67.2,
+      "local_walk_in_scripts": 13.4,
+      "capture_rate": 0.4,
+      "method": "item_136_medical_centre",
+      "area_multiplier": 1.0,
+      "mature_scripts_day": 80.6,
+      "year1_avg_scripts_day": 48.3,
+      "year2_avg_scripts_day": 68.5,
+      "year3_avg_scripts_day": 80.6
+    },
+    "revenue": {
+      "year1": {
+        "scripts_per_day": 48.3,
+        "annual_script_revenue": 441045,
+        "front_of_shop_revenue": 257276,
+        "clinical_services_revenue": 36754,
+        "total_annual_revenue": 735075
+      },
+      "year2": {
+        "scripts_per_day": 68.5,
+        "annual_script_revenue": 624814,
+        "front_of_shop_revenue": 364475,
+        "clinical_services_revenue": 52068,
+        "total_annual_revenue": 1041356
+      },
+      "year3_mature": {
+        "scripts_per_day": 80.6,
+        "annual_script_revenue": 735075,
+        "front_of_shop_revenue": 428794,
+        "clinical_services_revenue": 61256,
+        "total_annual_revenue": 1225125
+      }
+    },
+    "operating_costs": {
+      "year1": {
+        "cogs": 514552,
+        "annual_rent": 46200,
+        "wages": 212000,
+        "pharmacist_cost": 95000,
+        "retail_staff_count": 1,
+        "regional_loading": 1.0,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 308200,
+        "total_costs": 822752
+      },
+      "year2": {
+        "cogs": 728949,
+        "annual_rent": 46200,
+        "wages": 267000,
+        "pharmacist_cost": 95000,
+        "retail_staff_count": 2,
+        "regional_loading": 1.0,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 363200,
+        "total_costs": 1092149
+      },
+      "year3_mature": {
+        "cogs": 857588,
+        "annual_rent": 46200,
+        "wages": 267000,
+        "pharmacist_cost": 95000,
+        "retail_staff_count": 2,
+        "regional_loading": 1.0,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 363200,
+        "total_costs": 1220788
+      }
+    },
+    "profitability": {
+      "year1": {
+        "gross_profit": 220522,
+        "gross_margin_pct": 30.0,
+        "ebitda": -87677,
+        "ebitda_margin_pct": -11.9,
+        "profitable": false
+      },
+      "year2": {
+        "gross_profit": 312407,
+        "gross_margin_pct": 30.0,
+        "ebitda": -50793,
+        "ebitda_margin_pct": -4.9,
+        "profitable": false
+      },
+      "year3_mature": {
+        "gross_profit": 367538,
+        "gross_margin_pct": 30.0,
+        "ebitda": 4337,
+        "ebitda_margin_pct": 0.4,
+        "profitable": true
+      }
+    },
+    "break_even": {
+      "break_even_months": 84,
+      "cumulative_profit_year1": -650677,
+      "cumulative_profit_year2": -701470,
+      "cumulative_profit_year3": -697133,
+      "cumulative_profit_year5": -651207
+    },
+    "exit_value": {
+      "exit_value_12m": 735075,
+      "roi_12m_pct": 30.6,
+      "exit_value_24m": 1562034,
+      "roi_24m_pct": 177.4,
+      "exit_value_36m": 2450250,
+      "roi_36m_pct": 335.2
+    },
+    "risk_assessment": {
+      "competition_risk": 4,
+      "competition_note": "High competition — 39 pharmacies in 10km",
+      "location_risk": 3,
+      "location_note": "Metro Suburban area with moderate growth outlook.",
+      "regulatory_risk": 3,
+      "regulatory_note": "Item 136 (8 GPs) — meets threshold but borderline FTE after part-time adjustment",
+      "operational_risk": 2,
+      "operational_note": "Metro area — good pharmacist supply, reliable supply chain",
+      "overall_risk": 3.1,
+      "risk_rating": "MEDIUM"
+    },
+    "summary": {
+      "total_investment": 563000,
+      "mature_annual_revenue": 1225125,
+      "mature_ebitda": 4337,
+      "break_even_months": 84,
+      "exit_value_36m": 2450250,
+      "roi_36m_pct": 335.2,
+      "overall_risk": 3.1,
+      "risk_rating": "MEDIUM",
+      "scripts_per_day_mature": 80.6,
+      "recommendation": "CAUTIOUS — Viable but higher risk. Requires careful risk mitigation strategy."
+    }
+  },
+  {
+    "opportunity": {
+      "name": "Sunshine Hospital Medical Centre",
+      "state": "VIC",
+      "address": "49, Novara Parade, St Albans South, St Albans, Melbourne, City of Brimbank, Victoria, 3021, Australia",
+      "lat": -37.7602073,
+      "lng": 144.816728,
+      "rules": "Item 136",
+      "score": 100,
+      "ratio": 36161,
+      "pop_10km": 3652261,
+      "pharmacies_10km": 101,
+      "nearest_pharmacy_km": 1.55,
+      "nearest_pharmacy": "Happy Pharmacy"
+    },
+    "location_research": {
+      "actual_location": "St Albans, Melbourne VIC",
+      "description": "Western Melbourne suburb, 17km NW of CBD. Major growth corridor. Sunshine Hospital is a major public hospital. Medical centre has 15 GPs.",
+      "area_type": "metro_growth",
+      "growth_outlook": "very_strong",
+      "nearby_amenities": "Sunshine Hospital, train station, Alfrieda St shopping strip, Victoria University",
+      "competition_notes": "Nearest pharmacy 1.55km (Happy Pharmacy). 101 pharmacies in 10km but this is a huge metro pop area.",
+      "demographic_notes": "High multicultural population, growing families, new housing estates. Lower socioeconomic — high PBS concession card usage."
+    },
+    "setup_costs": {
+      "fitout": 350000,
+      "stock": 100000,
+      "pbs_approval": 8000,
+      "working_capital": 135000,
+      "total_establishment": 593000
+    },
+    "script_analysis": {
+      "mature_scripts_per_day": 213.7,
+      "benchmark": "exceptional",
+      "gp_driven_scripts": 189.0,
+      "local_walk_in_scripts": 5.2,
+      "capture_rate": 0.6,
+      "method": "item_136_medical_centre",
+      "area_multiplier": 1.1,
+      "mature_scripts_day": 213.7,
+      "year1_avg_scripts_day": 128.2,
+      "year2_avg_scripts_day": 181.6,
+      "year3_avg_scripts_day": 213.7
+    },
+    "revenue": {
+      "year1": {
+        "scripts_per_day": 128.2,
+        "annual_script_revenue": 1169797,
+        "front_of_shop_revenue": 682381,
+        "clinical_services_revenue": 97483,
+        "total_annual_revenue": 1949661
+      },
+      "year2": {
+        "scripts_per_day": 181.6,
+        "annual_script_revenue": 1657212,
+        "front_of_shop_revenue": 966707,
+        "clinical_services_revenue": 138101,
+        "total_annual_revenue": 2762020
+      },
+      "year3_mature": {
+        "scripts_per_day": 213.7,
+        "annual_script_revenue": 1949661,
+        "front_of_shop_revenue": 1137302,
+        "clinical_services_revenue": 162472,
+        "total_annual_revenue": 3249435
+      }
+    },
+    "operating_costs": {
+      "year1": {
+        "cogs": 1364763,
+        "annual_rent": 45600,
+        "wages": 377000,
+        "pharmacist_cost": 95000,
+        "retail_staff_count": 4,
+        "regional_loading": 1.0,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 472600,
+        "total_costs": 1837363
+      },
+      "year2": {
+        "cogs": 1933414,
+        "annual_rent": 45600,
+        "wages": 582000,
+        "pharmacist_cost": 190000,
+        "retail_staff_count": 6,
+        "regional_loading": 1.0,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 677600,
+        "total_costs": 2611014
+      },
+      "year3_mature": {
+        "cogs": 2274604,
+        "annual_rent": 45600,
+        "wages": 582000,
+        "pharmacist_cost": 190000,
+        "retail_staff_count": 6,
+        "regional_loading": 1.0,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 677600,
+        "total_costs": 2952204
+      }
+    },
+    "profitability": {
+      "year1": {
+        "gross_profit": 584898,
+        "gross_margin_pct": 30.0,
+        "ebitda": 112298,
+        "ebitda_margin_pct": 5.8,
+        "profitable": true
+      },
+      "year2": {
+        "gross_profit": 828606,
+        "gross_margin_pct": 30.0,
+        "ebitda": 151006,
+        "ebitda_margin_pct": 5.5,
+        "profitable": true
+      },
+      "year3_mature": {
+        "gross_profit": 974830,
+        "gross_margin_pct": 30.0,
+        "ebitda": 297231,
+        "ebitda_margin_pct": 9.1,
+        "profitable": true
+      }
+    },
+    "break_even": {
+      "break_even_months": 38,
+      "cumulative_profit_year1": -480702,
+      "cumulative_profit_year2": -329696,
+      "cumulative_profit_year3": -32465,
+      "cumulative_profit_year5": 669402
+    },
+    "exit_value": {
+      "exit_value_12m": 1949661,
+      "roi_12m_pct": 228.8,
+      "exit_value_24m": 4143030,
+      "roi_24m_pct": 598.7,
+      "exit_value_36m": 6498870,
+      "roi_36m_pct": 995.9
+    },
+    "risk_assessment": {
+      "competition_risk": 4,
+      "competition_note": "Very high competition — 101 pharmacies in 10km. Nearest pharmacy 1.6km away (good buffer)",
+      "location_risk": 1,
+      "location_note": "Metro Growth area with very_strong growth outlook.",
+      "regulatory_risk": 2,
+      "regulatory_note": "Item 136 (large medical centre, 15 GPs) — strong case with clear FTE threshold",
+      "operational_risk": 2,
+      "operational_note": "Metro area — good pharmacist supply, reliable supply chain. High demand for pharmacists in area.",
+      "overall_risk": 2.4,
+      "risk_rating": "MEDIUM"
+    },
+    "summary": {
+      "total_investment": 593000,
+      "mature_annual_revenue": 3249435,
+      "mature_ebitda": 297231,
+      "break_even_months": 38,
+      "exit_value_36m": 6498870,
+      "roi_36m_pct": 995.9,
+      "overall_risk": 2.4,
+      "risk_rating": "MEDIUM",
+      "scripts_per_day_mature": 213.7,
+      "recommendation": "STRONG BUY — Exceptional script volume with low risk. Top-tier opportunity."
+    }
+  },
+  {
+    "opportunity": {
+      "name": "Canning Vale Medical Centre",
+      "state": "WA",
+      "address": "Lydiard Retreat, Canning Vale, City of Gosnells, Western Australia, 6155, Australia",
+      "lat": -32.0838537,
+      "lng": 115.9197265,
+      "rules": "Item 136",
+      "score": 83.6,
+      "ratio": 19945,
+      "pop_10km": 1515822,
+      "pharmacies_10km": 76,
+      "nearest_pharmacy_km": 0.37,
+      "nearest_pharmacy": "Wizard Pharmacy Livingston"
+    },
+    "location_research": {
+      "actual_location": "Canning Vale, Perth WA",
+      "description": "Large southern Perth suburb, 22km from CBD. Major residential growth area with young families. Medical centre at 290 Ranford Road.",
+      "area_type": "metro_suburban",
+      "growth_outlook": "strong",
+      "nearby_amenities": "Livingston Marketplace, Ranford Road shopping, Nicholson Road commercial, Canning Vale College",
+      "competition_notes": "Nearest: Wizard Pharmacy Livingston 366m. 76 pharmacies in 10km. Very competitive market.",
+      "demographic_notes": "Young families, multicultural, middle income. Growing rapidly."
+    },
+    "setup_costs": {
+      "fitout": 350000,
+      "stock": 100000,
+      "pbs_approval": 8000,
+      "working_capital": 105000,
+      "total_establishment": 563000
+    },
+    "script_analysis": {
+      "mature_scripts_per_day": 90.9,
+      "benchmark": "breakeven_plus",
+      "gp_driven_scripts": 84.0,
+      "local_walk_in_scripts": 6.9,
+      "capture_rate": 0.4,
+      "method": "item_136_medical_centre",
+      "area_multiplier": 1.0,
+      "mature_scripts_day": 90.9,
+      "year1_avg_scripts_day": 54.6,
+      "year2_avg_scripts_day": 77.3,
+      "year3_avg_scripts_day": 90.9
+    },
+    "revenue": {
+      "year1": {
+        "scripts_per_day": 54.6,
+        "annual_script_revenue": 497887,
+        "front_of_shop_revenue": 290434,
+        "clinical_services_revenue": 41491,
+        "total_annual_revenue": 829812
+      },
+      "year2": {
+        "scripts_per_day": 77.3,
+        "annual_script_revenue": 705340,
+        "front_of_shop_revenue": 411448,
+        "clinical_services_revenue": 58778,
+        "total_annual_revenue": 1175567
+      },
+      "year3_mature": {
+        "scripts_per_day": 90.9,
+        "annual_script_revenue": 829812,
+        "front_of_shop_revenue": 484057,
+        "clinical_services_revenue": 69151,
+        "total_annual_revenue": 1383019
+      }
+    },
+    "operating_costs": {
+      "year1": {
+        "cogs": 580868,
+        "annual_rent": 49500,
+        "wages": 267000,
+        "pharmacist_cost": 95000,
+        "retail_staff_count": 2,
+        "regional_loading": 1.0,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 366500,
+        "total_costs": 947368
+      },
+      "year2": {
+        "cogs": 822897,
+        "annual_rent": 49500,
+        "wages": 267000,
+        "pharmacist_cost": 95000,
+        "retail_staff_count": 2,
+        "regional_loading": 1.0,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 366500,
+        "total_costs": 1189397
+      },
+      "year3_mature": {
+        "cogs": 968113,
+        "annual_rent": 49500,
+        "wages": 322000,
+        "pharmacist_cost": 95000,
+        "retail_staff_count": 3,
+        "regional_loading": 1.0,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 421500,
+        "total_costs": 1389613
+      }
+    },
+    "profitability": {
+      "year1": {
+        "gross_profit": 248944,
+        "gross_margin_pct": 30.0,
+        "ebitda": -117556,
+        "ebitda_margin_pct": -14.2,
+        "profitable": false
+      },
+      "year2": {
+        "gross_profit": 352670,
+        "gross_margin_pct": 30.0,
+        "ebitda": -13830,
+        "ebitda_margin_pct": -1.2,
+        "profitable": false
+      },
+      "year3_mature": {
+        "gross_profit": 414906,
+        "gross_margin_pct": 30.0,
+        "ebitda": -6594,
+        "ebitda_margin_pct": -0.5,
+        "profitable": false
+      }
+    },
+    "break_even": {
+      "break_even_months": 84,
+      "cumulative_profit_year1": -680556,
+      "cumulative_profit_year2": -694386,
+      "cumulative_profit_year3": -700980,
+      "cumulative_profit_year5": -672461
+    },
+    "exit_value": {
+      "exit_value_12m": 829812,
+      "roi_12m_pct": 47.4,
+      "exit_value_24m": 1763350,
+      "roi_24m_pct": 213.2,
+      "exit_value_36m": 2766038,
+      "roi_36m_pct": 391.3
+    },
+    "risk_assessment": {
+      "competition_risk": 5,
+      "competition_note": "Very high competition — 76 pharmacies in 10km",
+      "location_risk": 2,
+      "location_note": "Metro Suburban area with strong growth outlook.",
+      "regulatory_risk": 2,
+      "regulatory_note": "Item 136 (large medical centre, 10 GPs) — strong case with clear FTE threshold",
+      "operational_risk": 2,
+      "operational_note": "Metro area — good pharmacist supply, reliable supply chain",
+      "overall_risk": 2.9,
+      "risk_rating": "MEDIUM"
+    },
+    "summary": {
+      "total_investment": 563000,
+      "mature_annual_revenue": 1383019,
+      "mature_ebitda": -6594,
+      "break_even_months": 84,
+      "exit_value_36m": 2766038,
+      "roi_36m_pct": 391.3,
+      "overall_risk": 2.9,
+      "risk_rating": "MEDIUM",
+      "scripts_per_day_mature": 90.9,
+      "recommendation": "MARGINAL — Close to break-even. High sensitivity to assumptions. Extra due diligence needed."
+    }
+  },
+  {
+    "opportunity": {
       "name": "Supa IGA Gordonvale",
       "state": "QLD",
       "address": "",
       "lat": -17.0930134,
       "lng": 145.7916302,
       "rules": "Item 132",
-      "score": 77.8,
+      "score": 47.2,
       "ratio": 9010,
       "pop_10km": 18020,
       "pharmacies_10km": 2,
@@ -363,13 +1083,193 @@
   },
   {
     "opportunity": {
+      "name": "Lake Macquarie Medical Centre",
+      "state": "NSW",
+      "address": "Griffiths Street, Charlestown, Newcastle-Maitland, City of Lake Macquarie, New South Wales, 2290, Australia",
+      "lat": -32.9820602,
+      "lng": 151.6703278,
+      "rules": "Item 136",
+      "score": 37.5,
+      "ratio": 6224,
+      "pop_10km": 348539,
+      "pharmacies_10km": 56,
+      "nearest_pharmacy_km": 0.35,
+      "nearest_pharmacy": "Pharmacy 4 Less Mount Hutton"
+    },
+    "location_research": {
+      "actual_location": "Charlestown, Newcastle NSW",
+      "description": "Major suburb in Lake Macquarie LGA, 10km from Newcastle CBD. Large medical centre with 10 GPs. Charlestown Square nearby.",
+      "area_type": "metro_suburban",
+      "growth_outlook": "moderate",
+      "nearby_amenities": "Charlestown Square (major shopping centre), John Hunter Hospital nearby, schools, Charlestown Swim Centre",
+      "competition_notes": "Nearest: Pharmacy 4 Less Mt Hutton 352m. 56 pharmacies in 10km! Very saturated market.",
+      "demographic_notes": "Established suburban, families + retirees. Stable population."
+    },
+    "setup_costs": {
+      "fitout": 350000,
+      "stock": 100000,
+      "pbs_approval": 8000,
+      "working_capital": 105000,
+      "total_establishment": 563000
+    },
+    "script_analysis": {
+      "mature_scripts_per_day": 93.4,
+      "benchmark": "breakeven_plus",
+      "gp_driven_scripts": 84.0,
+      "local_walk_in_scripts": 9.4,
+      "capture_rate": 0.4,
+      "method": "item_136_medical_centre",
+      "area_multiplier": 1.0,
+      "mature_scripts_day": 93.4,
+      "year1_avg_scripts_day": 56.0,
+      "year2_avg_scripts_day": 79.4,
+      "year3_avg_scripts_day": 93.4
+    },
+    "revenue": {
+      "year1": {
+        "scripts_per_day": 56.0,
+        "annual_script_revenue": 511216,
+        "front_of_shop_revenue": 298209,
+        "clinical_services_revenue": 42601,
+        "total_annual_revenue": 852026
+      },
+      "year2": {
+        "scripts_per_day": 79.4,
+        "annual_script_revenue": 724222,
+        "front_of_shop_revenue": 422463,
+        "clinical_services_revenue": 60352,
+        "total_annual_revenue": 1207037
+      },
+      "year3_mature": {
+        "scripts_per_day": 93.4,
+        "annual_script_revenue": 852026,
+        "front_of_shop_revenue": 497015,
+        "clinical_services_revenue": 71002,
+        "total_annual_revenue": 1420044
+      }
+    },
+    "operating_costs": {
+      "year1": {
+        "cogs": 596418,
+        "annual_rent": 44000,
+        "wages": 267000,
+        "pharmacist_cost": 95000,
+        "retail_staff_count": 2,
+        "regional_loading": 1.0,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 361000,
+        "total_costs": 957418
+      },
+      "year2": {
+        "cogs": 844926,
+        "annual_rent": 44000,
+        "wages": 267000,
+        "pharmacist_cost": 95000,
+        "retail_staff_count": 2,
+        "regional_loading": 1.0,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 361000,
+        "total_costs": 1205926
+      },
+      "year3_mature": {
+        "cogs": 994031,
+        "annual_rent": 44000,
+        "wages": 322000,
+        "pharmacist_cost": 95000,
+        "retail_staff_count": 3,
+        "regional_loading": 1.0,
+        "insurance": 12000,
+        "utilities": 8000,
+        "software_it": 6000,
+        "marketing": 10000,
+        "accounting": 6000,
+        "sundry": 8000,
+        "total_opex": 416000,
+        "total_costs": 1410031
+      }
+    },
+    "profitability": {
+      "year1": {
+        "gross_profit": 255608,
+        "gross_margin_pct": 30.0,
+        "ebitda": -105392,
+        "ebitda_margin_pct": -12.4,
+        "profitable": false
+      },
+      "year2": {
+        "gross_profit": 362111,
+        "gross_margin_pct": 30.0,
+        "ebitda": 1111,
+        "ebitda_margin_pct": 0.1,
+        "profitable": true
+      },
+      "year3_mature": {
+        "gross_profit": 426013,
+        "gross_margin_pct": 30.0,
+        "ebitda": 10013,
+        "ebitda_margin_pct": 0.7,
+        "profitable": true
+      }
+    },
+    "break_even": {
+      "break_even_months": 84,
+      "cumulative_profit_year1": -668392,
+      "cumulative_profit_year2": -667281,
+      "cumulative_profit_year3": -657268,
+      "cumulative_profit_year5": -593913
+    },
+    "exit_value": {
+      "exit_value_12m": 852026,
+      "roi_12m_pct": 51.3,
+      "exit_value_24m": 1810556,
+      "roi_24m_pct": 221.6,
+      "exit_value_36m": 2840088,
+      "roi_36m_pct": 404.5
+    },
+    "risk_assessment": {
+      "competition_risk": 4,
+      "competition_note": "High competition — 56 pharmacies in 10km",
+      "location_risk": 3,
+      "location_note": "Metro Suburban area with moderate growth outlook.",
+      "regulatory_risk": 2,
+      "regulatory_note": "Item 136 (large medical centre, 10 GPs) — strong case with clear FTE threshold",
+      "operational_risk": 2,
+      "operational_note": "Metro area — good pharmacist supply, reliable supply chain",
+      "overall_risk": 2.9,
+      "risk_rating": "MEDIUM"
+    },
+    "summary": {
+      "total_investment": 563000,
+      "mature_annual_revenue": 1420044,
+      "mature_ebitda": 10013,
+      "break_even_months": 84,
+      "exit_value_36m": 2840088,
+      "roi_36m_pct": 404.5,
+      "overall_risk": 2.9,
+      "risk_rating": "MEDIUM",
+      "scripts_per_day_mature": 93.4,
+      "recommendation": "CONSIDER — Viable opportunity but moderate returns. Proceed with due diligence."
+    }
+  },
+  {
+    "opportunity": {
       "name": "Gladstone Medical Centre",
       "state": "QLD",
       "address": "Young Street, Gladstone Ports - Port Central, Barney Point, Gladstone, Gladstone Regional, Queensland, 4680, Australia",
       "lat": -23.8571249,
       "lng": 151.243877,
       "rules": "Item 136",
-      "score": 59.8,
+      "score": 18.5,
       "ratio": 4958,
       "pop_10km": 34703,
       "pharmacies_10km": 7,
