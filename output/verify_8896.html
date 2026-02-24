@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verify: Supa IGA Gordonvale (QLD)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f1117; color: #e2e8f0; }
+.container { display: grid; grid-template-columns: 400px 1fr; height: 100vh; }
+.panel { padding: 20px; overflow-y: auto; background: #1a1d2e; border-right: 1px solid #2a2f45; }
+#map { width: 100%; height: 100%; }
+h1 { font-size: 20px; color: #22c55e; margin-bottom: 4px; }
+.subtitle { color: #94a3b8; font-size: 13px; margin-bottom: 16px; }
+.score-bar { display: flex; gap: 12px; margin-bottom: 16px; padding: 12px; background: #0f1117; border-radius: 8px; }
+.score-item { text-align: center; }
+.score-item .value { font-size: 24px; font-weight: 700; color: #f59e0b; }
+.score-item .label { font-size: 10px; color: #94a3b8; text-transform: uppercase; }
+.section { margin-bottom: 16px; }
+.section-title { font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; border-bottom: 1px solid #2a2f45; padding-bottom: 4px; }
+.criterion { display: flex; gap: 8px; padding: 8px; margin-bottom: 4px; border-radius: 6px; background: #0f1117; }
+.criterion.pass { border-left: 3px solid #22c55e; }
+.criterion.fail { border-left: 3px solid #ef4444; }
+.icon { font-size: 16px; }
+.crit-name { font-size: 13px; font-weight: 600; }
+.crit-value { font-size: 12px; color: #94a3b8; }
+.address { font-size: 13px; color: #cbd5e1; padding: 8px; background: #0f1117; border-radius: 6px; margin-bottom: 8px; }
+.evidence { font-size: 11px; color: #64748b; padding: 8px; background: #0f1117; border-radius: 6px; word-break: break-all; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th, td { padding: 6px 8px; text-align: left; border-bottom: 1px solid #2a2f45; }
+th { color: #94a3b8; font-weight: 600; }
+</style>
+</head><body>
+<div class="container">
+<div class="panel">
+    <h1>📍 Supa IGA Gordonvale</h1>
+    <div class="subtitle">QLD • GORDONVALE • Item 132</div>
+    
+    <div class="address">📌 Address not available</div>
+    <div class="address">🌐 -17.093013, 145.791630</div>
+    
+    <div class="score-bar">
+        <div class="score-item"><div class="value">77.8</div><div class="label">Score</div></div>
+        <div class="score-item"><div class="value">9,010:1</div><div class="label">Ratio</div></div>
+        <div class="score-item"><div class="value">18,020</div><div class="label">Pop 10km</div></div>
+        <div class="score-item"><div class="value">2</div><div class="label">Ph 10km</div></div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Rule Criteria — Item 132</div>
+        
+        <div class="criterion pass">
+            <span class="icon">✅</span>
+            <div>
+                <div class="crit-name">Nearest pharmacy ≥ 200m (same town)</div>
+                <div class="crit-value">Nearest: Gordonvale Discount Drug Store at 1921m</div>
+            </div>
+        </div>
+        <div class="criterion pass">
+            <span class="icon">✅</span>
+            <div>
+                <div class="crit-name">Qualifying POI anchor (supermarket/medical)</div>
+                <div class="crit-value">Anchor: Supa IGA Gordonvale</div>
+            </div>
+        </div>
+        <div class="criterion pass">
+            <span class="icon">✅</span>
+            <div>
+                <div class="crit-name">Population supports additional pharmacy</div>
+                <div class="crit-value">Pop 10km: 18,020 | Ratio: 9,010:1</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Nearest Pharmacies</div>
+        <table>
+            <tr><th>#</th><th>Name</th><th>Address</th><th>Dist</th></tr>
+            <tr>
+            <td>1</td>
+            <td>Gordonvale Discount Drug Store</td>
+            <td>Shop 3-4 Woolworths Complex, 46 Draper Road, GORDONVALE, QLD, 4865</td>
+            <td><b>1.92km</b></td>
+        </tr><tr>
+            <td>2</td>
+            <td>Alive Pharmacy Warehouse Edmonton</td>
+            <td>Shop 2/9-11 Stokes Street, EDMONTON, QLD, 4869</td>
+            <td><b>9.62km</b></td>
+        </tr><tr>
+            <td>3</td>
+            <td>TerryWhite Chemmart Edmonton</td>
+            <td>Shop 12 Sugarworld Shopping Village, 7-11 Walker Road, EDMONTON, QLD, 4869</td>
+            <td><b>10.66km</b></td>
+        </tr><tr>
+            <td>4</td>
+            <td>Chemist Warehouse Bentley Village SC</td>
+            <td>Shop 15/96 McLaughlin Road, Bentley Park, QLD, 4869</td>
+            <td><b>11.41km</b></td>
+        </tr><tr>
+            <td>5</td>
+            <td>Alive Pharmacy Warehouse Mount Sheridan</td>
+            <td>Shop 14 Mount Sheridan Plaza, 106 Barnard Drive, MOUNT SHERIDAN, QLD, 4868</td>
+            <td><b>12.7km</b></td>
+        </tr><tr>
+            <td>6</td>
+            <td>Mount Sheridan Pharmacy</td>
+            <td>Unit 1 6-8 George Cannon Drive, MOUNT SHERIDAN, QLD, 4868</td>
+            <td><b>13.8km</b></td>
+        </tr>
+        </table>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Evidence</div>
+        <div class="evidence">rule: Item 132: New additional pharmacy in town | town: GORDONVALE | nearest_pharmacy: Gordonvale Discount Drug Store at 1.92 km (>=200m ✓, same town ✓) | second_nearest: Second nearest pharmacy: Aliv</div>
+    </div>
+</div>
+<div id="map"></div>
+</div>
+<script>
+var map = L.map('map').setView([-17.0930134, 145.7916302], 14);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OSM &copy; CARTO'
+}).addTo(map);
+
+// Opportunity marker (green star)
+L.marker([-17.0930134, 145.7916302], {
+    icon: L.divIcon({
+        html: '<div style="background:#22c55e;width:20px;height:20px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 10px rgba(34,197,94,0.5)"></div>',
+        iconSize: [20,20],
+        iconAnchor: [10,10],
+        className: ''
+    })
+}).bindPopup('<b>Supa IGA Gordonvale</b><br>Opportunity Location').addTo(map);
+
+// Rule radius circle
+L.circle([-17.0930134, 145.7916302], {
+    radius: 2000,
+    color: '#f59e0b',
+    fillColor: '#f59e0b',
+    fillOpacity: 0.05,
+    weight: 2,
+    dashArray: '8 4'
+}).addTo(map);
+
+// 200m circle for Item 132
+L.circle([-17.0930134, 145.7916302], {radius: 200, color: '#ef4444', fillOpacity: 0.05, weight: 2, dashArray: '4 4'}).bindPopup('200m exclusion zone').addTo(map);
+
+// 10km circle for Item 131
+
+
+// Pharmacy markers (red)
+
+        L.circleMarker([-17.0875169, 145.774499], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Gordonvale Discount Drug Store</b><br>Shop 3-4 Woolworths Complex, 46 Draper Road, GORDONVALE, QLD, 4865<br>Distance: 1.92km')
+            .addTo(map);
+        L.circleMarker([-17.0196275, 145.7436503], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Alive Pharmacy Warehouse Edmonton</b><br>Shop 2/9-11 Stokes Street, EDMONTON, QLD, 4869<br>Distance: 9.62km')
+            .addTo(map);
+        L.circleMarker([-17.0191435, 145.7277047], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>TerryWhite Chemmart Edmonton</b><br>Shop 12 Sugarworld Shopping Village, 7-11 Walker Road, EDMONTON, QLD, 4869<br>Distance: 10.66km')
+            .addTo(map);
+        L.circleMarker([-17.0041, 145.738], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Chemist Warehouse Bentley Village SC</b><br>Shop 15/96 McLaughlin Road, Bentley Park, QLD, 4869<br>Distance: 11.41km')
+            .addTo(map);
+        L.circleMarker([-16.9899651, 145.7401854], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Alive Pharmacy Warehouse Mount Sheridan</b><br>Shop 14 Mount Sheridan Plaza, 106 Barnard Drive, MOUNT SHERIDAN, QLD, 4868<br>Distance: 12.7km')
+            .addTo(map);
+        L.circleMarker([-16.9785577, 145.7413536], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Mount Sheridan Pharmacy</b><br>Unit 1 6-8 George Cannon Drive, MOUNT SHERIDAN, QLD, 4868<br>Distance: 13.8km')
+            .addTo(map);
+</script>
+</body></html>

@@ -1,17 +1,20 @@
-import json, sqlite3
+import sqlite3
+conn = sqlite3.connect(r'C:\Users\MJ\Documents\GitHub\PharmacyFinder\pharmacy_finder.db')
+cur = conn.cursor()
+cur.execute("SELECT name FROM sqlite_master WHERE type='table'")
+print('Tables:', [r[0] for r in cur.fetchall()])
 
-conn = sqlite3.connect('output/pharmacy_opportunities.db')
-c = conn.cursor()
-c.execute("SELECT name FROM sqlite_master WHERE type='table'")
-print('Tables:', c.fetchall())
-
-for table_row in c.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall():
-    table = table_row[0]
-    c.execute(f"PRAGMA table_info({table})")
-    print(f"\n{table} columns:", c.fetchall())
-    c.execute(f"SELECT * FROM {table} LIMIT 3")
-    print(f"{table} sample:", c.fetchall())
-    c.execute(f"SELECT COUNT(*) FROM {table}")
-    print(f"{table} count:", c.fetchone()[0])
-
+for table in ['pharmacies', 'pharmacy', 'opportunities', 'pois']:
+    try:
+        cur.execute(f"PRAGMA table_info({table})")
+        cols = [r[1] for r in cur.fetchall()]
+        if cols:
+            print(f'\n{table} columns: {cols}')
+            cur.execute(f"SELECT COUNT(*) FROM {table}")
+            print(f'{table} rows: {cur.fetchone()[0]}')
+            cur.execute(f"SELECT * FROM {table} LIMIT 2")
+            for row in cur.fetchall():
+                print(f'  {row}')
+    except:
+        pass
 conn.close()

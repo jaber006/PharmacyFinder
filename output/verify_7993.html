@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verify: IGA (NT)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f1117; color: #e2e8f0; }
+.container { display: grid; grid-template-columns: 400px 1fr; height: 100vh; }
+.panel { padding: 20px; overflow-y: auto; background: #1a1d2e; border-right: 1px solid #2a2f45; }
+#map { width: 100%; height: 100%; }
+h1 { font-size: 20px; color: #22c55e; margin-bottom: 4px; }
+.subtitle { color: #94a3b8; font-size: 13px; margin-bottom: 16px; }
+.score-bar { display: flex; gap: 12px; margin-bottom: 16px; padding: 12px; background: #0f1117; border-radius: 8px; }
+.score-item { text-align: center; }
+.score-item .value { font-size: 24px; font-weight: 700; color: #f59e0b; }
+.score-item .label { font-size: 10px; color: #94a3b8; text-transform: uppercase; }
+.section { margin-bottom: 16px; }
+.section-title { font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; border-bottom: 1px solid #2a2f45; padding-bottom: 4px; }
+.criterion { display: flex; gap: 8px; padding: 8px; margin-bottom: 4px; border-radius: 6px; background: #0f1117; }
+.criterion.pass { border-left: 3px solid #22c55e; }
+.criterion.fail { border-left: 3px solid #ef4444; }
+.icon { font-size: 16px; }
+.crit-name { font-size: 13px; font-weight: 600; }
+.crit-value { font-size: 12px; color: #94a3b8; }
+.address { font-size: 13px; color: #cbd5e1; padding: 8px; background: #0f1117; border-radius: 6px; margin-bottom: 8px; }
+.evidence { font-size: 11px; color: #64748b; padding: 8px; background: #0f1117; border-radius: 6px; word-break: break-all; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th, td { padding: 6px 8px; text-align: left; border-bottom: 1px solid #2a2f45; }
+th { color: #94a3b8; font-weight: 600; }
+</style>
+</head><body>
+<div class="container">
+<div class="panel">
+    <h1>📍 IGA</h1>
+    <div class="subtitle">NT • CYGNET • Item 132</div>
+    
+    <div class="address">📌 IGA, Yulara Drive, Yulara, Northern Territory, Australia</div>
+    <div class="address">🌐 -43.158557, 147.075032</div>
+    
+    <div class="score-bar">
+        <div class="score-item"><div class="value">100</div><div class="label">Score</div></div>
+        <div class="score-item"><div class="value">122,207:1</div><div class="label">Ratio</div></div>
+        <div class="score-item"><div class="value">122,207</div><div class="label">Pop 10km</div></div>
+        <div class="score-item"><div class="value">1</div><div class="label">Ph 10km</div></div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Rule Criteria — Item 132</div>
+        
+        <div class="criterion pass">
+            <span class="icon">✅</span>
+            <div>
+                <div class="crit-name">Nearest pharmacy ≥ 200m (same town)</div>
+                <div class="crit-value">Nearest: Cygnet Pharmacy at 220m</div>
+            </div>
+        </div>
+        <div class="criterion pass">
+            <span class="icon">✅</span>
+            <div>
+                <div class="crit-name">Qualifying POI anchor (supermarket/medical)</div>
+                <div class="crit-value">Anchor: IGA</div>
+            </div>
+        </div>
+        <div class="criterion pass">
+            <span class="icon">✅</span>
+            <div>
+                <div class="crit-name">Population supports additional pharmacy</div>
+                <div class="crit-value">Pop 10km: 122,207 | Ratio: 122,207:1</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Nearest Pharmacies</div>
+        <table>
+            <tr><th>#</th><th>Name</th><th>Address</th><th>Dist</th></tr>
+            <tr>
+            <td>1</td>
+            <td>Cygnet Pharmacy</td>
+            <td>43 Mary Street, CYGNET, TAS, 7112</td>
+            <td><b>0.22km</b></td>
+        </tr><tr>
+            <td>2</td>
+            <td>Blooms The Chemist Huonville Arcade</td>
+            <td>Shop 6 Huon Arcade 13 Main Street, HUONVILLE, TAS, 7109</td>
+            <td><b>14.26km</b></td>
+        </tr><tr>
+            <td>3</td>
+            <td>Blooms The Chemist Huonville</td>
+            <td>59 Main Street, HUONVILLE, TAS, 7109</td>
+            <td><b>14.52km</b></td>
+        </tr>
+        </table>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Evidence</div>
+        <div class="evidence">rule: Item 132: New additional pharmacy in town | town: CYGNET | nearest_pharmacy: Cygnet Pharmacy at 219 m (>=200m ✓, same town ✓) | second_nearest: Second nearest pharmacy: Blooms The Chemist Huonvi</div>
+    </div>
+</div>
+<div id="map"></div>
+</div>
+<script>
+var map = L.map('map').setView([-43.1585571, 147.0750318], 14);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OSM &copy; CARTO'
+}).addTo(map);
+
+// Opportunity marker (green star)
+L.marker([-43.1585571, 147.0750318], {
+    icon: L.divIcon({
+        html: '<div style="background:#22c55e;width:20px;height:20px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 10px rgba(34,197,94,0.5)"></div>',
+        iconSize: [20,20],
+        iconAnchor: [10,10],
+        className: ''
+    })
+}).bindPopup('<b>IGA</b><br>Opportunity Location').addTo(map);
+
+// Rule radius circle
+L.circle([-43.1585571, 147.0750318], {
+    radius: 2000,
+    color: '#f59e0b',
+    fillColor: '#f59e0b',
+    fillOpacity: 0.05,
+    weight: 2,
+    dashArray: '8 4'
+}).addTo(map);
+
+// 200m circle for Item 132
+L.circle([-43.1585571, 147.0750318], {radius: 200, color: '#ef4444', fillOpacity: 0.05, weight: 2, dashArray: '4 4'}).bindPopup('200m exclusion zone').addTo(map);
+
+// 10km circle for Item 131
+
+
+// Pharmacy markers (red)
+
+        L.circleMarker([-43.1604644, 147.0757517], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Cygnet Pharmacy</b><br>43 Mary Street, CYGNET, TAS, 7112<br>Distance: 0.22km')
+            .addTo(map);
+        L.circleMarker([-43.0319006, 147.0475162], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Blooms The Chemist Huonville Arcade</b><br>Shop 6 Huon Arcade 13 Main Street, HUONVILLE, TAS, 7109<br>Distance: 14.26km')
+            .addTo(map);
+        L.circleMarker([-43.029452, 147.048484], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Blooms The Chemist Huonville</b><br>59 Main Street, HUONVILLE, TAS, 7109<br>Distance: 14.52km')
+            .addTo(map);
+</script>
+</body></html>

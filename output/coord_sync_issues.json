@@ -1,0 +1,674 @@
+[
+  {
+    "id": 7993,
+    "name": "IGA",
+    "lat": -33.7631046,
+    "lng": 150.8691985,
+    "expected_state": "NT",
+    "address": "IGA, Yulara Drive, Yulara, Northern Territory, Australia"
+  },
+  {
+    "id": 7994,
+    "name": "Foodworks",
+    "lat": -32.2443163,
+    "lng": 147.3564635,
+    "expected_state": "NT",
+    "address": "Foodworks, Stuart Highway, Mulggan, Mataranka, Roper Gulf Region, Northern Terri"
+  },
+  {
+    "id": 7998,
+    "name": "Jabiru Foodland",
+    "lat": -35.2543359,
+    "lng": 139.4541616,
+    "expected_state": "NT",
+    "address": "Jabiru Community Health Centre, Flinders Street, Jabiru, West Arnhem Region, Nor"
+  },
+  {
+    "id": 8003,
+    "name": "Kintore Community Store",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "NT",
+    "address": "Kintore Health Centre, Yunytju Street, Kintore, Macdonnell Region, Northern Terr"
+  },
+  {
+    "id": 8008,
+    "name": "Yaralin Store",
+    "lat": -16.4484865,
+    "lng": 130.8830752,
+    "expected_state": "VIC",
+    "address": "Yarralin, Victoria Daly Region, Northern Territory, Australia"
+  },
+  {
+    "id": 8011,
+    "name": "Supermarket",
+    "lat": -42.1224456,
+    "lng": 148.2845945,
+    "expected_state": "NT",
+    "address": ""
+  },
+  {
+    "id": 8013,
+    "name": "Redimart",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "NT",
+    "address": ""
+  },
+  {
+    "id": 8021,
+    "name": "Lajamanu Health Centre",
+    "lat": -18.337827,
+    "lng": 130.6401304,
+    "expected_state": "WA",
+    "address": ""
+  },
+  {
+    "id": 8022,
+    "name": "Kalkaringi Health Centre",
+    "lat": -17.4435665,
+    "lng": 130.8306822,
+    "expected_state": "WA",
+    "address": ""
+  },
+  {
+    "id": 8027,
+    "name": "Medical Practice",
+    "lat": -32.9265953,
+    "lng": 151.7763427,
+    "expected_state": "NT",
+    "address": ""
+  },
+  {
+    "id": 8031,
+    "name": "Amanbidji Health Centre",
+    "lat": -16.4274295,
+    "lng": 129.6198914,
+    "expected_state": "WA",
+    "address": ""
+  },
+  {
+    "id": 8033,
+    "name": "Bulla Health Centre",
+    "lat": -15.7661619,
+    "lng": 130.0397629,
+    "expected_state": "WA",
+    "address": ""
+  },
+  {
+    "id": 8038,
+    "name": "Robinson River Health Centre",
+    "lat": -16.7594289,
+    "lng": 136.980186,
+    "expected_state": "QLD",
+    "address": ""
+  },
+  {
+    "id": 8039,
+    "name": "Woodycupaldiya Health Centre",
+    "lat": -33.5223666,
+    "lng": 151.3210588,
+    "expected_state": "NT",
+    "address": ""
+  },
+  {
+    "id": 8050,
+    "name": "Areyonga Health Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "NT",
+    "address": ""
+  },
+  {
+    "id": 8056,
+    "name": "Corrella Creek Health Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "NT",
+    "address": ""
+  },
+  {
+    "id": 8065,
+    "name": "Ngalkanbuy Wellbeing Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "NT",
+    "address": ""
+  },
+  {
+    "id": 8066,
+    "name": "Canteen Creek Health Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "NT",
+    "address": ""
+  },
+  {
+    "id": 8071,
+    "name": "Nganmarriyanga Health Centre",
+    "lat": -14.3521044,
+    "lng": 129.8822919,
+    "expected_state": "WA",
+    "address": ""
+  },
+  {
+    "id": 8093,
+    "name": "Julanimawu Health Care Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "NT",
+    "address": ""
+  },
+  {
+    "id": 8096,
+    "name": "Pine Creek Health Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "NT",
+    "address": ""
+  },
+  {
+    "id": 8097,
+    "name": "Adelaide River Health Centre",
+    "lat": -34.926023,
+    "lng": 138.6063397,
+    "expected_state": "NT",
+    "address": ""
+  },
+  {
+    "id": 8117,
+    "name": "Marree Health Service",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "SA",
+    "address": "Marree Health Service, 45, First Street, Marree, Pastoral Unincorporated Area, S"
+  },
+  {
+    "id": 8122,
+    "name": "IGA Gladstone",
+    "lat": -23.8479533,
+    "lng": 151.2612009,
+    "expected_state": "SA",
+    "address": "IGA Gladstone, 48, Gladstone Street, Gladstone, Northern Areas Council, South Au"
+  },
+  {
+    "id": 8140,
+    "name": "Nildottie Friendly Grocer",
+    "lat": -32.7242508,
+    "lng": 148.1912842,
+    "expected_state": "SA",
+    "address": ""
+  },
+  {
+    "id": 8141,
+    "name": "Spalding General Store",
+    "lat": -33.5223666,
+    "lng": 151.3210588,
+    "expected_state": "SA",
+    "address": ""
+  },
+  {
+    "id": 8142,
+    "name": "Arno Bay Supermarket - Friendly Grocer",
+    "lat": -32.7242508,
+    "lng": 148.1912842,
+    "expected_state": "SA",
+    "address": ""
+  },
+  {
+    "id": 8230,
+    "name": "Warakurna Health Clinic",
+    "lat": -25.0029532,
+    "lng": 128.2867997,
+    "expected_state": "NT",
+    "address": ""
+  },
+  {
+    "id": 8259,
+    "name": "Supermarket",
+    "lat": -42.1224456,
+    "lng": 148.2845945,
+    "expected_state": "WA",
+    "address": ""
+  },
+  {
+    "id": 8260,
+    "name": "IGA Local Grocer",
+    "lat": -42.8334608,
+    "lng": 147.4682967,
+    "expected_state": "WA",
+    "address": ""
+  },
+  {
+    "id": 8268,
+    "name": "General Store",
+    "lat": -41.5710486,
+    "lng": 147.2501456,
+    "expected_state": "WA",
+    "address": ""
+  },
+  {
+    "id": 8271,
+    "name": "IGA Express Local Grocer",
+    "lat": -41.1755513,
+    "lng": 146.3533019,
+    "expected_state": "WA",
+    "address": ""
+  },
+  {
+    "id": 8272,
+    "name": "Family Shopping Centre",
+    "lat": -41.0629677,
+    "lng": 145.9141737,
+    "expected_state": "WA",
+    "address": ""
+  },
+  {
+    "id": 8273,
+    "name": "IGA Local Grocer - Nourish Brookton",
+    "lat": -37.8241268,
+    "lng": 145.0971038,
+    "expected_state": "WA",
+    "address": ""
+  },
+  {
+    "id": 8282,
+    "name": "Clinic",
+    "lat": -42.9886892,
+    "lng": 147.3050908,
+    "expected_state": "WA",
+    "address": ""
+  },
+  {
+    "id": 8330,
+    "name": "East Victoria Park IGA",
+    "lat": -31.984866,
+    "lng": 115.9037543,
+    "expected_state": "VIC",
+    "address": ""
+  },
+  {
+    "id": 8378,
+    "name": "IGA",
+    "lat": -33.7631046,
+    "lng": 150.8691985,
+    "expected_state": "VIC",
+    "address": "IGA, 39, River Drive, Tarwin Lower, Shire of South Gippsland, Victoria, 3956, Au"
+  },
+  {
+    "id": 8387,
+    "name": "Wyndham Harbour Mini Mart",
+    "lat": -24.7288119,
+    "lng": 152.2841438,
+    "expected_state": "VIC",
+    "address": ""
+  },
+  {
+    "id": 8494,
+    "name": "Village Grocer",
+    "lat": -32.5338293,
+    "lng": 117.0843534,
+    "expected_state": "VIC",
+    "address": ""
+  },
+  {
+    "id": 8497,
+    "name": "Eskdale IGA X-press + Liquor",
+    "lat": -41.0406587,
+    "lng": 145.83099,
+    "expected_state": "NSW",
+    "address": ""
+  },
+  {
+    "id": 8499,
+    "name": "Smith's Foodland",
+    "lat": -35.2543359,
+    "lng": 139.4541616,
+    "expected_state": "VIC",
+    "address": ""
+  },
+  {
+    "id": 8501,
+    "name": "Lockington Friendly Grocer + Liquor",
+    "lat": -32.7242508,
+    "lng": 148.1912842,
+    "expected_state": "VIC",
+    "address": ""
+  },
+  {
+    "id": 8507,
+    "name": "Falls Creek Medical Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "VIC",
+    "address": ""
+  },
+  {
+    "id": 8513,
+    "name": "Cann Valley Bush Nursing Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "VIC",
+    "address": ""
+  },
+  {
+    "id": 8514,
+    "name": "Woomelang & District Bush Nursing Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "VIC",
+    "address": ""
+  },
+  {
+    "id": 8516,
+    "name": "Dartmoor & District Bush Nursing Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "VIC",
+    "address": ""
+  },
+  {
+    "id": 8654,
+    "name": "Foodworks",
+    "lat": -32.2443163,
+    "lng": 147.3564635,
+    "expected_state": "VIC",
+    "address": ""
+  },
+  {
+    "id": 8716,
+    "name": "Emerald Medical Centre",
+    "lat": -30.7236525,
+    "lng": 146.8050297,
+    "expected_state": "QLD",
+    "address": "Sullivan Street, Emerald, Central Highlands Regional, Queensland, 4720, Australi"
+  },
+  {
+    "id": 8717,
+    "name": "5-Star Supermarket",
+    "lat": -34.8664901,
+    "lng": 138.5924507,
+    "expected_state": "QLD",
+    "address": "5-Star Supermarket, Herbert Street, Boulia, Boulia Shire, Queensland, 4829, Aust"
+  },
+  {
+    "id": 8723,
+    "name": "Foodworks Local",
+    "lat": -42.8334608,
+    "lng": 147.4682967,
+    "expected_state": "QLD",
+    "address": "Foodworks Local, Arthur Street, Tambo, Blackall Tambo Regional, Queensland, 4478"
+  },
+  {
+    "id": 8724,
+    "name": "Camooweal Primary Health Care Clinic",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "QLD",
+    "address": ""
+  },
+  {
+    "id": 8728,
+    "name": "Croydon Primary Health Care Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "QLD",
+    "address": ""
+  },
+  {
+    "id": 8736,
+    "name": "Jundah Primary Health Care Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "QLD",
+    "address": ""
+  },
+  {
+    "id": 8795,
+    "name": "Foodworks",
+    "lat": -32.2443163,
+    "lng": 147.3564635,
+    "expected_state": "QLD",
+    "address": ""
+  },
+  {
+    "id": 8797,
+    "name": "Foodworks",
+    "lat": -32.2443163,
+    "lng": 147.3564635,
+    "expected_state": "QLD",
+    "address": ""
+  },
+  {
+    "id": 8798,
+    "name": "Green Room",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "QLD",
+    "address": ""
+  },
+  {
+    "id": 8799,
+    "name": "IGA Express",
+    "lat": -42.8253244,
+    "lng": 147.2656637,
+    "expected_state": "QLD",
+    "address": ""
+  },
+  {
+    "id": 8800,
+    "name": "Tobin's 5 Star Supermarket",
+    "lat": -34.8664901,
+    "lng": 138.5924507,
+    "expected_state": "QLD",
+    "address": ""
+  },
+  {
+    "id": 8801,
+    "name": "Finch Hatton General Store",
+    "lat": -21.1406962,
+    "lng": 148.6307152,
+    "expected_state": "VIC",
+    "address": ""
+  },
+  {
+    "id": 8802,
+    "name": "Calen Store",
+    "lat": -20.898075,
+    "lng": 148.7723244,
+    "expected_state": "VIC",
+    "address": ""
+  },
+  {
+    "id": 8811,
+    "name": "Jericho Health Clinic / Bush Nursing Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "QLD",
+    "address": ""
+  },
+  {
+    "id": 8813,
+    "name": "Community Health Care",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "QLD",
+    "address": ""
+  },
+  {
+    "id": 8814,
+    "name": "Nebo Medical Centre",
+    "lat": -21.6904546,
+    "lng": 148.6886769,
+    "expected_state": "VIC",
+    "address": ""
+  },
+  {
+    "id": 8815,
+    "name": "Laura Primary Health Care Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "QLD",
+    "address": ""
+  },
+  {
+    "id": 8818,
+    "name": "McKinlay Bush Nursing Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "QLD",
+    "address": ""
+  },
+  {
+    "id": 8820,
+    "name": "Community Health Care",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "QLD",
+    "address": ""
+  },
+  {
+    "id": 8926,
+    "name": "Foodworks",
+    "lat": -32.2443163,
+    "lng": 147.3564635,
+    "expected_state": "QLD",
+    "address": ""
+  },
+  {
+    "id": 9001,
+    "name": "Crabbes Creek General Store",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "NSW",
+    "address": ""
+  },
+  {
+    "id": 9099,
+    "name": "Sciberras fresh (fruits and veggies)",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "NSW",
+    "address": ""
+  },
+  {
+    "id": 9107,
+    "name": "Baby Health Centre",
+    "lat": -37.9826532,
+    "lng": 145.202899,
+    "expected_state": "NSW",
+    "address": ""
+  },
+  {
+    "id": 9109,
+    "name": "Barellan Community Health Centre",
+    "lat": -31.9330046,
+    "lng": 115.8408959,
+    "expected_state": "NSW",
+    "address": ""
+  },
+  {
+    "id": 9273,
+    "name": "Foodworks",
+    "lat": -32.2443163,
+    "lng": 147.3564635,
+    "expected_state": "VIC",
+    "address": ""
+  },
+  {
+    "id": 9369,
+    "name": "Coles",
+    "lat": -32.7769495,
+    "lng": 151.6403949,
+    "expected_state": "TAS",
+    "address": "Coles, 86, Best Street, Devonport, City of Devonport, Tasmania, 7310, Australia"
+  },
+  {
+    "id": 9370,
+    "name": "Coles",
+    "lat": -32.7769495,
+    "lng": 151.6403949,
+    "expected_state": "TAS",
+    "address": "Coles, 11, Cove Hill Road, Bridgewater, Hobart, Brighton, Tasmania, 7030, Austra"
+  },
+  {
+    "id": 9371,
+    "name": "Coles",
+    "lat": -32.7769495,
+    "lng": 151.6403949,
+    "expected_state": "TAS",
+    "address": "Coles, 12, Cole Street, Sorell, Tasmania, 7172, Australia"
+  },
+  {
+    "id": 9372,
+    "name": "Coles",
+    "lat": -32.7769495,
+    "lng": 151.6403949,
+    "expected_state": "TAS",
+    "address": "Coles, 26, Bligh Street, Rosny Park, Hobart, City of Clarence, Tasmania, 7018, A"
+  },
+  {
+    "id": 9373,
+    "name": "Coles",
+    "lat": -32.7769495,
+    "lng": 151.6403949,
+    "expected_state": "TAS",
+    "address": "Coles, 246, Sandy Bay Road, Sandy Bay Shopping Area, Sandy Bay, Hobart, City of "
+  },
+  {
+    "id": 9374,
+    "name": "Woolworths",
+    "lat": -33.6754999,
+    "lng": 151.3023434,
+    "expected_state": "TAS",
+    "address": "Woolworths, 111, Hobart Road, Kings Meadows, Launceston, City of Launceston, Tas"
+  },
+  {
+    "id": 9375,
+    "name": "Woolworths",
+    "lat": -33.6754999,
+    "lng": 151.3023434,
+    "expected_state": "TAS",
+    "address": "Linton Street, Upper Burnie, Burnie, City of Burnie, Tasmania, 7320, Australia"
+  },
+  {
+    "id": 9376,
+    "name": "Coles",
+    "lat": -32.7769495,
+    "lng": 151.6403949,
+    "expected_state": "TAS",
+    "address": "Mowbray Shops Stop 9 Out, 385, Invermay Road, Mowbray Heights, Mowbray, Launcest"
+  },
+  {
+    "id": 9377,
+    "name": "Coles",
+    "lat": -32.7769495,
+    "lng": 151.6403949,
+    "expected_state": "TAS",
+    "address": "Coles, 128, Wellington Street, Launceston, City of Launceston, Tasmania, 7250, A"
+  },
+  {
+    "id": 9378,
+    "name": "Woolworths",
+    "lat": -33.6754999,
+    "lng": 151.3023434,
+    "expected_state": "TAS",
+    "address": "192-196, New Town Road, New Town, Hobart, City of Hobart, Tasmania, 7008, Austra"
+  },
+  {
+    "id": 9379,
+    "name": "Woolworths",
+    "lat": -33.6754999,
+    "lng": 151.3023434,
+    "expected_state": "TAS",
+    "address": "36-40, Wellington Street, Launceston, City of Launceston, Tasmania, 7250, Austra"
+  },
+  {
+    "id": 9380,
+    "name": "Coles",
+    "lat": -32.7769495,
+    "lng": 151.6403949,
+    "expected_state": "TAS",
+    "address": "KFC, Main Road, Hobart, City of Glenorchy, Tasmania, 7010, Australia"
+  }
+]

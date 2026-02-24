@@ -1,0 +1,142 @@
+[
+  {
+    "idx": 1,
+    "name": "Emerald Medical Centre",
+    "reason": "Address says Emerald QLD but coords were in NSW (811km off)",
+    "old_lat": -30.7236525,
+    "old_lng": 146.8050297,
+    "new_lat": -23.528425,
+    "new_lng": 148.1562263,
+    "distance_m": 811144.4
+  },
+  {
+    "idx": 311,
+    "name": "Murdoch Medical Centre",
+    "reason": "Address says Murdoch WA but coords were near Rockingham (25.7km off)",
+    "old_lat": -32.2971739,
+    "old_lng": 115.8014883,
+    "new_lat": -32.0674158,
+    "new_lng": 115.8346086,
+    "distance_m": 25737.4
+  },
+  {
+    "idx": 312,
+    "name": "Ellenbrook Medical Centre",
+    "reason": "Re-geocoded to Vines Avenue, The Vines, City of Swan, Western Australia, 60 (shift 4680m)",
+    "old_lat": -31.7791173,
+    "old_lng": 115.9748254,
+    "new_lat": -31.7495174,
+    "new_lng": 116.0100149,
+    "distance_m": 4679.8
+  },
+  {
+    "idx": 356,
+    "name": "Shellharbour Medical Centre",
+    "reason": "Re-geocoded to Darley Street, Shellharbour, Shellharbour City Council, New  (shift 3900m)",
+    "old_lat": -34.5636281,
+    "old_lng": 150.8336293,
+    "new_lat": -34.5805798,
+    "new_lng": 150.8709193,
+    "distance_m": 3900.0
+  },
+  {
+    "idx": 300,
+    "name": "Adelaide Medical Centre",
+    "reason": "Re-geocoded to Medical Centre, 850, Port Road, Woodville South, Adelaide, C (shift 4860m)",
+    "old_lat": -34.9076225,
+    "old_lng": 138.5782584,
+    "new_lat": -34.8815666,
+    "new_lng": 138.5354708,
+    "distance_m": 4860.3
+  },
+  {
+    "idx": 337,
+    "name": "Gladstone Medical Centre",
+    "reason": "Re-geocoded to Gladstone Medical Centre, Ballantine Street, Clinton, Gladst (shift 2808m)",
+    "old_lat": -23.8571249,
+    "old_lng": 151.243877,
+    "new_lat": -23.875069,
+    "new_lng": 151.2244529,
+    "distance_m": 2807.6
+  },
+  {
+    "idx": 336,
+    "name": "North Lakes Medical Centre",
+    "reason": "Re-geocoded to Bruce Highway, Dakabin, Brisbane, City of Moreton Bay, Queen (shift 2488m)",
+    "old_lat": -27.2295122,
+    "old_lng": 153.0107916,
+    "new_lat": -27.2136942,
+    "new_lng": 152.9929985,
+    "distance_m": 2487.8
+  },
+  {
+    "idx": 321,
+    "name": "Tarneit Medical Centre",
+    "reason": "Re-geocoded to 492, Sayers Road, Hoppers Crossing, Melbourne, City of Wyndh (shift 1962m)",
+    "old_lat": -37.8491364,
+    "old_lng": 144.6734411,
+    "new_lat": -37.8489586,
+    "new_lng": 144.6957805,
+    "distance_m": 1961.6
+  },
+  {
+    "idx": 309,
+    "name": "Mandurah Medical Centre",
+    "reason": "Re-geocoded to Mandurah Station Stand 4, Mandurah Road, Greenfields, Mandur (shift 1664m)",
+    "old_lat": -32.5356548,
+    "old_lng": 115.7328766,
+    "new_lat": -32.5263096,
+    "new_lng": 115.7467364,
+    "distance_m": 1663.8
+  },
+  {
+    "idx": 341,
+    "name": "Redcliffe Medical Centre",
+    "reason": "Re-geocoded to Redcliffe Peninsula 7 Day Medical Centre, 284, Anzac Avenue, (shift 1643m)",
+    "old_lat": -27.2289074,
+    "old_lng": 153.1014202,
+    "new_lat": -27.2261182,
+    "new_lng": 153.0851054,
+    "distance_m": 1642.7
+  },
+  {
+    "idx": 319,
+    "name": "Sunshine Hospital Medical Centre",
+    "reason": "Re-geocoded to 49, Novara Parade, St Albans South, St Albans, Melbourne, Ci (shift 1424m)",
+    "old_lat": -37.7602073,
+    "old_lng": 144.816728,
+    "new_lat": -37.7474056,
+    "new_lng": 144.8161662,
+    "distance_m": 1424.3
+  },
+  {
+    "idx": 332,
+    "name": "Sunshine Coast Medical Centre",
+    "reason": "Re-geocoded to Arthur Street, Caloundra, Sunshine Coast Regional, Queenslan (shift 1311m)",
+    "old_lat": -26.8112875,
+    "old_lng": 153.1264956,
+    "new_lat": -26.7994955,
+    "new_lng": 153.1266311,
+    "distance_m": 1311.3
+  },
+  {
+    "idx": 310,
+    "name": "Wanneroo Medical Centre",
+    "reason": "Re-geocoded to Dundebar Road, Wanneroo, City of Wanneroo, Western Australia (shift 1172m)",
+    "old_lat": -31.7428306,
+    "old_lng": 115.7956677,
+    "new_lat": -31.7503334,
+    "new_lng": 115.8043736,
+    "distance_m": 1172.0
+  },
+  {
+    "idx": 302,
+    "name": "Noarlunga Medical Centre",
+    "reason": "Re-geocoded to Naples Street, Hackham West, Adelaide, City of Onkaparinga,  (shift 1064m)",
+    "old_lat": -35.1392391,
+    "old_lng": 138.4992785,
+    "new_lat": -35.1401017,
+    "new_lng": 138.5109282,
+    "distance_m": 1063.6
+  }
+]

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verify: Eastlands Shopping Centre (TAS)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f1117; color: #e2e8f0; }
+.container { display: grid; grid-template-columns: 400px 1fr; height: 100vh; }
+.panel { padding: 20px; overflow-y: auto; background: #1a1d2e; border-right: 1px solid #2a2f45; }
+#map { width: 100%; height: 100%; }
+h1 { font-size: 20px; color: #22c55e; margin-bottom: 4px; }
+.subtitle { color: #94a3b8; font-size: 13px; margin-bottom: 16px; }
+.score-bar { display: flex; gap: 12px; margin-bottom: 16px; padding: 12px; background: #0f1117; border-radius: 8px; }
+.score-item { text-align: center; }
+.score-item .value { font-size: 24px; font-weight: 700; color: #f59e0b; }
+.score-item .label { font-size: 10px; color: #94a3b8; text-transform: uppercase; }
+.section { margin-bottom: 16px; }
+.section-title { font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; border-bottom: 1px solid #2a2f45; padding-bottom: 4px; }
+.criterion { display: flex; gap: 8px; padding: 8px; margin-bottom: 4px; border-radius: 6px; background: #0f1117; }
+.criterion.pass { border-left: 3px solid #22c55e; }
+.criterion.fail { border-left: 3px solid #ef4444; }
+.icon { font-size: 16px; }
+.crit-name { font-size: 13px; font-weight: 600; }
+.crit-value { font-size: 12px; color: #94a3b8; }
+.address { font-size: 13px; color: #cbd5e1; padding: 8px; background: #0f1117; border-radius: 6px; margin-bottom: 8px; }
+.evidence { font-size: 11px; color: #64748b; padding: 8px; background: #0f1117; border-radius: 6px; word-break: break-all; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th, td { padding: 6px 8px; text-align: left; border-bottom: 1px solid #2a2f45; }
+th { color: #94a3b8; font-weight: 600; }
+</style>
+</head><body>
+<div class="container">
+<div class="panel">
+    <h1>📍 Eastlands Shopping Centre</h1>
+    <div class="subtitle">TAS •  • Item 134A</div>
+    
+    <div class="address">📌 Rosny Hill Lookout, Rosny Lookout Road, Rosny, Hobart, City of Clarence, Tasmania, 7018, Australia</div>
+    <div class="address">🌐 -42.866291, 147.368413</div>
+    
+    <div class="score-bar">
+        <div class="score-item"><div class="value">73.2</div><div class="label">Score</div></div>
+        <div class="score-item"><div class="value">3,656:1</div><div class="label">Ratio</div></div>
+        <div class="score-item"><div class="value">197,451</div><div class="label">Pop 10km</div></div>
+        <div class="score-item"><div class="value">54</div><div class="label">Ph 10km</div></div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Rule Criteria — Item 134A</div>
+        
+        <div class="criterion pass">
+            <span class="icon">✅</span>
+            <div>
+                <div class="crit-name">Shopping centre ≥ 5,000sqm GLA</div>
+                <div class="crit-value">Centre: Eastlands Shopping Centre</div>
+            </div>
+        </div>
+        <div class="criterion pass">
+            <span class="icon">✅</span>
+            <div>
+                <div class="crit-name">GLA & tenant count</div>
+                <div class="crit-value">22,000sqm (>= 5,000sqm ✓)</div>
+            </div>
+        </div>
+        <div class="criterion pass">
+            <span class="icon">✅</span>
+            <div>
+                <div class="crit-name">Fewer pharmacies than allowed for tenant tier</div>
+                <div class="crit-value">tenants: 110 tenants (100-199 tier, max 1 existing phar</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Nearest Pharmacies</div>
+        <table>
+            <tr><th>#</th><th>Name</th><th>Address</th><th>Dist</th></tr>
+            <tr>
+            <td>1</td>
+            <td>Chemist Warehouse Eastlands Shopping Centre</td>
+            <td>Shop G017, Eastlands Shopping Centre, 26 Bligh Street, ROSNY PARK, TAS, 7018</td>
+            <td><b>0.0km</b></td>
+        </tr><tr>
+            <td>2</td>
+            <td>Complete Care Pharmacy Rosny Park</td>
+            <td>8 Bayfield Street, Tenancy A, Ground Floor 8, ROSNY PARK, TAS, 7018</td>
+            <td><b>0.15km</b></td>
+        </tr><tr>
+            <td>3</td>
+            <td>Rhys Jones Pharmacy</td>
+            <td>G2/13 Bayfield Street, BELLERIVE, TAS, 7018</td>
+            <td><b>0.21km</b></td>
+        </tr><tr>
+            <td>4</td>
+            <td>Chemist Warehouse Rosny</td>
+            <td>Tenancy B, 27 Bligh Street, ROSNY PARK, TAS, 7018</td>
+            <td><b>0.34km</b></td>
+        </tr><tr>
+            <td>5</td>
+            <td>Bellerive Quay Pharmacy</td>
+            <td>46 Cambridge Road, BELLERIVE, TAS, 7018</td>
+            <td><b>0.93km</b></td>
+        </tr><tr>
+            <td>6</td>
+            <td>Warrane Pharmacy</td>
+            <td>14 Edgeworth Street, WARRANE, TAS, 7018</td>
+            <td><b>0.98km</b></td>
+        </tr><tr>
+            <td>7</td>
+            <td>Chemist Warehouse Lindisfarne</td>
+            <td>36 Lincoln st Lindisfarne, Lindisfarne, TAS, 7015</td>
+            <td><b>1.84km</b></td>
+        </tr><tr>
+            <td>8</td>
+            <td>Amcal+ Pharmacy Howrah - Wentworth</td>
+            <td>178 Clarence Street, Howrah TAS 7018</td>
+            <td><b>1.86km</b></td>
+        </tr><tr>
+            <td>9</td>
+            <td>Wentworth Pharmacy</td>
+            <td>178 Clarence Street, HOWRAH, TAS, 7018</td>
+            <td><b>2.0km</b></td>
+        </tr><tr>
+            <td>10</td>
+            <td>Chemist Warehouse Lindisfarne</td>
+            <td>36 Lincoln Street, LINDISFARNE, TAS, 7015</td>
+            <td><b>2.45km</b></td>
+        </tr>
+        </table>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Evidence</div>
+        <div class="evidence">rule: Item 134A: Additional pharmacy in large shopping centre | centre_name: Eastlands Shopping Centre | centre_gla: 22,000sqm (>= 5,000sqm ✓) | tenants: 110 tenants (100-199 tier, max 1 existing phar</div>
+    </div>
+</div>
+<div id="map"></div>
+</div>
+<script>
+var map = L.map('map').setView([-42.8662909, 147.3684125], 14);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OSM &copy; CARTO'
+}).addTo(map);
+
+// Opportunity marker (green star)
+L.marker([-42.8662909, 147.3684125], {
+    icon: L.divIcon({
+        html: '<div style="background:#22c55e;width:20px;height:20px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 10px rgba(34,197,94,0.5)"></div>',
+        iconSize: [20,20],
+        iconAnchor: [10,10],
+        className: ''
+    })
+}).bindPopup('<b>Eastlands Shopping Centre</b><br>Opportunity Location').addTo(map);
+
+// Rule radius circle
+L.circle([-42.8662909, 147.3684125], {
+    radius: 1000,
+    color: '#f59e0b',
+    fillColor: '#f59e0b',
+    fillOpacity: 0.05,
+    weight: 2,
+    dashArray: '8 4'
+}).addTo(map);
+
+// 200m circle for Item 132
+
+
+// 10km circle for Item 131
+
+
+// Pharmacy markers (red)
+
+        L.circleMarker([-42.8662561, 147.3684022], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Chemist Warehouse Eastlands Shopping Centre</b><br>Shop G017, Eastlands Shopping Centre, 26 Bligh Street, ROSNY PARK, TAS, 7018<br>Distance: 0.0km')
+            .addTo(map);
+        L.circleMarker([-42.8661754, 147.3702713], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Complete Care Pharmacy Rosny Park</b><br>8 Bayfield Street, Tenancy A, Ground Floor 8, ROSNY PARK, TAS, 7018<br>Distance: 0.15km')
+            .addTo(map);
+        L.circleMarker([-42.8668901, 147.3708163], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Rhys Jones Pharmacy</b><br>G2/13 Bayfield Street, BELLERIVE, TAS, 7018<br>Distance: 0.21km')
+            .addTo(map);
+        L.circleMarker([-42.864052, 147.3712057], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Chemist Warehouse Rosny</b><br>Tenancy B, 27 Bligh Street, ROSNY PARK, TAS, 7018<br>Distance: 0.34km')
+            .addTo(map);
+        L.circleMarker([-42.8746536, 147.3675801], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Bellerive Quay Pharmacy</b><br>46 Cambridge Road, BELLERIVE, TAS, 7018<br>Distance: 0.93km')
+            .addTo(map);
+        L.circleMarker([-42.8601579, 147.3770666], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Warrane Pharmacy</b><br>14 Edgeworth Street, WARRANE, TAS, 7018<br>Distance: 0.98km')
+            .addTo(map);
+        L.circleMarker([-42.8507, 147.361], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Chemist Warehouse Lindisfarne</b><br>36 Lincoln st Lindisfarne, Lindisfarne, TAS, 7015<br>Distance: 1.84km')
+            .addTo(map);
+        L.circleMarker([-42.87615, 147.38682], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Amcal+ Pharmacy Howrah - Wentworth</b><br>178 Clarence Street, Howrah TAS 7018<br>Distance: 1.86km')
+            .addTo(map);
+        L.circleMarker([-42.8761107, 147.3889989], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Wentworth Pharmacy</b><br>178 Clarence Street, HOWRAH, TAS, 7018<br>Distance: 2.0km')
+            .addTo(map);
+        L.circleMarker([-42.8473431, 147.3530747], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Chemist Warehouse Lindisfarne</b><br>36 Lincoln Street, LINDISFARNE, TAS, 7015<br>Distance: 2.45km')
+            .addTo(map);
+        L.circleMarker([-42.8475339, 147.3517989], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>TerryWhite Chemmart Lindisfarne Medical</b><br>30 Lincoln Street, LINDISFARNE, TAS, 7015<br>Distance: 2.49km')
+            .addTo(map);
+        L.circleMarker([-42.8467221, 147.3535578], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>TerryWhite Chemmart Lindisfarne Village</b><br>17 - 19 Franklin Street, LINDISFARNE, TAS, 7015<br>Distance: 2.49km')
+            .addTo(map);
+        L.circleMarker([-42.87824, 147.40732], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Amcal+ Pharmacy Howrah - Shoreline</b><br>6 Shoreline Drive, Shoreline Shopping Centre, Howrah TAS 7018<br>Distance: 3.44km')
+            .addTo(map);
+        L.circleMarker([-42.8802897, 147.4070934], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Shoreline Amcal Pharmacy</b><br>Shop 20 Shoreline Shopping Centre, 6 Shoreline Drive, HOWRAH, TAS, 7018<br>Distance: 3.52km')
+            .addTo(map);
+        L.circleMarker([-42.8807898, 147.3297541], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>HPS Pharmacies Hobart</b><br>Hobart Private Hospital, 33 Argyle Street, HOBART, TAS, 7000<br>Distance: 3.54km')
+            .addTo(map);
+        L.circleMarker([-42.8808014, 147.3284436], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Good Price Pharmacy Warehouse Hobart</b><br>Shop 9 Wellington Centre, 42 - 44 Argyle Street, HOBART, TAS, 7000<br>Distance: 3.63km')
+            .addTo(map);
+        L.circleMarker([-42.8820391, 147.3289715], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Chemist Warehouse Hobart City Centre</b><br>Corner 34 Elizabeth & 96 Collins Street, HOBART, TAS, 7000<br>Distance: 3.66km')
+            .addTo(map);
+        L.circleMarker([-42.881605, 147.327781], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Priceline Hobart</b><br>SHOP FF1, ELIZABETH PLAZA CENTRE, 60 - 64 ELIZABETH STREET, HOBART, TAS, 7000<br>Distance: 3.72km')
+            .addTo(map);
+        L.circleMarker([-42.8876131, 147.3316797], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Chemist Warehouse Salamanca</b><br>16 Montpelier Retreat, BATTERY POINT, TAS, 7004<br>Distance: 3.82km')
+            .addTo(map);
+        L.circleMarker([-42.8817307, 147.3264085], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Friendly Care Advantage Hobart</b><br>103 Liverpool Street, HOBART, TAS, 7000<br>Distance: 3.83km')
+            .addTo(map);
+        L.circleMarker([-42.8818073, 147.3234349], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Chemist Warehouse Hobart</b><br>144 Murray Street, HOBART, TAS, 7000<br>Distance: 4.05km')
+            .addTo(map);
+        L.circleMarker([-42.8864491, 147.3256475], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Macquarie Pharmacy</b><br><br>Distance: 4.14km')
+            .addTo(map);
+        L.circleMarker([-42.8855138, 147.3229261], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Capital Chemist Hobart</b><br>232 - 242 Liverpool Street, Tenancy 4, Hobart, TAS, 7000<br>Distance: 4.28km')
+            .addTo(map);
+        L.circleMarker([-42.8744712, 147.3165156], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Chemist Warehouse North Hobart</b><br>Shop 5, 346-352 Elizabeth Street, North Hobart, TAS, 7000<br>Distance: 4.33km')
+            .addTo(map);
+        L.circleMarker([-42.874114, 147.3161571], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>North Hobart Pharmacy</b><br>360 Elizabeth Street, NORTH HOBART, TAS, 7000<br>Distance: 4.35km')
+            .addTo(map);
+        L.circleMarker([-42.8733731, 147.3155245], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Elizabeth Street Pharmacy</b><br>382-384 Elizabeth Street, NORTH HOBART, TAS, 7000<br>Distance: 4.38km')
+            .addTo(map);
+        L.circleMarker([-42.895223, 147.3279113], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>TerryWhite Chemmart Sandy Bay</b><br>230 Sandy Bay Road, SANDY BAY, TAS, 7005<br>Distance: 4.61km')
+            .addTo(map);
+        L.circleMarker([-42.8666828, 147.311175], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Slade Pharmacy New Town</b><br>30 - 36 New Town Road, Shop 1, NEW TOWN, TAS, 7008<br>Distance: 4.67km')
+            .addTo(map);
+        L.circleMarker([-42.8952405, 147.3269028], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Chemist Warehouse Sandy Bay</b><br>Tenancy 2, 201-205 Sandy Bay Road, SANDY BAY, TAS, 7005<br>Distance: 4.67km')
+            .addTo(map);
+        L.circleMarker([-42.8909884, 147.3207799], {radius: 7, color: '#ef4444', fillColor: '#ef4444', fillOpacity: 0.8, weight: 1})
+            .bindPopup('<b>Davey Street Discount Pharmacy</b><br>179 Davey Street, HOBART, TAS, 7000<br>Distance: 4.75km')
+            .addTo(map);
+</script>
+</body></html>

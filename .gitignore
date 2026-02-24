@@ -10,3 +10,5 @@ build/
 .venv/
 venv/
 cache/
+
+temp_scripts/
