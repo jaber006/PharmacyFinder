@@ -136,10 +136,15 @@ def audit_table(conn, table, name_col, progress):
                 # Auto-fix shifts between 200m and 5km if not a chain
                 if dist < 5000 and not is_chain:
                     c2 = conn.cursor()
-                    c2.execute(f"UPDATE {table} SET latitude=?, longitude=? WHERE id=?", (new_lat, new_lng, rid))
-                    conn.commit()
-                    entry['status'] = 'auto_fixed'
-                    fixed_count += 1
+                    try:
+                        c2.execute(f"UPDATE {table} SET latitude=?, longitude=? WHERE id=?", (new_lat, new_lng, rid))
+                        conn.commit()
+                        entry['status'] = 'auto_fixed'
+                        fixed_count += 1
+                    except Exception as e:
+                        entry['status'] = 'fix_failed'
+                        entry['error'] = str(e)
+                        conn.rollback()
                 
                 completed[str_id] = entry
         else:

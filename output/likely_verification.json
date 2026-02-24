@@ -1,0 +1,1347 @@
+[
+  {
+    "id": 7971,
+    "name": "Garran Medical Centre",
+    "poi_type": "medical_centre",
+    "state": "ACT",
+    "lat": -35.3396745,
+    "lng": 149.103205,
+    "address": "4, Gilmore Crescent, Garran, District of Woden Valley, Australian Capital Territory, 2605, Australia",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "Chemist Warehouse",
+      "Priceline pharmacy",
+      "Garran Pharmacy",
+      "Colbee Court Pharmacy",
+      "Capital Chemist",
+      "TCH Pharmacy"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: 4, Gilmore Crescent, Garran, District of Woden Valley, Australian Capital Territory, 2605, Australia",
+      "Found on OSM within 0.6km: Garran Medical Centre, Garran Place, Garran Shops, Garran, District of Woden Valley, Australian Capital Territory, 2605, Australia",
+      "OSM pharmacies within 2km: ['Chemist Warehouse', 'Priceline pharmacy', 'Garran Pharmacy', 'Colbee Court Pharmacy', 'Capital Chemist', 'TCH Pharmacy']"
+    ],
+    "nominatim_address": "4, Gilmore Crescent, Garran, District of Woden Valley, Australian Capital Territory, 2605, Australia"
+  },
+  {
+    "id": 7973,
+    "name": "Westfield Woden",
+    "poi_type": "shopping_centre",
+    "state": "ACT",
+    "lat": -35.3430433,
+    "lng": 149.0860281,
+    "address": "Bowes Street, Phillip, District of Woden Valley, Australian Capital Territory, 2606, Australia",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": 266,
+    "pharmacy_inside": true,
+    "missing_pharmacies": [
+      "Chemist Warehouse",
+      "Priceline pharmacy",
+      "Garran Pharmacy",
+      "Colbee Court Pharmacy",
+      "Capital Chemist",
+      "TCH Pharmacy"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Abode Hotel, 10, Bowes Street, Phillip, District of Woden Valley, Australian Capital Territory, 2606, Australia",
+      "Found on OSM within 0.4km: Westfield Woden, Corinna Street, Phillip, District of Woden Valley, Australian Capital Territory, 2606, Australia",
+      "Wikipedia confirms 266 stores+services, 4 anchors (David Jones, Big W, Coles, Woolworths). PharmaSave Pharmacy confirmed inside via Westfield website.",
+      "Pharmacies in centre: PharmaSave Pharmacy",
+      "OSM pharmacies within 2km: ['Chemist Warehouse', 'Priceline pharmacy', 'Garran Pharmacy', 'Colbee Court Pharmacy', 'Capital Chemist', 'TCH Pharmacy']"
+    ],
+    "nominatim_address": "Abode Hotel, 10, Bowes Street, Phillip, District of Woden Valley, Australian Capital Territory, 2606, Australia"
+  },
+  {
+    "id": 8027,
+    "name": "Medical Practice",
+    "poi_type": "gp",
+    "state": "NSW",
+    "lat": -32.9265953,
+    "lng": 151.7763427,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "Guardian",
+      "Darby Street Day Night Chemist",
+      "Priority Health Pharmacy",
+      "Discount Chemist Warehouse",
+      "Unnamed pharmacy",
+      "Baggas",
+      "Doc’s Mega Save Chemist"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: BFT Newcastle, 257-259, Hunter Street, Newcastle, Newcastle-Maitland, City of Newcastle, New South Wales, 2300, Australia",
+      "OSM results not near coords. Query: Medical Practice, NSW, Australia",
+      "OSM pharmacies within 2km: ['Guardian', 'Darby Street Day Night Chemist', 'Priority Health Pharmacy', 'Discount Chemist Warehouse', 'Unnamed pharmacy', 'Baggas', 'Doc’s Mega Save Chemist']",
+      "POIs within 500m: ['Georges Darby Hotel (pub)', 'Newcastle Post Office (post_office)', 'Crown & Anchor Hotel (pub)', 'Westpac (atm)', 'The Clarendon Hotel (pub)', 'Newcastle Permanent (atm)', 'Newcastle Family Practice (doctors)', 'Muloobinba / Queens Wharf (ferry_terminal)', 'Nagisa (restaurant)', 'Silo (restaurant)']",
+      "Found matching medical facility: Newcastle Family Practice"
+    ],
+    "nominatim_address": "BFT Newcastle, 257-259, Hunter Street, Newcastle, Newcastle-Maitland, City of Newcastle, New South Wales, 2300, Australia"
+  },
+  {
+    "id": 8062,
+    "name": "Milikapiti Health Centre",
+    "poi_type": "gp",
+    "state": "NT",
+    "lat": -11.4211412,
+    "lng": 130.6733702,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Milikapiti Health Centre, Paru Milikapiti Road, Tiwi Islands, Milikapiti, Tiwi Islands Region, Northern Territory, 0822, Australia",
+      "Found on OSM within 0.0km: Milikapiti Health Centre, Paru Milikapiti Road, Tiwi Islands, Milikapiti, Tiwi Islands Region, Northern Territory, 0822, Australia",
+      "Milikapiti Health Centre on Melville Island (Tiwi Islands), NT. Very remote Aboriginal community. No pharmacy expected.",
+      "No pharmacies found within 2km on OSM"
+    ],
+    "nominatim_address": "Milikapiti Health Centre, Paru Milikapiti Road, Tiwi Islands, Milikapiti, Tiwi Islands Region, Northern Territory, 0822, Australia"
+  },
+  {
+    "id": 8063,
+    "name": "Pirlangimpi Health Centre",
+    "poi_type": "gp",
+    "state": "NT",
+    "lat": -11.4060526,
+    "lng": 130.418099,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Pirlangimpi Health Centre, 238, Golf Course Road, Pirlangimpi, Tiwi Islands Region, Northern Territory, Australia",
+      "Found on OSM within 0.0km: Pirlangimpi Health Centre, 238, Golf Course Road, Pirlangimpi, Tiwi Islands Region, Northern Territory, Australia",
+      "Pirlangimpi Health Centre on Melville Island (Tiwi Islands), NT. Very remote Aboriginal community. No pharmacy expected.",
+      "No pharmacies found within 2km on OSM"
+    ],
+    "nominatim_address": "Pirlangimpi Health Centre, 238, Golf Course Road, Pirlangimpi, Tiwi Islands Region, Northern Territory, Australia"
+  },
+  {
+    "id": 8088,
+    "name": "Piliyamanyirra Supermarket",
+    "poi_type": "supermarket",
+    "state": "NT",
+    "lat": -11.761109,
+    "lng": 130.6312938,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Piliyamanyirra Supermarket, Malawu Street, Wurrumiyanga, Tiwi Islands Region, Northern Territory, Australia",
+      "Found on OSM within 0.0km: Piliyamanyirra Supermarket, Malawu Street, Wurrumiyanga, Tiwi Islands Region, Northern Territory, Australia",
+      "Piliyamanyirra Supermarket on Tiwi Islands, NT. Remote community.",
+      "No pharmacies found within 2km on OSM"
+    ],
+    "nominatim_address": "Piliyamanyirra Supermarket, Malawu Street, Wurrumiyanga, Tiwi Islands Region, Northern Territory, Australia"
+  },
+  {
+    "id": 8097,
+    "name": "Adelaide River Health Centre",
+    "poi_type": "gp",
+    "state": "SA",
+    "lat": -34.926023,
+    "lng": 138.6063397,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "TerryWhite Chemmart",
+      "Unnamed pharmacy",
+      "Unnamed pharmacy",
+      "Chemist Warehouse",
+      "TerryWhite Chemmart",
+      "Discount Chemist",
+      "TerryWhite Chemmart",
+      "National Pharmacies",
+      "Healthylife Pharmacy - Adelaide",
+      "Priceline Pharmacy",
+      "Chemist Warehouse"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Rising Sun Pictures, 180, Pulteney Street, Adelaide, Adelaide City Council, South Australia, 5000, Australia",
+      "Could not find 'Adelaide River Health Centre' on OSM",
+      "OSM pharmacies within 2km: ['TerryWhite Chemmart', 'Unnamed pharmacy', 'Unnamed pharmacy', 'Chemist Warehouse', 'TerryWhite Chemmart', 'Discount Chemist', 'TerryWhite Chemmart', 'National Pharmacies', 'Healthylife Pharmacy - Adelaide', 'Priceline Pharmacy', 'Chemist Warehouse']",
+      "POIs within 500m: ['UPark on Frome Street (parking)', 'Flinders Street Baptist Church (place_of_worship)', 'Bethlehem Lutheran Church (place_of_worship)', 'Target (department_store)', \"McDonald's (fast_food)\", 'Hindmarsh Square Exeloo (toilets)', 'Seven Stars Hotel (pub)', 'German Club Adelaide (pub)', 'Fresco-Bah (cafe)', 'People First Bank (bank)']",
+      "Found matching medical facility: Laser Vision"
+    ],
+    "nominatim_address": "Rising Sun Pictures, 180, Pulteney Street, Adelaide, Adelaide City Council, South Australia, 5000, Australia"
+  },
+  {
+    "id": 8119,
+    "name": "Roxby Downs Hospital",
+    "poi_type": "hospital",
+    "state": "SA",
+    "lat": -30.5626574,
+    "lng": 136.8942395,
+    "address": "Roxby Downs Hospital, 16-28, Burgoyne Street, Roxby Downs, Municipal Council of Roxby Downs, South Australia, 5725, Australia",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Roxby Downs Hospital, 16-28, Burgoyne Street, Roxby Downs, Municipal Council of Roxby Downs, South Australia, 5725, Australia",
+      "Found on OSM within 0.0km: Roxby Downs Hospital, 16-28, Burgoyne Street, Roxby Downs, Municipal Council of Roxby Downs, South Australia, 5725, Australia",
+      "Overpass error: HTTP Error 429: Too Many Requests"
+    ],
+    "nominatim_address": "Roxby Downs Hospital, 16-28, Burgoyne Street, Roxby Downs, Municipal Council of Roxby Downs, South Australia, 5725, Australia"
+  },
+  {
+    "id": 8184,
+    "name": "Gawler Medical Centre",
+    "poi_type": "medical_centre",
+    "state": "SA",
+    "lat": -34.6037934,
+    "lng": 138.749661,
+    "address": "",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "National Pharmacies",
+      "Gawler Pharmacy",
+      "TerryWhite Chemmart"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Gawler Cinema, 11, Murray Street, Gawler South, Gawler, Town of Gawler, South Australia, 5118, Australia",
+      "Could not find 'Gawler Medical Centre' on OSM",
+      "OSM pharmacies within 2km: ['National Pharmacies', 'Gawler Pharmacy', 'TerryWhite Chemmart']"
+    ],
+    "nominatim_address": "Gawler Cinema, 11, Murray Street, Gawler South, Gawler, Town of Gawler, South Australia, 5118, Australia"
+  },
+  {
+    "id": 8192,
+    "name": "Kimba IGA",
+    "poi_type": "supermarket",
+    "state": "SA",
+    "lat": -33.1411684,
+    "lng": 136.4197935,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "healthSAVE Pharmacy Kimba"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Kimba IGA, South Terrace, Kimba, The District Council of Kimba, South Australia, 5641, Australia",
+      "Found on OSM within 0.0km: Kimba IGA, South Terrace, Kimba, The District Council of Kimba, South Australia, 5641, Australia",
+      "OSM pharmacies within 2km: ['healthSAVE Pharmacy Kimba']"
+    ],
+    "nominatim_address": "Kimba IGA, South Terrace, Kimba, The District Council of Kimba, South Australia, 5641, Australia"
+  },
+  {
+    "id": 8197,
+    "name": "Becker's IGA",
+    "poi_type": "supermarket",
+    "state": "SA",
+    "lat": -34.0280864,
+    "lng": 138.6857993,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "Clare Valley Family Pharmacy"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Becker's IGA, Horrocks Highway, Auburn, Clare and Gilbert Valleys Council, South Australia, 5451, Australia",
+      "Found on OSM within 0.0km: Becker's IGA, Horrocks Highway, Auburn, Clare and Gilbert Valleys Council, South Australia, 5451, Australia",
+      "OSM pharmacies within 2km: ['Clare Valley Family Pharmacy']"
+    ],
+    "nominatim_address": "Becker's IGA, Horrocks Highway, Auburn, Clare and Gilbert Valleys Council, South Australia, 5451, Australia"
+  },
+  {
+    "id": 8199,
+    "name": "Booleroo IGA",
+    "poi_type": "supermarket",
+    "state": "SA",
+    "lat": -32.8813947,
+    "lng": 138.3507991,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Booleroo IGA, 31, Stephens Street, Booleroo Centre, The District Council of Mount Remarkable, South Australia, 5482, Australia",
+      "Found on OSM within 0.0km: Booleroo IGA, 31, Stephens Street, Booleroo Centre, The District Council of Mount Remarkable, South Australia, 5482, Australia",
+      "Overpass error: HTTP Error 504: Gateway Timeout"
+    ],
+    "nominatim_address": "Booleroo IGA, 31, Stephens Street, Booleroo Centre, The District Council of Mount Remarkable, South Australia, 5482, Australia"
+  },
+  {
+    "id": 8210,
+    "name": "Murdoch Medical Centre",
+    "poi_type": "medical_centre",
+    "state": "WA",
+    "lat": -32.2971739,
+    "lng": 115.8014883,
+    "address": "90, South Street, Murdoch, City of Melville, Western Australia, 6150, Australia",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "Good Price Pharmacy Warehouse Baldivis"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Kerosene Lane, Baldivis, City of Rockingham, Western Australia, 6171, Australia",
+      "OSM results not near coords. Query: Murdoch Medical Centre, WA, Australia",
+      "OSM pharmacies within 2km: ['Good Price Pharmacy Warehouse Baldivis']",
+      "POIs within 500m: ['Tuart Lakes Lifestyle Village (social_facility)']"
+    ],
+    "nominatim_address": "Kerosene Lane, Baldivis, City of Rockingham, Western Australia, 6171, Australia"
+  },
+  {
+    "id": 8211,
+    "name": "Ellenbrook Medical Centre",
+    "poi_type": "medical_centre",
+    "state": "WA",
+    "lat": -31.784719,
+    "lng": 115.9654835,
+    "address": "Vines Avenue, The Vines, City of Swan, Western Australia, 6069, Australia",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "TerryWhite Chemmart"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Main Street After Tome Way, 100, Main Street, Ellenbrook, City of Swan, Western Australia, 6069, Australia",
+      "Could not find 'Ellenbrook Medical Centre' on OSM",
+      "OSM pharmacies within 2km: ['TerryWhite Chemmart']",
+      "POIs within 500m: [\"Domino's (fast_food)\", 'Noodle Bar (fast_food)', 'Harry and the Boys (fast_food)', 'Dôme (cafe)', 'The Slippery Eel (fast_food)', 'Chicken Treat (fast_food)', 'Ellenbrook Community Garden (garden_centre)', \"Amaretto's (restaurant)\", 'Woolworths (supermarket)', 'Big W (department_store)']"
+    ],
+    "nominatim_address": "Main Street After Tome Way, 100, Main Street, Ellenbrook, City of Swan, Western Australia, 6069, Australia"
+  },
+  {
+    "id": 8272,
+    "name": "Family Shopping Centre",
+    "poi_type": "supermarket",
+    "state": "TAS",
+    "lat": -41.0629677,
+    "lng": 145.9141737,
+    "address": "",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "Advantage Pharmacy",
+      "Chemist Discount Centre",
+      "Burnie Chemmart Pharmacy"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Marine Terrace, South Burnie, Burnie, City of Burnie, Tasmania, 7320, Australia",
+      "Could not find 'Family Shopping Centre' on OSM",
+      "OSM pharmacies within 2km: ['Advantage Pharmacy', 'Chemist Discount Centre', 'Burnie Chemmart Pharmacy']",
+      "POIs within 500m: ['Cars R Us (car)', 'South Side Barber (hairdresser)', 'Bunnings Warehouse (doityourself)', 'Infuse Coffee Roasters (cafe)', 'Lingers Bodyworks & Motorcycle Repairs (car_repair)', 'Motor Accident Repair Centre (car_repair)', 'South Burnie Campus (college)', 'West Beach Cycles (bicycle)']"
+    ],
+    "nominatim_address": "Marine Terrace, South Burnie, Burnie, City of Burnie, Tasmania, 7320, Australia"
+  },
+  {
+    "id": 8282,
+    "name": "Clinic",
+    "poi_type": "gp",
+    "state": "TAS",
+    "lat": -42.9886892,
+    "lng": 147.3050908,
+    "address": "",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "Terry white chemist",
+      "Good Price Pharmacy Warehouse Kingston",
+      "TerryWhite Chemmart",
+      "Kingston Discount Drug Store"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Redwood Rd past Lorikeet St, 137, Redwood Road, Redwood Village, Kingston, Kingborough, Tasmania, 7050, Australia",
+      "Could not find 'Clinic' on OSM",
+      "OSM pharmacies within 2km: ['Terry white chemist', 'Good Price Pharmacy Warehouse Kingston', 'TerryWhite Chemmart', 'Kingston Discount Drug Store']",
+      "POIs within 500m: ['Hawthorn Drive Store (fast_food)', 'Street Library (public_bookcase)', 'Hawthorn Drive Store (convenience)', 'Kingston Fire Station (fire_station)', 'Southern Christian College (school)', 'CityLight Church (place_of_worship)', 'Kingston Neighborhood House (community_centre)']"
+    ],
+    "nominatim_address": "Redwood Rd past Lorikeet St, 137, Redwood Road, Redwood Village, Kingston, Kingborough, Tasmania, 7050, Australia"
+  },
+  {
+    "id": 8318,
+    "name": "IGA Kalbarri",
+    "poi_type": "supermarket",
+    "state": "WA",
+    "lat": -27.7037781,
+    "lng": 114.1683953,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "Kalbarri Pharmacy"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: IGA Kalbarri, 47-49, Grey Street, Kalbarri, Shire of Northampton, Western Australia, 6536, Australia",
+      "Found on OSM within 0.0km: IGA Kalbarri, 47-49, Grey Street, Kalbarri, Shire of Northampton, Western Australia, 6536, Australia",
+      "OSM pharmacies within 2km: ['Kalbarri Pharmacy']"
+    ],
+    "nominatim_address": "IGA Kalbarri, 47-49, Grey Street, Kalbarri, Shire of Northampton, Western Australia, 6536, Australia"
+  },
+  {
+    "id": 8321,
+    "name": "Toodyay IGA",
+    "poi_type": "supermarket",
+    "state": "WA",
+    "lat": -31.5509306,
+    "lng": 116.4661064,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "Toodyay Pharmacy"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Toodyay IGA, Lot 303, Piesse Street, Toodyay, Shire Of Toodyay, Western Australia, 6566, Australia",
+      "Found on OSM within 0.0km: Toodyay IGA, Lot 303, Piesse Street, Toodyay, Shire Of Toodyay, Western Australia, 6566, Australia",
+      "OSM pharmacies within 2km: ['Toodyay Pharmacy']"
+    ],
+    "nominatim_address": "Toodyay IGA, Lot 303, Piesse Street, Toodyay, Shire Of Toodyay, Western Australia, 6566, Australia"
+  },
+  {
+    "id": 8331,
+    "name": "IGA Jurien Bay",
+    "poi_type": "supermarket",
+    "state": "WA",
+    "lat": -30.3053241,
+    "lng": 115.0381341,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "Jurien Pharmacy"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: IGA Jurien Bay, Lot 1, White Street, Jurien Bay, Shire Of Dandaragan, Western Australia, 6516, Australia",
+      "Found on OSM within 0.0km: IGA Jurien Bay, Lot 1, White Street, Jurien Bay, Shire Of Dandaragan, Western Australia, 6516, Australia",
+      "OSM pharmacies within 2km: ['Jurien Pharmacy']"
+    ],
+    "nominatim_address": "IGA Jurien Bay, Lot 1, White Street, Jurien Bay, Shire Of Dandaragan, Western Australia, 6516, Australia"
+  },
+  {
+    "id": 8354,
+    "name": "Melo Velo",
+    "poi_type": "shopping_centre",
+    "state": "WA",
+    "lat": -33.9766994,
+    "lng": 115.7649428,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "Nannup Pharmacy"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Melo Velo, 8, Warren Road, Nannup, Shire Of Nannup, Western Australia, 6275, Australia",
+      "Found on OSM within 0.0km: Melo Velo, Warren Road, Nannup, Shire Of Nannup, Western Australia, 6275, Australia",
+      "Melo Velo appears to be a cafe/bike shop in Nannup, WA (pop ~1,300). NOT a shopping centre. Misclassified POI type.",
+      "OSM pharmacies within 2km: ['Nannup Pharmacy']"
+    ],
+    "nominatim_address": "Melo Velo, 8, Warren Road, Nannup, Shire Of Nannup, Western Australia, 6275, Australia"
+  },
+  {
+    "id": 8370,
+    "name": "Garran Medical Centre",
+    "poi_type": "medical_centre",
+    "state": "ACT",
+    "lat": -35.3396745,
+    "lng": 149.103205,
+    "address": "4, Gilmore Crescent, Garran, District of Woden Valley, Australian Capital Territory, 2605, Australia",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "Chemist Warehouse",
+      "Priceline pharmacy",
+      "Garran Pharmacy",
+      "Colbee Court Pharmacy",
+      "Capital Chemist",
+      "TCH Pharmacy"
+    ],
+    "issues": [
+      "DUPLICATE of id=7971"
+    ],
+    "notes": [
+      "Nominatim resolves to: 4, Gilmore Crescent, Garran, District of Woden Valley, Australian Capital Territory, 2605, Australia",
+      "Found on OSM within 0.6km: Garran Medical Centre, Garran Place, Garran Shops, Garran, District of Woden Valley, Australian Capital Territory, 2605, Australia",
+      "DUPLICATE of id=7971 (Garran Medical Centre, ACT). Same coords.",
+      "OSM pharmacies within 2km: ['Chemist Warehouse', 'Priceline pharmacy', 'Garran Pharmacy', 'Colbee Court Pharmacy', 'Capital Chemist', 'TCH Pharmacy']"
+    ],
+    "nominatim_address": "4, Gilmore Crescent, Garran, District of Woden Valley, Australian Capital Territory, 2605, Australia"
+  },
+  {
+    "id": 8382,
+    "name": "Eastland Shopping Centre",
+    "poi_type": "shopping_centre",
+    "state": "TAS",
+    "lat": -42.8666873,
+    "lng": 147.368137,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": 95,
+    "pharmacy_inside": true,
+    "missing_pharmacies": [
+      "Guardian",
+      "Chemist Warehouse"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Kmart, 1, Bligh Street, Rosny Park, Hobart, City of Clarence, Tasmania, 7018, Australia",
+      "Could not find 'Eastland Shopping Centre' on OSM",
+      "australia-shoppings.com lists 95 stores. Chemist Warehouse confirmed at Shop G017 via healthdirect and localsearch.",
+      "Pharmacies in centre: Chemist Warehouse Eastlands",
+      "OSM pharmacies within 2km: ['Guardian', 'Chemist Warehouse']",
+      "POIs within 500m: ['United (fuel)', 'Bellerive Police Station (police)', \"Domino's (fast_food)\", 'KFC (fast_food)', 'Seventh Day Adventist (place_of_worship)', 'Rooftop parking (parking)', 'Rosny Library (library)', 'Commonwealth Bank (bank)', 'Westpac (bank)', 'Rosny Post Office (post_office)']",
+      "Found matching retail: Coles"
+    ],
+    "nominatim_address": "Kmart, 1, Bligh Street, Rosny Park, Hobart, City of Clarence, Tasmania, 7018, Australia"
+  },
+  {
+    "id": 8383,
+    "name": "Liberty Tower",
+    "poi_type": "shopping_centre",
+    "state": "VIC",
+    "lat": -37.818838516666666,
+    "lng": 144.95452115,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "Amcal",
+      "Elizabeth Pharmacy",
+      "Chemist Warehouse",
+      "Creelman's Pharmacy",
+      "Exhibition Pharmacy",
+      "MyChemist",
+      "Chemist Warehouse",
+      "Pharmacy Neo",
+      "Priceline Pharmacy",
+      "Bourke Place Pharmacy",
+      "Spencer Street Pharmacy",
+      "Flinders Street Station Pharmacy",
+      "Victoria Harbour Pharmacy + News",
+      "Chemist Warehouse",
+      "Chemist Warehouse",
+      "Southgate Pharmacy",
+      "Priceline Pharmacy",
+      "U Pharmacy",
+      "Queen Victoria Market Chemist",
+      "Chemist Warehouse",
+      "Urban Pharmacy",
+      "Chemist Warehouse",
+      "Priceline Pharmacy",
+      "Tong Ren Tang",
+      "Treasury Pharmacy",
+      "Chemist Warehouse",
+      "Capsule Pharmacy",
+      "Carlton Pharmacy",
+      "Chemist Warehouse",
+      "Chemist Warehouse",
+      "Ramsay Pharmacy",
+      "Chemist Warehouse",
+      "Chemist Warehouse",
+      "Chemist Warehouse",
+      "Chemist Warehouse",
+      "Priceline Pharmacy"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Liberty Tower, 620, Collins Street, Melbourne, City of Melbourne, Victoria, 3000, Australia",
+      "Found on OSM within 0.0km: Liberty Tower, 620, Collins Street, Melbourne, City of Melbourne, Victoria, 3000, Australia",
+      "Liberty Tower is a residential/commercial tower at 620 Collins St Melbourne CBD. NOT a traditional shopping centre. Unlikely to have many retail tenants.",
+      "OSM pharmacies within 2km: ['Amcal', 'Elizabeth Pharmacy', 'Chemist Warehouse', \"Creelman's Pharmacy\", 'Exhibition Pharmacy', 'MyChemist', 'Chemist Warehouse', 'Pharmacy Neo', 'Priceline Pharmacy', 'Bourke Place Pharmacy', 'Spencer Street Pharmacy', 'Flinders Street Station Pharmacy', 'Victoria Harbour Pharmacy + News', 'Chemist Warehouse', 'Chemist Warehouse', 'Southgate Pharmacy', 'Priceline Pharmacy', 'U Pharmacy', 'Queen Victoria Market Chemist', 'Chemist Warehouse', 'Urban Pharmacy', 'Chemist Warehouse', 'Priceline Pharmacy', 'Tong Ren Tang', 'Treasury Pharmacy', 'Chemist Warehouse', 'Capsule Pharmacy', 'Carlton Pharmacy', 'Chemist Warehouse', 'Chemist Warehouse', 'Ramsay Pharmacy', 'Chemist Warehouse', 'Chemist Warehouse', 'Chemist Warehouse', 'Chemist Warehouse', 'Priceline Pharmacy']"
+    ],
+    "nominatim_address": "Liberty Tower, 620, Collins Street, Melbourne, City of Melbourne, Victoria, 3000, Australia"
+  },
+  {
+    "id": 8511,
+    "name": "Lismore Community Health",
+    "poi_type": "gp",
+    "state": "NSW",
+    "lat": -28.8176156,
+    "lng": 153.2726455,
+    "address": "",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [
+      "Priceline Pharmacy",
+      "Lismore Southside Chempro",
+      "Chempro"
+    ],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: 304, Keen Street, Albert Park, Girards Hill, Lismore City Council, New South Wales, 2480, Australia",
+      "Could not find 'Lismore Community Health' on OSM",
+      "OSM pharmacies within 2km: ['Priceline Pharmacy', 'Lismore Southside Chempro', 'Chempro']"
+    ],
+    "nominatim_address": "304, Keen Street, Albert Park, Girards Hill, Lismore City Council, New South Wales, 2480, Australia"
+  },
+  {
+    "id": 8512,
+    "name": "Mallacoota Medical Centre",
+    "poi_type": "hospital",
+    "state": "VIC",
+    "lat": -37.558366,
+    "lng": 149.7534583,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [
+      "State mismatch: expected NSW, coords resolve to VIC",
+      "STATE FIX: Should be VIC not NSW"
+    ],
+    "notes": [
+      "Nominatim resolves to: Mallacoota Medical Centre, Clarke Street, Mallacoota, Shire of East Gippsland, Victoria, 3892, Australia",
+      "Could not find 'Mallacoota Medical Centre' on OSM",
+      "State should be VIC not NSW. Mallacoota is in East Gippsland, Victoria (3892). Medical centre confirmed on OSM.",
+      "No pharmacies found within 2km on OSM"
+    ],
+    "nominatim_address": "Mallacoota Medical Centre, Clarke Street, Mallacoota, Shire of East Gippsland, Victoria, 3892, Australia"
+  },
+  {
+    "id": 8584,
+    "name": "Pakenham Medical Centre",
+    "poi_type": "medical_centre",
+    "state": "VIC",
+    "lat": -38.0730551,
+    "lng": 145.4847189,
+    "address": "",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: 3B, John Street, Pakenham, Melbourne, Shire of Cardinia, Victoria, 3810, Australia",
+      "Could not find 'Pakenham Medical Centre' on OSM"
+    ],
+    "nominatim_address": "3B, John Street, Pakenham, Melbourne, Shire of Cardinia, Victoria, 3810, Australia"
+  },
+  {
+    "id": 8587,
+    "name": "IGA Country Grocers & Liquor",
+    "poi_type": "supermarket",
+    "state": "NSW",
+    "lat": -37.3884937,
+    "lng": 144.321389,
+    "address": "",
+    "verified": false,
+    "coords_correct": false,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [
+      "State mismatch: expected NSW, coords resolve to VIC"
+    ],
+    "notes": [
+      "Nominatim resolves to: IGA Country Grocers & Liquor, High Street, Trentham, Shire of Hepburn, Victoria, 3458, Australia",
+      "Could not find 'IGA Country Grocers & Liquor' on OSM"
+    ],
+    "nominatim_address": "IGA Country Grocers & Liquor, High Street, Trentham, Shire of Hepburn, Victoria, 3458, Australia"
+  },
+  {
+    "id": 8598,
+    "name": "Ritchies Supa IGA",
+    "poi_type": "supermarket",
+    "state": "NSW",
+    "lat": -28.6188507,
+    "lng": 153.0033296,
+    "address": "",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Ritchies IGA + Liquor, Summerland Way, Kyogle, Kyogle Council, New South Wales, 2474, Australia",
+      "OSM results not near coords. Query: Ritchies Supa IGA, NSW, Australia"
+    ],
+    "nominatim_address": "Ritchies IGA + Liquor, Summerland Way, Kyogle, Kyogle Council, New South Wales, 2474, Australia"
+  },
+  {
+    "id": 8649,
+    "name": "FoodWorks",
+    "poi_type": "supermarket",
+    "state": "VIC",
+    "lat": -38.5351816,
+    "lng": 143.9739247,
+    "address": "",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: FoodWorks, Erskine Avenue, Lorne, Surf Coast Shire, Victoria, 3232, Australia",
+      "OSM results not near coords. Query: FoodWorks, VIC, Australia"
+    ],
+    "nominatim_address": "FoodWorks, Erskine Avenue, Lorne, Surf Coast Shire, Victoria, 3232, Australia"
+  },
+  {
+    "id": 8653,
+    "name": "Foodworks",
+    "poi_type": "supermarket",
+    "state": "VIC",
+    "lat": -37.7079778,
+    "lng": 148.4549913,
+    "address": "",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Foodworks, 70, Nicholson Street, Orbost, Shire of East Gippsland, Victoria, 3888, Australia",
+      "OSM results not near coords. Query: Foodworks, VIC, Australia"
+    ],
+    "nominatim_address": "Foodworks, 70, Nicholson Street, Orbost, Shire of East Gippsland, Victoria, 3888, Australia"
+  },
+  {
+    "id": 8654,
+    "name": "Foodworks",
+    "poi_type": "supermarket",
+    "state": "NSW",
+    "lat": -36.4202837,
+    "lng": 143.6136597,
+    "address": "",
+    "verified": false,
+    "coords_correct": false,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [
+      "State mismatch: expected NSW, coords resolve to VIC"
+    ],
+    "notes": [
+      "Nominatim resolves to: Foodworks, 15, Kerr Street, Wedderburn, Shire of Loddon, Victoria, 3518, Australia",
+      "OSM results not near coords. Query: Foodworks, NSW, Australia"
+    ],
+    "nominatim_address": "Foodworks, 15, Kerr Street, Wedderburn, Shire of Loddon, Victoria, 3518, Australia"
+  },
+  {
+    "id": 8743,
+    "name": "Mornington Island Hospital",
+    "poi_type": "hospital",
+    "state": "QLD",
+    "lat": -16.6647062,
+    "lng": 139.1804346,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Mornington Island Hospital, Lardil Street, Wellesley Islands, Gununa, Mornington Shire, Queensland, Australia",
+      "Found on OSM within 0.0km: Mornington Island Hospital, Lardil Street, Wellesley Islands, Gununa, Mornington Shire, Queensland, Australia"
+    ],
+    "nominatim_address": "Mornington Island Hospital, Lardil Street, Wellesley Islands, Gununa, Mornington Shire, Queensland, Australia"
+  },
+  {
+    "id": 8745,
+    "name": "Marburg Medical",
+    "poi_type": "gp",
+    "state": "QLD",
+    "lat": -27.565993,
+    "lng": 152.592946,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Marburg Medical, 104, Edmond Street, Marburg, Ipswich City, Queensland, 4346, Australia",
+      "Found on OSM within 0.0km: Marburg Medical, 104, Edmond Street, Marburg, Ipswich City, Queensland, 4346, Australia"
+    ],
+    "nominatim_address": "Marburg Medical, 104, Edmond Street, Marburg, Ipswich City, Queensland, 4346, Australia"
+  },
+  {
+    "id": 8898,
+    "name": "IGA Gayndah",
+    "poi_type": "supermarket",
+    "state": "QLD",
+    "lat": -25.6257902,
+    "lng": 151.611642,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: IGA Gayndah, 69, Burnett Highway, Gayndah, North Burnett Regional, Queensland, 4625, Australia",
+      "Found on OSM within 0.0km: IGA Gayndah, 69, Burnett Highway, Gayndah, North Burnett Regional, Queensland, 4625, Australia"
+    ],
+    "nominatim_address": "IGA Gayndah, 69, Burnett Highway, Gayndah, North Burnett Regional, Queensland, 4625, Australia"
+  },
+  {
+    "id": 8908,
+    "name": "Miles IGA",
+    "poi_type": "supermarket",
+    "state": "QLD",
+    "lat": -26.6600742,
+    "lng": 150.1912996,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Miles IGA, Murilla Street, Miles, Western Downs Regional, Queensland, 4415, Australia",
+      "Found on OSM within 0.0km: Miles IGA, Murilla Street, Miles, Western Downs Regional, Queensland, 4415, Australia"
+    ],
+    "nominatim_address": "Miles IGA, Murilla Street, Miles, Western Downs Regional, Queensland, 4415, Australia"
+  },
+  {
+    "id": 8928,
+    "name": "Foodworks",
+    "poi_type": "supermarket",
+    "state": "QLD",
+    "lat": -28.0161841,
+    "lng": 153.1622698,
+    "address": "",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Foodworks, 16, Christie Street, Canungra, Scenic Rim Regional, Queensland, 4275, Australia",
+      "OSM results not near coords. Query: Foodworks, QLD, Australia"
+    ],
+    "nominatim_address": "Foodworks, 16, Christie Street, Canungra, Scenic Rim Regional, Queensland, 4275, Australia"
+  },
+  {
+    "id": 8930,
+    "name": "Millmerran Foodworks",
+    "poi_type": "supermarket",
+    "state": "QLD",
+    "lat": -27.8746056,
+    "lng": 151.266232,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Millmerran Foodworks, Smith Street, Millmerran, Toowoomba Regional, Queensland, 4357, Australia",
+      "Found on OSM within 0.0km: Millmerran Foodworks, Smith Street, Millmerran, Toowoomba Regional, Queensland, 4357, Australia"
+    ],
+    "nominatim_address": "Millmerran Foodworks, Smith Street, Millmerran, Toowoomba Regional, Queensland, 4357, Australia"
+  },
+  {
+    "id": 8987,
+    "name": "Garran Medical Centre",
+    "poi_type": "medical_centre",
+    "state": "ACT",
+    "lat": -35.3396745,
+    "lng": 149.103205,
+    "address": "4, Gilmore Crescent, Garran, District of Woden Valley, Australian Capital Territory, 2605, Australia",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: 4, Gilmore Crescent, Garran, District of Woden Valley, Australian Capital Territory, 2605, Australia",
+      "Found on OSM within 0.6km: Garran Medical Centre, Garran Place, Garran Shops, Garran, District of Woden Valley, Australian Capital Territory, 2605, Australia"
+    ],
+    "nominatim_address": "4, Gilmore Crescent, Garran, District of Woden Valley, Australian Capital Territory, 2605, Australia"
+  },
+  {
+    "id": 9206,
+    "name": "Pakenham Medical Centre",
+    "poi_type": "medical_centre",
+    "state": "VIC",
+    "lat": -38.0730551,
+    "lng": 145.4847189,
+    "address": "",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: 3B, John Street, Pakenham, Melbourne, Shire of Cardinia, Victoria, 3810, Australia",
+      "Could not find 'Pakenham Medical Centre' on OSM"
+    ],
+    "nominatim_address": "3B, John Street, Pakenham, Melbourne, Shire of Cardinia, Victoria, 3810, Australia"
+  },
+  {
+    "id": 9231,
+    "name": "Coonamble IGA",
+    "poi_type": "supermarket",
+    "state": "NSW",
+    "lat": -30.9537536,
+    "lng": 148.3833719,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Coonamble IGA, Aberford Street, Coonamble, Coonamble Shire Council, New South Wales, 2829, Australia",
+      "Found on OSM within 0.0km: Coonamble IGA, Aberford Street, Coonamble, Coonamble Shire Council, New South Wales, 2829, Australia"
+    ],
+    "nominatim_address": "Coonamble IGA, Aberford Street, Coonamble, Coonamble Shire Council, New South Wales, 2829, Australia"
+  },
+  {
+    "id": 9240,
+    "name": "Carlo's IGA + Liquor",
+    "poi_type": "supermarket",
+    "state": "NSW",
+    "lat": -31.5108053,
+    "lng": 150.6786676,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Carlo's IGA + Liquor, 56-64, George Street, Quirindi, Liverpool Plains Shire Council, New South Wales, 2343, Australia",
+      "Found on OSM within 0.0km: Carlo's IGA + Liquor, 56-64, George Street, Quirindi, Liverpool Plains Shire Council, New South Wales, 2343, Australia"
+    ],
+    "nominatim_address": "Carlo's IGA + Liquor, 56-64, George Street, Quirindi, Liverpool Plains Shire Council, New South Wales, 2343, Australia"
+  },
+  {
+    "id": 9243,
+    "name": "Ritchies Supa IGA",
+    "poi_type": "supermarket",
+    "state": "NSW",
+    "lat": -28.6188507,
+    "lng": 153.0033296,
+    "address": "",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Ritchies IGA + Liquor, Summerland Way, Kyogle, Kyogle Council, New South Wales, 2474, Australia",
+      "OSM results not near coords. Query: Ritchies Supa IGA, NSW, Australia"
+    ],
+    "nominatim_address": "Ritchies IGA + Liquor, Summerland Way, Kyogle, Kyogle Council, New South Wales, 2474, Australia"
+  },
+  {
+    "id": 9251,
+    "name": "IGA Finley + Liquor",
+    "poi_type": "supermarket",
+    "state": "NSW",
+    "lat": -35.6427763,
+    "lng": 145.5768562,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: IGA Finley + Liquor, Murray Street, Finley, Berrigan Shire Council, New South Wales, 2713, Australia",
+      "Found on OSM within 0.0km: IGA Finley + Liquor, Murray Street, Finley, Berrigan Shire Council, New South Wales, 2713, Australia"
+    ],
+    "nominatim_address": "IGA Finley + Liquor, Murray Street, Finley, Berrigan Shire Council, New South Wales, 2713, Australia"
+  },
+  {
+    "id": 9252,
+    "name": "IGA Austral",
+    "poi_type": "supermarket",
+    "state": "TAS",
+    "lat": -41.1587797,
+    "lng": 146.1837638,
+    "address": "",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: EG Australia, 20-22, Eastland Drive, Ulverstone, Central Coast, Tasmania, 7315, Australia",
+      "Could not find 'IGA Austral' on OSM"
+    ],
+    "nominatim_address": "EG Australia, 20-22, Eastland Drive, Ulverstone, Central Coast, Tasmania, 7315, Australia"
+  },
+  {
+    "id": 9258,
+    "name": "IGA Condobolin",
+    "poi_type": "supermarket",
+    "state": "NSW",
+    "lat": -33.0892178,
+    "lng": 147.1500133,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: XXXX Bottle Shop, Bathurst Street, Condobolin, Lachlan Shire Council, New South Wales, 2877, Australia",
+      "Found on OSM within 0.0km: IGA Condobolin, Bathurst Street, Condobolin, Lachlan Shire Council, New South Wales, 2877, Australia"
+    ],
+    "nominatim_address": "XXXX Bottle Shop, Bathurst Street, Condobolin, Lachlan Shire Council, New South Wales, 2877, Australia"
+  },
+  {
+    "id": 9267,
+    "name": "Harrison's IGA",
+    "poi_type": "supermarket",
+    "state": "NSW",
+    "lat": -34.5071027,
+    "lng": 144.8435005,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Harrison's Store, Lachlan Street, Hay, Hay Shire Council, New South Wales, 2711, Australia",
+      "Found on OSM within 0.0km: Harrison's IGA, Victoria Street, Hay, Hay Shire Council, New South Wales, 2711, Australia"
+    ],
+    "nominatim_address": "Harrison's Store, Lachlan Street, Hay, Hay Shire Council, New South Wales, 2711, Australia"
+  },
+  {
+    "id": 9282,
+    "name": "Foodworks",
+    "poi_type": "supermarket",
+    "state": "NSW",
+    "lat": -33.298675,
+    "lng": 146.3706032,
+    "address": "51, Foster Street, Lake Cargelligo, NSW, Australia",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Super Cellars, Foster Street, Lake Cargelligo, Lachlan Shire Council, New South Wales, 2672, Australia",
+      "OSM results not near coords. Query: Foodworks, NSW, Australia"
+    ],
+    "nominatim_address": "Super Cellars, Foster Street, Lake Cargelligo, Lachlan Shire Council, New South Wales, 2672, Australia"
+  },
+  {
+    "id": 9316,
+    "name": "Strathfield Private Hospital",
+    "poi_type": "hospital",
+    "state": "NSW",
+    "lat": -33.8719185,
+    "lng": 151.0975672,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Strathfield Private Hospital, 3, Everton Road, Strathfield, Inner West, Sydney, Burwood Council, New South Wales, 2135, Australia",
+      "Found on OSM within 0.0km: Strathfield Private Hospital, 3, Everton Road, Strathfield, Inner West, Sydney, Burwood Council, New South Wales, 2135, Australia"
+    ],
+    "nominatim_address": "Strathfield Private Hospital, 3, Everton Road, Strathfield, Inner West, Sydney, Burwood Council, New South Wales, 2135, Australia"
+  },
+  {
+    "id": 9332,
+    "name": "Sydney Southwest Private Hospital",
+    "poi_type": "hospital",
+    "state": "NSW",
+    "lat": -33.9172651,
+    "lng": 150.9283216,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Jamaica Blue, Bigge Street, Sydney, Liverpool City Council, New South Wales, 2170, Australia",
+      "Found on OSM within 0.0km: Sydney Southwest Private Hospital, 40, Bigge Street, Liverpool, Liverpool City Council, New South Wales, 2170, Australia"
+    ],
+    "nominatim_address": "Jamaica Blue, Bigge Street, Sydney, Liverpool City Council, New South Wales, 2170, Australia"
+  },
+  {
+    "id": 9357,
+    "name": "Newcastle Private Hospital",
+    "poi_type": "hospital",
+    "state": "NSW",
+    "lat": -32.9265953,
+    "lng": 151.7763427,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: BFT Newcastle, 257-259, Hunter Street, Newcastle, Newcastle-Maitland, City of Newcastle, New South Wales, 2300, Australia",
+      "Found on OSM within 8.7km: Newcastle Private Hospital, Lookout Road, New Lambton Heights, Newcastle, Newcastle-Maitland, City of Newcastle, New South Wales, 2305, Australia"
+    ],
+    "nominatim_address": "BFT Newcastle, 257-259, Hunter Street, Newcastle, Newcastle-Maitland, City of Newcastle, New South Wales, 2300, Australia"
+  },
+  {
+    "id": 9364,
+    "name": "Eastlands Shopping Centre",
+    "poi_type": "shopping_centre",
+    "state": "TAS",
+    "lat": -42.8666873,
+    "lng": 147.368137,
+    "address": "Rosny Hill Lookout, Rosny Lookout Road, Rosny, Hobart, City of Clarence, Tasmania, 7018, Australia",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Kmart, 1, Bligh Street, Rosny Park, Hobart, City of Clarence, Tasmania, 7018, Australia",
+      "Found on OSM within 0.0km: Eastlands Shopping Centre, Rosny Park, Hobart, City of Clarence, Tasmania, 7018, Australia"
+    ],
+    "nominatim_address": "Kmart, 1, Bligh Street, Rosny Park, Hobart, City of Clarence, Tasmania, 7018, Australia"
+  },
+  {
+    "id": 9365,
+    "name": "Channel Court Shopping Centre",
+    "poi_type": "shopping_centre",
+    "state": "TAS",
+    "lat": -42.9771278,
+    "lng": 147.3064362,
+    "address": "14, Maranoa Road, Kingston Park, Kingston, Kingborough, Tasmania, 7050, Australia",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: 14, Maranoa Road, Kingston Park, Kingston, Kingborough, Tasmania, 7050, Australia",
+      "Found on OSM within 0.4km: Channel Court Shopping Centre, 29, Channel Highway, Kingston Park, Kingston, Kingborough, Tasmania, 7050, Australia"
+    ],
+    "nominatim_address": "14, Maranoa Road, Kingston Park, Kingston, Kingborough, Tasmania, 7050, Australia"
+  },
+  {
+    "id": 9381,
+    "name": "TAS Family Medical Centre",
+    "poi_type": "medical_centre",
+    "state": "TAS",
+    "lat": -41.0629677,
+    "lng": 145.9141737,
+    "address": "1-3 Reeves Street, South Burnie, Burnie, City of Burnie, Tasmania, 7320, Australia",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Marine Terrace, South Burnie, Burnie, City of Burnie, Tasmania, 7320, Australia",
+      "Could not find 'TAS Family Medical Centre' on OSM"
+    ],
+    "nominatim_address": "Marine Terrace, South Burnie, Burnie, City of Burnie, Tasmania, 7320, Australia"
+  },
+  {
+    "id": 9393,
+    "name": "Moonah Medical Centre",
+    "poi_type": "medical_centre",
+    "state": "TAS",
+    "lat": -42.8480395,
+    "lng": 147.302331,
+    "address": "",
+    "verified": null,
+    "coords_correct": true,
+    "poi_found_osm": false,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Albert Road, Moonah, Hobart, City of Glenorchy, Tasmania, 7009, Australia",
+      "Could not find 'Moonah Medical Centre' on OSM"
+    ],
+    "nominatim_address": "Albert Road, Moonah, Hobart, City of Glenorchy, Tasmania, 7009, Australia"
+  },
+  {
+    "id": 9396,
+    "name": "Hilly's IGA",
+    "poi_type": "supermarket",
+    "state": "TAS",
+    "lat": -41.32339865,
+    "lng": 148.2489222,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: St Helens Central, 29, Cecilia Street, St Helens, Break O'Day, Tasmania, 7216, Australia",
+      "Found on OSM within 0.1km: Hilly's IGA, 23, Cecilia Street, St Helens, Break O'Day, Tasmania, 7216, Australia"
+    ],
+    "nominatim_address": "St Helens Central, 29, Cecilia Street, St Helens, Break O'Day, Tasmania, 7216, Australia"
+  },
+  {
+    "id": 9397,
+    "name": "Lane's IGA",
+    "poi_type": "supermarket",
+    "state": "TAS",
+    "lat": -41.1129758,
+    "lng": 146.0716909,
+    "address": "",
+    "verified": true,
+    "coords_correct": true,
+    "poi_found_osm": true,
+    "tenant_count": null,
+    "pharmacy_inside": null,
+    "missing_pharmacies": [],
+    "issues": [],
+    "notes": [
+      "Nominatim resolves to: Lane's IGA, 66, Main Road, Penguin, Central Coast, Tasmania, 7316, Australia",
+      "Found on OSM within 0.0km: Lane's IGA, 66, Main Road, Penguin, Central Coast, Tasmania, 7316, Australia"
+    ],
+    "nominatim_address": "Lane's IGA, 66, Main Road, Penguin, Central Coast, Tasmania, 7316, Australia"
+  }
+]
