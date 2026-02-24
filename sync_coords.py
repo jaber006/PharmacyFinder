@@ -95,24 +95,24 @@ def main():
     print("COORDINATE SYNC & VALIDATION")
     print("=" * 60)
     
-    # Load all source tables
+    # Load all source tables (coord_verified entries are authoritative)
     sources = {}
     
     # Medical centres
-    c.execute("SELECT id, name, latitude, longitude, state FROM medical_centres WHERE latitude IS NOT NULL")
-    sources['medical_centre'] = {r[1]: {'lat': r[2], 'lng': r[3], 'state': r[4], 'id': r[0]} for r in c.fetchall()}
+    c.execute("SELECT id, name, latitude, longitude, state, COALESCE(coord_verified,0) FROM medical_centres WHERE latitude IS NOT NULL")
+    sources['medical_centre'] = {r[1]: {'lat': r[2], 'lng': r[3], 'state': r[4], 'id': r[0], 'verified': r[5]} for r in c.fetchall()}
     
     # Shopping centres
-    c.execute("SELECT id, name, latitude, longitude FROM shopping_centres WHERE latitude IS NOT NULL")
-    sources['shopping_centre'] = {r[1]: {'lat': r[2], 'lng': r[3], 'id': r[0]} for r in c.fetchall()}
+    c.execute("SELECT id, name, latitude, longitude, COALESCE(coord_verified,0) FROM shopping_centres WHERE latitude IS NOT NULL")
+    sources['shopping_centre'] = {r[1]: {'lat': r[2], 'lng': r[3], 'id': r[0], 'verified': r[4]} for r in c.fetchall()}
     
     # Hospitals
-    c.execute("SELECT id, name, latitude, longitude FROM hospitals WHERE latitude IS NOT NULL")
-    sources['hospital'] = {r[1]: {'lat': r[2], 'lng': r[3], 'id': r[0]} for r in c.fetchall()}
+    c.execute("SELECT id, name, latitude, longitude, COALESCE(coord_verified,0) FROM hospitals WHERE latitude IS NOT NULL")
+    sources['hospital'] = {r[1]: {'lat': r[2], 'lng': r[3], 'id': r[0], 'verified': r[4]} for r in c.fetchall()}
     
     # Supermarkets
-    c.execute("SELECT id, name, latitude, longitude FROM supermarkets WHERE latitude IS NOT NULL")
-    sources['supermarket'] = {r[1]: {'lat': r[2], 'lng': r[3], 'id': r[0]} for r in c.fetchall()}
+    c.execute("SELECT id, name, latitude, longitude, COALESCE(coord_verified,0) FROM supermarkets WHERE latitude IS NOT NULL")
+    sources['supermarket'] = {r[1]: {'lat': r[2], 'lng': r[3], 'id': r[0], 'verified': r[4]} for r in c.fetchall()}
     
     print(f"Loaded sources: {', '.join(f'{k}={len(v)}' for k,v in sources.items())}")
     
