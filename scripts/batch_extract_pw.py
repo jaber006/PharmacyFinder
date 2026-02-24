@@ -10,10 +10,11 @@ import asyncio
 try:
     from playwright.async_api import async_playwright
 except ImportError:
-    os.system("pip install playwright")
+    import subprocess
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'playwright'])
     from playwright.async_api import async_playwright
 
-BASE_DIR = r"C:\Users\MJ\Documents\GitHub\PharmacyFinder"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 CDP_URL = "http://127.0.0.1:18800"
 

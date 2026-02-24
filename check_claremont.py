@@ -1,5 +1,8 @@
+import os
 import sqlite3, sys, io
 from math import radians, cos, sin, asin, sqrt
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -8,7 +11,7 @@ def haversine(lat1, lon1, lat2, lon2):
     a = sin((lat2-lat1)/2)**2 + cos(lat1)*cos(lat2)*sin((lon2-lon1)/2)**2
     return 2 * 6371000 * asin(sqrt(a))
 
-conn = sqlite3.connect(r'C:\Users\MJ\Documents\GitHub\PharmacyFinder\pharmacy_finder.db')
+conn = sqlite3.connect(os.path.join(BASE_DIR, 'pharmacy_finder.db'))
 c = conn.cursor()
 
 # Where is Claremont Village Shopping Centre in our DB?

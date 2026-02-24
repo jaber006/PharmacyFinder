@@ -1,6 +1,9 @@
+import os
 import sqlite3, csv
 
-DB = r'C:\Users\MJ\Documents\GitHub\PharmacyFinder\pharmacy_finder.db'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+DB = os.path.join(BASE_DIR, 'pharmacy_finder.db')
 conn = sqlite3.connect(DB)
 c = conn.cursor()
 
@@ -14,7 +17,7 @@ print("\nDB opportunities:")
 for r in c.fetchall():
     print(f"  {r[0]}: ({r[1]}, {r[2]})")
 
-csv_path = r'C:\Users\MJ\Documents\GitHub\PharmacyFinder\output\population_ranked_TAS.csv'
+csv_path = os.path.join(BASE_DIR, 'output', 'population_ranked_TAS.csv')
 with open(csv_path, 'r', encoding='utf-8') as f:
     for row in csv.DictReader(f):
         if 'TAS Family' in row.get('POI Name', ''):

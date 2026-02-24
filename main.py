@@ -31,7 +31,6 @@ import sys
 from datetime import datetime
 
 import pandas as pd
-import folium
 
 from utils.database import Database
 from utils.geocoding import Geocoder
@@ -143,8 +142,8 @@ class PharmacyLocationFinder:
         self.db.connection.commit()
         try:
             self.db.connection.execute("PRAGMA wal_checkpoint(PASSIVE)")
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"  [warn] WAL checkpoint failed (non-critical): {e}")
 
         print(f"  {'-'*56}")
         print(f"  Pharmacies:        {pharmacy_count}")

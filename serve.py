@@ -17,14 +17,14 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
 if __name__ == '__main__':
     port = int(sys.argv[1]) if len(sys.argv) > 1 else PORT
-    with socketserver.TCPServer(("", port), Handler) as httpd:
+    with socketserver.TCPServer(("127.0.0.1", port), Handler) as httpd:
         url = f"http://localhost:{port}/dashboard.html"
         print(f"Serving dashboard at {url}")
         print("Press Ctrl+C to stop")
         try:
             webbrowser.open(url)
-        except:
-            pass
+        except Exception:
+            pass  # Browser open may fail in headless environments
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:

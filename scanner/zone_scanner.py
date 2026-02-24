@@ -18,13 +18,12 @@ For each discovered opportunity we record:
 
 from __future__ import annotations
 
-import math
 import time
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
 from utils.database import Database
-from utils.boundaries import in_state, STATE_BOUNDING_BOXES
+from utils.boundaries import STATE_BOUNDING_BOXES
 from utils.distance import (
     find_nearest,
     find_within_radius,
@@ -32,7 +31,6 @@ from utils.distance import (
     format_distance,
     get_driving_distance,
     assess_distance_confidence,
-    assess_proximity_confidence,
 )
 from utils.geocoding import Geocoder
 import config
@@ -192,8 +190,9 @@ class ZoneScanner:
                 if address:
                     # Trim to a reasonable length
                     opp.address = address[:200]
-            except Exception:
-                pass
+            except Exception as e:
+                if verbose:
+                    print(f"    [warn] Geocode failed for ({opp.latitude:.4f}, {opp.longitude:.4f}): {e}")
 
         geocoded = sum(1 for o in to_geocode if o.address)
         if verbose:

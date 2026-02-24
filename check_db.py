@@ -1,5 +1,8 @@
+import os
 import sqlite3
-conn = sqlite3.connect(r'C:\Users\MJ\Documents\GitHub\PharmacyFinder\pharmacy_finder.db')
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+conn = sqlite3.connect(os.path.join(BASE_DIR, 'pharmacy_finder.db'))
 cur = conn.cursor()
 cur.execute("SELECT name FROM sqlite_master WHERE type='table'")
 print('Tables:', [r[0] for r in cur.fetchall()])

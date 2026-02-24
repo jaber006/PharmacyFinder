@@ -1,7 +1,10 @@
+import os
 """Check remaining VERIFIED PASS opps that aren't remote NT - see which need manual Google Maps check"""
 import json
 
-with open(r'C:\Users\MJ\Documents\GitHub\PharmacyFinder\output\pass_verification.json', encoding='utf-8') as f:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+with open(os.path.join(BASE_DIR, 'output', 'pass_verification.json'), encoding='utf-8') as f:
     results = json.load(f)
 
 # Find verified non-remote that might need checking

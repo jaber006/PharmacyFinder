@@ -11,12 +11,13 @@ import sys
 try:
     import websocket
 except ImportError:
-    os.system("pip install websocket-client")
+    import subprocess
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'websocket-client'])
     import websocket
 
 import urllib.request
 
-BASE_DIR = r"C:\Users\MJ\Documents\GitHub\PharmacyFinder"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 CDP_URL = "http://127.0.0.1:18800"
 

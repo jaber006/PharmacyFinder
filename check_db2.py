@@ -1,8 +1,11 @@
+import os
 import sqlite3, os, glob
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # Find all DB files
-db_files = glob.glob(r'C:\Users\MJ\Documents\GitHub\PharmacyFinder\**\*.db', recursive=True)
-db_files += glob.glob(r'C:\Users\MJ\Documents\GitHub\PharmacyFinder\*.db')
+db_files = glob.glob(os.path.join(BASE_DIR, '**', '*.db'), recursive=True)
+db_files += glob.glob(os.path.join(BASE_DIR, '*.db'))
 print(f"DB files found: {db_files}")
 
 for db in set(db_files):

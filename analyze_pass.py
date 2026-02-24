@@ -1,6 +1,7 @@
+import os
 import json
 
-with open(r'C:\Users\MJ\Documents\GitHub\PharmacyFinder\output\pass_list.json', encoding='utf-8') as f:
+with open(os.path.join(BASE_DIR, 'output', 'pass_list.json'), encoding='utf-8') as f:
     data = json.load(f)
 
 print(f"Total PASS: {len(data)}")
@@ -50,6 +51,8 @@ for d in flagged[:10]:
 
 # Check for suspicious coords (all same lat/lng)
 from collections import Counter
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 coords = Counter()
 for d in data:
     k = f"{d.get('lat','')},{d.get('lng','')}"

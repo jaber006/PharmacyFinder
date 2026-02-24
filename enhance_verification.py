@@ -1,3 +1,4 @@
+import os
 """
 Enhanced PASS verification:
 1. Update status for all Foodworks with bad coords to ISSUE_FOUND
@@ -8,7 +9,9 @@ Enhanced PASS verification:
 import json
 import sqlite3
 
-DB_PATH = r'C:\Users\MJ\Documents\GitHub\PharmacyFinder\pharmacy_finder.db'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+DB_PATH = os.path.join(BASE_DIR, 'pharmacy_finder.db')
 VERIF_PATH = r'C:\Users\MJ\Documents\GitHub\PharmacyFinder\output\pass_verification.json'
 PASS_LIST = r'C:\Users\MJ\Documents\GitHub\PharmacyFinder\output\pass_list.json'
 

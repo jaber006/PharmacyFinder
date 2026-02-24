@@ -1,5 +1,8 @@
+import os
 import sqlite3, sys, io
 from math import radians, cos, sin, asin, sqrt
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -14,7 +17,7 @@ def haversine(lat1, lon1, lat2, lon2):
 PROP_LAT = -41.4557
 PROP_LNG = 147.1728
 
-DB = r'C:\Users\MJ\Documents\GitHub\PharmacyFinder\pharmacy_finder.db'
+DB = os.path.join(BASE_DIR, 'pharmacy_finder.db')
 conn = sqlite3.connect(DB)
 c = conn.cursor()
 
