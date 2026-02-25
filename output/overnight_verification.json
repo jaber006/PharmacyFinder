@@ -1,0 +1,3125 @@
+{
+  "timestamp": "2026-02-25T23:04:34.555553",
+  "summary": {
+    "total_verified": 122,
+    "clean": 117,
+    "issues": 0,
+    "review": 5,
+    "already_flagged": 0
+  },
+  "results": [
+    {
+      "id": 7994,
+      "name": "Foodworks",
+      "lat": -14.9249086,
+      "lng": 133.0685047,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 427,
+      "nearest_pharmacy_km": 100.30789909099329,
+      "state": "NT",
+      "issues": [
+        "GENERIC_NAME: \"Foodworks\" is too generic, may not be a real POI"
+      ],
+      "status": "REVIEW",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 7995,
+      "name": "Yulara Medical Centre",
+      "lat": -25.2377063,
+      "lng": 130.98594,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 853,
+      "nearest_pharmacy_km": 335.84564593130847,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 7997,
+      "name": "Adjumarllarl Store & Takeaway",
+      "lat": -12.3266273,
+      "lng": 133.0560544,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 1153,
+      "nearest_pharmacy_km": 214.02739618130812,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 7999,
+      "name": "Ntaria Supermarket",
+      "lat": -23.9423066,
+      "lng": 132.7799582,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 751,
+      "nearest_pharmacy_km": 114.81544922694191,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8000,
+      "name": "Yuendumu Store",
+      "lat": -22.2534182,
+      "lng": 131.7950398,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 740,
+      "nearest_pharmacy_km": 265.72235645018935,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8001,
+      "name": "Lajamanu Store",
+      "lat": -18.3356777,
+      "lng": 130.6374637,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 653,
+      "nearest_pharmacy_km": 313.7658929223338,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8006,
+      "name": "Fink River Mission General Store",
+      "lat": -23.9427685,
+      "lng": 132.7794582,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 651,
+      "nearest_pharmacy_km": 115.32532977046041,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8007,
+      "name": "Beswick Store",
+      "lat": -14.5547275,
+      "lng": 133.11380675,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 542,
+      "nearest_pharmacy_km": 91.8395474444236,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8014,
+      "name": "Angurugu Community Store",
+      "lat": -13.98075605,
+      "lng": 136.4611424,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 883,
+      "nearest_pharmacy_km": 202.874935930278,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8016,
+      "name": "Xpress Mart",
+      "lat": -13.8514094,
+      "lng": 136.4177153,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 751,
+      "nearest_pharmacy_km": 189.6653530572574,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8018,
+      "name": "Aurora Kakadu Lodge",
+      "lat": -12.6641036,
+      "lng": 132.8365538,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 755,
+      "nearest_pharmacy_km": 188.55357876393538,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8020,
+      "name": "Yuendumu Health Centre",
+      "lat": -22.2554189,
+      "lng": 131.7964869,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 740,
+      "nearest_pharmacy_km": 265.45631567961817,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8021,
+      "name": "Lajamanu Health Centre",
+      "lat": -18.337827,
+      "lng": 130.6401304,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 653,
+      "nearest_pharmacy_km": 314.0547906261618,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8022,
+      "name": "Kalkaringi Health Centre",
+      "lat": -17.4435665,
+      "lng": 130.8306822,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 544,
+      "nearest_pharmacy_km": 289.8707710649027,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8029,
+      "name": "Wilora Health Centre",
+      "lat": -21.740422549999998,
+      "lng": 133.73175880000002,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 216.74702771908858,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8031,
+      "name": "Amanbidji Health Centre",
+      "lat": -16.4274295,
+      "lng": 129.6198914,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 118.70536753131759,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8037,
+      "name": "Borroloola Health Centre",
+      "lat": -16.0545005,
+      "lng": 136.305245,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 955,
+      "nearest_pharmacy_km": 433.49553623041805,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8044,
+      "name": "Ngukurr Health Centre",
+      "lat": -14.7295132,
+      "lng": 134.7335675,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 1088,
+      "nearest_pharmacy_km": 267.17707712889415,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8045,
+      "name": "Baniyala Health Centre",
+      "lat": -13.1997421,
+      "lng": 136.2258172,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 128.29170192458142,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8048,
+      "name": "Alyangula Health Centre",
+      "lat": -13.8480945,
+      "lng": 136.4212055,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 751,
+      "nearest_pharmacy_km": 189.22560927373362,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8052,
+      "name": "Pmara Jutunta Health Centre",
+      "lat": -22.2074436,
+      "lng": 133.430551,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 170.46423766646566,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8057,
+      "name": "Medical Clinic",
+      "lat": -22.4513095,
+      "lng": 134.2097098,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 141.46977657978525,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8059,
+      "name": "Pigeon Hole Health Centre",
+      "lat": -16.8149686,
+      "lng": 131.2201018,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 284.110225599781,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8061,
+      "name": "Wogyala Health Centre",
+      "lat": -19.0060212,
+      "lng": 135.1785447,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 125.52634961042948,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8068,
+      "name": "Milyakburra Health Centre",
+      "lat": -13.782681,
+      "lng": 136.1953861,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 188.9574513622175,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8069,
+      "name": "Minyerri Health Clinic",
+      "lat": -15.2215285,
+      "lng": 134.0826122,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 650,
+      "nearest_pharmacy_km": 212.60097831906398,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8072,
+      "name": "Galiwinku Health Centre",
+      "lat": -12.0197596,
+      "lng": 135.5686928,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 2199,
+      "nearest_pharmacy_km": 133.69109831198162,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8073,
+      "name": "Gapuwiyak Health Centre",
+      "lat": -12.5026861,
+      "lng": 135.8054722,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 828,
+      "nearest_pharmacy_km": 112.33059419057862,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8076,
+      "name": "Gunbalanya Health Centre",
+      "lat": -12.3217551,
+      "lng": 133.0548208,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 1153,
+      "nearest_pharmacy_km": 213.96700291711838,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8077,
+      "name": "Numbulwar Health Centre",
+      "lat": -14.275415,
+      "lng": 135.7413994,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 681,
+      "nearest_pharmacy_km": 258.6168817676915,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8078,
+      "name": "Ramingining Health Centre",
+      "lat": -12.3286593,
+      "lng": 134.9289942,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 1314,
+      "nearest_pharmacy_km": 202.5093443984803,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8080,
+      "name": "Manangrida Health Centre",
+      "lat": -12.0520371,
+      "lng": 134.2215483,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 2518,
+      "nearest_pharmacy_km": 279.2720394019876,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8081,
+      "name": "Yirrkala Health Centre",
+      "lat": -12.249838,
+      "lng": 136.8926673,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 657,
+      "nearest_pharmacy_km": 13.634344914002195,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Gove Pharmacy",
+          "brand": "",
+          "distance_km": 13.63,
+          "lat": -12.1840416,
+          "lng": 136.7868016
+        }
+      ],
+      "actual_nearest_km": 13.63
+    },
+    {
+      "id": 8082,
+      "name": "Binjari Health Centre (Top Camp)",
+      "lat": -14.5521135,
+      "lng": 132.1827508,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 12.928609013636503,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Territory Pharmacy Terrace",
+          "brand": "",
+          "distance_km": 12.93,
+          "lat": -14.4654238,
+          "lng": 132.2627858
+        },
+        {
+          "name": "Pharmasave Katherine Pharmacy",
+          "brand": "",
+          "distance_km": 13.09,
+          "lat": -14.4659989,
+          "lng": 132.2655972
+        }
+      ],
+      "actual_nearest_km": 12.93
+    },
+    {
+      "id": 8083,
+      "name": "Binjari Health Centre (Bottom Camp)",
+      "lat": -14.5388842,
+      "lng": 132.1748538,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 12.503177180204933,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Territory Pharmacy Terrace",
+          "brand": "",
+          "distance_km": 12.5,
+          "lat": -14.4654238,
+          "lng": 132.2627858
+        },
+        {
+          "name": "Pharmasave Katherine Pharmacy",
+          "brand": "",
+          "distance_km": 12.69,
+          "lat": -14.4659989,
+          "lng": 132.2655972
+        }
+      ],
+      "actual_nearest_km": 12.5
+    },
+    {
+      "id": 8092,
+      "name": "Ltyentye Purte Health Centre",
+      "lat": -24.1308387,
+      "lng": 134.3755784,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 603,
+      "nearest_pharmacy_km": 60.11759975209482,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8115,
+      "name": "RFDS Clinic Innamincka",
+      "lat": -27.7464648,
+      "lng": 140.7366777,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 20,
+      "nearest_pharmacy_km": 371.5258604217573,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8120,
+      "name": "Oodnadatta Hospital",
+      "lat": -27.5451927,
+      "lng": 135.4458198,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 102,
+      "nearest_pharmacy_km": 176.6567928313215,
+      "state": "SA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8121,
+      "name": "Hawker Hospital",
+      "lat": -31.8934242,
+      "lng": 138.42780705,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 226,
+      "nearest_pharmacy_km": 90.34938611330988,
+      "state": "SA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8144,
+      "name": "IGA Coffin Bay",
+      "lat": -34.6221532,
+      "lng": 135.4663195,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 667,
+      "nearest_pharmacy_km": 37.735144885136535,
+      "state": "SA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "TerryWhite Chemmart Port Lincoln",
+          "brand": "",
+          "distance_km": 37.74,
+          "lat": -34.7225577,
+          "lng": 135.8604831
+        },
+        {
+          "name": "Priceline Pharmacy Port Lincoln",
+          "brand": "",
+          "distance_km": 38.13,
+          "lat": -34.7252139,
+          "lng": 135.8639894
+        },
+        {
+          "name": "Cummins Chemist",
+          "brand": "",
+          "distance_km": 46.37,
+          "lat": -34.2646551,
+          "lng": 135.7267272
+        }
+      ],
+      "actual_nearest_km": 37.74
+    },
+    {
+      "id": 8147,
+      "name": "Health Clinic",
+      "lat": -35.5067732,
+      "lng": 139.1328016,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 608,
+      "nearest_pharmacy_km": 18.2552575025366,
+      "state": "SA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Milang Pharmacy",
+          "brand": "",
+          "distance_km": 18.26,
+          "lat": -35.4075818,
+          "lng": 138.9721968
+        },
+        {
+          "name": "Meningie Pharmacy",
+          "brand": "",
+          "distance_km": 26.93,
+          "lat": -35.6782947,
+          "lng": 139.3430005
+        },
+        {
+          "name": "Unknown Pharmacy",
+          "brand": "",
+          "distance_km": 27.36,
+          "lat": -35.6869768,
+          "lng": 139.3388486
+        },
+        {
+          "name": "Priceline Pharmacy Goolwa",
+          "brand": "",
+          "distance_km": 31.68,
+          "lat": -35.501552,
+          "lng": 138.782935
+        },
+        {
+          "name": "Goolwa Pharmacy",
+          "brand": "",
+          "distance_km": 32.12,
+          "lat": -35.50519,
+          "lng": 138.777923
+        }
+      ],
+      "actual_nearest_km": 18.26
+    },
+    {
+      "id": 8215,
+      "name": "IGA Mount Magnet",
+      "lat": -28.064766699999996,
+      "lng": 117.848477,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 576,
+      "nearest_pharmacy_km": 175.82185677188158,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8218,
+      "name": "Warburton Store",
+      "lat": -26.134566149999998,
+      "lng": 126.5797383,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 511,
+      "nearest_pharmacy_km": 601.0478778361022,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8219,
+      "name": "Gibb River Store",
+      "lat": -16.4266949,
+      "lng": 126.4309519,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 216.76477180279244,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8221,
+      "name": "Corporate Office - Store",
+      "lat": -20.1026248,
+      "lng": 127.594643,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 208.9981079009316,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8222,
+      "name": "Beagle Bay Community Store",
+      "lat": -16.9810617,
+      "lng": 122.6650396,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 907,
+      "nearest_pharmacy_km": 108.66237749282071,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8226,
+      "name": "Nullagine Health Clinic",
+      "lat": -21.886916,
+      "lng": 120.1088301,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 647,
+      "nearest_pharmacy_km": 167.98365720788138,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8227,
+      "name": "Bidyadanga Health Centre",
+      "lat": -18.6855103,
+      "lng": 121.7767184,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 593,
+      "nearest_pharmacy_km": 93.43429165136979,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8229,
+      "name": "Pannawonica Medical Center",
+      "lat": -21.6392644,
+      "lng": 116.3270047,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 685,
+      "nearest_pharmacy_km": 111.08123494387983,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8230,
+      "name": "Warakurna Health Clinic",
+      "lat": -25.0029532,
+      "lng": 128.2867997,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 185,
+      "nearest_pharmacy_km": 584.4734271398402,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8231,
+      "name": "Laverton Hospital",
+      "lat": -28.626606,
+      "lng": 122.3996233,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 507,
+      "nearest_pharmacy_km": 108.03666229905005,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8232,
+      "name": "Ngangganawili Aboriginal Health Service",
+      "lat": -26.5951423,
+      "lng": 120.2280643,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 845,
+      "nearest_pharmacy_km": 172.24311744513898,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8233,
+      "name": "BHP Leinster Medical Centre",
+      "lat": -27.9132586,
+      "lng": 120.6977621,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 395,
+      "nearest_pharmacy_km": 124.32799394700024,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8234,
+      "name": "Roebourne Supermarket",
+      "lat": -20.7743055,
+      "lng": 117.1464062,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 762,
+      "nearest_pharmacy_km": 11.087426586501204,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Clinicare Pharmacy Wickham",
+          "brand": "",
+          "distance_km": 11.09,
+          "lat": -20.6746342,
+          "lng": 117.1433746
+        },
+        {
+          "name": "Pharmacy Help Karratha",
+          "brand": "",
+          "distance_km": 31.56,
+          "lat": -20.7355744,
+          "lng": 116.8457555
+        },
+        {
+          "name": "Pharmacy 777 Karratha",
+          "brand": "",
+          "distance_km": 31.68,
+          "lat": -20.7346307,
+          "lng": 116.8447437
+        },
+        {
+          "name": "Pharmacy 777 Tambrey",
+          "brand": "",
+          "distance_km": 35.26,
+          "lat": -20.7468827,
+          "lng": 116.8085937
+        }
+      ],
+      "actual_nearest_km": 11.09
+    },
+    {
+      "id": 8235,
+      "name": "Roebourne Hospital",
+      "lat": -20.776496,
+      "lng": 117.1435435,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 762,
+      "nearest_pharmacy_km": 11.326528999336656,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Clinicare Pharmacy Wickham",
+          "brand": "",
+          "distance_km": 11.33,
+          "lat": -20.6746342,
+          "lng": 117.1433746
+        },
+        {
+          "name": "Pharmacy Help Karratha",
+          "brand": "",
+          "distance_km": 31.3,
+          "lat": -20.7355744,
+          "lng": 116.8457555
+        },
+        {
+          "name": "Pharmacy 777 Karratha",
+          "brand": "",
+          "distance_km": 31.42,
+          "lat": -20.7346307,
+          "lng": 116.8447437
+        },
+        {
+          "name": "Pharmacy 777 Tambrey",
+          "brand": "",
+          "distance_km": 34.98,
+          "lat": -20.7468827,
+          "lng": 116.8085937
+        }
+      ],
+      "actual_nearest_km": 11.33
+    },
+    {
+      "id": 8261,
+      "name": "Morans General store",
+      "lat": -30.9544584,
+      "lng": 121.169181,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 763,
+      "nearest_pharmacy_km": 36.07640868481934,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Boulder Pharmacy",
+          "brand": "",
+          "distance_km": 36.08,
+          "lat": -30.7822369,
+          "lng": 121.4895174
+        },
+        {
+          "name": "Wizard Pharmacy Kalgoorlie City",
+          "brand": "",
+          "distance_km": 36.6,
+          "lat": -30.7494673,
+          "lng": 121.4691347
+        },
+        {
+          "name": "Guardian",
+          "brand": "",
+          "distance_km": 36.67,
+          "lat": -30.7482614,
+          "lng": 121.4689499
+        },
+        {
+          "name": "Wizard Pharmacy Kalgoorlie",
+          "brand": "",
+          "distance_km": 36.81,
+          "lat": -30.7501694,
+          "lng": 121.47257
+        },
+        {
+          "name": "Wizard Pharmacy Hannans",
+          "brand": "",
+          "distance_km": 36.85,
+          "lat": -30.7309837,
+          "lng": 121.4541397
+        }
+      ],
+      "actual_nearest_km": 36.08
+    },
+    {
+      "id": 8270,
+      "name": "Wyndham Supermarket",
+      "lat": -15.485668,
+      "lng": 128.1192082,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 845,
+      "nearest_pharmacy_km": 73.83467455329452,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8285,
+      "name": "Cervantes Health Centre",
+      "lat": -30.5039781,
+      "lng": 115.066037,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 480,
+      "nearest_pharmacy_km": 62.7759222826431,
+      "state": "WA",
+      "issues": [
+        "DISTANCE_MISMATCH: Stated 62.7759222826431km vs actual 22.46km (diff=40.3km)"
+      ],
+      "status": "REVIEW",
+      "nearby_pharmacies": [
+        {
+          "name": "Jurien Pharmacy",
+          "brand": "",
+          "distance_km": 22.46,
+          "lat": -30.3030923,
+          "lng": 115.0414588
+        },
+        {
+          "name": "Green Head Chemist",
+          "brand": "",
+          "distance_km": 49.27,
+          "lat": -30.0694334,
+          "lng": 114.9658749
+        }
+      ],
+      "actual_nearest_km": 22.46
+    },
+    {
+      "id": 8286,
+      "name": "Coolgardie Health Centre",
+      "lat": -30.9600365,
+      "lng": 121.1644984,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 763,
+      "nearest_pharmacy_km": 36.7847843409391,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Boulder Pharmacy",
+          "brand": "",
+          "distance_km": 36.78,
+          "lat": -30.7822369,
+          "lng": 121.4895174
+        },
+        {
+          "name": "Wizard Pharmacy Kalgoorlie City",
+          "brand": "",
+          "distance_km": 37.33,
+          "lat": -30.7494673,
+          "lng": 121.4691347
+        },
+        {
+          "name": "Guardian",
+          "brand": "",
+          "distance_km": 37.41,
+          "lat": -30.7482614,
+          "lng": 121.4689499
+        },
+        {
+          "name": "Wizard Pharmacy Kalgoorlie",
+          "brand": "",
+          "distance_km": 37.54,
+          "lat": -30.7501694,
+          "lng": 121.47257
+        },
+        {
+          "name": "Wizard Pharmacy Hannans",
+          "brand": "",
+          "distance_km": 37.59,
+          "lat": -30.7309837,
+          "lng": 121.4541397
+        }
+      ],
+      "actual_nearest_km": 36.78
+    },
+    {
+      "id": 8289,
+      "name": "Mullewa Health Service",
+      "lat": -28.5359855,
+      "lng": 115.5098174,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 312,
+      "nearest_pharmacy_km": 85.32783875132411,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8290,
+      "name": "Dumbleyung Health Service",
+      "lat": -33.3101989,
+      "lng": 117.740287,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 238,
+      "nearest_pharmacy_km": 45.49674449923865,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Wagin Pharmacy",
+          "brand": "",
+          "distance_km": 36.86,
+          "lat": -33.3090332,
+          "lng": 117.3436367
+        },
+        {
+          "name": "Great Southern Community Chemist",
+          "brand": "",
+          "distance_km": 45.29,
+          "lat": -33.6881987,
+          "lng": 117.558416
+        },
+        {
+          "name": "Katanning Pharmacy",
+          "brand": "",
+          "distance_km": 45.5,
+          "lat": -33.6897552,
+          "lng": 117.5570369
+        }
+      ],
+      "actual_nearest_km": 36.86
+    },
+    {
+      "id": 8291,
+      "name": "Wongan Hills Health Service",
+      "lat": -30.8941224,
+      "lng": 116.7247833,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 725,
+      "nearest_pharmacy_km": 46.01772154281447,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Goomalling Pharmacy",
+          "brand": "",
+          "distance_km": 45.88,
+          "lat": -31.2967697,
+          "lng": 116.8301295
+        },
+        {
+          "name": "Goomalling Pharmacy",
+          "brand": "",
+          "distance_km": 46.0,
+          "lat": -31.2983622,
+          "lng": 116.8276235
+        }
+      ],
+      "actual_nearest_km": 45.88
+    },
+    {
+      "id": 8292,
+      "name": "Wyndham Hospital",
+      "lat": -15.4776236,
+      "lng": 128.1273182,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 845,
+      "nearest_pharmacy_km": 73.45246088101784,
+      "state": "WA",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8376,
+      "name": "Rupanyup Supermarket",
+      "lat": -36.6307452,
+      "lng": 142.6307295,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 353,
+      "nearest_pharmacy_km": 14.324530005491008,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Murtoa Community Pharmacy",
+          "brand": "",
+          "distance_km": 14.32,
+          "lat": -36.619818,
+          "lng": 142.470791
+        },
+        {
+          "name": "Minyip Medical Supplies Depot",
+          "brand": "",
+          "distance_km": 19.42,
+          "lat": -36.4595002,
+          "lng": 142.5877721
+        },
+        {
+          "name": "TerryWhite Chemmart Horsham Compounding",
+          "brand": "",
+          "distance_km": 39.56,
+          "lat": -36.7138858,
+          "lng": 142.1994498
+        },
+        {
+          "name": "Horsham Amcal Pharmacy",
+          "brand": "",
+          "distance_km": 39.6,
+          "lat": -36.715316,
+          "lng": 142.199414
+        },
+        {
+          "name": "Priceline Pharmacy Madden Street",
+          "brand": "",
+          "distance_km": 39.76,
+          "lat": -36.7181761,
+          "lng": 142.1984069
+        }
+      ],
+      "actual_nearest_km": 14.32
+    },
+    {
+      "id": 8379,
+      "name": "Rupanyup Doctors Surgery",
+      "lat": -36.6367286,
+      "lng": 142.6316358,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 353,
+      "nearest_pharmacy_km": 14.475872857277865,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Murtoa Community Pharmacy",
+          "brand": "",
+          "distance_km": 14.48,
+          "lat": -36.619818,
+          "lng": 142.470791
+        },
+        {
+          "name": "Minyip Medical Supplies Depot",
+          "brand": "",
+          "distance_km": 20.09,
+          "lat": -36.4595002,
+          "lng": 142.5877721
+        },
+        {
+          "name": "TerryWhite Chemmart Horsham Compounding",
+          "brand": "",
+          "distance_km": 39.49,
+          "lat": -36.7138858,
+          "lng": 142.1994498
+        },
+        {
+          "name": "Horsham Amcal Pharmacy",
+          "brand": "",
+          "distance_km": 39.52,
+          "lat": -36.715316,
+          "lng": 142.199414
+        },
+        {
+          "name": "Priceline Pharmacy Madden Street",
+          "brand": "",
+          "distance_km": 39.68,
+          "lat": -36.7181761,
+          "lng": 142.1984069
+        }
+      ],
+      "actual_nearest_km": 14.48
+    },
+    {
+      "id": 8381,
+      "name": "Kirrae Health Service",
+      "lat": -38.3098264,
+      "lng": 142.6416732,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 737,
+      "nearest_pharmacy_km": 13.17735403539984,
+      "state": "VIC",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Chemist Warehouse",
+          "brand": "",
+          "distance_km": 13.18,
+          "lat": -38.38057,
+          "lng": 142.5204488
+        },
+        {
+          "name": "Chemist Warehouse Warrnambool",
+          "brand": "",
+          "distance_km": 13.26,
+          "lat": -38.38174,
+          "lng": 142.5203641
+        },
+        {
+          "name": "Direct Chemist Outlet Northpoint",
+          "brand": "",
+          "distance_km": 14.44,
+          "lat": -38.3683196,
+          "lng": 142.4938198
+        },
+        {
+          "name": "Blooms The Chemist Warrnambool",
+          "brand": "",
+          "distance_km": 15.92,
+          "lat": -38.3814837,
+          "lng": 142.4836401
+        },
+        {
+          "name": "Priceline Pharmacy",
+          "brand": "",
+          "distance_km": 15.98,
+          "lat": -38.3834195,
+          "lng": 142.4842237
+        }
+      ],
+      "actual_nearest_km": 13.18
+    },
+    {
+      "id": 8490,
+      "name": "Dargo General Store",
+      "lat": -37.461341,
+      "lng": 147.2508931,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 31,
+      "nearest_pharmacy_km": 50.1845459221546,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8492,
+      "name": "McPherson General Store",
+      "lat": -36.076008,
+      "lng": 142.4153186,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 99,
+      "nearest_pharmacy_km": 19.49729673380028,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Warracknabeal Pharmacy",
+          "brand": "",
+          "distance_km": 19.5,
+          "lat": -36.2505639,
+          "lng": 142.3947577
+        },
+        {
+          "name": "Mallee Pharmacy",
+          "brand": "",
+          "distance_km": 39.05,
+          "lat": -35.727344,
+          "lng": 142.363775
+        },
+        {
+          "name": "Rainbow Community Pharmacy",
+          "brand": "",
+          "distance_km": 39.09,
+          "lat": -36.141702,
+          "lng": 141.9879004
+        },
+        {
+          "name": "Rainbow Community Pharmacy",
+          "brand": "",
+          "distance_km": 42.77,
+          "lat": -35.8981788,
+          "lng": 141.9938386
+        },
+        {
+          "name": "Minyip Medical Supplies Depot",
+          "brand": "",
+          "distance_km": 45.36,
+          "lat": -36.4595002,
+          "lng": 142.5877721
+        }
+      ],
+      "actual_nearest_km": 19.5
+    },
+    {
+      "id": 8493,
+      "name": "Yanakie General Store",
+      "lat": -38.8125072,
+      "lng": 146.2076606,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 17.187500583096877,
+      "state": "VIC",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "AMCAL FISH CREEK",
+          "brand": "",
+          "distance_km": 17.19,
+          "lat": -38.6926553,
+          "lng": 146.0824966
+        },
+        {
+          "name": "Foster Pharmacy",
+          "brand": "",
+          "distance_km": 17.76,
+          "lat": -38.6528509,
+          "lng": 146.2011701
+        },
+        {
+          "name": "Toora Pharmacy",
+          "brand": "",
+          "distance_km": 19.35,
+          "lat": -38.6639813,
+          "lng": 146.3240227
+        },
+        {
+          "name": "Meeniyan Pharmacy",
+          "brand": "",
+          "distance_km": 31.06,
+          "lat": -38.5780227,
+          "lng": 146.0131497
+        },
+        {
+          "name": "Venus Bay Pharmacy",
+          "brand": "",
+          "distance_km": 35.76,
+          "lat": -38.702067,
+          "lng": 145.820274
+        }
+      ],
+      "actual_nearest_km": 17.19
+    },
+    {
+      "id": 8495,
+      "name": "Marnoo General Store",
+      "lat": -36.670831,
+      "lng": 142.8698477,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 34.881279868528125,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Minyip Medical Supplies Depot",
+          "brand": "",
+          "distance_km": 34.45,
+          "lat": -36.4595002,
+          "lng": 142.5877721
+        },
+        {
+          "name": "Caremore Pharmacy Donald",
+          "brand": "",
+          "distance_km": 34.88,
+          "lat": -36.3703297,
+          "lng": 142.9818619
+        },
+        {
+          "name": "St Arnaud Pharmacy",
+          "brand": "",
+          "distance_km": 35.04,
+          "lat": -36.6136986,
+          "lng": 143.2561172
+        },
+        {
+          "name": "Murtoa Community Pharmacy",
+          "brand": "",
+          "distance_km": 36.05,
+          "lat": -36.619818,
+          "lng": 142.470791
+        },
+        {
+          "name": "Grampians Pharmacy",
+          "brand": "",
+          "distance_km": 43.58,
+          "lat": -37.0562047,
+          "lng": 142.7803735
+        }
+      ],
+      "actual_nearest_km": 34.45
+    },
+    {
+      "id": 8498,
+      "name": "Balmoral Community Store",
+      "lat": -37.2476232,
+      "lng": 141.8408747,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 161,
+      "nearest_pharmacy_km": 41.19928843328656,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Coleraine Pharmacy",
+          "brand": "",
+          "distance_km": 41.2,
+          "lat": -37.598465,
+          "lng": 141.6908749
+        }
+      ],
+      "actual_nearest_km": 41.2
+    },
+    {
+      "id": 8500,
+      "name": "Hotham Supermarket",
+      "lat": -36.9816356,
+      "lng": 147.1425355,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 128,
+      "nearest_pharmacy_km": 26.590407354192482,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Mount Beauty Pharmacy",
+          "brand": "",
+          "distance_km": 26.59,
+          "lat": -36.7435418,
+          "lng": 147.1703736
+        },
+        {
+          "name": "Bright Pharmacy",
+          "brand": "",
+          "distance_km": 32.38,
+          "lat": -36.729029,
+          "lng": 146.961377
+        },
+        {
+          "name": "Omeo Pharmacy",
+          "brand": "",
+          "distance_km": 41.98,
+          "lat": -37.1004485,
+          "lng": 147.5914993
+        }
+      ],
+      "actual_nearest_km": 26.59
+    },
+    {
+      "id": 8503,
+      "name": "Katamatite Fuel & Grocery",
+      "lat": -36.076795,
+      "lng": 145.6881216,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 240,
+      "nearest_pharmacy_km": 17.785610919822798,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Cobram Discount Drug Store",
+          "brand": "",
+          "distance_km": 17.79,
+          "lat": -35.9202159,
+          "lng": 145.6477474
+        },
+        {
+          "name": "TerryWhite Chemmart Cobram",
+          "brand": "",
+          "distance_km": 17.86,
+          "lat": -35.9194143,
+          "lng": 145.648556
+        },
+        {
+          "name": "Unknown Pharmacy",
+          "brand": "",
+          "distance_km": 18.32,
+          "lat": -35.9120357,
+          "lng": 145.6907999
+        },
+        {
+          "name": "Chemist Discount Centre Numurkah",
+          "brand": "",
+          "distance_km": 22.17,
+          "lat": -36.0913497,
+          "lng": 145.4420847
+        },
+        {
+          "name": "Numurkah Guardian Pharmacy",
+          "brand": "",
+          "distance_km": 22.23,
+          "lat": -36.0989564,
+          "lng": 145.4423041
+        }
+      ],
+      "actual_nearest_km": 17.79
+    },
+    {
+      "id": 8504,
+      "name": "Cann River Friendly Grocer",
+      "lat": -37.5663956,
+      "lng": 149.151396,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 188,
+      "nearest_pharmacy_km": 53.42449487092929,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8508,
+      "name": "Mt Buller Medical Centre",
+      "lat": -37.1460532,
+      "lng": 146.4453248,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 0,
+      "nearest_pharmacy_km": 33.15300397131884,
+      "state": "NSW",
+      "issues": [
+        "ZERO_POP: No population within 5km"
+      ],
+      "status": "REVIEW",
+      "nearby_pharmacies": [
+        {
+          "name": "Mansfield Pharmacy",
+          "brand": "",
+          "distance_km": 33.15,
+          "lat": -37.0520369,
+          "lng": 146.0905813
+        },
+        {
+          "name": "Eisner's Pharmacy",
+          "brand": "",
+          "distance_km": 33.27,
+          "lat": -37.0519384,
+          "lng": 146.0892301
+        },
+        {
+          "name": "TerryWhite Chemmart Eildon",
+          "brand": "",
+          "distance_km": 48.39,
+          "lat": -37.2329454,
+          "lng": 145.9101063
+        }
+      ],
+      "actual_nearest_km": 33.15
+    },
+    {
+      "id": 8509,
+      "name": "Mount Hotham Medical Centre",
+      "lat": -36.9834575,
+      "lng": 147.1422005,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 128,
+      "nearest_pharmacy_km": 26.794887971251494,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Mount Beauty Pharmacy",
+          "brand": "",
+          "distance_km": 26.79,
+          "lat": -36.7435418,
+          "lng": 147.1703736
+        },
+        {
+          "name": "Bright Pharmacy",
+          "brand": "",
+          "distance_km": 32.55,
+          "lat": -36.729029,
+          "lng": 146.961377
+        },
+        {
+          "name": "Omeo Pharmacy",
+          "brand": "",
+          "distance_km": 41.95,
+          "lat": -37.1004485,
+          "lng": 147.5914993
+        }
+      ],
+      "actual_nearest_km": 26.79
+    },
+    {
+      "id": 8510,
+      "name": "Peter M. Sudholz Medical & Allied Health Centre",
+      "lat": -36.7452309,
+      "lng": 141.9371821,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 421,
+      "nearest_pharmacy_km": 23.37008464793942,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Priceline Pharmacy Horsham",
+          "brand": "",
+          "distance_km": 23.37,
+          "lat": -36.7149669,
+          "lng": 142.1966854
+        },
+        {
+          "name": "Priceline Pharmacy Madden Street",
+          "brand": "",
+          "distance_km": 23.47,
+          "lat": -36.7181761,
+          "lng": 142.1984069
+        },
+        {
+          "name": "Horsham Amcal Pharmacy",
+          "brand": "",
+          "distance_km": 23.61,
+          "lat": -36.715316,
+          "lng": 142.199414
+        },
+        {
+          "name": "TerryWhite Chemmart Horsham Compounding",
+          "brand": "",
+          "distance_km": 23.63,
+          "lat": -36.7138858,
+          "lng": 142.1994498
+        },
+        {
+          "name": "Guardian",
+          "brand": "",
+          "distance_km": 33.35,
+          "lat": -36.4540571,
+          "lng": 142.0268567
+        }
+      ],
+      "actual_nearest_km": 23.37
+    },
+    {
+      "id": 8515,
+      "name": "Rural Northwest Health Beulah Campus",
+      "lat": -35.9382726,
+      "lng": 142.4216616,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 170,
+      "nearest_pharmacy_km": 24.027709195962068,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Mallee Pharmacy",
+          "brand": "",
+          "distance_km": 24.03,
+          "lat": -35.727344,
+          "lng": 142.363775
+        },
+        {
+          "name": "Warracknabeal Pharmacy",
+          "brand": "",
+          "distance_km": 34.81,
+          "lat": -36.2505639,
+          "lng": 142.3947577
+        },
+        {
+          "name": "Rainbow Community Pharmacy",
+          "brand": "",
+          "distance_km": 38.78,
+          "lat": -35.8981788,
+          "lng": 141.9938386
+        },
+        {
+          "name": "Birchip Pharmacy Excellence",
+          "brand": "",
+          "distance_km": 44.87,
+          "lat": -35.9821851,
+          "lng": 142.9172712
+        },
+        {
+          "name": "Rainbow Community Pharmacy",
+          "brand": "",
+          "distance_km": 45.09,
+          "lat": -36.141702,
+          "lng": 141.9879004
+        }
+      ],
+      "actual_nearest_km": 24.03
+    },
+    {
+      "id": 8518,
+      "name": "Kaniava Hospital",
+      "lat": -36.3814224,
+      "lng": 141.2460372,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 683,
+      "nearest_pharmacy_km": 36.5569861797125,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Nhill Pharmacy",
+          "brand": "",
+          "distance_km": 36.56,
+          "lat": -36.3337394,
+          "lng": 141.6499557
+        },
+        {
+          "name": "Bordertown Pharmacy",
+          "brand": "",
+          "distance_km": 43.07,
+          "lat": -36.3116989,
+          "lng": 140.7730095
+        }
+      ],
+      "actual_nearest_km": 36.56
+    },
+    {
+      "id": 8519,
+      "name": "Western District Health Service - Penshurst",
+      "lat": -37.8773663,
+      "lng": 142.2824238,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 491,
+      "nearest_pharmacy_km": 27.10027604363831,
+      "state": "VIC",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Dunkeld Pharmacy",
+          "brand": "",
+          "distance_km": 25.86,
+          "lat": -37.6496214,
+          "lng": 142.3419843
+        },
+        {
+          "name": "James Dean Pharmacy - Gray St",
+          "brand": "",
+          "distance_km": 26.87,
+          "lat": -37.7396879,
+          "lng": 142.0310277
+        },
+        {
+          "name": "James Dean Pharmacy - Lonsdale St",
+          "brand": "",
+          "distance_km": 27.1,
+          "lat": -37.7398843,
+          "lng": 142.0277098
+        },
+        {
+          "name": "Robson's Amcal Pharmacy",
+          "brand": "",
+          "distance_km": 27.11,
+          "lat": -37.7431469,
+          "lng": 142.0247897
+        },
+        {
+          "name": "James Dean Pharmacy",
+          "brand": "",
+          "distance_km": 27.2,
+          "lat": -37.7367118,
+          "lng": 142.0290505
+        }
+      ],
+      "actual_nearest_km": 25.86
+    },
+    {
+      "id": 8719,
+      "name": "Andos Food Barn",
+      "lat": -24.2587959,
+      "lng": 144.4418647,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 116.54839986571054,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8725,
+      "name": "Yaraka Primary Health Centre",
+      "lat": -24.8830594,
+      "lng": 144.0779683,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 192.27196529936327,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8726,
+      "name": "Bollon Community Clinic",
+      "lat": -28.0313969,
+      "lng": 147.478997,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 95.74974996873138,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8730,
+      "name": "Royal Flying Doctor Service - Clinic",
+      "lat": -27.9704665,
+      "lng": 144.6348138,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 103.45023520538624,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8732,
+      "name": "Doomadgee Community Health Service",
+      "lat": -17.94200375,
+      "lng": 138.82874765000003,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 1387,
+      "nearest_pharmacy_km": 218.68065417098848,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8735,
+      "name": "Dajarra Health Centre",
+      "lat": -21.6941701,
+      "lng": 139.5148346,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 0,
+      "nearest_pharmacy_km": 107.58414186820475,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8737,
+      "name": "Boulia Health Centre",
+      "lat": -22.9082636,
+      "lng": 139.9086721,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 218,
+      "nearest_pharmacy_km": 246.32046781812036,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8738,
+      "name": "Birdsville Health Clinic",
+      "lat": -25.8975765,
+      "lng": 139.3553854,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 0,
+      "nearest_pharmacy_km": 496.5303406618587,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8739,
+      "name": "Thargomindah Community Clinic",
+      "lat": -27.9975925,
+      "lng": 143.8207934,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 194,
+      "nearest_pharmacy_km": 160.17003535785116,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8740,
+      "name": "Muttaburra Primary Health Centre",
+      "lat": -22.5938169,
+      "lng": 144.5465739,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 130.91877044924084,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8741,
+      "name": "Isisford Primary Health Centre",
+      "lat": -24.2608202,
+      "lng": 144.4397565,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 116.85791623613557,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8742,
+      "name": "Forsayth Hospital - Primary Health Centre",
+      "lat": -18.589965,
+      "lng": 143.6050342,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 58,
+      "nearest_pharmacy_km": 226.03276020705457,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8801,
+      "name": "Finch Hatton General Store",
+      "lat": -21.1406962,
+      "lng": 148.6307152,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 1600,
+      "nearest_pharmacy_km": 24.138505541225708,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Mirani Pharmacy",
+          "brand": "",
+          "distance_km": 24.14,
+          "lat": -21.1596334,
+          "lng": 148.86259
+        },
+        {
+          "name": "Direct Chemist Outlet Marian",
+          "brand": "",
+          "distance_km": 33.37,
+          "lat": -21.147438,
+          "lng": 148.9523806
+        },
+        {
+          "name": "Walkerston Pharmacy",
+          "brand": "",
+          "distance_km": 45.01,
+          "lat": -21.1602378,
+          "lng": 149.0642246
+        }
+      ],
+      "actual_nearest_km": 24.14
+    },
+    {
+      "id": 8804,
+      "name": "Hopevale Supermarket",
+      "lat": -15.2948202,
+      "lng": 145.109605,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 895,
+      "nearest_pharmacy_km": 24.497244268831075,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Vitality Pharmacy Warehouse Cooktown",
+          "brand": "",
+          "distance_km": 24.5,
+          "lat": -15.4692542,
+          "lng": 145.2491737
+        }
+      ],
+      "actual_nearest_km": 24.5
+    },
+    {
+      "id": 8806,
+      "name": "Yandaran General Store",
+      "lat": -24.7214676,
+      "lng": 152.1133353,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 17.239782696526227,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Moore Park Beach Pharmacy",
+          "brand": "",
+          "distance_km": 17.24,
+          "lat": -24.7273734,
+          "lng": 152.2838995
+        },
+        {
+          "name": "Ramsay Pharmacy North Bundaberg",
+          "brand": "",
+          "distance_km": 27.61,
+          "lat": -24.8550841,
+          "lng": 152.343876
+        },
+        {
+          "name": "Priceline Pharmacy",
+          "brand": "",
+          "distance_km": 27.69,
+          "lat": -24.8867536,
+          "lng": 152.318504
+        },
+        {
+          "name": "WholeLife Pharmacy & Healthfoods - Bundaberg",
+          "brand": "",
+          "distance_km": 27.78,
+          "lat": -24.8704905,
+          "lng": 152.3341938
+        },
+        {
+          "name": "Chemist Warehouse Bundaberg - Kensington SC",
+          "brand": "",
+          "distance_km": 28.13,
+          "lat": -24.890758,
+          "lng": 152.320465
+        }
+      ],
+      "actual_nearest_km": 17.24
+    },
+    {
+      "id": 8812,
+      "name": "Royal Flying Doctor - Part-Time Clinic",
+      "lat": -28.1608616,
+      "lng": 145.0470738,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 63.188611357312354,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8819,
+      "name": "Mount Garnet Clinic",
+      "lat": -17.6789363,
+      "lng": 145.1131707,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 253,
+      "nearest_pharmacy_km": 58.9787954448941,
+      "state": "QLD",
+      "issues": [
+        "DISTANCE_MISMATCH: Stated 58.9787954448941km vs actual 39.95km (diff=19.0km)"
+      ],
+      "status": "REVIEW",
+      "nearby_pharmacies": [
+        {
+          "name": "Ravenshoe Pharmacy",
+          "brand": "",
+          "distance_km": 39.95,
+          "lat": -17.6070323,
+          "lng": 145.4825772
+        },
+        {
+          "name": "Herberton Pharmacy",
+          "brand": "",
+          "distance_km": 43.71,
+          "lat": -17.3840181,
+          "lng": 145.3857817
+        }
+      ],
+      "actual_nearest_km": 39.95
+    },
+    {
+      "id": 8821,
+      "name": "Mount Perry Health Centre",
+      "lat": -25.1817444,
+      "lng": 151.6460935,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 250,
+      "nearest_pharmacy_km": 37.7625089975948,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Gin Gin Pharmacy",
+          "brand": "",
+          "distance_km": 37.76,
+          "lat": -24.9911564,
+          "lng": 151.9564554
+        },
+        {
+          "name": "Gayndah Pharmacy",
+          "brand": "",
+          "distance_km": 49.36,
+          "lat": -25.6244047,
+          "lng": 151.6090554
+        }
+      ],
+      "actual_nearest_km": 37.76
+    },
+    {
+      "id": 8822,
+      "name": "Aramac Primary Health Centre",
+      "lat": -22.9664868,
+      "lng": 145.2447815,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 226,
+      "nearest_pharmacy_km": 65.34230167488927,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8996,
+      "name": "Wanaaring Health Clinic",
+      "lat": -29.7049195,
+      "lng": 144.148759,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 218.78730592510198,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8997,
+      "name": "Wanaaring Community Health service",
+      "lat": -29.7040741,
+      "lng": 144.123962,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 218.08950849497742,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8998,
+      "name": "Ivanhoe Hospital",
+      "lat": -32.894455300000004,
+      "lng": 144.29532035,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 162,
+      "nearest_pharmacy_km": 171.79612963023368,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8999,
+      "name": "Menindee Health Service",
+      "lat": -32.390316,
+      "lng": 142.4150138,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 380,
+      "nearest_pharmacy_km": 101.41648814459555,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 9000,
+      "name": "Tibooburra Health Service",
+      "lat": -29.4331613,
+      "lng": 142.0129124,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 100,
+      "nearest_pharmacy_km": 270.09206941355126,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 9006,
+      "name": "Urbenville Multi-Purpose Service",
+      "lat": -28.4714415,
+      "lng": 152.5429693,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 218,
+      "nearest_pharmacy_km": 30.592617331342282,
+      "state": "NSW",
+      "issues": [
+        "DISTANCE_MISMATCH: Stated 30.592617331342282km vs actual 11.35km (diff=19.2km)"
+      ],
+      "status": "REVIEW",
+      "nearby_pharmacies": [
+        {
+          "name": "Woodenbong Pharmacy - Chemist",
+          "brand": "",
+          "distance_km": 11.35,
+          "lat": -28.3897752,
+          "lng": 152.6125605
+        },
+        {
+          "name": "Killarney Pharmacy",
+          "brand": "",
+          "distance_km": 28.48,
+          "lat": -28.3357263,
+          "lng": 152.2960077
+        },
+        {
+          "name": "Bonalbo Pharmacy",
+          "brand": "",
+          "distance_km": 30.59,
+          "lat": -28.7375324,
+          "lng": 152.6226193
+        },
+        {
+          "name": "Soul Pattinson Chemist Kyogle",
+          "brand": "",
+          "distance_km": 47.97,
+          "lat": -28.6212139,
+          "lng": 153.0034924
+        }
+      ],
+      "actual_nearest_km": 11.35
+    },
+    {
+      "id": 9100,
+      "name": "Eugowra Supermarket & Newsagency",
+      "lat": -33.4272308,
+      "lng": 148.3689384,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 801,
+      "nearest_pharmacy_km": 30.9836610895317,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Canowindra Pharmacy",
+          "brand": "",
+          "distance_km": 30.98,
+          "lat": -33.5646336,
+          "lng": 148.6596234
+        },
+        {
+          "name": "Flannery's Pharmacy",
+          "brand": "",
+          "distance_km": 33.95,
+          "lat": -33.3836579,
+          "lng": 148.0069546
+        },
+        {
+          "name": "Life Pharmacy Forbes",
+          "brand": "",
+          "distance_km": 34.04,
+          "lat": -33.3865392,
+          "lng": 148.0055251
+        },
+        {
+          "name": "Ron Dunford Chemist",
+          "brand": "",
+          "distance_km": 37.09,
+          "lat": -33.1361277,
+          "lng": 148.1742094
+        },
+        {
+          "name": "Parkes Pharmacy",
+          "brand": "",
+          "distance_km": 37.26,
+          "lat": -33.13395,
+          "lng": 148.1749518
+        }
+      ],
+      "actual_nearest_km": 30.98
+    },
+    {
+      "id": 9101,
+      "name": "Cool Country Cuisine Gourmet Condiments",
+      "lat": -36.50245285,
+      "lng": 148.83496524999998,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 15.207780155052456,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Berridale Pharmacy",
+          "brand": "",
+          "distance_km": 15.21,
+          "lat": -36.3658856,
+          "lng": 148.8257844
+        },
+        {
+          "name": "Jindabyne Pharmacy",
+          "brand": "",
+          "distance_km": 21.49,
+          "lat": -36.4148821,
+          "lng": 148.6207008
+        },
+        {
+          "name": "Perisher Pharmacy",
+          "brand": "",
+          "distance_km": 39.36,
+          "lat": -36.4054691,
+          "lng": 148.4117103
+        },
+        {
+          "name": "Hooks Pharmacy",
+          "brand": "",
+          "distance_km": 39.46,
+          "lat": -36.2354854,
+          "lng": 149.1252894
+        },
+        {
+          "name": "Monaro Chemist",
+          "brand": "",
+          "distance_km": 39.53,
+          "lat": -36.2335102,
+          "lng": 149.1236104
+        }
+      ],
+      "actual_nearest_km": 15.21
+    },
+    {
+      "id": 9103,
+      "name": "Comboyne LPO",
+      "lat": -31.60572225,
+      "lng": 152.46791515,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 616,
+      "nearest_pharmacy_km": 27.489928483357318,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Your Discount Chemist Lakewood",
+          "brand": "",
+          "distance_km": 27.49,
+          "lat": -31.634676,
+          "lng": 152.756241
+        },
+        {
+          "name": "Plunketts TerryWhite Chemmart Pharmacy Wauchope",
+          "brand": "",
+          "distance_km": 27.75,
+          "lat": -31.4700231,
+          "lng": 152.7136664
+        },
+        {
+          "name": "The Wauchope Pharmacy",
+          "brand": "",
+          "distance_km": 30.08,
+          "lat": -31.4576324,
+          "lng": 152.7335219
+        },
+        {
+          "name": "TerryWhite Chemmart High St Wauchope",
+          "brand": "",
+          "distance_km": 30.11,
+          "lat": -31.457621,
+          "lng": 152.733881
+        },
+        {
+          "name": "Coopers Pharmacy Wingham",
+          "brand": "",
+          "distance_km": 30.52,
+          "lat": -31.8676382,
+          "lng": 152.3715093
+        }
+      ],
+      "actual_nearest_km": 27.49
+    },
+    {
+      "id": 9104,
+      "name": "Boomi Co-Op",
+      "lat": -28.7245913,
+      "lng": 149.5785637,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 63.914942319346856,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 9106,
+      "name": "Adaminaby Store",
+      "lat": -35.996638,
+      "lng": 148.7738012,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 257,
+      "nearest_pharmacy_km": 41.28184599262425,
+      "state": "ACT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Monaro Chemist",
+          "brand": "",
+          "distance_km": 41.0,
+          "lat": -36.2335102,
+          "lng": 149.1236104
+        },
+        {
+          "name": "Hooks Pharmacy",
+          "brand": "",
+          "distance_km": 41.26,
+          "lat": -36.2354854,
+          "lng": 149.1252894
+        },
+        {
+          "name": "Berridale Pharmacy",
+          "brand": "",
+          "distance_km": 41.32,
+          "lat": -36.3658856,
+          "lng": 148.8257844
+        },
+        {
+          "name": "Jindabyne Pharmacy",
+          "brand": "",
+          "distance_km": 48.49,
+          "lat": -36.4148821,
+          "lng": 148.6207008
+        }
+      ],
+      "actual_nearest_km": 41.0
+    },
+    {
+      "id": 9110,
+      "name": "Woodstock Community Health Center",
+      "lat": -33.7444555,
+      "lng": 148.8499565,
+      "poi_type": "gp",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 792,
+      "nearest_pharmacy_km": 17.457305699870997,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Optimal Pharmacy Plus Cowra",
+          "brand": "",
+          "distance_km": 17.52,
+          "lat": -33.8352077,
+          "lng": 148.694937
+        },
+        {
+          "name": "Optimal Pharmacy Plus Health Hub Cowra",
+          "brand": "",
+          "distance_km": 17.75,
+          "lat": -33.8358926,
+          "lng": 148.6925633
+        },
+        {
+          "name": "Guardian",
+          "brand": "",
+          "distance_km": 17.9,
+          "lat": -33.8346783,
+          "lng": 148.6895295
+        },
+        {
+          "name": "Canowindra Pharmacy",
+          "brand": "",
+          "distance_km": 26.65,
+          "lat": -33.5646336,
+          "lng": 148.6596234
+        },
+        {
+          "name": "Blayney Pharmacy",
+          "brand": "",
+          "distance_km": 44.55,
+          "lat": -33.5295453,
+          "lng": 149.2560909
+        }
+      ],
+      "actual_nearest_km": 17.52
+    },
+    {
+      "id": 9111,
+      "name": "White Cliffs Health Service",
+      "lat": -30.8507774,
+      "lng": 143.0895209,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 0,
+      "nearest_pharmacy_km": 83.30932620267251,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 9112,
+      "name": "Bundarra Community Health",
+      "lat": -30.1646202,
+      "lng": 151.0757175,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 374,
+      "nearest_pharmacy_km": 26.739209029583826,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Tingha Pharmacy",
+          "brand": "",
+          "distance_km": 26.74,
+          "lat": -29.954978,
+          "lng": 151.2118227
+        },
+        {
+          "name": "Campbell & Freebairn Chemists",
+          "brand": "",
+          "distance_km": 43.17,
+          "lat": -29.777845,
+          "lng": 151.1147915
+        },
+        {
+          "name": "Ditton's Pharmacy",
+          "brand": "",
+          "distance_km": 43.7,
+          "lat": -29.7729662,
+          "lng": 151.1130348
+        },
+        {
+          "name": "Inverell Pharmacy",
+          "brand": "",
+          "distance_km": 43.79,
+          "lat": -29.7721179,
+          "lng": 151.112864
+        }
+      ],
+      "actual_nearest_km": 26.74
+    },
+    {
+      "id": 9113,
+      "name": "Baradine Multi-Purpose Service",
+      "lat": -30.9450275,
+      "lng": 149.0664006,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 586,
+      "nearest_pharmacy_km": 41.63692280124128,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Coonabarabran Pharmacy",
+          "brand": "",
+          "distance_km": 41.64,
+          "lat": -31.2730328,
+          "lng": 149.2773654
+        },
+        {
+          "name": "Coonabarabran Chemist",
+          "brand": "",
+          "distance_km": 41.87,
+          "lat": -31.2750793,
+          "lng": 149.2781374
+        }
+      ],
+      "actual_nearest_km": 41.64
+    },
+    {
+      "id": 9114,
+      "name": "Goodooga Health Service",
+      "lat": -29.1102562,
+      "lng": 147.4560175,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 179,
+      "nearest_pharmacy_km": 61.661897607824535,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 9115,
+      "name": "Eugowra Multi-Purpose Service",
+      "lat": -33.4245577,
+      "lng": 148.3669433,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 801,
+      "nearest_pharmacy_km": 31.291987457984074,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Canowindra Pharmacy",
+          "brand": "",
+          "distance_km": 31.29,
+          "lat": -33.5646336,
+          "lng": 148.6596234
+        },
+        {
+          "name": "Flannery's Pharmacy",
+          "brand": "",
+          "distance_km": 33.72,
+          "lat": -33.3836579,
+          "lng": 148.0069546
+        },
+        {
+          "name": "Life Pharmacy Forbes",
+          "brand": "",
+          "distance_km": 33.81,
+          "lat": -33.3865392,
+          "lng": 148.0055251
+        },
+        {
+          "name": "Ron Dunford Chemist",
+          "brand": "",
+          "distance_km": 36.74,
+          "lat": -33.1361277,
+          "lng": 148.1742094
+        },
+        {
+          "name": "Parkes Pharmacy",
+          "brand": "",
+          "distance_km": 36.92,
+          "lat": -33.13395,
+          "lng": 148.1749518
+        }
+      ],
+      "actual_nearest_km": 31.29
+    },
+    {
+      "id": 9116,
+      "name": "Delegate Multi-Purpose Service",
+      "lat": -37.0447209,
+      "lng": 148.9459705,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 201,
+      "nearest_pharmacy_km": 29.987201857795377,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Bombala Pharmacy",
+          "brand": "",
+          "distance_km": 30.5,
+          "lat": -36.9084082,
+          "lng": 149.2438765
+        }
+      ],
+      "actual_nearest_km": 30.5
+    },
+    {
+      "id": 9117,
+      "name": "Trangie Multi Purpose Service",
+      "lat": -32.0306936,
+      "lng": 147.9768545,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 768,
+      "nearest_pharmacy_km": 33.342800035086654,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Narromine Pharmacy",
+          "brand": "",
+          "distance_km": 33.34,
+          "lat": -32.2312689,
+          "lng": 148.2400719
+        },
+        {
+          "name": "Warren Pharmacy",
+          "brand": "",
+          "distance_km": 39.0,
+          "lat": -31.7007397,
+          "lng": 147.8368204
+        },
+        {
+          "name": "Warren Pharmacy",
+          "brand": "",
+          "distance_km": 39.13,
+          "lat": -31.6996853,
+          "lng": 147.836099
+        }
+      ],
+      "actual_nearest_km": 33.34
+    },
+    {
+      "id": 9118,
+      "name": "Tottenham Multi Purpose Service",
+      "lat": -32.2424623,
+      "lng": 147.3581185,
+      "poi_type": "hospital",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 263,
+      "nearest_pharmacy_km": 47.91935242214402,
+      "state": "NSW",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "Fairwater Compounding Pharmacy",
+          "brand": "",
+          "distance_km": 47.92,
+          "lat": -32.6351523,
+          "lng": 147.5684544
+        }
+      ],
+      "actual_nearest_km": 47.92
+    },
+    {
+      "id": 9383,
+      "name": "Grassy Supermarket",
+      "lat": -40.048726,
+      "lng": 144.0576882,
+      "poi_type": "supermarket",
+      "score": 75,
+      "verdict": "PASS",
+      "pop_5km": 500,
+      "nearest_pharmacy_km": 21.93910055010932,
+      "state": "TAS",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [
+        {
+          "name": "King Island Pharmacy",
+          "brand": "",
+          "distance_km": 22.24,
+          "lat": -39.9218272,
+          "lng": 143.8559789
+        }
+      ],
+      "actual_nearest_km": 22.24
+    },
+    {
+      "id": 8088,
+      "name": "Piliyamanyirra Supermarket",
+      "lat": -11.761109,
+      "lng": 130.6312938,
+      "poi_type": "supermarket",
+      "score": 42,
+      "verdict": "LIKELY",
+      "pop_5km": 1521,
+      "nearest_pharmacy_km": 71.53070348541961,
+      "state": "NT",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    },
+    {
+      "id": 8743,
+      "name": "Mornington Island Hospital",
+      "lat": -16.6647062,
+      "lng": 139.1804346,
+      "poi_type": "hospital",
+      "score": 42,
+      "verdict": "LIKELY",
+      "pop_5km": 1022,
+      "nearest_pharmacy_km": 198.4564232379794,
+      "state": "QLD",
+      "issues": [],
+      "status": "VERIFIED",
+      "nearby_pharmacies": [],
+      "actual_nearest_km": null
+    }
+  ]
+}

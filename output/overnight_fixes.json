@@ -1,0 +1,140 @@
+{
+  "timestamp": "2026-02-25T23:03:22.361637",
+  "fixes_applied": [
+    {
+      "id": 8027,
+      "name": "Medical Practice",
+      "verdict_was": "LIKELY",
+      "nearest_pharmacy_km_was": 247.9548730852603,
+      "actual_nearest_km": 0.39,
+      "nearest_pharmacy_name": "Bagga's Pharmacy Newcastle",
+      "action": "DOWNGRADE_TO_FAIL",
+      "reason": "Pharmacy Bagga's Pharmacy Newcastle is 0.39km away"
+    },
+    {
+      "id": 8119,
+      "name": "Roxby Downs Hospital",
+      "verdict_was": "LIKELY",
+      "nearest_pharmacy_km_was": 228.7214189653733,
+      "actual_nearest_km": 0.36,
+      "nearest_pharmacy_name": "Roxby Downs Pharmacy",
+      "action": "DOWNGRADE_TO_FAIL",
+      "reason": "Pharmacy Roxby Downs Pharmacy is 0.36km away"
+    },
+    {
+      "id": 8192,
+      "name": "Kimba IGA",
+      "verdict_was": "LIKELY",
+      "nearest_pharmacy_km_was": 62.73032392266138,
+      "actual_nearest_km": 0.29,
+      "nearest_pharmacy_name": "healthSAVE Pharmacy Kimba",
+      "action": "DOWNGRADE_TO_FAIL",
+      "reason": "Pharmacy healthSAVE Pharmacy Kimba is 0.29km away"
+    },
+    {
+      "id": 8197,
+      "name": "Becker's IGA",
+      "verdict_was": "LIKELY",
+      "nearest_pharmacy_km_was": 22.73033701188397,
+      "actual_nearest_km": 0.24,
+      "nearest_pharmacy_name": "Clare Valley Family Pharmacy",
+      "action": "DOWNGRADE_TO_FAIL",
+      "reason": "Pharmacy Clare Valley Family Pharmacy is 0.24km away"
+    },
+    {
+      "id": 8331,
+      "name": "IGA Jurien Bay",
+      "verdict_was": "LIKELY",
+      "nearest_pharmacy_km_was": 84.31084562262717,
+      "actual_nearest_km": 0.4,
+      "nearest_pharmacy_name": "Jurien Pharmacy",
+      "action": "DOWNGRADE_TO_FAIL",
+      "reason": "Pharmacy Jurien Pharmacy is 0.4km away"
+    },
+    {
+      "id": 8511,
+      "name": "Lismore Community Health",
+      "verdict_was": "LIKELY",
+      "nearest_pharmacy_km_was": 29.723374273972553,
+      "actual_nearest_km": 0.67,
+      "nearest_pharmacy_name": "Brand's Pharmacy",
+      "action": "DOWNGRADE_TO_FAIL",
+      "reason": "Pharmacy Brand's Pharmacy is 0.67km away"
+    },
+    {
+      "id": 8512,
+      "name": "Mallacoota Medical Centre",
+      "verdict_was": "LIKELY",
+      "nearest_pharmacy_km_was": 56.472304176937165,
+      "actual_nearest_km": 0.35,
+      "nearest_pharmacy_name": "Mallacoota Pharmacy",
+      "action": "DOWNGRADE_TO_FAIL",
+      "reason": "Pharmacy Mallacoota Pharmacy is 0.35km away"
+    },
+    {
+      "id": 8653,
+      "name": "Foodworks",
+      "verdict_was": "LIKELY",
+      "nearest_pharmacy_km_was": 0.24868527752712602,
+      "actual_nearest_km": 0.25,
+      "nearest_pharmacy_name": "Orbost Pharmacy",
+      "action": "DOWNGRADE_TO_FAIL",
+      "reason": "Pharmacy Orbost Pharmacy is 0.25km away"
+    },
+    {
+      "id": 8928,
+      "name": "Foodworks",
+      "verdict_was": "LIKELY",
+      "nearest_pharmacy_km_was": 0.23476387299671492,
+      "actual_nearest_km": 0.23,
+      "nearest_pharmacy_name": "TerryWhite Chemmart Canungra",
+      "action": "DOWNGRADE_TO_FAIL",
+      "reason": "Pharmacy TerryWhite Chemmart Canungra is 0.23km away"
+    },
+    {
+      "id": 8930,
+      "name": "Millmerran Foodworks",
+      "verdict_was": "LIKELY",
+      "nearest_pharmacy_km_was": 34.79035873704474,
+      "actual_nearest_km": 0.4,
+      "nearest_pharmacy_name": "Millmerran Pharmacy",
+      "action": "DOWNGRADE_TO_FAIL",
+      "reason": "Pharmacy Millmerran Pharmacy is 0.4km away"
+    },
+    {
+      "id": 9231,
+      "name": "Coonamble IGA",
+      "verdict_was": "LIKELY",
+      "nearest_pharmacy_km_was": 42.73572458258329,
+      "actual_nearest_km": 0.54,
+      "nearest_pharmacy_name": "Leonards Pharmacy",
+      "action": "DOWNGRADE_TO_FAIL",
+      "reason": "Pharmacy Leonards Pharmacy is 0.54km away"
+    },
+    {
+      "id": 9396,
+      "name": "Hilly's IGA",
+      "verdict_was": "LIKELY",
+      "nearest_pharmacy_km_was": 0.2233657111897464,
+      "actual_nearest_km": 0.22,
+      "nearest_pharmacy_name": "Blooms the Chemist St Helen's",
+      "action": "DOWNGRADE_TO_FAIL",
+      "reason": "Pharmacy Blooms the Chemist St Helen's is 0.22km away"
+    },
+    {
+      "id": 9397,
+      "name": "Lane's IGA",
+      "verdict_was": "LIKELY",
+      "nearest_pharmacy_km_was": 0.3540366381803131,
+      "actual_nearest_km": 0.35,
+      "nearest_pharmacy_name": "Complete Care Pharmacy Penguin",
+      "action": "DOWNGRADE_TO_FAIL",
+      "reason": "Pharmacy Complete Care Pharmacy Penguin is 0.35km away"
+    }
+  ],
+  "final_verdicts": {
+    "PASS": 120,
+    "FAIL": 55,
+    "LIKELY": 4
+  }
+}

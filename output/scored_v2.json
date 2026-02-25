@@ -15153,7 +15153,7 @@
     "best_rule": "item_136",
     "overall_verdict": "LIKELY",
     "score": 42,
-    "verdict": "LIKELY",
+    "verdict": "FAIL",
     "rules": "Item 136",
     "best_rule_display": "Item 136",
     "auto_pass": 7,
@@ -15209,7 +15209,9 @@
       "d_8fte",
       "e_hours_match"
     ],
-    "ratio": 600
+    "ratio": 600,
+    "verdict_reason": "Downgraded: Pharmacy Bagga's Pharmacy Newcastle is 0.39km away",
+    "nearest_pharmacy_km_corrected": 0.39
   },
   {
     "id": 8088,
@@ -15460,7 +15462,7 @@
     "best_rule": "item_132",
     "overall_verdict": "LIKELY",
     "score": 42,
-    "verdict": "LIKELY",
+    "verdict": "FAIL",
     "rules": "Item 132",
     "best_rule_display": "Item 132",
     "auto_pass": 2,
@@ -15504,7 +15506,9 @@
       "b_i_4fte_gps",
       "b_ii_supermarket_2500"
     ],
-    "ratio": 3671
+    "ratio": 3671,
+    "verdict_reason": "Downgraded: Pharmacy Roxby Downs Pharmacy is 0.36km away",
+    "nearest_pharmacy_km_corrected": 0.36
   },
   {
     "id": 8184,
@@ -15660,7 +15664,7 @@
     "best_rule": "item_136",
     "overall_verdict": "LIKELY",
     "score": 42,
-    "verdict": "LIKELY",
+    "verdict": "FAIL",
     "rules": "Item 136",
     "best_rule_display": "Item 136",
     "auto_pass": 5,
@@ -15716,7 +15720,8 @@
       "d_8fte",
       "e_hours_match"
     ],
-    "ratio": 3634
+    "ratio": 3634,
+    "verdict_reason": "Downgraded: Gawler Medical Centre - 5+ pharmacies within 2km (Gawler Pharmacy 0.46km)"
   },
   {
     "id": 8192,
@@ -15842,7 +15847,7 @@
     "best_rule": "item_132",
     "overall_verdict": "LIKELY",
     "score": 42,
-    "verdict": "LIKELY",
+    "verdict": "FAIL",
     "rules": "Item 132",
     "best_rule_display": "Item 132",
     "auto_pass": 2,
@@ -15886,7 +15891,9 @@
       "b_i_4fte_gps",
       "b_ii_supermarket_2500"
     ],
-    "ratio": 608
+    "ratio": 608,
+    "verdict_reason": "Downgraded: Pharmacy healthSAVE Pharmacy Kimba is 0.29km away",
+    "nearest_pharmacy_km_corrected": 0.29
   },
   {
     "id": 8197,
@@ -16012,7 +16019,7 @@
     "best_rule": "item_132",
     "overall_verdict": "LIKELY",
     "score": 42,
-    "verdict": "LIKELY",
+    "verdict": "FAIL",
     "rules": "Item 132",
     "best_rule_display": "Item 132",
     "auto_pass": 2,
@@ -16056,7 +16063,9 @@
       "b_i_4fte_gps",
       "b_ii_supermarket_2500"
     ],
-    "ratio": 786
+    "ratio": 786,
+    "verdict_reason": "Downgraded: Pharmacy Clare Valley Family Pharmacy is 0.24km away",
+    "nearest_pharmacy_km_corrected": 0.24
   },
   {
     "id": 8331,
@@ -16182,7 +16191,7 @@
     "best_rule": "item_132",
     "overall_verdict": "LIKELY",
     "score": 42,
-    "verdict": "LIKELY",
+    "verdict": "FAIL",
     "rules": "Item 132",
     "best_rule_display": "Item 132",
     "auto_pass": 2,
@@ -16226,7 +16235,9 @@
       "b_i_4fte_gps",
       "b_ii_supermarket_2500"
     ],
-    "ratio": 1600
+    "ratio": 1600,
+    "verdict_reason": "Downgraded: Pharmacy Jurien Pharmacy is 0.4km away",
+    "nearest_pharmacy_km_corrected": 0.4
   },
   {
     "id": 8511,
@@ -16382,7 +16393,7 @@
     "best_rule": "item_136",
     "overall_verdict": "LIKELY",
     "score": 42,
-    "verdict": "LIKELY",
+    "verdict": "FAIL",
     "rules": "Item 136",
     "best_rule_display": "Item 136",
     "auto_pass": 6,
@@ -16438,7 +16449,9 @@
       "d_8fte",
       "e_hours_match"
     ],
-    "ratio": 513
+    "ratio": 513,
+    "verdict_reason": "Downgraded: Pharmacy Brand's Pharmacy is 0.67km away",
+    "nearest_pharmacy_km_corrected": 0.67
   },
   {
     "id": 8512,
@@ -16564,7 +16577,7 @@
     "best_rule": "item_132",
     "overall_verdict": "LIKELY",
     "score": 42,
-    "verdict": "LIKELY",
+    "verdict": "FAIL",
     "rules": "Item 132",
     "best_rule_display": "Item 132",
     "auto_pass": 2,
@@ -16608,7 +16621,9 @@
       "b_i_4fte_gps",
       "b_ii_supermarket_2500"
     ],
-    "ratio": 1118
+    "ratio": 1118,
+    "verdict_reason": "Downgraded: Pharmacy Mallacoota Pharmacy is 0.35km away",
+    "nearest_pharmacy_km_corrected": 0.35
   },
   {
     "id": 8653,
@@ -16734,7 +16749,7 @@
     "best_rule": "item_132",
     "overall_verdict": "LIKELY",
     "score": 42,
-    "verdict": "LIKELY",
+    "verdict": "FAIL",
     "rules": "Item 132",
     "best_rule_display": "Item 132",
     "auto_pass": 3,
@@ -16778,7 +16793,9 @@
       "b_i_4fte_gps",
       "b_ii_supermarket_2500"
     ],
-    "ratio": 0
+    "ratio": 0,
+    "verdict_reason": "Downgraded: Pharmacy Orbost Pharmacy is 0.25km away",
+    "nearest_pharmacy_km_corrected": 0.25
   },
   {
     "id": 8743,
@@ -17029,7 +17046,7 @@
     "best_rule": "item_132",
     "overall_verdict": "LIKELY",
     "score": 42,
-    "verdict": "LIKELY",
+    "verdict": "FAIL",
     "rules": "Item 132",
     "best_rule_display": "Item 132",
     "auto_pass": 3,
@@ -17073,7 +17090,9 @@
       "b_i_4fte_gps",
       "b_ii_supermarket_2500"
     ],
-    "ratio": 0
+    "ratio": 0,
+    "verdict_reason": "Downgraded: Pharmacy TerryWhite Chemmart Canungra is 0.23km away",
+    "nearest_pharmacy_km_corrected": 0.23
   },
   {
     "id": 8930,
@@ -17199,7 +17218,7 @@
     "best_rule": "item_132",
     "overall_verdict": "LIKELY",
     "score": 42,
-    "verdict": "LIKELY",
+    "verdict": "FAIL",
     "rules": "Item 132",
     "best_rule_display": "Item 132",
     "auto_pass": 2,
@@ -17243,7 +17262,9 @@
       "b_i_4fte_gps",
       "b_ii_supermarket_2500"
     ],
-    "ratio": 1371
+    "ratio": 1371,
+    "verdict_reason": "Downgraded: Pharmacy Millmerran Pharmacy is 0.4km away",
+    "nearest_pharmacy_km_corrected": 0.4
   },
   {
     "id": 9231,
@@ -17369,7 +17390,7 @@
     "best_rule": "item_132",
     "overall_verdict": "LIKELY",
     "score": 42,
-    "verdict": "LIKELY",
+    "verdict": "FAIL",
     "rules": "Item 132",
     "best_rule_display": "Item 132",
     "auto_pass": 2,
@@ -17413,7 +17434,9 @@
       "b_i_4fte_gps",
       "b_ii_supermarket_2500"
     ],
-    "ratio": 2353
+    "ratio": 2353,
+    "verdict_reason": "Downgraded: Pharmacy Leonards Pharmacy is 0.54km away",
+    "nearest_pharmacy_km_corrected": 0.54
   },
   {
     "id": 9381,
@@ -17569,7 +17592,7 @@
     "best_rule": "item_136",
     "overall_verdict": "LIKELY",
     "score": 42,
-    "verdict": "LIKELY",
+    "verdict": "FAIL",
     "rules": "Item 136",
     "best_rule_display": "Item 136",
     "auto_pass": 7,
@@ -17625,7 +17648,8 @@
       "d_8fte",
       "e_hours_match"
     ],
-    "ratio": 2603
+    "ratio": 2603,
+    "verdict_reason": "Downgraded: TAS Family Medical Centre - 5 pharmacies within 1.5km in Burnie"
   },
   {
     "id": 9396,
@@ -17796,7 +17820,7 @@
     "best_rule": "item_132",
     "overall_verdict": "LIKELY",
     "score": 42,
-    "verdict": "LIKELY",
+    "verdict": "FAIL",
     "rules": "Item 132",
     "best_rule_display": "Item 132",
     "auto_pass": 7,
@@ -17840,7 +17864,9 @@
     "manual_check_list": [
       "b_i_4fte_gps"
     ],
-    "ratio": 2320
+    "ratio": 2320,
+    "verdict_reason": "Downgraded: Pharmacy Blooms the Chemist St Helen's is 0.22km away",
+    "nearest_pharmacy_km_corrected": 0.22
   },
   {
     "id": 9397,
@@ -17966,7 +17992,7 @@
     "best_rule": "item_132",
     "overall_verdict": "LIKELY",
     "score": 42,
-    "verdict": "LIKELY",
+    "verdict": "FAIL",
     "rules": "Item 132",
     "best_rule_display": "Item 132",
     "auto_pass": 3,
@@ -18010,7 +18036,9 @@
       "b_i_4fte_gps",
       "b_ii_supermarket_2500"
     ],
-    "ratio": 3405
+    "ratio": 3405,
+    "verdict_reason": "Downgraded: Pharmacy Complete Care Pharmacy Penguin is 0.35km away",
+    "nearest_pharmacy_km_corrected": 0.35
   },
   {
     "id": 7998,
