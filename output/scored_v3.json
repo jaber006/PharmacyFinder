@@ -1,0 +1,1255 @@
+[
+  {
+    "id": 8896,
+    "score": 63.0,
+    "name": "Supa IGA Gordonvale",
+    "verification": "VERIFIED",
+    "pop_10km": 18020
+  },
+  {
+    "id": 8266,
+    "score": 45.3,
+    "name": "Rottnest General Store",
+    "verification": "VERIFIED",
+    "pop_10km": 1500
+  },
+  {
+    "id": 8801,
+    "score": 44.5,
+    "name": "Finch Hatton General Store",
+    "verification": "VERIFIED",
+    "pop_10km": 1600
+  },
+  {
+    "id": 8122,
+    "score": 43.5,
+    "name": "IGA Gladstone",
+    "verification": "VERIFIED",
+    "pop_10km": 869
+  },
+  {
+    "id": 8234,
+    "score": 43.5,
+    "name": "Roebourne Supermarket",
+    "verification": "VERIFIED",
+    "pop_10km": 864
+  },
+  {
+    "id": 8493,
+    "score": 43.3,
+    "name": "Yanakie General Store",
+    "verification": "VERIFIED",
+    "pop_10km": 754
+  },
+  {
+    "id": 8800,
+    "score": 43.3,
+    "name": "Tobin's 5 Star Supermarket",
+    "verification": "VERIFIED",
+    "pop_10km": 745
+  },
+  {
+    "id": 8273,
+    "score": 43.0,
+    "name": "IGA Local Grocer - Nourish Brookton",
+    "verification": "VERIFIED",
+    "pop_10km": 532
+  },
+  {
+    "id": 8381,
+    "score": 42.6,
+    "name": "Kirrae Health Service",
+    "verification": "VERIFIED",
+    "pop_10km": 1733
+  },
+  {
+    "id": 9383,
+    "score": 42.5,
+    "name": "Grassy Supermarket",
+    "verification": "VERIFIED",
+    "pop_10km": 500
+  },
+  {
+    "id": 9103,
+    "score": 41.4,
+    "name": "Comboyne LPO",
+    "verification": "VERIFIED",
+    "pop_10km": 616
+  },
+  {
+    "id": 9110,
+    "score": 41.4,
+    "name": "Woodstock Community Health Center",
+    "verification": "VERIFIED",
+    "pop_10km": 792
+  },
+  {
+    "id": 8081,
+    "score": 41.2,
+    "name": "Yirrkala Health Centre",
+    "verification": "VERIFIED",
+    "pop_10km": 657
+  },
+  {
+    "id": 8147,
+    "score": 41.1,
+    "name": "Health Clinic",
+    "verification": "VERIFIED",
+    "pop_10km": 608
+  },
+  {
+    "id": 9100,
+    "score": 40.8,
+    "name": "Eugowra Supermarket & Newsagency",
+    "verification": "VERIFIED",
+    "pop_10km": 801
+  },
+  {
+    "id": 8261,
+    "score": 39.6,
+    "name": "Morans General store",
+    "verification": "VERIFIED",
+    "pop_10km": 763
+  },
+  {
+    "id": 8144,
+    "score": 39.3,
+    "name": "IGA Coffin Bay",
+    "verification": "VERIFIED",
+    "pop_10km": 803
+  },
+  {
+    "id": 9117,
+    "score": 38.2,
+    "name": "Trangie Multi Purpose Service",
+    "verification": "VERIFIED",
+    "pop_10km": 768
+  },
+  {
+    "id": 8518,
+    "score": 37.4,
+    "name": "Kaniava Hospital",
+    "verification": "VERIFIED",
+    "pop_10km": 683
+  },
+  {
+    "id": 9113,
+    "score": 36.1,
+    "name": "Baradine Multi-Purpose Service",
+    "verification": "VERIFIED",
+    "pop_10km": 586
+  },
+  {
+    "id": 8291,
+    "score": 35.3,
+    "name": "Wongan Hills Health Service",
+    "verification": "VERIFIED",
+    "pop_10km": 725
+  },
+  {
+    "id": 8798,
+    "score": 33.9,
+    "name": "Green Room",
+    "verification": "VERIFIED",
+    "pop_10km": 425
+  },
+  {
+    "id": 8376,
+    "score": 33.7,
+    "name": "Rupanyup Supermarket",
+    "verification": "VERIFIED",
+    "pop_10km": 353
+  },
+  {
+    "id": 8500,
+    "score": 33.7,
+    "name": "Hotham Supermarket",
+    "verification": "VERIFIED",
+    "pop_10km": 354
+  },
+  {
+    "id": 9004,
+    "score": 32.8,
+    "name": "Hilltop Surgery",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 7333
+  },
+  {
+    "id": 8285,
+    "score": 31.4,
+    "name": "Cervantes Health Centre",
+    "verification": "VERIFIED",
+    "pop_10km": 480
+  },
+  {
+    "id": 8375,
+    "score": 31.1,
+    "name": "Venus Bay General Store",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 6046
+  },
+  {
+    "id": 8510,
+    "score": 31.1,
+    "name": "Peter M. Sudholz Medical & Allied Health Centre",
+    "verification": "VERIFIED",
+    "pop_10km": 421
+  },
+  {
+    "id": 8519,
+    "score": 30.6,
+    "name": "Western District Health Service - Penshurst",
+    "verification": "VERIFIED",
+    "pop_10km": 491
+  },
+  {
+    "id": 9112,
+    "score": 30.2,
+    "name": "Bundarra Community Health",
+    "verification": "VERIFIED",
+    "pop_10km": 374
+  },
+  {
+    "id": 8082,
+    "score": 21.4,
+    "name": "Binjari Health Centre (Top Camp)",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 5980
+  },
+  {
+    "id": 8884,
+    "score": 21.3,
+    "name": "IGA Rainbow Beach",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 3450
+  },
+  {
+    "id": 8241,
+    "score": 20.4,
+    "name": "Capel Fresh IGA",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 2920
+  },
+  {
+    "id": 8877,
+    "score": 19.1,
+    "name": "Luke's Supa IGA",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 2528
+  },
+  {
+    "id": 8517,
+    "score": 17.8,
+    "name": "East Wimmera Health Service St Arnaud Campus",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 2126
+  },
+  {
+    "id": 8639,
+    "score": 17.7,
+    "name": "Tongala IGA plus Liquor",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 2106
+  },
+  {
+    "id": 8260,
+    "score": 17.5,
+    "name": "IGA Local Grocer",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 2944
+  },
+  {
+    "id": 9255,
+    "score": 17.4,
+    "name": "Khan's Supa IGA Plus Liquor",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 2035
+  },
+  {
+    "id": 8183,
+    "score": 16.4,
+    "name": "BP",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 2606
+  },
+  {
+    "id": 8807,
+    "score": 16.0,
+    "name": "IGA Mount Morgan",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 2487
+  },
+  {
+    "id": 9258,
+    "score": 14.1,
+    "name": "IGA Condobolin",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 2579
+  },
+  {
+    "id": 8351,
+    "score": 12.3,
+    "name": "Foodworks Wagin Co-Op",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 1311
+  },
+  {
+    "id": 8145,
+    "score": 11.8,
+    "name": "IGA Quorn",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 1150
+  },
+  {
+    "id": 9227,
+    "score": 11.8,
+    "name": "Rose's IGA & Liquor",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 1149
+  },
+  {
+    "id": 8202,
+    "score": 10.3,
+    "name": "Mallala IGA",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 993
+  },
+  {
+    "id": 8320,
+    "score": 9.9,
+    "name": "IGA Beverley",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 869
+  },
+  {
+    "id": 8341,
+    "score": 9.7,
+    "name": "Kellerberrin Farmers Market IGA",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 798
+  },
+  {
+    "id": 8350,
+    "score": 8.9,
+    "name": "Southern Cross Foodworks",
+    "verification": "PHARMACY_EXISTS_NEARBY",
+    "pop_10km": 523
+  },
+  {
+    "id": 7994,
+    "score": 1.0,
+    "name": "Foodworks",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 427
+  },
+  {
+    "id": 7995,
+    "score": 1.0,
+    "name": "Yulara Medical Centre",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 853
+  },
+  {
+    "id": 7997,
+    "score": 1.0,
+    "name": "Adjumarllarl Store & Takeaway",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 1153
+  },
+  {
+    "id": 7998,
+    "score": 1.0,
+    "name": "Jabiru Foodland",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 755
+  },
+  {
+    "id": 7999,
+    "score": 1.0,
+    "name": "Ntaria Supermarket",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 751
+  },
+  {
+    "id": 8000,
+    "score": 1.0,
+    "name": "Yuendumu Store",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 740
+  },
+  {
+    "id": 8001,
+    "score": 1.0,
+    "name": "Lajamanu Store",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 654
+  },
+  {
+    "id": 8007,
+    "score": 1.0,
+    "name": "Beswick Store",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 542
+  },
+  {
+    "id": 8014,
+    "score": 1.0,
+    "name": "Angurugu Community Store",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 883
+  },
+  {
+    "id": 8016,
+    "score": 1.0,
+    "name": "Xpress Mart",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 751
+  },
+  {
+    "id": 8022,
+    "score": 1.0,
+    "name": "Kalkaringi Health Centre",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 544
+  },
+  {
+    "id": 8037,
+    "score": 1.0,
+    "name": "Borroloola Health Centre",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 955
+  },
+  {
+    "id": 8044,
+    "score": 1.0,
+    "name": "Ngukurr Health Centre",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 1088
+  },
+  {
+    "id": 8052,
+    "score": 1.0,
+    "name": "Pmara Jutunta Health Centre",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 653
+  },
+  {
+    "id": 8065,
+    "score": 1.0,
+    "name": "Ngalkanbuy Wellbeing Centre",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 2199
+  },
+  {
+    "id": 8069,
+    "score": 1.0,
+    "name": "Minyerri Health Clinic",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 650
+  },
+  {
+    "id": 8073,
+    "score": 1.0,
+    "name": "Gapuwiyak Health Centre",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 828
+  },
+  {
+    "id": 8077,
+    "score": 1.0,
+    "name": "Numbulwar Health Centre",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 681
+  },
+  {
+    "id": 8078,
+    "score": 1.0,
+    "name": "Ramingining Health Centre",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 1314
+  },
+  {
+    "id": 8080,
+    "score": 1.0,
+    "name": "Manangrida Health Centre",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 2518
+  },
+  {
+    "id": 8088,
+    "score": 1.0,
+    "name": "Piliyamanyirra Supermarket",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 1521
+  },
+  {
+    "id": 8092,
+    "score": 1.0,
+    "name": "Ltyentye Purte Health Centre",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 603
+  },
+  {
+    "id": 8218,
+    "score": 1.0,
+    "name": "Warburton Store",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 511
+  },
+  {
+    "id": 8222,
+    "score": 1.0,
+    "name": "Beagle Bay Community Store",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 907
+  },
+  {
+    "id": 8227,
+    "score": 1.0,
+    "name": "Bidyadanga Health Centre",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 593
+  },
+  {
+    "id": 8229,
+    "score": 1.0,
+    "name": "Pannawonica Medical Center",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 685
+  },
+  {
+    "id": 8231,
+    "score": 1.0,
+    "name": "Laverton Hospital",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 507
+  },
+  {
+    "id": 8233,
+    "score": 1.0,
+    "name": "BHP Leinster Medical Centre",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 395
+  },
+  {
+    "id": 8270,
+    "score": 1.0,
+    "name": "Wyndham Supermarket",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 845
+  },
+  {
+    "id": 8289,
+    "score": 1.0,
+    "name": "Mullewa Health Service",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 312
+  },
+  {
+    "id": 8743,
+    "score": 1.0,
+    "name": "Mornington Island Hospital",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 1022
+  },
+  {
+    "id": 8996,
+    "score": 1.0,
+    "name": "Wanaaring Health Clinic",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8999,
+    "score": 1.0,
+    "name": "Menindee Health Service",
+    "verification": "NOT_VIABLE_REMOTE",
+    "pop_10km": 380
+  },
+  {
+    "id": 8006,
+    "score": 0.0,
+    "name": "Fink River Mission General Store",
+    "verification": "DUPLICATE",
+    "pop_10km": 751
+  },
+  {
+    "id": 8013,
+    "score": 0.0,
+    "name": "Redimart",
+    "verification": "DUPLICATE",
+    "pop_10km": 855
+  },
+  {
+    "id": 8018,
+    "score": 0.0,
+    "name": "Aurora Kakadu Lodge",
+    "verification": "DUPLICATE",
+    "pop_10km": 755
+  },
+  {
+    "id": 8020,
+    "score": 0.0,
+    "name": "Yuendumu Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 740
+  },
+  {
+    "id": 8021,
+    "score": 0.0,
+    "name": "Lajamanu Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 654
+  },
+  {
+    "id": 8027,
+    "score": 0.0,
+    "name": "Medical Practice",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 0
+  },
+  {
+    "id": 8029,
+    "score": 0.0,
+    "name": "Wilora Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8031,
+    "score": 0.0,
+    "name": "Amanbidji Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8039,
+    "score": 0.0,
+    "name": "Woodycupaldiya Health Centre",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 0
+  },
+  {
+    "id": 8045,
+    "score": 0.0,
+    "name": "Baniyala Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8048,
+    "score": 0.0,
+    "name": "Alyangula Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 751
+  },
+  {
+    "id": 8056,
+    "score": 0.0,
+    "name": "Corrella Creek Health Centre",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 0
+  },
+  {
+    "id": 8057,
+    "score": 0.0,
+    "name": "Medical Clinic",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8059,
+    "score": 0.0,
+    "name": "Pigeon Hole Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8061,
+    "score": 0.0,
+    "name": "Wogyala Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8068,
+    "score": 0.0,
+    "name": "Milyakburra Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8072,
+    "score": 0.0,
+    "name": "Galiwinku Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 2199
+  },
+  {
+    "id": 8076,
+    "score": 0.0,
+    "name": "Gunbalanya Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 1153
+  },
+  {
+    "id": 8083,
+    "score": 0.0,
+    "name": "Binjari Health Centre (Bottom Camp)",
+    "verification": "DUPLICATE",
+    "pop_10km": 5980
+  },
+  {
+    "id": 8093,
+    "score": 0.0,
+    "name": "Julanimawu Health Care Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 1521
+  },
+  {
+    "id": 8115,
+    "score": 0.0,
+    "name": "RFDS Clinic Innamincka",
+    "verification": "DUPLICATE",
+    "pop_10km": 20
+  },
+  {
+    "id": 8119,
+    "score": 0.0,
+    "name": "Roxby Downs Hospital",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 3671
+  },
+  {
+    "id": 8120,
+    "score": 0.0,
+    "name": "Oodnadatta Hospital",
+    "verification": "DUPLICATE",
+    "pop_10km": 102
+  },
+  {
+    "id": 8121,
+    "score": 0.0,
+    "name": "Hawker Hospital",
+    "verification": "DUPLICATE",
+    "pop_10km": 226
+  },
+  {
+    "id": 8148,
+    "score": 0.0,
+    "name": "Quorn District and Memorial Hospital",
+    "verification": "DUPLICATE",
+    "pop_10km": 1150
+  },
+  {
+    "id": 8184,
+    "score": 0.0,
+    "name": "Gawler Medical Centre",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 32399
+  },
+  {
+    "id": 8192,
+    "score": 0.0,
+    "name": "Kimba IGA",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 0
+  },
+  {
+    "id": 8197,
+    "score": 0.0,
+    "name": "Becker's IGA",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 786
+  },
+  {
+    "id": 8215,
+    "score": 0.0,
+    "name": "IGA Mount Magnet",
+    "verification": "DUPLICATE",
+    "pop_10km": 0
+  },
+  {
+    "id": 8219,
+    "score": 0.0,
+    "name": "Gibb River Store",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8221,
+    "score": 0.0,
+    "name": "Corporate Office - Store",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8226,
+    "score": 0.0,
+    "name": "Nullagine Health Clinic",
+    "verification": "DUPLICATE",
+    "pop_10km": 647
+  },
+  {
+    "id": 8230,
+    "score": 0.0,
+    "name": "Warakurna Health Clinic",
+    "verification": "DUPLICATE",
+    "pop_10km": 185
+  },
+  {
+    "id": 8232,
+    "score": 0.0,
+    "name": "Ngangganawili Aboriginal Health Service",
+    "verification": "DUPLICATE",
+    "pop_10km": 845
+  },
+  {
+    "id": 8235,
+    "score": 0.0,
+    "name": "Roebourne Hospital",
+    "verification": "DUPLICATE",
+    "pop_10km": 762
+  },
+  {
+    "id": 8242,
+    "score": 0.0,
+    "name": "CAPEL Child Health Clinic",
+    "verification": "DUPLICATE",
+    "pop_10km": 2920
+  },
+  {
+    "id": 8286,
+    "score": 0.0,
+    "name": "Coolgardie Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 763
+  },
+  {
+    "id": 8290,
+    "score": 0.0,
+    "name": "Dumbleyung Health Service",
+    "verification": "DUPLICATE",
+    "pop_10km": 238
+  },
+  {
+    "id": 8292,
+    "score": 0.0,
+    "name": "Wyndham Hospital",
+    "verification": "DUPLICATE",
+    "pop_10km": 845
+  },
+  {
+    "id": 8314,
+    "score": 0.0,
+    "name": "Geraldton Medical Centre",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 33217
+  },
+  {
+    "id": 8331,
+    "score": 0.0,
+    "name": "IGA Jurien Bay",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 1600
+  },
+  {
+    "id": 8379,
+    "score": 0.0,
+    "name": "Rupanyup Doctors Surgery",
+    "verification": "DUPLICATE",
+    "pop_10km": 353
+  },
+  {
+    "id": 8490,
+    "score": 0.0,
+    "name": "Dargo General Store",
+    "verification": "DUPLICATE",
+    "pop_10km": 31
+  },
+  {
+    "id": 8492,
+    "score": 0.0,
+    "name": "McPherson General Store",
+    "verification": "DUPLICATE",
+    "pop_10km": 99
+  },
+  {
+    "id": 8495,
+    "score": 0.0,
+    "name": "Marnoo General Store",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8498,
+    "score": 0.0,
+    "name": "Balmoral Community Store",
+    "verification": "DUPLICATE",
+    "pop_10km": 161
+  },
+  {
+    "id": 8501,
+    "score": 0.0,
+    "name": "Lockington Friendly Grocer + Liquor",
+    "verification": "DUPLICATE",
+    "pop_10km": 0
+  },
+  {
+    "id": 8503,
+    "score": 0.0,
+    "name": "Katamatite Fuel & Grocery",
+    "verification": "DUPLICATE",
+    "pop_10km": 240
+  },
+  {
+    "id": 8504,
+    "score": 0.0,
+    "name": "Cann River Friendly Grocer",
+    "verification": "DUPLICATE",
+    "pop_10km": 188
+  },
+  {
+    "id": 8508,
+    "score": 0.0,
+    "name": "Mt Buller Medical Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 221
+  },
+  {
+    "id": 8509,
+    "score": 0.0,
+    "name": "Mount Hotham Medical Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 354
+  },
+  {
+    "id": 8511,
+    "score": 0.0,
+    "name": "Lismore Community Health",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 321
+  },
+  {
+    "id": 8512,
+    "score": 0.0,
+    "name": "Mallacoota Medical Centre",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 1118
+  },
+  {
+    "id": 8515,
+    "score": 0.0,
+    "name": "Rural Northwest Health Beulah Campus",
+    "verification": "DUPLICATE",
+    "pop_10km": 170
+  },
+  {
+    "id": 8516,
+    "score": 0.0,
+    "name": "Dartmoor & District Bush Nursing Centre",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 0
+  },
+  {
+    "id": 8653,
+    "score": 0.0,
+    "name": "Foodworks",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 2124
+  },
+  {
+    "id": 8715,
+    "score": 0.0,
+    "name": "Gladstone Medical Centre",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 34703
+  },
+  {
+    "id": 8719,
+    "score": 0.0,
+    "name": "Andos Food Barn",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8725,
+    "score": 0.0,
+    "name": "Yaraka Primary Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8726,
+    "score": 0.0,
+    "name": "Bollon Community Clinic",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8730,
+    "score": 0.0,
+    "name": "Royal Flying Doctor Service - Clinic",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8732,
+    "score": 0.0,
+    "name": "Doomadgee Community Health Service",
+    "verification": "DUPLICATE",
+    "pop_10km": 0
+  },
+  {
+    "id": 8735,
+    "score": 0.0,
+    "name": "Dajarra Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 0
+  },
+  {
+    "id": 8737,
+    "score": 0.0,
+    "name": "Boulia Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 218
+  },
+  {
+    "id": 8738,
+    "score": 0.0,
+    "name": "Birdsville Health Clinic",
+    "verification": "DUPLICATE",
+    "pop_10km": 0
+  },
+  {
+    "id": 8739,
+    "score": 0.0,
+    "name": "Thargomindah Community Clinic",
+    "verification": "DUPLICATE",
+    "pop_10km": 194
+  },
+  {
+    "id": 8740,
+    "score": 0.0,
+    "name": "Muttaburra Primary Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8741,
+    "score": 0.0,
+    "name": "Isisford Primary Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8742,
+    "score": 0.0,
+    "name": "Forsayth Hospital - Primary Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 58
+  },
+  {
+    "id": 8799,
+    "score": 0.0,
+    "name": "IGA Express",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 0
+  },
+  {
+    "id": 8804,
+    "score": 0.0,
+    "name": "Hopevale Supermarket",
+    "verification": "DUPLICATE",
+    "pop_10km": 0
+  },
+  {
+    "id": 8806,
+    "score": 0.0,
+    "name": "Yandaran General Store",
+    "verification": "DUPLICATE",
+    "pop_10km": 767
+  },
+  {
+    "id": 8812,
+    "score": 0.0,
+    "name": "Royal Flying Doctor - Part-Time Clinic",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8819,
+    "score": 0.0,
+    "name": "Mount Garnet Clinic",
+    "verification": "DUPLICATE",
+    "pop_10km": 253
+  },
+  {
+    "id": 8821,
+    "score": 0.0,
+    "name": "Mount Perry Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 250
+  },
+  {
+    "id": 8822,
+    "score": 0.0,
+    "name": "Aramac Primary Health Centre",
+    "verification": "DUPLICATE",
+    "pop_10km": 226
+  },
+  {
+    "id": 8823,
+    "score": 0.0,
+    "name": "Mount Morgan Multipurpose Health Service",
+    "verification": "DUPLICATE",
+    "pop_10km": 2487
+  },
+  {
+    "id": 8928,
+    "score": 0.0,
+    "name": "Foodworks",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 793
+  },
+  {
+    "id": 8930,
+    "score": 0.0,
+    "name": "Millmerran Foodworks",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 1371
+  },
+  {
+    "id": 8949,
+    "score": 0.0,
+    "name": "Normanton Stop Shop",
+    "verification": "DUPLICATE",
+    "pop_10km": 0
+  },
+  {
+    "id": 8997,
+    "score": 0.0,
+    "name": "Wanaaring Community Health service",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 8998,
+    "score": 0.0,
+    "name": "Ivanhoe Hospital",
+    "verification": "DUPLICATE",
+    "pop_10km": 162
+  },
+  {
+    "id": 9000,
+    "score": 0.0,
+    "name": "Tibooburra Health Service",
+    "verification": "DUPLICATE",
+    "pop_10km": 100
+  },
+  {
+    "id": 9006,
+    "score": 0.0,
+    "name": "Urbenville Multi-Purpose Service",
+    "verification": "DUPLICATE",
+    "pop_10km": 218
+  },
+  {
+    "id": 9101,
+    "score": 0.0,
+    "name": "Cool Country Cuisine Gourmet Condiments",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 9104,
+    "score": 0.0,
+    "name": "Boomi Co-Op",
+    "verification": "DUPLICATE",
+    "pop_10km": 500
+  },
+  {
+    "id": 9106,
+    "score": 0.0,
+    "name": "Adaminaby Store",
+    "verification": "DUPLICATE",
+    "pop_10km": 257
+  },
+  {
+    "id": 9111,
+    "score": 0.0,
+    "name": "White Cliffs Health Service",
+    "verification": "DUPLICATE",
+    "pop_10km": 0
+  },
+  {
+    "id": 9114,
+    "score": 0.0,
+    "name": "Goodooga Health Service",
+    "verification": "DUPLICATE",
+    "pop_10km": 179
+  },
+  {
+    "id": 9115,
+    "score": 0.0,
+    "name": "Eugowra Multi-Purpose Service",
+    "verification": "DUPLICATE",
+    "pop_10km": 801
+  },
+  {
+    "id": 9116,
+    "score": 0.0,
+    "name": "Delegate Multi-Purpose Service",
+    "verification": "DUPLICATE",
+    "pop_10km": 201
+  },
+  {
+    "id": 9118,
+    "score": 0.0,
+    "name": "Tottenham Multi Purpose Service",
+    "verification": "DUPLICATE",
+    "pop_10km": 263
+  },
+  {
+    "id": 9231,
+    "score": 0.0,
+    "name": "Coonamble IGA",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 0
+  },
+  {
+    "id": 9267,
+    "score": 0.0,
+    "name": "Harrison's IGA",
+    "verification": "DUPLICATE",
+    "pop_10km": 0
+  },
+  {
+    "id": 9381,
+    "score": 0.0,
+    "name": "TAS Family Medical Centre",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 21337
+  },
+  {
+    "id": 9391,
+    "score": 0.0,
+    "name": "Rosny Park Family Medical Centre",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 197451
+  },
+  {
+    "id": 9396,
+    "score": 0.0,
+    "name": "Hilly's IGA",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 2320
+  },
+  {
+    "id": 9397,
+    "score": 0.0,
+    "name": "Lane's IGA",
+    "verification": "FAIL_PHARMACY_EXISTS",
+    "pop_10km": 17023
+  }
+]
