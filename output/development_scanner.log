@@ -1,0 +1,330 @@
+2026-03-06 19:38:10 [INFO] Database initialized (developments table ready)
+2026-03-06 19:38:10 [INFO] Loading pharmacies from database...
+2026-03-06 19:38:10 [INFO] Loaded 6498 pharmacies
+2026-03-06 19:38:10 [INFO] Loaded 0 existing development hashes
+2026-03-06 19:38:10 [INFO] ============================================================
+2026-03-06 19:38:10 [INFO]   DEVELOPMENT SCANNER v2.0 — Starting
+2026-03-06 19:38:10 [INFO]   Timestamp: 2026-03-06 19:38:10
+2026-03-06 19:38:10 [INFO] ============================================================
+2026-03-06 19:38:10 [INFO] === Scanning Shopping Centre News ===
+2026-03-06 19:38:19 [INFO]   Found 92 relevant SCN article links
+2026-03-06 19:38:33 [ERROR] Shopping Centre News scan failed: could not convert string to float: '.'
+Traceback (most recent call last):
+  File "C:\Users\MJ\Documents\GitHub\PharmacyFinder\development_scanner.py", line 1544, in run_all_scans
+    fn()
+  File "C:\Users\MJ\Documents\GitHub\PharmacyFinder\development_scanner.py", line 683, in scan_shopping_centre_news
+    self.add_development(
+  File "C:\Users\MJ\Documents\GitHub\PharmacyFinder\development_scanner.py", line 571, in add_development
+    scale = extract_scale_info(full_text)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MJ\Documents\GitHub\PharmacyFinder\development_scanner.py", line 396, in extract_scale_info
+    info["sqm"] = float(m.group(1)) * 10000
+                  ^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '.'
+2026-03-06 19:38:33 [INFO] === Scanning Inside Retail ===
+2026-03-06 19:38:42 [WARNING] HTTP 404 for https://insideretail.com.au/industries/property
+2026-03-06 19:38:42 [INFO] Inside Retail: found 12 articles
+2026-03-06 19:38:42 [INFO] === Scanning The Urban Developer ===
+2026-03-06 19:38:47 [WARNING] HTTP 404 for https://www.theurbandeveloper.com/articles
+2026-03-06 19:38:47 [INFO] The Urban Developer: found 4 articles
+2026-03-06 19:38:47 [INFO] === Scanning ALDI new stores ===
+2026-03-06 19:38:52 [WARNING] HTTP 404 for https://www.aldi.com.au/about-aldi/new-stores/
+2026-03-06 19:38:52 [INFO] ALDI new stores: found 0 entries
+2026-03-06 19:38:52 [INFO] === Scanning Coles Group news ===
+2026-03-06 19:38:57 [INFO] Coles Group: found 0 articles
+2026-03-06 19:38:57 [INFO] === Scanning Woolworths Group news ===
+2026-03-06 19:39:02 [INFO] Woolworths Group: found 0 articles
+2026-03-06 19:39:02 [INFO] === Scanning Costco Australia ===
+2026-03-06 19:39:06 [INFO] Costco news: found 10 articles
+2026-03-06 19:39:06 [INFO] === Scanning Property Council of Australia ===
+2026-03-06 19:39:08 [WARNING] HTTP 403 for https://www.propertycouncil.com.au/news
+2026-03-06 19:39:10 [WARNING] HTTP 403 for https://www.propertycouncil.com.au/news-and-media
+2026-03-06 19:39:10 [INFO] Property Council: found 0 articles
+2026-03-06 19:39:10 [INFO] === Scanning Commercial Real Estate ===
+2026-03-06 19:39:30 [WARNING] Request failed for https://www.commercialrealestate.com.au/news/: HTTPSConnectionPool(host='www.commercialrealestate.com.au', port=443): Read timed out. (read timeout=20)
+2026-03-06 19:39:51 [WARNING] Request failed for https://www.commercialrealestate.com.au/news/retail/: HTTPSConnectionPool(host='www.commercialrealestate.com.au', port=443): Read timed out. (read timeout=20)
+2026-03-06 19:39:51 [INFO] Commercial Real Estate: found 0 articles
+2026-03-06 19:39:51 [INFO] === Scanning Google News RSS ===
+2026-03-06 19:40:28 [ERROR] Google News scan failed: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\MJ\Documents\GitHub\PharmacyFinder\development_scanner.py", line 1544, in run_all_scans
+    ("Google News", self.scan_google_news),
+        ^^^^
+  File "C:\Users\MJ\Documents\GitHub\PharmacyFinder\development_scanner.py", line 1200, in scan_google_news
+    "medical": "medical",
+  File "C:\Users\MJ\Documents\GitHub\PharmacyFinder\development_scanner.py", line 571, in add_development
+    suburb = suburb or ext_suburb
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MJ\Documents\GitHub\PharmacyFinder\development_scanner.py", line 401, in extract_scale_info
+    except (ValueError, TypeError):
+                        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+2026-03-06 19:40:28 [INFO] === Scanning PlanningAlerts.org.au ===
+2026-03-06 19:40:28 [WARNING] No PLANNING_ALERTS_KEY env var set — skipping. Get a free key at https://www.planningalerts.org.au/api/howto
+2026-03-06 19:40:28 [INFO] 
+2026-03-06 19:40:28 [INFO] Total raw developments found: 97
+2026-03-06 19:40:28 [INFO] === Geocoding developments ===
+2026-03-06 19:40:28 [INFO] Need to geocode: 27 developments
+2026-03-06 19:41:42 [INFO] Geocoding: 15 API, 5 cache, 20 total with coords
+2026-03-06 19:41:42 [INFO] === Checking pharmacy proximity ===
+2026-03-06 19:41:42 [INFO] Found 8 developments >1.5km from nearest pharmacy
+2026-03-06 19:41:42 [INFO] === Calculating relevance scores ===
+2026-03-06 19:41:42 [INFO] === Saving to database ===
+2026-03-06 19:41:42 [INFO] DB: 97 inserted, 0 updated, 97 total (8 opportunities)
+2026-03-06 19:41:42 [INFO] Saved JSON: C:\Users\MJ\Documents\GitHub\PharmacyFinder\output\development_opportunities.json
+2026-03-06 19:41:42 [INFO] Saved CSV: C:\Users\MJ\Documents\GitHub\PharmacyFinder\output\development_opportunities.csv
+2026-03-06 19:42:16 [INFO] Database initialized (developments table ready)
+2026-03-06 19:42:16 [INFO] Loading pharmacies from database...
+2026-03-06 19:42:16 [INFO] Loaded 6498 pharmacies
+2026-03-06 19:42:16 [INFO] Loaded 0 existing development hashes
+2026-03-06 19:42:16 [INFO] ============================================================
+2026-03-06 19:42:16 [INFO]   DEVELOPMENT SCANNER v2.0 — Starting
+2026-03-06 19:42:16 [INFO]   Timestamp: 2026-03-06 19:42:16
+2026-03-06 19:42:16 [INFO] ============================================================
+2026-03-06 19:42:16 [INFO] === Scanning Shopping Centre News ===
+2026-03-06 19:42:25 [INFO]   Found 92 relevant SCN article links
+2026-03-06 19:43:00 [INFO] Shopping Centre News: found 20 articles
+2026-03-06 19:43:00 [INFO] === Scanning Inside Retail ===
+2026-03-06 19:43:09 [WARNING] HTTP 404 for https://insideretail.com.au/industries/property
+2026-03-06 19:43:09 [INFO] Inside Retail: found 12 articles
+2026-03-06 19:43:09 [INFO] === Scanning The Urban Developer ===
+2026-03-06 19:43:39 [INFO] Database initialized (developments table ready)
+2026-03-06 19:43:39 [INFO] Loading pharmacies from database...
+2026-03-06 19:43:39 [INFO] Loaded 6498 pharmacies
+2026-03-06 19:43:39 [INFO] Loaded 0 existing development hashes
+2026-03-06 19:43:39 [INFO] ============================================================
+2026-03-06 19:43:39 [INFO]   DEVELOPMENT SCANNER v2.0 — Starting
+2026-03-06 19:43:39 [INFO]   Timestamp: 2026-03-06 19:43:39
+2026-03-06 19:43:39 [INFO] ============================================================
+2026-03-06 19:43:39 [INFO] === Scanning Shopping Centre News ===
+2026-03-06 19:43:48 [INFO]   Found 92 relevant SCN article links
+2026-03-06 19:44:23 [INFO] Shopping Centre News: found 20 articles
+2026-03-06 19:44:23 [INFO] === Scanning Inside Retail ===
+2026-03-06 19:44:32 [WARNING] HTTP 404 for https://insideretail.com.au/industries/property
+2026-03-06 19:44:32 [INFO] Inside Retail: found 12 articles
+2026-03-06 19:44:32 [INFO] === Scanning The Urban Developer ===
+2026-03-06 19:44:37 [WARNING] HTTP 404 for https://www.theurbandeveloper.com/articles
+2026-03-06 19:44:37 [INFO] The Urban Developer: found 4 articles
+2026-03-06 19:44:37 [INFO] === Scanning ALDI new stores ===
+2026-03-06 19:44:43 [WARNING] HTTP 404 for https://www.aldi.com.au/about-aldi/new-stores/
+2026-03-06 19:44:43 [INFO] ALDI new stores: found 0 entries
+2026-03-06 19:44:43 [INFO] === Scanning Coles Group news ===
+2026-03-06 19:44:48 [INFO] Coles Group: found 0 articles
+2026-03-06 19:44:48 [INFO] === Scanning Woolworths Group news ===
+2026-03-06 19:44:53 [INFO] Woolworths Group: found 0 articles
+2026-03-06 19:44:53 [INFO] === Scanning Costco Australia ===
+2026-03-06 19:44:56 [INFO] Costco news: found 10 articles
+2026-03-06 19:44:56 [INFO] === Scanning Property Council of Australia ===
+2026-03-06 19:44:58 [WARNING] HTTP 403 for https://www.propertycouncil.com.au/news
+2026-03-06 19:45:00 [WARNING] HTTP 403 for https://www.propertycouncil.com.au/news-and-media
+2026-03-06 19:45:00 [INFO] Property Council: found 0 articles
+2026-03-06 19:45:00 [INFO] === Scanning Commercial Real Estate ===
+2026-03-06 19:45:21 [WARNING] Request failed for https://www.commercialrealestate.com.au/news/: HTTPSConnectionPool(host='www.commercialrealestate.com.au', port=443): Read timed out. (read timeout=20)
+2026-03-06 19:45:41 [WARNING] Request failed for https://www.commercialrealestate.com.au/news/retail/: HTTPSConnectionPool(host='www.commercialrealestate.com.au', port=443): Read timed out. (read timeout=20)
+2026-03-06 19:45:41 [INFO] Commercial Real Estate: found 0 articles
+2026-03-06 19:45:41 [INFO] === Scanning Google News RSS ===
+2026-03-06 19:46:07 [INFO] Database initialized (developments table ready)
+2026-03-06 19:46:07 [INFO] Loading pharmacies from database...
+2026-03-06 19:46:07 [INFO] Loaded 6498 pharmacies
+2026-03-06 19:46:07 [INFO] Loaded 0 existing development hashes
+2026-03-06 19:46:07 [INFO] ============================================================
+2026-03-06 19:46:07 [INFO]   DEVELOPMENT SCANNER v2.0 — Starting
+2026-03-06 19:46:07 [INFO]   Timestamp: 2026-03-06 19:46:07
+2026-03-06 19:46:07 [INFO] ============================================================
+2026-03-06 19:46:07 [INFO] === Scanning Shopping Centre News ===
+2026-03-06 19:46:14 [INFO]   Found 69 relevant SCN article links
+2026-03-06 19:46:18 [INFO] Google News: found 70 articles
+2026-03-06 19:46:18 [INFO] === Scanning PlanningAlerts.org.au ===
+2026-03-06 19:46:18 [WARNING] No PLANNING_ALERTS_KEY env var set — skipping. Get a free key at https://www.planningalerts.org.au/api/howto
+2026-03-06 19:46:18 [INFO] 
+2026-03-06 19:46:18 [INFO] Total raw developments found: 97
+2026-03-06 19:46:18 [INFO] === Geocoding developments ===
+2026-03-06 19:46:18 [INFO] Need to geocode: 34 developments
+2026-03-06 19:46:38 [INFO] Shopping Centre News: found 20 articles
+2026-03-06 19:46:38 [INFO] === Scanning Inside Retail ===
+2026-03-06 19:46:40 [INFO]   Geocoded 10/34 ...
+2026-03-06 19:46:45 [WARNING] HTTP 404 for https://insideretail.com.au/industries/property
+2026-03-06 19:46:45 [INFO] Inside Retail: found 11 articles
+2026-03-06 19:46:45 [INFO] === Scanning The Urban Developer ===
+2026-03-06 19:46:49 [WARNING] HTTP 404 for https://www.theurbandeveloper.com/articles
+2026-03-06 19:46:49 [INFO] The Urban Developer: found 4 articles
+2026-03-06 19:46:49 [INFO] === Scanning ALDI new stores ===
+2026-03-06 19:46:53 [WARNING] HTTP 404 for https://www.aldi.com.au/about-aldi/new-stores/
+2026-03-06 19:46:53 [INFO] ALDI new stores: found 0 entries
+2026-03-06 19:46:53 [INFO] === Scanning Coles Group news ===
+2026-03-06 19:46:57 [INFO] Coles Group: found 0 articles
+2026-03-06 19:46:57 [INFO] === Scanning Woolworths Group news ===
+2026-03-06 19:46:59 [INFO]   Geocoded 30/34 ...
+2026-03-06 19:46:59 [INFO] Geocoding: 7 API, 19 cache, 26 total with coords
+2026-03-06 19:46:59 [INFO] === Checking pharmacy proximity ===
+2026-03-06 19:46:59 [INFO] Found 8 developments >1.5km from nearest pharmacy
+2026-03-06 19:46:59 [INFO] === Calculating relevance scores ===
+2026-03-06 19:46:59 [INFO] === Saving to database ===
+2026-03-06 19:46:59 [INFO] DB: 97 inserted, 0 updated, 97 total (8 opportunities)
+2026-03-06 19:46:59 [INFO] Saved JSON: C:\Users\MJ\Documents\GitHub\PharmacyFinder\output\development_opportunities.json
+2026-03-06 19:46:59 [INFO] Saved CSV: C:\Users\MJ\Documents\GitHub\PharmacyFinder\output\development_opportunities.csv
+2026-03-06 19:47:01 [INFO] Woolworths Group: found 0 articles
+2026-03-06 19:47:01 [INFO] === Scanning Costco Australia ===
+2026-03-06 19:47:04 [INFO] Costco news: found 10 articles
+2026-03-06 19:47:04 [INFO] === Scanning Property Council of Australia ===
+2026-03-06 19:47:06 [WARNING] Blocked by https://www.propertycouncil.com.au/news (HTTP 403)
+2026-03-06 19:47:07 [WARNING] Blocked by https://www.propertycouncil.com.au/news-and-media (HTTP 403)
+2026-03-06 19:47:07 [INFO] Property Council: found 0 articles
+2026-03-06 19:47:07 [INFO] === Scanning Commercial Real Estate ===
+2026-03-06 19:48:09 [WARNING] Request failed for https://www.commercialrealestate.com.au/news/: HTTPSConnectionPool(host='www.commercialrealestate.com.au', port=443): Max retries exceeded with url: /news/ (Caused by ReadTimeoutError("HTTPSConnectionPool(host='www.commercialrealestate.com.au', port=443): Read timed out. (read timeout=20)"))
+2026-03-06 19:49:13 [WARNING] Request failed for https://www.commercialrealestate.com.au/news/retail/: HTTPSConnectionPool(host='www.commercialrealestate.com.au', port=443): Max retries exceeded with url: /news/retail/ (Caused by ReadTimeoutError("HTTPSConnectionPool(host='www.commercialrealestate.com.au', port=443): Read timed out. (read timeout=20)"))
+2026-03-06 19:49:15 [INFO] Commercial Real Estate: found 0 articles
+2026-03-06 19:49:15 [INFO] === Scanning Google News RSS ===
+2026-03-06 19:49:39 [INFO] Google News: found 70 articles
+2026-03-06 19:49:39 [INFO] === Scanning PlanningAlerts.org.au ===
+2026-03-06 19:49:39 [WARNING] No PLANNING_ALERTS_KEY env var set — skipping. Get a free key at https://www.planningalerts.org.au/api/howto
+2026-03-06 19:49:39 [INFO] 
+2026-03-06 19:49:39 [INFO] Total raw developments found: 97
+2026-03-06 19:49:39 [INFO] === Geocoding developments ===
+2026-03-06 19:49:39 [INFO] Need to geocode: 34 developments
+2026-03-06 19:49:50 [INFO]   Geocoded 30/34 ...
+2026-03-06 19:49:50 [INFO] Geocoding: 0 API, 26 cache, 26 total with coords
+2026-03-06 19:49:50 [INFO] === Checking pharmacy proximity ===
+2026-03-06 19:49:50 [INFO] Found 8 developments >1.5km from nearest pharmacy
+2026-03-06 19:49:50 [INFO] === Calculating relevance scores ===
+2026-03-06 19:49:50 [INFO] === Saving to database ===
+2026-03-06 19:49:50 [INFO] DB: 2 inserted, 95 updated, 99 total (8 opportunities)
+2026-03-06 19:49:50 [INFO] Saved JSON: C:\Users\MJ\Documents\GitHub\PharmacyFinder\output\development_opportunities.json
+2026-03-06 19:49:50 [INFO] Saved CSV: C:\Users\MJ\Documents\GitHub\PharmacyFinder\output\development_opportunities.csv
+2026-03-06 19:51:00 [WARNING] HTTP 404 for https://insideretail.com.au/industries/property
+2026-03-06 19:51:04 [WARNING] HTTP 404 for https://www.theurbandeveloper.com/articles
+2026-03-06 19:51:08 [WARNING] HTTP 404 for https://www.aldi.com.au/about-aldi/new-stores/
+2026-03-06 20:16:55 [INFO] Database initialized (developments table ready)
+2026-03-06 20:16:55 [INFO] Loading pharmacies from database...
+2026-03-06 20:16:55 [INFO] Loaded 6498 pharmacies
+2026-03-06 20:16:55 [INFO] Loaded 99 existing development hashes
+2026-03-06 20:16:55 [INFO] ============================================================
+2026-03-06 20:16:55 [INFO]   DEVELOPMENT SCANNER v2.0 — Starting
+2026-03-06 20:16:55 [INFO]   Timestamp: 2026-03-06 20:16:55
+2026-03-06 20:16:55 [INFO] ============================================================
+2026-03-06 20:16:55 [INFO] === Scanning Shopping Centre News ===
+2026-03-06 20:17:03 [INFO]   Found 69 relevant SCN article links
+2026-03-06 20:17:27 [INFO] Shopping Centre News: found 20 articles
+2026-03-06 20:17:27 [INFO] === Scanning Inside Retail ===
+2026-03-06 20:17:57 [WARNING] HTTP 404 for https://insideretail.com.au/industries/property
+2026-03-06 20:17:57 [INFO] Inside Retail: found 11 articles
+2026-03-06 20:17:57 [INFO] === Scanning The Urban Developer ===
+2026-03-06 20:18:11 [WARNING] HTTP 404 for https://www.theurbandeveloper.com/articles
+2026-03-06 20:18:11 [INFO] The Urban Developer: found 4 articles
+2026-03-06 20:18:11 [INFO] === Scanning ALDI new stores ===
+2026-03-06 20:18:14 [WARNING] HTTP 404 for https://www.aldi.com.au/about-aldi/new-stores/
+2026-03-06 20:18:14 [INFO] ALDI new stores: found 0 entries
+2026-03-06 20:18:14 [INFO] === Scanning Coles Group news ===
+2026-03-06 20:18:18 [INFO] Coles Group: found 0 articles
+2026-03-06 20:18:18 [INFO] === Scanning Woolworths Group news ===
+2026-03-06 20:18:22 [INFO] Woolworths Group: found 0 articles
+2026-03-06 20:18:22 [INFO] === Scanning Costco Australia ===
+2026-03-06 20:18:44 [INFO] Costco news: found 10 articles
+2026-03-06 20:18:44 [INFO] === Scanning Property Council of Australia ===
+2026-03-06 20:18:46 [WARNING] Blocked by https://www.propertycouncil.com.au/news (HTTP 403)
+2026-03-06 20:18:48 [WARNING] Blocked by https://www.propertycouncil.com.au/news-and-media (HTTP 403)
+2026-03-06 20:18:48 [INFO] Property Council: found 0 articles
+2026-03-06 20:18:48 [INFO] === Scanning Commercial Real Estate ===
+2026-03-06 20:19:50 [WARNING] Request failed for https://www.commercialrealestate.com.au/news/: HTTPSConnectionPool(host='www.commercialrealestate.com.au', port=443): Max retries exceeded with url: /news/ (Caused by ReadTimeoutError("HTTPSConnectionPool(host='www.commercialrealestate.com.au', port=443): Read timed out. (read timeout=20)"))
+2026-03-06 20:20:54 [WARNING] Request failed for https://www.commercialrealestate.com.au/news/retail/: HTTPSConnectionPool(host='www.commercialrealestate.com.au', port=443): Max retries exceeded with url: /news/retail/ (Caused by ReadTimeoutError("HTTPSConnectionPool(host='www.commercialrealestate.com.au', port=443): Read timed out. (read timeout=20)"))
+2026-03-06 20:20:56 [INFO] Commercial Real Estate: found 0 articles
+2026-03-06 20:20:56 [INFO] === Scanning Google News RSS ===
+2026-03-06 20:23:32 [INFO] Google News: found 70 articles
+2026-03-06 20:23:32 [INFO] === Scanning PlanningAlerts.org.au ===
+2026-03-06 20:23:32 [WARNING] No PLANNING_ALERTS_KEY env var set — skipping. Get a free key at https://www.planningalerts.org.au/api/howto
+2026-03-06 20:23:32 [INFO] 
+2026-03-06 20:23:32 [INFO] Total raw developments found: 85
+2026-03-06 20:23:32 [INFO] === Geocoding developments ===
+2026-03-06 20:23:32 [INFO] Need to geocode: 48 developments
+2026-03-06 20:23:59 [INFO]   Geocoded 20/48 ...
+2026-03-06 20:24:23 [INFO]   Geocoded 40/48 ...
+2026-03-06 20:24:34 [INFO] Geocoding: 20 API, 24 cache, 44 total with coords
+2026-03-06 20:24:34 [INFO] === Checking pharmacy proximity ===
+2026-03-06 20:24:34 [INFO] Found 3 developments >1.5km from nearest pharmacy
+2026-03-06 20:24:34 [INFO] === Calculating relevance scores ===
+2026-03-06 20:24:34 [INFO] === Saving to database ===
+2026-03-06 20:24:34 [INFO] DB: 48 inserted, 37 updated, 147 total (11 opportunities)
+2026-03-06 20:24:34 [INFO] Saved JSON: C:\Users\MJ\Documents\GitHub\PharmacyFinder\output\development_opportunities.json
+2026-03-06 20:24:34 [INFO] Saved CSV: C:\Users\MJ\Documents\GitHub\PharmacyFinder\output\development_opportunities.csv
+2026-03-06 20:25:42 [INFO] Database initialized (developments table ready)
+2026-03-06 20:25:42 [INFO] Loading pharmacies from database...
+2026-03-06 20:25:42 [INFO] Loaded 6498 pharmacies
+2026-03-06 20:25:42 [INFO] Loaded 0 existing development hashes
+2026-03-06 20:25:42 [INFO] ============================================================
+2026-03-06 20:25:42 [INFO]   DEVELOPMENT SCANNER v2.0 — Starting
+2026-03-06 20:25:42 [INFO]   Timestamp: 2026-03-06 20:25:42
+2026-03-06 20:25:42 [INFO] ============================================================
+2026-03-06 20:25:42 [INFO] === Scanning Shopping Centre News ===
+2026-03-06 20:25:49 [INFO]   Found 69 relevant SCN article links
+2026-03-06 20:26:13 [INFO] Shopping Centre News: found 20 articles
+2026-03-06 20:26:13 [INFO] === Scanning Inside Retail ===
+2026-03-06 20:26:45 [WARNING] HTTP 404 for https://insideretail.com.au/industries/property
+2026-03-06 20:26:45 [INFO] Inside Retail: found 11 articles
+2026-03-06 20:26:45 [INFO] === Scanning The Urban Developer ===
+2026-03-06 20:26:59 [WARNING] HTTP 404 for https://www.theurbandeveloper.com/articles
+2026-03-06 20:26:59 [INFO] The Urban Developer: found 4 articles
+2026-03-06 20:26:59 [INFO] === Scanning ALDI new stores ===
+2026-03-06 20:27:03 [WARNING] HTTP 404 for https://www.aldi.com.au/about-aldi/new-stores/
+2026-03-06 20:27:03 [INFO] ALDI new stores: found 0 entries
+2026-03-06 20:27:03 [INFO] === Scanning Coles Group news ===
+2026-03-06 20:27:07 [INFO] Coles Group: found 0 articles
+2026-03-06 20:27:07 [INFO] === Scanning Woolworths Group news ===
+2026-03-06 20:27:11 [INFO] Woolworths Group: found 0 articles
+2026-03-06 20:27:11 [INFO] === Scanning Costco Australia ===
+2026-03-06 20:27:35 [INFO] Costco news: found 10 articles
+2026-03-06 20:27:35 [INFO] === Scanning Property Council of Australia ===
+2026-03-06 20:27:37 [WARNING] Blocked by https://www.propertycouncil.com.au/news (HTTP 403)
+2026-03-06 20:27:38 [WARNING] Blocked by https://www.propertycouncil.com.au/news-and-media (HTTP 403)
+2026-03-06 20:27:38 [INFO] Property Council: found 0 articles
+2026-03-06 20:27:38 [INFO] === Scanning Commercial Real Estate ===
+2026-03-06 20:28:40 [WARNING] Request failed for https://www.commercialrealestate.com.au/news/: HTTPSConnectionPool(host='www.commercialrealestate.com.au', port=443): Max retries exceeded with url: /news/ (Caused by ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))
+2026-03-06 20:29:44 [WARNING] Request failed for https://www.commercialrealestate.com.au/news/retail/: HTTPSConnectionPool(host='www.commercialrealestate.com.au', port=443): Max retries exceeded with url: /news/retail/ (Caused by ReadTimeoutError("HTTPSConnectionPool(host='www.commercialrealestate.com.au', port=443): Read timed out. (read timeout=20)"))
+2026-03-06 20:29:46 [INFO] Commercial Real Estate: found 0 articles
+2026-03-06 20:29:46 [INFO] === Scanning Google News RSS ===
+2026-03-06 20:32:27 [INFO] Google News: found 70 articles
+2026-03-06 20:32:27 [INFO] === Scanning PlanningAlerts.org.au ===
+2026-03-06 20:32:27 [WARNING] No PLANNING_ALERTS_KEY env var set — skipping. Get a free key at https://www.planningalerts.org.au/api/howto
+2026-03-06 20:32:27 [INFO] 
+2026-03-06 20:32:27 [INFO] Total raw developments found: 79
+2026-03-06 20:32:27 [INFO] === Geocoding developments ===
+2026-03-06 20:32:27 [INFO] Need to geocode: 41 developments
+2026-03-06 20:32:55 [INFO]   Geocoded 20/41 ...
+2026-03-06 20:33:18 [INFO] Geocoding: 28 API, 13 cache, 41 total with coords
+2026-03-06 20:33:18 [INFO] === Checking pharmacy proximity ===
+2026-03-06 20:33:18 [INFO] Found 1 developments >1.5km from nearest pharmacy
+2026-03-06 20:33:18 [INFO] === Calculating relevance scores ===
+2026-03-06 20:33:18 [INFO] === Saving to database ===
+2026-03-06 20:33:18 [INFO] DB: 79 inserted, 0 updated, 79 total (1 opportunities)
+2026-03-06 20:33:18 [INFO] Saved JSON: C:\Users\MJ\Documents\GitHub\PharmacyFinder\output\development_opportunities.json
+2026-03-06 20:33:18 [INFO] Saved CSV: C:\Users\MJ\Documents\GitHub\PharmacyFinder\output\development_opportunities.csv
+2026-03-06 20:34:08 [INFO] Database initialized (developments table ready)
+2026-03-06 20:34:08 [INFO] Loading pharmacies from database...
+2026-03-06 20:34:08 [INFO] Loaded 6498 pharmacies
+2026-03-06 20:34:08 [INFO] Loaded 79 existing development hashes
+2026-03-06 20:34:08 [INFO] ============================================================
+2026-03-06 20:34:08 [INFO]   DEVELOPMENT SCANNER v2.0 — Starting
+2026-03-06 20:34:08 [INFO]   Timestamp: 2026-03-06 20:34:08
+2026-03-06 20:34:08 [INFO] ============================================================
+2026-03-06 20:34:08 [INFO] === Scanning Shopping Centre News ===
+2026-03-06 20:34:14 [INFO]   Found 69 relevant SCN article links
+2026-03-06 20:34:37 [INFO] Shopping Centre News: found 20 articles
+2026-03-06 20:34:37 [INFO] === Scanning Inside Retail ===
+2026-03-06 20:35:08 [WARNING] HTTP 404 for https://insideretail.com.au/industries/property
+2026-03-06 20:35:08 [INFO] Inside Retail: found 11 articles
+2026-03-06 20:35:08 [INFO] === Scanning The Urban Developer ===
+2026-03-06 20:35:24 [WARNING] HTTP 404 for https://www.theurbandeveloper.com/articles
+2026-03-06 20:35:24 [INFO] The Urban Developer: found 4 articles
+2026-03-06 20:35:24 [INFO] === Scanning ALDI new stores ===
+2026-03-06 20:35:28 [WARNING] HTTP 404 for https://www.aldi.com.au/about-aldi/new-stores/
+2026-03-06 20:35:28 [INFO] ALDI new stores: found 0 entries
+2026-03-06 20:35:28 [INFO] === Scanning Coles Group news ===
+2026-03-06 20:35:33 [INFO] Coles Group: found 0 articles
+2026-03-06 20:35:33 [INFO] === Scanning Woolworths Group news ===
+2026-03-06 20:35:37 [INFO] Woolworths Group: found 0 articles
+2026-03-06 20:35:37 [INFO] === Scanning Costco Australia ===
+2026-03-06 20:36:02 [INFO] Costco news: found 10 articles
+2026-03-06 20:36:02 [INFO] === Scanning Property Council of Australia ===
+2026-03-06 20:36:03 [WARNING] Blocked by https://www.propertycouncil.com.au/news (HTTP 403)
+2026-03-06 20:36:05 [WARNING] Blocked by https://www.propertycouncil.com.au/news-and-media (HTTP 403)
+2026-03-06 20:36:05 [INFO] Property Council: found 0 articles
+2026-03-06 20:36:05 [INFO] === Scanning Commercial Real Estate ===

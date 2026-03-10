@@ -1,31 +1,24 @@
 """
-Development Scanner - Cron / Daily Version
-============================================
-Lightweight version of development_scanner.py designed to run daily.
-Compares against previous results and only outputs NEW findings.
+Development Scanner - Cron / Scheduled Run
+==========================================
+Wrapper around development_scanner.py for daily/regular runs.
+It executes a full scan and reports only NEW rows inserted into the DB.
 
 Exit codes:
   0 = nothing new found
-  1 = new opportunities found (suitable for notification trigger)
-
-Usage:
-  python development_scanner_cron.py
-  python development_scanner_cron.py --notify   (print notification-friendly output)
+  1 = new developments found
+  2 = error during scan
 """
 
 import json
 import os
 import sys
+import sqlite3
 import logging
 from datetime import datetime
 
-# Import the main scanner
-from development_scanner import (
-    DevelopmentScanner, OUTPUT_JSON, OUTPUT_DIR, OUTPUT_CSV,
-    log as scanner_log,
-)
+from development_scanner import DevelopmentScanner, DB_PATH, OUTPUT_DIR, init_db, log as scanner_log
 
-# Output paths for cron
 CRON_NEW_JSON = os.path.join(OUTPUT_DIR, "development_new_findings.json")
 CRON_LOG = os.path.join(OUTPUT_DIR, "development_scanner_cron.log")
 
@@ -37,122 +30,144 @@ logging.basicConfig(
 log = logging.getLogger("dev_scanner_cron")
 
 
-def load_previous_ids():
-    """Load IDs from the previous scan results."""
-    if not os.path.exists(OUTPUT_JSON):
-        return set()
+def get_db_totals():
+    """Return (total_developments, total_opportunities)."""
     try:
-        with open(OUTPUT_JSON, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        return {d["id"] for d in data.get("developments", [])}
-    except (json.JSONDecodeError, KeyError, TypeError) as e:
-        log.warning("Could not load previous results: %s", e)
-        return set()
+        conn = sqlite3.connect(DB_PATH)
+        cur = conn.cursor()
+        cur.execute("SELECT COUNT(*) FROM developments")
+        total = cur.fetchone()[0]
+        cur.execute("SELECT COUNT(*) FROM developments WHERE is_opportunity = 1")
+        opps = cur.fetchone()[0]
+        conn.close()
+        return total, opps
+    except Exception:
+        return 0, 0
+
+
+def format_location(dev):
+    parts = []
+    if dev.get("location_suburb"):
+        parts.append(dev["location_suburb"])
+    if dev.get("location_state"):
+        parts.append(dev["location_state"])
+    return ", ".join(parts)
 
 
 def main():
     notify_mode = "--notify" in sys.argv
+    quiet_mode = "--quiet" in sys.argv
 
-    log.info("Development Scanner (cron) starting...")
-    log.info("Timestamp: %s", datetime.now().isoformat())
+    if quiet_mode:
+        logging.getLogger().setLevel(logging.WARNING)
+        scanner_log.setLevel(logging.WARNING)
 
-    # Load previous IDs
-    previous_ids = load_previous_ids()
-    log.info("Previous scan had %d developments", len(previous_ids))
+    init_db()
+    before_total, before_opps = get_db_totals()
+    log.info("Development Scanner (cron) start: %s", datetime.now().isoformat())
+    log.info("DB before run: total=%d opportunities=%d", before_total, before_opps)
 
-    # Run full scan
-    scanner = DevelopmentScanner()
-    scanner.run_all_scans()
+    try:
+        scanner = DevelopmentScanner()
+        scanner.run_all_scans()
 
-    # Find new developments
-    new_devs = [d for d in scanner.developments if d["id"] not in previous_ids]
-    new_opps = [d for d in new_devs if d["is_opportunity"]]
+        save_stats = scanner.save_to_db()
+        scanner.save_to_files()
 
-    log.info("Current scan: %d total, %d new, %d new opportunities",
-             len(scanner.developments), len(new_devs), len(new_opps))
+        new_devs = [d for d in scanner.developments if d.get("_db_action") == "inserted"]
+        if not new_devs:
+            # Fallback in case DB tracking field is not present
+            new_devs = [d for d in scanner.developments if d.get("_is_new_to_db", False)]
+        new_opps = [d for d in new_devs if d.get("is_opportunity")]
 
-    # Save full results (overwrite previous)
-    scanner.save_results()
+        after_total, after_opps = get_db_totals()
 
-    # Save new-only findings
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    with open(CRON_NEW_JSON, "w", encoding="utf-8") as f:
-        json.dump({
-            "scan_date": datetime.now().isoformat(),
-            "previous_count": len(previous_ids),
-            "current_count": len(scanner.developments),
-            "new_count": len(new_devs),
-            "new_opportunities_count": len(new_opps),
-            "new_developments": new_devs,
-        }, f, indent=2, ensure_ascii=False)
+        os.makedirs(OUTPUT_DIR, exist_ok=True)
+        clean_new = [{k: v for k, v in d.items() if not k.startswith("_")} for d in new_devs]
+        clean_new.sort(key=lambda x: x.get("relevance_score", 0), reverse=True)
 
-    # Append to cron log
-    with open(CRON_LOG, "a", encoding="utf-8") as f:
-        f.write("%s | total=%d | new=%d | new_opps=%d\n" % (
-            datetime.now().isoformat(), len(scanner.developments),
-            len(new_devs), len(new_opps)))
+        with open(CRON_NEW_JSON, "w", encoding="utf-8") as f:
+            json.dump(
+                {
+                    "scan_date": datetime.now().isoformat(),
+                    "db_before_total": before_total,
+                    "db_after_total": after_total,
+                    "db_before_opportunities": before_opps,
+                    "db_after_opportunities": after_opps,
+                    "scanner_total_in_run": len(scanner.developments),
+                    "db_inserted": save_stats.get("inserted", 0),
+                    "db_updated": save_stats.get("updated", 0),
+                    "db_errors": save_stats.get("errors", 0),
+                    "new_count": len(clean_new),
+                    "new_opportunities_count": len(new_opps),
+                    "new_developments": clean_new,
+                },
+                f,
+                indent=2,
+                ensure_ascii=False,
+            )
 
-    # Output
-    if new_devs:
-        if notify_mode:
-            # Notification-friendly output
-            print("PHARMACY FINDER - New Retail Developments Detected")
-            print("")
-            print("%d new development(s) found, %d are greenfield opportunities:" % (
-                len(new_devs), len(new_opps)))
-            print("")
-            for d in sorted(new_devs, key=lambda x: -x["priority_score"])[:10]:
-                flag = " [OPPORTUNITY]" if d["is_opportunity"] else ""
-                print("  * %s (%s)%s" % (d["name"][:60], d["type"], flag))
-                if d["address"]:
-                    print("    Location: %s" % d["address"][:60])
-                if d["nearest_pharmacy_km"] is not None:
-                    print("    Nearest pharmacy: %.1f km" % d["nearest_pharmacy_km"])
-            if len(new_devs) > 10:
+        with open(CRON_LOG, "a", encoding="utf-8") as f:
+            f.write(
+                "%s | run_total=%d | db_inserted=%d | db_updated=%d | new_opps=%d | db_errors=%d\n"
+                % (
+                    datetime.now().isoformat(),
+                    len(scanner.developments),
+                    save_stats.get("inserted", 0),
+                    save_stats.get("updated", 0),
+                    len(new_opps),
+                    save_stats.get("errors", 0),
+                )
+            )
+
+        if clean_new:
+            if notify_mode:
+                print("PHARMACY FINDER - New Retail Developments")
                 print("")
-                print("  ... and %d more. See full report." % (len(new_devs) - 10))
-        else:
-            print("")
-            print("=" * 60)
-            print("  CRON SCAN COMPLETE - %s" % datetime.now().strftime("%Y-%m-%d %H:%M"))
-            print("=" * 60)
-            print("")
-            print("  Previous developments: %d" % len(previous_ids))
-            print("  Current developments:  %d" % len(scanner.developments))
-            print("  NEW developments:      %d" % len(new_devs))
-            print("  NEW opportunities:     %d" % len(new_opps))
-            print("")
+                print("%d new development(s), %d opportunities:" % (len(clean_new), len(new_opps)))
+                print("")
+                for d in clean_new[:10]:
+                    score = d.get("relevance_score", 0)
+                    suffix = " [OPPORTUNITY]" if d.get("is_opportunity") else ""
+                    print("- [%.0f] %s%s" % (score, d["name"][:80], suffix))
+                    loc = format_location(d)
+                    if loc:
+                        print("  Location: %s" % loc)
+                    if d.get("nearest_pharmacy_km") is not None:
+                        print("  Nearest pharmacy: %.1f km" % d["nearest_pharmacy_km"])
+                if len(clean_new) > 10:
+                    print("")
+                    print("... and %d more (%s)" % (len(clean_new) - 10, CRON_NEW_JSON))
+            elif not quiet_mode:
+                print("")
+                print("=" * 60)
+                print("  CRON SCAN COMPLETE - %s" % datetime.now().strftime("%Y-%m-%d %H:%M"))
+                print("=" * 60)
+                print("  DB before:          %d developments (%d opportunities)" % (before_total, before_opps))
+                print("  Scanned this run:   %d" % len(scanner.developments))
+                print("  DB inserted new:    %d" % save_stats.get("inserted", 0))
+                print("  DB updated:         %d" % save_stats.get("updated", 0))
+                print("  NEW opportunities:  %d" % len(new_opps))
+                print("  DB after:           %d developments (%d opportunities)" % (after_total, after_opps))
+                print("  New findings JSON:  %s" % CRON_NEW_JSON)
+                print("=" * 60)
+                print("")
+            return 1
 
-            if new_opps:
-                print("  New Greenfield Opportunities:")
-                for i, d in enumerate(new_opps[:10], 1):
-                    print("    %d. [Score %d] %s" % (
-                        i, d["priority_score"], d["name"][:60]))
-                    if d["nearest_pharmacy_km"] is not None:
-                        print("       %.1f km from nearest pharmacy" % d["nearest_pharmacy_km"])
-            elif new_devs:
-                print("  New Developments (no greenfield opportunities):")
-                for i, d in enumerate(new_devs[:5], 1):
-                    print("    %d. %s (%s)" % (i, d["name"][:60], d["type"]))
-
-            print("")
-            print("  Full results: %s" % OUTPUT_JSON)
-            print("  New findings: %s" % CRON_NEW_JSON)
-            print("=" * 60)
-
-        # Exit 1 = new findings
-        return 1
-    else:
         if notify_mode:
             print("No new retail developments found.")
-        else:
+        elif not quiet_mode:
             print("")
-            print("Cron scan complete - no new developments found.")
-            print("Total tracked: %d" % len(scanner.developments))
+            print("Cron scan complete - no new developments.")
+            print("Total in DB: %d developments, %d opportunities" % (after_total, after_opps))
             print("")
-
-        # Exit 0 = nothing new
         return 0
+
+    except Exception as exc:
+        log.error("Scan failed: %s", exc, exc_info=True)
+        if notify_mode:
+            print("Development scanner error: %s" % str(exc))
+        return 2
 
 
 if __name__ == "__main__":

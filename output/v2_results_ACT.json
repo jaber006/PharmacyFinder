@@ -1,0 +1,1764 @@
+{
+  "generated": "2026-03-11T00:38:11.793165",
+  "state": "ACT",
+  "total_candidates": 38,
+  "total_passing": 15,
+  "results": [
+    {
+      "id": "supermarket_26989",
+      "name": "Near IGA",
+      "address": "NT, Australia (OSM:173081274)",
+      "latitude": -23.7100754,
+      "longitude": 133.8600427,
+      "state": "ACT",
+      "source_type": "supermarket",
+      "passed_any": true,
+      "primary_rule": "Item 130",
+      "commercial_score": 0.471,
+      "best_confidence": 0.95,
+      "rules": [
+        {
+          "item": "Item 130",
+          "passed": true,
+          "reasons": [
+            "PASS (a): Nearest pharmacy United Chemists Alice Springs is 2.353 km (threshold 1.5 km, margin +853m)",
+            "PASS (b)(i): Supermarket IGA (1003 sqm) within 0.000 km AND GP Alice Springs Community Health within 0.234 km"
+          ],
+          "evidence_needed": [
+            "Verify public access door midpoints for precise measurement"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km": 2.3527,
+            "nearest_pharmacy_name": "United Chemists Alice Springs",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 1
+          }
+        }
+      ],
+      "all_rules": [
+        {
+          "item": "Item 130",
+          "passed": true,
+          "reasons": [
+            "PASS (a): Nearest pharmacy United Chemists Alice Springs is 2.353 km (threshold 1.5 km, margin +853m)",
+            "PASS (b)(i): Supermarket IGA (1003 sqm) within 0.000 km AND GP Alice Springs Community Health within 0.234 km"
+          ],
+          "evidence_needed": [
+            "Verify public access door midpoints for precise measurement"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km": 2.3527,
+            "nearest_pharmacy_name": "United Chemists Alice Springs",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 1
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": false,
+          "reasons": [
+            "FAIL: Nearest pharmacy United Chemists Alice Springs is only 2.35 km geodesic (~3.3 km by road, need \u2265 10.0 km)"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 2.3527,
+            "nearest_pharmacy_name": "United Chemists Alice Springs",
+            "estimated_route_km": 3.29
+          }
+        },
+        {
+          "item": "Item 132",
+          "passed": false,
+          "reasons": [
+            "PASS (a)(ii): Nearest pharmacy United Chemists Alice Springs = 2353m (margin +2153m)",
+            "FAIL (a)(iii): Other pharmacy Alice Springs Pharmacy estimated 3.4km by road (geodesic 2.44km, need \u2265 10.0km route from ALL other pharmacies)"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 2.3527,
+            "nearest_pharmacy_m": 2352.7,
+            "nearest_pharmacy_name": "United Chemists Alice Springs",
+            "other_pharmacy_246_est_route_km": 3.42
+          }
+        },
+        {
+          "item": "Item 133",
+          "passed": false,
+          "reasons": [
+            "FAIL: No shopping centre within 300m \u2014 not a shopping centre site"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 135",
+          "passed": false,
+          "reasons": [
+            "FAIL: No hospital within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 136",
+          "passed": false,
+          "reasons": [
+            "FAIL: No medical centre within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        }
+      ]
+    },
+    {
+      "id": "medical_centre_121",
+      "name": "Woden Medical Centre",
+      "address": "16 Bowes Street, Woden ACT 2606",
+      "latitude": -35.3430433,
+      "longitude": 149.0860281,
+      "state": "ACT",
+      "source_type": "medical_centre",
+      "passed_any": true,
+      "primary_rule": "Item 136",
+      "commercial_score": 0.468,
+      "best_confidence": 0.65,
+      "rules": [
+        {
+          "item": "Item 136",
+          "passed": true,
+          "reasons": [
+            "PASS: No existing pharmacy in Woden Medical Centre",
+            "PASS (c): Nearest pharmacy = 333m (margin +33m)",
+            "PASS (d): Woden Medical Centre has ~8.0 FTE prescribers (10 GPs)",
+            "PASS (e): Woden Medical Centre operates 70 hrs/week (\u2265 70.0)"
+          ],
+          "evidence_needed": [
+            "Verify public access door midpoints for 300m measurement",
+            "Verify prescriber roster and FTE calculation",
+            "Verify operating hours from centre management",
+            "Confirm \u2265 7 of the 8 FTE are medical practitioners"
+          ],
+          "confidence": 0.65,
+          "distances": {
+            "medical_centre_name": "Woden Medical Centre",
+            "medical_centre_distance_m": 0.0,
+            "mc_num_gps": 10,
+            "mc_total_fte": 8.0,
+            "mc_hours_per_week": 70.0,
+            "nearest_pharmacy_m": 333.0,
+            "nearest_pharmacy_name": "Chemist Warehouse"
+          }
+        }
+      ],
+      "all_rules": [
+        {
+          "item": "Item 130",
+          "passed": false,
+          "reasons": [
+            "FAIL: Nearest pharmacy Chemist Warehouse is 0.333 km away (need >= 1.5 km). Short by 1167m."
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 0.3334,
+            "nearest_pharmacy_name": "Chemist Warehouse"
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": false,
+          "reasons": [
+            "FAIL: Nearest pharmacy Chemist Warehouse is only 0.33 km geodesic (~0.5 km by road, need \u2265 10.0 km)"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 0.3334,
+            "nearest_pharmacy_name": "Chemist Warehouse",
+            "estimated_route_km": 0.47
+          }
+        },
+        {
+          "item": "Item 132",
+          "passed": false,
+          "reasons": [
+            "PASS (a)(ii): Nearest pharmacy Chemist Warehouse = 333m (margin +133m)",
+            "FAIL (a)(iii): Other pharmacy Priceline Pharmacy Woden estimated 0.5km by road (geodesic 0.38km, need \u2265 10.0km route from ALL other pharmacies)"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 0.3334,
+            "nearest_pharmacy_m": 333.4,
+            "nearest_pharmacy_name": "Chemist Warehouse",
+            "other_pharmacy_179_est_route_km": 0.53
+          }
+        },
+        {
+          "item": "Item 133",
+          "passed": false,
+          "reasons": [
+            "FAIL: No shopping centre within 300m \u2014 not a shopping centre site"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 135",
+          "passed": false,
+          "reasons": [
+            "FAIL: No hospital within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 136",
+          "passed": true,
+          "reasons": [
+            "PASS: No existing pharmacy in Woden Medical Centre",
+            "PASS (c): Nearest pharmacy = 333m (margin +33m)",
+            "PASS (d): Woden Medical Centre has ~8.0 FTE prescribers (10 GPs)",
+            "PASS (e): Woden Medical Centre operates 70 hrs/week (\u2265 70.0)"
+          ],
+          "evidence_needed": [
+            "Verify public access door midpoints for 300m measurement",
+            "Verify prescriber roster and FTE calculation",
+            "Verify operating hours from centre management",
+            "Confirm \u2265 7 of the 8 FTE are medical practitioners"
+          ],
+          "confidence": 0.65,
+          "distances": {
+            "medical_centre_name": "Woden Medical Centre",
+            "medical_centre_distance_m": 0.0,
+            "mc_num_gps": 10,
+            "mc_total_fte": 8.0,
+            "mc_hours_per_week": 70.0,
+            "nearest_pharmacy_m": 333.0,
+            "nearest_pharmacy_name": "Chemist Warehouse"
+          }
+        }
+      ]
+    },
+    {
+      "id": "supermarket_26987",
+      "name": "Near Unknown Supermarket",
+      "address": "NT, Australia",
+      "latitude": -23.9432155,
+      "longitude": 132.7754618,
+      "state": "ACT",
+      "source_type": "supermarket",
+      "passed_any": true,
+      "primary_rule": "Item 131",
+      "commercial_score": 0.463,
+      "best_confidence": 0.95,
+      "rules": [
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy United Chemists Northside Pharmacy NT is 115.44 km geodesic (~161.6 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 115.4354,
+            "nearest_pharmacy_name": "United Chemists Northside Pharmacy NT",
+            "estimated_route_km": 161.61
+          }
+        }
+      ],
+      "all_rules": [
+        {
+          "item": "Item 130",
+          "passed": false,
+          "reasons": [
+            "PASS (a): Nearest pharmacy United Chemists Northside Pharmacy NT is 115.435 km (threshold 1.5 km, margin +113935m)",
+            "FAIL (b): Nearest supermarket GLA (821 sqm) below 1000 sqm"
+          ],
+          "evidence_needed": [
+            "Verify public access door midpoints for precise measurement",
+            "Verify supermarket GLA from council/planning docs"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 115.4354,
+            "nearest_pharmacy_name": "United Chemists Northside Pharmacy NT",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 1
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy United Chemists Northside Pharmacy NT is 115.44 km geodesic (~161.6 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 115.4354,
+            "nearest_pharmacy_name": "United Chemists Northside Pharmacy NT",
+            "estimated_route_km": 161.61
+          }
+        },
+        {
+          "item": "Item 132",
+          "passed": false,
+          "reasons": [
+            "PASS (a)(ii): Nearest pharmacy United Chemists Northside Pharmacy NT = 115435m (margin +115235m)",
+            "PASS (a)(iii): No other pharmacies within 8km geodesic",
+            "FAIL (b)(i): Only 1.0 FTE GPs within 5.0km (need \u2265 4.0 FTE)"
+          ],
+          "evidence_needed": [
+            "Verify GP FTE counts from Medicare/AHPRA data"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 115.4354,
+            "nearest_pharmacy_m": 115435.4,
+            "nearest_pharmacy_name": "United Chemists Northside Pharmacy NT",
+            "gps_in_town": 1,
+            "total_fte_in_town": 1.0
+          }
+        },
+        {
+          "item": "Item 133",
+          "passed": false,
+          "reasons": [
+            "FAIL: No shopping centre within 300m \u2014 not a shopping centre site"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 135",
+          "passed": false,
+          "reasons": [
+            "FAIL: No hospital within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 136",
+          "passed": false,
+          "reasons": [
+            "FAIL: No medical centre within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        }
+      ]
+    },
+    {
+      "id": "supermarket_26990",
+      "name": "Near Yuendumu Store",
+      "address": "NT, Australia (OSM:188552157)",
+      "latitude": -22.2534447,
+      "longitude": 131.7949438,
+      "state": "ACT",
+      "source_type": "supermarket",
+      "passed_any": true,
+      "primary_rule": "Item 130",
+      "commercial_score": 0.463,
+      "best_confidence": 0.95,
+      "rules": [
+        {
+          "item": "Item 130",
+          "passed": true,
+          "reasons": [
+            "PASS (a): No pharmacies found \u2014 very remote area",
+            "PASS (b)(i): Supermarket Yuendumu Store (2137 sqm) within 0.000 km AND GP Yuendumu Health Centre within 0.282 km"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist in wider area"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km": 999,
+            "nearest_pharmacy_name": "None",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 1
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: No pharmacies in database (remote area)"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist"
+          ],
+          "confidence": 0.5,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 999,
+            "nearest_pharmacy_name": "None"
+          }
+        }
+      ],
+      "all_rules": [
+        {
+          "item": "Item 130",
+          "passed": true,
+          "reasons": [
+            "PASS (a): No pharmacies found \u2014 very remote area",
+            "PASS (b)(i): Supermarket Yuendumu Store (2137 sqm) within 0.000 km AND GP Yuendumu Health Centre within 0.282 km"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist in wider area"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km": 999,
+            "nearest_pharmacy_name": "None",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 1
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: No pharmacies in database (remote area)"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist"
+          ],
+          "confidence": 0.5,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 999,
+            "nearest_pharmacy_name": "None"
+          }
+        },
+        {
+          "item": "Item 132",
+          "passed": false,
+          "reasons": [
+            "FAIL: No pharmacies found \u2014 Item 132 is 'additional pharmacy in town'"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 999,
+            "nearest_pharmacy_m": 999000,
+            "nearest_pharmacy_name": "None"
+          }
+        },
+        {
+          "item": "Item 133",
+          "passed": false,
+          "reasons": [
+            "FAIL: No shopping centre within 300m \u2014 not a shopping centre site"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 135",
+          "passed": false,
+          "reasons": [
+            "FAIL: No hospital within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 136",
+          "passed": false,
+          "reasons": [
+            "FAIL: No medical centre within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        }
+      ]
+    },
+    {
+      "id": "supermarket_26993",
+      "name": "Near Unknown Supermarket",
+      "address": "NT, Australia (OSM:189465618)",
+      "latitude": -24.6742398,
+      "longitude": 134.0760275,
+      "state": "ACT",
+      "source_type": "supermarket",
+      "passed_any": true,
+      "primary_rule": "Item 131",
+      "commercial_score": 0.463,
+      "best_confidence": 0.95,
+      "rules": [
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy Territory Pharmacy Alice Springs is 98.20 km geodesic (~137.5 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 98.1987,
+            "nearest_pharmacy_name": "Territory Pharmacy Alice Springs",
+            "estimated_route_km": 137.48
+          }
+        }
+      ],
+      "all_rules": [
+        {
+          "item": "Item 130",
+          "passed": false,
+          "reasons": [
+            "PASS (a): Nearest pharmacy Territory Pharmacy Alice Springs is 98.199 km (threshold 1.5 km, margin +96699m)",
+            "FAIL (b): Nearest supermarket GLA (539 sqm) below 1000 sqm"
+          ],
+          "evidence_needed": [
+            "Verify public access door midpoints for precise measurement",
+            "Verify supermarket GLA from council/planning docs"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 98.1987,
+            "nearest_pharmacy_name": "Territory Pharmacy Alice Springs",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 1
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy Territory Pharmacy Alice Springs is 98.20 km geodesic (~137.5 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 98.1987,
+            "nearest_pharmacy_name": "Territory Pharmacy Alice Springs",
+            "estimated_route_km": 137.48
+          }
+        },
+        {
+          "item": "Item 132",
+          "passed": false,
+          "reasons": [
+            "PASS (a)(ii): Nearest pharmacy Territory Pharmacy Alice Springs = 98199m (margin +97999m)",
+            "PASS (a)(iii): No other pharmacies within 8km geodesic",
+            "FAIL (b)(i): Only 1.0 FTE GPs within 5.0km (need \u2265 4.0 FTE)"
+          ],
+          "evidence_needed": [
+            "Verify GP FTE counts from Medicare/AHPRA data"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 98.1987,
+            "nearest_pharmacy_m": 98198.7,
+            "nearest_pharmacy_name": "Territory Pharmacy Alice Springs",
+            "gps_in_town": 1,
+            "total_fte_in_town": 1.0
+          }
+        },
+        {
+          "item": "Item 133",
+          "passed": false,
+          "reasons": [
+            "FAIL: No shopping centre within 300m \u2014 not a shopping centre site"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 135",
+          "passed": false,
+          "reasons": [
+            "FAIL: No hospital within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 136",
+          "passed": false,
+          "reasons": [
+            "FAIL: No medical centre within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        }
+      ]
+    },
+    {
+      "id": "supermarket_26994",
+      "name": "Near Alpurrurulam Store",
+      "address": "NT, Australia (OSM:193262432)",
+      "latitude": -20.9857471,
+      "longitude": 137.8490485,
+      "state": "ACT",
+      "source_type": "supermarket",
+      "passed_any": true,
+      "primary_rule": "Item 131",
+      "commercial_score": 0.463,
+      "best_confidence": 0.95,
+      "rules": [
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy Mount Isa Pharmacy First is 173.51 km geodesic (~242.9 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 173.5108,
+            "nearest_pharmacy_name": "Mount Isa Pharmacy First",
+            "estimated_route_km": 242.92
+          }
+        }
+      ],
+      "all_rules": [
+        {
+          "item": "Item 130",
+          "passed": false,
+          "reasons": [
+            "PASS (a): Nearest pharmacy Mount Isa Pharmacy First is 173.511 km (threshold 1.5 km, margin +172011m)",
+            "FAIL (b): Nearest supermarket GLA (972 sqm) below 1000 sqm"
+          ],
+          "evidence_needed": [
+            "Verify public access door midpoints for precise measurement",
+            "Verify supermarket GLA from council/planning docs"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 173.5108,
+            "nearest_pharmacy_name": "Mount Isa Pharmacy First",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 1
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy Mount Isa Pharmacy First is 173.51 km geodesic (~242.9 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 173.5108,
+            "nearest_pharmacy_name": "Mount Isa Pharmacy First",
+            "estimated_route_km": 242.92
+          }
+        },
+        {
+          "item": "Item 132",
+          "passed": false,
+          "reasons": [
+            "PASS (a)(ii): Nearest pharmacy Mount Isa Pharmacy First = 173511m (margin +173311m)",
+            "PASS (a)(iii): No other pharmacies within 8km geodesic",
+            "FAIL (b)(i): Only 1.0 FTE GPs within 5.0km (need \u2265 4.0 FTE)"
+          ],
+          "evidence_needed": [
+            "Verify GP FTE counts from Medicare/AHPRA data"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 173.5108,
+            "nearest_pharmacy_m": 173510.8,
+            "nearest_pharmacy_name": "Mount Isa Pharmacy First",
+            "gps_in_town": 1,
+            "total_fte_in_town": 1.0
+          }
+        },
+        {
+          "item": "Item 133",
+          "passed": false,
+          "reasons": [
+            "FAIL: No shopping centre within 300m \u2014 not a shopping centre site"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 135",
+          "passed": false,
+          "reasons": [
+            "FAIL: No hospital within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 136",
+          "passed": false,
+          "reasons": [
+            "FAIL: No medical centre within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        }
+      ]
+    },
+    {
+      "id": "supermarket_26995",
+      "name": "Near Atitjere Store",
+      "address": "NT, Australia (OSM:193303723)",
+      "latitude": -22.983983,
+      "longitude": 134.9355365,
+      "state": "ACT",
+      "source_type": "supermarket",
+      "passed_any": true,
+      "primary_rule": "Item 131",
+      "commercial_score": 0.463,
+      "best_confidence": 0.95,
+      "rules": [
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy Priceline Pharmacy Alice Springs is 133.43 km geodesic (~186.8 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 133.4257,
+            "nearest_pharmacy_name": "Priceline Pharmacy Alice Springs",
+            "estimated_route_km": 186.8
+          }
+        }
+      ],
+      "all_rules": [
+        {
+          "item": "Item 130",
+          "passed": false,
+          "reasons": [
+            "PASS (a): Nearest pharmacy Priceline Pharmacy Alice Springs is 133.426 km (threshold 1.5 km, margin +131926m)",
+            "FAIL (b): Nearest supermarket GLA (440 sqm) below 1000 sqm"
+          ],
+          "evidence_needed": [
+            "Verify public access door midpoints for precise measurement",
+            "Verify supermarket GLA from council/planning docs"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 133.4257,
+            "nearest_pharmacy_name": "Priceline Pharmacy Alice Springs",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 1
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy Priceline Pharmacy Alice Springs is 133.43 km geodesic (~186.8 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 133.4257,
+            "nearest_pharmacy_name": "Priceline Pharmacy Alice Springs",
+            "estimated_route_km": 186.8
+          }
+        },
+        {
+          "item": "Item 132",
+          "passed": false,
+          "reasons": [
+            "PASS (a)(ii): Nearest pharmacy Priceline Pharmacy Alice Springs = 133426m (margin +133226m)",
+            "PASS (a)(iii): No other pharmacies within 8km geodesic",
+            "FAIL (b)(i): Only 1.0 FTE GPs within 5.0km (need \u2265 4.0 FTE)"
+          ],
+          "evidence_needed": [
+            "Verify GP FTE counts from Medicare/AHPRA data"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 133.4257,
+            "nearest_pharmacy_m": 133425.7,
+            "nearest_pharmacy_name": "Priceline Pharmacy Alice Springs",
+            "gps_in_town": 1,
+            "total_fte_in_town": 1.0
+          }
+        },
+        {
+          "item": "Item 133",
+          "passed": false,
+          "reasons": [
+            "FAIL: No shopping centre within 300m \u2014 not a shopping centre site"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 135",
+          "passed": false,
+          "reasons": [
+            "FAIL: No hospital within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 136",
+          "passed": false,
+          "reasons": [
+            "FAIL: No medical centre within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        }
+      ]
+    },
+    {
+      "id": "supermarket_27003",
+      "name": "Near Unknown Supermarket",
+      "address": "NT, Australia (OSM:980814861)",
+      "latitude": -24.1251234,
+      "longitude": 133.0867381,
+      "state": "ACT",
+      "source_type": "supermarket",
+      "passed_any": true,
+      "primary_rule": "Item 131",
+      "commercial_score": 0.463,
+      "best_confidence": 0.95,
+      "rules": [
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy Territory Pharmacy Alice Springs is 90.81 km geodesic (~127.1 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 90.8072,
+            "nearest_pharmacy_name": "Territory Pharmacy Alice Springs",
+            "estimated_route_km": 127.13
+          }
+        }
+      ],
+      "all_rules": [
+        {
+          "item": "Item 130",
+          "passed": false,
+          "reasons": [
+            "PASS (a): Nearest pharmacy Territory Pharmacy Alice Springs is 90.807 km (threshold 1.5 km, margin +89307m)",
+            "FAIL (b): Nearest supermarket GLA (779 sqm) below 1000 sqm"
+          ],
+          "evidence_needed": [
+            "Verify public access door midpoints for precise measurement",
+            "Verify supermarket GLA from council/planning docs"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 90.8072,
+            "nearest_pharmacy_name": "Territory Pharmacy Alice Springs",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 1
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy Territory Pharmacy Alice Springs is 90.81 km geodesic (~127.1 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 90.8072,
+            "nearest_pharmacy_name": "Territory Pharmacy Alice Springs",
+            "estimated_route_km": 127.13
+          }
+        },
+        {
+          "item": "Item 132",
+          "passed": false,
+          "reasons": [
+            "PASS (a)(ii): Nearest pharmacy Territory Pharmacy Alice Springs = 90807m (margin +90607m)",
+            "PASS (a)(iii): No other pharmacies within 8km geodesic",
+            "FAIL (b)(i): Only 1.0 FTE GPs within 5.0km (need \u2265 4.0 FTE)"
+          ],
+          "evidence_needed": [
+            "Verify GP FTE counts from Medicare/AHPRA data"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 90.8072,
+            "nearest_pharmacy_m": 90807.2,
+            "nearest_pharmacy_name": "Territory Pharmacy Alice Springs",
+            "gps_in_town": 1,
+            "total_fte_in_town": 1.0
+          }
+        },
+        {
+          "item": "Item 133",
+          "passed": false,
+          "reasons": [
+            "FAIL: No shopping centre within 300m \u2014 not a shopping centre site"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 135",
+          "passed": false,
+          "reasons": [
+            "FAIL: No hospital within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 136",
+          "passed": false,
+          "reasons": [
+            "FAIL: No medical centre within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        }
+      ]
+    },
+    {
+      "id": "supermarket_27007",
+      "name": "Near Weterngerr Store",
+      "address": "NT, Australia (OSM:982452475)",
+      "latitude": -20.4618645,
+      "longitude": 135.251071,
+      "state": "ACT",
+      "source_type": "supermarket",
+      "passed_any": true,
+      "primary_rule": "Item 131",
+      "commercial_score": 0.463,
+      "best_confidence": 0.95,
+      "rules": [
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy United Chemists Tennant Creek is 142.61 km geodesic (~199.7 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 142.6141,
+            "nearest_pharmacy_name": "United Chemists Tennant Creek",
+            "estimated_route_km": 199.66
+          }
+        }
+      ],
+      "all_rules": [
+        {
+          "item": "Item 130",
+          "passed": false,
+          "reasons": [
+            "PASS (a): Nearest pharmacy United Chemists Tennant Creek is 142.614 km (threshold 1.5 km, margin +141114m)",
+            "FAIL (b): Nearest supermarket GLA (235 sqm) below 1000 sqm"
+          ],
+          "evidence_needed": [
+            "Verify public access door midpoints for precise measurement",
+            "Verify supermarket GLA from council/planning docs"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 142.6141,
+            "nearest_pharmacy_name": "United Chemists Tennant Creek",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 1
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy United Chemists Tennant Creek is 142.61 km geodesic (~199.7 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 142.6141,
+            "nearest_pharmacy_name": "United Chemists Tennant Creek",
+            "estimated_route_km": 199.66
+          }
+        },
+        {
+          "item": "Item 132",
+          "passed": false,
+          "reasons": [
+            "PASS (a)(ii): Nearest pharmacy United Chemists Tennant Creek = 142614m (margin +142414m)",
+            "PASS (a)(iii): No other pharmacies within 8km geodesic",
+            "FAIL (b)(i): Only 1.0 FTE GPs within 5.0km (need \u2265 4.0 FTE)"
+          ],
+          "evidence_needed": [
+            "Verify GP FTE counts from Medicare/AHPRA data"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 142.6141,
+            "nearest_pharmacy_m": 142614.1,
+            "nearest_pharmacy_name": "United Chemists Tennant Creek",
+            "gps_in_town": 1,
+            "total_fte_in_town": 1.0
+          }
+        },
+        {
+          "item": "Item 133",
+          "passed": false,
+          "reasons": [
+            "FAIL: No shopping centre within 300m \u2014 not a shopping centre site"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 135",
+          "passed": false,
+          "reasons": [
+            "FAIL: No hospital within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 136",
+          "passed": false,
+          "reasons": [
+            "FAIL: No medical centre within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        }
+      ]
+    },
+    {
+      "id": "supermarket_27008",
+      "name": "Near Imanpa General Store",
+      "address": "NT, Australia (OSM:988249277)",
+      "latitude": -25.1289421,
+      "longitude": 132.5714907,
+      "state": "ACT",
+      "source_type": "supermarket",
+      "passed_any": true,
+      "primary_rule": "Item 131",
+      "commercial_score": 0.463,
+      "best_confidence": 0.95,
+      "rules": [
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy Territory Pharmacy Alice Springs is 199.84 km geodesic (~279.8 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 199.844,
+            "nearest_pharmacy_name": "Territory Pharmacy Alice Springs",
+            "estimated_route_km": 279.78
+          }
+        }
+      ],
+      "all_rules": [
+        {
+          "item": "Item 130",
+          "passed": false,
+          "reasons": [
+            "PASS (a): Nearest pharmacy Territory Pharmacy Alice Springs is 199.844 km (threshold 1.5 km, margin +198344m)",
+            "FAIL (b): Nearest supermarket GLA (380 sqm) below 1000 sqm"
+          ],
+          "evidence_needed": [
+            "Verify public access door midpoints for precise measurement",
+            "Verify supermarket GLA from council/planning docs"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 199.844,
+            "nearest_pharmacy_name": "Territory Pharmacy Alice Springs",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 1
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy Territory Pharmacy Alice Springs is 199.84 km geodesic (~279.8 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 199.844,
+            "nearest_pharmacy_name": "Territory Pharmacy Alice Springs",
+            "estimated_route_km": 279.78
+          }
+        },
+        {
+          "item": "Item 132",
+          "passed": false,
+          "reasons": [
+            "PASS (a)(ii): Nearest pharmacy Territory Pharmacy Alice Springs = 199844m (margin +199644m)",
+            "PASS (a)(iii): No other pharmacies within 8km geodesic",
+            "FAIL (b)(i): Only 1.0 FTE GPs within 5.0km (need \u2265 4.0 FTE)"
+          ],
+          "evidence_needed": [
+            "Verify GP FTE counts from Medicare/AHPRA data"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 199.844,
+            "nearest_pharmacy_m": 199844.0,
+            "nearest_pharmacy_name": "Territory Pharmacy Alice Springs",
+            "gps_in_town": 1,
+            "total_fte_in_town": 1.0
+          }
+        },
+        {
+          "item": "Item 133",
+          "passed": false,
+          "reasons": [
+            "FAIL: No shopping centre within 300m \u2014 not a shopping centre site"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 135",
+          "passed": false,
+          "reasons": [
+            "FAIL: No hospital within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 136",
+          "passed": false,
+          "reasons": [
+            "FAIL: No medical centre within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        }
+      ]
+    },
+    {
+      "id": "supermarket_27014",
+      "name": "Near Macdonald Downs Station Store",
+      "address": "NT, Australia (OSM:1413179991)",
+      "latitude": -22.6129274,
+      "longitude": 135.0364343,
+      "state": "ACT",
+      "source_type": "supermarket",
+      "passed_any": true,
+      "primary_rule": "Item 131",
+      "commercial_score": 0.456,
+      "best_confidence": 0.95,
+      "rules": [
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy United Chemists Northside Pharmacy NT is 168.22 km geodesic (~235.5 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 168.2183,
+            "nearest_pharmacy_name": "United Chemists Northside Pharmacy NT",
+            "estimated_route_km": 235.51
+          }
+        }
+      ],
+      "all_rules": [
+        {
+          "item": "Item 130",
+          "passed": false,
+          "reasons": [
+            "PASS (a): Nearest pharmacy United Chemists Northside Pharmacy NT is 168.218 km (threshold 1.5 km, margin +166718m)",
+            "FAIL (b): Nearest supermarket GLA (231 sqm) below 1000 sqm"
+          ],
+          "evidence_needed": [
+            "Verify public access door midpoints for precise measurement",
+            "Verify supermarket GLA from council/planning docs"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 168.2183,
+            "nearest_pharmacy_name": "United Chemists Northside Pharmacy NT",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 0
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: Nearest pharmacy United Chemists Northside Pharmacy NT is 168.22 km geodesic (~235.5 km by road, threshold 10.0 km)"
+          ],
+          "evidence_needed": [
+            "Verify with actual OSRM route for legal-grade distance"
+          ],
+          "confidence": 0.95,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 168.2183,
+            "nearest_pharmacy_name": "United Chemists Northside Pharmacy NT",
+            "estimated_route_km": 235.51
+          }
+        },
+        {
+          "item": "Item 132",
+          "passed": false,
+          "reasons": [
+            "PASS (a)(ii): Nearest pharmacy United Chemists Northside Pharmacy NT = 168218m (margin +168018m)",
+            "PASS (a)(iii): No other pharmacies within 8km geodesic",
+            "FAIL (b)(i): Only 0.0 FTE GPs within 5.0km (need \u2265 4.0 FTE)"
+          ],
+          "evidence_needed": [
+            "Verify GP FTE counts from Medicare/AHPRA data"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 168.2183,
+            "nearest_pharmacy_m": 168218.3,
+            "nearest_pharmacy_name": "United Chemists Northside Pharmacy NT",
+            "gps_in_town": 0,
+            "total_fte_in_town": 0
+          }
+        },
+        {
+          "item": "Item 133",
+          "passed": false,
+          "reasons": [
+            "FAIL: No shopping centre within 300m \u2014 not a shopping centre site"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 135",
+          "passed": false,
+          "reasons": [
+            "FAIL: No hospital within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 136",
+          "passed": false,
+          "reasons": [
+            "FAIL: No medical centre within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        }
+      ]
+    },
+    {
+      "id": "supermarket_26988",
+      "name": "Near Unknown Supermarket",
+      "address": "NT, Australia (OSM:94068948)",
+      "latitude": -22.6496421,
+      "longitude": 130.5521494,
+      "state": "ACT",
+      "source_type": "supermarket",
+      "passed_any": true,
+      "primary_rule": "Item 131",
+      "commercial_score": 0.306,
+      "best_confidence": 0.5,
+      "rules": [
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: No pharmacies in database (remote area)"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist"
+          ],
+          "confidence": 0.5,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 999,
+            "nearest_pharmacy_name": "None"
+          }
+        }
+      ],
+      "all_rules": [
+        {
+          "item": "Item 130",
+          "passed": false,
+          "reasons": [
+            "PASS (a): No pharmacies found \u2014 very remote area",
+            "FAIL (b): Nearest supermarket GLA (586 sqm) below 1000 sqm"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist in wider area",
+            "Verify supermarket GLA from council/planning docs"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 999,
+            "nearest_pharmacy_name": "None",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 1
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: No pharmacies in database (remote area)"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist"
+          ],
+          "confidence": 0.5,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 999,
+            "nearest_pharmacy_name": "None"
+          }
+        },
+        {
+          "item": "Item 132",
+          "passed": false,
+          "reasons": [
+            "FAIL: No pharmacies found \u2014 Item 132 is 'additional pharmacy in town'"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 999,
+            "nearest_pharmacy_m": 999000,
+            "nearest_pharmacy_name": "None"
+          }
+        },
+        {
+          "item": "Item 133",
+          "passed": false,
+          "reasons": [
+            "FAIL: No shopping centre within 300m \u2014 not a shopping centre site"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 135",
+          "passed": false,
+          "reasons": [
+            "FAIL: No hospital within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 136",
+          "passed": false,
+          "reasons": [
+            "FAIL: No medical centre within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        }
+      ]
+    },
+    {
+      "id": "supermarket_26991",
+      "name": "Near Mount Liebig Store",
+      "address": "NT, Australia (OSM:189326470)",
+      "latitude": -23.266382,
+      "longitude": 131.2731588,
+      "state": "ACT",
+      "source_type": "supermarket",
+      "passed_any": true,
+      "primary_rule": "Item 131",
+      "commercial_score": 0.306,
+      "best_confidence": 0.5,
+      "rules": [
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: No pharmacies in database (remote area)"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist"
+          ],
+          "confidence": 0.5,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 999,
+            "nearest_pharmacy_name": "None"
+          }
+        }
+      ],
+      "all_rules": [
+        {
+          "item": "Item 130",
+          "passed": false,
+          "reasons": [
+            "PASS (a): No pharmacies found \u2014 very remote area",
+            "FAIL (b): Nearest supermarket GLA (671 sqm) below 1000 sqm"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist in wider area",
+            "Verify supermarket GLA from council/planning docs"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 999,
+            "nearest_pharmacy_name": "None",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 1
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: No pharmacies in database (remote area)"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist"
+          ],
+          "confidence": 0.5,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 999,
+            "nearest_pharmacy_name": "None"
+          }
+        },
+        {
+          "item": "Item 132",
+          "passed": false,
+          "reasons": [
+            "FAIL: No pharmacies found \u2014 Item 132 is 'additional pharmacy in town'"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 999,
+            "nearest_pharmacy_m": 999000,
+            "nearest_pharmacy_name": "None"
+          }
+        },
+        {
+          "item": "Item 133",
+          "passed": false,
+          "reasons": [
+            "FAIL: No shopping centre within 300m \u2014 not a shopping centre site"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 135",
+          "passed": false,
+          "reasons": [
+            "FAIL: No hospital within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 136",
+          "passed": false,
+          "reasons": [
+            "FAIL: No medical centre within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        }
+      ]
+    },
+    {
+      "id": "supermarket_26992",
+      "name": "Near Unknown Supermarket",
+      "address": "NT, Australia (OSM:189336563)",
+      "latitude": -23.2755664,
+      "longitude": 129.388126,
+      "state": "ACT",
+      "source_type": "supermarket",
+      "passed_any": true,
+      "primary_rule": "Item 131",
+      "commercial_score": 0.306,
+      "best_confidence": 0.5,
+      "rules": [
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: No pharmacies in database (remote area)"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist"
+          ],
+          "confidence": 0.5,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 999,
+            "nearest_pharmacy_name": "None"
+          }
+        }
+      ],
+      "all_rules": [
+        {
+          "item": "Item 130",
+          "passed": false,
+          "reasons": [
+            "PASS (a): No pharmacies found \u2014 very remote area",
+            "FAIL (b): Nearest supermarket GLA (484 sqm) below 1000 sqm"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist in wider area",
+            "Verify supermarket GLA from council/planning docs"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 999,
+            "nearest_pharmacy_name": "None",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 1
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: No pharmacies in database (remote area)"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist"
+          ],
+          "confidence": 0.5,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 999,
+            "nearest_pharmacy_name": "None"
+          }
+        },
+        {
+          "item": "Item 132",
+          "passed": false,
+          "reasons": [
+            "FAIL: No pharmacies found \u2014 Item 132 is 'additional pharmacy in town'"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 999,
+            "nearest_pharmacy_m": 999000,
+            "nearest_pharmacy_name": "None"
+          }
+        },
+        {
+          "item": "Item 133",
+          "passed": false,
+          "reasons": [
+            "FAIL: No shopping centre within 300m \u2014 not a shopping centre site"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 135",
+          "passed": false,
+          "reasons": [
+            "FAIL: No hospital within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 136",
+          "passed": false,
+          "reasons": [
+            "FAIL: No medical centre within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        }
+      ]
+    },
+    {
+      "id": "supermarket_26999",
+      "name": "Near Docker River Community Store",
+      "address": "NT, Australia (OSM:334142012)",
+      "latitude": -24.8736004,
+      "longitude": 129.0834971,
+      "state": "ACT",
+      "source_type": "supermarket",
+      "passed_any": true,
+      "primary_rule": "Item 131",
+      "commercial_score": 0.306,
+      "best_confidence": 0.5,
+      "rules": [
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: No pharmacies in database (remote area)"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist"
+          ],
+          "confidence": 0.5,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 999,
+            "nearest_pharmacy_name": "None"
+          }
+        }
+      ],
+      "all_rules": [
+        {
+          "item": "Item 130",
+          "passed": false,
+          "reasons": [
+            "PASS (a): No pharmacies found \u2014 very remote area",
+            "FAIL (b): Nearest supermarket GLA (884 sqm) below 1000 sqm"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist in wider area",
+            "Verify supermarket GLA from council/planning docs"
+          ],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 999,
+            "nearest_pharmacy_name": "None",
+            "supermarkets_within_500m": 1,
+            "gps_within_500m": 1
+          }
+        },
+        {
+          "item": "Item 131",
+          "passed": true,
+          "reasons": [
+            "PASS: No pharmacies in database (remote area)"
+          ],
+          "evidence_needed": [
+            "Verify no approved pharmacies exist"
+          ],
+          "confidence": 0.5,
+          "distances": {
+            "nearest_pharmacy_km_geodesic": 999,
+            "nearest_pharmacy_name": "None"
+          }
+        },
+        {
+          "item": "Item 132",
+          "passed": false,
+          "reasons": [
+            "FAIL: No pharmacies found \u2014 Item 132 is 'additional pharmacy in town'"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {
+            "nearest_pharmacy_km": 999,
+            "nearest_pharmacy_m": 999000,
+            "nearest_pharmacy_name": "None"
+          }
+        },
+        {
+          "item": "Item 133",
+          "passed": false,
+          "reasons": [
+            "FAIL: No shopping centre within 300m \u2014 not a shopping centre site"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 135",
+          "passed": false,
+          "reasons": [
+            "FAIL: No hospital within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        },
+        {
+          "item": "Item 136",
+          "passed": false,
+          "reasons": [
+            "FAIL: No medical centre within 300m"
+          ],
+          "evidence_needed": [],
+          "confidence": 0.0,
+          "distances": {}
+        }
+      ]
+    }
+  ]
+}

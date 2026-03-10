@@ -10,7 +10,7 @@ import time
 import threading
 
 PORT = 8050
-BUILD_SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'build_dashboard.py')
+BUILD_SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'build_dashboard_v4.py')
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'output')
 DASHBOARD = os.path.join(OUTPUT_DIR, 'dashboard.html')
 
