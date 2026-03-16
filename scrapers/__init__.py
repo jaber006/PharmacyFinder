@@ -1,1 +1,1 @@
-# Scrapers package for collecting data from various sources
+# PharmacyFinder data enrichment scrapers
