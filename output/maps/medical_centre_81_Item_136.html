@@ -1,0 +1,3317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fd38f7ae94a1771c04eac7354ba4021c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position:fixed;bottom:30px;left:30px;z-index:1000;
+         background:white;padding:10px 15px;border:2px solid #333;
+         border-radius:5px;font-size:13px;box-shadow:2px 2px 6px rgba(0,0,0,0.3);">
+        <b>Item 136 Distance Map</b><br>
+        <span style="color:green">● Green</span> — Passes (>10% margin)<br>
+        <span style="color:orange">● Orange</span> — Borderline (<10% margin)<br>
+        <span style="color:red">● Red</span> — Fails (too close)<br>
+        <span style="color:blue">◯ Blue circle</span> — 300m threshold<br>
+        Pharmacies shown: 38 within 5.0km
+    </div>
+    
+    
+    <div style="position:fixed;top:10px;left:50%;transform:translateX(-50%);
+         z-index:1000;background:white;padding:8px 20px;border:2px solid #333;
+         border-radius:5px;font-size:16px;font-weight:bold;
+         box-shadow:2px 2px 6px rgba(0,0,0,0.3);">
+        Gold Coast Medical Centre — Item 136 Distance Analysis
+    </div>
+    
+    
+            <div class="folium-map" id="map_fd38f7ae94a1771c04eac7354ba4021c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fd38f7ae94a1771c04eac7354ba4021c = L.map(
+                "map_fd38f7ae94a1771c04eac7354ba4021c",
+                {
+                    center: [-27.9719229, 153.4151327],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_dffb6967ea021238fd9acfdd0a0d0c78 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_dffb6967ea021238fd9acfdd0a0d0c78.addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var marker_a5c8e619b58432e820d188c3bc93ee73 = L.marker(
+                [-27.9719229, 153.4151327],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_9eb92a4f989463b77e6cedc271869e3e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_83c80511f0df22d6100be77eb5a18551 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c9c538c916efd64d41435c4e4287ce6f = $(`<div id="html_c9c538c916efd64d41435c4e4287ce6f" style="width: 100.0%; height: 100.0%;"><b>Gold Coast Medical Centre</b><br>Rule: Item 136<br>Threshold: 300m</div>`)[0];
+                popup_83c80511f0df22d6100be77eb5a18551.setContent(html_c9c538c916efd64d41435c4e4287ce6f);
+            
+        
+
+        marker_a5c8e619b58432e820d188c3bc93ee73.bindPopup(popup_83c80511f0df22d6100be77eb5a18551)
+        ;
+
+        
+    
+    
+            marker_a5c8e619b58432e820d188c3bc93ee73.bindTooltip(
+                `<div>
+                     Gold Coast Medical Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a5c8e619b58432e820d188c3bc93ee73.setIcon(icon_9eb92a4f989463b77e6cedc271869e3e);
+            
+    
+            var circle_76080b1dabfa5503d526d4293bfd40b1 = L.circle(
+                [-27.9719229, 153.4151327],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": "10", "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.6, "radius": 300, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            circle_76080b1dabfa5503d526d4293bfd40b1.bindTooltip(
+                `<div>
+                     Item 136 threshold: 300m
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_576e7d756703bb14b17e9c2ba1b8ad03 = L.circle(
+                [-27.9719229, 153.4151327],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": "5", "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5000.0, "stroke": true, "weight": 1}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            circle_576e7d756703bb14b17e9c2ba1b8ad03.bindTooltip(
+                `<div>
+                     Search radius: 5.0km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_48210fd1af13f2013709940e33cfe64b = L.marker(
+                [-27.9686831, 153.4155735],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_709ec5ca1fbd293ea7da85112c63d97a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_543caa40b9cb47f7011174fc2a2ca1ca = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1304db03a9b1333e8dab4f70c2e29ef5 = $(`<div id="html_1304db03a9b1333e8dab4f70c2e29ef5" style="width: 100.0%; height: 100.0%;"><b>TerryWhite Chemmart Australia Fair</b><br>Shop G143 Australia Fair Sc, Scarborough Street, SOUTHPORT, QLD, 4215<br>Distance: 362m (0.362km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_543caa40b9cb47f7011174fc2a2ca1ca.setContent(html_1304db03a9b1333e8dab4f70c2e29ef5);
+            
+        
+
+        marker_48210fd1af13f2013709940e33cfe64b.bindPopup(popup_543caa40b9cb47f7011174fc2a2ca1ca)
+        ;
+
+        
+    
+    
+            marker_48210fd1af13f2013709940e33cfe64b.bindTooltip(
+                `<div>
+                     TerryWhite Chemmart Australia Fair (362m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_48210fd1af13f2013709940e33cfe64b.setIcon(icon_709ec5ca1fbd293ea7da85112c63d97a);
+            
+    
+            var poly_line_b76619bcedaae0544de24e65ef50a4be = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9686831, 153.4155735]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_b76619bcedaae0544de24e65ef50a4be.bindTooltip(
+                `<div>
+                     362m to TerryWhite Chemmart Australia Fair
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4ee160ec0427cad721487c170e9484df = L.marker(
+                [-27.970303, 153.4153531],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_9aea65a49f531d56c912ba746b90bbe6 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e362m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_4ee160ec0427cad721487c170e9484df.setIcon(div_icon_9aea65a49f531d56c912ba746b90bbe6);
+            
+    
+            var marker_9024b31f513cceec645f47b50ed2e5b6 = L.marker(
+                [-27.968589, 153.41551],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_023a4273910cc67e9b97186c68a20599 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bb5591efc9b4408921b2263b6859464f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2e61da9e8be140146f5d3c94164fec5e = $(`<div id="html_2e61da9e8be140146f5d3c94164fec5e" style="width: 100.0%; height: 100.0%;"><b>Priceline Pharmacy Australia Fair</b><br>Shop G080/G081, Australia Fair Shopping Centre, 42 Marine Parade, SOUTHPORT, QLD, 4215<br>Distance: 371m (0.371km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_bb5591efc9b4408921b2263b6859464f.setContent(html_2e61da9e8be140146f5d3c94164fec5e);
+            
+        
+
+        marker_9024b31f513cceec645f47b50ed2e5b6.bindPopup(popup_bb5591efc9b4408921b2263b6859464f)
+        ;
+
+        
+    
+    
+            marker_9024b31f513cceec645f47b50ed2e5b6.bindTooltip(
+                `<div>
+                     Priceline Pharmacy Australia Fair (371m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9024b31f513cceec645f47b50ed2e5b6.setIcon(icon_023a4273910cc67e9b97186c68a20599);
+            
+    
+            var poly_line_922592fb6aa2bc6a2cae8ba5d6723ca8 = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.968589, 153.41551]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_922592fb6aa2bc6a2cae8ba5d6723ca8.bindTooltip(
+                `<div>
+                     371m to Priceline Pharmacy Australia Fair
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_51957632db2a2b6f0a4597e6c52b6ceb = L.marker(
+                [-27.970255950000002, 153.41532135],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_aec22f7d43f17ea5def7fe81b010c182 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e371m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_51957632db2a2b6f0a4597e6c52b6ceb.setIcon(div_icon_aec22f7d43f17ea5def7fe81b010c182);
+            
+    
+            var marker_54f5002a90d3cc8fd2a1ffc6b6c7946f = L.marker(
+                [-27.9685119, 153.4146881],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_58a8a988f865c903edc241b3a3f3bc5f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_473e182ba6cd1650109c8f050431bf12 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f77d67a6e1cc3d8dfae267cee9938926 = $(`<div id="html_f77d67a6e1cc3d8dfae267cee9938926" style="width: 100.0%; height: 100.0%;"><b>Chemist Warehouse</b><br>87, Scarborough Street, Southport, QLD, 4215<br>Distance: 381m (0.381km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_473e182ba6cd1650109c8f050431bf12.setContent(html_f77d67a6e1cc3d8dfae267cee9938926);
+            
+        
+
+        marker_54f5002a90d3cc8fd2a1ffc6b6c7946f.bindPopup(popup_473e182ba6cd1650109c8f050431bf12)
+        ;
+
+        
+    
+    
+            marker_54f5002a90d3cc8fd2a1ffc6b6c7946f.bindTooltip(
+                `<div>
+                     Chemist Warehouse (381m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_54f5002a90d3cc8fd2a1ffc6b6c7946f.setIcon(icon_58a8a988f865c903edc241b3a3f3bc5f);
+            
+    
+            var poly_line_274f0aece93af665751fabe6e532317d = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9685119, 153.4146881]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_274f0aece93af665751fabe6e532317d.bindTooltip(
+                `<div>
+                     381m to Chemist Warehouse
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_109423d4cb214f457b00d01091665ca2 = L.marker(
+                [-27.9702174, 153.4149104],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_94c9abcb40073dbb81b5081431d32787 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e381m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_109423d4cb214f457b00d01091665ca2.setIcon(div_icon_94c9abcb40073dbb81b5081431d32787);
+            
+    
+            var marker_e9a82f75f42dd9558aa14f166fa98c86 = L.marker(
+                [-27.9739444, 153.4114406],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_1104e562ed39596c894e80e5327fb5d5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f8b9b5d3fd856a7a97dc1dbe2bb16dd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5b12e002c7bfa5c67d1f537eb5495d33 = $(`<div id="html_5b12e002c7bfa5c67d1f537eb5495d33" style="width: 100.0%; height: 100.0%;"><b>Ferry Road Chempro Chemist</b><br>Shop 15, Mercato on Ferry, 59-73 Meron Street, SOUTHPORT, QLD, 4215<br>Distance: 427m (0.427km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_8f8b9b5d3fd856a7a97dc1dbe2bb16dd.setContent(html_5b12e002c7bfa5c67d1f537eb5495d33);
+            
+        
+
+        marker_e9a82f75f42dd9558aa14f166fa98c86.bindPopup(popup_8f8b9b5d3fd856a7a97dc1dbe2bb16dd)
+        ;
+
+        
+    
+    
+            marker_e9a82f75f42dd9558aa14f166fa98c86.bindTooltip(
+                `<div>
+                     Ferry Road Chempro Chemist (427m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e9a82f75f42dd9558aa14f166fa98c86.setIcon(icon_1104e562ed39596c894e80e5327fb5d5);
+            
+    
+            var poly_line_016f633e7affc0437853193feb842881 = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9739444, 153.4114406]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_016f633e7affc0437853193feb842881.bindTooltip(
+                `<div>
+                     427m to Ferry Road Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_899d795355f450ddbc433b495261bbe0 = L.marker(
+                [-27.97293365, 153.41328664999997],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_d84a4df218059675b2693c4c225d9224 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e427m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_899d795355f450ddbc433b495261bbe0.setIcon(div_icon_d84a4df218059675b2693c4c225d9224);
+            
+    
+            var marker_c813584f075f92ef3b65192a98b8ed58 = L.marker(
+                [-27.9746189, 153.419373],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_d7e33c741c55adeaf3ba0a382a6f1a45 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_75cb4fa5ccc00961cd2a7a11e1461919 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ddaf011dea0c905dbc9cac97e9c6f470 = $(`<div id="html_ddaf011dea0c905dbc9cac97e9c6f470" style="width: 100.0%; height: 100.0%;"><b>Meriton Sundale Chempro Chemist</b><br>5-8 2 Como Crescent, SOUTHPORT, QLD, 4215<br>Distance: 513m (0.513km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_75cb4fa5ccc00961cd2a7a11e1461919.setContent(html_ddaf011dea0c905dbc9cac97e9c6f470);
+            
+        
+
+        marker_c813584f075f92ef3b65192a98b8ed58.bindPopup(popup_75cb4fa5ccc00961cd2a7a11e1461919)
+        ;
+
+        
+    
+    
+            marker_c813584f075f92ef3b65192a98b8ed58.bindTooltip(
+                `<div>
+                     Meriton Sundale Chempro Chemist (513m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c813584f075f92ef3b65192a98b8ed58.setIcon(icon_d7e33c741c55adeaf3ba0a382a6f1a45);
+            
+    
+            var poly_line_aead3fe436b44b4fe945af0b77b1c4c2 = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9746189, 153.419373]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_aead3fe436b44b4fe945af0b77b1c4c2.bindTooltip(
+                `<div>
+                     513m to Meriton Sundale Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_80981959ef5a02342f85f2d6a2f5e3ec = L.marker(
+                [-27.9732709, 153.41725285],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_feecb0debeebc43523e606522fef0925 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e513m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_80981959ef5a02342f85f2d6a2f5e3ec.setIcon(div_icon_feecb0debeebc43523e606522fef0925);
+            
+    
+            var marker_203785c42bcded27e13bd3dd2c72434b = L.marker(
+                [-27.972219, 153.409404],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_51ba4832ab6a6e5f1dcb99dc08eaefcb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4cb31a03f2ca8962c9d0a636d05a32bc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8598dd488787ab919f551a93a68a4937 = $(`<div id="html_8598dd488787ab919f551a93a68a4937" style="width: 100.0%; height: 100.0%;"><b>TerryWhite Chemmart Queen St Village</b><br>Shop T26, 129 Queen Street, Southport, QLD, 4215<br>Distance: 565m (0.565km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_4cb31a03f2ca8962c9d0a636d05a32bc.setContent(html_8598dd488787ab919f551a93a68a4937);
+            
+        
+
+        marker_203785c42bcded27e13bd3dd2c72434b.bindPopup(popup_4cb31a03f2ca8962c9d0a636d05a32bc)
+        ;
+
+        
+    
+    
+            marker_203785c42bcded27e13bd3dd2c72434b.bindTooltip(
+                `<div>
+                     TerryWhite Chemmart Queen St Village (565m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_203785c42bcded27e13bd3dd2c72434b.setIcon(icon_51ba4832ab6a6e5f1dcb99dc08eaefcb);
+            
+    
+            var poly_line_bcc2dbdc1506415bc1572dd07bf76b1c = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.972219, 153.409404]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_bcc2dbdc1506415bc1572dd07bf76b1c.bindTooltip(
+                `<div>
+                     565m to TerryWhite Chemmart Queen St Village
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_69bac42ce146d0838b56189d4c5a27a9 = L.marker(
+                [-27.97207095, 153.41226834999998],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_21ca7fbcd0952930f8dfd5493bc1d5de = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e565m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_69bac42ce146d0838b56189d4c5a27a9.setIcon(div_icon_21ca7fbcd0952930f8dfd5493bc1d5de);
+            
+    
+            var marker_da0148e4049e0c33b656d6136509d68d = L.marker(
+                [-27.9701899, 153.4086873],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_e78bdcac2d34d6b41e91eb2353832f1d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_db6c844cd3d65f4ba0b7e4db4555361e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_96edc9726d8d9cb767eeb1a3a0dc482d = $(`<div id="html_96edc9726d8d9cb767eeb1a3a0dc482d" style="width: 100.0%; height: 100.0%;"><b>Southport Chempro Chemist</b><br>Shop 2/103 Nerang Street, SOUTHPORT, QLD, 4215<br>Distance: 663m (0.663km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_db6c844cd3d65f4ba0b7e4db4555361e.setContent(html_96edc9726d8d9cb767eeb1a3a0dc482d);
+            
+        
+
+        marker_da0148e4049e0c33b656d6136509d68d.bindPopup(popup_db6c844cd3d65f4ba0b7e4db4555361e)
+        ;
+
+        
+    
+    
+            marker_da0148e4049e0c33b656d6136509d68d.bindTooltip(
+                `<div>
+                     Southport Chempro Chemist (663m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_da0148e4049e0c33b656d6136509d68d.setIcon(icon_e78bdcac2d34d6b41e91eb2353832f1d);
+            
+    
+            var poly_line_88fcf4b727567e3e9a0d1610e2f9278d = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9701899, 153.4086873]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_88fcf4b727567e3e9a0d1610e2f9278d.bindTooltip(
+                `<div>
+                     663m to Southport Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a2b62dfdd1f19d93c71113506c336c46 = L.marker(
+                [-27.971056400000002, 153.41190999999998],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_552e576973d06604d14611816247c8a5 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e663m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_a2b62dfdd1f19d93c71113506c336c46.setIcon(div_icon_552e576973d06604d14611816247c8a5);
+            
+    
+            var marker_78169bed5bbb55bf6a6df4fd5b350e83 = L.marker(
+                [-27.971398, 153.4083129],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_301a0aceb23e439b69fa370b3c9dc521 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6ff1eb14b3888e834b61face4ee62921 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3efd0d81e50eb972099569cd161a321a = $(`<div id="html_3efd0d81e50eb972099569cd161a321a" style="width: 100.0%; height: 100.0%;"><b>TerryWhite Chemmart Queen St Village</b><br>T26, 129 Queen St, SOUTHPORT, QLD, 4215<br>Distance: 674m (0.674km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_6ff1eb14b3888e834b61face4ee62921.setContent(html_3efd0d81e50eb972099569cd161a321a);
+            
+        
+
+        marker_78169bed5bbb55bf6a6df4fd5b350e83.bindPopup(popup_6ff1eb14b3888e834b61face4ee62921)
+        ;
+
+        
+    
+    
+            marker_78169bed5bbb55bf6a6df4fd5b350e83.bindTooltip(
+                `<div>
+                     TerryWhite Chemmart Queen St Village (674m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_78169bed5bbb55bf6a6df4fd5b350e83.setIcon(icon_301a0aceb23e439b69fa370b3c9dc521);
+            
+    
+            var poly_line_7ba190617f34e8f440ba966e206c712f = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.971398, 153.4083129]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_7ba190617f34e8f440ba966e206c712f.bindTooltip(
+                `<div>
+                     674m to TerryWhite Chemmart Queen St Village
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b5eb25e44655f6d984e6901b02ddcfdc = L.marker(
+                [-27.97166045, 153.4117228],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_099dc108bf7a1f4062e6fcba2c684b88 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e674m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_b5eb25e44655f6d984e6901b02ddcfdc.setIcon(div_icon_099dc108bf7a1f4062e6fcba2c684b88);
+            
+    
+            var marker_6866aa06f74f6d1cf58e4a393d8c51d2 = L.marker(
+                [-27.9799, 153.409],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_e7e803515a1e245a1865bd44311047b8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_50819f59156f893faa6c95b4d547a4fa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8d8d4d88fbd4612d29fa8a686f58ce7b = $(`<div id="html_8d8d4d88fbd4612d29fa8a686f58ce7b" style="width: 100.0%; height: 100.0%;"><b>Chemist Warehouse Southport Brickworks Centre</b><br>Shop 7 107 Ferry Rd, Southport, QLD, 4215<br>Distance: 1070m (1.070km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_50819f59156f893faa6c95b4d547a4fa.setContent(html_8d8d4d88fbd4612d29fa8a686f58ce7b);
+            
+        
+
+        marker_6866aa06f74f6d1cf58e4a393d8c51d2.bindPopup(popup_50819f59156f893faa6c95b4d547a4fa)
+        ;
+
+        
+    
+    
+            marker_6866aa06f74f6d1cf58e4a393d8c51d2.bindTooltip(
+                `<div>
+                     Chemist Warehouse Southport Brickworks Centre (1070m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6866aa06f74f6d1cf58e4a393d8c51d2.setIcon(icon_e7e803515a1e245a1865bd44311047b8);
+            
+    
+            var poly_line_f9834bf53287765eee8c5f7f1060525a = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9799, 153.409]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_f9834bf53287765eee8c5f7f1060525a.bindTooltip(
+                `<div>
+                     1070m to Chemist Warehouse Southport Brickworks Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2f62fa2d2805db6c1c4a9f0e12ae09cd = L.marker(
+                [-27.975911449999998, 153.41206634999998],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_e16efa381c67f4f0c62793c87c32fcf7 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1070m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_2f62fa2d2805db6c1c4a9f0e12ae09cd.setIcon(div_icon_e16efa381c67f4f0c62793c87c32fcf7);
+            
+    
+            var marker_d0d8dcd2a741248d975f0f0e37c2e65a = L.marker(
+                [-27.9623545, 153.4131657],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_c97de611e7628df7dddb85158df0e692 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3561182f7ca6a5fcb9c04f398b2f681f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aa3ef7da19104b2deaedecd809d8d603 = $(`<div id="html_aa3ef7da19104b2deaedecd809d8d603" style="width: 100.0%; height: 100.0%;"><b>Greg Keily Chemist</b><br>98 Marine Parade, SOUTHPORT, QLD, 4215<br>Distance: 1078m (1.078km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_3561182f7ca6a5fcb9c04f398b2f681f.setContent(html_aa3ef7da19104b2deaedecd809d8d603);
+            
+        
+
+        marker_d0d8dcd2a741248d975f0f0e37c2e65a.bindPopup(popup_3561182f7ca6a5fcb9c04f398b2f681f)
+        ;
+
+        
+    
+    
+            marker_d0d8dcd2a741248d975f0f0e37c2e65a.bindTooltip(
+                `<div>
+                     Greg Keily Chemist (1078m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d0d8dcd2a741248d975f0f0e37c2e65a.setIcon(icon_c97de611e7628df7dddb85158df0e692);
+            
+    
+            var poly_line_9232ea4e05b14e7609ab802ba4833320 = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9623545, 153.4131657]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_9232ea4e05b14e7609ab802ba4833320.bindTooltip(
+                `<div>
+                     1078m to Greg Keily Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9d5ae6dd56ccc1faf900ee3aa12beb90 = L.marker(
+                [-27.9671387, 153.4141492],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_78e5307f73e5c347da124d748260e601 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1078m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_9d5ae6dd56ccc1faf900ee3aa12beb90.setIcon(div_icon_78e5307f73e5c347da124d748260e601);
+            
+    
+            var marker_57710d5114811ecfc87d2346d4e1c882 = L.marker(
+                [-27.9747953, 153.4022465],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_e1dbfb78ad6632c9f43e762079ee9968 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_59136850ba26377c7ad7173be44c163c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1fe7ec93e35b2c3666eb82742ad9dd27 = $(`<div id="html_1fe7ec93e35b2c3666eb82742ad9dd27" style="width: 100.0%; height: 100.0%;"><b>Southport Pharmacy</b><br>178 Nerang St, Southport QLD 4215, Australia<br>Distance: 1307m (1.307km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_59136850ba26377c7ad7173be44c163c.setContent(html_1fe7ec93e35b2c3666eb82742ad9dd27);
+            
+        
+
+        marker_57710d5114811ecfc87d2346d4e1c882.bindPopup(popup_59136850ba26377c7ad7173be44c163c)
+        ;
+
+        
+    
+    
+            marker_57710d5114811ecfc87d2346d4e1c882.bindTooltip(
+                `<div>
+                     Southport Pharmacy (1307m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_57710d5114811ecfc87d2346d4e1c882.setIcon(icon_e1dbfb78ad6632c9f43e762079ee9968);
+            
+    
+            var poly_line_52e4dd315aa3aa012c42f0fdc3270054 = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9747953, 153.4022465]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_52e4dd315aa3aa012c42f0fdc3270054.bindTooltip(
+                `<div>
+                     1307m to Southport Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d572663317c05d73eabf066b343cb250 = L.marker(
+                [-27.9733591, 153.4086896],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_a8e1be2f524a6371994b674c45200a09 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1307m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_d572663317c05d73eabf066b343cb250.setIcon(div_icon_a8e1be2f524a6371994b674c45200a09);
+            
+    
+            var marker_b369d70b868125671261144eef05b43d = L.marker(
+                [-27.9802937, 153.4249838],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_663970a1b0169e079487677d3f947d57 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8d681f56cb7174974722efdf61c73885 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3b77ab4748279d3642419773fb58e531 = $(`<div id="html_3b77ab4748279d3642419773fb58e531" style="width: 100.0%; height: 100.0%;"><b>Main Beach Pharmacy</b><br>Main Beach Pharmacy, 13 Tedder Ave, MAIN BEACH, QLD, 4217<br>Distance: 1342m (1.342km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_8d681f56cb7174974722efdf61c73885.setContent(html_3b77ab4748279d3642419773fb58e531);
+            
+        
+
+        marker_b369d70b868125671261144eef05b43d.bindPopup(popup_8d681f56cb7174974722efdf61c73885)
+        ;
+
+        
+    
+    
+            marker_b369d70b868125671261144eef05b43d.bindTooltip(
+                `<div>
+                     Main Beach Pharmacy (1342m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b369d70b868125671261144eef05b43d.setIcon(icon_663970a1b0169e079487677d3f947d57);
+            
+    
+            var poly_line_c09dfb0d9f6e4ac257aa9b04e2cd5ce1 = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9802937, 153.4249838]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_c09dfb0d9f6e4ac257aa9b04e2cd5ce1.bindTooltip(
+                `<div>
+                     1342m to Main Beach Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_28305c27d442da213ae370b039278801 = L.marker(
+                [-27.9761083, 153.42005825],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_65ca0654fd5471c61b0bc580778666be = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1342m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_28305c27d442da213ae370b039278801.setIcon(div_icon_65ca0654fd5471c61b0bc580778666be);
+            
+    
+            var marker_c046e48547d5685449a3c2299a773f0b = L.marker(
+                [-27.9852973, 153.4115205],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_a4a7ef1825d508cb5bfbd42d9386819c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_37030d0c540311be9183a7f431862a86 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c58509b4141ff9d5521df88cebe80256 = $(`<div id="html_c58509b4141ff9d5521df88cebe80256" style="width: 100.0%; height: 100.0%;"><b>Southport Park Chempro Chemist</b><br>Shop 28 Centro Shopping Centre, Ferry Road, SOUTHPORT, QLD, 4215<br>Distance: 1524m (1.524km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_37030d0c540311be9183a7f431862a86.setContent(html_c58509b4141ff9d5521df88cebe80256);
+            
+        
+
+        marker_c046e48547d5685449a3c2299a773f0b.bindPopup(popup_37030d0c540311be9183a7f431862a86)
+        ;
+
+        
+    
+    
+            marker_c046e48547d5685449a3c2299a773f0b.bindTooltip(
+                `<div>
+                     Southport Park Chempro Chemist (1524m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c046e48547d5685449a3c2299a773f0b.setIcon(icon_a4a7ef1825d508cb5bfbd42d9386819c);
+            
+    
+            var poly_line_27de3c425802195ca7dfd534e11d11b3 = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9852973, 153.4115205]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_27de3c425802195ca7dfd534e11d11b3.bindTooltip(
+                `<div>
+                     1524m to Southport Park Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b1cfc0735f497807124ab3334fbd18de = L.marker(
+                [-27.978610099999997, 153.4133266],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_e482bf8f72d6b40219bc3b7c22786db8 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1524m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_b1cfc0735f497807124ab3334fbd18de.setIcon(div_icon_e482bf8f72d6b40219bc3b7c22786db8);
+            
+    
+            var marker_71a66a94edbf361c4e9a2711f9cca94f = L.marker(
+                [-27.9565354, 153.4013482],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_e0ddf71497ffb4d1b9e5bcd21feac5b6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2acab8d8065942c15a2e27a5f993b59c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bb839e6ef5422b08f6d5d06b0fb60fcf = $(`<div id="html_bb839e6ef5422b08f6d5d06b0fb60fcf" style="width: 100.0%; height: 100.0%;"><b>Chirn Park Chempro Chemist</b><br>32 Musgrave Avenue, SOUTHPORT, QLD, 4215<br>Distance: 2179m (2.179km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_2acab8d8065942c15a2e27a5f993b59c.setContent(html_bb839e6ef5422b08f6d5d06b0fb60fcf);
+            
+        
+
+        marker_71a66a94edbf361c4e9a2711f9cca94f.bindPopup(popup_2acab8d8065942c15a2e27a5f993b59c)
+        ;
+
+        
+    
+    
+            marker_71a66a94edbf361c4e9a2711f9cca94f.bindTooltip(
+                `<div>
+                     Chirn Park Chempro Chemist (2179m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_71a66a94edbf361c4e9a2711f9cca94f.setIcon(icon_e0ddf71497ffb4d1b9e5bcd21feac5b6);
+            
+    
+            var poly_line_ee55d782bc00d9657c1aa744265b3fcd = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9565354, 153.4013482]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_ee55d782bc00d9657c1aa744265b3fcd.bindTooltip(
+                `<div>
+                     2179m to Chirn Park Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9a77f1b69f5ab1600639c0cbf9ec3b7c = L.marker(
+                [-27.96422915, 153.40824045],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_8acc3a5f8c6ada3a99ef09b5cc630e1d = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e2179m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_9a77f1b69f5ab1600639c0cbf9ec3b7c.setIcon(div_icon_8acc3a5f8c6ada3a99ef09b5cc630e1d);
+            
+    
+            var marker_164d54042482f76f67751c0960b25ab0 = L.marker(
+                [-27.9977355, 153.4189434],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_16517f7c932ddd9e988d91b695be26f1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f66d13ca23c7bc6371915c1298f3292a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2f63e5a94c0a20e366b7b5a09ea392ae = $(`<div id="html_2f63e5a94c0a20e366b7b5a09ea392ae" style="width: 100.0%; height: 100.0%;"><b>Chevron Island Chempro Chemist</b><br>Shop 5-6/57 Thomas Drive, CHEVRON ISLAND, QLD, 4217<br>Distance: 2885m (2.885km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_f66d13ca23c7bc6371915c1298f3292a.setContent(html_2f63e5a94c0a20e366b7b5a09ea392ae);
+            
+        
+
+        marker_164d54042482f76f67751c0960b25ab0.bindPopup(popup_f66d13ca23c7bc6371915c1298f3292a)
+        ;
+
+        
+    
+    
+            marker_164d54042482f76f67751c0960b25ab0.bindTooltip(
+                `<div>
+                     Chevron Island Chempro Chemist (2885m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_164d54042482f76f67751c0960b25ab0.setIcon(icon_16517f7c932ddd9e988d91b695be26f1);
+            
+    
+            var poly_line_328e66ceb471be45392f9eb591816f97 = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9977355, 153.4189434]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_328e66ceb471be45392f9eb591816f97.bindTooltip(
+                `<div>
+                     2885m to Chevron Island Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ce5571f6ca789c5fe327e05715c725df = L.marker(
+                [-27.9848292, 153.41703804999997],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_783a9d6c6769681d1020570ccb74c524 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e2885m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_ce5571f6ca789c5fe327e05715c725df.setIcon(div_icon_783a9d6c6769681d1020570ccb74c524);
+            
+    
+            var marker_e5a247884a3ff4ab07246a65dfca8191 = L.marker(
+                [-27.96176, 153.38679],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_6024bd4daeba8a7f44b743cbc9f4465a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_99803ea1930648663327c741b29655c3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cf6035430da5630d197000f08f7f25f4 = $(`<div id="html_cf6035430da5630d197000f08f7f25f4" style="width: 100.0%; height: 100.0%;"><b>Smith Collective Amcal Pharmacy</b><br>C1-C3, 2 Nexus Way, SOUTHPORT, QLD, 4215<br>Distance: 3008m (3.008km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_99803ea1930648663327c741b29655c3.setContent(html_cf6035430da5630d197000f08f7f25f4);
+            
+        
+
+        marker_e5a247884a3ff4ab07246a65dfca8191.bindPopup(popup_99803ea1930648663327c741b29655c3)
+        ;
+
+        
+    
+    
+            marker_e5a247884a3ff4ab07246a65dfca8191.bindTooltip(
+                `<div>
+                     Smith Collective Amcal Pharmacy (3008m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e5a247884a3ff4ab07246a65dfca8191.setIcon(icon_6024bd4daeba8a7f44b743cbc9f4465a);
+            
+    
+            var poly_line_33e770b059db256889d44a019354736a = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.96176, 153.38679]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_33e770b059db256889d44a019354736a.bindTooltip(
+                `<div>
+                     3008m to Smith Collective Amcal Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3084172b400e29a036921e676a34b325 = L.marker(
+                [-27.96684145, 153.40096135],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_74344dd64f29493ee011affac87af5e1 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3008m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_3084172b400e29a036921e676a34b325.setIcon(div_icon_74344dd64f29493ee011affac87af5e1);
+            
+    
+            var marker_5265ea2fecd4e77fee9734b4f7de18a6 = L.marker(
+                [-27.995528, 153.399351],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_e33afa8d9a15af270b685753a432e4ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_08489f35bae63e28e33c50c75ae285db = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_947695af745f98453a0970c7745c3611 = $(`<div id="html_947695af745f98453a0970c7745c3611" style="width: 100.0%; height: 100.0%;"><b>Bronberg Plaza Chempro Chemist</b><br>Shop 2 & 3 Bronberg Plaza, 138 Slatyer Avenue, SOUTHPORT, QLD, 4215<br>Distance: 3042m (3.042km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_08489f35bae63e28e33c50c75ae285db.setContent(html_947695af745f98453a0970c7745c3611);
+            
+        
+
+        marker_5265ea2fecd4e77fee9734b4f7de18a6.bindPopup(popup_08489f35bae63e28e33c50c75ae285db)
+        ;
+
+        
+    
+    
+            marker_5265ea2fecd4e77fee9734b4f7de18a6.bindTooltip(
+                `<div>
+                     Bronberg Plaza Chempro Chemist (3042m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5265ea2fecd4e77fee9734b4f7de18a6.setIcon(icon_e33afa8d9a15af270b685753a432e4ce);
+            
+    
+            var poly_line_29b155123f36f4f39309415d66f54c28 = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.995528, 153.399351]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_29b155123f36f4f39309415d66f54c28.bindTooltip(
+                `<div>
+                     3042m to Bronberg Plaza Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9cb4c8e8a95ddcd02541366fab68d790 = L.marker(
+                [-27.98372545, 153.40724185],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_c94da5f3d51ec397c53cd8965d6cd5dc = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3042m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_9cb4c8e8a95ddcd02541366fab68d790.setIcon(div_icon_c94da5f3d51ec397c53cd8965d6cd5dc);
+            
+    
+            var marker_55dca6e853b9b68f497163c3b7158af1 = L.marker(
+                [-27.9985526, 153.4287415],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_0c595bf0499d6798122c153ba1b90f46 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6a01132d498dcab77f33ef0d7707f048 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_381e187c7619507ebb7df4fd95a42417 = $(`<div id="html_381e187c7619507ebb7df4fd95a42417" style="width: 100.0%; height: 100.0%;"><b>Surfers Paradise 24hr Chempro Chemist</b><br>Shop16-17/3197 surfers paradise blvd, SURFERS PARADISE, QLD, 4217<br>Distance: 3241m (3.241km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_6a01132d498dcab77f33ef0d7707f048.setContent(html_381e187c7619507ebb7df4fd95a42417);
+            
+        
+
+        marker_55dca6e853b9b68f497163c3b7158af1.bindPopup(popup_6a01132d498dcab77f33ef0d7707f048)
+        ;
+
+        
+    
+    
+            marker_55dca6e853b9b68f497163c3b7158af1.bindTooltip(
+                `<div>
+                     Surfers Paradise 24hr Chempro Chemist (3241m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_55dca6e853b9b68f497163c3b7158af1.setIcon(icon_0c595bf0499d6798122c153ba1b90f46);
+            
+    
+            var poly_line_9c702bb464838890631ecacfde0a5cdd = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9985526, 153.4287415]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_9c702bb464838890631ecacfde0a5cdd.bindTooltip(
+                `<div>
+                     3241m to Surfers Paradise 24hr Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_87bb5aa461db9f94f64e459021685b4b = L.marker(
+                [-27.98523775, 153.42193709999998],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_51a5f98370c102a4bc1653a7150d0481 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3241m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_87bb5aa461db9f94f64e459021685b4b.setIcon(div_icon_51a5f98370c102a4bc1653a7150d0481);
+            
+    
+            var marker_3679230cbb8b8e069cf156a7763a9468 = L.marker(
+                [-27.9619509, 153.3838787],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_4c1ee3e74d33c69b2f140e179451038f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9e8a0ea74ca1da9703c750c68c9961ed = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e323c92311bba6d8996401d383ecfed0 = $(`<div id="html_e323c92311bba6d8996401d383ecfed0" style="width: 100.0%; height: 100.0%;"><b>HPS Pharmacies Gold Coast</b><br>Gold Coast Private Hospital, 14 Hill Street, SOUTHPORT, QLD, 4215<br>Distance: 3268m (3.268km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_9e8a0ea74ca1da9703c750c68c9961ed.setContent(html_e323c92311bba6d8996401d383ecfed0);
+            
+        
+
+        marker_3679230cbb8b8e069cf156a7763a9468.bindPopup(popup_9e8a0ea74ca1da9703c750c68c9961ed)
+        ;
+
+        
+    
+    
+            marker_3679230cbb8b8e069cf156a7763a9468.bindTooltip(
+                `<div>
+                     HPS Pharmacies Gold Coast (3268m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3679230cbb8b8e069cf156a7763a9468.setIcon(icon_4c1ee3e74d33c69b2f140e179451038f);
+            
+    
+            var poly_line_41ec1d6ee36072168fdf2fcb59e4b13c = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9619509, 153.3838787]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_41ec1d6ee36072168fdf2fcb59e4b13c.bindTooltip(
+                `<div>
+                     3268m to HPS Pharmacies Gold Coast
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0614aee664d01e0f1ef5e30ade3d47d0 = L.marker(
+                [-27.9669369, 153.3995057],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_cd7828ca8e6cb6c976c0484710f4731c = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3268m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_0614aee664d01e0f1ef5e30ade3d47d0.setIcon(div_icon_cd7828ca8e6cb6c976c0484710f4731c);
+            
+    
+            var marker_7331de195907296d47def849753f2124 = L.marker(
+                [-27.9996033, 153.4276123],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_b156241da2586442c0a612c90f436a84 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0fadeee78744b82112f68692738227ec = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_18ef9fc5cbcf69029c9f5fbd969a9c31 = $(`<div id="html_18ef9fc5cbcf69029c9f5fbd969a9c31" style="width: 100.0%; height: 100.0%;"><b>Surfers Renaissance Chempro Chemist</b><br>Shop 45 Chevron Renaissance Shopping Centre, Elkorn Avenue, SURFERS PARADISE, QLD, 4217<br>Distance: 3304m (3.304km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_0fadeee78744b82112f68692738227ec.setContent(html_18ef9fc5cbcf69029c9f5fbd969a9c31);
+            
+        
+
+        marker_7331de195907296d47def849753f2124.bindPopup(popup_0fadeee78744b82112f68692738227ec)
+        ;
+
+        
+    
+    
+            marker_7331de195907296d47def849753f2124.bindTooltip(
+                `<div>
+                     Surfers Renaissance Chempro Chemist (3304m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7331de195907296d47def849753f2124.setIcon(icon_b156241da2586442c0a612c90f436a84);
+            
+    
+            var poly_line_978e4ed0edb1687f35a3105b46692233 = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9996033, 153.4276123]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_978e4ed0edb1687f35a3105b46692233.bindTooltip(
+                `<div>
+                     3304m to Surfers Renaissance Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_503b2b54014868f84ac70f37aac37752 = L.marker(
+                [-27.9857631, 153.4213725],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_586372c9b23786023e37094164693f29 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3304m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_503b2b54014868f84ac70f37aac37752.setIcon(div_icon_586372c9b23786023e37094164693f29);
+            
+    
+            var marker_28bfb7a6371b1b3326e1e6fa73f55d8e = L.marker(
+                [-27.9780639, 153.3808068],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_470eed1df12624d4169f392478f1c380 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5ee49b868290e82c495f5dda3279f5e3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f1104e463b5b7d6ba91f2789fede2442 = $(`<div id="html_f1104e463b5b7d6ba91f2789fede2442" style="width: 100.0%; height: 100.0%;"><b>Ashmore City Chempro Chemist</b><br>Shop 3 Ashmore City Shopping Centre, Corner Currumburra Road & Southport Nerang Road, ASHMORE, QLD, 4214<br>Distance: 3445m (3.445km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_5ee49b868290e82c495f5dda3279f5e3.setContent(html_f1104e463b5b7d6ba91f2789fede2442);
+            
+        
+
+        marker_28bfb7a6371b1b3326e1e6fa73f55d8e.bindPopup(popup_5ee49b868290e82c495f5dda3279f5e3)
+        ;
+
+        
+    
+    
+            marker_28bfb7a6371b1b3326e1e6fa73f55d8e.bindTooltip(
+                `<div>
+                     Ashmore City Chempro Chemist (3445m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_28bfb7a6371b1b3326e1e6fa73f55d8e.setIcon(icon_470eed1df12624d4169f392478f1c380);
+            
+    
+            var poly_line_3d2290c5916f05baf995cf5de1b9869e = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9780639, 153.3808068]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_3d2290c5916f05baf995cf5de1b9869e.bindTooltip(
+                `<div>
+                     3445m to Ashmore City Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1ea9c959f204f4c216304f527e26be09 = L.marker(
+                [-27.9749934, 153.39796975],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_8e8d82bfe55ef1b6343b09171c4c4a32 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3445m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_1ea9c959f204f4c216304f527e26be09.setIcon(div_icon_8e8d82bfe55ef1b6343b09171c4c4a32);
+            
+    
+            var marker_2e3a786847143d01936eeadc846f9624 = L.marker(
+                [-28.0012093, 153.4270935],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_c30cf16f78d2fb79f372eff37c6b598b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dd83a52a0438184df047322a2c1054b8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9955bbf259f9c51afa1343fd3b1ee75a = $(`<div id="html_9955bbf259f9c51afa1343fd3b1ee75a" style="width: 100.0%; height: 100.0%;"><b>Circle On Cavill Chempro Chemist</b><br>Shop T32 & T33, Circle on Cavill Shopping Centre, 3184 Surfers Paradise Boulevard, SURFERS PARADISE, QLD, 4217<br>Distance: 3452m (3.452km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_dd83a52a0438184df047322a2c1054b8.setContent(html_9955bbf259f9c51afa1343fd3b1ee75a);
+            
+        
+
+        marker_2e3a786847143d01936eeadc846f9624.bindPopup(popup_dd83a52a0438184df047322a2c1054b8)
+        ;
+
+        
+    
+    
+            marker_2e3a786847143d01936eeadc846f9624.bindTooltip(
+                `<div>
+                     Circle On Cavill Chempro Chemist (3452m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2e3a786847143d01936eeadc846f9624.setIcon(icon_c30cf16f78d2fb79f372eff37c6b598b);
+            
+    
+            var poly_line_1d1f45b2d19c40f7e4f5a0fbd0373c06 = L.polyline(
+                [[-27.9719229, 153.4151327], [-28.0012093, 153.4270935]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_1d1f45b2d19c40f7e4f5a0fbd0373c06.bindTooltip(
+                `<div>
+                     3452m to Circle On Cavill Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_277b6196c8578a12349112c28ffda4a1 = L.marker(
+                [-27.986566099999997, 153.4211131],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_3dd82aebfee0ed83f5d43d217cd27fcd = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3452m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_277b6196c8578a12349112c28ffda4a1.setIcon(div_icon_3dd82aebfee0ed83f5d43d217cd27fcd);
+            
+    
+            var marker_b40793f2bd307832799a8e31154531c6 = L.marker(
+                [-27.9873778, 153.383952],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_2bb3590a58356b8c4b9d52fe46ad276d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5109c58231ea675893f3c890122822f0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1f6c4977b8cc85cfe23471ee3d039541 = $(`<div id="html_1f6c4977b8cc85cfe23471ee3d039541" style="width: 100.0%; height: 100.0%;"><b>Ashmore Plaza Chempro Chemist</b><br>Shops 42-44 Ashmore Plaza Shopping Centre, 146 Cotlew Street, ASHMORE, QLD, 4214<br>Distance: 3513m (3.513km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_5109c58231ea675893f3c890122822f0.setContent(html_1f6c4977b8cc85cfe23471ee3d039541);
+            
+        
+
+        marker_b40793f2bd307832799a8e31154531c6.bindPopup(popup_5109c58231ea675893f3c890122822f0)
+        ;
+
+        
+    
+    
+            marker_b40793f2bd307832799a8e31154531c6.bindTooltip(
+                `<div>
+                     Ashmore Plaza Chempro Chemist (3513m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b40793f2bd307832799a8e31154531c6.setIcon(icon_2bb3590a58356b8c4b9d52fe46ad276d);
+            
+    
+            var poly_line_8a37b36b44639ed6802c6fe57fb1d10a = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9873778, 153.383952]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_8a37b36b44639ed6802c6fe57fb1d10a.bindTooltip(
+                `<div>
+                     3513m to Ashmore Plaza Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_328111e9637d9936a6580dfd436332c1 = L.marker(
+                [-27.97965035, 153.39954235],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_7624faae612a28687e10f01b91dbc097 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3513m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_328111e9637d9936a6580dfd436332c1.setIcon(div_icon_7624faae612a28687e10f01b91dbc097);
+            
+    
+            var marker_1e3de613c757d5c954c43663cac8594f = L.marker(
+                [-27.9596657, 153.3818123],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_807297852886c00df739c4e07bcaf159 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8d5c399c6e7fa000b6d28d7d2d06e7f1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9d90dc1ceb89717b58ddfad7bf2d51b4 = $(`<div id="html_9d90dc1ceb89717b58ddfad7bf2d51b4" style="width: 100.0%; height: 100.0%;"><b>Chempro</b><br><br>Distance: 3549m (3.549km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_8d5c399c6e7fa000b6d28d7d2d06e7f1.setContent(html_9d90dc1ceb89717b58ddfad7bf2d51b4);
+            
+        
+
+        marker_1e3de613c757d5c954c43663cac8594f.bindPopup(popup_8d5c399c6e7fa000b6d28d7d2d06e7f1)
+        ;
+
+        
+    
+    
+            marker_1e3de613c757d5c954c43663cac8594f.bindTooltip(
+                `<div>
+                     Chempro (3549m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1e3de613c757d5c954c43663cac8594f.setIcon(icon_807297852886c00df739c4e07bcaf159);
+            
+    
+            var poly_line_f384400f333343f66283b651d2633163 = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9596657, 153.3818123]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_f384400f333343f66283b651d2633163.bindTooltip(
+                `<div>
+                     3549m to Chempro
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_79194cd24aa0b5a6f379af48fc008b41 = L.marker(
+                [-27.9657943, 153.3984725],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_3bb3c9796dc6518c0eff38dbcb0ccbdf = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3549m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_79194cd24aa0b5a6f379af48fc008b41.setIcon(div_icon_3bb3c9796dc6518c0eff38dbcb0ccbdf);
+            
+    
+            var marker_b00130ef3e388390401c000ab18220e2 = L.marker(
+                [-27.9586993, 153.3810712],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_4c4506f7afb8b8a0a18f8848e2232a16 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e7af7359ba294633c18be4e692b6dfb0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_38cfdf42d48e667e5be4ca66498e8bf5 = $(`<div id="html_38cfdf42d48e667e5be4ca66498e8bf5" style="width: 100.0%; height: 100.0%;"><b>Gold Coast University Hospital Chempro Chemist</b><br>Retail Suite 1, 1 Hospital Blvd, Gold Coast University Hospital, SOUTHPORT, QLD, 4215<br>Distance: 3658m (3.658km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_e7af7359ba294633c18be4e692b6dfb0.setContent(html_38cfdf42d48e667e5be4ca66498e8bf5);
+            
+        
+
+        marker_b00130ef3e388390401c000ab18220e2.bindPopup(popup_e7af7359ba294633c18be4e692b6dfb0)
+        ;
+
+        
+    
+    
+            marker_b00130ef3e388390401c000ab18220e2.bindTooltip(
+                `<div>
+                     Gold Coast University Hospital Chempro Chemist (3658m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b00130ef3e388390401c000ab18220e2.setIcon(icon_4c4506f7afb8b8a0a18f8848e2232a16);
+            
+    
+            var poly_line_3dce5b41b1019ae1e435c55b60a0fddb = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9586993, 153.3810712]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_3dce5b41b1019ae1e435c55b60a0fddb.bindTooltip(
+                `<div>
+                     3658m to Gold Coast University Hospital Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a86cab89e9faff7308b5da4527901d4e = L.marker(
+                [-27.9653111, 153.39810195],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_d02e6ae7a603e61c889da2800b1ec709 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3658m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_a86cab89e9faff7308b5da4527901d4e.setIcon(div_icon_d02e6ae7a603e61c889da2800b1ec709);
+            
+    
+            var marker_e289938b0318aa27197cece4316c3dd7 = L.marker(
+                [-28.0033974, 153.4289153],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_3541ae6a870abf94194a7109e6679df2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_910663797495482c4b8b8a19566368ad = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1ca8bb5ff53bf1e72363682a798b30cc = $(`<div id="html_1ca8bb5ff53bf1e72363682a798b30cc" style="width: 100.0%; height: 100.0%;"><b>Towers Chempro Chemist</b><br>3059 Surfers Paradise Boulevard, SURFERS PARADISE, QLD, 4217<br>Distance: 3742m (3.742km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_910663797495482c4b8b8a19566368ad.setContent(html_1ca8bb5ff53bf1e72363682a798b30cc);
+            
+        
+
+        marker_e289938b0318aa27197cece4316c3dd7.bindPopup(popup_910663797495482c4b8b8a19566368ad)
+        ;
+
+        
+    
+    
+            marker_e289938b0318aa27197cece4316c3dd7.bindTooltip(
+                `<div>
+                     Towers Chempro Chemist (3742m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e289938b0318aa27197cece4316c3dd7.setIcon(icon_3541ae6a870abf94194a7109e6679df2);
+            
+    
+            var poly_line_cc9e936b5a6350a734243dc73dc3e68b = L.polyline(
+                [[-27.9719229, 153.4151327], [-28.0033974, 153.4289153]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_cc9e936b5a6350a734243dc73dc3e68b.bindTooltip(
+                `<div>
+                     3742m to Towers Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0cc27af24651184fd25d73c7ee3b329a = L.marker(
+                [-27.98766015, 153.422024],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_cf62d4a38e867e6e102d54662c8eb45f = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3742m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_0cc27af24651184fd25d73c7ee3b329a.setIcon(div_icon_cf62d4a38e867e6e102d54662c8eb45f);
+            
+    
+            var marker_0b3b0c534f80a097e967e032cb2bfe91 = L.marker(
+                [-28.0029251, 153.430513],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_e35d0d69e5696eb23271d7fc6ddc0874 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_89dda9b486df425c6f1f4d7a88a5cdde = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a1901f121413c13033b0578c919886c2 = $(`<div id="html_a1901f121413c13033b0578c919886c2" style="width: 100.0%; height: 100.0%;"><b>Priceline Pharmacy Surfers Paradise</b><br>Shop 50, Paradise Centre, 8-10 Cavill Avenue, SURFERS PARADISE, QLD, 4217<br>Distance: 3754m (3.754km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_89dda9b486df425c6f1f4d7a88a5cdde.setContent(html_a1901f121413c13033b0578c919886c2);
+            
+        
+
+        marker_0b3b0c534f80a097e967e032cb2bfe91.bindPopup(popup_89dda9b486df425c6f1f4d7a88a5cdde)
+        ;
+
+        
+    
+    
+            marker_0b3b0c534f80a097e967e032cb2bfe91.bindTooltip(
+                `<div>
+                     Priceline Pharmacy Surfers Paradise (3754m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0b3b0c534f80a097e967e032cb2bfe91.setIcon(icon_e35d0d69e5696eb23271d7fc6ddc0874);
+            
+    
+            var poly_line_5d18c4f6e342f451c5c6e72a9772fa25 = L.polyline(
+                [[-27.9719229, 153.4151327], [-28.0029251, 153.430513]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_5d18c4f6e342f451c5c6e72a9772fa25.bindTooltip(
+                `<div>
+                     3754m to Priceline Pharmacy Surfers Paradise
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8722327d2ff53347ea8b9253014b8abd = L.marker(
+                [-27.987423999999997, 153.42282285],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_b346e6b6c2569ce77a54a9be1c73ade3 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3754m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_8722327d2ff53347ea8b9253014b8abd.setIcon(div_icon_b346e6b6c2569ce77a54a9be1c73ade3);
+            
+    
+            var marker_f2db925d0320ab4e5f5c5669b9ac1267 = L.marker(
+                [-27.9565199, 153.3810834],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_061f30b02597cdb2b6a1db1656fd5713 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_06c6121fc8ea5624111186be13c9c96c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d7095735dcb9a4ce9072a7d6c9e89e57 = $(`<div id="html_d7095735dcb9a4ce9072a7d6c9e89e57" style="width: 100.0%; height: 100.0%;"><b>Parkwood Family Chempro Chemist</b><br>Shop 1/306 Olsen Avenue, PARKWOOD, QLD, 4214<br>Distance: 3760m (3.760km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_06c6121fc8ea5624111186be13c9c96c.setContent(html_d7095735dcb9a4ce9072a7d6c9e89e57);
+            
+        
+
+        marker_f2db925d0320ab4e5f5c5669b9ac1267.bindPopup(popup_06c6121fc8ea5624111186be13c9c96c)
+        ;
+
+        
+    
+    
+            marker_f2db925d0320ab4e5f5c5669b9ac1267.bindTooltip(
+                `<div>
+                     Parkwood Family Chempro Chemist (3760m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f2db925d0320ab4e5f5c5669b9ac1267.setIcon(icon_061f30b02597cdb2b6a1db1656fd5713);
+            
+    
+            var poly_line_34019d90c2f120606aba9fcdf960d024 = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9565199, 153.3810834]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_34019d90c2f120606aba9fcdf960d024.bindTooltip(
+                `<div>
+                     3760m to Parkwood Family Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cb1c2279d9ee86b004b7831119a09b0e = L.marker(
+                [-27.9642214, 153.39810805],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_98459d7f7d658238e36fc75c1ce08329 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3760m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_cb1c2279d9ee86b004b7831119a09b0e.setIcon(div_icon_98459d7f7d658238e36fc75c1ce08329);
+            
+    
+            var marker_46a17a37a16fdf3f9da7a862cfd3b0e4 = L.marker(
+                [-28.00679, 153.41111],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_1d3870c29a33a2c9f56641150a6ae549 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_411c8f87e7afcb4b4211537662960829 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9352eb9212be95a2fb32031b3bc9d408 = $(`<div id="html_9352eb9212be95a2fb32031b3bc9d408" style="width: 100.0%; height: 100.0%;"><b>Chempro Aged Care Chemist</b><br>47 Upton Street, Bundall, QLD, 4217<br>Distance: 3884m (3.884km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_411c8f87e7afcb4b4211537662960829.setContent(html_9352eb9212be95a2fb32031b3bc9d408);
+            
+        
+
+        marker_46a17a37a16fdf3f9da7a862cfd3b0e4.bindPopup(popup_411c8f87e7afcb4b4211537662960829)
+        ;
+
+        
+    
+    
+            marker_46a17a37a16fdf3f9da7a862cfd3b0e4.bindTooltip(
+                `<div>
+                     Chempro Aged Care Chemist (3884m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_46a17a37a16fdf3f9da7a862cfd3b0e4.setIcon(icon_1d3870c29a33a2c9f56641150a6ae549);
+            
+    
+            var poly_line_5e8f5152713f4f651fb4c2b7f38f9b41 = L.polyline(
+                [[-27.9719229, 153.4151327], [-28.00679, 153.41111]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_5e8f5152713f4f651fb4c2b7f38f9b41.bindTooltip(
+                `<div>
+                     3884m to Chempro Aged Care Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2b9f3382ec8a0def2b75f894f1755ed4 = L.marker(
+                [-27.98935645, 153.41312134999998],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_0eef4c2d411992fd1c1bf826582e3c1c = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3884m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_2b9f3382ec8a0def2b75f894f1755ed4.setIcon(div_icon_0eef4c2d411992fd1c1bf826582e3c1c);
+            
+    
+            var marker_2a3c27ce548e66297b10b379ecf7ac55 = L.marker(
+                [-27.9372441, 153.4055962],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_24ba22a275ae4db2803e8c0172e44960 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_38fdc8eb7f1ade7aa93c617057ca5e58 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_41ad9d9645fb7146666354d00b4ca0a2 = $(`<div id="html_41ad9d9645fb7146666354d00b4ca0a2" style="width: 100.0%; height: 100.0%;"><b>Broadwater Pharmacy</b><br>15 Brisbane Road, Shop 1, (parking and entry via Brighton Street), BIGGERA WATERS, QLD, 4216<br>Distance: 3956m (3.956km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_38fdc8eb7f1ade7aa93c617057ca5e58.setContent(html_41ad9d9645fb7146666354d00b4ca0a2);
+            
+        
+
+        marker_2a3c27ce548e66297b10b379ecf7ac55.bindPopup(popup_38fdc8eb7f1ade7aa93c617057ca5e58)
+        ;
+
+        
+    
+    
+            marker_2a3c27ce548e66297b10b379ecf7ac55.bindTooltip(
+                `<div>
+                     Broadwater Pharmacy (3956m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2a3c27ce548e66297b10b379ecf7ac55.setIcon(icon_24ba22a275ae4db2803e8c0172e44960);
+            
+    
+            var poly_line_599733f453be680a1338e0177e0a4fcb = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9372441, 153.4055962]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_599733f453be680a1338e0177e0a4fcb.bindTooltip(
+                `<div>
+                     3956m to Broadwater Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d03fd23217f980d8d64364015e68b8ca = L.marker(
+                [-27.9545835, 153.41036444999997],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_75982343bdcd90d7490268a65838ace9 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3956m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_d03fd23217f980d8d64364015e68b8ca.setIcon(div_icon_75982343bdcd90d7490268a65838ace9);
+            
+    
+            var marker_41558390973d494d27ae7c5557d7fdc9 = L.marker(
+                [-27.9456832, 153.3867211],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_fc3b8928403d795d88f0ad1f9a1790d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_edd66741cb4d61badd4f2ed7b9afbeb7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6e2d554f00b2c224e9a5e960768685b0 = $(`<div id="html_6e2d554f00b2c224e9a5e960768685b0" style="width: 100.0%; height: 100.0%;"><b>Labrador Chempro Chemist</b><br>Shop 10 Parkwood Plaza, 129-133 Olsen Avenue, LABRADOR, QLD, 4215<br>Distance: 4034m (4.034km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_edd66741cb4d61badd4f2ed7b9afbeb7.setContent(html_6e2d554f00b2c224e9a5e960768685b0);
+            
+        
+
+        marker_41558390973d494d27ae7c5557d7fdc9.bindPopup(popup_edd66741cb4d61badd4f2ed7b9afbeb7)
+        ;
+
+        
+    
+    
+            marker_41558390973d494d27ae7c5557d7fdc9.bindTooltip(
+                `<div>
+                     Labrador Chempro Chemist (4034m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_41558390973d494d27ae7c5557d7fdc9.setIcon(icon_fc3b8928403d795d88f0ad1f9a1790d4);
+            
+    
+            var poly_line_dc39f2946de2888071a670a3dd9f2487 = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9456832, 153.3867211]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_dc39f2946de2888071a670a3dd9f2487.bindTooltip(
+                `<div>
+                     4034m to Labrador Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d23b70a5778342e83fa3263f0d531d6c = L.marker(
+                [-27.95880305, 153.4009269],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_7d04d620eff8a0342f01399b52ee11ef = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e4034m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_d23b70a5778342e83fa3263f0d531d6c.setIcon(div_icon_7d04d620eff8a0342f01399b52ee11ef);
+            
+    
+            var marker_df93a948b9e985d61d9717a5d72e768c = L.marker(
+                [-28.0101286, 153.4092596],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_92091f04b63269eb0325174b05ff9624 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ccf29e83f6bf3e3fd29ccdc7659dbe62 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ca649034fc0230b5354a1411f100fd1 = $(`<div id="html_5ca649034fc0230b5354a1411f100fd1" style="width: 100.0%; height: 100.0%;"><b>Bundall Chempro Chemist</b><br>Showroom 7 Bundall Circle, 21/29 Ashmore Road, BUNDALL, QLD, 4217<br>Distance: 4273m (4.273km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_ccf29e83f6bf3e3fd29ccdc7659dbe62.setContent(html_5ca649034fc0230b5354a1411f100fd1);
+            
+        
+
+        marker_df93a948b9e985d61d9717a5d72e768c.bindPopup(popup_ccf29e83f6bf3e3fd29ccdc7659dbe62)
+        ;
+
+        
+    
+    
+            marker_df93a948b9e985d61d9717a5d72e768c.bindTooltip(
+                `<div>
+                     Bundall Chempro Chemist (4273m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_df93a948b9e985d61d9717a5d72e768c.setIcon(icon_92091f04b63269eb0325174b05ff9624);
+            
+    
+            var poly_line_5d57515e1e5ab42d1edcbc696a766eef = L.polyline(
+                [[-27.9719229, 153.4151327], [-28.0101286, 153.4092596]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_5d57515e1e5ab42d1edcbc696a766eef.bindTooltip(
+                `<div>
+                     4273m to Bundall Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_28331e95644f70818728c45fa57b72e7 = L.marker(
+                [-27.99102575, 153.41219615],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_d21d797e146f96bb4daafd66257b98f8 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e4273m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_28331e95644f70818728c45fa57b72e7.setIcon(div_icon_d21d797e146f96bb4daafd66257b98f8);
+            
+    
+            var marker_c135a059cc6e3951d4ad470cce7015f0 = L.marker(
+                [-27.9363777, 153.3976395],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_f8721205b90a46fab9f2d26631d1379b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_52d341877706a26f3e3412aff935e721 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dd0c64fd08554b1e8b8f1a6c0f5152f3 = $(`<div id="html_dd0c64fd08554b1e8b8f1a6c0f5152f3" style="width: 100.0%; height: 100.0%;"><b>Labrador Park Pharmacy</b><br>Shop 11, 100 Brisbane Rd, 100 Brisbane Road, LABRADOR, QLD, 4215<br>Distance: 4299m (4.299km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_52d341877706a26f3e3412aff935e721.setContent(html_dd0c64fd08554b1e8b8f1a6c0f5152f3);
+            
+        
+
+        marker_c135a059cc6e3951d4ad470cce7015f0.bindPopup(popup_52d341877706a26f3e3412aff935e721)
+        ;
+
+        
+    
+    
+            marker_c135a059cc6e3951d4ad470cce7015f0.bindTooltip(
+                `<div>
+                     Labrador Park Pharmacy (4299m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c135a059cc6e3951d4ad470cce7015f0.setIcon(icon_f8721205b90a46fab9f2d26631d1379b);
+            
+    
+            var poly_line_960a9de49ce15f035a8bc0af93a708f7 = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9363777, 153.3976395]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_960a9de49ce15f035a8bc0af93a708f7.bindTooltip(
+                `<div>
+                     4299m to Labrador Park Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_55f9563d54150bf58e415e0a2b7e0931 = L.marker(
+                [-27.954150300000002, 153.4063861],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_6871a6c9e3d92890de2a8cae1d8e15e2 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e4299m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_55f9563d54150bf58e415e0a2b7e0931.setIcon(div_icon_6871a6c9e3d92890de2a8cae1d8e15e2);
+            
+    
+            var marker_407410accec4053f70ea8bb994e5730d = L.marker(
+                [-28.01108, 153.4087571],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_0e4e1d40b713c4a4fe254a3bffe538f6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_141931b8c611a8e86ad37813cff1b4a3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4d74b483654003583d297d2de15f92d7 = $(`<div id="html_4d74b483654003583d297d2de15f92d7" style="width: 100.0%; height: 100.0%;"><b>Cape Byron Compounding Chemist</b><br>NSW<br>Distance: 4384m (4.384km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_141931b8c611a8e86ad37813cff1b4a3.setContent(html_4d74b483654003583d297d2de15f92d7);
+            
+        
+
+        marker_407410accec4053f70ea8bb994e5730d.bindPopup(popup_141931b8c611a8e86ad37813cff1b4a3)
+        ;
+
+        
+    
+    
+            marker_407410accec4053f70ea8bb994e5730d.bindTooltip(
+                `<div>
+                     Cape Byron Compounding Chemist (4384m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_407410accec4053f70ea8bb994e5730d.setIcon(icon_0e4e1d40b713c4a4fe254a3bffe538f6);
+            
+    
+            var poly_line_e081da56816b553cbb80d4fdc16f053e = L.polyline(
+                [[-27.9719229, 153.4151327], [-28.01108, 153.4087571]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_e081da56816b553cbb80d4fdc16f053e.bindTooltip(
+                `<div>
+                     4384m to Cape Byron Compounding Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c8a72982718b0eaab4b31871f731527e = L.marker(
+                [-27.99150145, 153.41194489999998],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_d0490a67dfd6dee16b036d7918622a2e = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e4384m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_c8a72982718b0eaab4b31871f731527e.setIcon(div_icon_d0490a67dfd6dee16b036d7918622a2e);
+            
+    
+            var marker_b9070b63b1a3405777dcf3b00c1a2554 = L.marker(
+                [-28.0112147, 153.4246353],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_831e3418692c8f909c47e975db850251 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_80e8f9a7d74035b2a1626368390626c4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7fa74acc1bf3f16f07e11e24bad257a7 = $(`<div id="html_7fa74acc1bf3f16f07e11e24bad257a7" style="width: 100.0%; height: 100.0%;"><b>Capri Chempro Chemist</b><br>Shop 5, 15 Via Roma, ISLE OF CAPRI, QLD, 4217<br>Distance: 4453m (4.453km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_80e8f9a7d74035b2a1626368390626c4.setContent(html_7fa74acc1bf3f16f07e11e24bad257a7);
+            
+        
+
+        marker_b9070b63b1a3405777dcf3b00c1a2554.bindPopup(popup_80e8f9a7d74035b2a1626368390626c4)
+        ;
+
+        
+    
+    
+            marker_b9070b63b1a3405777dcf3b00c1a2554.bindTooltip(
+                `<div>
+                     Capri Chempro Chemist (4453m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b9070b63b1a3405777dcf3b00c1a2554.setIcon(icon_831e3418692c8f909c47e975db850251);
+            
+    
+            var poly_line_8f891974dd2ca1d8972b9d50612dc677 = L.polyline(
+                [[-27.9719229, 153.4151327], [-28.0112147, 153.4246353]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_8f891974dd2ca1d8972b9d50612dc677.bindTooltip(
+                `<div>
+                     4453m to Capri Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_38c314b3c3e2b7762a6b781dfd71e559 = L.marker(
+                [-27.9915688, 153.419884],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_b9b01d3ee760ea3e6fd1990f6dab3535 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e4453m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_38c314b3c3e2b7762a6b781dfd71e559.setIcon(div_icon_b9b01d3ee760ea3e6fd1990f6dab3535);
+            
+    
+            var marker_74cd605b8868e7bc219b0dacaaa0b6bc = L.marker(
+                [-27.9327693, 153.400266],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_1698e16fccf392a18abaacd19f94b301 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3f9b6d7051f21785a5098aa23d4e9e7d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cc74588d7757342bf164ac4c296cffb1 = $(`<div id="html_cc74588d7757342bf164ac4c296cffb1" style="width: 100.0%; height: 100.0%;"><b>Biggera Waters Pharmacy</b><br>Shop 24 Metro Market, 33 Hollywell Road, BIGGERA WATERS, QLD, 4216<br>Distance: 4579m (4.579km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_3f9b6d7051f21785a5098aa23d4e9e7d.setContent(html_cc74588d7757342bf164ac4c296cffb1);
+            
+        
+
+        marker_74cd605b8868e7bc219b0dacaaa0b6bc.bindPopup(popup_3f9b6d7051f21785a5098aa23d4e9e7d)
+        ;
+
+        
+    
+    
+            marker_74cd605b8868e7bc219b0dacaaa0b6bc.bindTooltip(
+                `<div>
+                     Biggera Waters Pharmacy (4579m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_74cd605b8868e7bc219b0dacaaa0b6bc.setIcon(icon_1698e16fccf392a18abaacd19f94b301);
+            
+    
+            var poly_line_7acf724c226580385e292e94b4c9d7fa = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9327693, 153.400266]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_7acf724c226580385e292e94b4c9d7fa.bindTooltip(
+                `<div>
+                     4579m to Biggera Waters Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_539965433df383074500500b6476472e = L.marker(
+                [-27.9523461, 153.40769934999997],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_1534989e594fa6646c5c9069d75a6b5b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e4579m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_539965433df383074500500b6476472e.setIcon(div_icon_1534989e594fa6646c5c9069d75a6b5b);
+            
+    
+            var marker_c61d88d3c8ddc749539ba3dffaf61ac1 = L.marker(
+                [-28.009024, 153.392217],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_97f2fceef9c0ec737bef0f2e52bcfadb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2c59cf8472b80f44c5da13c2ed35542 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f743a901d67d27181b3084cee3c467be = $(`<div id="html_f743a901d67d27181b3084cee3c467be" style="width: 100.0%; height: 100.0%;"><b>Benowa Gardens Chempro Chemist</b><br>Shop 10 Benowa Gardens Shopping Centre, Corner Ashmore & Benowa Roads, BENOWA, QLD, 4217<br>Distance: 4689m (4.689km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_c2c59cf8472b80f44c5da13c2ed35542.setContent(html_f743a901d67d27181b3084cee3c467be);
+            
+        
+
+        marker_c61d88d3c8ddc749539ba3dffaf61ac1.bindPopup(popup_c2c59cf8472b80f44c5da13c2ed35542)
+        ;
+
+        
+    
+    
+            marker_c61d88d3c8ddc749539ba3dffaf61ac1.bindTooltip(
+                `<div>
+                     Benowa Gardens Chempro Chemist (4689m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c61d88d3c8ddc749539ba3dffaf61ac1.setIcon(icon_97f2fceef9c0ec737bef0f2e52bcfadb);
+            
+    
+            var poly_line_be6d470986354775922b3b2181442090 = L.polyline(
+                [[-27.9719229, 153.4151327], [-28.009024, 153.392217]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_be6d470986354775922b3b2181442090.bindTooltip(
+                `<div>
+                     4689m to Benowa Gardens Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_21d12301ca55555dea3d5108922cb756 = L.marker(
+                [-27.99047345, 153.40367485],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_beda9de67187b3b3aac570454f5eee83 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e4689m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_21d12301ca55555dea3d5108922cb756.setIcon(div_icon_beda9de67187b3b3aac570454f5eee83);
+            
+    
+            var marker_286fe9c5864c5bfdc1d48001b3492faf = L.marker(
+                [-27.9998168, 153.3767527],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var icon_7be918023bc60f2aae190f3e60196712 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4e31766fa89f31fef306d69890d2d3dc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_174a346973c20cda342696c77011a5e4 = $(`<div id="html_174a346973c20cda342696c77011a5e4" style="width: 100.0%; height: 100.0%;"><b>Benowa Village Chempro Chemist</b><br>Shop 11 Benowa Village, 406 Ashmore Road, BENOWA, QLD, 4217<br>Distance: 4880m (4.880km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_4e31766fa89f31fef306d69890d2d3dc.setContent(html_174a346973c20cda342696c77011a5e4);
+            
+        
+
+        marker_286fe9c5864c5bfdc1d48001b3492faf.bindPopup(popup_4e31766fa89f31fef306d69890d2d3dc)
+        ;
+
+        
+    
+    
+            marker_286fe9c5864c5bfdc1d48001b3492faf.bindTooltip(
+                `<div>
+                     Benowa Village Chempro Chemist (4880m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_286fe9c5864c5bfdc1d48001b3492faf.setIcon(icon_7be918023bc60f2aae190f3e60196712);
+            
+    
+            var poly_line_b38ec8ff9bc9267a0a203987fc893713 = L.polyline(
+                [[-27.9719229, 153.4151327], [-27.9998168, 153.3767527]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            poly_line_b38ec8ff9bc9267a0a203987fc893713.bindTooltip(
+                `<div>
+                     4880m to Benowa Village Chempro Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_71a5227b9f69f5ffa7e6c6b17c0b922c = L.marker(
+                [-27.98586985, 153.39594269999998],
+                {
+}
+            ).addTo(map_fd38f7ae94a1771c04eac7354ba4021c);
+        
+    
+            var div_icon_0ce538715d355876eb333a45b9bd596d = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e4880m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_71a5227b9f69f5ffa7e6c6b17c0b922c.setIcon(div_icon_0ce538715d355876eb333a45b9bd596d);
+            
+</script>
+</html>

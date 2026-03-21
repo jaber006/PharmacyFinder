@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -43,10 +45,61 @@
         <input type="number" id="filter-score" placeholder="Min score" step="0.1" min="0" max="1" />
         <div class="stats-badge" id="stats-badge">Loading…</div>
     </div>
+    <div id="tab-bar">
+        <button class="tab-btn active" data-tab="map" onclick="switchTab('map')">🗺️ Map</button>
+        <button class="tab-btn" data-tab="analytics" onclick="switchTab('analytics')">📊 Analytics</button>
+    </div>
 </div>
 
 <!-- Map -->
 <div id="map"></div>
+
+<!-- Analytics Panel -->
+<div id="analytics-panel" style="display:none">
+    <div class="analytics-grid">
+        <div class="analytics-card" id="overview-card">
+            <h3>National Overview</h3>
+            <div id="overview-stats" class="overview-stats">Loading…</div>
+        </div>
+        <div class="analytics-card">
+            <h3>Sites by State</h3>
+            <canvas id="chart-state"></canvas>
+        </div>
+        <div class="analytics-card">
+            <h3>Sites by Rule Item</h3>
+            <canvas id="chart-rule"></canvas>
+        </div>
+        <div class="analytics-card">
+            <h3>Competition — Pharmacy Density per 10k</h3>
+            <canvas id="chart-competition"></canvas>
+        </div>
+        <div class="analytics-card full-width">
+            <h3>Top 10 Highest-Scoring Sites</h3>
+            <table class="analytics-table" id="top-10-table">
+                <thead>
+                    <tr><th>#</th><th>Name</th><th>State</th><th>Rule</th><th>Score</th><th>Confidence</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="analytics-card full-width">
+            <h3>Data Freshness</h3>
+            <div id="freshness-info"></div>
+        </div>
+        <div class="analytics-card full-width">
+            <h3>🔥 Heatmap Layer</h3>
+            <p style="color:var(--text-dim);font-size:13px;margin-bottom:10px">
+                Toggle population-weighted opportunity density on the map.
+            </p>
+            <button class="btn btn-primary" id="heatmap-toggle" onclick="toggleHeatmap()">Show Heatmap on Map</button>
+            <span id="heatmap-status" style="margin-left:10px;color:var(--text-dim);font-size:12px"></span>
+        </div>
+        <div class="analytics-card full-width">
+            <h3>🏜️ Pharmacy Deserts</h3>
+            <div id="gaps-info">Loading…</div>
+        </div>
+    </div>
+</div>
 
 <!-- Legend -->
 <div id="legend">
@@ -367,6 +420,335 @@ tooltipStyle.textContent = `
     .dark-tooltip::before { border-top-color: var(--border) !important; }
 `;
 document.head.appendChild(tooltipStyle);
+
+// ─── Tab Switching ──────────────────────────────────────────────────
+function switchTab(tab) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector(`.tab-btn[data-tab="${tab}"]`).classList.add('active');
+    
+    const mapEl = document.getElementById('map');
+    const legendEl = document.getElementById('legend');
+    const analyticsEl = document.getElementById('analytics-panel');
+    const filtersEl = document.getElementById('filters');
+    const searchEl = document.getElementById('search-box');
+    
+    if (tab === 'map') {
+        mapEl.style.display = 'block';
+        legendEl.style.display = 'block';
+        analyticsEl.style.display = 'none';
+        filtersEl.style.display = 'flex';
+        searchEl.style.display = 'flex';
+        map.invalidateSize();
+    } else {
+        mapEl.style.display = 'none';
+        legendEl.style.display = 'none';
+        analyticsEl.style.display = 'block';
+        filtersEl.style.display = 'none';
+        searchEl.style.display = 'none';
+        loadAnalytics();
+    }
+}
+
+// ─── Analytics ──────────────────────────────────────────────────────
+let analyticsLoaded = false;
+let chartState = null;
+let chartRule = null;
+let chartCompetition = null;
+let heatLayer = null;
+let heatmapData = null;
+
+async function loadAnalytics() {
+    if (analyticsLoaded) return;
+    analyticsLoaded = true;
+    
+    try {
+        // Load overview
+        const overviewResp = await fetch('/api/analytics/overview');
+        const overview = await overviewResp.json();
+        renderOverview(overview);
+        renderCharts(overview);
+        
+        // Load competition
+        const compResp = await fetch('/api/analytics/competition');
+        const comp = await compResp.json();
+        renderCompetition(comp);
+        
+        // Load gaps
+        const gapsResp = await fetch('/api/analytics/gaps');
+        const gaps = await gapsResp.json();
+        renderGaps(gaps);
+    } catch (e) {
+        console.error('Failed to load analytics:', e);
+    }
+}
+
+function renderOverview(data) {
+    const el = document.getElementById('overview-stats');
+    el.innerHTML = `
+        <div class="stat-grid">
+            <div class="stat-item">
+                <div class="stat-value" style="color:var(--accent)">${data.total_qualifying}</div>
+                <div class="stat-label">Qualifying Sites</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" style="color:var(--green)">${Object.keys(data.by_state).length}</div>
+                <div class="stat-label">States Covered</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" style="color:var(--accent)">${Object.keys(data.by_rule).length}</div>
+                <div class="stat-label">Rule Types</div>
+            </div>
+        </div>
+    `;
+    
+    // Top 10 table
+    const tbody = document.querySelector('#top-10-table tbody');
+    tbody.innerHTML = data.top_10.map((s, i) => `
+        <tr>
+            <td>${i + 1}</td>
+            <td>${s.name}</td>
+            <td>${s.state}</td>
+            <td><span class="badge badge-rule">${s.primary_rule}</span></td>
+            <td style="color:var(--accent);font-weight:600">${(s.commercial_score || 0).toFixed(3)}</td>
+            <td>${((s.best_confidence || 0) * 100).toFixed(0)}%</td>
+        </tr>
+    `).join('');
+    
+    // Freshness
+    const freshEl = document.getElementById('freshness-info');
+    const f = data.data_freshness;
+    freshEl.innerHTML = `
+        <div class="freshness-grid">
+            <div><strong>Results:</strong> ${f.v2_results || 'N/A'}</div>
+            <div><strong>Pharmacies:</strong> ${f.pharmacies || 'N/A'} (${(f.pharmacies_count || 0).toLocaleString()} records)</div>
+            <div><strong>Supermarkets:</strong> ${f.supermarkets || 'N/A'} (${(f.supermarkets_count || 0).toLocaleString()} records)</div>
+            <div><strong>Medical Centres:</strong> ${(f.medical_centres_count || 0).toLocaleString()} records</div>
+            <div><strong>Hospitals:</strong> ${(f.hospitals_count || 0).toLocaleString()} records</div>
+            <div><strong>Shopping Centres:</strong> ${(f.shopping_centres_count || 0).toLocaleString()} records</div>
+        </div>
+    `;
+}
+
+function renderCharts(data) {
+    const stateLabels = Object.keys(data.by_state);
+    const stateValues = Object.values(data.by_state);
+    const stateColors = stateLabels.map((_, i) => `hsl(${210 + i * 30}, 70%, 55%)`);
+    
+    // Bar chart: Sites by State
+    if (chartState) chartState.destroy();
+    chartState = new Chart(document.getElementById('chart-state'), {
+        type: 'bar',
+        data: {
+            labels: stateLabels,
+            datasets: [{
+                label: 'Qualifying Sites',
+                data: stateValues,
+                backgroundColor: stateColors,
+                borderColor: stateColors.map(c => c.replace('55%', '40%')),
+                borderWidth: 1,
+            }],
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { color: '#999' },
+                    grid: { color: 'rgba(255,255,255,0.05)' },
+                },
+                x: {
+                    ticks: { color: '#999' },
+                    grid: { display: false },
+                },
+            },
+        },
+    });
+    
+    // Pie chart: Sites by Rule
+    const ruleLabels = Object.keys(data.by_rule);
+    const ruleValues = Object.values(data.by_rule);
+    const ruleColors = ruleLabels.map(r => RULE_COLORS[r] || '#666');
+    
+    if (chartRule) chartRule.destroy();
+    chartRule = new Chart(document.getElementById('chart-rule'), {
+        type: 'doughnut',
+        data: {
+            labels: ruleLabels,
+            datasets: [{
+                data: ruleValues,
+                backgroundColor: ruleColors,
+                borderColor: '#1a1a2e',
+                borderWidth: 2,
+            }],
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: { color: '#ccc', font: { size: 11 }, padding: 12 },
+                },
+            },
+        },
+    });
+}
+
+function renderCompetition(data) {
+    const labels = data.states.map(s => s.state);
+    const densityValues = data.states.map(s => s.density_per_10k);
+    const qualValues = data.states.map(s => s.qualifying_sites);
+    
+    if (chartCompetition) chartCompetition.destroy();
+    chartCompetition = new Chart(document.getElementById('chart-competition'), {
+        type: 'bar',
+        data: {
+            labels,
+            datasets: [
+                {
+                    label: 'Pharmacies per 10k pop',
+                    data: densityValues,
+                    backgroundColor: 'rgba(79, 140, 255, 0.6)',
+                    borderColor: 'rgba(79, 140, 255, 1)',
+                    borderWidth: 1,
+                    yAxisID: 'y',
+                },
+                {
+                    label: 'Qualifying Sites',
+                    data: qualValues,
+                    backgroundColor: 'rgba(52, 211, 153, 0.6)',
+                    borderColor: 'rgba(52, 211, 153, 1)',
+                    borderWidth: 1,
+                    yAxisID: 'y1',
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: { color: '#ccc', font: { size: 11 } },
+                },
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    position: 'left',
+                    ticks: { color: '#4f8cff' },
+                    grid: { color: 'rgba(255,255,255,0.05)' },
+                    title: { display: true, text: 'Per 10k pop', color: '#4f8cff' },
+                },
+                y1: {
+                    beginAtZero: true,
+                    position: 'right',
+                    ticks: { color: '#34d399' },
+                    grid: { drawOnChartArea: false },
+                    title: { display: true, text: 'Sites', color: '#34d399' },
+                },
+                x: {
+                    ticks: { color: '#999' },
+                    grid: { display: false },
+                },
+            },
+        },
+    });
+}
+
+function renderGaps(data) {
+    const el = document.getElementById('gaps-info');
+    const deserts = data.pharmacy_deserts;
+    const towns = data.town_gaps;
+    
+    let html = `
+        <div class="stat-grid" style="margin-bottom:16px">
+            <div class="stat-item">
+                <div class="stat-value" style="color:var(--red)">${deserts.count}</div>
+                <div class="stat-label">Pharmacy Deserts (>10km)</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" style="color:#fbbf24">${towns.count}</div>
+                <div class="stat-label">Town Gaps (supermarket, no pharmacy)</div>
+            </div>
+        </div>
+    `;
+    
+    if (deserts.features.length > 0) {
+        html += '<h4 style="margin:12px 0 6px;color:var(--text)">Top Pharmacy Deserts</h4>';
+        html += '<table class="analytics-table"><thead><tr><th>Name</th><th>State</th><th>Gap (km)</th><th>Nearest Pharmacy</th></tr></thead><tbody>';
+        deserts.features
+            .sort((a, b) => b.properties.gap_km_geodesic - a.properties.gap_km_geodesic)
+            .slice(0, 15)
+            .forEach(f => {
+                const p = f.properties;
+                html += `<tr><td>${p.name}</td><td>${p.state}</td><td style="color:var(--red)">${p.gap_km_geodesic}</td><td>${p.nearest_pharmacy}</td></tr>`;
+            });
+        html += '</tbody></table>';
+    }
+    
+    if (towns.features.length > 0) {
+        html += '<h4 style="margin:16px 0 6px;color:var(--text)">Top Town Gaps</h4>';
+        html += '<table class="analytics-table"><thead><tr><th>Location</th><th>Gap (km)</th><th>Nearest Pharmacy</th></tr></thead><tbody>';
+        towns.features
+            .sort((a, b) => b.properties.gap_km - a.properties.gap_km)
+            .slice(0, 15)
+            .forEach(f => {
+                const p = f.properties;
+                html += `<tr><td>${p.name}</td><td style="color:#fbbf24">${p.gap_km}</td><td>${p.nearest_pharmacy}</td></tr>`;
+            });
+        html += '</tbody></table>';
+    }
+    
+    el.innerHTML = html;
+}
+
+// ─── Heatmap Toggle ─────────────────────────────────────────────────
+async function toggleHeatmap() {
+    const btn = document.getElementById('heatmap-toggle');
+    const status = document.getElementById('heatmap-status');
+    
+    if (heatLayer) {
+        map.removeLayer(heatLayer);
+        heatLayer = null;
+        btn.textContent = 'Show Heatmap on Map';
+        status.textContent = 'Removed';
+        return;
+    }
+    
+    btn.disabled = true;
+    status.textContent = 'Loading heatmap data…';
+    
+    try {
+        if (!heatmapData) {
+            const resp = await fetch('/api/analytics/heatmap');
+            heatmapData = await resp.json();
+        }
+        
+        const points = heatmapData.features.map(f => [
+            f.geometry.coordinates[1],
+            f.geometry.coordinates[0],
+            f.properties.density,
+        ]);
+        
+        heatLayer = L.heatLayer(points, {
+            radius: 25,
+            blur: 20,
+            maxZoom: 12,
+            gradient: { 0.2: '#2196f3', 0.4: '#4caf50', 0.6: '#ffeb3b', 0.8: '#ff9800', 1.0: '#f44336' },
+        }).addTo(map);
+        
+        btn.textContent = 'Hide Heatmap';
+        status.textContent = `${heatmapData.features.length} points loaded`;
+        
+        // Switch to map tab to see it
+        switchTab('map');
+    } catch (e) {
+        status.textContent = 'Error loading heatmap';
+        console.error(e);
+    }
+    btn.disabled = false;
+}
 
 // Init
 loadSites();

@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-03-21T22:28:05.940102",
+  "week": {
+    "start": "2026-03-16",
+    "end": "2026-03-22"
+  },
+  "summary": {
+    "total_qualifying_sites": 619,
+    "new_this_week": 0,
+    "daily_reports_generated": 1
+  },
+  "state_breakdown": {
+    "WA": 183,
+    "QLD": 53,
+    "VIC": 10,
+    "NSW": 15,
+    "TAS": 169,
+    "SA": 168,
+    "NT": 20,
+    "ACT": 1
+  },
+  "rule_breakdown": {
+    "Item 136": 32,
+    "Item 131": 546,
+    "Item 130": 10,
+    "Item 135": 31
+  },
+  "confidence_distribution": {
+    "high_85plus": 556,
+    "medium_50_85": 32,
+    "low_below_50": 31
+  },
+  "best_new_opportunities": [],
+  "data_quality": {
+    "total_sites": 619,
+    "with_address": 619,
+    "with_coordinates": 619,
+    "with_rules_evaluated": 619,
+    "completeness_pct": 100.0
+  },
+  "recommended_actions": [
+    "Prioritise 556 high-confidence sites (>=85%) for on-ground verification",
+    "No new sites this week \u2014 consider expanding search parameters or running fresh scans",
+    "Review commercial property listings for top 5 sites",
+    "Check watchlist items for any near-miss sites that may now qualify"
+  ]
+}

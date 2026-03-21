@@ -233,7 +233,7 @@
       "name": "Canning Vale Medical Centre",
       "address": "290 Ranford Road, Canning Vale WA 6155"
     },
-    "assessment_date": "2026-03-21T22:12:49.963481",
+    "assessment_date": "2026-03-21T22:15:24.849961",
     "qualifying_rules": [
       "Item 136"
     ],
@@ -336,5 +336,5 @@
   "map_paths": {
     "Item 136": "C:\\Users\\MJ\\Documents\\GitHub\\PharmacyFinder\\output\\maps\\medical_centre_164_Item_136.html"
   },
-  "generated_at": "2026-03-21T22:12:50.076936"
+  "generated_at": "2026-03-21T22:15:24.951498"
 }

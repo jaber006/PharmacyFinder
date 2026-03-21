@@ -1,0 +1,2579 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3adeb926931b6d7e061ca9f1876d4778 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position:fixed;bottom:30px;left:30px;z-index:1000;
+         background:white;padding:10px 15px;border:2px solid #333;
+         border-radius:5px;font-size:13px;box-shadow:2px 2px 6px rgba(0,0,0,0.3);">
+        <b>Item 136 Distance Map</b><br>
+        <span style="color:green">● Green</span> — Passes (>10% margin)<br>
+        <span style="color:orange">● Orange</span> — Borderline (<10% margin)<br>
+        <span style="color:red">● Red</span> — Fails (too close)<br>
+        <span style="color:blue">◯ Blue circle</span> — 300m threshold<br>
+        Pharmacies shown: 29 within 5.0km
+    </div>
+    
+    
+    <div style="position:fixed;top:10px;left:50%;transform:translateX(-50%);
+         z-index:1000;background:white;padding:8px 20px;border:2px solid #333;
+         border-radius:5px;font-size:16px;font-weight:bold;
+         box-shadow:2px 2px 6px rgba(0,0,0,0.3);">
+        Joondalup Health Campus Medical Centre — Item 136 Distance Analysis
+    </div>
+    
+    
+            <div class="folium-map" id="map_3adeb926931b6d7e061ca9f1876d4778" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3adeb926931b6d7e061ca9f1876d4778 = L.map(
+                "map_3adeb926931b6d7e061ca9f1876d4778",
+                {
+                    center: [-31.7411785, 115.7531333],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4d18e42a3598929333a8407d1e622a38 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4d18e42a3598929333a8407d1e622a38.addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var marker_e160bb725432c194fe72803f79267265 = L.marker(
+                [-31.7411785, 115.7531333],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_254719fa45eea375196e8488461802be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ee4ff73d111d40dadff38e4f8d5ba26 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d10ce7a795eec015a2696c84b0311f8d = $(`<div id="html_d10ce7a795eec015a2696c84b0311f8d" style="width: 100.0%; height: 100.0%;"><b>Joondalup Health Campus Medical Centre</b><br>Rule: Item 136<br>Threshold: 300m</div>`)[0];
+                popup_1ee4ff73d111d40dadff38e4f8d5ba26.setContent(html_d10ce7a795eec015a2696c84b0311f8d);
+            
+        
+
+        marker_e160bb725432c194fe72803f79267265.bindPopup(popup_1ee4ff73d111d40dadff38e4f8d5ba26)
+        ;
+
+        
+    
+    
+            marker_e160bb725432c194fe72803f79267265.bindTooltip(
+                `<div>
+                     Joondalup Health Campus Medical Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e160bb725432c194fe72803f79267265.setIcon(icon_254719fa45eea375196e8488461802be);
+            
+    
+            var circle_c41f7fc7e2fbe22ef983d0d31fd0a1b6 = L.circle(
+                [-31.7411785, 115.7531333],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": "10", "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.6, "radius": 300, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            circle_c41f7fc7e2fbe22ef983d0d31fd0a1b6.bindTooltip(
+                `<div>
+                     Item 136 threshold: 300m
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_4d559d3715cd80aed228bf61e4186e3e = L.circle(
+                [-31.7411785, 115.7531333],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": "5", "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5000.0, "stroke": true, "weight": 1}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            circle_4d559d3715cd80aed228bf61e4186e3e.bindTooltip(
+                `<div>
+                     Search radius: 5.0km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_88c0be67cbbf3424b2cbe3f04eaa839f = L.marker(
+                [-31.7437778, 115.7630231],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_837db57218a0171efdff725b3ac6aa26 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc99dc2c86cd9b248147e4a859d50f89 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_34abf429054dbbd9515b6af95a727d45 = $(`<div id="html_34abf429054dbbd9515b6af95a727d45" style="width: 100.0%; height: 100.0%;"><b>Chemist Warehouse</b><br>WA<br>Distance: 980m (0.980km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_bc99dc2c86cd9b248147e4a859d50f89.setContent(html_34abf429054dbbd9515b6af95a727d45);
+            
+        
+
+        marker_88c0be67cbbf3424b2cbe3f04eaa839f.bindPopup(popup_bc99dc2c86cd9b248147e4a859d50f89)
+        ;
+
+        
+    
+    
+            marker_88c0be67cbbf3424b2cbe3f04eaa839f.bindTooltip(
+                `<div>
+                     Chemist Warehouse (980m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_88c0be67cbbf3424b2cbe3f04eaa839f.setIcon(icon_837db57218a0171efdff725b3ac6aa26);
+            
+    
+            var poly_line_9e7943622a506db535d82d669f9289d5 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7437778, 115.7630231]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_9e7943622a506db535d82d669f9289d5.bindTooltip(
+                `<div>
+                     980m to Chemist Warehouse
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2898f54dae7c5233e94d015b8973d757 = L.marker(
+                [-31.74247815, 115.7580782],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_5d4a0a5c09ffef5be45721ab20378309 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e980m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_2898f54dae7c5233e94d015b8973d757.setIcon(div_icon_5d4a0a5c09ffef5be45721ab20378309);
+            
+    
+            var marker_c5cca8310b7f920acd200b76a926e554 = L.marker(
+                [-31.7441198, 115.7649971],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_a514342bcb612c9fe80d4cde72ca2995 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_db21df1f38b1acbf272c9dc880ebb1bb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_56e4a709ee30facd8f077aff724e7a69 = $(`<div id="html_56e4a709ee30facd8f077aff724e7a69" style="width: 100.0%; height: 100.0%;"><b>Wizard Pharmacy</b><br>OSM (-31.744120, 115.764997)<br>Distance: 1171m (1.171km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_db21df1f38b1acbf272c9dc880ebb1bb.setContent(html_56e4a709ee30facd8f077aff724e7a69);
+            
+        
+
+        marker_c5cca8310b7f920acd200b76a926e554.bindPopup(popup_db21df1f38b1acbf272c9dc880ebb1bb)
+        ;
+
+        
+    
+    
+            marker_c5cca8310b7f920acd200b76a926e554.bindTooltip(
+                `<div>
+                     Wizard Pharmacy (1171m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c5cca8310b7f920acd200b76a926e554.setIcon(icon_a514342bcb612c9fe80d4cde72ca2995);
+            
+    
+            var poly_line_75fbc6bfd872969268ea743b0f6d3ea5 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7441198, 115.7649971]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_75fbc6bfd872969268ea743b0f6d3ea5.bindTooltip(
+                `<div>
+                     1171m to Wizard Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5462e3934513d75e8df1331732b53d67 = L.marker(
+                [-31.74264915, 115.75906520000001],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_18240c148a4107c4cca5717ceb12354b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1171m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_5462e3934513d75e8df1331732b53d67.setIcon(div_icon_18240c148a4107c4cca5717ceb12354b);
+            
+    
+            var marker_6d6573e1bd9f767917f1b7a488042d59 = L.marker(
+                [-31.743233, 115.766142],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_f5884927cd9e34c73a3c902d6f90675e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_73a54037a872ff9cfe69b6dcebb69fa7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_518282eb560af8e7e73b11cc828af84b = $(`<div id="html_518282eb560af8e7e73b11cc828af84b" style="width: 100.0%; height: 100.0%;"><b>Wizard Pharmacy</b><br>WA<br>Distance: 1254m (1.254km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_73a54037a872ff9cfe69b6dcebb69fa7.setContent(html_518282eb560af8e7e73b11cc828af84b);
+            
+        
+
+        marker_6d6573e1bd9f767917f1b7a488042d59.bindPopup(popup_73a54037a872ff9cfe69b6dcebb69fa7)
+        ;
+
+        
+    
+    
+            marker_6d6573e1bd9f767917f1b7a488042d59.bindTooltip(
+                `<div>
+                     Wizard Pharmacy (1254m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6d6573e1bd9f767917f1b7a488042d59.setIcon(icon_f5884927cd9e34c73a3c902d6f90675e);
+            
+    
+            var poly_line_48e48f7962d7b00f4fd0b666674bd079 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.743233, 115.766142]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_48e48f7962d7b00f4fd0b666674bd079.bindTooltip(
+                `<div>
+                     1254m to Wizard Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_75f8d45f0095502b0b968127c69e0d24 = L.marker(
+                [-31.74220575, 115.75963765],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_12ae1e625d94a402bbf9699d1d16bff1 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1254m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_75f8d45f0095502b0b968127c69e0d24.setIcon(div_icon_12ae1e625d94a402bbf9699d1d16bff1);
+            
+    
+            var marker_872874e245e91fd24a80ebdf200b7457 = L.marker(
+                [-31.7530657, 115.7512075],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_d7f47db20b58b4170462db040205d1c6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9a0df7244a98ba31b53e7607a8e182c3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5a4bbc7b53f7a65c778ce5484f3a3676 = $(`<div id="html_5a4bbc7b53f7a65c778ce5484f3a3676" style="width: 100.0%; height: 100.0%;"><b>Pharmacy 777 Connolly</b><br>Shop 5 Connolly Shopping Centre, 1 Glenelg Place, CONNOLLY, WA, 6027<br>Distance: 1331m (1.331km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_9a0df7244a98ba31b53e7607a8e182c3.setContent(html_5a4bbc7b53f7a65c778ce5484f3a3676);
+            
+        
+
+        marker_872874e245e91fd24a80ebdf200b7457.bindPopup(popup_9a0df7244a98ba31b53e7607a8e182c3)
+        ;
+
+        
+    
+    
+            marker_872874e245e91fd24a80ebdf200b7457.bindTooltip(
+                `<div>
+                     Pharmacy 777 Connolly (1331m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_872874e245e91fd24a80ebdf200b7457.setIcon(icon_d7f47db20b58b4170462db040205d1c6);
+            
+    
+            var poly_line_5723d4aeb7260f45f620cdbae26c076d = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7530657, 115.7512075]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_5723d4aeb7260f45f620cdbae26c076d.bindTooltip(
+                `<div>
+                     1331m to Pharmacy 777 Connolly
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_38911ff57ff69a928bc2dc8389608b91 = L.marker(
+                [-31.7471221, 115.75217040000001],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_3e8c62d4e63ddb3a2e2f10ae11e300ab = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1331m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_38911ff57ff69a928bc2dc8389608b91.setIcon(div_icon_3e8c62d4e63ddb3a2e2f10ae11e300ab);
+            
+    
+            var marker_c2d16e47c3dc2ca6315db0af6819ffac = L.marker(
+                [-31.7411833, 115.7387678],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_795525684afd2d35c53c7d096ba1738e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c28d4822d4ed38e43680b323b711afc0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_892ff063de2680d7a51d329d7a515d14 = $(`<div id="html_892ff063de2680d7a51d329d7a515d14" style="width: 100.0%; height: 100.0%;"><b>Currambine Pharmacy & Gifts</b><br>Shops 17-18 Currambine Central, 1244 Cnr Marmion Ave and Shenton Ave, CURRAMBINE, WA, 6028<br>Distance: 1361m (1.361km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_c28d4822d4ed38e43680b323b711afc0.setContent(html_892ff063de2680d7a51d329d7a515d14);
+            
+        
+
+        marker_c2d16e47c3dc2ca6315db0af6819ffac.bindPopup(popup_c28d4822d4ed38e43680b323b711afc0)
+        ;
+
+        
+    
+    
+            marker_c2d16e47c3dc2ca6315db0af6819ffac.bindTooltip(
+                `<div>
+                     Currambine Pharmacy & Gifts (1361m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c2d16e47c3dc2ca6315db0af6819ffac.setIcon(icon_795525684afd2d35c53c7d096ba1738e);
+            
+    
+            var poly_line_e04f87d9c2a6b89e88f457e6dbf8d4fc = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7411833, 115.7387678]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_e04f87d9c2a6b89e88f457e6dbf8d4fc.bindTooltip(
+                `<div>
+                     1361m to Currambine Pharmacy & Gifts
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_54f40e0460c834ab45296004e3b372c1 = L.marker(
+                [-31.7411809, 115.74595055],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_47ef57b7171ec017862305af2ef85cd1 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1361m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_54f40e0460c834ab45296004e3b372c1.setIcon(div_icon_47ef57b7171ec017862305af2ef85cd1);
+            
+    
+            var marker_45247fad35666d5fc4749dc4df055c3e = L.marker(
+                [-31.7435966, 115.7673963],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_a04c9d8c510d7954229b2bd3968494b5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0b642e5463db4d82952a1c444d23409e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6a4e9661ddf97d4313c5048844a2ffc8 = $(`<div id="html_6a4e9661ddf97d4313c5048844a2ffc8" style="width: 100.0%; height: 100.0%;"><b>Wizard Pharmacy Joondalup Upper Level</b><br>Shop T214, Lakeside Joondalup Shopping Centre, 420 Joondalup Drive, JOONDALUP, WA, 6027<br>Distance: 1378m (1.378km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_0b642e5463db4d82952a1c444d23409e.setContent(html_6a4e9661ddf97d4313c5048844a2ffc8);
+            
+        
+
+        marker_45247fad35666d5fc4749dc4df055c3e.bindPopup(popup_0b642e5463db4d82952a1c444d23409e)
+        ;
+
+        
+    
+    
+            marker_45247fad35666d5fc4749dc4df055c3e.bindTooltip(
+                `<div>
+                     Wizard Pharmacy Joondalup Upper Level (1378m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_45247fad35666d5fc4749dc4df055c3e.setIcon(icon_a04c9d8c510d7954229b2bd3968494b5);
+            
+    
+            var poly_line_82ff7d342d135f035d6d3b44db844e71 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7435966, 115.7673963]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_82ff7d342d135f035d6d3b44db844e71.bindTooltip(
+                `<div>
+                     1378m to Wizard Pharmacy Joondalup Upper Level
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6a3f85989ff058d1ca39ea913d89c636 = L.marker(
+                [-31.74238755, 115.7602648],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_74e4b828c488ae70b5f72a853f88d46a = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1378m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_6a3f85989ff058d1ca39ea913d89c636.setIcon(div_icon_74e4b828c488ae70b5f72a853f88d46a);
+            
+    
+            var marker_fd58855e33d83148aa7724090d4ab786 = L.marker(
+                [-31.7435966, 115.7673963],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_fc6a1ec5140e8a693ca600366965ffb5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d9ac2ee0ca64ac1e7e10634fd2f66da5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b756902eb3453688d82eaf5d912087a3 = $(`<div id="html_b756902eb3453688d82eaf5d912087a3" style="width: 100.0%; height: 100.0%;"><b>Wizard Pharmacy Joondalup Central</b><br>Shop T8 Lakeside Joondalup Shopping Centre, 420 Joondalup Drive, JOONDALUP, WA, 6027<br>Distance: 1378m (1.378km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_d9ac2ee0ca64ac1e7e10634fd2f66da5.setContent(html_b756902eb3453688d82eaf5d912087a3);
+            
+        
+
+        marker_fd58855e33d83148aa7724090d4ab786.bindPopup(popup_d9ac2ee0ca64ac1e7e10634fd2f66da5)
+        ;
+
+        
+    
+    
+            marker_fd58855e33d83148aa7724090d4ab786.bindTooltip(
+                `<div>
+                     Wizard Pharmacy Joondalup Central (1378m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fd58855e33d83148aa7724090d4ab786.setIcon(icon_fc6a1ec5140e8a693ca600366965ffb5);
+            
+    
+            var poly_line_a131ca763c642bf0d7ded3cda69b05ca = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7435966, 115.7673963]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_a131ca763c642bf0d7ded3cda69b05ca.bindTooltip(
+                `<div>
+                     1378m to Wizard Pharmacy Joondalup Central
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_086b8310c661d264552215ca9606214e = L.marker(
+                [-31.74238755, 115.7602648],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_4699522452dbd2767b9a07140bd94748 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1378m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_086b8310c661d264552215ca9606214e.setIcon(div_icon_4699522452dbd2767b9a07140bd94748);
+            
+    
+            var marker_7e4379f56a4e82f39b9a1cb951284742 = L.marker(
+                [-31.7434268, 115.7690981],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_42793f5353ec407f5479190490341cf6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9d5c77fa20b4039a7459e4dd1d540e70 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1ce3a09bdd7b289e099f415a680b59e5 = $(`<div id="html_1ce3a09bdd7b289e099f415a680b59e5" style="width: 100.0%; height: 100.0%;"><b>Priceline Pharmacy</b><br>WA<br>Distance: 1533m (1.533km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_9d5c77fa20b4039a7459e4dd1d540e70.setContent(html_1ce3a09bdd7b289e099f415a680b59e5);
+            
+        
+
+        marker_7e4379f56a4e82f39b9a1cb951284742.bindPopup(popup_9d5c77fa20b4039a7459e4dd1d540e70)
+        ;
+
+        
+    
+    
+            marker_7e4379f56a4e82f39b9a1cb951284742.bindTooltip(
+                `<div>
+                     Priceline Pharmacy (1533m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7e4379f56a4e82f39b9a1cb951284742.setIcon(icon_42793f5353ec407f5479190490341cf6);
+            
+    
+            var poly_line_9d7f0e9de8e354c46be0407948b938da = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7434268, 115.7690981]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_9d7f0e9de8e354c46be0407948b938da.bindTooltip(
+                `<div>
+                     1533m to Priceline Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f6d1177da0a9e4a553f9b44e39644420 = L.marker(
+                [-31.74230265, 115.7611157],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_63de0e239f5670a73384f10fd20813fc = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1533m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_f6d1177da0a9e4a553f9b44e39644420.setIcon(div_icon_63de0e239f5670a73384f10fd20813fc);
+            
+    
+            var marker_3eb666a50286e7c3c7d95164f00b9ad2 = L.marker(
+                [-31.735249, 115.7679068],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_2b8364c3089b783abb0d1677a8156a9c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e8df88ed1b0c2d91c03bee1a487c11f3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_55e7ecc7c7bbadb4cd9d293946e473eb = $(`<div id="html_55e7ecc7c7bbadb4cd9d293946e473eb" style="width: 100.0%; height: 100.0%;"><b>HPS Pharmacies Grand Boulevard</b><br>87 Grand Boulevard, JOONDALUP, WA, 6027<br>Distance: 1547m (1.547km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_e8df88ed1b0c2d91c03bee1a487c11f3.setContent(html_55e7ecc7c7bbadb4cd9d293946e473eb);
+            
+        
+
+        marker_3eb666a50286e7c3c7d95164f00b9ad2.bindPopup(popup_e8df88ed1b0c2d91c03bee1a487c11f3)
+        ;
+
+        
+    
+    
+            marker_3eb666a50286e7c3c7d95164f00b9ad2.bindTooltip(
+                `<div>
+                     HPS Pharmacies Grand Boulevard (1547m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3eb666a50286e7c3c7d95164f00b9ad2.setIcon(icon_2b8364c3089b783abb0d1677a8156a9c);
+            
+    
+            var poly_line_cec6eb42de78e0cf5ea9e09f7c571e2c = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.735249, 115.7679068]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_cec6eb42de78e0cf5ea9e09f7c571e2c.bindTooltip(
+                `<div>
+                     1547m to HPS Pharmacies Grand Boulevard
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_aa9483fa41b729c41542e509dfd7e54a = L.marker(
+                [-31.73821375, 115.76052005],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_fec58bf2b33a2da88dca7dda2ed038f8 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1547m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_aa9483fa41b729c41542e509dfd7e54a.setIcon(div_icon_fec58bf2b33a2da88dca7dda2ed038f8);
+            
+    
+            var marker_db429786d98fcfa7847a1ca740e1fd60 = L.marker(
+                [-31.7423442, 115.7695846],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_40f0aff56098388e3daafed68f1b6c91 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8eba88a49ee423f19f2fb46b425519f1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5d8a03acde3dd9cf6c63cd196e2823db = $(`<div id="html_5d8a03acde3dd9cf6c63cd196e2823db" style="width: 100.0%; height: 100.0%;"><b>Pharmacy 777 Joondalup Compounding</b><br>126 Grand Blvd, Joondalup WA 6027, Australia<br>Distance: 1564m (1.564km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_8eba88a49ee423f19f2fb46b425519f1.setContent(html_5d8a03acde3dd9cf6c63cd196e2823db);
+            
+        
+
+        marker_db429786d98fcfa7847a1ca740e1fd60.bindPopup(popup_8eba88a49ee423f19f2fb46b425519f1)
+        ;
+
+        
+    
+    
+            marker_db429786d98fcfa7847a1ca740e1fd60.bindTooltip(
+                `<div>
+                     Pharmacy 777 Joondalup Compounding (1564m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_db429786d98fcfa7847a1ca740e1fd60.setIcon(icon_40f0aff56098388e3daafed68f1b6c91);
+            
+    
+            var poly_line_306174092184712f50136bb115e05b65 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7423442, 115.7695846]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_306174092184712f50136bb115e05b65.bindTooltip(
+                `<div>
+                     1564m to Pharmacy 777 Joondalup Compounding
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3d949446f931ed31a45ff1bbac4f1e2c = L.marker(
+                [-31.74176135, 115.76135895],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_86fa091499c245c1c0e23c77e51104ca = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1564m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_3d949446f931ed31a45ff1bbac4f1e2c.setIcon(div_icon_86fa091499c245c1c0e23c77e51104ca);
+            
+    
+            var marker_81bf71a84a53680827f8fc67cf32a846 = L.marker(
+                [-31.7285978, 115.7643639],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_5c9e583010cf7a6683e2b7451dc2f68d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_64f0157633263a5b1fcb79fe60eb1c6a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0e483199dca7add841a57663d942af69 = $(`<div id="html_0e483199dca7add841a57663d942af69" style="width: 100.0%; height: 100.0%;"><b>TerryWhite Chemmart Candlewood Village</b><br>Shop 12 Candlewood Village, 45 Candlewood Boulevard, JOONDALUP, WA, 6027<br>Distance: 1755m (1.755km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_64f0157633263a5b1fcb79fe60eb1c6a.setContent(html_0e483199dca7add841a57663d942af69);
+            
+        
+
+        marker_81bf71a84a53680827f8fc67cf32a846.bindPopup(popup_64f0157633263a5b1fcb79fe60eb1c6a)
+        ;
+
+        
+    
+    
+            marker_81bf71a84a53680827f8fc67cf32a846.bindTooltip(
+                `<div>
+                     TerryWhite Chemmart Candlewood Village (1755m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_81bf71a84a53680827f8fc67cf32a846.setIcon(icon_5c9e583010cf7a6683e2b7451dc2f68d);
+            
+    
+            var poly_line_67334d0b0534feb1dd001c05d9ee590a = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7285978, 115.7643639]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_67334d0b0534feb1dd001c05d9ee590a.bindTooltip(
+                `<div>
+                     1755m to TerryWhite Chemmart Candlewood Village
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7e4e5f9cc94d0a15961fcd7452569601 = L.marker(
+                [-31.73488815, 115.7587486],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_b6836dd4156735a4116d937827c1feec = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1755m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_7e4e5f9cc94d0a15961fcd7452569601.setIcon(div_icon_b6836dd4156735a4116d937827c1feec);
+            
+    
+            var marker_ed363f7866be3d00163ea86f8cfc14eb = L.marker(
+                [-31.7382814, 115.7725329],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_fadc82129236561528af3a8c8ef546d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a6d63935c550345f06cf957a292675df = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5a39c80e63f432870cc07cca5bd3745f = $(`<div id="html_5a39c80e63f432870cc07cca5bd3745f" style="width: 100.0%; height: 100.0%;"><b>HPS Pharmacies Lakeside</b><br>Joondalup Health Campus, 60 Shenton Avenue, JOONDALUP, WA, 6027<br>Distance: 1866m (1.866km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_a6d63935c550345f06cf957a292675df.setContent(html_5a39c80e63f432870cc07cca5bd3745f);
+            
+        
+
+        marker_ed363f7866be3d00163ea86f8cfc14eb.bindPopup(popup_a6d63935c550345f06cf957a292675df)
+        ;
+
+        
+    
+    
+            marker_ed363f7866be3d00163ea86f8cfc14eb.bindTooltip(
+                `<div>
+                     HPS Pharmacies Lakeside (1866m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ed363f7866be3d00163ea86f8cfc14eb.setIcon(icon_fadc82129236561528af3a8c8ef546d4);
+            
+    
+            var poly_line_1425106d0ed9304ffccfff6d1d6bffb2 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7382814, 115.7725329]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_1425106d0ed9304ffccfff6d1d6bffb2.bindTooltip(
+                `<div>
+                     1866m to HPS Pharmacies Lakeside
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_35c3136499e6cddc4d0338dcd980ca59 = L.marker(
+                [-31.73972995, 115.7628331],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_94322325bdb8a68fe177df837d5e7b87 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1866m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_35c3136499e6cddc4d0338dcd980ca59.setIcon(div_icon_94322325bdb8a68fe177df837d5e7b87);
+            
+    
+            var marker_e033858a61bade961675a15aa3fb91af = L.marker(
+                [-31.7242316, 115.7465635],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_fb2f6d84e3e48cb1fc8dd7517157ece6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_86caabbd7a544939e667174bd0d02b8c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_396eedbfe01445cbfed9c0a39f767d8e = $(`<div id="html_396eedbfe01445cbfed9c0a39f767d8e" style="width: 100.0%; height: 100.0%;"><b>Sunlander Pharmacy</b><br>Unit 1, 10 Sunlander Drive, CURRAMBINE, WA, 6028<br>Distance: 1980m (1.980km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_86caabbd7a544939e667174bd0d02b8c.setContent(html_396eedbfe01445cbfed9c0a39f767d8e);
+            
+        
+
+        marker_e033858a61bade961675a15aa3fb91af.bindPopup(popup_86caabbd7a544939e667174bd0d02b8c)
+        ;
+
+        
+    
+    
+            marker_e033858a61bade961675a15aa3fb91af.bindTooltip(
+                `<div>
+                     Sunlander Pharmacy (1980m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e033858a61bade961675a15aa3fb91af.setIcon(icon_fb2f6d84e3e48cb1fc8dd7517157ece6);
+            
+    
+            var poly_line_0edae43193a8b9d9d7a7dff331e51693 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7242316, 115.7465635]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_0edae43193a8b9d9d7a7dff331e51693.bindTooltip(
+                `<div>
+                     1980m to Sunlander Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3ccb94ec73aadc299a1e58708feb222b = L.marker(
+                [-31.73270505, 115.74984839999999],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_185739508b224d77cb167abed44e01a3 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1980m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_3ccb94ec73aadc299a1e58708feb222b.setIcon(div_icon_185739508b224d77cb167abed44e01a3);
+            
+    
+            var marker_f08d0fb3bd746e44add2377b4b90b66f = L.marker(
+                [-31.751001, 115.7345339],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_ab6c2da42c72c2c8c031fa1323ef8a8e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_645f0080dec4b5140e499cb03768aa57 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_180c16372878e0964751457b1084534d = $(`<div id="html_180c16372878e0964751457b1084534d" style="width: 100.0%; height: 100.0%;"><b>Priceline Pharmacy - Beaumaris</b><br>Shop 8 Beaumaris City Shopping Centre, 68 Constellation Drive, OCEAN REEF, WA, 6027<br>Distance: 2072m (2.072km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_645f0080dec4b5140e499cb03768aa57.setContent(html_180c16372878e0964751457b1084534d);
+            
+        
+
+        marker_f08d0fb3bd746e44add2377b4b90b66f.bindPopup(popup_645f0080dec4b5140e499cb03768aa57)
+        ;
+
+        
+    
+    
+            marker_f08d0fb3bd746e44add2377b4b90b66f.bindTooltip(
+                `<div>
+                     Priceline Pharmacy - Beaumaris (2072m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f08d0fb3bd746e44add2377b4b90b66f.setIcon(icon_ab6c2da42c72c2c8c031fa1323ef8a8e);
+            
+    
+            var poly_line_88161c8d628765e32c456c9abe59cafe = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.751001, 115.7345339]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_88161c8d628765e32c456c9abe59cafe.bindTooltip(
+                `<div>
+                     2072m to Priceline Pharmacy - Beaumaris
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e17809fb55e23135564aacd1d930ff65 = L.marker(
+                [-31.74608975, 115.7438336],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_24812aac3fa07fe31bbf150ad91096cc = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e2072m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_e17809fb55e23135564aacd1d930ff65.setIcon(div_icon_24812aac3fa07fe31bbf150ad91096cc);
+            
+    
+            var marker_0f13ac4c84e27b0979f3b85c6aef0cee = L.marker(
+                [-31.7562, 115.77],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_cbaa2594328667f35e176c4f004f7cdc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9399ca6d46e7588b9750ff39a57197b5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fb25e380e706a51612e7a7044d456bac = $(`<div id="html_fb25e380e706a51612e7a7044d456bac" style="width: 100.0%; height: 100.0%;"><b>Chemist Warehouse Joondalup - Home Co.</b><br>Tenancy T5   11 Injune Way, Joondalup, WA, 6027<br>Distance: 2308m (2.308km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_9399ca6d46e7588b9750ff39a57197b5.setContent(html_fb25e380e706a51612e7a7044d456bac);
+            
+        
+
+        marker_0f13ac4c84e27b0979f3b85c6aef0cee.bindPopup(popup_9399ca6d46e7588b9750ff39a57197b5)
+        ;
+
+        
+    
+    
+            marker_0f13ac4c84e27b0979f3b85c6aef0cee.bindTooltip(
+                `<div>
+                     Chemist Warehouse Joondalup - Home Co. (2308m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0f13ac4c84e27b0979f3b85c6aef0cee.setIcon(icon_cbaa2594328667f35e176c4f004f7cdc);
+            
+    
+            var poly_line_71ae6fed69bfa5c89bc334ac6b69a2b3 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7562, 115.77]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_71ae6fed69bfa5c89bc334ac6b69a2b3.bindTooltip(
+                `<div>
+                     2308m to Chemist Warehouse Joondalup - Home Co.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_28158f2bb0bfaf0c3c2b96c0432a0fa6 = L.marker(
+                [-31.748689249999998, 115.76156664999999],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_dfaeed0aa69d69af2b413a3bea3d2d55 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e2308m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_28158f2bb0bfaf0c3c2b96c0432a0fa6.setIcon(div_icon_dfaeed0aa69d69af2b413a3bea3d2d55);
+            
+    
+            var marker_829cf24b2e4c5a03754e65b285aea916 = L.marker(
+                [-31.7192172, 115.7405052],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_a307d4622fd0de4667e3d5dda15eaf47 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e84d4f0d6697a5d7067c5a9f5340aa98 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_45ec6007f3369e520e656cb88188dad0 = $(`<div id="html_45ec6007f3369e520e656cb88188dad0" style="width: 100.0%; height: 100.0%;"><b>SuperChem Kinross</b><br>Tenancy 18, Kinross Central Shopping Centre, Corner Selkirk & Connolly Drive, KINROSS, WA, 6028<br>Distance: 2713m (2.713km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_e84d4f0d6697a5d7067c5a9f5340aa98.setContent(html_45ec6007f3369e520e656cb88188dad0);
+            
+        
+
+        marker_829cf24b2e4c5a03754e65b285aea916.bindPopup(popup_e84d4f0d6697a5d7067c5a9f5340aa98)
+        ;
+
+        
+    
+    
+            marker_829cf24b2e4c5a03754e65b285aea916.bindTooltip(
+                `<div>
+                     SuperChem Kinross (2713m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_829cf24b2e4c5a03754e65b285aea916.setIcon(icon_a307d4622fd0de4667e3d5dda15eaf47);
+            
+    
+            var poly_line_54abc7d748c845d7ff19ee82a1c9c3df = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7192172, 115.7405052]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_54abc7d748c845d7ff19ee82a1c9c3df.bindTooltip(
+                `<div>
+                     2713m to SuperChem Kinross
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_bb939e1213871abf044b15957c074ed5 = L.marker(
+                [-31.73019785, 115.74681925],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_1fc18d3206249a16dfb93c58e94deac8 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e2713m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_bb939e1213871abf044b15957c074ed5.setIcon(div_icon_1fc18d3206249a16dfb93c58e94deac8);
+            
+    
+            var marker_d4a2230e8690e50732542fdc676e8933 = L.marker(
+                [-31.718361, 115.7411907],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_9b450fd5c3c7846edc12f9821c10968c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22935db4044e8fab4f63f2fa3fb04439 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_161d8bd607f29281452e1ddc35ede0c6 = $(`<div id="html_161d8bd607f29281452e1ddc35ede0c6" style="width: 100.0%; height: 100.0%;"><b>SuperChem</b><br>WA<br>Distance: 2772m (2.772km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_22935db4044e8fab4f63f2fa3fb04439.setContent(html_161d8bd607f29281452e1ddc35ede0c6);
+            
+        
+
+        marker_d4a2230e8690e50732542fdc676e8933.bindPopup(popup_22935db4044e8fab4f63f2fa3fb04439)
+        ;
+
+        
+    
+    
+            marker_d4a2230e8690e50732542fdc676e8933.bindTooltip(
+                `<div>
+                     SuperChem (2772m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d4a2230e8690e50732542fdc676e8933.setIcon(icon_9b450fd5c3c7846edc12f9821c10968c);
+            
+    
+            var poly_line_032b3cb37f923ec2d88d45c2b7ced7d4 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.718361, 115.7411907]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_032b3cb37f923ec2d88d45c2b7ced7d4.bindTooltip(
+                `<div>
+                     2772m to SuperChem
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e56d915482637b3a079d8cb53f1e635a = L.marker(
+                [-31.729769750000003, 115.747162],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_4faa7414db1e55e039b4fe85d2310414 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e2772m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_e56d915482637b3a079d8cb53f1e635a.setIcon(div_icon_4faa7414db1e55e039b4fe85d2310414);
+            
+    
+            var marker_d635677fd23eb892c27dfc698c1965cf = L.marker(
+                [-31.7331703, 115.7237267],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_9ea0692097541fb3246485d4b6254384 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6cf2d54d1d995b7e0a5b82c58ec454b8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d16948b42278c31627033f470ed100a6 = $(`<div id="html_d16948b42278c31627033f470ed100a6" style="width: 100.0%; height: 100.0%;"><b>Iluka Plaza Pharmacy</b><br>Tenancy 4, 98 O'Mara Blvd, ILUKA, WA, 6028<br>Distance: 2925m (2.925km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_6cf2d54d1d995b7e0a5b82c58ec454b8.setContent(html_d16948b42278c31627033f470ed100a6);
+            
+        
+
+        marker_d635677fd23eb892c27dfc698c1965cf.bindPopup(popup_6cf2d54d1d995b7e0a5b82c58ec454b8)
+        ;
+
+        
+    
+    
+            marker_d635677fd23eb892c27dfc698c1965cf.bindTooltip(
+                `<div>
+                     Iluka Plaza Pharmacy (2925m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d635677fd23eb892c27dfc698c1965cf.setIcon(icon_9ea0692097541fb3246485d4b6254384);
+            
+    
+            var poly_line_17eee98db68208543ba63450232db726 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7331703, 115.7237267]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_17eee98db68208543ba63450232db726.bindTooltip(
+                `<div>
+                     2925m to Iluka Plaza Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_11e5a82284753a49a686f153db1bcfe2 = L.marker(
+                [-31.7371744, 115.73843],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_7d2f2dc12faf3c7b249465870888a2c0 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e2925m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_11e5a82284753a49a686f153db1bcfe2.setIcon(div_icon_7d2f2dc12faf3c7b249465870888a2c0);
+            
+    
+            var marker_49769e0e7c6398a7662a54b4e87c16ab = L.marker(
+                [-31.7196851, 115.7349136],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_421dcabe2a1de943e011b97ae459420e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e8db8e791bb14590cb41f57e4c67b3b5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_de260d0bc777188769018f74f88baa7d = $(`<div id="html_de260d0bc777188769018f74f88baa7d" style="width: 100.0%; height: 100.0%;"><b>Kinross Pharmacy</b><br>2/23 Edinburgh Avenue, KINROSS, WA, 6028<br>Distance: 2943m (2.943km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_e8db8e791bb14590cb41f57e4c67b3b5.setContent(html_de260d0bc777188769018f74f88baa7d);
+            
+        
+
+        marker_49769e0e7c6398a7662a54b4e87c16ab.bindPopup(popup_e8db8e791bb14590cb41f57e4c67b3b5)
+        ;
+
+        
+    
+    
+            marker_49769e0e7c6398a7662a54b4e87c16ab.bindTooltip(
+                `<div>
+                     Kinross Pharmacy (2943m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_49769e0e7c6398a7662a54b4e87c16ab.setIcon(icon_421dcabe2a1de943e011b97ae459420e);
+            
+    
+            var poly_line_e1ff8298f4faf0aa9a23e7d567eafbc4 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7196851, 115.7349136]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_e1ff8298f4faf0aa9a23e7d567eafbc4.bindTooltip(
+                `<div>
+                     2943m to Kinross Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d3172e0f72345116a36e453ebdf39725 = L.marker(
+                [-31.730431799999998, 115.74402345],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_6bfdff83f17b58ba6c907580b6cef90c = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e2943m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_d3172e0f72345116a36e453ebdf39725.setIcon(div_icon_6bfdff83f17b58ba6c907580b6cef90c);
+            
+    
+            var marker_cb7d1fcfd81c69d874b3add9ba75851c = L.marker(
+                [-31.7641977, 115.7735137],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_92669798418a5393acd8053e82e497c7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b6f060aa7e803828748cc23654dc8f18 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ed41ad72eea5cf57a94ad911eb130e66 = $(`<div id="html_ed41ad72eea5cf57a94ad911eb130e66" style="width: 100.0%; height: 100.0%;"><b>Joondalup Drive Pharmacy</b><br>Unit 7, The Gateway, 1 Joondalup Drive, EDGEWATER, WA, 6027<br>Distance: 3201m (3.201km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_b6f060aa7e803828748cc23654dc8f18.setContent(html_ed41ad72eea5cf57a94ad911eb130e66);
+            
+        
+
+        marker_cb7d1fcfd81c69d874b3add9ba75851c.bindPopup(popup_b6f060aa7e803828748cc23654dc8f18)
+        ;
+
+        
+    
+    
+            marker_cb7d1fcfd81c69d874b3add9ba75851c.bindTooltip(
+                `<div>
+                     Joondalup Drive Pharmacy (3201m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cb7d1fcfd81c69d874b3add9ba75851c.setIcon(icon_92669798418a5393acd8053e82e497c7);
+            
+    
+            var poly_line_d1445b155f59d4bdf355d228e1803a10 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7641977, 115.7735137]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_d1445b155f59d4bdf355d228e1803a10.bindTooltip(
+                `<div>
+                     3201m to Joondalup Drive Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_dfced5c9a508fcbeb8c6dbda06104d92 = L.marker(
+                [-31.7526881, 115.7633235],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_b61e763be755a146067a92776372dda6 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3201m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_dfced5c9a508fcbeb8c6dbda06104d92.setIcon(div_icon_b61e763be755a146067a92776372dda6);
+            
+    
+            var marker_98153821c623fefaa3a2f077989d157f = L.marker(
+                [-31.7699252, 115.7657369],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_5d4246b37a7e4cca6f8fff34b1c16e26 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a051e31a7c8776a462a546cb537b767a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4e6d83670ad88c0c9217a7e349506b6f = $(`<div id="html_4e6d83670ad88c0c9217a7e349506b6f" style="width: 100.0%; height: 100.0%;"><b>GreenLeaf Pharmacy Belridge</b><br>Shops 10/11 Belridge Shopping Centre, Corner Gwendoline Dve & Ocean Reef Road, BELDON, WA, 6027<br>Distance: 3404m (3.404km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_a051e31a7c8776a462a546cb537b767a.setContent(html_4e6d83670ad88c0c9217a7e349506b6f);
+            
+        
+
+        marker_98153821c623fefaa3a2f077989d157f.bindPopup(popup_a051e31a7c8776a462a546cb537b767a)
+        ;
+
+        
+    
+    
+            marker_98153821c623fefaa3a2f077989d157f.bindTooltip(
+                `<div>
+                     GreenLeaf Pharmacy Belridge (3404m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_98153821c623fefaa3a2f077989d157f.setIcon(icon_5d4246b37a7e4cca6f8fff34b1c16e26);
+            
+    
+            var poly_line_c93328f6d5f893c52b5959cec77dc2fa = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7699252, 115.7657369]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_c93328f6d5f893c52b5959cec77dc2fa.bindTooltip(
+                `<div>
+                     3404m to GreenLeaf Pharmacy Belridge
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3745bfb397ce9c5bdb2991b7bdfc0734 = L.marker(
+                [-31.75555185, 115.75943509999999],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_01464d41c5d10c2151a1044f9584dc5d = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3404m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_3745bfb397ce9c5bdb2991b7bdfc0734.setIcon(div_icon_01464d41c5d10c2151a1044f9584dc5d);
+            
+    
+            var marker_0745d351e13c151e47c56ba5434f6e4c = L.marker(
+                [-31.7181683, 115.7801827],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_7b36ec209fd6a4b5c6b0e66dc30bcae2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_596922f8aba26cc3fbd9ad0c93abf552 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5fd4c1642ebef87a0e7e831e037d1d39 = $(`<div id="html_5fd4c1642ebef87a0e7e831e037d1d39" style="width: 100.0%; height: 100.0%;"><b>Drovers Pharmacy Wanneroo</b><br>11/1397 Wanneroo Road, WANNEROO, WA, 6065<br>Distance: 3617m (3.617km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_596922f8aba26cc3fbd9ad0c93abf552.setContent(html_5fd4c1642ebef87a0e7e831e037d1d39);
+            
+        
+
+        marker_0745d351e13c151e47c56ba5434f6e4c.bindPopup(popup_596922f8aba26cc3fbd9ad0c93abf552)
+        ;
+
+        
+    
+    
+            marker_0745d351e13c151e47c56ba5434f6e4c.bindTooltip(
+                `<div>
+                     Drovers Pharmacy Wanneroo (3617m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0745d351e13c151e47c56ba5434f6e4c.setIcon(icon_7b36ec209fd6a4b5c6b0e66dc30bcae2);
+            
+    
+            var poly_line_9b909102a3341131d43bcd0bc9b744dd = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7181683, 115.7801827]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_9b909102a3341131d43bcd0bc9b744dd.bindTooltip(
+                `<div>
+                     3617m to Drovers Pharmacy Wanneroo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_27251301311f3f0bc7a28e9949cf90f1 = L.marker(
+                [-31.7296734, 115.766658],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_e7479995f433a10ade7d7eed404f2233 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3617m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_27251301311f3f0bc7a28e9949cf90f1.setIcon(div_icon_e7479995f433a10ade7d7eed404f2233);
+            
+    
+            var marker_e287c44b9a308c735b4c77e40d083589 = L.marker(
+                [-31.7693698, 115.7783031],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_693705dd7c058ad6008f71a6ef406029 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d60610121be4a2784650d276679e16cb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b0142a889e79019c6818229e37c84ca9 = $(`<div id="html_b0142a889e79019c6818229e37c84ca9" style="width: 100.0%; height: 100.0%;"><b>Joondalup Medical Pharmacy</b><br>Apollo Health Joondalup, 5 Joondalup Gate, 21-93 Joondalup Drive, EDGEWATER, WA, 6027<br>Distance: 3932m (3.932km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_d60610121be4a2784650d276679e16cb.setContent(html_b0142a889e79019c6818229e37c84ca9);
+            
+        
+
+        marker_e287c44b9a308c735b4c77e40d083589.bindPopup(popup_d60610121be4a2784650d276679e16cb)
+        ;
+
+        
+    
+    
+            marker_e287c44b9a308c735b4c77e40d083589.bindTooltip(
+                `<div>
+                     Joondalup Medical Pharmacy (3932m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e287c44b9a308c735b4c77e40d083589.setIcon(icon_693705dd7c058ad6008f71a6ef406029);
+            
+    
+            var poly_line_23e7297aaa83c0b1b68eb00d0aa13e2d = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7693698, 115.7783031]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_23e7297aaa83c0b1b68eb00d0aa13e2d.bindTooltip(
+                `<div>
+                     3932m to Joondalup Medical Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9137582efd27d4d1f6f2f9c54c7fea04 = L.marker(
+                [-31.755274149999998, 115.76571820000001],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_03dc86fbe5548c11a8749afb66f072e7 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3932m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_9137582efd27d4d1f6f2f9c54c7fea04.setIcon(div_icon_03dc86fbe5548c11a8749afb66f072e7);
+            
+    
+            var marker_c6b52ad3bdd32435de8fbbe17cce80ee = L.marker(
+                [-31.7767211, 115.7554429],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_d1b877cdb99244b813bde56520aa04d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dbf837c8a6826aec1f7704e255a4d96e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a0551e5c2b06c85e86f976428ad2ca53 = $(`<div id="html_a0551e5c2b06c85e86f976428ad2ca53" style="width: 100.0%; height: 100.0%;"><b>Beldon Amcal Chemist</b><br>Shops 5-8 Beldon Shopping Centre, Corner Marmion Avenue & Gunter Gr, BELDON, WA, 6027<br>Distance: 3947m (3.947km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_dbf837c8a6826aec1f7704e255a4d96e.setContent(html_a0551e5c2b06c85e86f976428ad2ca53);
+            
+        
+
+        marker_c6b52ad3bdd32435de8fbbe17cce80ee.bindPopup(popup_dbf837c8a6826aec1f7704e255a4d96e)
+        ;
+
+        
+    
+    
+            marker_c6b52ad3bdd32435de8fbbe17cce80ee.bindTooltip(
+                `<div>
+                     Beldon Amcal Chemist (3947m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c6b52ad3bdd32435de8fbbe17cce80ee.setIcon(icon_d1b877cdb99244b813bde56520aa04d0);
+            
+    
+            var poly_line_f8fec8035809c12af0352f5a8e1da560 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7767211, 115.7554429]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_f8fec8035809c12af0352f5a8e1da560.bindTooltip(
+                `<div>
+                     3947m to Beldon Amcal Chemist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cfd433b38a5014ea4996cdeb5e450798 = L.marker(
+                [-31.7589498, 115.7542881],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_03d515cab9c0fb13c1d6ada58c8f6d79 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3947m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_cfd433b38a5014ea4996cdeb5e450798.setIcon(div_icon_03d515cab9c0fb13c1d6ada58c8f6d79);
+            
+    
+            var marker_03bf90a223e3a51e68586ad40f02d542 = L.marker(
+                [-31.7738376, 115.7825555],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_ecf1416499d642b915d93ba38f0653ef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cf524a89162e1e895d732fe0c518e426 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_128e681619240668d72c99737c89325c = $(`<div id="html_128e681619240668d72c99737c89325c" style="width: 100.0%; height: 100.0%;"><b>Joondalup Medical Pharmacy</b><br>5 Joondalup Gate, 21-93 Joondalup Dr, Edgewater WA 6027, Australia<br>Distance: 4570m (4.570km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_cf524a89162e1e895d732fe0c518e426.setContent(html_128e681619240668d72c99737c89325c);
+            
+        
+
+        marker_03bf90a223e3a51e68586ad40f02d542.bindPopup(popup_cf524a89162e1e895d732fe0c518e426)
+        ;
+
+        
+    
+    
+            marker_03bf90a223e3a51e68586ad40f02d542.bindTooltip(
+                `<div>
+                     Joondalup Medical Pharmacy (4570m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_03bf90a223e3a51e68586ad40f02d542.setIcon(icon_ecf1416499d642b915d93ba38f0653ef);
+            
+    
+            var poly_line_84f8f9d33958633d2f92a8e789037ecf = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7738376, 115.7825555]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_84f8f9d33958633d2f92a8e789037ecf.bindTooltip(
+                `<div>
+                     4570m to Joondalup Medical Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_af2621663afe8f3a4923a99d5af1ae75 = L.marker(
+                [-31.75750805, 115.7678444],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_a8c35c8bd6fad970b534bdc9c7d3f2a8 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e4570m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_af2621663afe8f3a4923a99d5af1ae75.setIcon(div_icon_a8c35c8bd6fad970b534bdc9c7d3f2a8);
+            
+    
+            var marker_a53aaa6b10c01403173107fe6f9422c0 = L.marker(
+                [-31.7126603, 115.7894546],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_0d14dd37a785e9ee2a3893f6641ed464 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f1d1cfd9e8323f95e2d88fc06230a73b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_56f28a0e2050aff6d475d5e313647af0 = $(`<div id="html_56f28a0e2050aff6d475d5e313647af0" style="width: 100.0%; height: 100.0%;"><b>Wizard Pharmacy Carramar</b><br>Shops 11, 12 & 13, Carramar Shopping Centre, Corner Cheriton Dve & Joondalup Dve, CARRAMAR, WA, 6031<br>Distance: 4674m (4.674km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_f1d1cfd9e8323f95e2d88fc06230a73b.setContent(html_56f28a0e2050aff6d475d5e313647af0);
+            
+        
+
+        marker_a53aaa6b10c01403173107fe6f9422c0.bindPopup(popup_f1d1cfd9e8323f95e2d88fc06230a73b)
+        ;
+
+        
+    
+    
+            marker_a53aaa6b10c01403173107fe6f9422c0.bindTooltip(
+                `<div>
+                     Wizard Pharmacy Carramar (4674m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a53aaa6b10c01403173107fe6f9422c0.setIcon(icon_0d14dd37a785e9ee2a3893f6641ed464);
+            
+    
+            var poly_line_e82e9c7d303333617ef40648e6e10883 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7126603, 115.7894546]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_e82e9c7d303333617ef40648e6e10883.bindTooltip(
+                `<div>
+                     4674m to Wizard Pharmacy Carramar
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_212e3120a7e5d8d71b7a6afe4abae6fd = L.marker(
+                [-31.7269194, 115.77129395],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_b441f3b1f67eebfe1c5bf4d91853261b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e4674m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_212e3120a7e5d8d71b7a6afe4abae6fd.setIcon(div_icon_b441f3b1f67eebfe1c5bf4d91853261b);
+            
+    
+            var marker_79bd2de42f9ae0970222a31ce2f7f79c = L.marker(
+                [-31.7115926, 115.7885457],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_d3ea4fc61b3f3847ae33c53ebe6fdaf3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d9b15743f07c1f13302d591f4bd6cf19 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_45cbcf80f62747cb2ebea3d19b0d40ef = $(`<div id="html_45cbcf80f62747cb2ebea3d19b0d40ef" style="width: 100.0%; height: 100.0%;"><b>Wizard Pharmacy</b><br>WA<br>Distance: 4693m (4.693km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_d9b15743f07c1f13302d591f4bd6cf19.setContent(html_45cbcf80f62747cb2ebea3d19b0d40ef);
+            
+        
+
+        marker_79bd2de42f9ae0970222a31ce2f7f79c.bindPopup(popup_d9b15743f07c1f13302d591f4bd6cf19)
+        ;
+
+        
+    
+    
+            marker_79bd2de42f9ae0970222a31ce2f7f79c.bindTooltip(
+                `<div>
+                     Wizard Pharmacy (4693m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_79bd2de42f9ae0970222a31ce2f7f79c.setIcon(icon_d3ea4fc61b3f3847ae33c53ebe6fdaf3);
+            
+    
+            var poly_line_dac5e8242df2153823716b4c756be847 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7115926, 115.7885457]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_dac5e8242df2153823716b4c756be847.bindTooltip(
+                `<div>
+                     4693m to Wizard Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_42c75d291620767f0cfcda5741f07988 = L.marker(
+                [-31.72638555, 115.7708395],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_4ec50f195a318318dd666c41ea18d30f = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e4693m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_42c75d291620767f0cfcda5741f07988.setIcon(div_icon_4ec50f195a318318dd666c41ea18d30f);
+            
+    
+            var marker_a9c9e850d74b007c63d54d977d037167 = L.marker(
+                [-31.7728175, 115.7889408],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_9403f609be2f3c3c12307876705fa589 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b6fb63f5306ffea451bdcf42636a2de8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_01d252fc9f9e047f6a218813af2d8eaf = $(`<div id="html_01d252fc9f9e047f6a218813af2d8eaf" style="width: 100.0%; height: 100.0%;"><b>Guardian</b><br>OSM (-31.772817, 115.788941)<br>Distance: 4880m (4.880km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_b6fb63f5306ffea451bdcf42636a2de8.setContent(html_01d252fc9f9e047f6a218813af2d8eaf);
+            
+        
+
+        marker_a9c9e850d74b007c63d54d977d037167.bindPopup(popup_b6fb63f5306ffea451bdcf42636a2de8)
+        ;
+
+        
+    
+    
+            marker_a9c9e850d74b007c63d54d977d037167.bindTooltip(
+                `<div>
+                     Guardian (4880m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a9c9e850d74b007c63d54d977d037167.setIcon(icon_9403f609be2f3c3c12307876705fa589);
+            
+    
+            var poly_line_3c7fc6e5f02013f90dfaa9be8f98e561 = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7728175, 115.7889408]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_3c7fc6e5f02013f90dfaa9be8f98e561.bindTooltip(
+                `<div>
+                     4880m to Guardian
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3eb92c2de2c5da5a09a60f38f4832755 = L.marker(
+                [-31.756998, 115.77103705],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_b4188339906eef3982cdc9f4b4b922a0 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e4880m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_3eb92c2de2c5da5a09a60f38f4832755.setIcon(div_icon_b4188339906eef3982cdc9f4b4b922a0);
+            
+    
+            var marker_34bed810c089726ef6b5a58b9558811a = L.marker(
+                [-31.7844557, 115.7669498],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var icon_1e11d3394509a4ca85259f0dfb365bb4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_37af02f72019b41079fa75f782cc3ecc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d8192a40b947e04139ddd03a4a74d296 = $(`<div id="html_d8192a40b947e04139ddd03a4a74d296" style="width: 100.0%; height: 100.0%;"><b>TerryWhite Chemmart Craigie IVF</b><br>Shop 2-4 Craigie Shopping Plaza, Corner of Eddystone Rd and Perilya Rd, CRAIGIE, WA, 6025<br>Distance: 4974m (4.974km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_37af02f72019b41079fa75f782cc3ecc.setContent(html_d8192a40b947e04139ddd03a4a74d296);
+            
+        
+
+        marker_34bed810c089726ef6b5a58b9558811a.bindPopup(popup_37af02f72019b41079fa75f782cc3ecc)
+        ;
+
+        
+    
+    
+            marker_34bed810c089726ef6b5a58b9558811a.bindTooltip(
+                `<div>
+                     TerryWhite Chemmart Craigie IVF (4974m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_34bed810c089726ef6b5a58b9558811a.setIcon(icon_1e11d3394509a4ca85259f0dfb365bb4);
+            
+    
+            var poly_line_1fb158956c5981dbc70e79b444a4d26d = L.polyline(
+                [[-31.7411785, 115.7531333], [-31.7844557, 115.7669498]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            poly_line_1fb158956c5981dbc70e79b444a4d26d.bindTooltip(
+                `<div>
+                     4974m to TerryWhite Chemmart Craigie IVF
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2437d30e4fc64131e192f5bd750541a9 = L.marker(
+                [-31.7628171, 115.76004155000001],
+                {
+}
+            ).addTo(map_3adeb926931b6d7e061ca9f1876d4778);
+        
+    
+            var div_icon_310a937f0ef51977b9aac0ba1e50b705 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e4974m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_2437d30e4fc64131e192f5bd750541a9.setIcon(div_icon_310a937f0ef51977b9aac0ba1e50b705);
+            
+</script>
+</html>

@@ -10,7 +10,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from api.routes import evaluate, sites, watchlist
+from api.routes import analytics, evaluate, sites, watchlist
 
 # Database path
 DB_PATH = os.path.join(
@@ -57,6 +57,7 @@ app.add_middleware(
 )
 
 # Routes
+app.include_router(analytics.router, prefix="/api")
 app.include_router(evaluate.router, prefix="/api")
 app.include_router(sites.router, prefix="/api")
 app.include_router(watchlist.router, prefix="/api")

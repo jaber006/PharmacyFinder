@@ -1,0 +1,199 @@
+{
+  "generated": "2026-03-21T22:27:34.584709",
+  "monitor_version": "1.0.0",
+  "summary": {
+    "total_applications_found": 0,
+    "high_threat": 0,
+    "medium_threat": 0,
+    "low_threat": 0,
+    "our_target_sites_monitored": 619
+  },
+  "data_sources_checked": {
+    "acpa_pages": {
+      "acpa_main": {
+        "status": 200,
+        "url": "https://www.health.gov.au/committees-and-groups/australian-community-pharmacy-authority-acpa",
+        "last_updated": null,
+        "content_length": 2719
+      },
+      "acpa_rules": {
+        "status": 200,
+        "url": "https://www.health.gov.au/committees-and-groups/australian-community-pharmacy-authority-acpa/pharmacy-location-rules",
+        "last_updated": null,
+        "content_length": 6333
+      },
+      "acpa_old": {
+        "status": 200,
+        "url": "https://www1.health.gov.au/internet/main/publishing.nsf/Content/acpa",
+        "last_updated": null,
+        "content_length": 12044
+      },
+      "pbs_suppliers": {
+        "status": 200,
+        "url": "https://www.health.gov.au/our-work/pbs-approved-suppliers",
+        "last_updated": null,
+        "content_length": 3885
+      },
+      "establish_new": {
+        "status": 200,
+        "url": "https://www.health.gov.au/our-work/pbs-approved-suppliers/pharmacists/establish-a-new-pharmacy",
+        "last_updated": null,
+        "content_length": 3579
+      },
+      "relocate": {
+        "status": 200,
+        "url": "https://www.health.gov.au/our-work/pbs-approved-suppliers/pharmacists/relocate-a-pharmacy",
+        "last_updated": null,
+        "content_length": 3596
+      }
+    },
+    "news_sources": [
+      {
+        "name": "Pharmacy Daily",
+        "articles_found": 1
+      },
+      {
+        "name": "AJP",
+        "articles_found": 0
+      }
+    ],
+    "pbs_portal": {
+      "portal_accessible": true,
+      "notes": [
+        "Portal requires authentication - individual application data not publicly accessible",
+        "ACPA meeting outcomes are published on the Portal within 5 working days after a meeting",
+        "Only logged-in applicants and surrounding pharmacists can view specific decisions"
+      ],
+      "status_code": 200,
+      "final_url": "https://pbsapprovedsuppliers.health.gov.au/"
+    }
+  },
+  "acpa_meeting_schedule": [
+    {
+      "meeting_date": "26 September 2025",
+      "lodgement_window": "25 July to 28 August 2025"
+    },
+    {
+      "meeting_date": "7 November 2025",
+      "lodgement_window": "29 August to 2 October 2025"
+    },
+    {
+      "meeting_date": "12 December 2025",
+      "lodgement_window": "3 October to 13 November 2025"
+    },
+    {
+      "meeting_date": "6 February 2026",
+      "lodgement_window": "14 November to 18 December 2025"
+    },
+    {
+      "meeting_date": "27 March 2026",
+      "lodgement_window": "19 December 2025 to 19 February 2026"
+    },
+    {
+      "meeting_date": "8 May 2026",
+      "lodgement_window": "20 February to 2 April 2026"
+    },
+    {
+      "meeting_date": "12 June 2026",
+      "lodgement_window": "3 April to 14 May 2026"
+    },
+    {
+      "meeting_date": "17 July 2026",
+      "lodgement_window": "15 May to 18 June 2026"
+    },
+    {
+      "meeting_date": "21 August 2026",
+      "lodgement_window": "19 June to 23 July 2026"
+    },
+    {
+      "meeting_date": "25 September 2026",
+      "lodgement_window": "24 July to 27 August 2026"
+    },
+    {
+      "meeting_date": "6 November 2026",
+      "lodgement_window": "28 August to 1 October 2026"
+    },
+    {
+      "meeting_date": "11 December 2026",
+      "lodgement_window": "2 October to 12 November 2026"
+    },
+    {
+      "meeting_date": "5 February 2027",
+      "lodgement_window": "13 November to 17 December 2026"
+    },
+    {
+      "meeting_date": "27 September 2024",
+      "lodgement_window": "Friday 19 July 2024 to Thursday 29 August 2024"
+    },
+    {
+      "meeting_date": "1 November 2024",
+      "lodgement_window": "Friday 30 August 2024 to Thursday 3 October 2024"
+    },
+    {
+      "meeting_date": "6 December 2024",
+      "lodgement_window": "Friday 4 October 2024 to Thursday 7 November 2024"
+    },
+    {
+      "meeting_date": "7 February 2025",
+      "lodgement_window": "Friday 8 November 2024 to Thursday 12 December 2024"
+    },
+    {
+      "meeting_date": "28 March 2025",
+      "lodgement_window": "Friday 13 December 2024 to Thursday 20 February 2025"
+    },
+    {
+      "meeting_date": "9 May 2025",
+      "lodgement_window": "Friday 21 February 2025 to Thursday 3 April 2025"
+    },
+    {
+      "meeting_date": "13 June 2025",
+      "lodgement_window": "Friday 4 April 2025 to Thursday 15 May 2025"
+    },
+    {
+      "meeting_date": "18 July 2025",
+      "lodgement_window": "Friday 16 May 2025 to Thursday 19 June 2025"
+    },
+    {
+      "meeting_date": "22 August 2025",
+      "lodgement_window": "Friday 20 June 2025 to Thursday 24 July 2025"
+    },
+    {
+      "meeting_date": "26 September 2025",
+      "lodgement_window": "Friday 25 July 2025 to Thursday 28 August 2025"
+    },
+    {
+      "meeting_date": "7 November 2025",
+      "lodgement_window": "Friday 29 August 2025 to Thursday 2 October 2025"
+    },
+    {
+      "meeting_date": "12 December 2025",
+      "lodgement_window": "Friday 3 October 2025 to Thursday 13 November 2025"
+    },
+    {
+      "meeting_date": "6 February 2026",
+      "lodgement_window": "Friday 14 November 2025 to Thursday 18 December 2025"
+    }
+  ],
+  "next_meeting": "27 March 2026",
+  "applications": [],
+  "important_notes": [
+    "Individual ACPA application data is NOT publicly available.",
+    "Meeting outcomes are published on the authenticated PBS Approved Suppliers Portal only.",
+    "Applicant names and specific addresses are confidential until approval is granted.",
+    "This monitor aggregates publicly available information from news and government sources.",
+    "For comprehensive competitor monitoring, consider:",
+    "  - Registering on the PBS Approved Suppliers Portal to receive notifications",
+    "  - Monitoring local development applications and commercial leasing for pharmacy fitouts",
+    "  - Tracking new pharmacy board registrations in target areas",
+    "  - Setting up Google Alerts for 'new pharmacy' + target suburb names"
+  ],
+  "recommended_actions": [
+    "\u2705 No competitor applications detected in publicly available data",
+    "Note: This does not mean no applications exist - most data is behind the PBS Portal",
+    "\ud83d\udcc5 Next ACPA meeting: 27 March 2026",
+    "   Consider lodging applications before the cut-off for this meeting",
+    "\ud83d\udd0d Recommended: Set up Google Alerts for 'new pharmacy' + each target suburb",
+    "\ud83d\udd0d Recommended: Register on PBS Approved Suppliers Portal for official notifications",
+    "\ud83d\udd0d Recommended: Monitor commercial leasing in target areas for pharmacy fitout activity"
+  ]
+}

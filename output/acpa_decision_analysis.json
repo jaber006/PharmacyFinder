@@ -1,0 +1,33 @@
+{
+  "generated": "2026-03-21T22:29:17.411431",
+  "overall": {
+    "total_decisions": 5,
+    "approved": 0,
+    "rejected": 2,
+    "overturned_on_appeal": 2,
+    "approval_rate": 0.0,
+    "appeal_success_rate": 50.0
+  },
+  "by_item": {
+    "Item 130": {
+      "total": 2,
+      "approved": 0,
+      "rejected": 1,
+      "other": 1,
+      "approval_rate": 0.0
+    },
+    "Item 133": {
+      "total": 1,
+      "approved": 0,
+      "rejected": 0,
+      "other": 1,
+      "approval_rate": 0.0
+    }
+  },
+  "by_state": {},
+  "insights": [
+    "2 decisions were overturned on appeal to the AAT (50.0% appeal success rate)",
+    "Item 130: 0.0% approval rate (0/2 decisions found)",
+    "Note: This analysis is based on publicly available data only. Actual ACPA statistics may differ significantly. AAT cases skew toward rejections (as only rejections are appealed)."
+  ]
+}

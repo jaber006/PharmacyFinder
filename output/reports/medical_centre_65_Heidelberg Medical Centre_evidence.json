@@ -1,0 +1,340 @@
+{
+  "site": {
+    "id": "medical_centre_65",
+    "name": "Heidelberg Medical Centre",
+    "address": "99 Burgundy Street, Heidelberg VIC 3084",
+    "latitude": -37.7566686,
+    "longitude": 145.0700057,
+    "state": "VIC",
+    "source_type": "medical_centre",
+    "passed_any": 1,
+    "primary_rule": "Item 136",
+    "commercial_score": 0.5675,
+    "best_confidence": 0.65,
+    "rules_json": "[{\"item\": \"Item 136\", \"passed\": true, \"reasons\": [\"PASS: No existing pharmacy in Heidelberg Medical Centre\", \"PASS (c): Nearest pharmacy = 343m (margin +43m)\", \"PASS (d): Heidelberg Medical Centre has ~8.0 FTE prescribers (10 GPs)\", \"PASS (e): Heidelberg Medical Centre operates 70 hrs/week (\\u2265 70.0)\"], \"evidence_needed\": [\"Verify public access door midpoints for 300m measurement\", \"Verify prescriber roster and FTE calculation\", \"Verify operating hours from centre management\", \"Confirm \\u2265 7 of the 8 FTE are medical practitioners\"], \"confidence\": 0.65, \"distances\": {\"medical_centre_name\": \"Heidelberg Medical Centre\", \"medical_centre_distance_m\": 0.0, \"mc_num_gps\": 10, \"mc_total_fte\": 8.0, \"mc_hours_per_week\": 70.0, \"nearest_pharmacy_m\": 343.0, \"nearest_pharmacy_name\": \"Heidelberg Healthcare Pharmacy & Compounding\"}}]",
+    "all_rules_json": "[{\"item\": \"Item 130\", \"passed\": false, \"reasons\": [\"FAIL: Nearest pharmacy Heidelberg Healthcare Pharmacy & Compounding is 0.343 km away (need >= 1.5 km). Short by 1157m.\"], \"evidence_needed\": [], \"confidence\": 0.0, \"distances\": {\"nearest_pharmacy_km\": 0.3433, \"nearest_pharmacy_name\": \"Heidelberg Healthcare Pharmacy & Compounding\"}}, {\"item\": \"Item 131\", \"passed\": false, \"reasons\": [\"FAIL: Nearest pharmacy Heidelberg Healthcare Pharmacy & Compounding is only 0.34 km geodesic (~0.5 km by road, need \\u2265 10.0 km)\"], \"evidence_needed\": [], \"confidence\": 0.0, \"distances\": {\"nearest_pharmacy_km_geodesic\": 0.3433, \"nearest_pharmacy_name\": \"Heidelberg Healthcare Pharmacy & Compounding\", \"estimated_route_km\": 0.48}}, {\"item\": \"Item 132\", \"passed\": false, \"reasons\": [\"PASS (a)(ii): Nearest pharmacy Heidelberg Healthcare Pharmacy & Compounding = 343m (margin +143m)\", \"FAIL (a)(iii): Other pharmacy Chemist Warehouse Heidelberg estimated 0.6km by road (geodesic 0.45km, need \\u2265 10.0km route from ALL other pharmacies)\"], \"evidence_needed\": [], \"confidence\": 0.0, \"distances\": {\"nearest_pharmacy_km\": 0.3433, \"nearest_pharmacy_m\": 343.3, \"nearest_pharmacy_name\": \"Heidelberg Healthcare Pharmacy & Compounding\", \"other_pharmacy_7090_est_route_km\": 0.63}}, {\"item\": \"Item 133\", \"passed\": false, \"reasons\": [\"FAIL: No shopping centre within 300m \\u2014 not a shopping centre site\"], \"evidence_needed\": [], \"confidence\": 0.0, \"distances\": {}}, {\"item\": \"Item 135\", \"passed\": false, \"reasons\": [\"FAIL: No hospital within 300m\"], \"evidence_needed\": [], \"confidence\": 0.0, \"distances\": {}}, {\"item\": \"Item 136\", \"passed\": true, \"reasons\": [\"PASS: No existing pharmacy in Heidelberg Medical Centre\", \"PASS (c): Nearest pharmacy = 343m (margin +43m)\", \"PASS (d): Heidelberg Medical Centre has ~8.0 FTE prescribers (10 GPs)\", \"PASS (e): Heidelberg Medical Centre operates 70 hrs/week (\\u2265 70.0)\"], \"evidence_needed\": [\"Verify public access door midpoints for 300m measurement\", \"Verify prescriber roster and FTE calculation\", \"Verify operating hours from centre management\", \"Confirm \\u2265 7 of the 8 FTE are medical practitioners\"], \"confidence\": 0.65, \"distances\": {\"medical_centre_name\": \"Heidelberg Medical Centre\", \"medical_centre_distance_m\": 0.0, \"mc_num_gps\": 10, \"mc_total_fte\": 8.0, \"mc_hours_per_week\": 70.0, \"nearest_pharmacy_m\": 343.0, \"nearest_pharmacy_name\": \"Heidelberg Healthcare Pharmacy & Compounding\"}}]",
+    "date_evaluated": "2026-03-11T00:31:20.725173"
+  },
+  "checklist": {
+    "candidate": {
+      "id": "medical_centre_65",
+      "name": "Heidelberg Medical Centre",
+      "address": "99 Burgundy Street, Heidelberg VIC 3084"
+    },
+    "general_requirements": [
+      {
+        "id": "GR-1",
+        "section": "Part 2, Section 10(3)(a)",
+        "requirement": "Proposed premises are not approved premises",
+        "status": "PASS",
+        "evidence": {
+          "available_from_data": [],
+          "still_needed": [
+            "Statement confirming premises are not currently approved for PBS supply",
+            "Check PBS Approved Suppliers list for the address"
+          ],
+          "requires_manual_verification": []
+        }
+      },
+      {
+        "id": "GR-2",
+        "section": "Part 2, Section 10(3)(b)",
+        "requirement": "Applicant has legal right to occupy proposed premises at all relevant times",
+        "status": "PENDING",
+        "evidence": {
+          "available_from_data": [],
+          "still_needed": [],
+          "requires_manual_verification": [
+            "Fully executed lease or agreement to lease (signed by lessor and lessee)",
+            "OR title deed / sales contract if purchasing",
+            "If sub-lease: evidence head lease permits sub-leasing or head lessor consent",
+            "All applicants must be named in the lease",
+            "NOTE: Unsigned or non-binding leases are NOT sufficient"
+          ]
+        }
+      },
+      {
+        "id": "GR-3",
+        "section": "Part 2, Section 10(3)(c)",
+        "requirement": "Council approval to use premises for pharmacy operation",
+        "status": "PENDING",
+        "evidence": {
+          "available_from_data": [],
+          "still_needed": [
+            "Property Planning Report showing suitable zoning with relevant schedules",
+            "NOTE: Landlord approval alone is NOT sufficient",
+            "NOTE: Lodged-but-undecided DA is NOT sufficient"
+          ],
+          "requires_manual_verification": [
+            "Council decision notice approving pharmacy use, OR",
+            "Letter from council confirming zoning permits pharmacy without DA, OR"
+          ]
+        }
+      },
+      {
+        "id": "GR-4",
+        "section": "Part 2, Section 10(3)(d)",
+        "requirement": "Proposed premises accessible by the public",
+        "status": "PENDING",
+        "evidence": {
+          "available_from_data": [],
+          "still_needed": [
+            "Confirmation pharmacy is open to all public (not restricted to patients/staff)",
+            "No physical barriers preventing public access"
+          ],
+          "requires_manual_verification": [
+            "Floor plan showing public access points"
+          ]
+        }
+      },
+      {
+        "id": "GR-5",
+        "section": "Part 2, Section 10(3)(e)",
+        "requirement": "Ready to trade within 6 months of ACPA recommendation",
+        "status": "PENDING",
+        "evidence": {
+          "available_from_data": [],
+          "still_needed": [
+            "Formal building/fit-out schedule with completion date",
+            "Quotes and/or contracts for works"
+          ],
+          "requires_manual_verification": [
+            "Council-approved plans for fit-out",
+            "Dated photographs showing current premises status"
+          ]
+        }
+      },
+      {
+        "id": "GR-6",
+        "section": "Part 2, Section 10(3)(f)",
+        "requirement": "Premises NOT directly accessible from within a supermarket",
+        "status": "PASS",
+        "evidence": {
+          "available_from_data": [],
+          "still_needed": [
+            "Public access points to pharmacy clearly marked",
+            "Information about type of adjacent/adjoining shops"
+          ],
+          "requires_manual_verification": [
+            "Floor plan showing premises and adjacent shops"
+          ]
+        }
+      }
+    ],
+    "qualifying_rules": {
+      "Item 136": {
+        "passed": true,
+        "confidence": 0.65,
+        "evidence_needed_from_engine": [
+          "Verify public access door midpoints for 300m measurement",
+          "Verify prescriber roster and FTE calculation",
+          "Verify operating hours from centre management",
+          "Confirm \u2265 7 of the 8 FTE are medical practitioners"
+        ],
+        "requirements": [
+          {
+            "id": "136-a",
+            "section": "Item 136(a)",
+            "requirement": "Premises in a large medical centre (single management, \u226570 hrs/week, \u22651 GP for 70+ hrs/week)",
+            "status": "PASS",
+            "evidence": {
+              "available_from_data": [],
+              "still_needed": [
+                "  - Single management arrangement",
+                "  - Opening hours each day the centre operates",
+                "  - Hours a prescribing GP is available for general practice consultations"
+              ],
+              "requires_manual_verification": [
+                "Statutory declaration from centre manager/owner confirming:",
+                "Floor plan of medical centre showing pharmacy location"
+              ]
+            }
+          },
+          {
+            "id": "136-b",
+            "section": "Item 136(b)",
+            "requirement": "No approved premises in the medical centre",
+            "status": "PASS",
+            "evidence": {
+              "available_from_data": [],
+              "still_needed": [],
+              "requires_manual_verification": [
+                "Statutory declaration from centre manager confirming no pharmacy in centre"
+              ]
+            }
+          },
+          {
+            "id": "136-c",
+            "section": "Item 136(c)",
+            "requirement": "\u2265 300m straight line from nearest approved premises (with exemptions for large SC/private hospital)",
+            "status": "PASS",
+            "evidence": {
+              "available_from_data": [
+                "Scaled map or surveyor's report for distance measurement [AUTO-GENERATED from our data]"
+              ],
+              "still_needed": [
+                "If any pharmacy within 300m: evidence it's in a DIFFERENT large SC or private hospital",
+                "NOTE: This is a common failure point \u2014 ensure evidence covers ALL pharmacies within 300m"
+              ],
+              "requires_manual_verification": []
+            }
+          },
+          {
+            "id": "136-d",
+            "section": "Item 136(d)",
+            "requirement": "\u2265 8 FTE PBS prescribers (\u22657 medical practitioners) for 2 months before application AND until hearing",
+            "status": "PASS",
+            "evidence": {
+              "available_from_data": [],
+              "still_needed": [
+                "Summary of roster data",
+                "Start/finish times including breaks for each prescriber",
+                "Confirmation hours EXCLUDE: other centres, hospital duties, nursing homes, admin",
+                "Telehealth: only if GP physically present at centre AND patient is a centre patient",
+                "Minimum 304 hours/week total; max 38 hrs from non-medical PBS prescribers",
+                "NOTE: Authority WILL contact medical centre directly to verify"
+              ],
+              "requires_manual_verification": [
+                "Statutory declaration from centre owner/manager re: operating hours and each PBS prescriber's hours",
+                "Copies of rosters/timesheets for EVERY WEEK of 2 months pre-application"
+              ]
+            }
+          },
+          {
+            "id": "136-e",
+            "section": "Item 136(e)",
+            "requirement": "Reasonable attempts to match medical centre operating hours",
+            "status": "PENDING",
+            "evidence": {
+              "available_from_data": [],
+              "still_needed": [
+                "Statement that pharmacy will endeavour to match centre's operating hours",
+                "Intention to open outside normal hours if sufficient need exists"
+              ],
+              "requires_manual_verification": [
+                "Agreement between applicant and centre management regarding hours"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "summary": {
+      "total_requirements": 11,
+      "passed": 6,
+      "failed": 0,
+      "pending": 5,
+      "readiness_pct": 54.5
+    }
+  },
+  "risk_report": {
+    "candidate": {
+      "id": "medical_centre_65",
+      "name": "Heidelberg Medical Centre",
+      "address": "99 Burgundy Street, Heidelberg VIC 3084"
+    },
+    "assessment_date": "2026-03-21T22:15:25.324935",
+    "qualifying_rules": [
+      "Item 136"
+    ],
+    "risk_factors_by_rule": {
+      "Item 136": [
+        {
+          "category": "prescriber_drop_below_8fte",
+          "description": "PBS prescriber count drops below 8 FTE (304 hrs/week)",
+          "likelihood": "HIGH",
+          "impact": "Application MUST be withdrawn or will fail. This is the #1 reason Item 136 apps fail.",
+          "monitoring": "Weekly FTE tracking; locum arrangements; written GP commitments",
+          "current_measurement": "Current FTE: 8.0 (margin: 0.0)"
+        },
+        {
+          "category": "medical_practitioner_below_7",
+          "description": "Medical practitioners (not total prescribers) drop below 7 FTE",
+          "likelihood": "MEDIUM",
+          "impact": "Item 136(d) fails \u2014 at least 7 of 8 FTE must be medical practitioners",
+          "monitoring": "Track medical vs non-medical prescriber split weekly"
+        },
+        {
+          "category": "operating_hours_below_70",
+          "description": "Medical centre reduces hours below 70 per week",
+          "likelihood": "HIGH",
+          "impact": "No longer qualifies as 'large medical centre'",
+          "monitoring": "Monitor centre operating hours; watch for public holiday impacts",
+          "current_measurement": "Current hours: 70/week (margin: 0)"
+        },
+        {
+          "category": "gp_availability_below_70hrs",
+          "description": "GP availability for appointments drops below 70 hrs/week",
+          "likelihood": "MEDIUM",
+          "impact": "No longer qualifies as 'large medical centre' \u2014 need \u22651 GP available 70+ hrs/week",
+          "monitoring": "Verify GP roster covers 70+ hrs per week"
+        },
+        {
+          "category": "management_structure_change",
+          "description": "Medical centre management structure changes (loses 'single management')",
+          "likelihood": "LOW",
+          "impact": "No longer qualifies as 'large medical centre'",
+          "monitoring": "Monitor centre management arrangements"
+        },
+        {
+          "category": "new_pharmacy_within_300m",
+          "description": "A new pharmacy opens within 300m (not in large SC or hospital)",
+          "likelihood": "LOW",
+          "impact": "Item 136(c) fails",
+          "monitoring": "Monitor ACPA approvals in surrounding 300m"
+        }
+      ]
+    },
+    "all_relevant_times_window": {
+      "description": "Conditions must be met at BOTH: (1) application date, AND (2) ACPA hearing date",
+      "typical_gap_months": "2-6 months",
+      "acpa_meetings_per_year": 9,
+      "cutoff_before_meeting": "~5 weeks",
+      "note": "The ACPA will independently verify conditions at hearing. The Secretariat contacts medical centres directly to check hours.",
+      "what_changes": [
+        "New pharmacy approvals in the area",
+        "GP departures or reduced hours",
+        "Shopping centre tenant count changes",
+        "Medical centre prescriber roster changes",
+        "Supermarket closures or GLA reductions",
+        "Road/infrastructure changes (for road distance items)"
+      ]
+    },
+    "mitigation_plan": [
+      {
+        "rule": "Item 136",
+        "risk": "prescriber_drop_below_8fte",
+        "action": "Weekly FTE tracking; locum arrangements; written GP commitments",
+        "frequency": "Weekly",
+        "responsible": "Applicant / Monitoring System"
+      },
+      {
+        "rule": "Item 136",
+        "risk": "medical_practitioner_below_7",
+        "action": "Track medical vs non-medical prescriber split weekly",
+        "frequency": "Monthly",
+        "responsible": "Applicant / Monitoring System"
+      },
+      {
+        "rule": "Item 136",
+        "risk": "operating_hours_below_70",
+        "action": "Monitor centre operating hours; watch for public holiday impacts",
+        "frequency": "Weekly",
+        "responsible": "Applicant / Monitoring System"
+      },
+      {
+        "rule": "Item 136",
+        "risk": "gp_availability_below_70hrs",
+        "action": "Verify GP roster covers 70+ hrs per week",
+        "frequency": "Monthly",
+        "responsible": "Applicant / Monitoring System"
+      }
+    ],
+    "overall_risk": "CRITICAL",
+    "recommendation": "Critical risk. Multiple high-likelihood risks identified. Strongly consider delaying the application until conditions stabilise. Seek legal advice before proceeding."
+  },
+  "map_paths": {
+    "Item 136": "C:\\Users\\MJ\\Documents\\GitHub\\PharmacyFinder\\output\\maps\\medical_centre_65_Item_136.html"
+  },
+  "generated_at": "2026-03-21T22:15:25.449883"
+}

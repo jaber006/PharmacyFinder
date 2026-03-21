@@ -1,0 +1,179 @@
+{
+  "generated_at": "2026-03-21T22:27:48.344034",
+  "since": null,
+  "total_qualifying_sites": 619,
+  "new_sites_since_last": 0,
+  "state_breakdown": {
+    "WA": 183,
+    "QLD": 53,
+    "VIC": 10,
+    "NSW": 15,
+    "TAS": 169,
+    "SA": 168,
+    "NT": 20,
+    "ACT": 1
+  },
+  "rule_breakdown": {
+    "Item 136": 32,
+    "Item 131": 546,
+    "Item 130": 10,
+    "Item 135": 31
+  },
+  "top_5_opportunities": [
+    {
+      "rank": 1,
+      "id": "medical_centre_164",
+      "name": "Canning Vale Medical Centre",
+      "address": "290 Ranford Road, Canning Vale WA 6155",
+      "state": "WA",
+      "primary_rule": "Item 136",
+      "commercial_score": 0.5725,
+      "confidence": 0.95,
+      "next_steps": [
+        "Verify public access door midpoints for 300m measurement",
+        "Verify prescriber roster and FTE calculation",
+        "Search for commercial leases near this site"
+      ]
+    },
+    {
+      "rank": 2,
+      "id": "medical_centre_157",
+      "name": "North Lakes Medical Centre",
+      "address": "10 Endeavour Boulevard, North Lakes QLD 4509",
+      "state": "QLD",
+      "primary_rule": "Item 136",
+      "commercial_score": 0.5708,
+      "confidence": 0.85,
+      "next_steps": [
+        "Verify public access door midpoints for 300m measurement",
+        "Verify prescriber roster and FTE calculation",
+        "Search for commercial leases near this site"
+      ]
+    },
+    {
+      "rank": 3,
+      "id": "supermarket_27601",
+      "name": "Near Coles",
+      "address": "56, Burgundy Street, VIC, Australia",
+      "state": "VIC",
+      "primary_rule": "Item 136",
+      "commercial_score": 0.5675,
+      "confidence": 0.65,
+      "next_steps": [
+        "Verify public access door midpoints for 300m measurement",
+        "Verify prescriber roster and FTE calculation",
+        "Search for commercial leases near this site"
+      ]
+    },
+    {
+      "rank": 4,
+      "id": "supermarket_27838",
+      "name": "Near Woolworths",
+      "address": "451, Lower Heidelberg Road, Heidelberg, VIC, Australia",
+      "state": "VIC",
+      "primary_rule": "Item 136",
+      "commercial_score": 0.5675,
+      "confidence": 0.65,
+      "next_steps": [
+        "Verify public access door midpoints for 300m measurement",
+        "Verify prescriber roster and FTE calculation",
+        "Search for commercial leases near this site"
+      ]
+    },
+    {
+      "rank": 5,
+      "id": "medical_centre_65",
+      "name": "Heidelberg Medical Centre",
+      "address": "99 Burgundy Street, Heidelberg VIC 3084",
+      "state": "VIC",
+      "primary_rule": "Item 136",
+      "commercial_score": 0.5675,
+      "confidence": 0.65,
+      "next_steps": [
+        "Verify public access door midpoints for 300m measurement",
+        "Verify prescriber roster and FTE calculation",
+        "Search for commercial leases near this site"
+      ]
+    }
+  ],
+  "watchlist": {
+    "items_watching": 1,
+    "active_alerts": 0,
+    "alerts": []
+  },
+  "commercial": {
+    "direct_matches": 0,
+    "property_listings": 20,
+    "top_matches": [
+      {
+        "site_id": "SA_135",
+        "address": "64a Fullarton Road, Norwood, SA 5067",
+        "rent": "$65,000 P.A. excluding GST",
+        "area_sqm": 236.0,
+        "distance_m": null
+      },
+      {
+        "site_id": "SA_135",
+        "address": "2/223 The Parade, Norwood, SA 5067",
+        "rent": "Contact Agent",
+        "area_sqm": 103.0,
+        "distance_m": null
+      },
+      {
+        "site_id": "SA_135",
+        "address": "67 Edward St,Norwood, SA 5067",
+        "rent": "$100,000 per annum",
+        "area_sqm": 203.0,
+        "distance_m": null
+      },
+      {
+        "site_id": "SA_135",
+        "address": "46 Fullarton Road,Norwood, SA 5067",
+        "rent": "Enquire Now",
+        "area_sqm": 389.0,
+        "distance_m": null
+      },
+      {
+        "site_id": "SA_135",
+        "address": "74 Fullarton Road,Norwood, SA 5067",
+        "rent": "Contact Agents",
+        "area_sqm": 260.0,
+        "distance_m": null
+      }
+    ]
+  },
+  "ministerial": {
+    "total_candidates": 4,
+    "scan_date": "2026-03-21T22:19:50.811969",
+    "top_candidates": [
+      {
+        "name": "",
+        "address": "",
+        "state": "",
+        "primary_rule": "",
+        "confidence": 0
+      },
+      {
+        "name": "",
+        "address": "",
+        "state": "",
+        "primary_rule": "",
+        "confidence": 0
+      },
+      {
+        "name": "",
+        "address": "",
+        "state": "",
+        "primary_rule": "",
+        "confidence": 0
+      },
+      {
+        "name": "",
+        "address": "",
+        "state": "",
+        "primary_rule": "",
+        "confidence": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,152 @@
+======================================================================
+PHARMACYFINDER DATA QUALITY REPORT
+Generated: 2026-03-21T22:21:06.305520
+======================================================================
+
+## SUMMARY
+Total records across core tables: 12,108
+Total issues found: 180
+
+Records per table:
+  pharmacies                 6,498
+  medical_centres              163
+  gp_practices               3,815
+  shopping_centres             155
+  hospitals                     38
+  supermarkets               1,439
+
+======================================================================
+## PHARMACIES
+Total: 6,498
+Coord verified: 0 (0.0%)
+Sources: {'OpenStreetMap': 890, 'OpenStreetMap-verify': 371, 'amcal.com.au': 41, 'bloomsthechemist.com.au': 27, 'capitalchemist.com.au': 1, 'chemistwarehouse.com.au': 145, 'cincottachemist.com.au': 3, 'directchemistoutlet.com.au': 2, 'discountdrugstores.com.au': 11, 'findapharmacy.com.au': 4302, 'friendliespharmacy.com.au': 10, 'google_maps_browser': 11, 'google_maps_verification': 7, 'healthdirect.gov.au': 1, 'manual-google-maps': 1, 'manual_verification': 1, 'nationalpharmacies.com.au': 1, 'optimalpharmacyplus.com.au': 2, 'osm_verification': 259, 'pharmasave.com.au': 2, 'priceline.com.au': 245, 'soulpattinson.com.au': 5, 'stardiscountchemist.com.au': 2, 'terrywhitechemmart.com.au': 125, 'various-sigma': 33}
+
+Issues:
+  missing_coords                 OK
+  invalid_coords                 WARN (1)
+  invalid_states                 OK
+  missing_state                  OK
+  missing_name                   OK
+  duplicate_name_proximity       WARN (2)
+
+  Duplicate names within 100m:
+    Amcal (ID 7489) <-> (ID 7490) = 3.3m
+    Nick Logan Pharmacist Advice (ID 2982) <-> (ID 7600) = 33.4m
+
+======================================================================
+## MEDICAL CENTRES
+Total: 163
+Coord verified: 0
+GP count verified: 0
+
+Issues:
+  missing_or_zero_gps            OK
+  invalid_coords                 OK
+  suspicious_high_gps            OK
+
+======================================================================
+## GP PRACTICES
+Total: 3,815
+Coord verified: 0 (0.0%)
+
+Issues:
+  invalid_coords                 WARN (1)
+  missing_fte                    OK
+
+======================================================================
+## SHOPPING CENTRES
+Total: 155
+Coord verified: 0
+Tenants verified: 0
+
+Issues:
+  missing_tenants                OK
+  missing_gla                    OK
+  suspicious_high_tenants        OK
+  invalid_coords                 OK
+
+======================================================================
+## HOSPITALS
+Total: 38
+Coord verified: 0
+Bed count verified: 0
+
+Issues:
+  missing_bed_count              WARN (31)
+  missing_hospital_type          OK
+  suspicious_high_beds           OK
+  invalid_coords                 OK
+
+======================================================================
+## SUPERMARKETS
+Total: 1,439
+Coord verified: 0 (0.0%)
+
+Brand breakdown:
+  iga                         266
+  woolworths                  264
+  unknown                     264
+  aldi                        255
+  coles                       178
+  foodworks                    57
+  independent                  35
+  foodland                     26
+  friendly_grocer              16
+  spar                         11
+  drakes                       10
+  ritchies                      8
+  iga_everyday                  8
+  nqr                           6
+  iga_xpress                    5
+  iga_express                   5
+  harris_farm                   4
+  spudshed                      3
+  source_bulk_foods             3
+  grocery outlet                2
+  tasfresh                      1
+  romeo's retail group          1
+  qe foodstores                 1
+  le max group supermarkets     1
+  kfl supermarkets              1
+  islanders board of industry and service     1
+  go to grocer                  1
+  gemco                         1
+  gaganis bros                  1
+  fresh_provisions              1
+  food factory sales pty ltd     1
+  farmer_jacks                  1
+  campbells                     1
+
+Issues:
+  missing_gla                    OK
+  invalid_coords                 WARN (1)
+
+======================================================================
+## CROSS-CHECKS
+Pharmacy pairs within 50m: 144
+
+  Close pharmacy pairs (likely duplicates):
+    Geelong Day & Night Pharmacy (ID 1705) <-> Bull & Owen Pharmacy (ID 1706) = 22.6m
+    High Street Bannockburn Pharmacy (ID 1744) <-> Chemmart Pharmacy (ID 7670) = 41.4m
+    Infinity Pharmacy Endeavour Hills (ID 1514) <-> Infinity Pharmacy Heatherton Road (ID 1513) = 0.0m
+    Vicky Melissas Pharmacy (ID 1392) <-> Lairds Healthcare Pharmacy - Clayton (ID 1393) = 19.4m
+    Roths Pharmacy (ID 1236) <-> TerryWhite Chemmart Elwood (ID 1235) = 38.5m
+    Soul Pattinson Chemist Michael Shapp (ID 1230) <-> Szwarcbard Pharmacy (ID 1227) = 32.3m
+    Priceline Pharmacy The Glen (ID 1415) <-> TerryWhite Chemmart The Glen (ID 1416) = 0.0m
+    Priceline Pharmacy Knox (ID 1521) <-> TerryWhite Chemmart Knox (ID 1520) = 0.0m
+    Priceline Pharmacy Forest Hill (ID 1344) <-> TerryWhite Chemmart Forest Hill (ID 1343) = 0.0m
+    Yu Smiles @ Box Hill (ID 7615) <-> Box Hill South Pharmacy (ID 7616) = 4.4m
+    Mitcham Road Pharmacy (ID 1342) <-> Rangeview Pharmacy (ID 1341) = 7.0m
+    Slade Pharmacy Fitzroy (ID 1101) <-> HealthSmart Pharmacy Victoria Parade (ID 1100) = 48.4m
+    Edge Compounding Pharmacy (ID 1192) <-> Cotham Road Pharmacy (ID 1191) = 4.9m
+    Thao Nguyen Pharmacy - Footscray (ID 1155) <-> TerryWhite Chemmart Footscray (ID 1158) = 34.7m
+    Watsonia Compounding Pharmacy (ID 1321) <-> Diamond Village Discount Chemist (ID 1322) = 45.4m
+    Direct Chemist Outlet Glenroy (ID 1489) <-> Kapadia Pharmacy (ID 1488) = 33.0m
+    Priceline Pharmacy Fawkner (ID 1569) <-> Pharmacy World East Fawkner (ID 1567) = 33.9m
+    Priceline Pharmacy Watergardens (ID 1466) <-> TerryWhite Chemmart Watergardens (ID 1467) = 17.0m
+    Direct Chemist Outlet Gladstone Park (ID 1484) <-> SuperValue Chemist Gladstone Park (ID 1483) = 47.4m
+    Priceline Pharmacy Epping (ID 1565) <-> Chemist Depot Epping (ID 1564) = 47.9m
+
+======================================================================
+END OF REPORT
+======================================================================

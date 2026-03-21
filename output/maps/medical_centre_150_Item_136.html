@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_332c7e1495b9cc85f170996c34f25409 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position:fixed;bottom:30px;left:30px;z-index:1000;
+         background:white;padding:10px 15px;border:2px solid #333;
+         border-radius:5px;font-size:13px;box-shadow:2px 2px 6px rgba(0,0,0,0.3);">
+        <b>Item 136 Distance Map</b><br>
+        <span style="color:green">● Green</span> — Passes (>10% margin)<br>
+        <span style="color:orange">● Orange</span> — Borderline (<10% margin)<br>
+        <span style="color:red">● Red</span> — Fails (too close)<br>
+        <span style="color:blue">◯ Blue circle</span> — 300m threshold<br>
+        Pharmacies shown: 18 within 5.0km
+    </div>
+    
+    
+    <div style="position:fixed;top:10px;left:50%;transform:translateX(-50%);
+         z-index:1000;background:white;padding:8px 20px;border:2px solid #333;
+         border-radius:5px;font-size:16px;font-weight:bold;
+         box-shadow:2px 2px 6px rgba(0,0,0,0.3);">
+        Caroline Springs Medical Centre — Item 136 Distance Analysis
+    </div>
+    
+    
+            <div class="folium-map" id="map_332c7e1495b9cc85f170996c34f25409" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_332c7e1495b9cc85f170996c34f25409 = L.map(
+                "map_332c7e1495b9cc85f170996c34f25409",
+                {
+                    center: [-37.7446626, 144.7442226],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_3946c58131f026e97179ef34bddee289 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_3946c58131f026e97179ef34bddee289.addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var marker_516fea6d3fad46b1857f027b5bc6a777 = L.marker(
+                [-37.7446626, 144.7442226],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_e2d574c303ca1e369cdd047921d436a9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dfdc939c736508d54abdd24d8c171836 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b5d34e3e18514105bf741c44b9cf3574 = $(`<div id="html_b5d34e3e18514105bf741c44b9cf3574" style="width: 100.0%; height: 100.0%;"><b>Caroline Springs Medical Centre</b><br>Rule: Item 136<br>Threshold: 300m</div>`)[0];
+                popup_dfdc939c736508d54abdd24d8c171836.setContent(html_b5d34e3e18514105bf741c44b9cf3574);
+            
+        
+
+        marker_516fea6d3fad46b1857f027b5bc6a777.bindPopup(popup_dfdc939c736508d54abdd24d8c171836)
+        ;
+
+        
+    
+    
+            marker_516fea6d3fad46b1857f027b5bc6a777.bindTooltip(
+                `<div>
+                     Caroline Springs Medical Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_516fea6d3fad46b1857f027b5bc6a777.setIcon(icon_e2d574c303ca1e369cdd047921d436a9);
+            
+    
+            var circle_f7c7eb6718c8eb26fb6c10e0876acb68 = L.circle(
+                [-37.7446626, 144.7442226],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": "10", "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.6, "radius": 300, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            circle_f7c7eb6718c8eb26fb6c10e0876acb68.bindTooltip(
+                `<div>
+                     Item 136 threshold: 300m
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_e1190895e5dc0d8ce298bbc33b9388bd = L.circle(
+                [-37.7446626, 144.7442226],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": "5", "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5000.0, "stroke": true, "weight": 1}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            circle_e1190895e5dc0d8ce298bbc33b9388bd.bindTooltip(
+                `<div>
+                     Search radius: 5.0km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c97c9cbf0a5be5dd8d43b25e477e7a78 = L.marker(
+                [-37.735383, 144.740537],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_295c0d563994ec9d148ea47faf3e8223 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_66963012ee6224b7c7e8fe44d4955c72 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_62730515629d9b93b573202cd20c90d0 = $(`<div id="html_62730515629d9b93b573202cd20c90d0" style="width: 100.0%; height: 100.0%;"><b>TerryWhite Chemmart Caroline Springs</b><br>Unit 1, 173 Caroline Springs Boulevard, Caroline Springs, VIC, 3023<br>Distance: 1080m (1.080km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_66963012ee6224b7c7e8fe44d4955c72.setContent(html_62730515629d9b93b573202cd20c90d0);
+            
+        
+
+        marker_c97c9cbf0a5be5dd8d43b25e477e7a78.bindPopup(popup_66963012ee6224b7c7e8fe44d4955c72)
+        ;
+
+        
+    
+    
+            marker_c97c9cbf0a5be5dd8d43b25e477e7a78.bindTooltip(
+                `<div>
+                     TerryWhite Chemmart Caroline Springs (1080m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c97c9cbf0a5be5dd8d43b25e477e7a78.setIcon(icon_295c0d563994ec9d148ea47faf3e8223);
+            
+    
+            var poly_line_8759df66108c18e4676ea96a59038ad3 = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.735383, 144.740537]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_8759df66108c18e4676ea96a59038ad3.bindTooltip(
+                `<div>
+                     1080m to TerryWhite Chemmart Caroline Springs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_fadd46635502614373844741c7dbbf1f = L.marker(
+                [-37.7400228, 144.74237979999998],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_e5d44e776758f191d9dd97760f18a036 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1080m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_fadd46635502614373844741c7dbbf1f.setIcon(div_icon_e5d44e776758f191d9dd97760f18a036);
+            
+    
+            var marker_8cfc3f3f00d3841ccb3efc393d0e0b12 = L.marker(
+                [-37.7556203, 144.7407725],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_31ada49fa06b750ae424e2273092dd22 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ff91b96920c3744520e923da606a2267 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_27422bf27bc27aa8ea2edeb88aa7da9a = $(`<div id="html_27422bf27bc27aa8ea2edeb88aa7da9a" style="width: 100.0%; height: 100.0%;"><b>Chemist Warehouse</b><br>OSM (-37.755620, 144.740772)<br>Distance: 1254m (1.254km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_ff91b96920c3744520e923da606a2267.setContent(html_27422bf27bc27aa8ea2edeb88aa7da9a);
+            
+        
+
+        marker_8cfc3f3f00d3841ccb3efc393d0e0b12.bindPopup(popup_ff91b96920c3744520e923da606a2267)
+        ;
+
+        
+    
+    
+            marker_8cfc3f3f00d3841ccb3efc393d0e0b12.bindTooltip(
+                `<div>
+                     Chemist Warehouse (1254m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8cfc3f3f00d3841ccb3efc393d0e0b12.setIcon(icon_31ada49fa06b750ae424e2273092dd22);
+            
+    
+            var poly_line_764ca715eae3c46b769c094a3c355790 = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.7556203, 144.7407725]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_764ca715eae3c46b769c094a3c355790.bindTooltip(
+                `<div>
+                     1254m to Chemist Warehouse
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_34331d9e73b5373fdcae1bf19deb042f = L.marker(
+                [-37.75014145, 144.74249755],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_7451f8eddf6001d0985f3fd1f872c967 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1254m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_34331d9e73b5373fdcae1bf19deb042f.setIcon(div_icon_7451f8eddf6001d0985f3fd1f872c967);
+            
+    
+            var marker_9d63bc2d5e0a5dff86583297bbe53bbc = L.marker(
+                [-37.7324848, 144.7431768],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_d6e5c9bd709eb9d02dd5d530cfb6b246 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9a709ca72b857f7d7a67a5e64f208a9d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_50ff4debea7999a03055d2e98cbbafc8 = $(`<div id="html_50ff4debea7999a03055d2e98cbbafc8" style="width: 100.0%; height: 100.0%;"><b>Caroline Springs Pharmacy</b><br>29-35, Lake Street, Caroline Springs, VIC, 3023<br>Distance: 1355m (1.355km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_9a709ca72b857f7d7a67a5e64f208a9d.setContent(html_50ff4debea7999a03055d2e98cbbafc8);
+            
+        
+
+        marker_9d63bc2d5e0a5dff86583297bbe53bbc.bindPopup(popup_9a709ca72b857f7d7a67a5e64f208a9d)
+        ;
+
+        
+    
+    
+            marker_9d63bc2d5e0a5dff86583297bbe53bbc.bindTooltip(
+                `<div>
+                     Caroline Springs Pharmacy (1355m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9d63bc2d5e0a5dff86583297bbe53bbc.setIcon(icon_d6e5c9bd709eb9d02dd5d530cfb6b246);
+            
+    
+            var poly_line_f524594160dc252989da135031da9a42 = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.7324848, 144.7431768]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_f524594160dc252989da135031da9a42.bindTooltip(
+                `<div>
+                     1355m to Caroline Springs Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b9cd9b0fa18c6c8016e734c243188e2f = L.marker(
+                [-37.7385737, 144.74369969999998],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_01cd04627d93c138610d721b3343f23b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1355m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_b9cd9b0fa18c6c8016e734c243188e2f.setIcon(div_icon_01cd04627d93c138610d721b3343f23b);
+            
+    
+            var marker_724eb2ec63635498cae35cb67cc5145f = L.marker(
+                [-37.731494, 144.7435],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_0fcecb22bafa59f3049b8094e096b1b7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8fb4d6d30d586cf1aa691342360f50de = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_483c4436316059a7a56dae43c1c2c42b = $(`<div id="html_483c4436316059a7a56dae43c1c2c42b" style="width: 100.0%; height: 100.0%;"><b>Chemist Warehouse Caroline Springs Town Square</b><br>Shop L01 016, CS Square Centre, Caroline Springs, VIC, 3023<br>Distance: 1463m (1.463km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_8fb4d6d30d586cf1aa691342360f50de.setContent(html_483c4436316059a7a56dae43c1c2c42b);
+            
+        
+
+        marker_724eb2ec63635498cae35cb67cc5145f.bindPopup(popup_8fb4d6d30d586cf1aa691342360f50de)
+        ;
+
+        
+    
+    
+            marker_724eb2ec63635498cae35cb67cc5145f.bindTooltip(
+                `<div>
+                     Chemist Warehouse Caroline Springs Town Square (1463m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_724eb2ec63635498cae35cb67cc5145f.setIcon(icon_0fcecb22bafa59f3049b8094e096b1b7);
+            
+    
+            var poly_line_1709a7fbabb57ca81ba86393ad8cf90d = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.731494, 144.7435]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_1709a7fbabb57ca81ba86393ad8cf90d.bindTooltip(
+                `<div>
+                     1463m to Chemist Warehouse Caroline Springs Town Square
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_fa06dd8bd468ef24534ecff779857df0 = L.marker(
+                [-37.7380783, 144.7438613],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_a1c20ed38f258f614750fc5b10268d53 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1463m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_fa06dd8bd468ef24534ecff779857df0.setIcon(div_icon_a1c20ed38f258f614750fc5b10268d53);
+            
+    
+            var marker_b26f922f7cdaba7e56d8df907b6f9c23 = L.marker(
+                [-37.7585435, 144.7482966],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_4a3fc2b5ef2db08a67454e478e2d68ee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6ef2264db7981cb8cc54adf666421606 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2ef82d0a85176520d891cdb5536c7f13 = $(`<div id="html_2ef82d0a85176520d891cdb5536c7f13" style="width: 100.0%; height: 100.0%;"><b>Direct Chemist Outlet Westsprings</b><br>Unit C01, Westsprings Central, 1042 Western Hwy, CAROLINE SPRINGS, VIC, 3023<br>Distance: 1582m (1.582km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_6ef2264db7981cb8cc54adf666421606.setContent(html_2ef82d0a85176520d891cdb5536c7f13);
+            
+        
+
+        marker_b26f922f7cdaba7e56d8df907b6f9c23.bindPopup(popup_6ef2264db7981cb8cc54adf666421606)
+        ;
+
+        
+    
+    
+            marker_b26f922f7cdaba7e56d8df907b6f9c23.bindTooltip(
+                `<div>
+                     Direct Chemist Outlet Westsprings (1582m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b26f922f7cdaba7e56d8df907b6f9c23.setIcon(icon_4a3fc2b5ef2db08a67454e478e2d68ee);
+            
+    
+            var poly_line_3f268ee04f11dec3d73aa488645d13ee = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.7585435, 144.7482966]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_3f268ee04f11dec3d73aa488645d13ee.bindTooltip(
+                `<div>
+                     1582m to Direct Chemist Outlet Westsprings
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_db92caffd097a27a46be7366ee5432a4 = L.marker(
+                [-37.75160305, 144.7462596],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_612e759baa89b3384bb660c48b8d25ea = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1582m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_db92caffd097a27a46be7366ee5432a4.setIcon(div_icon_612e759baa89b3384bb660c48b8d25ea);
+            
+    
+            var marker_c0e9820d86c130e0b43b03f5de41cd1f = L.marker(
+                [-37.7301237, 144.7435512],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_fcf84b4aeecc81a29dce780091f5135c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e9d353b3cbb264a5e1bd75e054da5071 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_18570f111c38bca7e6abeb7c6fecbb14 = $(`<div id="html_18570f111c38bca7e6abeb7c6fecbb14" style="width: 100.0%; height: 100.0%;"><b>Priceline Pharmacy</b><br>29-35, Lake Street, Caroline Springs, VIC, 3023<br>Distance: 1615m (1.615km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_e9d353b3cbb264a5e1bd75e054da5071.setContent(html_18570f111c38bca7e6abeb7c6fecbb14);
+            
+        
+
+        marker_c0e9820d86c130e0b43b03f5de41cd1f.bindPopup(popup_e9d353b3cbb264a5e1bd75e054da5071)
+        ;
+
+        
+    
+    
+            marker_c0e9820d86c130e0b43b03f5de41cd1f.bindTooltip(
+                `<div>
+                     Priceline Pharmacy (1615m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c0e9820d86c130e0b43b03f5de41cd1f.setIcon(icon_fcf84b4aeecc81a29dce780091f5135c);
+            
+    
+            var poly_line_fe9cc75e14985ecd5862e900e828efde = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.7301237, 144.7435512]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_fe9cc75e14985ecd5862e900e828efde.bindTooltip(
+                `<div>
+                     1615m to Priceline Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_556fa466e057ad7385b030837e8d2084 = L.marker(
+                [-37.73739315, 144.7438869],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_1db229549699bff1dcbe697e720d1cb7 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1615m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_556fa466e057ad7385b030837e8d2084.setIcon(div_icon_1db229549699bff1dcbe697e720d1cb7);
+            
+    
+            var marker_b6281f1e8ffa359946d319b947096a02 = L.marker(
+                [-37.7586734, 144.7536003],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_28807efa00054747971fe111dfdf483e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0844ccc7ab0bd5c892933ff5b030f671 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9db1f52225e2596dc3015bf93f8bfdc0 = $(`<div id="html_9db1f52225e2596dc3015bf93f8bfdc0" style="width: 100.0%; height: 100.0%;"><b>Chemist Warehouse</b><br>OSM (-37.758673, 144.753600)<br>Distance: 1761m (1.761km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_0844ccc7ab0bd5c892933ff5b030f671.setContent(html_9db1f52225e2596dc3015bf93f8bfdc0);
+            
+        
+
+        marker_b6281f1e8ffa359946d319b947096a02.bindPopup(popup_0844ccc7ab0bd5c892933ff5b030f671)
+        ;
+
+        
+    
+    
+            marker_b6281f1e8ffa359946d319b947096a02.bindTooltip(
+                `<div>
+                     Chemist Warehouse (1761m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b6281f1e8ffa359946d319b947096a02.setIcon(icon_28807efa00054747971fe111dfdf483e);
+            
+    
+            var poly_line_fd1436b7f489b00974aa197b0c89a4f5 = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.7586734, 144.7536003]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_fd1436b7f489b00974aa197b0c89a4f5.bindTooltip(
+                `<div>
+                     1761m to Chemist Warehouse
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_44ca2b34e4793f5a67b77cc186e44248 = L.marker(
+                [-37.751667999999995, 144.74891144999998],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_9b1a6eebd684b5231cff490fdd897f9e = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e1761m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_44ca2b34e4793f5a67b77cc186e44248.setIcon(div_icon_9b1a6eebd684b5231cff490fdd897f9e);
+            
+    
+            var marker_4fcca33d08b3cf9ad333b438594f2137 = L.marker(
+                [-37.7233418, 144.7519896],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_b403f7593838be63c8b94eafcbeffa2d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_37d5826ec65ea24208ed6e792124cc79 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_130bdbd1bfec4d829e41bf6d633101d9 = $(`<div id="html_130bdbd1bfec4d829e41bf6d633101d9" style="width: 100.0%; height: 100.0%;"><b>Pharmacy Select</b><br>OSM (-37.723342, 144.751990)<br>Distance: 2463m (2.463km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_37d5826ec65ea24208ed6e792124cc79.setContent(html_130bdbd1bfec4d829e41bf6d633101d9);
+            
+        
+
+        marker_4fcca33d08b3cf9ad333b438594f2137.bindPopup(popup_37d5826ec65ea24208ed6e792124cc79)
+        ;
+
+        
+    
+    
+            marker_4fcca33d08b3cf9ad333b438594f2137.bindTooltip(
+                `<div>
+                     Pharmacy Select (2463m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4fcca33d08b3cf9ad333b438594f2137.setIcon(icon_b403f7593838be63c8b94eafcbeffa2d);
+            
+    
+            var poly_line_14aeacbbe69768e57383b59fc7347a89 = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.7233418, 144.7519896]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_14aeacbbe69768e57383b59fc7347a89.bindTooltip(
+                `<div>
+                     2463m to Pharmacy Select
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e7dcc4bbefd1a4e7f5ddcef648547139 = L.marker(
+                [-37.7340022, 144.7481061],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_1dfec1d0f75884469ef47ffc70a57e74 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e2463m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_e7dcc4bbefd1a4e7f5ddcef648547139.setIcon(div_icon_1dfec1d0f75884469ef47ffc70a57e74);
+            
+    
+            var marker_6de18175a84615881c3aea95f664ec8a = L.marker(
+                [-37.751052, 144.7746522],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_90b775803ccdb64f41188f7448e0d9a5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1db6c1907e4f3dc9262346cc0b86fd5d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3f41269c760e7f64c768e018a0c70809 = $(`<div id="html_3f41269c760e7f64c768e018a0c70809" style="width: 100.0%; height: 100.0%;"><b>Direct Chemist Outlet Brimbank</b><br>Shop T097 Brimbank Central Shopping Centre, 28-72 Neale Road, DEER PARK, VIC, 3023<br>Distance: 2774m (2.774km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_1db6c1907e4f3dc9262346cc0b86fd5d.setContent(html_3f41269c760e7f64c768e018a0c70809);
+            
+        
+
+        marker_6de18175a84615881c3aea95f664ec8a.bindPopup(popup_1db6c1907e4f3dc9262346cc0b86fd5d)
+        ;
+
+        
+    
+    
+            marker_6de18175a84615881c3aea95f664ec8a.bindTooltip(
+                `<div>
+                     Direct Chemist Outlet Brimbank (2774m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6de18175a84615881c3aea95f664ec8a.setIcon(icon_90b775803ccdb64f41188f7448e0d9a5);
+            
+    
+            var poly_line_c258c493193120d59b3879c8de8bf83c = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.751052, 144.7746522]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_c258c493193120d59b3879c8de8bf83c.bindTooltip(
+                `<div>
+                     2774m to Direct Chemist Outlet Brimbank
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5a3a01c9fa8512489d03e8d446d3702c = L.marker(
+                [-37.7478573, 144.7594374],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_a139ddabf451686b00d9917f327faad5 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e2774m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_5a3a01c9fa8512489d03e8d446d3702c.setIcon(div_icon_a139ddabf451686b00d9917f327faad5);
+            
+    
+            var marker_784da9d3fe1d907a0100ba1c7b6a04a9 = L.marker(
+                [-37.7511412, 144.7755019],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_b6cc0cf356160e791b1f47382d482731 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_61b5332db0b618b9185bffc3c42e86ee = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c0c63c6cd6489f5b06d78761655f2690 = $(`<div id="html_c0c63c6cd6489f5b06d78761655f2690" style="width: 100.0%; height: 100.0%;"><b>TerryWhite Chemmart Brimbank</b><br>Shop T51 Brimbank Central Shopping Centre, Corner Neale & Station Road, DEER PARK, VIC, 3023<br>Distance: 2849m (2.849km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_61b5332db0b618b9185bffc3c42e86ee.setContent(html_c0c63c6cd6489f5b06d78761655f2690);
+            
+        
+
+        marker_784da9d3fe1d907a0100ba1c7b6a04a9.bindPopup(popup_61b5332db0b618b9185bffc3c42e86ee)
+        ;
+
+        
+    
+    
+            marker_784da9d3fe1d907a0100ba1c7b6a04a9.bindTooltip(
+                `<div>
+                     TerryWhite Chemmart Brimbank (2849m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_784da9d3fe1d907a0100ba1c7b6a04a9.setIcon(icon_b6cc0cf356160e791b1f47382d482731);
+            
+    
+            var poly_line_19f6231da7eea54028b5a8bf042aba23 = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.7511412, 144.7755019]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_19f6231da7eea54028b5a8bf042aba23.bindTooltip(
+                `<div>
+                     2849m to TerryWhite Chemmart Brimbank
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f39126c4e95051efcb7b139ef7f9b892 = L.marker(
+                [-37.7479019, 144.75986225],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_5c0d9a42ec1ea3c5b50db1a752bd494d = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e2849m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_f39126c4e95051efcb7b139ef7f9b892.setIcon(div_icon_5c0d9a42ec1ea3c5b50db1a752bd494d);
+            
+    
+            var marker_0b98ddef5efebbeae204fc8546d7d099 = L.marker(
+                [-37.74154, 144.7063112],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_58d4c49c8ad6c38e13515ed622f6709f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d348d48af542a92f272117e875681597 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b9bacaa4ed5cadb8169d9173824ecc1c = $(`<div id="html_b9bacaa4ed5cadb8169d9173824ecc1c" style="width: 100.0%; height: 100.0%;"><b>Priceline Deer Park</b><br>SHOP T089, BRIMBANK CENTRAL SHOPPING CENTRE, CNR NEALE & STATION RDS, DEER PARK, VIC, 3023<br>Distance: 3359m (3.359km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_d348d48af542a92f272117e875681597.setContent(html_b9bacaa4ed5cadb8169d9173824ecc1c);
+            
+        
+
+        marker_0b98ddef5efebbeae204fc8546d7d099.bindPopup(popup_d348d48af542a92f272117e875681597)
+        ;
+
+        
+    
+    
+            marker_0b98ddef5efebbeae204fc8546d7d099.bindTooltip(
+                `<div>
+                     Priceline Deer Park (3359m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0b98ddef5efebbeae204fc8546d7d099.setIcon(icon_58d4c49c8ad6c38e13515ed622f6709f);
+            
+    
+            var poly_line_58b741941ed3dee8959babd9489f1706 = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.74154, 144.7063112]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_58b741941ed3dee8959babd9489f1706.bindTooltip(
+                `<div>
+                     3359m to Priceline Deer Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9577b768691bf692e9bddc80dbd7ea8f = L.marker(
+                [-37.7431013, 144.7252669],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_1ff8fe177e47e7774dfe1085b08ecbb9 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3359m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_9577b768691bf692e9bddc80dbd7ea8f.setIcon(div_icon_1ff8fe177e47e7774dfe1085b08ecbb9);
+            
+    
+            var marker_9a8dbe984cc051bb3a4d32eeca50b74d = L.marker(
+                [-37.7634667, 144.7757628],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_6ca00b65acfccbfeec75ceba5d207c67 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d4b3955e8a814027aadefc1cc734bfd9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_947f27553287ffab283db8e62eda9c05 = $(`<div id="html_947f27553287ffab283db8e62eda9c05" style="width: 100.0%; height: 100.0%;"><b>PharmaSave Graeme Wurm Pharmacy</b><br>104 Station Road, DEER PARK, VIC, 3023<br>Distance: 3476m (3.476km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_d4b3955e8a814027aadefc1cc734bfd9.setContent(html_947f27553287ffab283db8e62eda9c05);
+            
+        
+
+        marker_9a8dbe984cc051bb3a4d32eeca50b74d.bindPopup(popup_d4b3955e8a814027aadefc1cc734bfd9)
+        ;
+
+        
+    
+    
+            marker_9a8dbe984cc051bb3a4d32eeca50b74d.bindTooltip(
+                `<div>
+                     PharmaSave Graeme Wurm Pharmacy (3476m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9a8dbe984cc051bb3a4d32eeca50b74d.setIcon(icon_6ca00b65acfccbfeec75ceba5d207c67);
+            
+    
+            var poly_line_f3cf9f8ec5b866631bcb2c6763124075 = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.7634667, 144.7757628]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_f3cf9f8ec5b866631bcb2c6763124075.bindTooltip(
+                `<div>
+                     3476m to PharmaSave Graeme Wurm Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3604921ea8f71824b5ad4f9b56d21b41 = L.marker(
+                [-37.754064650000004, 144.7599927],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_b0fd7fa458e6979838b4480af7dbc708 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3476m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_3604921ea8f71824b5ad4f9b56d21b41.setIcon(div_icon_b0fd7fa458e6979838b4480af7dbc708);
+            
+    
+            var marker_fc7334c31792919af3fca7acae716caa = L.marker(
+                [-37.7324799, 144.7811666],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_faffe4faa61d7ca9eb2383e32f707a91 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_37a80e857e155b85be01da08256678a3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fcde8d3827328843000da4c8c76a7a8c = $(`<div id="html_fcde8d3827328843000da4c8c76a7a8c" style="width: 100.0%; height: 100.0%;"><b>Kings Pharmacy - VIC</b><br>149 Kings Road, KINGS PARK, VIC, 3021<br>Distance: 3526m (3.526km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_37a80e857e155b85be01da08256678a3.setContent(html_fcde8d3827328843000da4c8c76a7a8c);
+            
+        
+
+        marker_fc7334c31792919af3fca7acae716caa.bindPopup(popup_37a80e857e155b85be01da08256678a3)
+        ;
+
+        
+    
+    
+            marker_fc7334c31792919af3fca7acae716caa.bindTooltip(
+                `<div>
+                     Kings Pharmacy - VIC (3526m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fc7334c31792919af3fca7acae716caa.setIcon(icon_faffe4faa61d7ca9eb2383e32f707a91);
+            
+    
+            var poly_line_c14b41846eec39cc83533c83291c5570 = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.7324799, 144.7811666]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_c14b41846eec39cc83533c83291c5570.bindTooltip(
+                `<div>
+                     3526m to Kings Pharmacy - VIC
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2df43067cd63ce6b90150c0f883e64ec = L.marker(
+                [-37.73857125, 144.7626946],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_b728df23cb07eb58ad565f338210220c = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3526m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_2df43067cd63ce6b90150c0f883e64ec.setIcon(div_icon_b728df23cb07eb58ad565f338210220c);
+            
+    
+            var marker_1228c44d57027b1481d7fcfe3d3563de = L.marker(
+                [-37.7114131, 144.7417119],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_289ece48ef34e59a065132b55d291510 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e3e32c101e5511924fc16a382072f9e8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0b4e949109105f997ade31c571651140 = $(`<div id="html_0b4e949109105f997ade31c571651140" style="width: 100.0%; height: 100.0%;"><b>United Chemists Taylors Hill</b><br>Shop 8, Taylors Hill Village, Corner Gourlay & Hume Road, TAYLORS HILL, VIC, 3037<br>Distance: 3697m (3.697km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_e3e32c101e5511924fc16a382072f9e8.setContent(html_0b4e949109105f997ade31c571651140);
+            
+        
+
+        marker_1228c44d57027b1481d7fcfe3d3563de.bindPopup(popup_e3e32c101e5511924fc16a382072f9e8)
+        ;
+
+        
+    
+    
+            marker_1228c44d57027b1481d7fcfe3d3563de.bindTooltip(
+                `<div>
+                     United Chemists Taylors Hill (3697m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1228c44d57027b1481d7fcfe3d3563de.setIcon(icon_289ece48ef34e59a065132b55d291510);
+            
+    
+            var poly_line_0de4b7c7199e3a0130ffd57c3d2692f3 = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.7114131, 144.7417119]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_0de4b7c7199e3a0130ffd57c3d2692f3.bindTooltip(
+                `<div>
+                     3697m to United Chemists Taylors Hill
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a7af3616ad18f5d2066dea2d5047f390 = L.marker(
+                [-37.72803785, 144.74296725],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_8f854246093e3ba119e49d9ed9cd3080 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3697m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_a7af3616ad18f5d2066dea2d5047f390.setIcon(div_icon_8f854246093e3ba119e49d9ed9cd3080);
+            
+    
+            var marker_2a83bbbea7190814e51edc5e31553158 = L.marker(
+                [-37.7780163, 144.7556823],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_598f368f6312a3978f74984151e9dc96 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1c341cf9bb59b3953dd408f89529a80b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_60079b3b1338866540e10b2438119cc6 = $(`<div id="html_60079b3b1338866540e10b2438119cc6" style="width: 100.0%; height: 100.0%;"><b>Chemcare Wellness Pharmacy Deer Park</b><br>2/20 Clairview Road, DEER PARK, VIC, 3023<br>Distance: 3837m (3.837km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_1c341cf9bb59b3953dd408f89529a80b.setContent(html_60079b3b1338866540e10b2438119cc6);
+            
+        
+
+        marker_2a83bbbea7190814e51edc5e31553158.bindPopup(popup_1c341cf9bb59b3953dd408f89529a80b)
+        ;
+
+        
+    
+    
+            marker_2a83bbbea7190814e51edc5e31553158.bindTooltip(
+                `<div>
+                     Chemcare Wellness Pharmacy Deer Park (3837m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2a83bbbea7190814e51edc5e31553158.setIcon(icon_598f368f6312a3978f74984151e9dc96);
+            
+    
+            var poly_line_d799c8de58689f7e499e721dacc5355c = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.7780163, 144.7556823]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_d799c8de58689f7e499e721dacc5355c.bindTooltip(
+                `<div>
+                     3837m to Chemcare Wellness Pharmacy Deer Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6083bc952220151d6c6d14dcc77dc5e6 = L.marker(
+                [-37.761339449999994, 144.74995245],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_265be42d6bbd498d4b055744c1ed0d18 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3837m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_6083bc952220151d6c6d14dcc77dc5e6.setIcon(div_icon_265be42d6bbd498d4b055744c1ed0d18);
+            
+    
+            var marker_4a9598e87a67f4180c5b95b85dc976d6 = L.marker(
+                [-37.7704284, 144.7734748],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_80cb181212f1653ef118bbe24208e2be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b48c24e76f522cae15ffb959c4029ff2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b4d45454fec8237ad8d9329edc031f1f = $(`<div id="html_b4d45454fec8237ad8d9329edc031f1f" style="width: 100.0%; height: 100.0%;"><b>Deer Park Pharmacy</b><br>811A Ballarat Road, DEER PARK, VIC, 3023<br>Distance: 3850m (3.850km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_b48c24e76f522cae15ffb959c4029ff2.setContent(html_b4d45454fec8237ad8d9329edc031f1f);
+            
+        
+
+        marker_4a9598e87a67f4180c5b95b85dc976d6.bindPopup(popup_b48c24e76f522cae15ffb959c4029ff2)
+        ;
+
+        
+    
+    
+            marker_4a9598e87a67f4180c5b95b85dc976d6.bindTooltip(
+                `<div>
+                     Deer Park Pharmacy (3850m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4a9598e87a67f4180c5b95b85dc976d6.setIcon(icon_80cb181212f1653ef118bbe24208e2be);
+            
+    
+            var poly_line_92522339baf9b2d9b331495115aa2fc6 = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.7704284, 144.7734748]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_92522339baf9b2d9b331495115aa2fc6.bindTooltip(
+                `<div>
+                     3850m to Deer Park Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e0f601ef1e4ff24092007b27ea643b61 = L.marker(
+                [-37.7575455, 144.7588487],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_8a60ca8464e8061e70c37f2826ec60b2 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e3850m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_e0f601ef1e4ff24092007b27ea643b61.setIcon(div_icon_8a60ca8464e8061e70c37f2826ec60b2);
+            
+    
+            var marker_718bf052c4d2cc35495e428bb4a8e75f = L.marker(
+                [-37.7023114, 144.7415897],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_f4cf84184ac4c84f62b3885734b5ff52 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cff70d03febceb025616a2b04c11deec = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4b2cd99dc818a542c6b4e23eb9707173 = $(`<div id="html_4b2cd99dc818a542c6b4e23eb9707173" style="width: 100.0%; height: 100.0%;"><b>Rainbow Health Pharmacy</b><br>40 Gourlay Road, HILLSIDE, VIC, 3037<br>Distance: 4706m (4.706km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_cff70d03febceb025616a2b04c11deec.setContent(html_4b2cd99dc818a542c6b4e23eb9707173);
+            
+        
+
+        marker_718bf052c4d2cc35495e428bb4a8e75f.bindPopup(popup_cff70d03febceb025616a2b04c11deec)
+        ;
+
+        
+    
+    
+            marker_718bf052c4d2cc35495e428bb4a8e75f.bindTooltip(
+                `<div>
+                     Rainbow Health Pharmacy (4706m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_718bf052c4d2cc35495e428bb4a8e75f.setIcon(icon_f4cf84184ac4c84f62b3885734b5ff52);
+            
+    
+            var poly_line_d980f5754c0736b2ca6830ed488541c3 = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.7023114, 144.7415897]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_d980f5754c0736b2ca6830ed488541c3.bindTooltip(
+                `<div>
+                     4706m to Rainbow Health Pharmacy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4d310a5f8ab655e2c9855a5512477ba1 = L.marker(
+                [-37.723487, 144.74290615],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_8b564dfd8e582394803752605f0eb6a2 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e4706m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_4d310a5f8ab655e2c9855a5512477ba1.setIcon(div_icon_8b564dfd8e582394803752605f0eb6a2);
+            
+    
+            var marker_f4b3ca5c1ebcc35b80f43441729fee7c = L.marker(
+                [-37.7841818, 144.7712563],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var icon_d4238029c99f4fa657144afc5659c59f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4fac18b830b25e01b1cf8f751fe7910f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8304789627fe6eb38fc0961023c44459 = $(`<div id="html_8304789627fe6eb38fc0961023c44459" style="width: 100.0%; height: 100.0%;"><b>Chemist Warehouse</b><br>OSM (-37.784182, 144.771256)<br>Distance: 4991m (4.991km)<br>Status: <b>PASS</b></div>`)[0];
+                popup_4fac18b830b25e01b1cf8f751fe7910f.setContent(html_8304789627fe6eb38fc0961023c44459);
+            
+        
+
+        marker_f4b3ca5c1ebcc35b80f43441729fee7c.bindPopup(popup_4fac18b830b25e01b1cf8f751fe7910f)
+        ;
+
+        
+    
+    
+            marker_f4b3ca5c1ebcc35b80f43441729fee7c.bindTooltip(
+                `<div>
+                     Chemist Warehouse (4991m)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f4b3ca5c1ebcc35b80f43441729fee7c.setIcon(icon_d4238029c99f4fa657144afc5659c59f);
+            
+    
+            var poly_line_3e6b1a99b61a16fc988bded2a5dbd999 = L.polyline(
+                [[-37.7446626, 144.7442226], [-37.7841818, 144.7712563]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            poly_line_3e6b1a99b61a16fc988bded2a5dbd999.bindTooltip(
+                `<div>
+                     4991m to Chemist Warehouse
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1fa8dc4a854ecb52106bf42e75dd8f5e = L.marker(
+                [-37.7644222, 144.75773945],
+                {
+}
+            ).addTo(map_332c7e1495b9cc85f170996c34f25409);
+        
+    
+            var div_icon_fcf1402f07e3d923ca18884596f3a07f = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11px;font-weight:bold;color:green;background:white;padding:1px 4px;border:1px solid green;border-radius:3px;white-space:nowrap;\"\u003e4991m\u003c/div\u003e",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, 10],
+  "className": "empty",
+});
+        
+    
+                marker_1fa8dc4a854ecb52106bf42e75dd8f5e.setIcon(div_icon_fcf1402f07e3d923ca18884596f3a07f);
+            
+</script>
+</html>

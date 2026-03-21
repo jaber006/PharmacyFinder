@@ -1,0 +1,1950 @@
+{
+  "pharmacies": {
+    "total": 6498,
+    "coord_verified": 0,
+    "coord_verified_pct": 0.0,
+    "missing_coordinates": [],
+    "invalid_coordinates": [
+      {
+        "id": 7749,
+        "name": "Norfolk Island Pharmacy",
+        "lat": -29.0444807,
+        "lon": 167.9535677
+      }
+    ],
+    "invalid_states": [],
+    "missing_state": [],
+    "missing_name": [],
+    "duplicate_names_within_100m": [
+      {
+        "pharmacy_a": {
+          "id": 7489,
+          "name": "Amcal"
+        },
+        "pharmacy_b": {
+          "id": 7490,
+          "name": "Amcal"
+        },
+        "distance_m": 3.3
+      },
+      {
+        "pharmacy_a": {
+          "id": 2982,
+          "name": "Nick Logan Pharmacist Advice"
+        },
+        "pharmacy_b": {
+          "id": 7600,
+          "name": "Nick Logan Pharmacist Advice"
+        },
+        "distance_m": 33.4
+      }
+    ],
+    "sources": {
+      "OpenStreetMap": 890,
+      "OpenStreetMap-verify": 371,
+      "amcal.com.au": 41,
+      "bloomsthechemist.com.au": 27,
+      "capitalchemist.com.au": 1,
+      "chemistwarehouse.com.au": 145,
+      "cincottachemist.com.au": 3,
+      "directchemistoutlet.com.au": 2,
+      "discountdrugstores.com.au": 11,
+      "findapharmacy.com.au": 4302,
+      "friendliespharmacy.com.au": 10,
+      "google_maps_browser": 11,
+      "google_maps_verification": 7,
+      "healthdirect.gov.au": 1,
+      "manual-google-maps": 1,
+      "manual_verification": 1,
+      "nationalpharmacies.com.au": 1,
+      "optimalpharmacyplus.com.au": 2,
+      "osm_verification": 259,
+      "pharmasave.com.au": 2,
+      "priceline.com.au": 245,
+      "soulpattinson.com.au": 5,
+      "stardiscountchemist.com.au": 2,
+      "terrywhitechemmart.com.au": 125,
+      "various-sigma": 33
+    },
+    "issue_counts": {
+      "missing_coords": 0,
+      "invalid_coords": 1,
+      "invalid_states": 0,
+      "missing_state": 0,
+      "missing_name": 0,
+      "duplicate_name_proximity": 2
+    }
+  },
+  "medical_centres": {
+    "total": 163,
+    "coord_verified": 0,
+    "gp_count_verified": 0,
+    "missing_or_zero_gps": [],
+    "invalid_coordinates": [],
+    "suspicious_high_gps": [],
+    "issue_counts": {
+      "missing_or_zero_gps": 0,
+      "invalid_coords": 0,
+      "suspicious_high_gps": 0
+    }
+  },
+  "gp_practices": {
+    "total": 3815,
+    "coord_verified": 0,
+    "coord_verified_pct": 0.0,
+    "invalid_coordinates": [
+      {
+        "id": 24108,
+        "name": "Erub (Damley Island) Primary Health Care Centre",
+        "lat": -9.5984025,
+        "lon": 143.7629167
+      }
+    ],
+    "missing_fte": 0,
+    "issue_counts": {
+      "invalid_coords": 1,
+      "missing_fte": 0
+    }
+  },
+  "shopping_centres": {
+    "total": 155,
+    "coord_verified": 0,
+    "tenants_verified": 0,
+    "missing_tenants": [],
+    "missing_gla": [],
+    "suspicious_high_tenants": [],
+    "invalid_coordinates": [],
+    "issue_counts": {
+      "missing_tenants": 0,
+      "missing_gla": 0,
+      "suspicious_high_tenants": 0,
+      "invalid_coords": 0
+    }
+  },
+  "hospitals": {
+    "total": 38,
+    "coord_verified": 0,
+    "bed_count_verified": 0,
+    "missing_bed_count": [
+      {
+        "id": 5098,
+        "name": "Rosebery Communitiy Hospital",
+        "address": "Rosebery Communitiy Hospital, TAS, Australia"
+      },
+      {
+        "id": 5099,
+        "name": "The Hobart Clinic",
+        "address": "31, Chipmans Road, Rokeby, TAS"
+      },
+      {
+        "id": 5100,
+        "name": "Queenstown Hospital",
+        "address": "Queenstown Hospital, TAS, Australia"
+      },
+      {
+        "id": 5101,
+        "name": "Dover Multi-Purpose Health Centre",
+        "address": "Dover Multi-Purpose Health Centre, TAS, Australia"
+      },
+      {
+        "id": 5102,
+        "name": "Wellington Centre",
+        "address": "42, Argyle Street, Hobart, TAS"
+      },
+      {
+        "id": 5103,
+        "name": "Oatlands Multi-Purpose Health Centre",
+        "address": "Church Street, Oatlands, TAS"
+      },
+      {
+        "id": 5104,
+        "name": "Scottsdale General Hospital",
+        "address": "2, Fosters Road, Scottsdale, TAS"
+      },
+      {
+        "id": 5105,
+        "name": "Ochre Medical Centre Scottsdale",
+        "address": "2, Fosters Road, Scottsdale, TAS"
+      },
+      {
+        "id": 5106,
+        "name": "North Eastern Soldiers Memorial Hospital",
+        "address": "28, Fosters Road, Scottsdale, TAS"
+      },
+      {
+        "id": 5107,
+        "name": "Calvary Hospital",
+        "address": "49, Augusta Road, Lenah Valley, TAS"
+      },
+      {
+        "id": 5108,
+        "name": "Calvary Healthcare Tasmania - St John's Campus",
+        "address": "Calvary Healthcare Tasmania - St John's Campus, TAS, Australia"
+      },
+      {
+        "id": 5109,
+        "name": "Deloraine District Hospital",
+        "address": "Deloraine District Hospital, TAS, Australia"
+      },
+      {
+        "id": 5110,
+        "name": "King Island District Hospital and Health Centre",
+        "address": "King Island District Hospital and Health Centre, TAS, Australia"
+      },
+      {
+        "id": 5111,
+        "name": "North West Private Hospital",
+        "address": "21, Brickport Road, Cooee, TAS"
+      },
+      {
+        "id": 5112,
+        "name": "Campbell Town Health and Community Service",
+        "address": "Campbell Town Health and Community Service, TAS, Australia"
+      },
+      {
+        "id": 5113,
+        "name": "May Shaw Health and Aged Care for Living",
+        "address": "37, Wellington Street, Swansea, TAS"
+      },
+      {
+        "id": 5114,
+        "name": "Ouse District Public Hospital",
+        "address": "Ouse District Public Hospital, TAS, Australia"
+      },
+      {
+        "id": 5115,
+        "name": "St Helens District Hospital and Community Centre",
+        "address": "10, Annie Street, St Helens, TAS"
+      },
+      {
+        "id": 5116,
+        "name": "St Marys Community Health Centre",
+        "address": "15-17, Gardiners Creek Road, St Marys, TAS"
+      },
+      {
+        "id": 5117,
+        "name": "New Norfolk District Hospital",
+        "address": "New Norfolk District Hospital, TAS, Australia"
+      },
+      {
+        "id": 5118,
+        "name": "St Vincents Hospital",
+        "address": "5, Frederick Street, Launceston, TAS"
+      },
+      {
+        "id": 5119,
+        "name": "Flinders Island Multi Purpose Centre",
+        "address": "Flinders Island Multi Purpose Centre, TAS, Australia"
+      },
+      {
+        "id": 5120,
+        "name": "Calvary - St Luke's Hospital",
+        "address": "Calvary - St Luke's Hospital, TAS, Australia"
+      },
+      {
+        "id": 5121,
+        "name": "Alcohol and Drug Services",
+        "address": "St Johns Avenue, TAS"
+      },
+      {
+        "id": 5122,
+        "name": "West Coast District Hospital At Queenstown",
+        "address": "Orr Street, TAS"
+      },
+      {
+        "id": 5123,
+        "name": "Huon Regional Care",
+        "address": "3278, Huon Highway, Franklin, TAS"
+      },
+      {
+        "id": 5124,
+        "name": "Toosey Aged and Community Care",
+        "address": "10, Archer Street, Longford, TAS"
+      },
+      {
+        "id": 5125,
+        "name": "Oatlands Multi Purpose Health Centre",
+        "address": "13, Church Street, Oatlands, TAS"
+      },
+      {
+        "id": 5126,
+        "name": "Beaconsfield District Health Service",
+        "address": "13, Bolton Street, Beaconsfield, TAS"
+      },
+      {
+        "id": 5127,
+        "name": "Smithton District Hospital",
+        "address": "74, Brittons Road, Smithton, TAS"
+      },
+      {
+        "id": 5128,
+        "name": "Tasman Multi-Purpose Centre",
+        "address": "Tasman Multi-Purpose Centre, TAS, Australia"
+      }
+    ],
+    "missing_hospital_type": [],
+    "suspicious_high_beds": [],
+    "invalid_coordinates": [],
+    "issue_counts": {
+      "missing_bed_count": 31,
+      "missing_hospital_type": 0,
+      "suspicious_high_beds": 0,
+      "invalid_coords": 0
+    }
+  },
+  "supermarkets": {
+    "total": 1439,
+    "coord_verified": 0,
+    "coord_verified_pct": 0.0,
+    "missing_gla": [],
+    "invalid_coordinates": [
+      {
+        "id": 28043,
+        "name": "Joy's Shop",
+        "lat": -31.5269231,
+        "lon": 159.0688491
+      }
+    ],
+    "brands": {
+      "iga": 266,
+      "woolworths": 264,
+      "unknown": 264,
+      "aldi": 255,
+      "coles": 178,
+      "foodworks": 57,
+      "independent": 35,
+      "foodland": 26,
+      "friendly_grocer": 16,
+      "spar": 11,
+      "drakes": 10,
+      "ritchies": 8,
+      "iga_everyday": 8,
+      "nqr": 6,
+      "iga_xpress": 5,
+      "iga_express": 5,
+      "harris_farm": 4,
+      "spudshed": 3,
+      "source_bulk_foods": 3,
+      "grocery outlet": 2,
+      "tasfresh": 1,
+      "romeo's retail group": 1,
+      "qe foodstores": 1,
+      "le max group supermarkets": 1,
+      "kfl supermarkets": 1,
+      "islanders board of industry and service": 1,
+      "go to grocer": 1,
+      "gemco": 1,
+      "gaganis bros": 1,
+      "fresh_provisions": 1,
+      "food factory sales pty ltd": 1,
+      "farmer_jacks": 1,
+      "campbells": 1
+    },
+    "issue_counts": {
+      "missing_gla": 0,
+      "invalid_coords": 1
+    }
+  },
+  "cross_checks": {
+    "close_pharmacies_under_50m": [
+      {
+        "pharmacy_a": {
+          "id": 1705,
+          "name": "Geelong Day & Night Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 1706,
+          "name": "Bull & Owen Pharmacy"
+        },
+        "distance_m": 22.6
+      },
+      {
+        "pharmacy_a": {
+          "id": 1744,
+          "name": "High Street Bannockburn Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 7670,
+          "name": "Chemmart Pharmacy"
+        },
+        "distance_m": 41.4
+      },
+      {
+        "pharmacy_a": {
+          "id": 1514,
+          "name": "Infinity Pharmacy Endeavour Hills"
+        },
+        "pharmacy_b": {
+          "id": 1513,
+          "name": "Infinity Pharmacy Heatherton Road"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 1392,
+          "name": "Vicky Melissas Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 1393,
+          "name": "Lairds Healthcare Pharmacy - Clayton"
+        },
+        "distance_m": 19.4
+      },
+      {
+        "pharmacy_a": {
+          "id": 1236,
+          "name": "Roths Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 1235,
+          "name": "TerryWhite Chemmart Elwood"
+        },
+        "distance_m": 38.5
+      },
+      {
+        "pharmacy_a": {
+          "id": 1230,
+          "name": "Soul Pattinson Chemist Michael Shapp"
+        },
+        "pharmacy_b": {
+          "id": 1227,
+          "name": "Szwarcbard Pharmacy"
+        },
+        "distance_m": 32.3
+      },
+      {
+        "pharmacy_a": {
+          "id": 1415,
+          "name": "Priceline Pharmacy The Glen"
+        },
+        "pharmacy_b": {
+          "id": 1416,
+          "name": "TerryWhite Chemmart The Glen"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 1521,
+          "name": "Priceline Pharmacy Knox"
+        },
+        "pharmacy_b": {
+          "id": 1520,
+          "name": "TerryWhite Chemmart Knox"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 1344,
+          "name": "Priceline Pharmacy Forest Hill"
+        },
+        "pharmacy_b": {
+          "id": 1343,
+          "name": "TerryWhite Chemmart Forest Hill"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 7615,
+          "name": "Yu Smiles @ Box Hill"
+        },
+        "pharmacy_b": {
+          "id": 7616,
+          "name": "Box Hill South Pharmacy"
+        },
+        "distance_m": 4.4
+      },
+      {
+        "pharmacy_a": {
+          "id": 1342,
+          "name": "Mitcham Road Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 1341,
+          "name": "Rangeview Pharmacy"
+        },
+        "distance_m": 7.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 1101,
+          "name": "Slade Pharmacy Fitzroy"
+        },
+        "pharmacy_b": {
+          "id": 1100,
+          "name": "HealthSmart Pharmacy Victoria Parade"
+        },
+        "distance_m": 48.4
+      },
+      {
+        "pharmacy_a": {
+          "id": 1192,
+          "name": "Edge Compounding Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 1191,
+          "name": "Cotham Road Pharmacy"
+        },
+        "distance_m": 4.9
+      },
+      {
+        "pharmacy_a": {
+          "id": 1155,
+          "name": "Thao Nguyen Pharmacy - Footscray"
+        },
+        "pharmacy_b": {
+          "id": 1158,
+          "name": "TerryWhite Chemmart Footscray"
+        },
+        "distance_m": 34.7
+      },
+      {
+        "pharmacy_a": {
+          "id": 1321,
+          "name": "Watsonia Compounding Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 1322,
+          "name": "Diamond Village Discount Chemist"
+        },
+        "distance_m": 45.4
+      },
+      {
+        "pharmacy_a": {
+          "id": 1489,
+          "name": "Direct Chemist Outlet Glenroy"
+        },
+        "pharmacy_b": {
+          "id": 1488,
+          "name": "Kapadia Pharmacy"
+        },
+        "distance_m": 33.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 1569,
+          "name": "Priceline Pharmacy Fawkner"
+        },
+        "pharmacy_b": {
+          "id": 1567,
+          "name": "Pharmacy World East Fawkner"
+        },
+        "distance_m": 33.9
+      },
+      {
+        "pharmacy_a": {
+          "id": 1466,
+          "name": "Priceline Pharmacy Watergardens"
+        },
+        "pharmacy_b": {
+          "id": 1467,
+          "name": "TerryWhite Chemmart Watergardens"
+        },
+        "distance_m": 17.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 1484,
+          "name": "Direct Chemist Outlet Gladstone Park"
+        },
+        "pharmacy_b": {
+          "id": 1483,
+          "name": "SuperValue Chemist Gladstone Park"
+        },
+        "distance_m": 47.4
+      },
+      {
+        "pharmacy_a": {
+          "id": 1565,
+          "name": "Priceline Pharmacy Epping"
+        },
+        "pharmacy_b": {
+          "id": 1564,
+          "name": "Chemist Depot Epping"
+        },
+        "distance_m": 47.9
+      },
+      {
+        "pharmacy_a": {
+          "id": 1767,
+          "name": "UFS Dispensaries Ballarat (Victoria Street)"
+        },
+        "pharmacy_b": {
+          "id": 7672,
+          "name": "UFS pharmacy"
+        },
+        "distance_m": 1.6
+      },
+      {
+        "pharmacy_a": {
+          "id": 1971,
+          "name": "Priceline Pharmacy Ararat"
+        },
+        "pharmacy_b": {
+          "id": 1972,
+          "name": "Blooms The Chemist Ararat"
+        },
+        "distance_m": 45.1
+      },
+      {
+        "pharmacy_a": {
+          "id": 1967,
+          "name": "Stawell Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 1966,
+          "name": "Grampians Pharmacy"
+        },
+        "distance_m": 49.2
+      },
+      {
+        "pharmacy_a": {
+          "id": 2013,
+          "name": "Chemist Discount Centre Seymour"
+        },
+        "pharmacy_b": {
+          "id": 2012,
+          "name": "Dennis Kilmartin Pharmacy"
+        },
+        "distance_m": 31.6
+      },
+      {
+        "pharmacy_a": {
+          "id": 1974,
+          "name": "Direct Chemist Outlet Naracoorte"
+        },
+        "pharmacy_b": {
+          "id": 1973,
+          "name": "TerryWhite Chemmart Naracoorte"
+        },
+        "distance_m": 27.7
+      },
+      {
+        "pharmacy_a": {
+          "id": 1792,
+          "name": "Neangar EUFS Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 1794,
+          "name": "Eaglehawk UFS Dispensary"
+        },
+        "distance_m": 30.4
+      },
+      {
+        "pharmacy_a": {
+          "id": 215,
+          "name": "Pharmacy 4 Less Tuggeranong"
+        },
+        "pharmacy_b": {
+          "id": 214,
+          "name": "Priceline Pharmacy Tuggeranong"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 8183,
+          "name": "PharmaSave Pharmacy Woden"
+        },
+        "pharmacy_b": {
+          "id": 180,
+          "name": "My Pharmacy Woden"
+        },
+        "distance_m": 13.5
+      },
+      {
+        "pharmacy_a": {
+          "id": 8183,
+          "name": "PharmaSave Pharmacy Woden"
+        },
+        "pharmacy_b": {
+          "id": 179,
+          "name": "Priceline Pharmacy Woden"
+        },
+        "distance_m": 21.6
+      },
+      {
+        "pharmacy_a": {
+          "id": 180,
+          "name": "My Pharmacy Woden"
+        },
+        "pharmacy_b": {
+          "id": 179,
+          "name": "Priceline Pharmacy Woden"
+        },
+        "distance_m": 9.9
+      },
+      {
+        "pharmacy_a": {
+          "id": 7277,
+          "name": "TerryWhite Chemmart Urana"
+        },
+        "pharmacy_b": {
+          "id": 1948,
+          "name": "Urana Pharmacy"
+        },
+        "distance_m": 21.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 7489,
+          "name": "Amcal"
+        },
+        "pharmacy_b": {
+          "id": 7490,
+          "name": "Amcal"
+        },
+        "distance_m": 3.3
+      },
+      {
+        "pharmacy_a": {
+          "id": 368,
+          "name": "Priceline Pharmacy Marion"
+        },
+        "pharmacy_b": {
+          "id": 367,
+          "name": "United Chemists Mini Warehouse Marion"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 386,
+          "name": "The Green Dispensary - Stirling"
+        },
+        "pharmacy_b": {
+          "id": 384,
+          "name": "Stirling Day & Night Pharmacy"
+        },
+        "distance_m": 15.4
+      },
+      {
+        "pharmacy_a": {
+          "id": 346,
+          "name": "Blooms The Chemist Glenelg"
+        },
+        "pharmacy_b": {
+          "id": 347,
+          "name": "Priceline Pharmacy Glenelg"
+        },
+        "distance_m": 35.9
+      },
+      {
+        "pharmacy_a": {
+          "id": 7500,
+          "name": "Priceline Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 7501,
+          "name": "National Pharmacies"
+        },
+        "distance_m": 22.7
+      },
+      {
+        "pharmacy_a": {
+          "id": 371,
+          "name": "Better Health Pharmacy West Lakes"
+        },
+        "pharmacy_b": {
+          "id": 372,
+          "name": "West Lakes Amcal Pharmacy"
+        },
+        "distance_m": 38.1
+      },
+      {
+        "pharmacy_a": {
+          "id": 308,
+          "name": "Star Discount Chemist NorthPark"
+        },
+        "pharmacy_b": {
+          "id": 309,
+          "name": "Priceline Pharmacy Northpark"
+        },
+        "distance_m": 8.7
+      },
+      {
+        "pharmacy_a": {
+          "id": 326,
+          "name": "Pharmasave Arndale Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 327,
+          "name": "Star Discount Chemist Kilkenny"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 423,
+          "name": "Salisbury North Pharmacist Advice"
+        },
+        "pharmacy_b": {
+          "id": 424,
+          "name": "Whites Road Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3747,
+          "name": "Blooms The Chemist Shellharbour"
+        },
+        "pharmacy_b": {
+          "id": 3748,
+          "name": "Priceline Pharmacy Shellharbour"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3778,
+          "name": "Bowral Amcal Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 3779,
+          "name": "Capital Chemist Bowral"
+        },
+        "distance_m": 13.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3709,
+          "name": "Cincotta Discount Chemist Wollongong"
+        },
+        "pharmacy_b": {
+          "id": 3710,
+          "name": "Convenient Chemist Wollongong"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3709,
+          "name": "Cincotta Discount Chemist Wollongong"
+        },
+        "pharmacy_b": {
+          "id": 3712,
+          "name": "Hospital Hill Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3710,
+          "name": "Convenient Chemist Wollongong"
+        },
+        "pharmacy_b": {
+          "id": 3712,
+          "name": "Hospital Hill Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 541,
+          "name": "Waikerie Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 540,
+          "name": "Riverland West Pharmacy"
+        },
+        "distance_m": 42.2
+      },
+      {
+        "pharmacy_a": {
+          "id": 3519,
+          "name": "Pharmacy 4 Less Narellan"
+        },
+        "pharmacy_b": {
+          "id": 3520,
+          "name": "TerryWhite Chemmart Narellan Town Centre"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3387,
+          "name": "Blooms The Chemist Miranda"
+        },
+        "pharmacy_b": {
+          "id": 3385,
+          "name": "Priceline Pharmacy Miranda Fair"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3387,
+          "name": "Blooms The Chemist Miranda"
+        },
+        "pharmacy_b": {
+          "id": 3386,
+          "name": "Terrywhite Chemmart Pharmacy Miranda"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3385,
+          "name": "Priceline Pharmacy Miranda Fair"
+        },
+        "pharmacy_b": {
+          "id": 3386,
+          "name": "Terrywhite Chemmart Pharmacy Miranda"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3349,
+          "name": "The Jannali Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 3348,
+          "name": "Mycare Jannali Pharmacy"
+        },
+        "distance_m": 44.6
+      },
+      {
+        "pharmacy_a": {
+          "id": 7760,
+          "name": "Kavanaghs Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 3007,
+          "name": "Kennedy's Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3016,
+          "name": "Earlwood Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 3012,
+          "name": "Mediadvice Pharmacy Earlwood"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3266,
+          "name": "Condell Park Discount Drug Store"
+        },
+        "pharmacy_b": {
+          "id": 3265,
+          "name": "Condell Park Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 7942,
+          "name": "Chemist Warehouse"
+        },
+        "pharmacy_b": {
+          "id": 3089,
+          "name": "Punchbowl Pharmacy"
+        },
+        "distance_m": 34.1
+      },
+      {
+        "pharmacy_a": {
+          "id": 3273,
+          "name": "Chau's Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 3271,
+          "name": "Kim Vinh Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3246,
+          "name": "Dao Chemist"
+        },
+        "pharmacy_b": {
+          "id": 3245,
+          "name": "Priceline Pharmacy Cabramatta"
+        },
+        "distance_m": 28.3
+      },
+      {
+        "pharmacy_a": {
+          "id": 3244,
+          "name": "Park Road Compounding Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 3243,
+          "name": "Terry White Chemmart Cabramatta"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3020,
+          "name": "A1 Discount Chemist"
+        },
+        "pharmacy_b": {
+          "id": 3028,
+          "name": "Mediconsul Simpson's Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2889,
+          "name": "Cat & Claudia's Community Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 2888,
+          "name": "Chemistworks Broadway"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2877,
+          "name": "The Haymarket Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 2876,
+          "name": "Wu's Pharmacy"
+        },
+        "distance_m": 47.2
+      },
+      {
+        "pharmacy_a": {
+          "id": 3018,
+          "name": "FDMC Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 3014,
+          "name": "Fivedock Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2901,
+          "name": "Balmain Community Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 2905,
+          "name": "Wall's Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3192,
+          "name": "Chemist Direct Plus"
+        },
+        "pharmacy_b": {
+          "id": 3191,
+          "name": "Cincotta Discount Chemist Merrylands"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2920,
+          "name": "Neutral Bay Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 2925,
+          "name": "Cincotta Discount Chemist Neutral Bay"
+        },
+        "distance_m": 47.6
+      },
+      {
+        "pharmacy_a": {
+          "id": 2957,
+          "name": "TerryWhite Chemmart Mosman"
+        },
+        "pharmacy_b": {
+          "id": 2959,
+          "name": "Priceline Pharmacy Mosman"
+        },
+        "distance_m": 4.9
+      },
+      {
+        "pharmacy_a": {
+          "id": 3076,
+          "name": "Pharmacy 4 Less Top Ryde"
+        },
+        "pharmacy_b": {
+          "id": 3077,
+          "name": "Priceline Pharmacy Top Ryde"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3076,
+          "name": "Pharmacy 4 Less Top Ryde"
+        },
+        "pharmacy_b": {
+          "id": 3075,
+          "name": "Your Chemist Shop Top Ryde"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3077,
+          "name": "Priceline Pharmacy Top Ryde"
+        },
+        "pharmacy_b": {
+          "id": 3075,
+          "name": "Your Chemist Shop Top Ryde"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2968,
+          "name": "Northbridge Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 2969,
+          "name": "Blooms The Chemist Northbridge"
+        },
+        "distance_m": 32.3
+      },
+      {
+        "pharmacy_a": {
+          "id": 2982,
+          "name": "Nick Logan Pharmacist Advice"
+        },
+        "pharmacy_b": {
+          "id": 7600,
+          "name": "Nick Logan Pharmacist Advice"
+        },
+        "distance_m": 33.4
+      },
+      {
+        "pharmacy_a": {
+          "id": 3174,
+          "name": "Priceline Pharmacy Carlingford Court"
+        },
+        "pharmacy_b": {
+          "id": 3173,
+          "name": "Sydney Compounding Chemist"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3294,
+          "name": "Chester & Jakes Supa Save Chemist"
+        },
+        "pharmacy_b": {
+          "id": 3298,
+          "name": "Good Value Chemist"
+        },
+        "distance_m": 42.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3447,
+          "name": "Centrecare Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 3448,
+          "name": "St Marys Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3131,
+          "name": "Dee Why Healthcare Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 3133,
+          "name": "Dee Why Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3128,
+          "name": "Priceline Pharmacy Dee Why"
+        },
+        "pharmacy_b": {
+          "id": 3129,
+          "name": "Dee Why Grand Pharmacy"
+        },
+        "distance_m": 43.9
+      },
+      {
+        "pharmacy_a": {
+          "id": 3111,
+          "name": "Priceline Pharmacy Gordon"
+        },
+        "pharmacy_b": {
+          "id": 3110,
+          "name": "Blooms The Chemist Gordon"
+        },
+        "distance_m": 48.9
+      },
+      {
+        "pharmacy_a": {
+          "id": 7559,
+          "name": "Kingswood Park Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 7560,
+          "name": "Sydney GP Group Medical Centre"
+        },
+        "distance_m": 14.2
+      },
+      {
+        "pharmacy_a": {
+          "id": 3142,
+          "name": "Blooms The Chemist St Ives"
+        },
+        "pharmacy_b": {
+          "id": 3140,
+          "name": "O'Loughlin's Medical Pharmacy St Ives"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3142,
+          "name": "Blooms The Chemist St Ives"
+        },
+        "pharmacy_b": {
+          "id": 3141,
+          "name": "Priceline Pharmacy St Ives"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3140,
+          "name": "O'Loughlin's Medical Pharmacy St Ives"
+        },
+        "pharmacy_b": {
+          "id": 3141,
+          "name": "Priceline Pharmacy St Ives"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3553,
+          "name": "Chemist Outlet Umina Beach"
+        },
+        "pharmacy_b": {
+          "id": 3552,
+          "name": "Umina Chemsave Chemist"
+        },
+        "distance_m": 42.4
+      },
+      {
+        "pharmacy_a": {
+          "id": 3566,
+          "name": "Priceline Pharmacy Bateau Bay"
+        },
+        "pharmacy_b": {
+          "id": 3565,
+          "name": "TerryWhite Chemmart Bateau Bay"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3561,
+          "name": "TerryWhite Chemist Tuggerah"
+        },
+        "pharmacy_b": {
+          "id": 3560,
+          "name": "Priceline Pharmacy Tuggerah"
+        },
+        "distance_m": 9.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3886,
+          "name": "Orange Compounding Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 3884,
+          "name": "Peter Smith TerryWhite Chemmart"
+        },
+        "distance_m": 18.2
+      },
+      {
+        "pharmacy_a": {
+          "id": 3580,
+          "name": "Kuoch Chemist Toukley"
+        },
+        "pharmacy_b": {
+          "id": 3582,
+          "name": "Toukley Chempro Chemist"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3688,
+          "name": "Swansea Discount Drug Store"
+        },
+        "pharmacy_b": {
+          "id": 3689,
+          "name": "Swansea Wholelife Pharmacy & Healthfoods"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3633,
+          "name": "HealthSave Chemist Charlestown"
+        },
+        "pharmacy_b": {
+          "id": 3634,
+          "name": "Priceline Pharmacy Charlestown"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3620,
+          "name": "Priceline Pharmacy Kotara"
+        },
+        "pharmacy_b": {
+          "id": 3621,
+          "name": "Scott - Dibben Chemist"
+        },
+        "distance_m": 5.9
+      },
+      {
+        "pharmacy_a": {
+          "id": 3608,
+          "name": "Visionary Health Compounding Chemist"
+        },
+        "pharmacy_b": {
+          "id": 3607,
+          "name": "TerryWhite Chemmart Hamilton"
+        },
+        "distance_m": 20.7
+      },
+      {
+        "pharmacy_a": {
+          "id": 3610,
+          "name": "Priceline Pharmacy Hamilton"
+        },
+        "pharmacy_b": {
+          "id": 3609,
+          "name": "Hamilton Pharmacy"
+        },
+        "distance_m": 39.8
+      },
+      {
+        "pharmacy_a": {
+          "id": 3637,
+          "name": "Paul Wilson's Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 3638,
+          "name": "Pharmacy 4 Less Wallsend"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 4202,
+          "name": "Blooms The Chemist Mudgee"
+        },
+        "pharmacy_b": {
+          "id": 7572,
+          "name": "Blooms"
+        },
+        "distance_m": 18.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 932,
+          "name": "Blooms The Chemist Baldivis"
+        },
+        "pharmacy_b": {
+          "id": 933,
+          "name": "Blooms The Chemist Baldivis Stockland"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 4034,
+          "name": "Tuncurry Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 4035,
+          "name": "Great Lakes Pharmacy"
+        },
+        "distance_m": 34.4
+      },
+      {
+        "pharmacy_a": {
+          "id": 880,
+          "name": "Optimal Pharmacy Plus Armadale"
+        },
+        "pharmacy_b": {
+          "id": 881,
+          "name": "Priceline Pharmacy Armadale Central"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 704,
+          "name": "Amcal Cannington"
+        },
+        "pharmacy_b": {
+          "id": 705,
+          "name": "TerryWhite Chemmart Cannington"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 566,
+          "name": "Pharmacity Chemist Supermart"
+        },
+        "pharmacy_b": {
+          "id": 567,
+          "name": "Pharmacy 777 Perth City"
+        },
+        "distance_m": 37.3
+      },
+      {
+        "pharmacy_a": {
+          "id": 601,
+          "name": "Pharmacy 777 Wembley"
+        },
+        "pharmacy_b": {
+          "id": 610,
+          "name": "Wembley Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 674,
+          "name": "Wizard Pharmacy Morley Galleria"
+        },
+        "pharmacy_b": {
+          "id": 673,
+          "name": "Wizard Pharmacy Morley Galleria Car Park"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 636,
+          "name": "Ashley and Martin Dispensary"
+        },
+        "pharmacy_b": {
+          "id": 637,
+          "name": "Main Street Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 786,
+          "name": "Midland Gate Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 787,
+          "name": "Priceline Pharmacy Midland Gate"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 712,
+          "name": "Priceline Pharmacy Karrinyup"
+        },
+        "pharmacy_b": {
+          "id": 713,
+          "name": "TerryWhite Chemmart Karrinyup"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 871,
+          "name": "Wizard Pharmacy Joondalup Central"
+        },
+        "pharmacy_b": {
+          "id": 870,
+          "name": "Wizard Pharmacy Joondalup Upper Level"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 4046,
+          "name": "The Wauchope Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 4047,
+          "name": "TerryWhite Chemmart High St Wauchope"
+        },
+        "distance_m": 34.1
+      },
+      {
+        "pharmacy_a": {
+          "id": 4059,
+          "name": "Kempsey Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 4060,
+          "name": "Amcal Max Pharmacy Kempsey"
+        },
+        "distance_m": 49.9
+      },
+      {
+        "pharmacy_a": {
+          "id": 3958,
+          "name": "TerryWhite Chemmart Coffs Express"
+        },
+        "pharmacy_b": {
+          "id": 3959,
+          "name": "TerryWhite Chemmart Coffs Harbour"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3970,
+          "name": "Maclean Discount Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 3971,
+          "name": "Stanfords Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 3997,
+          "name": "McDonalds Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 3996,
+          "name": "Priceline Pharmacy Casino"
+        },
+        "distance_m": 25.6
+      },
+      {
+        "pharmacy_a": {
+          "id": 2527,
+          "name": "Priceline Pharmacy Murwillumbah"
+        },
+        "pharmacy_b": {
+          "id": 2526,
+          "name": "Varela and Swift Pharmacy"
+        },
+        "distance_m": 29.6
+      },
+      {
+        "pharmacy_a": {
+          "id": 2507,
+          "name": "Tugun Chempro Chemist"
+        },
+        "pharmacy_b": {
+          "id": 2506,
+          "name": "Tugun Compounding Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2498,
+          "name": "Burleigh Chempro Chemist"
+        },
+        "pharmacy_b": {
+          "id": 2497,
+          "name": "Burleigh Town Chempro Chemist"
+        },
+        "distance_m": 46.3
+      },
+      {
+        "pharmacy_a": {
+          "id": 2483,
+          "name": "Green Life Pharmacy Robina"
+        },
+        "pharmacy_b": {
+          "id": 2484,
+          "name": "Priceline Pharmacy Robina Lower"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2462,
+          "name": "National Custom Compounding Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 2461,
+          "name": "Merrimac Pharmacy"
+        },
+        "distance_m": 9.1
+      },
+      {
+        "pharmacy_a": {
+          "id": 2472,
+          "name": "Broadbeach Discount Drug Store"
+        },
+        "pharmacy_b": {
+          "id": 2471,
+          "name": "Priceline Pharmacy Oasis"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2433,
+          "name": "TerryWhite Chemmart Australia Fair"
+        },
+        "pharmacy_b": {
+          "id": 2432,
+          "name": "Priceline Pharmacy Australia Fair"
+        },
+        "distance_m": 12.2
+      },
+      {
+        "pharmacy_a": {
+          "id": 2304,
+          "name": "Mullein Pharmacy Springfield Orion"
+        },
+        "pharmacy_b": {
+          "id": 2305,
+          "name": "Priceline Pharmacy Springfield Orion"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2378,
+          "name": "Priceline Pharmacy Browns Plains"
+        },
+        "pharmacy_b": {
+          "id": 2377,
+          "name": "TerryWhite Chemmart Browns Plains"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2263,
+          "name": "Priceline Pharmacy Loganholme South"
+        },
+        "pharmacy_b": {
+          "id": 2262,
+          "name": "Green Life Pharmacy Logan"
+        },
+        "distance_m": 22.6
+      },
+      {
+        "pharmacy_a": {
+          "id": 2321,
+          "name": "Priceline Pharmacy Riverlink"
+        },
+        "pharmacy_b": {
+          "id": 2319,
+          "name": "Riverlink Medical Centre Pharmacy"
+        },
+        "distance_m": 8.4
+      },
+      {
+        "pharmacy_a": {
+          "id": 2270,
+          "name": "Priceline Pharmacy Victoria Point"
+        },
+        "pharmacy_b": {
+          "id": 2269,
+          "name": "TerryWhite Chemmart Victoria Point"
+        },
+        "distance_m": 42.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2169,
+          "name": "Healthyworld Pharmacy Garden City Lower Level"
+        },
+        "pharmacy_b": {
+          "id": 2171,
+          "name": "Priceline Pharmacy Garden City"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2169,
+          "name": "Healthyworld Pharmacy Garden City Lower Level"
+        },
+        "pharmacy_b": {
+          "id": 2170,
+          "name": "TerryWhite Chemmart Garden City"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2171,
+          "name": "Priceline Pharmacy Garden City"
+        },
+        "pharmacy_b": {
+          "id": 2170,
+          "name": "TerryWhite Chemmart Garden City"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2242,
+          "name": "Good Price Pharmacy Warehouse Capalaba"
+        },
+        "pharmacy_b": {
+          "id": 2241,
+          "name": "United Chemists Capalaba"
+        },
+        "distance_m": 20.3
+      },
+      {
+        "pharmacy_a": {
+          "id": 2087,
+          "name": "Priceline Pharmacy Indooroopilly Lower"
+        },
+        "pharmacy_b": {
+          "id": 2088,
+          "name": "Priceline Pharmacy Indooroopilly Upper"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2062,
+          "name": "TerryWhite Chemmart Toowong"
+        },
+        "pharmacy_b": {
+          "id": 2063,
+          "name": "Priceline Pharmacy Toowong"
+        },
+        "distance_m": 6.2
+      },
+      {
+        "pharmacy_a": {
+          "id": 2228,
+          "name": "Wynnum Central Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 2226,
+          "name": "Bayside Chempro Chemist"
+        },
+        "distance_m": 47.6
+      },
+      {
+        "pharmacy_a": {
+          "id": 6735,
+          "name": "Good Price Pharmacy Warehouse"
+        },
+        "pharmacy_b": {
+          "id": 2094,
+          "name": "Good Price Pharmacy Warehouse Stafford"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2155,
+          "name": "Ferny Grove Discount Drug Store"
+        },
+        "pharmacy_b": {
+          "id": 2159,
+          "name": "TerryWhite Chemmart Ferny Grove"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2162,
+          "name": "Direct Chemist Outlet Strathpine"
+        },
+        "pharmacy_b": {
+          "id": 2161,
+          "name": "Priceline Pharmacy Strathpine"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 7232,
+          "name": "TerryWhite Chemmart Kippa Ring"
+        },
+        "pharmacy_b": {
+          "id": 2327,
+          "name": "Kippa-Ring Discount Drug Store"
+        },
+        "distance_m": 31.3
+      },
+      {
+        "pharmacy_a": {
+          "id": 2347,
+          "name": "The Centre Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 2348,
+          "name": "Jadin Chemist Morayfield"
+        },
+        "distance_m": 32.6
+      },
+      {
+        "pharmacy_a": {
+          "id": 2595,
+          "name": "LiveLife Pharmacy Noosa Civic"
+        },
+        "pharmacy_b": {
+          "id": 2596,
+          "name": "Priceline Pharmacy Noosa Civic"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2603,
+          "name": "TerryWhite Chemmart Noosa"
+        },
+        "pharmacy_b": {
+          "id": 2602,
+          "name": "LiveLife Pharmacy Noosa Junction"
+        },
+        "distance_m": 28.5
+      },
+      {
+        "pharmacy_a": {
+          "id": 2662,
+          "name": "Good Price Pharmacy Warehouse Gympie"
+        },
+        "pharmacy_b": {
+          "id": 2663,
+          "name": "Gympie Day & Night Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2659,
+          "name": "Channon Street Friendlies Discount Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 2660,
+          "name": "Gympie Friendly Society Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2671,
+          "name": "Friendlies Pharmacy Maryborough"
+        },
+        "pharmacy_b": {
+          "id": 2672,
+          "name": "Good Price Pharmacy Warehouse Costigans"
+        },
+        "distance_m": 26.2
+      },
+      {
+        "pharmacy_a": {
+          "id": 2684,
+          "name": "Chemist Discount Centre Bundaberg"
+        },
+        "pharmacy_b": {
+          "id": 2683,
+          "name": "Good Price Pharmacy Warehouse Bundaberg"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 1040,
+          "name": "Boulevard Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 1039,
+          "name": "Hilditch Pharmacy"
+        },
+        "distance_m": 44.3
+      },
+      {
+        "pharmacy_a": {
+          "id": 4114,
+          "name": "Charters Towers Chempro Chemist"
+        },
+        "pharmacy_b": {
+          "id": 4115,
+          "name": "Charters Towers Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 2744,
+          "name": "Infinity Pharmacy Castletown"
+        },
+        "pharmacy_b": {
+          "id": 2742,
+          "name": "Priceline Pharmacy Castletown East"
+        },
+        "distance_m": 26.8
+      },
+      {
+        "pharmacy_a": {
+          "id": 2854,
+          "name": "Rothnies Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 2855,
+          "name": "Torre's Pharmacy"
+        },
+        "distance_m": 0.0
+      },
+      {
+        "pharmacy_a": {
+          "id": 229,
+          "name": "Casuarina Pharmacy"
+        },
+        "pharmacy_b": {
+          "id": 230,
+          "name": "Wizard Pharmacy Casuarina"
+        },
+        "distance_m": 0.0
+      }
+    ]
+  },
+  "summary": {
+    "records_per_table": {
+      "pharmacies": 6498,
+      "medical_centres": 163,
+      "gp_practices": 3815,
+      "shopping_centres": 155,
+      "hospitals": 38,
+      "supermarkets": 1439
+    },
+    "total_records": 12108,
+    "total_issues_found": 180,
+    "close_pharmacy_pairs": 144,
+    "report_generated": "2026-03-21T22:21:06.305520"
+  }
+}

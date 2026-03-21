@@ -233,7 +233,7 @@
       "name": "Near ALDI",
       "address": "440-450, Chapel Road, Bankstown, NSW, Australia"
     },
-    "assessment_date": "2026-03-21T22:12:43.877781",
+    "assessment_date": "2026-03-21T22:15:25.450884",
     "qualifying_rules": [
       "Item 136"
     ],
@@ -336,5 +336,5 @@
   "map_paths": {
     "Item 136": "C:\\Users\\MJ\\Documents\\GitHub\\PharmacyFinder\\output\\maps\\supermarket_28018_Item_136.html"
   },
-  "generated_at": "2026-03-21T22:12:44.074728"
+  "generated_at": "2026-03-21T22:15:25.644747"
 }
