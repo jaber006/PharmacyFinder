@@ -3,6 +3,7 @@
 ## Overview
 - **Total qualifying sites:** 619
 - **New since last run:** 0
+- **Period:** since 2026-03-21T22:27:48.348340
 
 ### By State
 - **WA:** 183
@@ -83,14 +84,14 @@
 - No new alerts triggered.
 
 ## Commercial Properties
-- **Direct matches:** 0
+- **Direct matches:** 14
 - **Listed properties near sites:** 20
 
-- **64a Fullarton Road, Norwood, SA 5067** — $65,000 P.A. excluding GST, 236.0sqm
-- **2/223 The Parade, Norwood, SA 5067** — Contact Agent, 103.0sqm
-- **67 Edward St,Norwood, SA 5067** — $100,000 per annum, 203.0sqm
-- **46 Fullarton Road,Norwood, SA 5067** — Enquire Now, 389.0sqm
-- **74 Fullarton Road,Norwood, SA 5067** — Contact Agents, 260.0sqm
+- **Whole Property/10 Wellington Street South Burnie TAS 7320** — Contact agent, N/A
+- **49 Marine Terrace South Burnie TAS 7320** — Contact agent, N/A
+- **47 Marine Terrace South Burnie TAS 7320** — Contact agent, N/A
+- **5/11 Edwardes Street South Burnie TAS 7320** — Contact agent, 74.0sqm
+- **34 Marine Terrace Burnie TAS 7320** — Contact agent, N/A
 
 ## Ministerial Pathway Candidates
 - **Total candidates:** 4
@@ -102,4 +103,4 @@
 - **** () — , confidence N/A
 
 ---
-*Generated 2026-03-21 22:27:48 by PharmacyFinder notify_opportunities.py*
+*Generated 2026-03-21 23:52:41 by PharmacyFinder notify_opportunities.py*

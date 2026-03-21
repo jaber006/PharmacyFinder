@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-21T22:27:48.344034",
-  "since": null,
+  "generated_at": "2026-03-21T23:52:41.764787",
+  "since": "2026-03-21T22:27:48.348340",
   "total_qualifying_sites": 619,
   "new_sites_since_last": 0,
   "state_breakdown": {
@@ -102,43 +102,43 @@
     "alerts": []
   },
   "commercial": {
-    "direct_matches": 0,
+    "direct_matches": 14,
     "property_listings": 20,
     "top_matches": [
       {
-        "site_id": "SA_135",
-        "address": "64a Fullarton Road, Norwood, SA 5067",
-        "rent": "$65,000 P.A. excluding GST",
-        "area_sqm": 236.0,
-        "distance_m": null
+        "site_id": "medical_centre_1",
+        "address": "Whole Property/10 Wellington Street South Burnie TAS 7320",
+        "rent": null,
+        "area_sqm": null,
+        "distance_m": 484.8016877069432
       },
       {
-        "site_id": "SA_135",
-        "address": "2/223 The Parade, Norwood, SA 5067",
-        "rent": "Contact Agent",
-        "area_sqm": 103.0,
-        "distance_m": null
+        "site_id": "medical_centre_1",
+        "address": "49 Marine Terrace South Burnie TAS 7320",
+        "rent": null,
+        "area_sqm": null,
+        "distance_m": 499.814275925728
       },
       {
-        "site_id": "SA_135",
-        "address": "67 Edward St,Norwood, SA 5067",
-        "rent": "$100,000 per annum",
-        "area_sqm": 203.0,
-        "distance_m": null
+        "site_id": "medical_centre_1",
+        "address": "47 Marine Terrace South Burnie TAS 7320",
+        "rent": null,
+        "area_sqm": null,
+        "distance_m": 510.0711764352707
       },
       {
-        "site_id": "SA_135",
-        "address": "46 Fullarton Road,Norwood, SA 5067",
-        "rent": "Enquire Now",
-        "area_sqm": 389.0,
-        "distance_m": null
+        "site_id": "medical_centre_1",
+        "address": "5/11 Edwardes Street South Burnie TAS 7320",
+        "rent": null,
+        "area_sqm": 74.0,
+        "distance_m": 536.7307516172575
       },
       {
-        "site_id": "SA_135",
-        "address": "74 Fullarton Road,Norwood, SA 5067",
-        "rent": "Contact Agents",
-        "area_sqm": 260.0,
-        "distance_m": null
+        "site_id": "medical_centre_1",
+        "address": "34 Marine Terrace Burnie TAS 7320",
+        "rent": null,
+        "area_sqm": null,
+        "distance_m": 1019.9118124187783
       }
     ]
   },

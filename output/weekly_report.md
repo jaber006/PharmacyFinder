@@ -3,7 +3,7 @@
 ## Executive Summary
 - **Total qualifying sites:** 619
 - **New sites this week:** 0
-- **Daily reports generated:** 1
+- **Daily reports generated:** 2
 
 ## Sites by State
 - **WA:** 183 ████████████████████████████████████████
@@ -42,4 +42,4 @@ No new qualifying sites found this week.
 4. Check watchlist items for any near-miss sites that may now qualify
 
 ---
-*Generated 2026-03-21 22:28:05 by PharmacyFinder weekly_report.py*
+*Generated 2026-03-21 23:52:44 by PharmacyFinder weekly_report.py*

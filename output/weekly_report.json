@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-21T22:28:05.940102",
+  "generated_at": "2026-03-21T23:52:44.840397",
   "week": {
     "start": "2026-03-16",
     "end": "2026-03-22"
@@ -7,7 +7,7 @@
   "summary": {
     "total_qualifying_sites": 619,
     "new_this_week": 0,
-    "daily_reports_generated": 1
+    "daily_reports_generated": 2
   },
   "state_breakdown": {
     "WA": 183,
