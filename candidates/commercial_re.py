@@ -241,10 +241,14 @@ def _classify_property_type(text: str) -> str:
 
 
 def _resolve_ref(apollo: dict, ref_or_val) -> dict:
-    """Resolve an Apollo __ref to its actual object."""
+    """Resolve an Apollo reference to its actual object.
+    Handles both {'__ref': 'key'} and {'type': 'id', 'id': 'key'} formats.
+    """
     if isinstance(ref_or_val, dict):
         if '__ref' in ref_or_val:
             return apollo.get(ref_or_val['__ref'], {})
+        if ref_or_val.get('type') == 'id' and 'id' in ref_or_val:
+            return apollo.get(ref_or_val['id'], {})
         return ref_or_val
     return {}
 
@@ -264,27 +268,28 @@ def _extract_listings_from_apollo(apollo: dict) -> list[dict]:
         listing_url = f"{BASE_URL}{seo_url}" if seo_url else ""
         
         # Address
-        address = (
-            val.get('displayableAddress', '')
-            or val.get('displayableLocationWithPostcode', '')
-            or val.get('displayableStreet', '')
-        )
-        suburb = val.get('suburb', '')
-        state = val.get('state', '')
-        postcode = val.get('postcode', '')
-        if suburb and not address:
-            address = f"{suburb}, {state} {postcode}".strip()
+        address = val.get('displayableAddress', '') or ''
+        if not address:
+            street = val.get('displayableStreet', '')
+            loc = val.get('displayableLocationWithPostcode', '')
+            address = f"{street} {loc}".strip() if street else loc
         
         # Price
         price_text = val.get('displayablePrice', '')
         
-        # Area
-        area_text = val.get('area', '') or val.get('areaHeaderDisplay', '')
+        # Area - 'area' field is region name, not floor area
+        # Floor area is not available in listing cards - extract from description
+        area_text = ''
+        description = val.get('shortDescription', '')
+        if description:
+            # Try to find area in description (e.g. "120m2", "120 sqm")
+            area_match = re.search(r'(\d+(?:,\d+)?)\s*(?:m\xb2|m2|sqm|sq\s*m)', description, re.IGNORECASE)
+            if area_match:
+                area_text = area_match.group(0)
         
         # Property type
-        prop_type_details = val.get('propertyTypeDetails', '')
         main_category = val.get('mainCategory', '')
-        prop_type = _classify_property_type(f"{prop_type_details} {main_category}")
+        prop_type = _classify_property_type(main_category)
         
         # Map location (lat/lng)
         lat, lng = None, None
@@ -297,34 +302,22 @@ def _extract_listings_from_apollo(apollo: dict) -> list[dict]:
         # Headline for extra context
         headline = val.get('headline', '')
         
-        # Agent info from highlights
+        # Agent info
         agent_name = ""
         agent_phone = ""
-        # Check agency ref
+        
+        # Agency ref
         agency = val.get('agency')
         if agency:
             agency_data = _resolve_ref(apollo, agency)
             agent_name = agency_data.get('name', '')
         
-        # Find contact details linked to this listing
-        # ContactDetails are stored separately; we'll match by listing ad_id pattern
-        contact_key_prefix = f"PropertyListingType:{ad_id}"
+        # Contact details - find ListingContactDetailType linked to this listing
         for ck, cv in apollo.items():
             if isinstance(cv, dict) and cv.get('__typename') == 'ListingContactDetailType':
-                if str(ad_id) in ck or contact_key_prefix in ck:
-                    if not agent_name:
-                        agent_name = cv.get('fullName', '')
+                if str(ad_id) in ck:
+                    agent_name = cv.get('fullName', '') or agent_name
                     break
-        
-        # Also check highlights for area/features
-        highlights = val.get('highlights', [])
-        if isinstance(highlights, list):
-            for h in highlights:
-                h_data = _resolve_ref(apollo, h) if isinstance(h, dict) else {}
-                h_text = h_data.get('text', '') or h_data.get('label', '')
-                if h_text and ('m' in h_text.lower() or 'sq' in h_text.lower()):
-                    if not area_text:
-                        area_text = h_text
         
         listing = {
             "ad_id": str(ad_id),

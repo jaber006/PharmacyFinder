@@ -1,0 +1,620 @@
+id,name,address,state,primary_rule,population_5km,pharmacies_5km,gps_2km,estimated_scripts,annual_revenue,annual_gp,setup_cost,payback_years,exit_value_12mo,flip_profit,profitability_score
+supermarket_27601,Near Coles,"56, Burgundy Street, VIC, Australia",VIC,Item 136,164716,32,9,137363.0,1796287.0,592775.0,525000.0,0.9,718515.0,193515.0,100
+gap_8773_4334,Gap: Priceline Pharmacy ↔ TerryWhite Chemmart Flagstone Central,Midpoint between  and FLAGSTONE,QLD,Item 131,10922,0,0,174752.0,2285218.0,754122.0,525000.0,0.7,914087.0,389087.0,100
+gap_2473_2387,Gap: Coomera City Centre Chempro Chemist ↔ Jimboomba Day & Night Chempro Chemist,Midpoint between UPPER COOMERA and JIMBOOMBA,QLD,Item 131,10922,0,0,174752.0,2285218.0,754122.0,525000.0,0.7,914087.0,389087.0,100
+gap_2504_7144,Gap: Tamborine Village Pharmacy ↔ Chemist Warehouse Coomera,Midpoint between TAMBORINE and Coomera,QLD,Item 131,18705,0,0,299280.0,3913662.0,1291508.0,525000.0,0.4,1565465.0,1040465.0,100
+gap_8620_968,Gap: Brunswick Family Pharmacy ↔ Harvey Pharmacy,Midpoint between  and HARVEY,WA,Item 131,9628,0,0,154048.0,2014474.0,664776.0,525000.0,0.8,805790.0,280790.0,100
+gap_8620_969,Gap: Brunswick Family Pharmacy ↔ Uduc Dispensary,Midpoint between  and HARVEY,WA,Item 131,9628,0,0,154048.0,2014474.0,664776.0,525000.0,0.8,805790.0,280790.0,100
+gap_7487_7804,Gap: Healthpoint Pharmacy Snug ↔ Blooms The Chemist Huonville,Midpoint between Snug and ,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_114_131,Gap: Blooms The Chemist Huonville Arcade ↔ TerryWhite Chemmart Margate,Midpoint between HUONVILLE and MARGATE,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_114_7220,Gap: Blooms The Chemist Huonville Arcade ↔ TerryWhite Chemmart Channel Margate,Midpoint between HUONVILLE and Margate,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_114_130,Gap: Blooms The Chemist Huonville Arcade ↔ TerryWhite Chemmart Blackmans Bay,Midpoint between HUONVILLE and BLACKMANS BAY,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_114_7395,Gap: Blooms The Chemist Huonville Arcade ↔ Priceline Pharmacy Kingston,Midpoint between HUONVILLE and KINGSTON,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_114_125,Gap: Blooms The Chemist Huonville Arcade ↔ TerryWhite Chemmart Kingston Town,Midpoint between HUONVILLE and KINGSTON,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_114_124,Gap: Blooms The Chemist Huonville Arcade ↔ Priceline Pharmacy Kingston,Midpoint between HUONVILLE and KINGSTON,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_112_131,Gap: Blooms The Chemist Huonville ↔ TerryWhite Chemmart Margate,Midpoint between HUONVILLE and MARGATE,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_112_7220,Gap: Blooms The Chemist Huonville ↔ TerryWhite Chemmart Channel Margate,Midpoint between HUONVILLE and Margate,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_112_130,Gap: Blooms The Chemist Huonville ↔ TerryWhite Chemmart Blackmans Bay,Midpoint between HUONVILLE and BLACKMANS BAY,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_112_7395,Gap: Blooms The Chemist Huonville ↔ Priceline Pharmacy Kingston,Midpoint between HUONVILLE and KINGSTON,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_112_125,Gap: Blooms The Chemist Huonville ↔ TerryWhite Chemmart Kingston Town,Midpoint between HUONVILLE and KINGSTON,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_112_124,Gap: Blooms The Chemist Huonville ↔ Priceline Pharmacy Kingston,Midpoint between HUONVILLE and KINGSTON,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_112_7256,Gap: Blooms The Chemist Huonville ↔ TerryWhite Chemmart Kingston Plaza,Midpoint between HUONVILLE and Kingston,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_131_7804,Gap: TerryWhite Chemmart Margate ↔ Blooms The Chemist Huonville,Midpoint between MARGATE and ,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_7220_7804,Gap: TerryWhite Chemmart Channel Margate ↔ Blooms The Chemist Huonville,Midpoint between Margate and ,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_7804_130,Gap: Blooms The Chemist Huonville ↔ TerryWhite Chemmart Blackmans Bay,Midpoint between  and BLACKMANS BAY,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_7804_7395,Gap: Blooms The Chemist Huonville ↔ Priceline Pharmacy Kingston,Midpoint between  and KINGSTON,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_7804_116,Gap: Blooms The Chemist Huonville ↔ Bayside Amcal Pharmacy,Midpoint between  and SANDY BAY,TAS,Item 131,13758,0,0,220128.0,2878597.0,949937.0,525000.0,0.6,1151439.0,626439.0,100
+gap_8570_51,Gap: Amcal ↔ New Norfolk Amcal Community Pharmacy,Midpoint between Montrose and NEW NORFOLK,TAS,Item 131,10170,0,0,162720.0,2127877.0,702199.0,525000.0,0.7,851151.0,326151.0,100
+gap_57_62,Gap: Claremont Pharmacy ↔ Richmond Pharmacy,Midpoint between CLAREMONT and RICHMOND,TAS,Item 131,8591,0,0,137456.0,1797502.0,593176.0,525000.0,0.9,719001.0,194001.0,100
+gap_58_62,Gap: Claremont Plaza Advantage Pharmacy ↔ Richmond Pharmacy,Midpoint between CLAREMONT and RICHMOND,TAS,Item 131,8591,0,0,137456.0,1797502.0,593176.0,525000.0,0.9,719001.0,194001.0,100
+gap_49_53,Gap: Blooms the Chemist New Norfolk ↔ Priceline Pharmacy Bridgewater,Midpoint between NEW NORFOLK and BRIDGEWATER,TAS,Item 131,12652,0,0,202432.0,2647188.0,873572.0,525000.0,0.6,1058875.0,533875.0,100
+gap_51_53,Gap: New Norfolk Amcal Community Pharmacy ↔ Priceline Pharmacy Bridgewater,Midpoint between NEW NORFOLK and BRIDGEWATER,TAS,Item 131,12652,0,0,202432.0,2647188.0,873572.0,525000.0,0.6,1058875.0,533875.0,100
+gap_7804_125,Gap: Blooms The Chemist Huonville ↔ TerryWhite Chemmart Kingston Town,Midpoint between  and KINGSTON,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_7804_124,Gap: Blooms The Chemist Huonville ↔ Priceline Pharmacy Kingston,Midpoint between  and KINGSTON,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_7804_122,Gap: Blooms The Chemist Huonville ↔ TerryWhite Chemmart Kingston Plaza,Midpoint between  and KINGSTON,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+gap_7804_121,Gap: Blooms The Chemist Huonville ↔ Kingborough Pharmacy,Midpoint between  and KINGSTON,TAS,Item 131,8603,0,0,137648.0,1800012.0,594004.0,525000.0,0.9,720005.0,195005.0,100
+medical_centre_11,Campbelltown Medical & Dental Centre,"1 Cordeaux Street, Campbelltown NSW 2560",NSW,Item 136,79775,13,5,127640.0,1669138.0,550816.0,525000.0,1.0,667655.0,142655.0,90.6
+medical_centre_164,Canning Vale Medical Centre,"290 Ranford Road, Canning Vale WA 6155",WA,Item 136,143694,21,2,121225.0,1585256.0,523135.0,525000.0,1.0,634103.0,109103.0,83.6
+medical_centre_65,Heidelberg Medical Centre,"99 Burgundy Street, Heidelberg VIC 3084",VIC,Item 136,154167,33,8,118981.0,1555901.0,513447.0,525000.0,1.0,622360.0,97360.0,81.1
+supermarket_27838,Near Woolworths,"451, Lower Heidelberg Road, Heidelberg, VIC, Australia",VIC,Item 136,154167,36,9,114667.0,1499490.0,494832.0,525000.0,1.1,599796.0,74796.0,76.3
+medical_centre_157,North Lakes Medical Centre,"10 Endeavour Boulevard, North Lakes QLD 4509",QLD,Item 136,107515,26,12,114683.0,1499696.0,494900.0,525000.0,1.1,599879.0,74879.0,76.3
+supermarket_28018,Near ALDI,"440-450, Chapel Road, Bankstown, NSW, Australia",NSW,Item 136,293665,57,5,113415.0,1483125.0,489431.0,525000.0,1.1,593250.0,68250.0,74.9
+gap_127_4,Gap: Triabunna Pharmacy ↔ Central Highlands Pharmacy,Midpoint between TRIABUNNA and BOTHWELL,TAS,Item 131,6846,0,0,109536.0,1432394.0,472690.0,525000.0,1.1,572958.0,47958.0,70.6
+medical_centre_146,Casey Medical Centre,"2 Lynbrook Boulevard, Lynbrook VIC 3975",VIC,Item 136,113387,19,2,105223.0,1375995.0,454078.0,525000.0,1.2,550398.0,25398.0,65.7
+gap_62_52,Gap: Richmond Pharmacy ↔ Brighton Pharmacy,Midpoint between RICHMOND and BRIGHTON,TAS,Item 131,6527,0,0,104432.0,1365649.0,450664.0,525000.0,1.2,546260.0,21260.0,64.9
+medical_centre_163,Ellenbrook Medical Centre,"22 Main Street, Ellenbrook WA 6069",WA,Item 136,47636,9,3,94510.0,1235898.0,407846.0,525000.0,1.3,494359.0,-30641.0,57.5
+gap_8570_49,Gap: Amcal ↔ Blooms the Chemist New Norfolk,Midpoint between Montrose and NEW NORFOLK,TAS,Item 131,5820,0,0,93120.0,1217723.0,401849.0,525000.0,1.3,487089.0,-37911.0,56.8
+medical_centre_124,IPN Medical Centre Werribee Plaza,"Werribee Plaza, Werribee VIC 3030",VIC,Item 136,111592,26,5,92580.0,1210662.0,399518.0,525000.0,1.3,484265.0,-40735.0,56.6
+gap_8177_967,Gap: HealthSave Capel Pharmacy ↔ Boyanup Pharmacy,Midpoint between  and BOYANUP,WA,Item 131,5606,0,0,89696.0,1172948.0,387073.0,525000.0,1.4,469179.0,-55821.0,55.2
+medical_centre_121,Woden Medical Centre,"16 Bowes Street, Woden ACT 2606",ACT,Item 136,81781,23,8,89414.0,1169259.0,385855.0,525000.0,1.4,467703.0,-57297.0,55.0
+medical_centre_106,Joondalup Health Campus Medical Centre,"Shenton Avenue, Joondalup WA 6027",WA,Item 136,95838,31,11,86254.0,1127940.0,372220.0,525000.0,1.4,451176.0,-73824.0,53.5
+medical_centre_150,Caroline Springs Medical Centre,"1 Aitken Boulevard, Caroline Springs VIC 3023",VIC,Item 136,103310,22,2,83367.0,1090180.0,359759.0,525000.0,1.5,436072.0,-88928.0,52.0
+medical_centre_162,Murdoch Medical Centre,"100 Murdoch Drive, Murdoch WA 6150",WA,Item 136,64265,12,0,79095.0,1034324.0,341327.0,525000.0,1.5,413730.0,-111270.0,49.9
+medical_centre_138,Norwest Medical Centre,"8 Columbia Court, Norwest NSW 2153",NSW,Item 136,172313,34,0,78772.0,1030091.0,339930.0,525000.0,1.5,412036.0,-112964.0,49.7
+gap_8361_7220,Gap: Geeveston Pharmacy ↔ TerryWhite Chemmart Channel Margate,Midpoint between  and Margate,TAS,Item 131,4912,0,0,78592.0,1027742.0,339155.0,525000.0,1.5,411097.0,-113903.0,49.6
+medical_centre_89,Caboolture Medical Centre,"54 King Street, Caboolture QLD 4510",QLD,Item 136,65839,18,5,77621.0,1015040.0,334963.0,525000.0,1.6,406016.0,-118984.0,49.1
+medical_centre_180,Lake Macquarie Medical Centre,"7 Main Road, Charlestown NSW 2290",NSW,Item 136,108411,22,0,75416.0,986214.0,325451.0,525000.0,1.6,394486.0,-130514.0,48.0
+medical_centre_12,Melbourne CBD Medical,"250 Collins Street, Melbourne VIC 3000",VIC,Item 136,312420,120,31,74361.0,972415.0,320897.0,525000.0,1.6,388966.0,-136034.0,47.5
+medical_centre_156,Springfield Medical Centre,"1 Springfield Central Blvd, Springfield QLD 4300",QLD,Item 136,40622,8,0,72217.0,944375.0,311644.0,525000.0,1.7,377750.0,-147250.0,46.3
+medical_centre_81,Gold Coast Medical Centre,"20 Scarborough Street, Southport QLD 4215",QLD,Item 136,104579,38,8,70363.0,920130.0,303643.0,525000.0,1.7,368052.0,-156948.0,45.3
+gap_59_49,Gap: Chigwell Pharmacy ↔ Blooms the Chemist New Norfolk,Midpoint between CHIGWELL and NEW NORFOLK,TAS,Item 131,4350,0,0,69600.0,910154.0,300351.0,525000.0,1.7,364062.0,-160938.0,44.9
+gap_57_49,Gap: Claremont Pharmacy ↔ Blooms the Chemist New Norfolk,Midpoint between CLAREMONT and NEW NORFOLK,TAS,Item 131,4350,0,0,69600.0,910154.0,300351.0,525000.0,1.7,364062.0,-160938.0,44.9
+gap_57_51,Gap: Claremont Pharmacy ↔ New Norfolk Amcal Community Pharmacy,Midpoint between CLAREMONT and NEW NORFOLK,TAS,Item 131,4350,0,0,69600.0,910154.0,300351.0,525000.0,1.7,364062.0,-160938.0,44.9
+gap_58_49,Gap: Claremont Plaza Advantage Pharmacy ↔ Blooms the Chemist New Norfolk,Midpoint between CLAREMONT and NEW NORFOLK,TAS,Item 131,4350,0,0,69600.0,910154.0,300351.0,525000.0,1.7,364062.0,-160938.0,44.9
+gap_58_51,Gap: Claremont Plaza Advantage Pharmacy ↔ New Norfolk Amcal Community Pharmacy,Midpoint between CLAREMONT and NEW NORFOLK,TAS,Item 131,4350,0,0,69600.0,910154.0,300351.0,525000.0,1.7,364062.0,-160938.0,44.9
+supermarket_27445,Near Coles,"2, Norris Street, QLD, Australia",QLD,Item 130,56194,13,1,69359.0,907008.0,299313.0,525000.0,1.8,362803.0,-162197.0,44.8
+medical_centre_88,Logan Medical Centre,"10 Wembley Road, Logan Central QLD 4114",QLD,Item 136,118421,33,3,69102.0,903643.0,298202.0,525000.0,1.8,361457.0,-163543.0,44.7
+medical_centre_16,Adelaide Medical Centre,"180 Pulteney Street, Adelaide SA 5000",SA,Item 136,186347,77,21,68805.0,899758.0,296920.0,525000.0,1.8,359903.0,-165097.0,44.5
+gap_139_8361,Gap: Dover Pharmacy ↔ Geeveston Pharmacy,Midpoint between DOVER and ,TAS,Item 131,4140,0,0,66240.0,866215.0,285851.0,525000.0,1.8,346486.0,-178514.0,43.1
+medical_centre_98,Marion Medical Centre,"866 Marion Road, Marion SA 5043",SA,Item 136,177345,47,1,63844.0,834886.0,275512.0,525000.0,1.9,333954.0,-191046.0,41.8
+medical_centre_97,Noarlunga Medical Centre,"26 Goldsmith Drive, Noarlunga Centre SA 5168",SA,Item 136,67160,22,4,61670.0,806459.0,266131.0,525000.0,2.0,322584.0,-202416.0,40.5
+medical_centre_135,GP Super Clinic Redcliffe,"16 Anzac Avenue, Redcliffe QLD 4020",QLD,Item 136,46663,18,7,61300.0,801621.0,264535.0,525000.0,2.0,320648.0,-204352.0,40.3
+hospital_5108,Calvary Healthcare Tasmania - St John's Campus,"Calvary Healthcare Tasmania - St John's Campus, TAS, Australia",TAS,Item 135,56041,26,12,59777.0,781700.0,257961.0,525000.0,2.0,312680.0,-212320.0,39.4
+gap_130_126,Gap: TerryWhite Chemmart Blackmans Bay ↔ Lauderdale Pharmacy,Midpoint between BLACKMANS BAY and LAUDERDALE,TAS,Item 131,3672,0,0,58752.0,768295.0,253537.0,525000.0,2.1,307318.0,-217682.0,38.8
+gap_483_7305,Gap: Mt Compass Pharmacy ↔ TerryWhite Chemmart Aldinga Medical Centre,Midpoint between MOUNT COMPASS and Aldinga,SA,Item 131,3625,0,0,58000.0,758462.0,250292.0,525000.0,2.1,303385.0,-221615.0,38.4
+gap_57_115,Gap: Claremont Pharmacy ↔ TerryWhite Chemmart Sorell,Midpoint between CLAREMONT and SORELL,TAS,Item 131,3558,0,0,56928.0,744443.0,245666.0,525000.0,2.1,297777.0,-227223.0,37.8
+gap_57_113,Gap: Claremont Pharmacy ↔ Chemist Warehouse Sorell,Midpoint between CLAREMONT and SORELL,TAS,Item 131,3558,0,0,56928.0,744443.0,245666.0,525000.0,2.1,297777.0,-227223.0,37.8
+gap_58_115,Gap: Claremont Plaza Advantage Pharmacy ↔ TerryWhite Chemmart Sorell,Midpoint between CLAREMONT and SORELL,TAS,Item 131,3558,0,0,56928.0,744443.0,245666.0,525000.0,2.1,297777.0,-227223.0,37.8
+gap_58_113,Gap: Claremont Plaza Advantage Pharmacy ↔ Chemist Warehouse Sorell,Midpoint between CLAREMONT and SORELL,TAS,Item 131,3558,0,0,56928.0,744443.0,245666.0,525000.0,2.1,297777.0,-227223.0,37.8
+shopping_centre_33531,Peppermint Bay Hotel,"3435, Channel Highway, Woodbridge, TAS",TAS,Item 131,3518,0,0,56288.0,736074.0,242904.0,525000.0,2.2,294430.0,-230570.0,37.4
+gap_139_135,Gap: Dover Pharmacy ↔ South Arm Community Pharmacy,Midpoint between DOVER and SOUTH ARM,TAS,Item 131,3518,0,0,56288.0,736074.0,242904.0,525000.0,2.2,294430.0,-230570.0,37.4
+medical_centre_5,GP Plus Super Clinic Kingston,"2 Redwood Road, Kingston TAS 7050",TAS,Item 136,24987,8,3,55082.0,720309.0,237702.0,525000.0,2.2,288124.0,-236876.0,36.6
+gap_8177_971,Gap: HealthSave Capel Pharmacy ↔ Collie healthSAVE Pharmacy,Midpoint between  and COLLIE,WA,Item 131,3368,0,0,53888.0,704689.0,232547.0,525000.0,2.3,281876.0,-243124.0,35.9
+gap_8177_7517,Gap: HealthSave Capel Pharmacy ↔ Unknown Pharmacy,Midpoint between  and ,WA,Item 131,3368,0,0,53888.0,704689.0,232547.0,525000.0,2.3,281876.0,-243124.0,35.9
+gap_8177_972,Gap: HealthSave Capel Pharmacy ↔ TerryWhite Chemmart Collie,Midpoint between  and COLLIE,WA,Item 131,3368,0,0,53888.0,704689.0,232547.0,525000.0,2.3,281876.0,-243124.0,35.9
+supermarket_27403,Near Woolworths,"Santa Maria Court, Cooloola Cove, QLD, Australia",QLD,Item 130,6606,1,0,52848.0,691089.0,228059.0,525000.0,2.3,276436.0,-248564.0,35.3
+gap_8177_965,Gap: HealthSave Capel Pharmacy ↔ Dalyellup Pharmacy,Midpoint between  and DALYELLUP,WA,Item 131,3128,0,0,50048.0,654474.0,215976.0,525000.0,2.4,261790.0,-263210.0,33.5
+gap_8177_962,Gap: HealthSave Capel Pharmacy ↔ Pharmacy 777 Usher,Midpoint between  and BUNBURY,WA,Item 131,3128,0,0,50048.0,654474.0,215976.0,525000.0,2.4,261790.0,-263210.0,33.5
+medical_centre_1,TAS Family Medical Centre,"1-3 Reeves Street, South Burnie TAS 7320",TAS,Item 136,17800,8,7,49365.0,645547.0,213030.0,525000.0,2.5,258219.0,-266781.0,33.0
+hospital_5099,The Hobart Clinic,"31, Chipmans Road, Rokeby, TAS",TAS,Item 135,19842,6,1,48981.0,640526.0,211374.0,525000.0,2.5,256210.0,-268790.0,32.8
+supermarket_27583,Near ALDI,"120, Nepean Highway, VIC, Australia",VIC,Item 130,13469,4,1,46549.0,608716.0,200876.0,525000.0,2.6,243486.0,-281514.0,31.1
+medical_centre_116,Palmerston Medical Centre,"9 Temple Terrace, Palmerston NT 0830",NT,Item 136,39405,13,0,45034.0,588910.0,194340.0,525000.0,2.7,235564.0,-289436.0,30.0
+supermarket_26989,Near IGA,"NT, Australia (OSM:173081274)",TAS,Item 130,14059,5,2,43489.0,568705.0,187673.0,525000.0,2.8,227482.0,-297518.0,28.9
+medical_centre_38,Newcastle Family Medical Practice,"160 Hunter Street, Newcastle NSW 2300",NSW,Item 136,49341,26,6,43274.0,565889.0,186743.0,525000.0,2.8,226356.0,-298644.0,28.8
+medical_centre_111,Mandurah Medical Centre,"3 Pinjarra Road, Mandurah WA 6210",WA,Item 136,39316,15,1,42461.0,555263.0,183237.0,525000.0,2.9,222105.0,-302895.0,28.2
+supermarket_26849,Near Norwood IGA,"Norwood IGA, TAS, Australia",TAS,Item 130,47586,19,1,41114.0,537649.0,177424.0,525000.0,3.0,215059.0,-309941.0,27.1
+medical_centre_82,Townsville Medical Centre,"320 Sturt Street, Townsville QLD 4810",QLD,Item 136,54523,22,1,40963.0,535675.0,176773.0,525000.0,3.0,214270.0,-310730.0,27.0
+hospital_5120,Calvary - St Luke's Hospital,"Calvary - St Luke's Hospital, TAS, Australia",TAS,Item 135,51240,24,3,40664.0,531761.0,175481.0,525000.0,3.0,212704.0,-312296.0,26.8
+supermarket_26922,Near Coles,"198, Charles Street, Launceston, TAS, 7250",TAS,Item 135,51240,25,2,36577.0,478321.0,157846.0,525000.0,3.3,191328.0,-333672.0,23.4
+hospital_5118,St Vincents Hospital,"5, Frederick Street, Launceston, TAS",TAS,Item 135,51240,25,2,36577.0,478321.0,157846.0,525000.0,3.3,191328.0,-333672.0,23.4
+hospital_5121,Alcohol and Drug Services,"St Johns Avenue, TAS",TAS,Item 135,59129,40,7,35997.0,470725.0,155339.0,525000.0,3.4,188290.0,-336710.0,22.9
+hospital_5126,Beaconsfield District Health Service,"13, Bolton Street, Beaconsfield, TAS",TAS,Item 135,4118,1,0,32944.0,430806.0,142166.0,525000.0,3.7,172322.0,-352678.0,20.1
+medical_centre_137,Greenway Medical Centre,"5 Greenway Drive, Tuggerah NSW 2259",NSW,Item 136,14455,8,1,27754.0,362932.0,119767.0,525000.0,4.4,145173.0,-379827.0,14.5
+hospital_5124,Toosey Aged and Community Care,"10, Archer Street, Longford, TAS",TAS,Item 135,4512,2,1,25989.0,339858.0,112153.0,525000.0,4.7,135943.0,-389057.0,12.3
+hospital_5111,North West Private Hospital,"21, Brickport Road, Cooee, TAS",TAS,Item 135,10315,10,3,18605.0,243290.0,80286.0,525000.0,6.5,97316.0,-427684.0,7.7
+hospital_5127,Smithton District Hospital,"74, Brittons Road, Smithton, TAS",TAS,Item 135,4039,4,1,13959.0,182538.0,60238.0,525000.0,8.7,73015.0,-451985.0,5.7
+supermarket_28043,Near Joy's Shop,"NSW, Australia (OSM:320068027)",NSW,Item 131,444,0,0,7104.0,92898.0,30656.0,525000.0,17.1,37159.0,-487841.0,2.9
+supermarket_28179,Near Urbenville General Store and Takeaway,"43, Urben Street, NSW, Australia",NSW,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_28174,Near 5 Star Supermarket,"NSW, Australia (OSM:729199109)",NSW,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27861,Near IGA,"VIC, Australia (OSM:890988611)",NSW,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_28265,Near Star Point Groceries,"NSW, Australia (OSM:1409944143)",NSW,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_28274,Near Foodworks,"NSW, Australia (OSM:1459753190)",NSW,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+medical_centre_53,Port Macquarie Medical Centre,"2 Hayward Street, Port Macquarie NSW 2444",NSW,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+medical_centre_130,Ochre Health Broken Hill,Broken Hill NSW 2880,NSW,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27993,Near TJ's Roadhouse,"NSW, Australia (OSM:194729657)",NSW,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27749,Near Cann River Friendly Grocer,"VIC, Australia (OSM:392556904)",VIC,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27773,Near IGA Friendly Grocer,"40, Main Street, Derrinallum, VIC, Australia",VIC,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27287,Near Friendly Grocer,"QLD, Australia (OSM:168516405)",QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27327,Near Unknown Supermarket,"QLD, Australia (OSM:338641936)",QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27330,Near Unknown Supermarket,"QLD, Australia (OSM:355604898)",QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27342,Near Yandaran General Store,"26, Main Street, QLD, Australia",QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27502,Near Unknown Supermarket,"QLD, Australia (OSM:1441771318)",QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+medical_centre_184,Emerald Medical Centre,"5 Hospital Road, Emerald QLD 4720",QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4219_4274,Gap: Texas Pharmacy ↔ Granite Belt Pharmacy,Midpoint between TEXAS and STANTHORPE,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4219_4275,Gap: Texas Pharmacy ↔ Stanthorpe Amcal Chemist,Midpoint between TEXAS and STANTHORPE,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4219_7688,Gap: Texas Pharmacy ↔ Amcal+ Pharmacy Stanthorpe,Midpoint between TEXAS and Stanthorpe,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4219_4169,Gap: Texas Pharmacy ↔ Lucy Walker Pharmacy,Midpoint between TEXAS and GOONDIWINDI,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4219_4168,Gap: Texas Pharmacy ↔ Allen's Pharmacy,Midpoint between TEXAS and GOONDIWINDI,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4219_4208,Gap: Texas Pharmacy ↔ Inglewood Pharmacy,Midpoint between TEXAS and INGLEWOOD,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4274_4208,Gap: Granite Belt Pharmacy ↔ Inglewood Pharmacy,Midpoint between STANTHORPE and INGLEWOOD,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4274_7930,Gap: Granite Belt Pharmacy ↔ Woodenbong Pharmacy - Chemist,Midpoint between STANTHORPE and ,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4275_4208,Gap: Stanthorpe Amcal Chemist ↔ Inglewood Pharmacy,Midpoint between STANTHORPE and INGLEWOOD,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4275_7930,Gap: Stanthorpe Amcal Chemist ↔ Woodenbong Pharmacy - Chemist,Midpoint between STANTHORPE and ,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7688_4208,Gap: Amcal+ Pharmacy Stanthorpe ↔ Inglewood Pharmacy,Midpoint between Stanthorpe and INGLEWOOD,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7688_7930,Gap: Amcal+ Pharmacy Stanthorpe ↔ Woodenbong Pharmacy - Chemist,Midpoint between Stanthorpe and ,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7688_4282,Gap: Amcal+ Pharmacy Stanthorpe ↔ Friendly Society Dispensary Palmerin Street,Midpoint between Stanthorpe and WARWICK,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4169_4208,Gap: Lucy Walker Pharmacy ↔ Inglewood Pharmacy,Midpoint between GOONDIWINDI and INGLEWOOD,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4168_4208,Gap: Allen's Pharmacy ↔ Inglewood Pharmacy,Midpoint between GOONDIWINDI and INGLEWOOD,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8172_7930,Gap: Burringbar Pharmacy ↔ Woodenbong Pharmacy - Chemist,Midpoint between  and ,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4208_4282,Gap: Inglewood Pharmacy ↔ Friendly Society Dispensary Palmerin Street,Midpoint between INGLEWOOD and WARWICK,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4208_7538,Gap: Inglewood Pharmacy ↔ Discount Drug Stores,Midpoint between INGLEWOOD and ,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4208_4278,Gap: Inglewood Pharmacy ↔ Warwick Friendly Society Pharmacy,Midpoint between INGLEWOOD and WARWICK,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4208_4281,Gap: Inglewood Pharmacy ↔ Warwick Discount Drug Store,Midpoint between INGLEWOOD and WARWICK,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4208_7537,Gap: Inglewood Pharmacy ↔ Go Vita,Midpoint between INGLEWOOD and ,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8173_7930,Gap: Ramsay Pharmacy Pottsville (Waters) ↔ Woodenbong Pharmacy - Chemist,Midpoint between  and ,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7930_7913,Gap: Woodenbong Pharmacy - Chemist ↔ Ramsay Pharmacy,Midpoint between  and ,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7930_2512,Gap: Woodenbong Pharmacy - Chemist ↔ Coolangatta Chempro Chemist,Midpoint between  and COOLANGATTA,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7930_7148,Gap: Woodenbong Pharmacy - Chemist ↔ Chemist Warehouse Coolangatta,Midpoint between  and Coolangatta,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7930_2511,Gap: Woodenbong Pharmacy - Chemist ↔ Coolangatta Central Chempro Chemist,Midpoint between  and Coolangatta,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_2499_2438,Gap: TerryWhite Chemmart Canungra ↔ Highland Park Chempro Chemist,Midpoint between CANUNGRA and HIGHLAND PARK,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4312_4337,Gap: Boonah Pharmacy ↔ Scenic Rim Discount Drug Store,Midpoint between BOONAH and BEAUDESERT,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4312_4336,Gap: Boonah Pharmacy ↔ Priceline Pharmacy Beaudesert,Midpoint between BOONAH and BEAUDESERT,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4337_2444,Gap: Scenic Rim Discount Drug Store ↔ Main Beach Pharmacy,Midpoint between BEAUDESERT and MAIN BEACH,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4336_2444,Gap: Priceline Pharmacy Beaudesert ↔ Main Beach Pharmacy,Midpoint between BEAUDESERT and MAIN BEACH,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4335_2444,Gap: Beaudesert Amcal Pharmacy ↔ Main Beach Pharmacy,Midpoint between BEAUDESERT and MAIN BEACH,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8655_2493,Gap: Kalbar Pharmacy ↔ Mt Tamborine Chempro Chemist,Midpoint between  and NORTH TAMBORINE,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8655_6953,Gap: Kalbar Pharmacy ↔ Clifton Pharmacy,Midpoint between  and Clifton,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8655_8442,Gap: Kalbar Pharmacy ↔ Mt Tamborine Chempro Chemist,Midpoint between  and ,QLD,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27154,Near Store,"WA, Australia (OSM:186750709)",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27157,Near Unknown Supermarket,"WA, Australia (OSM:188462933)",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27158,Near Corporate Office - Store,"WA, Australia (OSM:188857086)",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27160,Near Beagle Bay Community Store,"WA, Australia (OSM:196467091)",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27161,Near Unknown Supermarket,"WA, Australia (OSM:196482344)",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27162,Near Bardi Ardyaloon Store,"WA, Australia (OSM:196963299)",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27179,Near IGA,"Newton Street, WA, Australia",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27180,Near Unknown Supermarket,"WA, Australia (OSM:320505966)",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27181,Near Unknown Supermarket,"WA, Australia (OSM:320955242)",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27189,Near Mingenew IGA,"WA, Australia (OSM:388562150)",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27191,Near IGA,"WA, Australia (OSM:389526303)",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27194,Near Lake Yealering Emporium,"WA, Australia (OSM:392181319)",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27207,Near Unknown Supermarket,"WA, Australia (OSM:545776344)",WA,Item 130,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1056_1051,Gap: Albany Dog Rock Chemist ↔ Denmark Pharmacy,Midpoint between ALBANY and DENMARK,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8329_1051,Gap: Unknown Pharmacy ↔ Denmark Pharmacy,Midpoint between  and DENMARK,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8329_1050,Gap: Unknown Pharmacy ↔ Mt Barker Country Chemist,Midpoint between  and MOUNT BARKER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1055_1051,Gap: Priceline Pharmacy Spencer Park ↔ Denmark Pharmacy,Midpoint between ALBANY and DENMARK,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1055_1050,Gap: Priceline Pharmacy Spencer Park ↔ Mt Barker Country Chemist,Midpoint between ALBANY and MOUNT BARKER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1055_8824,Gap: Priceline Pharmacy Spencer Park ↔ Mt Barker Country Chemist,Midpoint between ALBANY and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7444_1051,Gap: Priceline Pharmacy Spencer Park ↔ Denmark Pharmacy,Midpoint between ALBANY and DENMARK,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7444_1050,Gap: Priceline Pharmacy Spencer Park ↔ Mt Barker Country Chemist,Midpoint between ALBANY and MOUNT BARKER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7444_8824,Gap: Priceline Pharmacy Spencer Park ↔ Mt Barker Country Chemist,Midpoint between ALBANY and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1052_1051,Gap: Orana Pharmacy Albany ↔ Denmark Pharmacy,Midpoint between ORANA and DENMARK,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1052_1050,Gap: Orana Pharmacy Albany ↔ Mt Barker Country Chemist,Midpoint between ORANA and MOUNT BARKER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1052_8824,Gap: Orana Pharmacy Albany ↔ Mt Barker Country Chemist,Midpoint between ORANA and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1053_1051,Gap: TerryWhite Chemmart Chester Pass Albany ↔ Denmark Pharmacy,Midpoint between ALBANY and DENMARK,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1053_1050,Gap: TerryWhite Chemmart Chester Pass Albany ↔ Mt Barker Country Chemist,Midpoint between ALBANY and MOUNT BARKER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1053_8824,Gap: TerryWhite Chemmart Chester Pass Albany ↔ Mt Barker Country Chemist,Midpoint between ALBANY and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1054_1051,Gap: TerryWhite Chemmart Bayonet Head ↔ Denmark Pharmacy,Midpoint between BAYONET HEAD and DENMARK,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1054_1050,Gap: TerryWhite Chemmart Bayonet Head ↔ Mt Barker Country Chemist,Midpoint between BAYONET HEAD and MOUNT BARKER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1054_8824,Gap: TerryWhite Chemmart Bayonet Head ↔ Mt Barker Country Chemist,Midpoint between BAYONET HEAD and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1065_1051,Gap: Walpole Pharmacy ↔ Denmark Pharmacy,Midpoint between WALPOLE and DENMARK,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1065_1050,Gap: Walpole Pharmacy ↔ Mt Barker Country Chemist,Midpoint between WALPOLE and MOUNT BARKER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1065_8824,Gap: Walpole Pharmacy ↔ Mt Barker Country Chemist,Midpoint between WALPOLE and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1065_1068,Gap: Walpole Pharmacy ↔ Pemberton Pharmacy,Midpoint between WALPOLE and PEMBERTON,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1065_1064,Gap: Walpole Pharmacy ↔ Pharmacy 777 Manjimup,Midpoint between WALPOLE and MANJIMUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7311_1051,Gap: Priceline Albany ↔ Denmark Pharmacy,Midpoint between ALBANY and DENMARK,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7311_1050,Gap: Priceline Albany ↔ Mt Barker Country Chemist,Midpoint between ALBANY and MOUNT BARKER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7311_8824,Gap: Priceline Albany ↔ Mt Barker Country Chemist,Midpoint between ALBANY and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1051_1050,Gap: Denmark Pharmacy ↔ Mt Barker Country Chemist,Midpoint between DENMARK and MOUNT BARKER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1051_8824,Gap: Denmark Pharmacy ↔ Mt Barker Country Chemist,Midpoint between DENMARK and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1068_4367,Gap: Pemberton Pharmacy ↔ Pharmacy 777 Augusta,Midpoint between PEMBERTON and AUGUSTA,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1068_8327,Gap: Pemberton Pharmacy ↔ Augusta Pharmacy,Midpoint between PEMBERTON and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1068_1064,Gap: Pemberton Pharmacy ↔ Pharmacy 777 Manjimup,Midpoint between PEMBERTON and MANJIMUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1068_1063,Gap: Pemberton Pharmacy ↔ Ambassadors Pharmacy,Midpoint between PEMBERTON and MANJIMUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1068_987,Gap: Pemberton Pharmacy ↔ Nannup Pharmacy,Midpoint between PEMBERTON and NANNUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1070_1084,Gap: Bremer Bay Pharmacy Amcal ↔ Hopetoun Beachfront Chemist,Midpoint between BREMER BAY and HOPETOUN,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4367_1064,Gap: Pharmacy 777 Augusta ↔ Pharmacy 777 Manjimup,Midpoint between AUGUSTA and MANJIMUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4367_1063,Gap: Pharmacy 777 Augusta ↔ Ambassadors Pharmacy,Midpoint between AUGUSTA and MANJIMUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4367_987,Gap: Pharmacy 777 Augusta ↔ Nannup Pharmacy,Midpoint between AUGUSTA and NANNUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4367_1006,Gap: Pharmacy 777 Augusta ↔ Pharmacy 777 Bridgetown,Midpoint between AUGUSTA and BRIDGETOWN,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4367_1012,Gap: Pharmacy 777 Augusta ↔ Priceline Pharmacy Margaret River,Midpoint between AUGUSTA and MARGARET RIVER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4367_1011,Gap: Pharmacy 777 Augusta ↔ Pharmacy 777 Margaret River,Midpoint between AUGUSTA and MARGARET RIVER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8327_1064,Gap: Augusta Pharmacy ↔ Pharmacy 777 Manjimup,Midpoint between  and MANJIMUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8327_1063,Gap: Augusta Pharmacy ↔ Ambassadors Pharmacy,Midpoint between  and MANJIMUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8327_987,Gap: Augusta Pharmacy ↔ Nannup Pharmacy,Midpoint between  and NANNUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8327_1006,Gap: Augusta Pharmacy ↔ Pharmacy 777 Bridgetown,Midpoint between  and BRIDGETOWN,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8327_1012,Gap: Augusta Pharmacy ↔ Priceline Pharmacy Margaret River,Midpoint between  and MARGARET RIVER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8327_1011,Gap: Augusta Pharmacy ↔ Pharmacy 777 Margaret River,Midpoint between  and MARGARET RIVER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1064_987,Gap: Pharmacy 777 Manjimup ↔ Nannup Pharmacy,Midpoint between MANJIMUP and NANNUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1064_1006,Gap: Pharmacy 777 Manjimup ↔ Pharmacy 777 Bridgetown,Midpoint between MANJIMUP and BRIDGETOWN,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1063_987,Gap: Ambassadors Pharmacy ↔ Nannup Pharmacy,Midpoint between MANJIMUP and NANNUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1063_1006,Gap: Ambassadors Pharmacy ↔ Pharmacy 777 Bridgetown,Midpoint between MANJIMUP and BRIDGETOWN,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_987_1006,Gap: Nannup Pharmacy ↔ Pharmacy 777 Bridgetown,Midpoint between NANNUP and BRIDGETOWN,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_987_1012,Gap: Nannup Pharmacy ↔ Priceline Pharmacy Margaret River,Midpoint between NANNUP and MARGARET RIVER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_987_1011,Gap: Nannup Pharmacy ↔ Pharmacy 777 Margaret River,Midpoint between NANNUP and MARGARET RIVER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1006_1012,Gap: Pharmacy 777 Bridgetown ↔ Priceline Pharmacy Margaret River,Midpoint between BRIDGETOWN and MARGARET RIVER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1006_1011,Gap: Pharmacy 777 Bridgetown ↔ Pharmacy 777 Margaret River,Midpoint between BRIDGETOWN and MARGARET RIVER,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1006_990,Gap: Pharmacy 777 Bridgetown ↔ Cowaramup Pharmacy,Midpoint between BRIDGETOWN and COWARAMUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1066_1049,Gap: Jerramungup Pharmacy Amcal ↔ Gnowangerup Pharmacy,Midpoint between JERRAMUNGUP and GNOWANGERUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1049_7520,Gap: Gnowangerup Pharmacy ↔ Kojonup Pharmacy,Midpoint between GNOWANGERUP and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1049_1048,Gap: Gnowangerup Pharmacy ↔ Katanning Pharmacy,Midpoint between GNOWANGERUP and KATANNING,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_990_983,Gap: Cowaramup Pharmacy ↔ Balingup Pharmacy,Midpoint between COWARAMUP and BALINGUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_990_979,Gap: Cowaramup Pharmacy ↔ Vasse Pharmacy,Midpoint between COWARAMUP and VASSE,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_990_978,Gap: Cowaramup Pharmacy ↔ Broadwater Pharmacy,Midpoint between COWARAMUP and BUSSELTON,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_990_977,Gap: Cowaramup Pharmacy ↔ Busselton Pharmacy,Midpoint between COWARAMUP and WEST BUSSELTON,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7520_1014,Gap: Kojonup Pharmacy ↔ Boyup Brook Pharmacy,Midpoint between  and BOYUP BROOK,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7520_1048,Gap: Kojonup Pharmacy ↔ Katanning Pharmacy,Midpoint between  and KATANNING,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7520_1047,Gap: Kojonup Pharmacy ↔ Great Southern Community Chemist,Midpoint between  and KATANNING,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1014_983,Gap: Boyup Brook Pharmacy ↔ Balingup Pharmacy,Midpoint between BOYUP BROOK and BALINGUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1014_976,Gap: Boyup Brook Pharmacy ↔ SuperChem Busselton Pharmacy,Midpoint between BOYUP BROOK and BUSSELTON,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1014_975,Gap: Boyup Brook Pharmacy ↔ Pharmacy 777 Busselton,Midpoint between BOYUP BROOK and BUSSELTON,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1014_974,Gap: Boyup Brook Pharmacy ↔ TerryWhite Chemmart Busselton,Midpoint between BOYUP BROOK and BUSSELTON,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_983_979,Gap: Balingup Pharmacy ↔ Vasse Pharmacy,Midpoint between BALINGUP and VASSE,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_983_978,Gap: Balingup Pharmacy ↔ Broadwater Pharmacy,Midpoint between BALINGUP and BUSSELTON,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_983_977,Gap: Balingup Pharmacy ↔ Busselton Pharmacy,Midpoint between BALINGUP and WEST BUSSELTON,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_983_976,Gap: Balingup Pharmacy ↔ SuperChem Busselton Pharmacy,Midpoint between BALINGUP and BUSSELTON,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_983_975,Gap: Balingup Pharmacy ↔ Pharmacy 777 Busselton,Midpoint between BALINGUP and BUSSELTON,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_983_974,Gap: Balingup Pharmacy ↔ TerryWhite Chemmart Busselton,Midpoint between BALINGUP and BUSSELTON,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_983_973,Gap: Balingup Pharmacy ↔ Busselton Discount Drug Store,Midpoint between BALINGUP and BUSSELTON,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_976_8177,Gap: SuperChem Busselton Pharmacy ↔ HealthSave Capel Pharmacy,Midpoint between BUSSELTON and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_975_8177,Gap: Pharmacy 777 Busselton ↔ HealthSave Capel Pharmacy,Midpoint between BUSSELTON and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_974_8177,Gap: TerryWhite Chemmart Busselton ↔ HealthSave Capel Pharmacy,Midpoint between BUSSELTON and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_973_8177,Gap: Busselton Discount Drug Store ↔ HealthSave Capel Pharmacy,Midpoint between BUSSELTON and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_973_962,Gap: Busselton Discount Drug Store ↔ Pharmacy 777 Usher,Midpoint between BUSSELTON and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7320_8177,Gap: Priceline Busselton ↔ HealthSave Capel Pharmacy,Midpoint between BUSSELTON and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7320_962,Gap: Priceline Busselton ↔ Pharmacy 777 Usher,Midpoint between BUSSELTON and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7320_961,Gap: Priceline Busselton ↔ Southwest Hospital Pharmacy,Midpoint between BUSSELTON and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_982_970,Gap: Dunsborough Pharmacy ↔ Donnybrook Pharmacy,Midpoint between DUNSBOROUGH and DONNYBROOK,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_982_967,Gap: Dunsborough Pharmacy ↔ Boyanup Pharmacy,Midpoint between DUNSBOROUGH and BOYANUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_982_965,Gap: Dunsborough Pharmacy ↔ Dalyellup Pharmacy,Midpoint between DUNSBOROUGH and DALYELLUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_982_962,Gap: Dunsborough Pharmacy ↔ Pharmacy 777 Usher,Midpoint between DUNSBOROUGH and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_982_961,Gap: Dunsborough Pharmacy ↔ Southwest Hospital Pharmacy,Midpoint between DUNSBOROUGH and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_982_960,Gap: Dunsborough Pharmacy ↔ South Bunbury Discount Drug Store,Midpoint between DUNSBOROUGH and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_981_970,Gap: Nourish Health Food Pharmacy ↔ Donnybrook Pharmacy,Midpoint between DUNSBOROUGH and DONNYBROOK,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_981_967,Gap: Nourish Health Food Pharmacy ↔ Boyanup Pharmacy,Midpoint between DUNSBOROUGH and BOYANUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_981_965,Gap: Nourish Health Food Pharmacy ↔ Dalyellup Pharmacy,Midpoint between DUNSBOROUGH and DALYELLUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_981_962,Gap: Nourish Health Food Pharmacy ↔ Pharmacy 777 Usher,Midpoint between DUNSBOROUGH and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_981_961,Gap: Nourish Health Food Pharmacy ↔ Southwest Hospital Pharmacy,Midpoint between DUNSBOROUGH and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_981_960,Gap: Nourish Health Food Pharmacy ↔ South Bunbury Discount Drug Store,Midpoint between DUNSBOROUGH and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_970_8177,Gap: Donnybrook Pharmacy ↔ HealthSave Capel Pharmacy,Midpoint between DONNYBROOK and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_970_971,Gap: Donnybrook Pharmacy ↔ Collie healthSAVE Pharmacy,Midpoint between DONNYBROOK and COLLIE,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_970_7517,Gap: Donnybrook Pharmacy ↔ Unknown Pharmacy,Midpoint between DONNYBROOK and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_967_960,Gap: Boyanup Pharmacy ↔ South Bunbury Discount Drug Store,Midpoint between BOYANUP and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_967_971,Gap: Boyanup Pharmacy ↔ Collie healthSAVE Pharmacy,Midpoint between BOYANUP and COLLIE,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_967_959,Gap: Boyanup Pharmacy ↔ Wizard Pharmacy Bunbury Park Centre,Midpoint between BOYANUP and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_967_7517,Gap: Boyanup Pharmacy ↔ Unknown Pharmacy,Midpoint between BOYANUP and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_967_972,Gap: Boyanup Pharmacy ↔ TerryWhite Chemmart Collie,Midpoint between BOYANUP and COLLIE,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_967_955,Gap: Boyanup Pharmacy ↔ Pharmacy 777 South Bunbury,Midpoint between BOYANUP and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_965_971,Gap: Dalyellup Pharmacy ↔ Collie healthSAVE Pharmacy,Midpoint between DALYELLUP and COLLIE,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_965_7517,Gap: Dalyellup Pharmacy ↔ Unknown Pharmacy,Midpoint between DALYELLUP and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_965_972,Gap: Dalyellup Pharmacy ↔ TerryWhite Chemmart Collie,Midpoint between DALYELLUP and COLLIE,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_962_971,Gap: Pharmacy 777 Usher ↔ Collie healthSAVE Pharmacy,Midpoint between BUNBURY and COLLIE,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_962_7517,Gap: Pharmacy 777 Usher ↔ Unknown Pharmacy,Midpoint between BUNBURY and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_962_972,Gap: Pharmacy 777 Usher ↔ TerryWhite Chemmart Collie,Midpoint between BUNBURY and COLLIE,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_961_971,Gap: Southwest Hospital Pharmacy ↔ Collie healthSAVE Pharmacy,Midpoint between BUNBURY and COLLIE,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_961_7517,Gap: Southwest Hospital Pharmacy ↔ Unknown Pharmacy,Midpoint between BUNBURY and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_961_972,Gap: Southwest Hospital Pharmacy ↔ TerryWhite Chemmart Collie,Midpoint between BUNBURY and COLLIE,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_960_971,Gap: South Bunbury Discount Drug Store ↔ Collie healthSAVE Pharmacy,Midpoint between BUNBURY and COLLIE,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_960_7517,Gap: South Bunbury Discount Drug Store ↔ Unknown Pharmacy,Midpoint between BUNBURY and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_960_972,Gap: South Bunbury Discount Drug Store ↔ TerryWhite Chemmart Collie,Midpoint between BUNBURY and COLLIE,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_971_959,Gap: Collie healthSAVE Pharmacy ↔ Wizard Pharmacy Bunbury Park Centre,Midpoint between COLLIE and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_971_955,Gap: Collie healthSAVE Pharmacy ↔ Pharmacy 777 South Bunbury,Midpoint between COLLIE and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_971_951,Gap: Collie healthSAVE Pharmacy ↔ Chemwise Pharmacy Bunbury,Midpoint between COLLIE and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_971_954,Gap: Collie healthSAVE Pharmacy ↔ TerryWhite Chemmart Southcity Bunbury,Midpoint between COLLIE and Bunbury,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_971_953,Gap: Collie healthSAVE Pharmacy ↔ Bunbury Drive-In Chemist,Midpoint between COLLIE and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_971_8243,Gap: Collie healthSAVE Pharmacy ↔ Unknown Pharmacy,Midpoint between COLLIE and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_971_950,Gap: Collie healthSAVE Pharmacy ↔ TerryWhite Chemmart Bunbury Plaza,Midpoint between COLLIE and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_959_7517,Gap: Wizard Pharmacy Bunbury Park Centre ↔ Unknown Pharmacy,Midpoint between BUNBURY and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_959_972,Gap: Wizard Pharmacy Bunbury Park Centre ↔ TerryWhite Chemmart Collie,Midpoint between BUNBURY and COLLIE,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7517_955,Gap: Unknown Pharmacy ↔ Pharmacy 777 South Bunbury,Midpoint between  and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7517_951,Gap: Unknown Pharmacy ↔ Chemwise Pharmacy Bunbury,Midpoint between  and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7517_954,Gap: Unknown Pharmacy ↔ TerryWhite Chemmart Southcity Bunbury,Midpoint between  and Bunbury,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7517_953,Gap: Unknown Pharmacy ↔ Bunbury Drive-In Chemist,Midpoint between  and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7517_8243,Gap: Unknown Pharmacy ↔ Unknown Pharmacy,Midpoint between  and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7517_950,Gap: Unknown Pharmacy ↔ TerryWhite Chemmart Bunbury Plaza,Midpoint between  and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7517_949,Gap: Unknown Pharmacy ↔ Bunbury Forum Pharmacy,Midpoint between  and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7517_948,Gap: Unknown Pharmacy ↔ Chemist Discount Centre Bunbury,Midpoint between  and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_972_955,Gap: TerryWhite Chemmart Collie ↔ Pharmacy 777 South Bunbury,Midpoint between COLLIE and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_972_951,Gap: TerryWhite Chemmart Collie ↔ Chemwise Pharmacy Bunbury,Midpoint between COLLIE and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_972_954,Gap: TerryWhite Chemmart Collie ↔ TerryWhite Chemmart Southcity Bunbury,Midpoint between COLLIE and Bunbury,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_972_953,Gap: TerryWhite Chemmart Collie ↔ Bunbury Drive-In Chemist,Midpoint between COLLIE and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_972_8243,Gap: TerryWhite Chemmart Collie ↔ Unknown Pharmacy,Midpoint between COLLIE and ,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_972_950,Gap: TerryWhite Chemmart Collie ↔ TerryWhite Chemmart Bunbury Plaza,Midpoint between COLLIE and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_972_949,Gap: TerryWhite Chemmart Collie ↔ Bunbury Forum Pharmacy,Midpoint between COLLIE and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_972_948,Gap: TerryWhite Chemmart Collie ↔ Chemist Discount Centre Bunbury,Midpoint between COLLIE and BUNBURY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_972_7816,Gap: TerryWhite Chemmart Collie ↔ Chemist Discount Centre Bunbury,Midpoint between COLLIE and Bunbury,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_963_968,Gap: Healthsave Treendale Pharmacy ↔ Harvey Pharmacy,Midpoint between AUSTRALIND and HARVEY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_963_969,Gap: Healthsave Treendale Pharmacy ↔ Uduc Dispensary,Midpoint between AUSTRALIND and HARVEY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_956_968,Gap: TerryWhite Chemmart Australind ↔ Harvey Pharmacy,Midpoint between AUSTRALIND and HARVEY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_956_969,Gap: TerryWhite Chemmart Australind ↔ Uduc Dispensary,Midpoint between AUSTRALIND and HARVEY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_964_968,Gap: Chemwise Pharmacy Australind ↔ Harvey Pharmacy,Midpoint between LESCHENAULT and HARVEY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_964_969,Gap: Chemwise Pharmacy Australind ↔ Uduc Dispensary,Midpoint between LESCHENAULT and HARVEY,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_974_965,Gap: TerryWhite Chemmart Busselton ↔ Dalyellup Pharmacy,Midpoint between BUSSELTON and DALYELLUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_973_965,Gap: Busselton Discount Drug Store ↔ Dalyellup Pharmacy,Midpoint between BUSSELTON and DALYELLUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7320_965,Gap: Priceline Busselton ↔ Dalyellup Pharmacy,Midpoint between BUSSELTON and DALYELLUP,WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27144,Near Unknown Supermarket,"WA, Australia (OSM:116970287)",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27153,Near Store,"WA, Australia (OSM:186709827)",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27155,Near Store,"WA, Australia (OSM:186902587)",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27156,Near Store,"WA, Australia (OSM:187402762)",WA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27077,Near IGA,"SA, Australia (OSM:493919211)",SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27113,Near Leigh Creek Foodland,"Black Oak Drive, Leigh Creek, SA, Australia",SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8450_1988,Gap: Unknown Pharmacy ↔ Star Discount Chemist Mt Gambier,Midpoint between  and MOUNT GAMBIER,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8450_8746,Gap: Unknown Pharmacy ↔ Star Discount Chemist Sturt St,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8450_1993,Gap: Unknown Pharmacy ↔ Gambier City Pharmacy,Midpoint between  and MOUNT GAMBIER,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8450_1991,Gap: Unknown Pharmacy ↔ Star Discount Chemist Sturt Street,Midpoint between  and MOUNT GAMBIER,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8450_1990,Gap: Unknown Pharmacy ↔ United Friendly Societies Chemists - Mount Gambier,Midpoint between  and MOUNT GAMBIER,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8450_1992,Gap: Unknown Pharmacy ↔ Priceline Pharmacy Mt Gambier,Midpoint between  and MOUNT GAMBIER,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8450_8310,Gap: Unknown Pharmacy ↔ Gambier City Pharmacy,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8450_7415,Gap: Unknown Pharmacy ↔ Priceline Pharmacy Mktplace Mt Gam,Midpoint between  and MT GAMBIER,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8450_1989,Gap: Unknown Pharmacy ↔ Chemist King Mt Gambier,Midpoint between  and MOUNT GAMBIER,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1991_1998,Gap: Star Discount Chemist Sturt Street ↔ Glen Street Pharmacy Millicent,Midpoint between MOUNT GAMBIER and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1990_1998,Gap: United Friendly Societies Chemists - Mount Gambier ↔ Glen Street Pharmacy Millicent,Midpoint between MOUNT GAMBIER and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1990_8469,Gap: United Friendly Societies Chemists - Mount Gambier ↔ Millicent Chemist & Giftware,Midpoint between MOUNT GAMBIER and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1992_1998,Gap: Priceline Pharmacy Mt Gambier ↔ Glen Street Pharmacy Millicent,Midpoint between MOUNT GAMBIER and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1992_8469,Gap: Priceline Pharmacy Mt Gambier ↔ Millicent Chemist & Giftware,Midpoint between MOUNT GAMBIER and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1992_1997,Gap: Priceline Pharmacy Mt Gambier ↔ Millicent Chemist and Giftware,Midpoint between MOUNT GAMBIER and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8310_1998,Gap: Gambier City Pharmacy ↔ Glen Street Pharmacy Millicent,Midpoint between  and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8310_8469,Gap: Gambier City Pharmacy ↔ Millicent Chemist & Giftware,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8310_1997,Gap: Gambier City Pharmacy ↔ Millicent Chemist and Giftware,Midpoint between  and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7415_1998,Gap: Priceline Pharmacy Mktplace Mt Gam ↔ Glen Street Pharmacy Millicent,Midpoint between MT GAMBIER and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7415_8469,Gap: Priceline Pharmacy Mktplace Mt Gam ↔ Millicent Chemist & Giftware,Midpoint between MT GAMBIER and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7415_1997,Gap: Priceline Pharmacy Mktplace Mt Gam ↔ Millicent Chemist and Giftware,Midpoint between MT GAMBIER and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7415_8348,Gap: Priceline Pharmacy Mktplace Mt Gam ↔ Beachport Pharmacy,Midpoint between MT GAMBIER and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7415_7509,Gap: Priceline Pharmacy Mktplace Mt Gam ↔ Unknown Pharmacy,Midpoint between MT GAMBIER and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1989_1998,Gap: Chemist King Mt Gambier ↔ Glen Street Pharmacy Millicent,Midpoint between MOUNT GAMBIER and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1989_8469,Gap: Chemist King Mt Gambier ↔ Millicent Chemist & Giftware,Midpoint between MOUNT GAMBIER and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1989_1997,Gap: Chemist King Mt Gambier ↔ Millicent Chemist and Giftware,Midpoint between MOUNT GAMBIER and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1989_7509,Gap: Chemist King Mt Gambier ↔ Unknown Pharmacy,Midpoint between MOUNT GAMBIER and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1987_1998,Gap: Gambier Village Pharmacy ↔ Glen Street Pharmacy Millicent,Midpoint between MOUNT GAMBIER and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1987_8469,Gap: Gambier Village Pharmacy ↔ Millicent Chemist & Giftware,Midpoint between MOUNT GAMBIER and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1987_1997,Gap: Gambier Village Pharmacy ↔ Millicent Chemist and Giftware,Midpoint between MOUNT GAMBIER and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1987_7509,Gap: Gambier Village Pharmacy ↔ Unknown Pharmacy,Midpoint between MOUNT GAMBIER and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8364_1998,Gap: Village Pharmacy ↔ Glen Street Pharmacy Millicent,Midpoint between  and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8364_8469,Gap: Village Pharmacy ↔ Millicent Chemist & Giftware,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8364_1997,Gap: Village Pharmacy ↔ Millicent Chemist and Giftware,Midpoint between  and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8364_7509,Gap: Village Pharmacy ↔ Unknown Pharmacy,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1986_1998,Gap: Priceline Pharmacy Marketplace Mount Gambier ↔ Glen Street Pharmacy Millicent,Midpoint between MOUNT GAMBIER and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1986_8469,Gap: Priceline Pharmacy Marketplace Mount Gambier ↔ Millicent Chemist & Giftware,Midpoint between MOUNT GAMBIER and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1986_1997,Gap: Priceline Pharmacy Marketplace Mount Gambier ↔ Millicent Chemist and Giftware,Midpoint between MOUNT GAMBIER and MILLICENT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1986_7509,Gap: Priceline Pharmacy Marketplace Mount Gambier ↔ Unknown Pharmacy,Midpoint between MOUNT GAMBIER and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1998_8348,Gap: Glen Street Pharmacy Millicent ↔ Beachport Pharmacy,Midpoint between MILLICENT and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1998_7509,Gap: Glen Street Pharmacy Millicent ↔ Unknown Pharmacy,Midpoint between MILLICENT and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1998_4116,Gap: Glen Street Pharmacy Millicent ↔ Robe Pharmacy,Midpoint between MILLICENT and ROBE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1998_1974,Gap: Glen Street Pharmacy Millicent ↔ Direct Chemist Outlet Naracoorte,Midpoint between MILLICENT and NARACOORTE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1998_1973,Gap: Glen Street Pharmacy Millicent ↔ TerryWhite Chemmart Naracoorte,Midpoint between MILLICENT and NARACOORTE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1998_2003,Gap: Glen Street Pharmacy Millicent ↔ Kingston Pharmacy,Midpoint between MILLICENT and KINGSTON SE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8469_8348,Gap: Millicent Chemist & Giftware ↔ Beachport Pharmacy,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8469_7509,Gap: Millicent Chemist & Giftware ↔ Unknown Pharmacy,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8469_4116,Gap: Millicent Chemist & Giftware ↔ Robe Pharmacy,Midpoint between  and ROBE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8469_1974,Gap: Millicent Chemist & Giftware ↔ Direct Chemist Outlet Naracoorte,Midpoint between  and NARACOORTE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8469_1973,Gap: Millicent Chemist & Giftware ↔ TerryWhite Chemmart Naracoorte,Midpoint between  and NARACOORTE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8469_2003,Gap: Millicent Chemist & Giftware ↔ Kingston Pharmacy,Midpoint between  and KINGSTON SE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1997_8348,Gap: Millicent Chemist and Giftware ↔ Beachport Pharmacy,Midpoint between MILLICENT and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1997_7509,Gap: Millicent Chemist and Giftware ↔ Unknown Pharmacy,Midpoint between MILLICENT and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1997_4116,Gap: Millicent Chemist and Giftware ↔ Robe Pharmacy,Midpoint between MILLICENT and ROBE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1997_1974,Gap: Millicent Chemist and Giftware ↔ Direct Chemist Outlet Naracoorte,Midpoint between MILLICENT and NARACOORTE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1997_1973,Gap: Millicent Chemist and Giftware ↔ TerryWhite Chemmart Naracoorte,Midpoint between MILLICENT and NARACOORTE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1997_2003,Gap: Millicent Chemist and Giftware ↔ Kingston Pharmacy,Midpoint between MILLICENT and KINGSTON SE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8348_7509,Gap: Beachport Pharmacy ↔ Unknown Pharmacy,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8348_4116,Gap: Beachport Pharmacy ↔ Robe Pharmacy,Midpoint between  and ROBE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8348_1974,Gap: Beachport Pharmacy ↔ Direct Chemist Outlet Naracoorte,Midpoint between  and NARACOORTE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8348_1973,Gap: Beachport Pharmacy ↔ TerryWhite Chemmart Naracoorte,Midpoint between  and NARACOORTE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8348_2003,Gap: Beachport Pharmacy ↔ Kingston Pharmacy,Midpoint between  and KINGSTON SE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7509_4116,Gap: Unknown Pharmacy ↔ Robe Pharmacy,Midpoint between  and ROBE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7509_1974,Gap: Unknown Pharmacy ↔ Direct Chemist Outlet Naracoorte,Midpoint between  and NARACOORTE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7509_1973,Gap: Unknown Pharmacy ↔ TerryWhite Chemmart Naracoorte,Midpoint between  and NARACOORTE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4116_1974,Gap: Robe Pharmacy ↔ Direct Chemist Outlet Naracoorte,Midpoint between ROBE and NARACOORTE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4116_1973,Gap: Robe Pharmacy ↔ TerryWhite Chemmart Naracoorte,Midpoint between ROBE and NARACOORTE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_4116_2003,Gap: Robe Pharmacy ↔ Kingston Pharmacy,Midpoint between ROBE and KINGSTON SE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1974_2003,Gap: Direct Chemist Outlet Naracoorte ↔ Kingston Pharmacy,Midpoint between NARACOORTE and KINGSTON SE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1974_1970,Gap: Direct Chemist Outlet Naracoorte ↔ Bordertown Pharmacy,Midpoint between NARACOORTE and BORDERTOWN,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1973_2003,Gap: TerryWhite Chemmart Naracoorte ↔ Kingston Pharmacy,Midpoint between NARACOORTE and KINGSTON SE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1973_1970,Gap: TerryWhite Chemmart Naracoorte ↔ Bordertown Pharmacy,Midpoint between NARACOORTE and BORDERTOWN,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_2003_1982,Gap: Kingston Pharmacy ↔ Keith Pharmacy,Midpoint between KINGSTON SE and KEITH,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_1970_1982,Gap: Bordertown Pharmacy ↔ Keith Pharmacy,Midpoint between BORDERTOWN and KEITH,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7212_500,Gap: TerryWhite Chemmart Penneshaw Depot ↔ TerryWhite Chemmart Kangaroo Island,Midpoint between Penneshaw and KINGSCOTE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7212_8903,Gap: TerryWhite Chemmart Penneshaw Depot ↔ Amcal,Midpoint between Penneshaw and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7212_497,Gap: TerryWhite Chemmart Penneshaw Depot ↔ Swan Harbor Pharmacy,Midpoint between Penneshaw and VICTOR HARBOR,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7212_496,Gap: TerryWhite Chemmart Penneshaw Depot ↔ Victor Harbor TerryWhite Chemmart,Midpoint between Penneshaw and VICTOR HARBOR,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7212_7850,Gap: TerryWhite Chemmart Penneshaw Depot ↔ National Pharmacies Victor Harbor,Midpoint between Penneshaw and Victor Harbor,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7212_485,Gap: TerryWhite Chemmart Penneshaw Depot ↔ TerryWhite Chemmart Hayborough Pharmacy,Midpoint between Penneshaw and HAYBOROUGH,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7212_486,Gap: TerryWhite Chemmart Penneshaw Depot ↔ Port Elliot Pharmacy,Midpoint between Penneshaw and PORT ELLIOT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8473_8903,Gap: Unknown Pharmacy ↔ Amcal,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8473_497,Gap: Unknown Pharmacy ↔ Swan Harbor Pharmacy,Midpoint between  and VICTOR HARBOR,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8473_496,Gap: Unknown Pharmacy ↔ Victor Harbor TerryWhite Chemmart,Midpoint between  and VICTOR HARBOR,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8473_7850,Gap: Unknown Pharmacy ↔ National Pharmacies Victor Harbor,Midpoint between  and Victor Harbor,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8473_485,Gap: Unknown Pharmacy ↔ TerryWhite Chemmart Hayborough Pharmacy,Midpoint between  and HAYBOROUGH,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8473_486,Gap: Unknown Pharmacy ↔ Port Elliot Pharmacy,Midpoint between  and PORT ELLIOT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8473_8864,Gap: Unknown Pharmacy ↔ Port Elliot Pharmacy,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_499_8903,Gap: Meningie Pharmacy ↔ Amcal,Midpoint between MENINGIE and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_499_497,Gap: Meningie Pharmacy ↔ Swan Harbor Pharmacy,Midpoint between MENINGIE and VICTOR HARBOR,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_499_496,Gap: Meningie Pharmacy ↔ Victor Harbor TerryWhite Chemmart,Midpoint between MENINGIE and VICTOR HARBOR,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_499_7850,Gap: Meningie Pharmacy ↔ National Pharmacies Victor Harbor,Midpoint between MENINGIE and Victor Harbor,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_499_485,Gap: Meningie Pharmacy ↔ TerryWhite Chemmart Hayborough Pharmacy,Midpoint between MENINGIE and HAYBOROUGH,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_499_486,Gap: Meningie Pharmacy ↔ Port Elliot Pharmacy,Midpoint between MENINGIE and PORT ELLIOT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_499_8864,Gap: Meningie Pharmacy ↔ Port Elliot Pharmacy,Midpoint between MENINGIE and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_499_488,Gap: Meningie Pharmacy ↔ Goolwa Pharmacy,Midpoint between MENINGIE and GOOLWA,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_500_8903,Gap: TerryWhite Chemmart Kangaroo Island ↔ Amcal,Midpoint between KINGSCOTE and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_500_497,Gap: TerryWhite Chemmart Kangaroo Island ↔ Swan Harbor Pharmacy,Midpoint between KINGSCOTE and VICTOR HARBOR,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_500_496,Gap: TerryWhite Chemmart Kangaroo Island ↔ Victor Harbor TerryWhite Chemmart,Midpoint between KINGSCOTE and VICTOR HARBOR,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_500_7850,Gap: TerryWhite Chemmart Kangaroo Island ↔ National Pharmacies Victor Harbor,Midpoint between KINGSCOTE and Victor Harbor,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_500_485,Gap: TerryWhite Chemmart Kangaroo Island ↔ TerryWhite Chemmart Hayborough Pharmacy,Midpoint between KINGSCOTE and HAYBOROUGH,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_500_486,Gap: TerryWhite Chemmart Kangaroo Island ↔ Port Elliot Pharmacy,Midpoint between KINGSCOTE and PORT ELLIOT,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_500_8864,Gap: TerryWhite Chemmart Kangaroo Island ↔ Port Elliot Pharmacy,Midpoint between KINGSCOTE and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8903_8154,Gap: Amcal ↔ Yankalilla Family Pharmacy,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_497_8154,Gap: Swan Harbor Pharmacy ↔ Yankalilla Family Pharmacy,Midpoint between VICTOR HARBOR and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_497_484,Gap: Swan Harbor Pharmacy ↔ TerryWhite Chemmart Normanville,Midpoint between VICTOR HARBOR and NORMANVILLE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_496_8154,Gap: Victor Harbor TerryWhite Chemmart ↔ Yankalilla Family Pharmacy,Midpoint between VICTOR HARBOR and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_496_484,Gap: Victor Harbor TerryWhite Chemmart ↔ TerryWhite Chemmart Normanville,Midpoint between VICTOR HARBOR and NORMANVILLE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7850_8154,Gap: National Pharmacies Victor Harbor ↔ Yankalilla Family Pharmacy,Midpoint between Victor Harbor and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7850_484,Gap: National Pharmacies Victor Harbor ↔ TerryWhite Chemmart Normanville,Midpoint between Victor Harbor and NORMANVILLE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7850_8155,Gap: National Pharmacies Victor Harbor ↔ Unknown Pharmacy,Midpoint between Victor Harbor and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_485_8154,Gap: TerryWhite Chemmart Hayborough Pharmacy ↔ Yankalilla Family Pharmacy,Midpoint between HAYBOROUGH and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_485_484,Gap: TerryWhite Chemmart Hayborough Pharmacy ↔ TerryWhite Chemmart Normanville,Midpoint between HAYBOROUGH and NORMANVILLE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_485_8155,Gap: TerryWhite Chemmart Hayborough Pharmacy ↔ Unknown Pharmacy,Midpoint between HAYBOROUGH and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_485_483,Gap: TerryWhite Chemmart Hayborough Pharmacy ↔ Mt Compass Pharmacy,Midpoint between HAYBOROUGH and MOUNT COMPASS,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_486_8154,Gap: Port Elliot Pharmacy ↔ Yankalilla Family Pharmacy,Midpoint between PORT ELLIOT and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_486_484,Gap: Port Elliot Pharmacy ↔ TerryWhite Chemmart Normanville,Midpoint between PORT ELLIOT and NORMANVILLE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_486_498,Gap: Port Elliot Pharmacy ↔ Milang Pharmacy,Midpoint between PORT ELLIOT and MILANG,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_486_8155,Gap: Port Elliot Pharmacy ↔ Unknown Pharmacy,Midpoint between PORT ELLIOT and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_486_483,Gap: Port Elliot Pharmacy ↔ Mt Compass Pharmacy,Midpoint between PORT ELLIOT and MOUNT COMPASS,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8864_8154,Gap: Port Elliot Pharmacy ↔ Yankalilla Family Pharmacy,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8864_484,Gap: Port Elliot Pharmacy ↔ TerryWhite Chemmart Normanville,Midpoint between  and NORMANVILLE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8864_498,Gap: Port Elliot Pharmacy ↔ Milang Pharmacy,Midpoint between  and MILANG,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8864_8155,Gap: Port Elliot Pharmacy ↔ Unknown Pharmacy,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8864_483,Gap: Port Elliot Pharmacy ↔ Mt Compass Pharmacy,Midpoint between  and MOUNT COMPASS,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8864_7305,Gap: Port Elliot Pharmacy ↔ TerryWhite Chemmart Aldinga Medical Centre,Midpoint between  and Aldinga,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_488_8154,Gap: Goolwa Pharmacy ↔ Yankalilla Family Pharmacy,Midpoint between GOOLWA and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_488_484,Gap: Goolwa Pharmacy ↔ TerryWhite Chemmart Normanville,Midpoint between GOOLWA and NORMANVILLE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_488_498,Gap: Goolwa Pharmacy ↔ Milang Pharmacy,Midpoint between GOOLWA and MILANG,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_488_8155,Gap: Goolwa Pharmacy ↔ Unknown Pharmacy,Midpoint between GOOLWA and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_488_483,Gap: Goolwa Pharmacy ↔ Mt Compass Pharmacy,Midpoint between GOOLWA and MOUNT COMPASS,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_487_8154,Gap: Priceline Pharmacy Goolwa ↔ Yankalilla Family Pharmacy,Midpoint between GOOLWA and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_487_484,Gap: Priceline Pharmacy Goolwa ↔ TerryWhite Chemmart Normanville,Midpoint between GOOLWA and NORMANVILLE,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_487_498,Gap: Priceline Pharmacy Goolwa ↔ Milang Pharmacy,Midpoint between GOOLWA and MILANG,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_487_8155,Gap: Priceline Pharmacy Goolwa ↔ Unknown Pharmacy,Midpoint between GOOLWA and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_487_483,Gap: Priceline Pharmacy Goolwa ↔ Mt Compass Pharmacy,Midpoint between GOOLWA and MOUNT COMPASS,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8154_498,Gap: Yankalilla Family Pharmacy ↔ Milang Pharmacy,Midpoint between  and MILANG,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8154_7305,Gap: Yankalilla Family Pharmacy ↔ TerryWhite Chemmart Aldinga Medical Centre,Midpoint between  and Aldinga,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8154_477,Gap: Yankalilla Family Pharmacy ↔ TerryWhite Chemmart Aldinga Medical Centre Pharmacy,Midpoint between  and ALDINGA,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8154_8212,Gap: Yankalilla Family Pharmacy ↔ Unknown Pharmacy,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_484_498,Gap: TerryWhite Chemmart Normanville ↔ Milang Pharmacy,Midpoint between NORMANVILLE and MILANG,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_484_7305,Gap: TerryWhite Chemmart Normanville ↔ TerryWhite Chemmart Aldinga Medical Centre,Midpoint between NORMANVILLE and Aldinga,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_484_477,Gap: TerryWhite Chemmart Normanville ↔ TerryWhite Chemmart Aldinga Medical Centre Pharmacy,Midpoint between NORMANVILLE and ALDINGA,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_484_8212,Gap: TerryWhite Chemmart Normanville ↔ Unknown Pharmacy,Midpoint between NORMANVILLE and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_484_473,Gap: TerryWhite Chemmart Normanville ↔ TerryWhite Chemmart Aldinga Beach,Midpoint between NORMANVILLE and ALDINGA BEACH,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_498_8155,Gap: Milang Pharmacy ↔ Unknown Pharmacy,Midpoint between MILANG and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_498_483,Gap: Milang Pharmacy ↔ Mt Compass Pharmacy,Midpoint between MILANG and MOUNT COMPASS,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_498_7305,Gap: Milang Pharmacy ↔ TerryWhite Chemmart Aldinga Medical Centre,Midpoint between MILANG and Aldinga,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_498_477,Gap: Milang Pharmacy ↔ TerryWhite Chemmart Aldinga Medical Centre Pharmacy,Midpoint between MILANG and ALDINGA,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_498_471,Gap: Milang Pharmacy ↔ Willunga Pharmacy,Midpoint between MILANG and WILLUNGA,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_498_8212,Gap: Milang Pharmacy ↔ Unknown Pharmacy,Midpoint between MILANG and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_498_473,Gap: Milang Pharmacy ↔ TerryWhite Chemmart Aldinga Beach,Midpoint between MILANG and ALDINGA BEACH,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8155_471,Gap: Unknown Pharmacy ↔ Willunga Pharmacy,Midpoint between  and WILLUNGA,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_483_482,Gap: Mt Compass Pharmacy ↔ Wizard Pharmacy Strathalbyn,Midpoint between MOUNT COMPASS and STRATHALBYN,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_483_9061,Gap: Mt Compass Pharmacy ↔ Tailem Bend Pharmacy,Midpoint between MOUNT COMPASS and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7510_8833,Gap: Unknown Pharmacy ↔ Mallee Pharmacies Pinnaroo,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7510_9061,Gap: Unknown Pharmacy ↔ Tailem Bend Pharmacy,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7305_482,Gap: TerryWhite Chemmart Aldinga Medical Centre ↔ Wizard Pharmacy Strathalbyn,Midpoint between Aldinga and STRATHALBYN,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7305_480,Gap: TerryWhite Chemmart Aldinga Medical Centre ↔ Strathalbyn Village Pharmacy,Midpoint between Aldinga and STRATHALBYN,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_477_482,Gap: TerryWhite Chemmart Aldinga Medical Centre Pharmacy ↔ Wizard Pharmacy Strathalbyn,Midpoint between ALDINGA and STRATHALBYN,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_477_480,Gap: TerryWhite Chemmart Aldinga Medical Centre Pharmacy ↔ Strathalbyn Village Pharmacy,Midpoint between ALDINGA and STRATHALBYN,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8310_8348,Gap: Gambier City Pharmacy ↔ Beachport Pharmacy,Midpoint between  and ,SA,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27009,Near Foodworks,"NT, Australia (OSM:1176513914)",NT,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26997,Near Unknown Supermarket,"NT, Australia (OSM:262978361)",NT,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26996,Near Xpress Mart,"Nabunga Street, Alyangula, NT, Australia",NT,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27000,Near Unknown Supermarket,"NT, Australia (OSM:475053637)",NT,Item 130,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27004,Near Beswick Store,"NT, Australia (OSM:981103116)",NT,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27006,Near IGA,"NT, Australia (OSM:981155310)",NT,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27010,Near Aurora Kakadu Lodge,"NT, Australia (OSM:1195950257)",NT,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26998,Near Ti Tree Food Store,"26, Spencer Street, Ti Tree, NT, Australia",NT,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27013,Near Unknown Supermarket,"NT, Australia (OSM:1298874461)",NT,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_244_243,Gap: Berry Springs Pharmacy ↔ TerryWhite Chemmart Humpty Doo,Midpoint between BERRY SPRINGS and HUMPTY DOO,NT,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_244_8536,Gap: Berry Springs Pharmacy ↔ Better Health,Midpoint between BERRY SPRINGS and ,NT,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_244_7191,Gap: Berry Springs Pharmacy ↔ Chemist Warehouse Coolalinga Central,Midpoint between BERRY SPRINGS and Coolalinga,NT,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_244_242,Gap: Berry Springs Pharmacy ↔ Coolalinga Pharmacy & Co,Midpoint between BERRY SPRINGS and COOLALINGA,NT,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_244_8696,Gap: Berry Springs Pharmacy ↔ Chemist Warehouse,Midpoint between BERRY SPRINGS and ,NT,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_244_241,Gap: Berry Springs Pharmacy ↔ Zuccoli Pharmacy,Midpoint between BERRY SPRINGS and ZUCCOLI,NT,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_244_240,Gap: Berry Springs Pharmacy ↔ Blooms The Chemist Bakewell,Midpoint between BERRY SPRINGS and BAKEWELL,NT,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_244_237,Gap: Berry Springs Pharmacy ↔ Territory Pharmacy Palmerston,Midpoint between BERRY SPRINGS and PALMERSTON,NT,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_244_238,Gap: Berry Springs Pharmacy ↔ Palmerston Health Centre Pharmacy,Midpoint between BERRY SPRINGS and PALMERSTON,NT,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27005,Near Yaralin Store,"NT, Australia (OSM:981118129)",NT,Item 131,0,0,2,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26799,Near Supermarket,"Supermarket, TAS, Australia",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26864,Near Coles Bay Convenience,"3, Garnet Avenue, Coles Bay, TAS, 7215",TAS,Item 130,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+shopping_centre_33468,Freycinet Rentals,"5, Garnet Avenue, Coles Bay, TAS",TAS,Item 130,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26987,Near Unknown Supermarket,"NT, Australia",TAS,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26990,Near Yuendumu Store,"NT, Australia (OSM:188552157)",TAS,Item 130,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26993,Near Unknown Supermarket,"NT, Australia (OSM:189465618)",TAS,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26994,Near Alpurrurulam Store,"NT, Australia (OSM:193262432)",TAS,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26995,Near Atitjere Store,"NT, Australia (OSM:193303723)",TAS,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27003,Near Unknown Supermarket,"NT, Australia (OSM:980814861)",TAS,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27007,Near Weterngerr Store,"NT, Australia (OSM:982452475)",TAS,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27008,Near Imanpa General Store,"NT, Australia (OSM:988249277)",TAS,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26873,Near Grassy Supermarket,"Grassy Supermarket, TAS, Australia",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26868,Near Salamanca Fresh,"Salamanca Fresh, TAS, Australia",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26869,Near IGA Everyday Strahan,"IGA Everyday Strahan, TAS, Australia",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26905,Near Village Supermarket,"Village Supermarket, TAS, Australia",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26978,Near IGA,"TAS, Australia (OSM:307513633)",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_27014,Near Macdonald Downs Station Store,"NT, Australia (OSM:1413179991)",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5114,Ouse District Public Hospital,"Ouse District Public Hospital, TAS, Australia",TAS,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+shopping_centre_33425,Take Away,"Take Away, TAS, Australia",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+shopping_centre_33426,Former supermarket,"Former supermarket, TAS, Australia",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+shopping_centre_33428,Reception,"Reception, TAS, Australia",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+shopping_centre_33448,Visitor's Centre,"Visitor's Centre, TAS, Australia",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+shopping_centre_33492,Epping Forest Roadhouse,"Epping Forest Roadhouse, TAS, Australia",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+shopping_centre_33510,Detention River Shop,"Detention River Shop, TAS, Australia",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+shopping_centre_33520,Church Street Antiques & Collectibles,"28, Church Street, Ross, TAS",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+shopping_centre_33521,Wisteria Café and Gifts,"Wisteria Café and Gifts, TAS, Australia",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+shopping_centre_33522,Classwood,"Classwood, TAS, Australia",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+shopping_centre_33525,Meander Store & PO,"75, Main Road, Meander, TAS",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+shopping_centre_33527,Melita Honey Farm,"Melita Honey Farm, TAS, Australia",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+shopping_centre_33538,Middleton General Store,"4409, Channel Highway, Middleton, TAS",TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_139_136,Gap: Dover Pharmacy ↔ Cygnet Pharmacy,Midpoint between DOVER and CYGNET,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_139_141,Gap: Dover Pharmacy ↔ Tasman Pharmacy,Midpoint between DOVER and NUBEENA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8361_141,Gap: Geeveston Pharmacy ↔ Tasman Pharmacy,Midpoint between  and NUBEENA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8361_114,Gap: Geeveston Pharmacy ↔ Blooms The Chemist Huonville Arcade,Midpoint between  and HUONVILLE,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8361_112,Gap: Geeveston Pharmacy ↔ Blooms The Chemist Huonville,Midpoint between  and HUONVILLE,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8361_135,Gap: Geeveston Pharmacy ↔ South Arm Community Pharmacy,Midpoint between  and SOUTH ARM,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8361_7804,Gap: Geeveston Pharmacy ↔ Blooms The Chemist Huonville,Midpoint between  and ,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_136_141,Gap: Cygnet Pharmacy ↔ Tasman Pharmacy,Midpoint between CYGNET and NUBEENA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_136_7487,Gap: Cygnet Pharmacy ↔ Healthpoint Pharmacy Snug,Midpoint between CYGNET and Snug,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_136_131,Gap: Cygnet Pharmacy ↔ TerryWhite Chemmart Margate,Midpoint between CYGNET and MARGATE,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_136_7220,Gap: Cygnet Pharmacy ↔ TerryWhite Chemmart Channel Margate,Midpoint between CYGNET and Margate,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_141_7487,Gap: Tasman Pharmacy ↔ Healthpoint Pharmacy Snug,Midpoint between NUBEENA and Snug,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_141_135,Gap: Tasman Pharmacy ↔ South Arm Community Pharmacy,Midpoint between NUBEENA and SOUTH ARM,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_141_130,Gap: Tasman Pharmacy ↔ TerryWhite Chemmart Blackmans Bay,Midpoint between NUBEENA and BLACKMANS BAY,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_141_7395,Gap: Tasman Pharmacy ↔ Priceline Pharmacy Kingston,Midpoint between NUBEENA and KINGSTON,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7487_114,Gap: Healthpoint Pharmacy Snug ↔ Blooms The Chemist Huonville Arcade,Midpoint between Snug and HUONVILLE,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7487_112,Gap: Healthpoint Pharmacy Snug ↔ Blooms The Chemist Huonville,Midpoint between Snug and HUONVILLE,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8570_115,Gap: Amcal ↔ TerryWhite Chemmart Sorell,Midpoint between Montrose and SORELL,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_8570_113,Gap: Amcal ↔ Chemist Warehouse Sorell,Midpoint between Montrose and SORELL,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_58_127,Gap: Claremont Plaza Advantage Pharmacy ↔ Triabunna Pharmacy,Midpoint between CLAREMONT and TRIABUNNA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_115_127,Gap: TerryWhite Chemmart Sorell ↔ Triabunna Pharmacy,Midpoint between SORELL and TRIABUNNA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_115_4,Gap: TerryWhite Chemmart Sorell ↔ Central Highlands Pharmacy,Midpoint between SORELL and BOTHWELL,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_113_127,Gap: Chemist Warehouse Sorell ↔ Triabunna Pharmacy,Midpoint between SORELL and TRIABUNNA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_113_4,Gap: Chemist Warehouse Sorell ↔ Central Highlands Pharmacy,Midpoint between SORELL and BOTHWELL,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_113_11,Gap: Chemist Warehouse Sorell ↔ Oatlands Pharmacy,Midpoint between SORELL and OATLANDS,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_49_127,Gap: Blooms the Chemist New Norfolk ↔ Triabunna Pharmacy,Midpoint between NEW NORFOLK and TRIABUNNA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_49_4,Gap: Blooms the Chemist New Norfolk ↔ Central Highlands Pharmacy,Midpoint between NEW NORFOLK and BOTHWELL,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_49_11,Gap: Blooms the Chemist New Norfolk ↔ Oatlands Pharmacy,Midpoint between NEW NORFOLK and OATLANDS,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_51_127,Gap: New Norfolk Amcal Community Pharmacy ↔ Triabunna Pharmacy,Midpoint between NEW NORFOLK and TRIABUNNA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_51_4,Gap: New Norfolk Amcal Community Pharmacy ↔ Central Highlands Pharmacy,Midpoint between NEW NORFOLK and BOTHWELL,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_51_11,Gap: New Norfolk Amcal Community Pharmacy ↔ Oatlands Pharmacy,Midpoint between NEW NORFOLK and OATLANDS,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_53_62,Gap: Priceline Pharmacy Bridgewater ↔ Richmond Pharmacy,Midpoint between BRIDGEWATER and RICHMOND,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_53_127,Gap: Priceline Pharmacy Bridgewater ↔ Triabunna Pharmacy,Midpoint between BRIDGEWATER and TRIABUNNA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_53_4,Gap: Priceline Pharmacy Bridgewater ↔ Central Highlands Pharmacy,Midpoint between BRIDGEWATER and BOTHWELL,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_53_11,Gap: Priceline Pharmacy Bridgewater ↔ Oatlands Pharmacy,Midpoint between BRIDGEWATER and OATLANDS,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_53_132,Gap: Priceline Pharmacy Bridgewater ↔ Swansea Pharmacy,Midpoint between BRIDGEWATER and SWANSEA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7349_62,Gap: Priceline Pharmacy Bridgewater ↔ Richmond Pharmacy,Midpoint between BRIDGEWATER and RICHMOND,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7349_127,Gap: Priceline Pharmacy Bridgewater ↔ Triabunna Pharmacy,Midpoint between BRIDGEWATER and TRIABUNNA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7349_4,Gap: Priceline Pharmacy Bridgewater ↔ Central Highlands Pharmacy,Midpoint between BRIDGEWATER and BOTHWELL,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7349_11,Gap: Priceline Pharmacy Bridgewater ↔ Oatlands Pharmacy,Midpoint between BRIDGEWATER and OATLANDS,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_7349_132,Gap: Priceline Pharmacy Bridgewater ↔ Swansea Pharmacy,Midpoint between BRIDGEWATER and SWANSEA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_62_127,Gap: Richmond Pharmacy ↔ Triabunna Pharmacy,Midpoint between RICHMOND and TRIABUNNA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_62_4,Gap: Richmond Pharmacy ↔ Central Highlands Pharmacy,Midpoint between RICHMOND and BOTHWELL,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_62_11,Gap: Richmond Pharmacy ↔ Oatlands Pharmacy,Midpoint between RICHMOND and OATLANDS,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_62_132,Gap: Richmond Pharmacy ↔ Swansea Pharmacy,Midpoint between RICHMOND and SWANSEA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_62_25,Gap: Richmond Pharmacy ↔ Campbell Town Community Pharmacy,Midpoint between RICHMOND and CAMPBELL TOWN,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_52_127,Gap: Brighton Pharmacy ↔ Triabunna Pharmacy,Midpoint between BRIGHTON and TRIABUNNA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_52_4,Gap: Brighton Pharmacy ↔ Central Highlands Pharmacy,Midpoint between BRIGHTON and BOTHWELL,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_52_11,Gap: Brighton Pharmacy ↔ Oatlands Pharmacy,Midpoint between BRIGHTON and OATLANDS,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_52_132,Gap: Brighton Pharmacy ↔ Swansea Pharmacy,Midpoint between BRIGHTON and SWANSEA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_127_11,Gap: Triabunna Pharmacy ↔ Oatlands Pharmacy,Midpoint between TRIABUNNA and OATLANDS,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_127_132,Gap: Triabunna Pharmacy ↔ Swansea Pharmacy,Midpoint between TRIABUNNA and SWANSEA,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_127_25,Gap: Triabunna Pharmacy ↔ Campbell Town Community Pharmacy,Midpoint between TRIABUNNA and CAMPBELL TOWN,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_127_8425,Gap: Triabunna Pharmacy ↔ Unknown Pharmacy,Midpoint between TRIABUNNA and ,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+gap_127_138,Gap: Triabunna Pharmacy ↔ Bicheno Pharmacy,Midpoint between TRIABUNNA and BICHENO,TAS,Item 131,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26988,Near Unknown Supermarket,"NT, Australia (OSM:94068948)",TAS,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26991,Near Mount Liebig Store,"NT, Australia (OSM:189326470)",TAS,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26992,Near Unknown Supermarket,"NT, Australia (OSM:189336563)",TAS,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26999,Near Docker River Community Store,"NT, Australia (OSM:334142012)",TAS,Item 131,0,0,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26865,Near IGA,"30, Orr Street, Queenstown, TAS, 7467",TAS,Item 135,0,1,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26866,Near IGA,"52, Orr Street, Queenstown, TAS, 7467",TAS,Item 135,0,1,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5100,Queenstown Hospital,"Queenstown Hospital, TAS, Australia",TAS,Item 135,0,1,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5115,St Helens District Hospital and Community Centre,"10, Annie Street, St Helens, TAS",TAS,Item 135,0,1,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5122,West Coast District Hospital At Queenstown,"Orr Street, TAS",TAS,Item 135,0,1,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26809,Near Walkers Supermarket,"Walkers Supermarket, TAS, Australia",TAS,Item 135,0,1,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+supermarket_26881,Near IGA: Oatlands,"IGA: Oatlands, TAS, Australia",TAS,Item 135,0,1,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5103,Oatlands Multi-Purpose Health Centre,"Church Street, Oatlands, TAS",TAS,Item 135,0,1,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5110,King Island District Hospital and Health Centre,"King Island District Hospital and Health Centre, TAS, Australia",TAS,Item 135,0,1,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5119,Flinders Island Multi Purpose Centre,"Flinders Island Multi Purpose Centre, TAS, Australia",TAS,Item 135,0,1,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5125,Oatlands Multi Purpose Health Centre,"13, Church Street, Oatlands, TAS",TAS,Item 135,0,1,1,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5098,Rosebery Communitiy Hospital,"Rosebery Communitiy Hospital, TAS, Australia",TAS,Item 135,0,2,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5101,Dover Multi-Purpose Health Centre,"Dover Multi-Purpose Health Centre, TAS, Australia",TAS,Item 135,0,1,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5104,Scottsdale General Hospital,"2, Fosters Road, Scottsdale, TAS",TAS,Item 135,0,2,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5105,Ochre Medical Centre Scottsdale,"2, Fosters Road, Scottsdale, TAS",TAS,Item 135,0,2,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5106,North Eastern Soldiers Memorial Hospital,"28, Fosters Road, Scottsdale, TAS",TAS,Item 135,0,2,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5109,Deloraine District Hospital,"Deloraine District Hospital, TAS, Australia",TAS,Item 135,0,2,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5112,Campbell Town Health and Community Service,"Campbell Town Health and Community Service, TAS, Australia",TAS,Item 135,0,1,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5113,May Shaw Health and Aged Care for Living,"37, Wellington Street, Swansea, TAS",TAS,Item 135,0,1,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5116,St Marys Community Health Centre,"15-17, Gardiners Creek Road, St Marys, TAS",TAS,Item 135,0,1,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
+hospital_5123,Huon Regional Care,"3278, Huon Highway, Franklin, TAS",TAS,Item 135,0,0,0,0,0.0,0.0,525000.0,999.0,0.0,-525000.0,0.0
