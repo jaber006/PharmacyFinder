@@ -15,3 +15,8 @@ temp_*
 temp_scripts/
 *.log
 .DS_Store
+pharmacy_finder.db
+data/sources/_cache/
+output/opportunity_zones_*.html
+cache/
+*.db
