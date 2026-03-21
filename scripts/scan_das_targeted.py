@@ -2,22 +2,16 @@
 """
 Targeted DA Scanner — queries PlanningAlerts around each qualifying site.
 
-The national scan via postcodes only found 2 results because it queried
-~10 postcodes per state. This script instead queries PlanningAlerts with
-a lat/lon + 2 km radius around every one of our 619 qualifying sites.
+Instead of broad state-level postcode searches (which return limited results),
+this queries a 2km radius around each of the 619 qualifying sites from v2_results.
 
 Usage:
-    py -3.12 scripts/scan_das_targeted.py
-    py -3.12 scripts/scan_das_targeted.py --radius 3000       # 3 km radius
-    py -3.12 scripts/scan_das_targeted.py --state TAS          # single state
-    py -3.12 scripts/scan_das_targeted.py --dry-run            # show plan only
-    py -3.12 scripts/scan_das_targeted.py --cached             # skip API, re-filter cache
-
-Requires PlanningAlerts API key:
-    - env var PLANNING_ALERTS_KEY, or
-    - file ~/.config/planningalerts/api_key
+  py -3.12 scripts/scan_das_targeted.py --all
+  py -3.12 scripts/scan_das_targeted.py --state TAS
+  py -3.12 scripts/scan_das_targeted.py --top 50
+  py -3.12 scripts/scan_das_targeted.py --resume
+  py -3.12 scripts/scan_das_targeted.py --state NSW --resume
 """
-
 import argparse
 import hashlib
 import json
@@ -26,556 +20,590 @@ import re
 import sqlite3
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import requests
 
-# ---------------------------------------------------------------------------
-# Config
-# ---------------------------------------------------------------------------
-
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = PROJECT_ROOT / "pharmacy_finder.db"
-CACHE_DIR = PROJECT_ROOT / "data" / "sources" / "_cache" / "planningalerts"
+CACHE_DIR = PROJECT_ROOT / "cache" / "planning_alerts"
 
-API_BASE = "https://api.planningalerts.org.au/applications.json"
-DEFAULT_RADIUS_M = 2000
-RATE_LIMIT_S = 1.0  # 1 request per second (PlanningAlerts TOS)
-MAX_PER_PAGE = 100  # API max
+PLANNING_ALERTS_URL = "https://api.planningalerts.org.au/applications.json"
+USER_AGENT = "PharmacyFinder-TargetedDA/1.0 (pharmacy-location-finder)"
+RATE_LIMIT_SEC = 1.0
+CACHE_TTL_HOURS = 24
+DEFAULT_RADIUS = 2000  # metres
 
-# Keywords that signal commercial / retail / medical DAs
-INCLUDE_KEYWORDS = re.compile(
-    r"(?i)"
-    r"(?:shopping\s*cent(?:re|er))"
-    r"|(?:medical\s*cent(?:re|er))"
-    r"|(?:health\s*cent(?:re|er))"
-    r"|(?:retail)"
-    r"|(?:commercial)"
-    r"|(?:pharmacy|chemist)"
-    r"|(?:mixed\s*use)"
-    r"|(?:supermarket)"
-    r"|(?:child\s*care|childcare)"
-    r"|(?:shop(?:s|front)?)"
-    r"|(?:office(?:s)?)"
-    r"|(?:food\s*(?:and|&)\s*drink)"
-    r"|(?:restaurant|cafe|takeaway)"
-    r"|(?:bulky\s*goods)"
-    r"|(?:service\s*station)"
-    r"|(?:neighbourhood\s*cent(?:re|er))"
-    r"|(?:community\s*cent(?:re|er))"
-    r"|(?:aged\s*care)"
-    r"|(?:hospital)"
-    r"|(?:clinic)"
-    r"|(?:(?:sub)?division.*(?:lot|commercial|retail))"
-    r"|(?:change\s*of\s*use)"
-    r"|(?:tenancy)"
-)
-
-# Exclude purely residential / trivial DAs
-EXCLUDE_KEYWORDS = re.compile(
-    r"(?i)"
-    r"(?:single\s*(?:storey\s*)?(?:dwelling|residence|house))"
-    r"|(?:swimming\s*pool)"
-    r"|(?:carport)"
-    r"|(?:pergola)"
-    r"|(?:fence|fencing)"
-    r"|(?:tree\s*removal)"
-    r"|(?:shed)"
-    r"|(?:garage)"
-    r"|(?:granny\s*flat)"
-    r"|(?:verandah)"
-    r"|(?:patio)"
-    r"|(?:deck\b)"
-    r"|(?:retaining\s*wall)"
-    r"|(?:awning)"
-    r"|(?:demolition\s*(?:of\s*)?(?:existing\s*)?(?:dwelling|residence|house))"
-)
+KEYWORDS = [
+    "shopping centre", "shopping center",
+    "medical centre", "medical center",
+    "retail", "commercial", "pharmacy",
+    "mixed use", "mixed-use",
+    "supermarket", "health", "clinic",
+]
 
 
-# ---------------------------------------------------------------------------
-# API key
-# ---------------------------------------------------------------------------
-
-def get_api_key() -> str:
+def _get_api_key() -> str:
+    """Read API key from env or file."""
     key = os.environ.get("PLANNING_ALERTS_KEY", "").strip()
     if key:
         return key
     key_file = Path.home() / ".config" / "planningalerts" / "api_key"
     if key_file.exists():
         key = key_file.read_text().strip()
-        if key:
-            return key
-    print("ERROR: No PlanningAlerts API key found.")
-    print("  Set PLANNING_ALERTS_KEY env var, or create ~/.config/planningalerts/api_key")
-    print("  Free key: https://www.planningalerts.org.au/api/howto")
-    sys.exit(1)
+    if not key:
+        print("ERROR: No PlanningAlerts API key found.")
+        print("  Set PLANNING_ALERTS_KEY env var or create ~/.config/planningalerts/api_key")
+        sys.exit(1)
+    return key
 
 
-# ---------------------------------------------------------------------------
-# Cache
-# ---------------------------------------------------------------------------
+# ── Caching ──────────────────────────────────────────────────────────────────
 
-def cache_key(lat: float, lon: float, radius: int) -> str:
-    """Deterministic cache key for a query."""
-    raw = f"{lat:.6f},{lon:.6f},{radius}"
+def _cache_key(lat: float, lon: float, radius: int) -> str:
+    """Deterministic cache key from query params."""
+    raw = f"{lat:.6f}_{lon:.6f}_{radius}"
     return hashlib.md5(raw.encode()).hexdigest()
 
 
-def load_cached(lat: float, lon: float, radius: int) -> Optional[list]:
+def _cache_path(lat: float, lon: float, radius: int) -> Path:
+    return CACHE_DIR / f"{_cache_key(lat, lon, radius)}.json"
+
+
+def _read_cache(lat: float, lon: float, radius: int) -> Optional[List[Dict]]:
+    """Return cached response if within TTL, else None."""
+    p = _cache_path(lat, lon, radius)
+    if not p.exists():
+        return None
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+        cached_at = datetime.fromisoformat(data["cached_at"])
+        if datetime.now() - cached_at > timedelta(hours=CACHE_TTL_HOURS):
+            return None  # expired
+        return data["applications"]
+    except (json.JSONDecodeError, KeyError, ValueError):
+        return None
+
+
+def _write_cache(lat: float, lon: float, radius: int, applications: List[Dict]) -> None:
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    path = CACHE_DIR / f"{cache_key(lat, lon, radius)}.json"
-    if path.exists():
-        with open(path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return None
+    p = _cache_path(lat, lon, radius)
+    p.write_text(json.dumps({
+        "cached_at": datetime.now().isoformat(),
+        "lat": lat, "lon": lon, "radius": radius,
+        "applications": applications,
+    }, default=str), encoding="utf-8")
 
 
-def save_cached(lat: float, lon: float, radius: int, apps: list):
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    path = CACHE_DIR / f"{cache_key(lat, lon, radius)}.json"
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(apps, f)
+def _is_cached(lat: float, lon: float, radius: int) -> bool:
+    """Check if valid (non-expired) cache exists."""
+    return _read_cache(lat, lon, radius) is not None
 
 
-# ---------------------------------------------------------------------------
-# PlanningAlerts API
-# ---------------------------------------------------------------------------
+# ── PlanningAlerts API ───────────────────────────────────────────────────────
 
-def query_planningalerts(api_key: str, lat: float, lon: float,
-                         radius: int = DEFAULT_RADIUS_M) -> list:
-    """Query PlanningAlerts for DAs near a point. Returns raw application list."""
-    all_apps = []
-    page = 1
+def _fetch_radius(api_key: str, lat: float, lon: float, radius: int = DEFAULT_RADIUS) -> List[Dict]:
+    """Fetch DAs within radius of a point. Returns raw application dicts."""
+    cached = _read_cache(lat, lon, radius)
+    if cached is not None:
+        return cached
 
-    while True:
-        params = {
-            "key": api_key,
-            "lat": f"{lat:.6f}",
-            "lng": f"{lon:.6f}",
-            "radius": radius,
-            "count": MAX_PER_PAGE,
-            "page": page,
-        }
+    params = {
+        "key": api_key,
+        "lat": f"{lat:.6f}",
+        "lng": f"{lon:.6f}",
+        "radius": radius,
+        "count": 100,
+    }
 
-        try:
-            resp = requests.get(API_BASE, params=params, timeout=30)
-            if resp.status_code == 429:
-                print("    Rate limited, waiting 5s ...")
-                time.sleep(5)
-                continue
-            resp.raise_for_status()
-        except requests.RequestException as exc:
-            print(f"    API error: {exc}")
-            break
-
-        data = resp.json()
-        # API wraps each app in {"application": {...}}
-        batch = []
-        if isinstance(data, list):
-            for item in data:
+    apps = []
+    should_cache = True
+    try:
+        resp = requests.get(
+            PLANNING_ALERTS_URL,
+            params=params,
+            headers={"User-Agent": USER_AGENT},
+            timeout=15,
+        )
+        if resp.status_code == 200:
+            data = resp.json()
+            # API returns list of {application: {...}} wrappers
+            items = data if isinstance(data, list) else data.get("applications", data.get("application", []))
+            if isinstance(items, dict):
+                items = [items]
+            for item in (items or []):
                 app = item.get("application", item) if isinstance(item, dict) else item
-                batch.append(app)
-        elif isinstance(data, dict):
-            for item in data.get("applications", data.get("application", [])):
-                app = item.get("application", item) if isinstance(item, dict) else item
-                batch.append(app)
+                if isinstance(app, dict):
+                    apps.append(app)
+        elif resp.status_code == 429:
+            print("\n  WARNING: Rate limited (429). Waiting 60s...")
+            should_cache = False  # don't cache rate-limited responses
+            time.sleep(60)
+        else:
+            should_cache = False
+    except requests.RequestException:
+        should_cache = False
 
-        if not batch:
-            break
-
-        all_apps.extend(batch)
-
-        if len(batch) < MAX_PER_PAGE:
-            break
-        page += 1
-        time.sleep(RATE_LIMIT_S)
-
-    return all_apps
+    if should_cache:
+        _write_cache(lat, lon, radius, apps)
+    time.sleep(RATE_LIMIT_SEC)
+    return apps
 
 
-# ---------------------------------------------------------------------------
-# Filtering
-# ---------------------------------------------------------------------------
+# ── Classification & Scoring ────────────────────────────────────────────────
 
-def classify_da(description: str) -> tuple[str, float]:
-    """Classify a DA description into development type and pharmacy potential.
-
-    Returns (dev_type, potential_score).
-    """
-    desc = (description or "").lower()
-
-    if not desc:
-        return ("unknown", 0.0)
-
-    # Exclude purely residential / trivial
-    if EXCLUDE_KEYWORDS.search(desc) and not INCLUDE_KEYWORDS.search(desc):
-        return ("residential", 0.0)
-
-    if not INCLUDE_KEYWORDS.search(desc):
-        return ("other", 0.0)
-
-    # Classify
-    if re.search(r"(?i)shopping\s*cent(?:re|er)", desc):
-        gla = _extract_sqm(desc)
-        if gla and gla >= 5000:
-            return ("shopping_centre_large", 0.95)
-        return ("shopping_centre", 0.85)
-
-    if re.search(r"(?i)medical\s*cent(?:re|er)|health\s*cent(?:re|er)|clinic", desc):
-        return ("medical_centre", 0.90)
-
-    if re.search(r"(?i)hospital", desc):
-        return ("hospital", 0.80)
-
-    if re.search(r"(?i)pharmacy|chemist", desc):
-        return ("pharmacy", 0.70)
-
-    if re.search(r"(?i)supermarket", desc):
-        return ("supermarket", 0.75)
-
-    if re.search(r"(?i)mixed\s*use", desc):
-        return ("mixed_use", 0.60)
-
-    if re.search(r"(?i)aged\s*care", desc):
-        return ("aged_care", 0.50)
-
-    if re.search(r"(?i)change\s*of\s*use", desc):
-        return ("change_of_use", 0.55)
-
-    if re.search(r"(?i)retail|shop|tenancy|commercial", desc):
-        return ("retail", 0.50)
-
-    return ("commercial", 0.40)
+def _matches_keywords(text: str) -> bool:
+    if not text:
+        return False
+    t = text.lower()
+    return any(kw in t for kw in KEYWORDS)
 
 
-def _extract_sqm(text: str) -> Optional[float]:
-    m = re.search(r"([\d,]+)\s*(?:sqm|sq\.?\s*m|m2|m²)", text, re.IGNORECASE)
+def _classify_development(desc: str) -> str:
+    t = (desc or "").lower()
+    if any(k in t for k in ["shopping centre", "shopping center", "neighbourhood centre"]):
+        return "shopping_centre"
+    if any(k in t for k in ["medical centre", "medical center", "health precinct",
+                             "gp ", "general practice", "clinic"]):
+        return "medical_centre"
+    if any(k in t for k in ["mixed use", "mixed-use"]):
+        return "mixed_use"
+    if any(k in t for k in ["supermarket"]):
+        return "retail"
+    if any(k in t for k in ["retail", "commercial", "pharmacy"]):
+        return "commercial"
+    return "commercial"
+
+
+def _extract_gla(text: str) -> Optional[float]:
+    if not text:
+        return None
+    patterns = [
+        r"([\d,]+)\s*(?:sq\s*m|sqm|m²|m2)\s*(?:gla|gross\s*lettable|floor\s*area)?",
+        r"(?:gla|gross\s*lettable|floor\s*area)\s*(?:of\s*)?([\d,]+)\s*(?:sq\s*m|sqm|m²)?",
+        r"([\d,]+)\s*(?:sq\s*m|sqm)\s*(?:retail|commercial)",
+    ]
+    for pat in patterns:
+        m = re.search(pat, text, re.IGNORECASE)
+        if m:
+            val = m.group(1).replace(",", "")
+            try:
+                return float(val)
+            except ValueError:
+                pass
+    m = re.search(r"([\d.]+)\s*ha(?:ectares?)?", text, re.IGNORECASE)
     if m:
         try:
-            return float(m.group(1).replace(",", ""))
+            return float(m.group(1)) * 10000
         except ValueError:
             pass
     return None
 
 
-def is_relevant(app: dict) -> bool:
-    """Check if a DA is relevant (commercial/retail/medical)."""
-    desc = app.get("description", "")
-    dev_type, score = classify_da(desc)
-    return score > 0
+def _score_pharmacy_potential(dev_type: str, gla: Optional[float], desc: str) -> float:
+    score = 0.0
+    t = (desc or "").lower()
+
+    if dev_type == "shopping_centre":
+        score = 0.8
+        if gla and gla >= 5000:
+            score = min(1.0, score + 0.15)
+        if gla and gla >= 10000:
+            score = 1.0
+    elif dev_type == "medical_centre":
+        score = 0.85
+        if any(k in t for k in ["8 fte", "8fte", "eight fte", "pharmacy"]):
+            score = 1.0
+    elif dev_type == "mixed_use":
+        score = 0.5
+        if "retail" in t or "commercial" in t:
+            score = 0.6
+        if "pharmacy" in t or "medical" in t:
+            score = 0.75
+    elif dev_type == "retail":
+        score = 0.5
+        if "supermarket" in t:
+            score = 0.65
+        if "pharmacy" in t:
+            score = 0.8
+    elif dev_type == "commercial":
+        score = 0.35
+        if "pharmacy" in t:
+            score = 0.8
+        elif "health" in t or "clinic" in t:
+            score = 0.55
+
+    if gla and gla >= 2500 and score < 0.7:
+        score = min(1.0, score + 0.2)
+
+    return round(min(1.0, score), 2)
 
 
-# ---------------------------------------------------------------------------
-# Database
-# ---------------------------------------------------------------------------
+def _parse_date(s: Any) -> Optional[str]:
+    if not s:
+        return None
+    return str(s)[:10]
 
-def ensure_table(conn: sqlite3.Connection):
+
+# ── Database ─────────────────────────────────────────────────────────────────
+
+def _ensure_table(conn: sqlite3.Connection) -> None:
     conn.execute("""
         CREATE TABLE IF NOT EXISTS council_da (
-            id               INTEGER PRIMARY KEY AUTOINCREMENT,
-            da_number        TEXT,
-            council          TEXT,
-            state            TEXT,
-            address          TEXT,
-            lat              REAL,
-            lon              REAL,
-            description      TEXT,
-            applicant        TEXT,
-            status           TEXT,
-            lodged_date      TEXT,
-            determined_date  TEXT,
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            da_number TEXT UNIQUE,
+            council TEXT,
+            state TEXT,
+            address TEXT,
+            lat REAL,
+            lon REAL,
+            description TEXT,
+            applicant TEXT,
+            status TEXT,
+            lodged_date TEXT,
+            determined_date TEXT,
             development_type TEXT,
             estimated_gla_sqm REAL,
             pharmacy_potential REAL,
-            source_url       TEXT,
-            date_scraped     TEXT
+            source_url TEXT,
+            date_scraped TEXT
         )
     """)
-    conn.execute(
-        "CREATE UNIQUE INDEX IF NOT EXISTS idx_council_da_number "
-        "ON council_da(da_number)"
-    )
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_council_da_state ON council_da(state)")
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_council_da_potential ON council_da(pharmacy_potential)")
     conn.commit()
 
 
-def upsert_da(conn: sqlite3.Connection, app: dict,
-              site_state: str) -> bool:
-    """Insert or skip a DA. Returns True if newly inserted."""
-    da_number = (
-        app.get("council_reference")
-        or app.get("id")
-        or ""
-    )
-    if not da_number:
+def _upsert_da(cur: sqlite3.Cursor, da: Dict) -> bool:
+    """Insert or update a DA. Returns True if new row inserted."""
+    # Try insert first
+    try:
+        cur.execute("""
+            INSERT INTO council_da
+            (da_number, council, state, address, lat, lon, description, applicant, status,
+             lodged_date, determined_date, development_type, estimated_gla_sqm,
+             pharmacy_potential, source_url, date_scraped)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            da["da_number"], da["council"], da["state"], da["address"],
+            da["lat"], da["lon"], da["description"], da["applicant"], da["status"],
+            da["lodged_date"], da["determined_date"], da["development_type"],
+            da["estimated_gla_sqm"], da["pharmacy_potential"],
+            da["source_url"], da["date_scraped"],
+        ))
+        return True
+    except sqlite3.IntegrityError:
+        # DA already exists — update if we have better data
+        cur.execute("""
+            UPDATE council_da SET
+                council = COALESCE(?, council),
+                state = COALESCE(?, state),
+                address = COALESCE(?, address),
+                lat = COALESCE(?, lat),
+                lon = COALESCE(?, lon),
+                description = COALESCE(?, description),
+                status = COALESCE(?, status),
+                development_type = COALESCE(?, development_type),
+                estimated_gla_sqm = COALESCE(?, estimated_gla_sqm),
+                pharmacy_potential = MAX(COALESCE(pharmacy_potential, 0), ?),
+                date_scraped = ?
+            WHERE da_number = ?
+        """, (
+            da["council"], da["state"], da["address"],
+            da["lat"], da["lon"], da["description"],
+            da["status"], da["development_type"],
+            da["estimated_gla_sqm"], da["pharmacy_potential"],
+            da["date_scraped"], da["da_number"],
+        ))
         return False
 
-    da_number = str(da_number).strip()
 
-    # Skip if already exists
-    existing = conn.execute(
-        "SELECT 1 FROM council_da WHERE da_number = ?", (da_number,)
-    ).fetchone()
-    if existing:
-        return False
+# ── Site Loading ─────────────────────────────────────────────────────────────
 
-    desc = app.get("description", "")
-    dev_type, potential = classify_da(desc)
-    gla = _extract_sqm(desc)
-
-    authority = app.get("authority", {})
-    council = authority.get("full_name", "") if isinstance(authority, dict) else str(authority)
-
-    lat = app.get("lat")
-    lon = app.get("lng") or app.get("lon")
-
-    address = app.get("address", "")
-    # Infer state from address or use site state
-    state = site_state
-    for abbr in ("NSW", "VIC", "QLD", "TAS", "WA", "SA", "NT", "ACT"):
-        if abbr in (address or "").upper():
-            state = abbr
-            break
-
-    lodged = app.get("date_received") or app.get("date_lodged") or ""
-    determined = app.get("date_decided") or app.get("date_determined") or ""
-
-    conn.execute(
-        "INSERT INTO council_da "
-        "(da_number, council, state, address, lat, lon, description, "
-        " applicant, status, lodged_date, determined_date, "
-        " development_type, estimated_gla_sqm, pharmacy_potential, "
-        " source_url, date_scraped) "
-        "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-        (
-            da_number,
-            council,
-            state,
-            address,
-            lat,
-            lon,
-            desc,
-            None,  # PlanningAlerts doesn't expose applicant
-            app.get("status", ""),
-            lodged,
-            determined,
-            dev_type,
-            gla,
-            potential,
-            app.get("info_url", ""),
-            datetime.now().isoformat(),
-        ),
-    )
-    return True
-
-
-# ---------------------------------------------------------------------------
-# Main scan
-# ---------------------------------------------------------------------------
-
-def load_sites(conn: sqlite3.Connection,
-               state: Optional[str] = None) -> list[dict]:
+def _load_sites(db_path: Path, state: Optional[str] = None,
+                top_n: Optional[int] = None) -> List[Dict]:
     """Load qualifying sites from v2_results."""
-    query = "SELECT id, name, address, latitude, longitude, state FROM v2_results"
-    params = []
+    conn = sqlite3.connect(str(db_path))
+    conn.row_factory = sqlite3.Row
+
+    query = """
+        SELECT id, name, address, latitude, longitude, state, profitability_score
+        FROM v2_results
+        WHERE latitude IS NOT NULL AND longitude IS NOT NULL
+    """
+    params: list = []
+
     if state:
-        query += " WHERE state = ?"
+        query += " AND state = ?"
         params.append(state.upper())
-    query += " ORDER BY state, id"
+
+    query += " ORDER BY profitability_score DESC"
+
+    if top_n:
+        query += " LIMIT ?"
+        params.append(top_n)
 
     rows = conn.execute(query, params).fetchall()
-    return [
-        {"id": r[0], "name": r[1], "address": r[2],
-         "lat": r[3], "lon": r[4], "state": r[5]}
-        for r in rows
-    ]
+    conn.close()
+    return [dict(r) for r in rows]
 
 
-def deduplicate_queries(sites: list[dict],
-                        radius_m: int) -> list[dict]:
-    """Merge sites whose query circles overlap to reduce API calls.
+# ── State Detection ──────────────────────────────────────────────────────────
 
-    Two sites within `radius_m` of each other share the same circle, so
-    we only need to query once for the cluster centroid.
-    """
-    from geopy.distance import geodesic
-
-    # Round to ~100m grid to find nearby clusters
-    used = set()
-    queries = []
-
-    for site in sites:
-        grid_key = (round(site["lat"], 3), round(site["lon"], 3))
-        if grid_key in used:
-            continue
-        used.add(grid_key)
-
-        # Collect all sites in this grid cell
-        cluster_sites = [
-            s for s in sites
-            if (round(s["lat"], 3), round(s["lon"], 3)) == grid_key
-        ]
-        # Use centroid
-        avg_lat = sum(s["lat"] for s in cluster_sites) / len(cluster_sites)
-        avg_lon = sum(s["lon"] for s in cluster_sites) / len(cluster_sites)
-
-        queries.append({
-            "lat": avg_lat,
-            "lon": avg_lon,
-            "state": cluster_sites[0]["state"],
-            "site_ids": [s["id"] for s in cluster_sites],
-            "label": cluster_sites[0].get("address", cluster_sites[0]["id"]),
-        })
-
-    return queries
+def _detect_state(lat: float, lon: float, fallback: str = "UNK") -> str:
+    """Rough state detection from coordinates."""
+    if lat > -29 and lon > 141:
+        return "QLD"
+    if lat < -39 and lon > 144 and lon < 149:
+        return "TAS"
+    if lon < 129:
+        return "WA"
+    if lon < 141:
+        return "SA"
+    if lat > -33.5 and lon > 141:
+        return "NSW"  # rough
+    if lat <= -33.5 and lon > 141 and lon < 150:
+        return "VIC"  # rough
+    if lon >= 150:
+        return "NSW"
+    return fallback
 
 
-def run_scan(state: Optional[str] = None, radius: int = DEFAULT_RADIUS_M,
-             dry_run: bool = False, cached_only: bool = False):
-    api_key = get_api_key()
-    conn = sqlite3.connect(str(DB_PATH))
-    ensure_table(conn)
+# ── Main Scanner ─────────────────────────────────────────────────────────────
 
-    sites = load_sites(conn, state)
-    if not sites:
-        print(f"No qualifying sites found{f' for {state}' if state else ''}.")
-        return
+def scan_targeted(
+    sites: List[Dict],
+    api_key: str,
+    db_path: Path,
+    resume: bool = False,
+    radius: int = DEFAULT_RADIUS,
+) -> Dict[str, Any]:
+    """Scan PlanningAlerts around each site. Returns summary stats."""
+    conn = sqlite3.connect(str(db_path))
+    _ensure_table(conn)
+    cur = conn.cursor()
 
-    queries = deduplicate_queries(sites, radius)
-    site_count = len(sites)
-    query_count = len(queries)
-    print(f"Sites: {site_count} qualifying locations"
-          f"{f' in {state}' if state else ''}")
-    print(f"Queries: {query_count} unique locations (after dedup)")
-    print(f"Radius: {radius}m")
-    print(f"Rate: 1 req/sec -> ~{query_count} seconds estimated")
-    print()
-
-    if dry_run:
-        print("DRY RUN — showing first 20 queries:")
-        for q in queries[:20]:
-            print(f"  ({q['lat']:.4f}, {q['lon']:.4f}) {q['state']} "
-                  f"[{len(q['site_ids'])} sites] {q['label'][:60]}")
-        return
-
-    total_apps = 0
-    total_relevant = 0
+    total_sites = len(sites)
+    total_das_found = 0
     total_inserted = 0
-    cache_hits = 0
-    api_calls = 0
-    errors = 0
+    total_updated = 0
+    total_skipped_cache = 0
+    das_by_state: Dict[str, int] = {}
+    high_potential = 0
+    seen_da_numbers: set = set()
 
-    for i, q in enumerate(queries, 1):
-        label = q["label"][:50]
-        prefix = f"[{i}/{query_count}]"
+    start_time = time.time()
+    bar_width = 40
 
-        # Check cache first
-        cached = load_cached(q["lat"], q["lon"], radius)
-        if cached is not None:
-            apps = cached
-            cache_hits += 1
-            src = "cache"
-        elif cached_only:
+    for i, site in enumerate(sites):
+        lat = site["latitude"]
+        lon = site["longitude"]
+        site_state = site.get("state", _detect_state(lat, lon))
+
+        # Resume mode: skip if already cached
+        if resume and _is_cached(lat, lon, radius):
+            total_skipped_cache += 1
+            _show_progress(i + 1, total_sites, bar_width, site["name"], "cached", start_time)
             continue
-        else:
-            apps = query_planningalerts(api_key, q["lat"], q["lon"], radius)
-            save_cached(q["lat"], q["lon"], radius, apps)
-            api_calls += 1
-            src = "API"
-            time.sleep(RATE_LIMIT_S)
 
-        total_apps += len(apps)
+        apps = _fetch_radius(api_key, lat, lon, radius)
+        matched = 0
 
-        relevant = [a for a in apps if is_relevant(a)]
-        total_relevant += len(relevant)
+        for app in apps:
+            desc = app.get("description") or ""
+            if not _matches_keywords(desc):
+                continue
 
-        inserted = 0
-        for app in relevant:
-            try:
-                if upsert_da(conn, app, q["state"]):
-                    inserted += 1
-            except sqlite3.IntegrityError:
-                pass
-            except Exception as exc:
-                errors += 1
-                if errors <= 5:
-                    print(f"  {prefix} Error inserting DA: {exc}")
+            da_id = str(app.get("id", ""))
+            da_number = app.get("council_reference") or da_id or f"PA-{da_id}"
 
-        total_inserted += inserted
+            if da_number in seen_da_numbers:
+                continue
+            seen_da_numbers.add(da_number)
+
+            app_lat = app.get("lat")
+            app_lon = app.get("lng")
+            if app_lat is not None and app_lon is not None:
+                try:
+                    app_lat, app_lon = float(app_lat), float(app_lon)
+                except (ValueError, TypeError):
+                    app_lat, app_lon = lat, lon
+            else:
+                app_lat, app_lon = lat, lon
+
+            da_state = _detect_state(app_lat, app_lon, site_state)
+
+            authority = app.get("authority") or {}
+            council = authority.get("full_name", "") if isinstance(authority, dict) else str(authority)
+
+            dev_type = _classify_development(desc)
+            gla = _extract_gla(desc)
+            potential = _score_pharmacy_potential(dev_type, gla, desc)
+
+            da_record = {
+                "da_number": da_number,
+                "council": council,
+                "state": da_state,
+                "address": app.get("address", ""),
+                "lat": app_lat,
+                "lon": app_lon,
+                "description": desc[:2000] if desc else None,
+                "applicant": None,
+                "status": app.get("status") or "Unknown",
+                "lodged_date": _parse_date(app.get("date_received") or app.get("date_lodged")),
+                "determined_date": _parse_date(app.get("date_decided")),
+                "development_type": dev_type,
+                "estimated_gla_sqm": gla,
+                "pharmacy_potential": potential,
+                "source_url": app.get("info_url") or app.get("comment_url"),
+                "date_scraped": datetime.now().isoformat(),
+            }
+
+            is_new = _upsert_da(cur, da_record)
+            if is_new:
+                total_inserted += 1
+            else:
+                total_updated += 1
+
+            total_das_found += 1
+            matched += 1
+            das_by_state[da_state] = das_by_state.get(da_state, 0) + 1
+
+            if potential >= 0.7:
+                high_potential += 1
+
         conn.commit()
-
-        if len(apps) > 0:
-            print(f"  {prefix} {q['state']} {label} "
-                  f"-> {len(apps)} DAs, {len(relevant)} relevant, "
-                  f"{inserted} new ({src})")
-        elif i % 50 == 0:
-            print(f"  {prefix} ... {api_calls} API calls, "
-                  f"{cache_hits} cache hits so far")
+        _show_progress(i + 1, total_sites, bar_width, site["name"],
+                       f"{matched} DAs" if matched else "0", start_time)
 
     conn.close()
+    elapsed = time.time() - start_time
 
-    # Summary
-    print()
-    print("=" * 60)
-    print("SCAN COMPLETE")
-    print("=" * 60)
-    print(f"  Queries:          {query_count}")
-    print(f"  API calls:        {api_calls}")
-    print(f"  Cache hits:       {cache_hits}")
-    print(f"  Total DAs found:  {total_apps}")
-    print(f"  Relevant DAs:     {total_relevant}")
-    print(f"  New DAs inserted: {total_inserted}")
-    if errors:
-        print(f"  Errors:           {errors}")
-
-    # Show top DAs by potential
-    conn2 = sqlite3.connect(str(DB_PATH))
-    print()
-    print("Top DAs by pharmacy potential:")
-    for row in conn2.execute(
-        "SELECT da_number, council, address, development_type, "
-        "       pharmacy_potential "
-        "FROM council_da "
-        "WHERE pharmacy_potential >= 0.5 "
-        "ORDER BY pharmacy_potential DESC "
-        "LIMIT 20"
-    ).fetchall():
-        print(f"  [{row[3]}] {row[4]:.2f} | {row[0]} | "
-              f"{(row[2] or '')[:60]} ({row[1]})")
-
-    total = conn2.execute("SELECT COUNT(*) FROM council_da").fetchone()[0]
-    high = conn2.execute(
-        "SELECT COUNT(*) FROM council_da WHERE pharmacy_potential >= 0.7"
-    ).fetchone()[0]
-    print(f"\nTotal in council_da: {total} ({high} with potential >= 0.7)")
-    conn2.close()
+    return {
+        "total_sites": total_sites,
+        "total_das_found": total_das_found,
+        "total_inserted": total_inserted,
+        "total_updated": total_updated,
+        "skipped_cached": total_skipped_cache,
+        "high_potential": high_potential,
+        "das_by_state": das_by_state,
+        "elapsed_seconds": round(elapsed, 1),
+    }
 
 
-# ---------------------------------------------------------------------------
-# CLI
-# ---------------------------------------------------------------------------
+def _show_progress(current: int, total: int, bar_width: int, name: str,
+                   status: str, start_time: float) -> None:
+    """Print a progress bar to stderr."""
+    pct = current / total if total else 1
+    filled = int(bar_width * pct)
+    bar = "#" * filled + "-" * (bar_width - filled)
 
-def main():
+    elapsed = time.time() - start_time
+    if current > 0 and elapsed > 0:
+        rate = current / elapsed
+        eta = (total - current) / rate if rate > 0 else 0
+        eta_str = f"ETA {int(eta)}s"
+    else:
+        eta_str = ""
+
+    short_name = (name[:25] + "..") if len(name) > 27 else name
+    line = f"\r  [{bar}] {current}/{total} ({pct:.0%}) {short_name:<28} {status:<10} {eta_str}"
+    sys.stderr.write(line)
+    sys.stderr.flush()
+    if current == total:
+        sys.stderr.write("\n")
+
+
+# ── CLI ──────────────────────────────────────────────────────────────────────
+
+def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Targeted DA scan around qualifying pharmacy sites")
-    parser.add_argument("--state", default=None,
-                        help="Filter to a single state (NSW, VIC, QLD, etc)")
-    parser.add_argument("--radius", type=int, default=DEFAULT_RADIUS_M,
-                        help=f"Search radius in metres (default: {DEFAULT_RADIUS_M})")
-    parser.add_argument("--dry-run", action="store_true",
-                        help="Show query plan without calling API")
-    parser.add_argument("--cached", action="store_true",
-                        help="Only process cached responses, skip API calls")
+        description="Targeted DA scanner — queries PlanningAlerts around each qualifying site"
+    )
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--all", action="store_true", help="Scan all 619 qualifying sites")
+    group.add_argument("--state", type=str, help="Scan sites in a specific state (NSW, VIC, QLD, TAS, WA, SA)")
+    group.add_argument("--top", type=int, help="Scan top N sites by profitability score")
+
+    parser.add_argument("--resume", action="store_true",
+                        help="Skip sites that already have valid cached responses")
+    parser.add_argument("--radius", type=int, default=DEFAULT_RADIUS,
+                        help=f"Search radius in metres (default: {DEFAULT_RADIUS})")
+    parser.add_argument("--db", type=str, default=None,
+                        help="Database path (default: pharmacy_finder.db in project root)")
     args = parser.parse_args()
 
-    run_scan(
-        state=args.state,
+    db_path = Path(args.db) if args.db else DB_PATH
+
+    if not db_path.exists():
+        print(f"ERROR: Database not found: {db_path}")
+        return 1
+
+    api_key = _get_api_key()
+
+    # Load sites
+    state_filter = args.state.upper() if args.state else None
+    top_n = args.top if args.top else None
+
+    if state_filter and state_filter not in ("NSW", "VIC", "QLD", "TAS", "WA", "SA", "NT", "ACT"):
+        print(f"ERROR: Invalid state: {state_filter}")
+        return 1
+
+    sites = _load_sites(db_path, state=state_filter, top_n=top_n)
+
+    if not sites:
+        print("No qualifying sites found matching criteria.")
+        return 0
+
+    # Banner
+    print("=" * 60)
+    print("  PharmacyFinder — Targeted DA Scanner")
+    print("=" * 60)
+    scope = f"state={state_filter}" if state_filter else f"top {top_n}" if top_n else "ALL"
+    print(f"  Sites to scan: {len(sites)} ({scope})")
+    print(f"  Radius: {args.radius}m")
+    print(f"  Resume mode: {'ON' if args.resume else 'OFF'}")
+    print(f"  Cache dir: {CACHE_DIR}")
+    print(f"  Database: {db_path}")
+    print("-" * 60)
+
+    results = scan_targeted(
+        sites=sites,
+        api_key=api_key,
+        db_path=db_path,
+        resume=args.resume,
         radius=args.radius,
-        dry_run=args.dry_run,
-        cached_only=args.cached,
     )
+
+    # Summary
+    print("\n" + "=" * 60)
+    print("  SCAN COMPLETE")
+    print("=" * 60)
+    print(f"  Sites scanned:     {results['total_sites']}")
+    if results["skipped_cached"]:
+        print(f"  Skipped (cached):  {results['skipped_cached']}")
+    print(f"  Total DAs found:   {results['total_das_found']}")
+    print(f"  New DAs inserted:  {results['total_inserted']}")
+    print(f"  DAs updated:       {results['total_updated']}")
+    print(f"  High potential:    {results['high_potential']}  (score >= 0.7)")
+    print(f"  Time elapsed:      {results['elapsed_seconds']}s")
+
+    if results["das_by_state"]:
+        print("\n  DAs by state:")
+        for st in sorted(results["das_by_state"].keys()):
+            print(f"    {st}: {results['das_by_state'][st]}")
+
+    if results["total_das_found"] == 0:
+        print("\n  TIP: No matching DAs found. This could mean:")
+        print("     - PlanningAlerts has limited coverage in these areas")
+        print("     - No recent commercial/medical DAs near these sites")
+        print("     - Try a larger --radius (e.g. 4000)")
+
+    print()
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
