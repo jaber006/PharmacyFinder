@@ -1,0 +1,28 @@
+classification,growth_score,sa2_name,state,population_current,population_projected,growth_rate_3yr,pharmacies_5km,pharmacies_10km,nearest_pharmacy_km,people_per_pharmacy_current,people_per_pharmacy_projected,psp_name,planned_dwellings,planned_retail_count,has_planned_retail,sa2_code
+HOT,84.0,Manor Lakes - Quandong,VIC,14362,37251,33.1%,0,0,10.6,99999,99999,Wyndham Vale PSP,10000,2,True,213051579
+WARM,74.5,Cobblebank - Strathtulloh,VIC,15068,140331,95.3%,10,15,1.1,1005.0,9355.0,Plumpton-Kororoit PSP,22000,3,True,213041572
+WARM,72.3,Rockbank - Mount Cottrell,VIC,30931,191516,72.8%,2,30,2.81,1031.0,6384.0,Rockbank PSP,25000,4,True,213041359
+WARM,69.7,Barwon Heads - Armstrong Creek,VIC,17225,69684,52.1%,0,12,5.15,1435.0,5807.0,Armstrong Creek PSP,22000,1,True,203031489
+WARM,67.1,Beveridge,VIC,0,0,52.1%,0,4,7.11,0.0,0.0,Beveridge Central PSP,30000,2,True,GC_Beveridge
+WARM,66.3,Fraser Rise - Plumpton,VIC,15572,62997,52.1%,1,30,4.22,519.0,2100.0,Plumpton PSP,15000,4,True,213041574
+WARM,64.7,Donnybrook,VIC,0,0,48.2%,0,4,5.91,0.0,0.0,Donnybrook-Woodstock PSP,20000,2,True,GC_Donnybrook
+WARM,63.8,Mambourin,VIC,0,0,119.7%,1,18,4.28,0.0,0.0,Mambourin PSP,20000,2,True,GC_Mambourin
+WARM,62.1,Wollert,VIC,40758,213320,64.3%,3,55,3.4,741.0,3879.0,Wollert PSP,17000,1,True,209041437
+WARM,58.6,Clyde North - South,VIC,25985,160892,72.8%,4,40,1.4,650.0,4022.0,Clyde PSP,30000,1,True,212031556
+WARM,55.6,Clyde North - North,VIC,18406,113965,72.8%,12,57,1.25,323.0,1999.0,Clyde PSP,30000,1,True,212031555
+WARM,50.3,Tarneit (West) - Mount Cottrell,VIC,13730,35612,33.1%,5,28,1.99,490.0,1272.0,Tarneit PSP,15000,3,True,213051582
+WATCH,49.7,Tarneit - North,VIC,9769,25338,33.1%,11,44,2.16,222.0,576.0,Tarneit PSP,15000,3,True,213051584
+WATCH,49.4,Mickleham - Yuroke,VIC,33430,103828,40.5%,10,17,2.25,1966.0,6108.0,Mickleham PSP,15000,0,False,210051445
+WATCH,47.7,Tarneit - Central,VIC,38058,98712,33.1%,17,43,0.43,885.0,2296.0,Tarneit PSP,15000,2,True,213051583
+WATCH,47.2,Charlemont,VIC,14511,45068,40.5%,11,41,0.84,354.0,1099.0,Armstrong Creek PSP,8000,1,True,203021485
+WATCH,46.3,Tarneit - South,VIC,15056,39051,33.1%,25,41,0.58,367.0,952.0,Tarneit PSP,15000,2,True,213051585
+WATCH,41.6,Beaconsfield - Officer,VIC,33670,104573,40.5%,10,39,1.82,863.0,2681.0,Officer PSP,10000,0,False,212011546
+WATCH,39.1,Sunbury - South,VIC,17987,32211,19.1%,7,21,3.61,857.0,1534.0,Sunbury South PSP,11000,1,True,210041540
+WATCH,38.7,Truganina - South West,VIC,27240,84603,40.5%,26,46,1.07,592.0,1839.0,Truganina PSP,12000,0,False,213051588
+WATCH,38.0,Truganina - North,VIC,13414,41661,40.5%,8,64,1.39,210.0,651.0,Truganina PSP,12000,0,False,213051586
+WATCH,35.7,Truganina - South East,VIC,13713,42590,40.5%,19,53,0.41,259.0,804.0,Truganina PSP,12000,0,False,213051587
+WATCH,35.0,Pakenham - South West,VIC,34227,73893,26.0%,9,14,1.12,2445.0,5278.0,Pakenham East PSP,8000,0,False,212011552
+WATCH,32.6,Pakenham - South East,VIC,8179,17657,26.0%,7,11,2.94,744.0,1605.0,Pakenham East PSP,8000,0,False,212011551
+WATCH,32.1,Pakenham - North East,VIC,19679,42485,26.0%,6,12,1.47,1640.0,3540.0,Pakenham East PSP,8000,0,False,212011549
+WATCH,31.3,Pakenham - North West,VIC,9532,20578,26.0%,9,19,2.56,502.0,1083.0,Pakenham East PSP,8000,0,False,212011550
+WATCH,28.8,Craigieburn - South,VIC,27722,59849,26.0%,17,44,1.25,630.0,1360.0,Craigieburn PSP,8000,0,False,210051443
