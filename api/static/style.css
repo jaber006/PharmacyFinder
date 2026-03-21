@@ -1,0 +1,451 @@
+/* PharmacyFinder Dashboard */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface-2: #232736;
+    --border: #2d3148;
+    --text: #e4e6f0;
+    --text-dim: #8b8fa8;
+    --accent: #4f8cff;
+    --accent-hover: #6da0ff;
+    --green: #34d399;
+    --amber: #fbbf24;
+    --red: #f87171;
+    --rule-130: #4f8cff;
+    --rule-131: #34d399;
+    --rule-132: #a78bfa;
+    --rule-133: #fbbf24;
+    --rule-134: #f97316;
+    --rule-134a: #fb923c;
+    --rule-135: #f87171;
+    --rule-136: #ec4899;
+    --sidebar-w: 420px;
+    --topbar-h: 56px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Top Bar */
+#topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--topbar-h);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 12px;
+    z-index: 1000;
+}
+
+#topbar .logo {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+#topbar .logo span {
+    color: var(--text-dim);
+    font-weight: 400;
+}
+
+#search-box {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+}
+
+#search-input {
+    width: 100%;
+    padding: 8px 14px 8px 36px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#search-input:focus {
+    border-color: var(--accent);
+}
+
+#search-input::placeholder {
+    color: var(--text-dim);
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-dim);
+    font-size: 14px;
+}
+
+#filters {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+#filters select, #filters input[type="number"] {
+    padding: 6px 10px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 13px;
+    outline: none;
+}
+
+#filters select:focus, #filters input[type="number"]:focus {
+    border-color: var(--accent);
+}
+
+#filters input[type="number"] {
+    width: 80px;
+}
+
+.stats-badge {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    color: var(--text-dim);
+    white-space: nowrap;
+}
+
+.stats-badge strong {
+    color: var(--accent);
+}
+
+/* Map */
+#map {
+    position: fixed;
+    top: var(--topbar-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* Sidebar */
+#sidebar {
+    position: fixed;
+    top: var(--topbar-h);
+    right: -var(--sidebar-w);
+    width: var(--sidebar-w);
+    height: calc(100vh - var(--topbar-h));
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    z-index: 500;
+    overflow-y: auto;
+    transition: right 0.3s ease;
+}
+
+#sidebar.open {
+    right: 0;
+}
+
+#sidebar-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sidebar-close:hover {
+    background: var(--border);
+}
+
+.sidebar-content {
+    padding: 20px;
+}
+
+.sidebar-content h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    padding-right: 36px;
+}
+
+.sidebar-content .address {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-pass { background: rgba(52, 211, 153, 0.15); color: var(--green); }
+.badge-fail { background: rgba(248, 113, 113, 0.15); color: var(--red); }
+.badge-rule { background: rgba(79, 140, 255, 0.15); color: var(--accent); }
+
+.detail-section {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.detail-section h3 {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+}
+
+.metric-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.metric {
+    background: var(--surface-2);
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.metric .label {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.metric .value {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.rule-item {
+    background: var(--surface-2);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+}
+
+.rule-item .rule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.rule-item .rule-name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.rule-item .reasons {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.5;
+}
+
+.rule-item .reasons li {
+    margin-left: 16px;
+    margin-bottom: 2px;
+}
+
+.evidence-list {
+    margin-top: 8px;
+}
+
+.evidence-list li {
+    font-size: 12px;
+    color: var(--amber);
+    margin-left: 16px;
+    margin-bottom: 2px;
+}
+
+.distances-table {
+    width: 100%;
+    font-size: 12px;
+    border-collapse: collapse;
+}
+
+.distances-table td {
+    padding: 4px 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+.distances-table td:first-child {
+    color: var(--text-dim);
+}
+
+.distances-table td:last-child {
+    text-align: right;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Watch button */
+.btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background: var(--border);
+}
+
+.btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+}
+
+.btn-danger {
+    background: transparent;
+    border-color: var(--red);
+    color: var(--red);
+}
+
+.btn-danger:hover {
+    background: rgba(248, 113, 113, 0.1);
+}
+
+.sidebar-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+/* Loading spinner */
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Eval result overlay */
+#eval-result {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 24px;
+    z-index: 600;
+    min-width: 320px;
+    max-width: 500px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+#eval-result.show { display: block; }
+
+/* Leaflet marker overrides */
+.marker-cluster {
+    background: rgba(79, 140, 255, 0.3) !important;
+}
+
+.marker-cluster div {
+    background: var(--accent) !important;
+    color: #fff !important;
+}
+
+/* Custom marker */
+.rule-marker {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+/* Scrollbar */
+#sidebar::-webkit-scrollbar { width: 6px; }
+#sidebar::-webkit-scrollbar-track { background: transparent; }
+#sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* Legend */
+#legend {
+    position: fixed;
+    bottom: 24px;
+    left: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    z-index: 500;
+    font-size: 12px;
+}
+
+#legend h4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1.5px solid #fff;
+    flex-shrink: 0;
+}

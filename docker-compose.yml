@@ -14,3 +14,37 @@ services:
       timeout: 10s
       retries: 3
       start_period: 10s
+
+  nominatim:
+    image: mediagis/nominatim:4.4
+    container_name: nominatim-australia
+    restart: unless-stopped
+    ports:
+      - "8088:8080"
+    environment:
+      PBF_URL: https://download.geofabrik.de/australia-oceania/australia-latest.osm.pbf
+      REPLICATION_URL: https://download.geofabrik.de/australia-oceania/australia-updates/
+      NOMINATIM_PASSWORD: nominatim
+      IMPORT_STYLE: full
+    volumes:
+      - nominatim-data:/var/lib/postgresql/14/main
+      - nominatim-flatnode:/nominatim/flatnode
+    shm_size: 1g
+
+  postgis:
+    image: postgis/postgis:16-3.4
+    container_name: pharmacyfinder-postgis
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: pharmacyfinder
+      POSTGRES_USER: pharmacyfinder
+      POSTGRES_PASSWORD: pharmacyfinder
+    volumes:
+      - postgis-data:/var/lib/postgresql/data
+
+volumes:
+  nominatim-data:
+  nominatim-flatnode:
+  postgis-data:

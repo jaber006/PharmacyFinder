@@ -2,7 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(pip install:*)",
-      "Bash(py:*)"
+      "Bash(py:*)",
+      "WebFetch(domain:geo.abs.gov.au)",
+      "WebSearch",
+      "WebFetch(domain:www.abs.gov.au)",
+      "WebFetch(domain:api.data.abs.gov.au)",
+      "WebFetch(domain:data.api.abs.gov.au)",
+      "WebFetch(domain:docs.sarahcgall.co.uk)",
+      "WebFetch(domain:services-ap1.arcgis.com)"
     ]
   }
 }

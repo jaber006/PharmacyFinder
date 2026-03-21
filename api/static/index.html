@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmacyFinder — Deal Machine</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div id="topbar">
+    <div class="logo">PharmacyFinder <span>v3</span></div>
+    <div id="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="Search address to evaluate…" />
+    </div>
+    <div id="filters">
+        <select id="filter-state">
+            <option value="">All States</option>
+            <option value="NSW">NSW</option>
+            <option value="VIC">VIC</option>
+            <option value="QLD">QLD</option>
+            <option value="WA">WA</option>
+            <option value="SA">SA</option>
+            <option value="TAS">TAS</option>
+            <option value="NT">NT</option>
+            <option value="ACT">ACT</option>
+        </select>
+        <select id="filter-rule">
+            <option value="">All Rules</option>
+            <option value="Item 130">Item 130</option>
+            <option value="Item 131">Item 131</option>
+            <option value="Item 132">Item 132</option>
+            <option value="Item 133">Item 133</option>
+            <option value="Item 134">Item 134</option>
+            <option value="Item 134A">Item 134A</option>
+            <option value="Item 135">Item 135</option>
+            <option value="Item 136">Item 136</option>
+        </select>
+        <input type="number" id="filter-score" placeholder="Min score" step="0.1" min="0" max="1" />
+        <div class="stats-badge" id="stats-badge">Loading…</div>
+    </div>
+</div>
+
+<!-- Map -->
+<div id="map"></div>
+
+<!-- Legend -->
+<div id="legend">
+    <h4>Rule Items</h4>
+    <div class="legend-item"><div class="legend-dot" style="background:#4f8cff"></div> Item 130 — 1.5km gap</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#34d399"></div> Item 131 — 10km road</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div> Item 132 — Same town</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fbbf24"></div> Item 133 — Small SC</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f97316"></div> Item 134 — Large SC</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fb923c"></div> Item 134A — Large SC add</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f87171"></div> Item 135 — Hospital</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#ec4899"></div> Item 136 — Medical centre</div>
+</div>
+
+<!-- Sidebar -->
+<div id="sidebar">
+    <button id="sidebar-close" onclick="closeSidebar()">✕</button>
+    <div class="sidebar-content" id="sidebar-content">
+        <!-- Populated by JS -->
+    </div>
+</div>
+
+<!-- Eval result toast -->
+<div id="eval-result"></div>
+
+<script>
+const RULE_COLORS = {
+    'Item 130': '#4f8cff',
+    'Item 131': '#34d399',
+    'Item 132': '#a78bfa',
+    'Item 133': '#fbbf24',
+    'Item 134': '#f97316',
+    'Item 134A': '#fb923c',
+    'Item 135': '#f87171',
+    'Item 136': '#ec4899',
+};
+
+// Map setup
+const map = L.map('map', {
+    center: [-25.5, 134],
+    zoom: 5,
+    zoomControl: true,
+});
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap © CARTO',
+    maxZoom: 19,
+}).addTo(map);
+
+let markers = [];
+let allSites = [];
+let evalMarker = null;
+
+// Load sites
+async function loadSites() {
+    const state = document.getElementById('filter-state').value;
+    const rule = document.getElementById('filter-rule').value;
+    const minScore = document.getElementById('filter-score').value;
+
+    const params = new URLSearchParams();
+    if (state) params.set('state', state);
+    if (rule) params.set('rule', rule);
+    if (minScore) params.set('min_score', minScore);
+    params.set('limit', '1000');
+
+    try {
+        const resp = await fetch(`/api/sites?${params}`);
+        const data = await resp.json();
+        allSites = data.sites;
+        renderMarkers();
+        document.getElementById('stats-badge').innerHTML =
+            `<strong>${data.total}</strong> qualifying sites`;
+    } catch (e) {
+        console.error('Failed to load sites:', e);
+    }
+}
+
+function createMarkerIcon(rule) {
+    const color = RULE_COLORS[rule] || '#4f8cff';
+    return L.divIcon({
+        className: '',
+        html: `<div class="rule-marker" style="background:${color}"></div>`,
+        iconSize: [12, 12],
+        iconAnchor: [6, 6],
+    });
+}
+
+function renderMarkers() {
+    markers.forEach(m => map.removeLayer(m));
+    markers = [];
+
+    allSites.forEach(site => {
+        const icon = createMarkerIcon(site.primary_rule);
+        const m = L.marker([site.latitude, site.longitude], { icon })
+            .addTo(map)
+            .on('click', () => showSiteDetail(site.id));
+        
+        m.bindTooltip(`${site.name}<br>${site.primary_rule} — Score: ${(site.commercial_score || 0).toFixed(3)}`, {
+            className: 'dark-tooltip',
+        });
+        markers.push(m);
+    });
+}
+
+// Sidebar
+async function showSiteDetail(siteId) {
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('sidebar-content');
+    content.innerHTML = '<div class="spinner"></div> Loading…';
+    sidebar.classList.add('open');
+
+    try {
+        const resp = await fetch(`/api/sites/${siteId}`);
+        const site = await resp.json();
+        renderSidebar(site);
+    } catch (e) {
+        content.innerHTML = `<p style="color:var(--red)">Error loading site details</p>`;
+    }
+}
+
+function renderSidebar(site) {
+    const content = document.getElementById('sidebar-content');
+    const rules = site.rules || [];
+    const allRules = site.all_rules || [];
+    const passingRule = rules[0] || {};
+    const distances = passingRule.distances || {};
+
+    let distancesHtml = '';
+    if (Object.keys(distances).length > 0) {
+        distancesHtml = '<table class="distances-table">';
+        for (const [key, val] of Object.entries(distances)) {
+            const label = key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+            const display = typeof val === 'number' ? 
+                (val > 100 ? val.toFixed(0) : val.toFixed(2)) : val;
+            distancesHtml += `<tr><td>${label}</td><td>${display}</td></tr>`;
+        }
+        distancesHtml += '</table>';
+    }
+
+    let rulesHtml = '';
+    allRules.forEach(r => {
+        const color = r.passed ? 'var(--green)' : 'var(--text-dim)';
+        const badge = r.passed ? '<span class="badge badge-pass">PASS</span>' :
+                                  '<span class="badge badge-fail">FAIL</span>';
+        rulesHtml += `
+            <div class="rule-item" style="border-left: 3px solid ${r.passed ? (RULE_COLORS[r.item] || '#4f8cff') : 'var(--border)'}">
+                <div class="rule-header">
+                    <span class="rule-name">${r.item}</span>
+                    ${badge}
+                </div>
+                <ul class="reasons">
+                    ${(r.reasons || []).map(reason => `<li>${reason}</li>`).join('')}
+                </ul>
+                ${r.evidence_needed && r.evidence_needed.length > 0 ? `
+                    <ul class="evidence-list">
+                        ${r.evidence_needed.map(e => `<li>⚠ ${e}</li>`).join('')}
+                    </ul>
+                ` : ''}
+            </div>
+        `;
+    });
+
+    content.innerHTML = `
+        <h2>${site.name}</h2>
+        <div class="address">${site.address}</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
+            <span class="badge badge-rule">${site.primary_rule}</span>
+            <span class="badge ${site.passed_any ? 'badge-pass' : 'badge-fail'}">
+                ${site.passed_any ? 'QUALIFYING' : 'NOT QUALIFYING'}
+            </span>
+            <span class="badge" style="background:rgba(79,140,255,0.1);color:var(--text-dim)">${site.state}</span>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric">
+                <div class="label">Commercial Score</div>
+                <div class="value" style="color:var(--accent)">${(site.commercial_score || 0).toFixed(3)}</div>
+            </div>
+            <div class="metric">
+                <div class="label">Confidence</div>
+                <div class="value" style="color:var(--green)">${((site.best_confidence || 0) * 100).toFixed(0)}%</div>
+            </div>
+        </div>
+
+        ${distancesHtml ? `
+            <div class="detail-section">
+                <h3>Key Distances</h3>
+                ${distancesHtml}
+            </div>
+        ` : ''}
+
+        <div class="detail-section">
+            <h3>Rules Assessment</h3>
+            ${rulesHtml}
+        </div>
+
+        <div class="sidebar-actions">
+            <button class="btn btn-primary" onclick="addToWatchlist('${site.id}')">👁 Watch</button>
+            <button class="btn" onclick="window.open('https://www.google.com/maps?q=${site.latitude},${site.longitude}', '_blank')">📍 Google Maps</button>
+        </div>
+    `;
+}
+
+function closeSidebar() {
+    document.getElementById('sidebar').classList.remove('open');
+}
+
+// Search / Evaluate
+const searchInput = document.getElementById('search-input');
+searchInput.addEventListener('keydown', async (e) => {
+    if (e.key !== 'Enter') return;
+    const address = searchInput.value.trim();
+    if (!address) return;
+
+    searchInput.disabled = true;
+    const evalResult = document.getElementById('eval-result');
+    evalResult.innerHTML = '<div class="spinner"></div> Evaluating…';
+    evalResult.classList.add('show');
+
+    try {
+        const resp = await fetch('/api/evaluate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ address }),
+        });
+        const data = await resp.json();
+
+        // Show on map
+        if (evalMarker) map.removeLayer(evalMarker);
+        evalMarker = L.marker([data.latitude, data.longitude], {
+            icon: L.divIcon({
+                className: '',
+                html: '<div style="width:16px;height:16px;background:#fff;border:3px solid #4f8cff;border-radius:50%;box-shadow:0 0 12px rgba(79,140,255,0.6)"></div>',
+                iconSize: [16, 16],
+                iconAnchor: [8, 8],
+            }),
+        }).addTo(map);
+        map.setView([data.latitude, data.longitude], 14);
+
+        // Show result
+        const qualRules = data.qualifying_rules || [];
+        if (data.passed_any) {
+            evalResult.innerHTML = `
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                    <div>
+                        <strong style="color:var(--green)">✓ QUALIFYING</strong> — ${data.primary_rule}
+                        <div style="font-size:12px;color:var(--text-dim);margin-top:4px">${data.geocoded_address}</div>
+                    </div>
+                    <div style="text-align:right">
+                        <div style="font-size:24px;font-weight:700;color:var(--accent)">${(data.commercial_score || 0).toFixed(3)}</div>
+                        <div style="font-size:11px;color:var(--text-dim)">Score</div>
+                    </div>
+                </div>
+                <div style="margin-top:8px;font-size:12px;color:var(--text-dim)">
+                    ${qualRules.map(r => `${r.item}: ${r.reasons[0] || ''}`).join('<br>')}
+                </div>
+                <button class="btn" style="margin-top:8px;font-size:11px" onclick="document.getElementById('eval-result').classList.remove('show')">Dismiss</button>
+            `;
+        } else {
+            evalResult.innerHTML = `
+                <div>
+                    <strong style="color:var(--red)">✕ NOT QUALIFYING</strong>
+                    <div style="font-size:12px;color:var(--text-dim);margin-top:4px">${data.geocoded_address}</div>
+                </div>
+                <div style="margin-top:8px;font-size:12px;color:var(--text-dim)">
+                    No rules passed. Closest misses shown in full evaluation.
+                </div>
+                <button class="btn" style="margin-top:8px;font-size:11px" onclick="document.getElementById('eval-result').classList.remove('show')">Dismiss</button>
+            `;
+        }
+    } catch (e) {
+        evalResult.innerHTML = `<strong style="color:var(--red)">Error:</strong> ${e.message}
+            <button class="btn" style="margin-top:8px;font-size:11px" onclick="document.getElementById('eval-result').classList.remove('show')">Dismiss</button>`;
+    }
+    searchInput.disabled = false;
+});
+
+// Filters
+document.getElementById('filter-state').addEventListener('change', loadSites);
+document.getElementById('filter-rule').addEventListener('change', loadSites);
+document.getElementById('filter-score').addEventListener('change', loadSites);
+
+// Watchlist
+async function addToWatchlist(candidateId) {
+    try {
+        const resp = await fetch('/api/watchlist', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                candidate_id: candidateId,
+                watch_reason: 'manual',
+                trigger_condition: 'Manual watch from dashboard',
+            }),
+        });
+        const data = await resp.json();
+        if (resp.ok) {
+            alert('Added to watchlist');
+        } else {
+            alert(data.detail || 'Error');
+        }
+    } catch (e) {
+        alert('Failed: ' + e.message);
+    }
+}
+
+// Tooltip style
+const tooltipStyle = document.createElement('style');
+tooltipStyle.textContent = `
+    .dark-tooltip {
+        background: var(--surface) !important;
+        color: var(--text) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 6px !important;
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+    }
+    .dark-tooltip::before { border-top-color: var(--border) !important; }
+`;
+document.head.appendChild(tooltipStyle);
+
+// Init
+loadSites();
+</script>
+</body>
+</html>
