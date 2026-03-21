@@ -78,17 +78,17 @@ Examples:
 
     # 1. Hotdoc GP Scraper
     if not args.only or args.only == "gp":
-        from scrapers.hotdoc_gp_scraper import run as gp_run
+        from hotdoc_gp_scraper import run as gp_run
         all_stats["gp"] = run_scraper("Hotdoc GP Scraper", gp_run, **kwargs)
 
     # 2. Shopping Centre Scraper
     if not args.only or args.only == "shopping":
-        from scrapers.shopping_centre_scraper import run as shopping_run
+        from shopping_centre_scraper import run as shopping_run
         all_stats["shopping"] = run_scraper("Shopping Centre Scraper", shopping_run, **kwargs)
 
     # 3. MyHospitals Scraper
     if not args.only or args.only == "hospitals":
-        from scrapers.myhospitals_scraper import run as hospitals_run
+        from myhospitals_scraper import run as hospitals_run
         all_stats["hospitals"] = run_scraper("MyHospitals Scraper", hospitals_run, **kwargs)
 
     # Final summary

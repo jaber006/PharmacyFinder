@@ -129,19 +129,30 @@ def get_driving_distance(
     origin_lon: float,
     dest_lat: float,
     dest_lon: float,
-    osrm_server: str = "http://router.project-osrm.org"
+    osrm_server: str = None
 ) -> Optional[float]:
     """
     Calculate driving distance using OSRM routing service.
 
+    Prefers local OSRM instance (localhost:5000) for speed, with automatic
+    fallback to the public server if local isn't running.
+
     Args:
         origin_lat, origin_lon: Origin coordinates
         dest_lat, dest_lon: Destination coordinates
-        osrm_server: OSRM server URL (default: public OSRM server)
+        osrm_server: OSRM server URL override (None = auto-detect local/public)
 
     Returns:
         Driving distance in kilometers, or None if route not found
     """
+    # Use the local OSRM module for auto-detection + caching
+    if osrm_server is None:
+        try:
+            from utils.osrm_local import route_distance
+            return route_distance(origin_lat, origin_lon, dest_lat, dest_lon)
+        except ImportError:
+            osrm_server = "http://router.project-osrm.org"
+
     import time as _time
     
     for attempt in range(3):
@@ -178,19 +189,30 @@ def get_driving_time(
     origin_lon: float,
     dest_lat: float,
     dest_lon: float,
-    osrm_server: str = "http://router.project-osrm.org"
+    osrm_server: str = None
 ) -> Optional[float]:
     """
     Calculate driving time using OSRM routing service.
 
+    Prefers local OSRM instance (localhost:5000) for speed, with automatic
+    fallback to the public server if local isn't running.
+
     Args:
         origin_lat, origin_lon: Origin coordinates
         dest_lat, dest_lon: Destination coordinates
-        osrm_server: OSRM server URL
+        osrm_server: OSRM server URL override (None = auto-detect local/public)
 
     Returns:
         Driving time in minutes, or None if route not found
     """
+    # Use the local OSRM module for auto-detection + caching
+    if osrm_server is None:
+        try:
+            from utils.osrm_local import route_duration
+            return route_duration(origin_lat, origin_lon, dest_lat, dest_lon)
+        except ImportError:
+            osrm_server = "http://router.project-osrm.org"
+
     try:
         url = f"{osrm_server}/route/v1/driving/{origin_lon},{origin_lat};{dest_lon},{dest_lat}"
         params = {

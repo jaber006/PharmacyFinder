@@ -230,6 +230,43 @@ class Database:
             )
         """)
 
+        # Watchlist (Hawk Mode)
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS watchlist_items (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                candidate_id TEXT NOT NULL,
+                watch_reason TEXT NOT NULL,
+                trigger_condition TEXT NOT NULL,
+                check_frequency TEXT DEFAULT 'weekly',
+                last_checked TEXT,
+                status TEXT DEFAULT 'watching',
+                created_date TEXT NOT NULL,
+                notes TEXT DEFAULT '',
+                last_eval_json TEXT
+            )
+        """)
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS watchlist_alerts (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                item_id INTEGER,
+                alert_type TEXT NOT NULL,
+                message TEXT NOT NULL,
+                severity TEXT DEFAULT 'medium',
+                triggered_date TEXT NOT NULL,
+                acknowledged INTEGER DEFAULT 0,
+                FOREIGN KEY (item_id) REFERENCES watchlist_items(id)
+            )
+        """)
+        # Scan snapshots for change detection (pharmacy closures, new GPs)
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS scan_snapshots (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                scan_type TEXT NOT NULL UNIQUE,
+                entity_ids_json TEXT NOT NULL,
+                scan_date TEXT NOT NULL
+            )
+        """)
+
         self.connection.commit()
 
     def insert_property(self, property_data: Dict) -> int:

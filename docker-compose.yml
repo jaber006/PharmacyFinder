@@ -1,0 +1,16 @@
+services:
+  osrm:
+    image: osrm/osrm-backend:latest
+    container_name: osrm-australia
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./cache:/data
+    command: osrm-routed --algorithm mld /data/australia-latest.osrm
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/nearest/v1/driving/151.2093,-33.8688"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s

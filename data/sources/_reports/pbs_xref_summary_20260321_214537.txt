@@ -1,0 +1,40 @@
+PBS Approved Suppliers Cross-Reference Report
+Generated: 2026-03-21T21:45:37.512221
+Source: findapharmacy.com.au (Pharmacy Guild / PBS proxy)
+============================================================
+
+PBS source pharmacies:          4302
+Database pharmacies:            6498
+Matched:                        4302
+Missing from DB (PBS only):        0
+Not in PBS (DB only):           2197
+Coordinate mismatches (>2km):      0
+
+
+IN DATABASE BUT NOT IN PBS SOURCE (by source):
+------------------------------------------------------------
+  OpenStreetMap: 890
+  OpenStreetMap-verify: 371
+  osm_verification: 259
+  priceline.com.au: 245
+  chemistwarehouse.com.au: 145
+  terrywhitechemmart.com.au: 125
+  amcal.com.au: 41
+  various-sigma: 33
+  bloomsthechemist.com.au: 27
+  discountdrugstores.com.au: 11
+  google_maps_browser: 11
+  friendliespharmacy.com.au: 10
+  google_maps_verification: 7
+  soulpattinson.com.au: 5
+  cincottachemist.com.au: 3
+  pharmasave.com.au: 2
+  stardiscountchemist.com.au: 2
+  directchemistoutlet.com.au: 2
+  optimalpharmacyplus.com.au: 2
+  findapharmacy.com.au: 1
+  healthdirect.gov.au: 1
+  manual-google-maps: 1
+  nationalpharmacies.com.au: 1
+  capitalchemist.com.au: 1
+  manual_verification: 1
