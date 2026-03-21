@@ -153,6 +153,115 @@ let markers = [];
 let allSites = [];
 let evalMarker = null;
 
+// Overlay layers — cleared on each site click
+let overlayLayers = [];
+
+function clearOverlayLayers() {
+    overlayLayers.forEach(l => map.removeLayer(l));
+    overlayLayers = [];
+}
+
+// Facility icon factories
+const FACILITY_COLORS = {
+    pharmacy: '#ef4444',
+    gp: '#3b82f6',
+    supermarket: '#eab308',
+    hospital: '#ffffff',
+    medical_centre: '#a855f7',
+};
+
+function facilityIcon(type) {
+    const color = FACILITY_COLORS[type] || '#888';
+    const symbols = { pharmacy: '+', gp: 'G', supermarket: 'S', hospital: 'H', medical_centre: 'M' };
+    const sym = symbols[type] || '?';
+    const border = type === 'hospital' ? '2px solid #ef4444' : `2px solid ${color}`;
+    return L.divIcon({
+        className: '',
+        html: `<div style="width:22px;height:22px;border-radius:50%;background:${color};border:${border};
+                display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;
+                color:${type === 'supermarket' ? '#000' : (type === 'hospital' ? '#ef4444' : '#fff')};
+                box-shadow:0 1px 4px rgba(0,0,0,0.5)">${sym}</div>`,
+        iconSize: [22, 22],
+        iconAnchor: [11, 11],
+    });
+}
+
+function addFacilityMarkers(items, type) {
+    items.forEach(f => {
+        const m = L.marker([f.latitude, f.longitude], { icon: facilityIcon(type) })
+            .addTo(map)
+            .bindTooltip(
+                `<strong>${f.name}</strong><br>${f.distance_km} km`,
+                { className: 'dark-tooltip' }
+            );
+        overlayLayers.push(m);
+    });
+}
+
+function addPharmacyMarkersWithLines(siteLat, siteLon, pharmacies) {
+    pharmacies.forEach(p => {
+        // Red marker
+        const m = L.marker([p.latitude, p.longitude], { icon: facilityIcon('pharmacy') })
+            .addTo(map)
+            .bindTooltip(
+                `<strong>${p.name}</strong><br>${p.distance_km} km`,
+                { className: 'dark-tooltip' }
+            );
+        overlayLayers.push(m);
+
+        // Dashed distance line
+        const line = L.polyline(
+            [[siteLat, siteLon], [p.latitude, p.longitude]],
+            { color: '#ef4444', weight: 1.5, dashArray: '6,4', opacity: 0.7 }
+        ).addTo(map);
+        overlayLayers.push(line);
+
+        // Distance label at midpoint
+        const midLat = (siteLat + p.latitude) / 2;
+        const midLon = (siteLon + p.longitude) / 2;
+        const label = L.marker([midLat, midLon], {
+            icon: L.divIcon({
+                className: '',
+                html: `<div style="background:rgba(15,17,23,0.85);color:#ef4444;padding:2px 6px;
+                        border-radius:4px;font-size:10px;font-weight:600;white-space:nowrap;
+                        border:1px solid rgba(239,68,68,0.4)">${p.distance_km} km</div>`,
+                iconSize: [60, 18],
+                iconAnchor: [30, 9],
+            }),
+            interactive: false,
+        }).addTo(map);
+        overlayLayers.push(label);
+    });
+}
+
+function addComplianceCircle(lat, lon, radiusKm) {
+    if (!radiusKm || radiusKm <= 0) return; // no circle for boundary-based rules
+    const circle = L.circle([lat, lon], {
+        radius: radiusKm * 1000,
+        color: '#34d399',
+        fillColor: '#34d399',
+        fillOpacity: 0.2,
+        weight: 2,
+    }).addTo(map);
+    overlayLayers.push(circle);
+
+    // Label on circle edge (north point)
+    const labelText = radiusKm >= 1 ? `${radiusKm} km` : `${(radiusKm * 1000).toFixed(0)}m`;
+    const edgeLat = lat + (radiusKm / 111.32);
+    const edgeLabel = L.marker([edgeLat, lon], {
+        icon: L.divIcon({
+            className: '',
+            html: `<div style="background:rgba(52,211,153,0.9);color:#000;padding:2px 8px;
+                    border-radius:4px;font-size:11px;font-weight:700;white-space:nowrap;
+                    border:1px solid rgba(52,211,153,0.6)">${labelText} radius</div>`,
+            iconSize: [80, 18],
+            iconAnchor: [40, 9],
+        }),
+        interactive: false,
+    }).addTo(map);
+    overlayLayers.push(edgeLabel);
+}
+
 // Load sites
 async function loadSites() {
     const state = document.getElementById('filter-state').value;
@@ -195,7 +304,10 @@ function renderMarkers() {
         const icon = createMarkerIcon(site.primary_rule);
         const m = L.marker([site.latitude, site.longitude], { icon })
             .addTo(map)
-            .on('click', () => showSiteDetail(site.id));
+            .on('click', () => {
+                _markerClickedFlag = true;
+                showSiteDetail(site.id);
+            });
         
         m.bindTooltip(`${site.name}<br>${site.primary_rule} — Score: ${(site.commercial_score || 0).toFixed(3)}`, {
             className: 'dark-tooltip',
@@ -210,17 +322,41 @@ async function showSiteDetail(siteId) {
     const content = document.getElementById('sidebar-content');
     content.innerHTML = '<div class="spinner"></div> Loading…';
     sidebar.classList.add('open');
+    clearOverlayLayers();
 
     try {
-        const resp = await fetch(`/api/sites/${siteId}`);
-        const site = await resp.json();
-        renderSidebar(site);
+        const [siteResp, nearbyResp] = await Promise.all([
+            fetch(`/api/sites/${siteId}`),
+            fetch(`/api/sites/${siteId}/nearby`),
+        ]);
+        const site = await siteResp.json();
+        const nearby = await nearbyResp.json();
+        renderSidebar(site, nearby);
+        renderOverlayLayers(site, nearby);
     } catch (e) {
         content.innerHTML = `<p style="color:var(--red)">Error loading site details</p>`;
     }
 }
 
-function renderSidebar(site) {
+function renderOverlayLayers(site, nearby) {
+    // 1. Compliance radius circle (null = no circle for boundary-based rules)
+    const radiusKm = nearby.compliance_radius_km;
+    if (radiusKm) {
+        addComplianceCircle(site.latitude, site.longitude, radiusKm);
+    }
+
+    // 2. Nearby pharmacies with dashed lines — show ALL within 15km
+    const pharmaciesToShow = nearby.pharmacies || [];
+    addPharmacyMarkersWithLines(site.latitude, site.longitude, pharmaciesToShow);
+
+    // 3. Facility markers
+    addFacilityMarkers(nearby.gps || [], 'gp');
+    addFacilityMarkers(nearby.supermarkets || [], 'supermarket');
+    addFacilityMarkers(nearby.hospitals || [], 'hospital');
+    addFacilityMarkers(nearby.medical_centres || [], 'medical_centre');
+}
+
+function renderSidebar(site, nearby) {
     const content = document.getElementById('sidebar-content');
     const rules = site.rules || [];
     const allRules = site.all_rules || [];
@@ -232,16 +368,71 @@ function renderSidebar(site) {
         distancesHtml = '<table class="distances-table">';
         for (const [key, val] of Object.entries(distances)) {
             const label = key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-            const display = typeof val === 'number' ? 
+            const display = typeof val === 'number' ?
                 (val > 100 ? val.toFixed(0) : val.toFixed(2)) : val;
             distancesHtml += `<tr><td>${label}</td><td>${display}</td></tr>`;
         }
         distancesHtml += '</table>';
     }
 
+    // Nearest 3 pharmacies section
+    const nearestPharmacies = (nearby && nearby.pharmacies || []).slice(0, 3);
+    let nearbyPharmHtml = '';
+    if (nearestPharmacies.length > 0) {
+        nearbyPharmHtml = '<div class="detail-section"><h3>Nearest Pharmacies</h3>';
+        nearbyPharmHtml += '<div class="nearby-list">';
+        nearestPharmacies.forEach((p, i) => {
+            nearbyPharmHtml += `
+                <div class="nearby-item">
+                    <div class="nearby-rank">${i + 1}</div>
+                    <div class="nearby-info">
+                        <div class="nearby-name">${p.name}</div>
+                        <div class="nearby-addr">${p.address || ''}</div>
+                    </div>
+                    <div class="nearby-dist">${p.distance_km} km</div>
+                </div>
+            `;
+        });
+        nearbyPharmHtml += '</div></div>';
+    }
+
+    // Nearby facilities summary
+    let facilitySummaryHtml = '';
+    if (nearby) {
+        const gpCount = (nearby.gps || []).length;
+        const superCount = (nearby.supermarkets || []).length;
+        const hospCount = (nearby.hospitals || []).length;
+        const mcCount = (nearby.medical_centres || []).length;
+        if (gpCount + superCount + hospCount + mcCount > 0) {
+            facilitySummaryHtml = `
+                <div class="detail-section">
+                    <h3>Nearby Facilities</h3>
+                    <div class="facility-grid">
+                        <div class="facility-chip" style="--fc:#3b82f6"><span class="fc-count">${gpCount}</span> GPs <span class="fc-radius">2km</span></div>
+                        <div class="facility-chip" style="--fc:#eab308"><span class="fc-count">${superCount}</span> Supermarkets <span class="fc-radius">2km</span></div>
+                        <div class="facility-chip" style="--fc:#ffffff"><span class="fc-count">${hospCount}</span> Hospitals <span class="fc-radius">5km</span></div>
+                        <div class="facility-chip" style="--fc:#a855f7"><span class="fc-count">${mcCount}</span> Med Centres <span class="fc-radius">2km</span></div>
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    // Profitability score
+    const profScore = site.profitability_score ?? nearby?.profitability_score ?? null;
+    let profHtml = '';
+    if (profScore !== null && profScore !== undefined) {
+        const profColor = profScore >= 70 ? 'var(--green)' : profScore >= 40 ? 'var(--amber)' : 'var(--red)';
+        profHtml = `
+            <div class="metric">
+                <div class="label">Profitability</div>
+                <div class="value" style="color:${profColor}">${profScore.toFixed(0)}/100</div>
+            </div>
+        `;
+    }
+
     let rulesHtml = '';
     allRules.forEach(r => {
-        const color = r.passed ? 'var(--green)' : 'var(--text-dim)';
         const badge = r.passed ? '<span class="badge badge-pass">PASS</span>' :
                                   '<span class="badge badge-fail">FAIL</span>';
         rulesHtml += `
@@ -282,7 +473,10 @@ function renderSidebar(site) {
                 <div class="label">Confidence</div>
                 <div class="value" style="color:var(--green)">${((site.best_confidence || 0) * 100).toFixed(0)}%</div>
             </div>
+            ${profHtml}
         </div>
+
+        ${nearbyPharmHtml}
 
         ${distancesHtml ? `
             <div class="detail-section">
@@ -291,20 +485,44 @@ function renderSidebar(site) {
             </div>
         ` : ''}
 
+        ${facilitySummaryHtml}
+
         <div class="detail-section">
             <h3>Rules Assessment</h3>
             ${rulesHtml}
         </div>
 
         <div class="sidebar-actions">
-            <button class="btn btn-primary" onclick="addToWatchlist('${site.id}')">👁 Watch</button>
-            <button class="btn" onclick="window.open('https://www.google.com/maps?q=${site.latitude},${site.longitude}', '_blank')">📍 Google Maps</button>
+            <button class="btn btn-primary" onclick="addToWatchlist('${site.id}')">Watch</button>
+            <button class="btn btn-evidence" onclick="generateEvidence('${site.id}')">Generate Evidence PDF</button>
+            <button class="btn" onclick="window.open('https://www.google.com/maps?q=${site.latitude},${site.longitude}', '_blank')">Google Maps</button>
         </div>
     `;
 }
 
 function closeSidebar() {
     document.getElementById('sidebar').classList.remove('open');
+    clearOverlayLayers();
+}
+
+async function generateEvidence(siteId) {
+    try {
+        const resp = await fetch(`/api/evidence/${siteId}`, { method: 'POST' });
+        if (resp.ok) {
+            const blob = await resp.blob();
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `evidence_${siteId}.pdf`;
+            a.click();
+            URL.revokeObjectURL(url);
+        } else {
+            const data = await resp.json().catch(() => ({}));
+            alert(data.detail || 'Evidence generation not available');
+        }
+    } catch (e) {
+        alert('Evidence generation endpoint not available. Deploy the evidence module first.');
+    }
 }
 
 // Search / Evaluate
@@ -749,6 +967,18 @@ async function toggleHeatmap() {
     }
     btn.disabled = false;
 }
+
+// Click map background to clear overlays (delay to let marker click flag first)
+let _markerClickedFlag = false;
+map.on('click', function() {
+    setTimeout(() => {
+        if (!_markerClickedFlag) {
+            clearOverlayLayers();
+            closeSidebar();
+        }
+        _markerClickedFlag = false;
+    }, 50);
+});
 
 // Init
 loadSites();
