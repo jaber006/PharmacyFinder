@@ -350,9 +350,16 @@ The current pipeline generates candidates from every POI nationally. This is slo
 
 SQLite handles this volume fine. PostGIS migration is optional and can come later for spatial query performance if needed.
 
-**No Docker.** Everything runs natively in Python. No containers.
+**Docker for OSRM.** Self-hosted OSRM in Docker for unlimited road distance queries. Everything else runs natively in Python.
 
-**OSRM road distances:** Use the public OSRM server (`router.project-osrm.org`) with aggressive SQLite caching:
+```bash
+# Start self-hosted OSRM with Australia data
+docker compose up -d osrm
+```
+
+This eliminates the public server's 1 req/sec rate limit. Queries take ~5ms locally. Needs ~4-8GB RAM for Australia OSM data. Update `config.py` to point `OSRM_SERVER` to `http://localhost:5000` when running locally.
+
+**Also cache results in SQLite** as a fallback when Docker isn't running:
 
 ```sql
 CREATE TABLE IF NOT EXISTS road_distance_cache (
@@ -364,9 +371,7 @@ CREATE TABLE IF NOT EXISTS road_distance_cache (
 );
 ```
 
-Before calling OSRM, check the cache. After calling OSRM, store the result. First national run will be slow (few hours). Every subsequent run uses cached values and only recalculates new/changed pairs.
-
-Fallback chain: SQLite cache → public OSRM server (1 req/sec) → geodesic × 1.4 estimate.
+Fallback chain: local OSRM Docker (~5ms) → SQLite cache (instant) → public OSRM server (1 req/sec) → geodesic × 1.4 estimate.
 
 For pre-filtering: use geodesic × 1.4 as a road distance estimate. Only call OSRM when the estimated road distance is between 7km and 12km (borderline cases for the 10km threshold). This cuts ~90% of OSRM calls.
 
