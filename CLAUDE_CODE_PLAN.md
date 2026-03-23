@@ -350,6 +350,26 @@ The current pipeline generates candidates from every POI nationally. This is slo
 
 SQLite handles this volume fine. PostGIS migration is optional and can come later for spatial query performance if needed.
 
+**No Docker.** Do not use Docker for any part of this project. All tools must run natively.
+
+**OSRM road distances:** Use the public OSRM server (`router.project-osrm.org`) with aggressive caching. Add a `road_distance_cache` table to the SQLite database:
+
+```sql
+CREATE TABLE IF NOT EXISTS road_distance_cache (
+    from_lat REAL, from_lon REAL,
+    to_lat REAL, to_lon REAL,
+    distance_km REAL,
+    cached_date TEXT,
+    PRIMARY KEY (from_lat, from_lon, to_lat, to_lon)
+);
+```
+
+Before calling OSRM, check the cache. After calling OSRM, store the result. First national run will be slow (few hours). Every subsequent run uses cached values and only calculates new/changed pairs.
+
+For pre-filtering: use geodesic × 1.4 as a road distance estimate. Only call OSRM when the estimated road distance is between 7km and 12km (borderline cases for the 10km threshold). This cuts ~90% of OSRM calls.
+
+**Parallelisation:** Use Python's built-in `multiprocessing.Pool` to spread distance calculations across all CPU cores. No external dependencies needed.
+
 ---
 
 ## Testing
