@@ -107,7 +107,7 @@ These are verified discrepancies between the code and the V1.9 handbook. Fix the
 
 ## Phase 2: Simplify the Scanner for Real Opportunities
 
-The current pipeline generates candidates from every POI nationally. This is slow and produces thousands of results, most of which are useless. Refocus on the 3 rules that actually produce opportunities.
+The current pipeline generates candidates from every POI nationally. This is slow and produces thousands of results, most of which are useless. Refocus on the 4 rules that actually produce opportunities.
 
 ### Task 1: Item 130 opportunity scanner (national)
 
@@ -147,7 +147,33 @@ The current pipeline generates candidates from every POI nationally. This is slo
 
 **Output:** National CSV + interactive map of qualifying rural gaps, with town name, state, population, and distance to nearest pharmacy.
 
-### Task 3: Item 136 opportunity scanner (national)
+### Task 3: Item 132 opportunity scanner (national)
+
+**What to build:** Find one-pharmacy towns across Australia where a second pharmacy could be established because every other pharmacy is 10km+ away by road.
+
+**Logic:**
+1. Load ALL pharmacies nationally
+2. Group pharmacies by town (suburb + postcode)
+3. Find towns that have exactly 1 pharmacy
+4. For each one-pharmacy town:
+   - Check road distance from that pharmacy to every other pharmacy nationally
+   - If ALL other pharmacies are ≥10km by road: this town qualifies for the 132(a)(iii) test
+   - Then check: does the town have ≥4 FTE GPs? (from GP/medical centre data)
+   - Then check: does the town have 1-2 supermarkets with combined GLA ≥2,500 m²?
+   - A qualifying candidate must be ≥200m straight line from the existing pharmacy
+5. Flag qualifying towns as Item 132 opportunities
+
+**Key insight:** These are growing regional towns with one pharmacy that's probably overworked. The town has enough GPs and a decent supermarket but only one pharmacy serving the whole area. Examples: towns with 5,000-15,000 population, one pharmacy, a Woolworths or Coles, and a medical centre with 4+ GPs.
+
+**Data requirements:** 
+- Pharmacy suburb + postcode (for same-town matching)
+- GP FTE data per town (not just per 5km radius)
+- Supermarket GLA (use brand defaults if unknown)
+- OSRM road distances (critical — the 10km is by road, not straight line)
+
+**Output:** National CSV + interactive map of qualifying one-pharmacy towns, with town name, state, population, existing pharmacy name, GP count, supermarket details, and road distance to next nearest pharmacy.
+
+### Task 4: Item 136 opportunity scanner (national)
 
 **What to build:** Find large medical centres across Australia that qualify for a pharmacy.
 
@@ -218,7 +244,8 @@ The current pipeline generates candidates from every POI nationally. This is slo
 1. **Phase 1 bugs** — get the rules right first, everything else depends on correctness
 2. **Phase 2 Task 1** (Item 130 national scanner) — this is where most opportunities are, and supermarket data is the most reliable
 3. **Phase 2 Task 2** (Item 131 national scanner) — rural gaps across all states, especially NT, WA, QLD, SA, TAS
-4. **Phase 2 Task 3** (Item 136 national scanner) — depends on medical centre data quality, enrichment from Hotdoc/Healthdirect is key
+4. **Phase 2 Task 3** (Item 132 national scanner) — one-pharmacy regional towns ripe for a second pharmacy. Depends on accurate town grouping and OSRM road distances
+5. **Phase 2 Task 4** (Item 136 national scanner) — depends on medical centre data quality, enrichment from Hotdoc/Healthdirect is key
 5. **Phase 3** — monitoring only matters once the scanners work
 6. **Phase 4** — housekeeping, do whenever
 
