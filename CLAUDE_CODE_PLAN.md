@@ -107,7 +107,7 @@ These are verified discrepancies between the code and the V1.9 handbook. Fix the
 
 ## Phase 2: Simplify the Scanner for Real Opportunities
 
-The current pipeline generates candidates from every POI nationally. This is slow and produces thousands of results, most of which are useless. Refocus on the 4 rules that actually produce opportunities.
+The current pipeline generates candidates from every POI nationally. This is slow and produces thousands of results, most of which are useless. Rebuild with focused scanners for ALL 8 new-pharmacy rules (Items 130-136), each with clear logic and national coverage. Leave no stone unturned.
 
 ### Task 1: Item 130 opportunity scanner (national)
 
@@ -173,7 +173,89 @@ The current pipeline generates candidates from every POI nationally. This is slo
 
 **Output:** National CSV + interactive map of qualifying one-pharmacy towns, with town name, state, population, existing pharmacy name, GP count, supermarket details, and road distance to next nearest pharmacy.
 
-### Task 4: Item 136 opportunity scanner (national)
+### Task 4: Item 133 opportunity scanner (national)
+
+**What to build:** Find small shopping centres across Australia where a new pharmacy could open.
+
+**Logic:**
+1. Load ALL shopping centres nationally
+2. Filter to centres with: GLA ≥5,000 m², ≥15 tenants (but <50 — otherwise it's Item 134), supermarket ≥2,500 m² GLA, parking
+3. For each qualifying small centre:
+   - Check: any pharmacy already inside the centre? → skip (requirement c)
+   - Find nearest pharmacy EXCLUDING those in large shopping centres or private hospitals
+   - If that nearest non-excluded pharmacy is ≥500m → PASS
+4. Flag as opportunity
+
+**Data challenges:** Tenant counts and centre GLA are often unknown in OSM. Where data is missing:
+- Estimate tenant count from OSM building footprint or known centre directories
+- Flag as "data incomplete — verify tenant count and GLA" in output
+- Default to including the centre with reduced confidence rather than excluding it
+
+**Output:** National CSV + interactive map of qualifying small shopping centres, with centre name, state, GLA, tenant count, supermarket details, and distance to nearest non-excluded pharmacy.
+
+### Task 5: Item 134 opportunity scanner (national)
+
+**What to build:** Find large shopping centres with no existing pharmacy.
+
+**Logic:**
+1. Load ALL shopping centres nationally
+2. Filter to centres with: GLA ≥5,000 m², ≥50 tenants, supermarket ≥2,500 m² GLA, parking
+3. For each qualifying large centre:
+   - Check: any pharmacy within 300m of centre centroid? → skip (likely already in centre)
+   - No distance requirement from pharmacies outside the centre
+4. Flag as opportunity
+
+**Reality check:** Most large shopping centres in Australia already have a pharmacy. This scanner will likely find very few results, but those results are gold — a large centre without a pharmacy is a near-guaranteed approval. Focus on:
+- Newly built centres not yet fully tenanted
+- Centres where a pharmacy recently closed/relocated out
+- Regional centres that have grown past 50 tenants recently
+
+**Output:** National CSV + interactive map. Expect very few results — that's fine.
+
+### Task 6: Item 134A opportunity scanner (national)
+
+**What to build:** Find large shopping centres where an additional pharmacy is allowed based on tenant count.
+
+**Logic:**
+1. Load ALL shopping centres nationally
+2. Filter to large centres (same criteria as 134) that ALREADY have pharmacy(ies) inside
+3. For each:
+   - Count existing pharmacies within the centre
+   - Count tenants (or estimate)
+   - Apply tiers:
+     - 100-199 tenants + max 1 existing pharmacy → room for 2nd
+     - ≥200 tenants + max 2 existing pharmacies → room for 3rd
+   - Verify no pharmacy has relocated OUT of the centre in last 12 months (may need manual check)
+4. Flag qualifying centres
+
+**Data source:** Cross-reference centre tenant directories, pharmacy chain store locators (Chemist Warehouse, Priceline, TerryWhite), and the PBS Suppliers list to count existing pharmacies per centre.
+
+**Output:** National CSV + interactive map of large centres with room for an additional pharmacy, with tenant count, existing pharmacy count, and tier classification.
+
+### Task 7: Item 135 opportunity scanner (national)
+
+**What to build:** Find large private hospitals with no pharmacy.
+
+**Logic:**
+1. Load ALL hospitals nationally
+2. Filter to:
+   - Private hospitals only (exclude public)
+   - Admission capacity ≥150 patients (use bed_count as proxy)
+3. For each qualifying private hospital:
+   - Check: any pharmacy within 150m? → skip (likely inside hospital)
+   - If no pharmacy inside → opportunity
+4. Flag as opportunity
+
+**Data enrichment:** 
+- AIHW hospital data for bed counts and private/public classification
+- State health department hospital registers for admission capacity (more accurate than bed count)
+- Cross-reference with PBS Suppliers to check for existing hospital pharmacies
+
+**Reality check:** Like Item 134, most large private hospitals already have a pharmacy. But hospital expansions, new private hospital builds, and hospital pharmacy closures create opportunities. Worth monitoring even if current results are few.
+
+**Output:** National CSV + interactive map of qualifying private hospitals with no pharmacy, with hospital name, state, bed count, and private/public classification.
+
+### Task 8: Item 136 opportunity scanner (national)
 
 **What to build:** Find large medical centres across Australia that qualify for a pharmacy.
 
@@ -242,10 +324,14 @@ The current pipeline generates candidates from every POI nationally. This is slo
 ## Priority Order
 
 1. **Phase 1 bugs** — get the rules right first, everything else depends on correctness
-2. **Phase 2 Task 1** (Item 130 national scanner) — this is where most opportunities are, and supermarket data is the most reliable
-3. **Phase 2 Task 2** (Item 131 national scanner) — rural gaps across all states, especially NT, WA, QLD, SA, TAS
-4. **Phase 2 Task 3** (Item 132 national scanner) — one-pharmacy regional towns ripe for a second pharmacy. Depends on accurate town grouping and OSRM road distances
-5. **Phase 2 Task 4** (Item 136 national scanner) — depends on medical centre data quality, enrichment from Hotdoc/Healthdirect is key
+2. **Phase 2 Task 1** (Item 130 scanner) — highest volume of opportunities, best data quality
+3. **Phase 2 Task 2** (Item 131 scanner) — rural gaps, especially NT, WA, QLD, SA, TAS
+4. **Phase 2 Task 3** (Item 132 scanner) — one-pharmacy regional towns. Depends on OSRM road distances
+5. **Phase 2 Task 4** (Item 133 scanner) — small shopping centres without a pharmacy
+6. **Phase 2 Task 5** (Item 134 scanner) — large shopping centres with no pharmacy (rare but gold)
+7. **Phase 2 Task 6** (Item 134A scanner) — large centres where tenant count allows additional pharmacy
+8. **Phase 2 Task 7** (Item 135 scanner) — large private hospitals with no pharmacy (rare but worth monitoring)
+9. **Phase 2 Task 8** (Item 136 scanner) — large medical centres. Depends on GP data enrichment from Hotdoc/Healthdirect
 5. **Phase 3** — monitoring only matters once the scanners work
 6. **Phase 4** — housekeeping, do whenever
 
