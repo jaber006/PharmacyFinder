@@ -6,8 +6,9 @@ Requirements:
   - GLA ≥ 5,000 sqm
   - ≥ 15 commercial tenants
   - At least one supermarket ≥ 2,500 sqm GLA
-- At least 500m straight-line from nearest approved pharmacy
-  (excluding pharmacies in large shopping centres or hospitals)
+- (b) At least 500m straight-line from nearest approved pharmacy,
+  EXCLUDING pharmacies in large shopping centres or private hospitals
+- (c) No existing pharmacy in the small shopping centre
 - Not in a large shopping centre or large hospital
 
 Measurement: geodesic straight-line distance.
@@ -24,6 +25,8 @@ MIN_TENANTS = 15
 MIN_SUPERMARKET_GLA = 2500     # sqm
 # Large centre threshold (Items 134/134A) — centres above this are NOT Item 133
 LARGE_CENTRE_TENANTS = 50
+# Radius to check for pharmacy inside the centre
+PHARMACY_IN_CENTRE_KM = 0.1    # 100m — pharmacy within this distance of centre centroid = "in the centre"
 
 
 def check_item_133(candidate: Candidate, context) -> RuleResult:
@@ -66,7 +69,6 @@ def check_item_133(candidate: Candidate, context) -> RuleResult:
             f"FAIL: Centre {centre['name']} GLA = {centre_gla:.0f} sqm (need ≥ {MIN_CENTRE_GLA} sqm)"
         )
         evidence_needed.append("Verify centre GLA from management/planning docs")
-        # Don't return yet — GLA might be unknown/estimated low
         if centre_gla == 0:
             reasons[-1] += " — GLA unknown, may still qualify"
             evidence_needed.append("Obtain actual centre GLA")
@@ -113,8 +115,24 @@ def check_item_133(candidate: Candidate, context) -> RuleResult:
         return RuleResult(item="Item 133", passed=False, reasons=reasons,
                         evidence_needed=evidence_needed, confidence=0.0, distances=distances)
 
-    # Distance check: ≥ 500m from nearest pharmacy (excluding large centres/hospitals)
-    nearest_pharm, nearest_dist = context.nearest_pharmacy(
+    # (c) No existing pharmacy in the shopping centre
+    # Bug 7 fix: explicitly check for pharmacies inside the centre (within 100m of centroid)
+    pharmacies_in_centre = context.pharmacies_within_radius(
+        centre['latitude'], centre['longitude'], PHARMACY_IN_CENTRE_KM
+    )
+    if pharmacies_in_centre:
+        p_in, p_in_dist = pharmacies_in_centre[0]
+        reasons.append(
+            f"FAIL (c): Existing pharmacy {p_in['name']} in the small shopping centre "
+            f"({p_in_dist*1000:.0f}m from centre centroid)"
+        )
+        return RuleResult(item="Item 133", passed=False, reasons=reasons,
+                        evidence_needed=evidence_needed, confidence=0.0, distances=distances)
+    reasons.append("PASS (c): No existing pharmacy in the small shopping centre")
+
+    # (b) Distance check: ≥ 500m from nearest pharmacy EXCLUDING those in large SCs or private hospitals
+    # Bug 2 fix: use nearest_pharmacy_excluding_complexes instead of nearest_pharmacy
+    nearest_pharm, nearest_dist = context.nearest_pharmacy_excluding_complexes(
         candidate.latitude, candidate.longitude
     )
     nearest_dist_m = nearest_dist * 1000
@@ -124,24 +142,22 @@ def check_item_133(candidate: Candidate, context) -> RuleResult:
     if not nearest_pharm:
         nearest_dist_m = 999000
         margin_m = nearest_dist_m - 500
-        reasons.append("PASS: No pharmacy found nearby")
+        reasons.append("PASS (b): No non-excluded pharmacy found nearby")
     elif nearest_dist_m < 500:
         reasons.append(
-            f"FAIL: Nearest pharmacy {nearest_pharm['name']} = {nearest_dist_m:.0f}m "
-            f"(need >= 500m). Note: pharmacies in large centres/hospitals excluded"
+            f"FAIL (b): Nearest non-excluded pharmacy {nearest_pharm['name']} = {nearest_dist_m:.0f}m "
+            f"(need ≥ 500m; pharmacies in large shopping centres/private hospitals are excluded)"
         )
-        evidence_needed.append("Check if nearest pharmacy is in a large centre/hospital (would be excluded)")
         return RuleResult(item="Item 133", passed=False, reasons=reasons,
                         evidence_needed=evidence_needed, confidence=0.0, distances=distances)
     else:
         margin_m = nearest_dist_m - 500
         reasons.append(
-            f"PASS: Nearest pharmacy = {nearest_dist_m:.0f}m (margin +{margin_m:.0f}m)"
+            f"PASS (b): Nearest non-excluded pharmacy = {nearest_dist_m:.0f}m (margin +{margin_m:.0f}m)"
         )
 
     evidence_needed.extend([
         "Verify centre meets 'shopping centre' definition under Rules",
-        "Verify no existing pharmacy within the centre",
         "Verify public access door midpoints",
     ])
 

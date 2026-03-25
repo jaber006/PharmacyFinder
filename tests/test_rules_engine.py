@@ -1158,6 +1158,452 @@ class TestItem136:
 
 
 # ═══════════════════════════════════════════════════════════════════════════
+# ITEM 136 — Bug 3: Two-branch distance rule (c)(i) and (c)(ii)
+# ═══════════════════════════════════════════════════════════════════════════
+class TestItem136DistanceBranches:
+    """
+    Bug 3: Item 136(c) has two distinct sub-rules based on whether
+    the medical centre is inside a shopping centre/hospital or not.
+    """
+
+    def _insert_qualifying_mc(self, cur, lat, lon, num_gps=10, total_fte=10.0, hours=80.0,
+                               medical_fte=0, gp_available_hours=0):
+        """Helper to insert a medical centre that meets all thresholds."""
+        cur.execute(
+            "INSERT INTO medical_centres (name, address, latitude, longitude, num_gps, total_fte, "
+            "hours_per_week, medical_fte, gp_available_hours) VALUES (?,?,?,?,?,?,?,?,?)",
+            ("Super Medical Centre", "Origin St", lat, lon, num_gps, total_fte, hours,
+             medical_fte, gp_available_hours),
+        )
+
+    def test_cii_pass_pharmacy_in_large_sc_excluded(self, test_db, build_context, make_candidate):
+        """
+        (c)(ii): MC is NOT in a SC/hospital.
+        Nearest pharmacy at 200m is inside a large SC (≥50 tenants) → excluded.
+        Next nearest at 400m → PASS (≥300m).
+        """
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        self._insert_qualifying_mc(cur, ORIGIN_LAT, ORIGIN_LON)
+
+        # Large shopping centre 200m north
+        sc_lat, sc_lon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.2)
+        cur.execute(
+            "INSERT INTO shopping_centres (name, address, latitude, longitude, estimated_tenants, gla_sqm) "
+            "VALUES (?,?,?,?,?,?)",
+            ("Westfield Big", "200m North", sc_lat, sc_lon, 60, 50000),
+        )
+
+        # Pharmacy inside that large SC (same location)
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("SC Pharmacy", "200m North", sc_lat, sc_lon),
+        )
+
+        # Another pharmacy 400m east (not in any complex)
+        plat, plon = offset_point(ORIGIN_LAT, ORIGIN_LON, east_km=0.4)
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Regular Pharmacy", "400m East", plat, plon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is True
+        assert any("(c)(ii)" in r for r in result.reasons)
+
+    def test_cii_fail_non_excluded_pharmacy_too_close(self, test_db, build_context, make_candidate):
+        """
+        (c)(ii): MC is NOT in a SC/hospital.
+        Nearest non-excluded pharmacy at 200m → FAIL (<300m).
+        """
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        self._insert_qualifying_mc(cur, ORIGIN_LAT, ORIGIN_LON)
+
+        # Regular pharmacy 200m away (not in any complex)
+        plat, plon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.2)
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Close Pharmacy", "200m North", plat, plon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is False
+        assert any("(c)(ii)" in r for r in result.reasons)
+
+    def test_ci_pass_pharmacy_in_different_large_sc(self, test_db, build_context, make_candidate):
+        """
+        (c)(i): MC IS in a shopping centre.
+        Pharmacy at 200m is in a DIFFERENT large SC → excluded → PASS.
+        """
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        # Shopping centre at MC location (MC is inside this SC)
+        cur.execute(
+            "INSERT INTO shopping_centres (name, address, latitude, longitude, estimated_tenants, gla_sqm) "
+            "VALUES (?,?,?,?,?,?)",
+            ("MC Shopping Centre", "Origin St", ORIGIN_LAT, ORIGIN_LON, 30, 15000),
+        )
+
+        self._insert_qualifying_mc(cur, ORIGIN_LAT, ORIGIN_LON)
+
+        # Different large SC 200m north
+        sc2_lat, sc2_lon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.2)
+        cur.execute(
+            "INSERT INTO shopping_centres (name, address, latitude, longitude, estimated_tenants, gla_sqm) "
+            "VALUES (?,?,?,?,?,?)",
+            ("Other Big Centre", "200m North", sc2_lat, sc2_lon, 80, 60000),
+        )
+
+        # Pharmacy inside the other large SC
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Other SC Pharmacy", "200m North", sc2_lat, sc2_lon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is True
+        assert any("(c)(i)" in r for r in result.reasons)
+
+    def test_ci_fail_pharmacy_not_in_different_complex(self, test_db, build_context, make_candidate):
+        """
+        (c)(i): MC IS in a shopping centre.
+        Pharmacy at 200m is NOT in any large SC/hospital → NOT excluded → FAIL.
+        """
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        # Shopping centre at MC location
+        cur.execute(
+            "INSERT INTO shopping_centres (name, address, latitude, longitude, estimated_tenants, gla_sqm) "
+            "VALUES (?,?,?,?,?,?)",
+            ("MC Shopping Centre", "Origin St", ORIGIN_LAT, ORIGIN_LON, 30, 15000),
+        )
+
+        self._insert_qualifying_mc(cur, ORIGIN_LAT, ORIGIN_LON)
+
+        # Regular pharmacy 200m north — not in any complex
+        plat, plon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.2)
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Regular Pharmacy", "200m North", plat, plon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is False
+        assert any("(c)(i)" in r for r in result.reasons)
+
+    def test_ci_mc_in_hospital(self, test_db, build_context, make_candidate):
+        """
+        (c)(i): MC IS in a hospital.
+        Pharmacy at 200m is in a DIFFERENT large SC → excluded → PASS.
+        """
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        # Hospital at MC location
+        cur.execute(
+            "INSERT INTO hospitals (name, address, latitude, longitude, hospital_type, bed_count) "
+            "VALUES (?,?,?,?,?,?)",
+            ("City Hospital", "Origin St", ORIGIN_LAT, ORIGIN_LON, "private", 200),
+        )
+
+        self._insert_qualifying_mc(cur, ORIGIN_LAT, ORIGIN_LON)
+
+        # Large SC 200m north with a pharmacy inside
+        sc_lat, sc_lon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.2)
+        cur.execute(
+            "INSERT INTO shopping_centres (name, address, latitude, longitude, estimated_tenants, gla_sqm) "
+            "VALUES (?,?,?,?,?,?)",
+            ("Big Mall", "200m North", sc_lat, sc_lon, 70, 50000),
+        )
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Mall Pharmacy", "200m North", sc_lat, sc_lon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is True
+        assert any("(c)(i)" in r for r in result.reasons)
+
+    def test_ci_all_pharmacies_beyond_300m(self, test_db, build_context, make_candidate):
+        """
+        (c)(i): MC IS in a SC. No pharmacies within 300m at all → PASS.
+        """
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        cur.execute(
+            "INSERT INTO shopping_centres (name, address, latitude, longitude, estimated_tenants, gla_sqm) "
+            "VALUES (?,?,?,?,?,?)",
+            ("MC Centre", "Origin St", ORIGIN_LAT, ORIGIN_LON, 30, 15000),
+        )
+
+        self._insert_qualifying_mc(cur, ORIGIN_LAT, ORIGIN_LON)
+
+        # Only pharmacy is 500m away
+        plat, plon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.5)
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Far Pharmacy", "500m North", plat, plon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is True
+        assert any("(c)(i)" in r for r in result.reasons)
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# ITEM 136 — Bug 4: Medical practitioner FTE validation
+# ═══════════════════════════════════════════════════════════════════════════
+class TestItem136MedicalFTE:
+    """
+    Bug 4: Of the ≥8 FTE PBS prescribers, at least 7 must be
+    medical practitioners (not dentists, optometrists, etc.).
+    """
+
+    def _insert_mc_with_fte(self, cur, lat, lon, total_fte=10.0, medical_fte=0,
+                            num_gps=10, hours=80.0, gp_available_hours=0):
+        cur.execute(
+            "INSERT INTO medical_centres (name, address, latitude, longitude, num_gps, total_fte, "
+            "hours_per_week, medical_fte, gp_available_hours) VALUES (?,?,?,?,?,?,?,?,?)",
+            ("Super Medical Centre", "Origin St", lat, lon, num_gps, total_fte, hours,
+             medical_fte, gp_available_hours),
+        )
+
+    def test_pass_medical_fte_meets_threshold(self, test_db, build_context, make_candidate):
+        """8 FTE total, 7 medical FTE → PASS."""
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        self._insert_mc_with_fte(cur, ORIGIN_LAT, ORIGIN_LON, total_fte=8.0, medical_fte=7.0)
+        plat, plon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.4)
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Distant Pharm", "400m North", plat, plon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is True
+        assert any("medical practitioner FTE" in r for r in result.reasons)
+
+    def test_fail_medical_fte_below_7(self, test_db, build_context, make_candidate):
+        """10 FTE total but only 5 are medical practitioners → FAIL."""
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        self._insert_mc_with_fte(cur, ORIGIN_LAT, ORIGIN_LON, total_fte=10.0, medical_fte=5.0)
+        plat, plon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.4)
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Distant Pharm", "400m North", plat, plon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is False
+        assert any("medical practitioner" in r.lower() for r in result.reasons)
+
+    def test_pass_exactly_7_medical_fte(self, test_db, build_context, make_candidate):
+        """Boundary: exactly 7 medical FTE of 8 total → PASS."""
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        self._insert_mc_with_fte(cur, ORIGIN_LAT, ORIGIN_LON, total_fte=8.0, medical_fte=7.0)
+        plat, plon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.4)
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Distant Pharm", "400m North", plat, plon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is True
+
+    def test_fail_6_9_medical_fte(self, test_db, build_context, make_candidate):
+        """6.9 medical FTE — just under threshold → FAIL."""
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        self._insert_mc_with_fte(cur, ORIGIN_LAT, ORIGIN_LON, total_fte=10.0, medical_fte=6.9)
+        plat, plon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.4)
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Distant Pharm", "400m North", plat, plon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is False
+
+    def test_unknown_medical_fte_still_passes_with_evidence(self, test_db, build_context, make_candidate):
+        """medical_fte=0 (unknown) — should pass but flag in evidence_needed."""
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        self._insert_mc_with_fte(cur, ORIGIN_LAT, ORIGIN_LON, total_fte=10.0, medical_fte=0)
+        plat, plon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.4)
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Distant Pharm", "400m North", plat, plon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is True
+        assert any("medical practitioner" in e.lower() for e in result.evidence_needed)
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# ITEM 136 — Bug 5: GP available hours for large MC definition
+# ═══════════════════════════════════════════════════════════════════════════
+class TestItem136GPAvailableHours:
+    """
+    Bug 5: A large medical centre requires a GP to be available
+    for at least 70 of the operating hours per week.
+    """
+
+    def _insert_mc_with_gp_hours(self, cur, lat, lon, hours=80.0, gp_available_hours=0,
+                                  num_gps=10, total_fte=10.0, medical_fte=0):
+        cur.execute(
+            "INSERT INTO medical_centres (name, address, latitude, longitude, num_gps, total_fte, "
+            "hours_per_week, medical_fte, gp_available_hours) VALUES (?,?,?,?,?,?,?,?,?)",
+            ("Super Medical Centre", "Origin St", lat, lon, num_gps, total_fte, hours,
+             medical_fte, gp_available_hours),
+        )
+
+    def test_pass_gp_available_70_hours(self, test_db, build_context, make_candidate):
+        """GP available 75 hrs/week → PASS."""
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        self._insert_mc_with_gp_hours(cur, ORIGIN_LAT, ORIGIN_LON,
+                                       hours=80.0, gp_available_hours=75.0)
+        plat, plon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.4)
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Distant Pharm", "400m North", plat, plon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is True
+        assert any("GP available" in r for r in result.reasons)
+
+    def test_fail_gp_available_60_hours(self, test_db, build_context, make_candidate):
+        """GP available only 60 hrs/week → FAIL (need ≥70)."""
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        self._insert_mc_with_gp_hours(cur, ORIGIN_LAT, ORIGIN_LON,
+                                       hours=80.0, gp_available_hours=60.0)
+        plat, plon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.4)
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Distant Pharm", "400m North", plat, plon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is False
+        assert any("GP available" in r for r in result.reasons)
+
+    def test_pass_boundary_exactly_70_gp_hours(self, test_db, build_context, make_candidate):
+        """Boundary: GP available exactly 70 hrs/week → PASS."""
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        self._insert_mc_with_gp_hours(cur, ORIGIN_LAT, ORIGIN_LON,
+                                       hours=80.0, gp_available_hours=70.0)
+        plat, plon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.4)
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Distant Pharm", "400m North", plat, plon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is True
+
+    def test_unknown_gp_hours_flags_evidence(self, test_db, build_context, make_candidate):
+        """gp_available_hours=0 (unknown) — should pass but flag in evidence_needed."""
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        self._insert_mc_with_gp_hours(cur, ORIGIN_LAT, ORIGIN_LON,
+                                       hours=80.0, gp_available_hours=0)
+        plat, plon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.4)
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Distant Pharm", "400m North", plat, plon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is True
+        assert any("GP" in e and "70" in e for e in result.evidence_needed)
+
+    def test_fail_69_gp_hours(self, test_db, build_context, make_candidate):
+        """GP available 69 hrs/week — just under → FAIL."""
+        db_path, conn = test_db
+        cur = conn.cursor()
+
+        self._insert_mc_with_gp_hours(cur, ORIGIN_LAT, ORIGIN_LON,
+                                       hours=80.0, gp_available_hours=69.0)
+        plat, plon = offset_point(ORIGIN_LAT, ORIGIN_LON, north_km=0.4)
+        cur.execute(
+            "INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?,?,?,?)",
+            ("Distant Pharm", "400m North", plat, plon),
+        )
+        conn.commit()
+
+        ctx = build_context(db_path)
+        candidate = make_candidate()
+        result = check_item_136(candidate, ctx)
+        assert result.passed is False
+
+
+# ═══════════════════════════════════════════════════════════════════════════
 # RULE RESULT STRUCTURE TESTS
 # ═══════════════════════════════════════════════════════════════════════════
 class TestRuleResultStructure:

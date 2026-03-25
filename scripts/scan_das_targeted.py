@@ -32,7 +32,7 @@ CACHE_DIR = PROJECT_ROOT / "cache" / "planning_alerts"
 
 PLANNING_ALERTS_URL = "https://api.planningalerts.org.au/applications.json"
 USER_AGENT = "PharmacyFinder-TargetedDA/1.0 (pharmacy-location-finder)"
-RATE_LIMIT_SEC = 1.0
+RATE_LIMIT_SEC = 5.0
 CACHE_TTL_HOURS = 24
 DEFAULT_RADIUS = 2000  # metres
 
@@ -102,6 +102,10 @@ def _is_cached(lat: float, lon: float, radius: int) -> bool:
     return _read_cache(lat, lon, radius) is not None
 
 
+class DailyQuotaExhausted(Exception):
+    """Raised when PlanningAlerts daily API quota is exhausted."""
+    pass
+
 # ── PlanningAlerts API ───────────────────────────────────────────────────────
 
 def _fetch_radius(api_key: str, lat: float, lon: float, radius: int = DEFAULT_RADIUS) -> List[Dict]:
@@ -138,9 +142,32 @@ def _fetch_radius(api_key: str, lat: float, lon: float, radius: int = DEFAULT_RA
                 if isinstance(app, dict):
                     apps.append(app)
         elif resp.status_code == 429:
-            print("\n  WARNING: Rate limited (429). Waiting 60s...")
-            should_cache = False  # don't cache rate-limited responses
-            time.sleep(60)
+            retry_after = resp.headers.get("retry-after", "")
+            if retry_after and int(retry_after) > 600:
+                hours = int(retry_after) / 3600
+                raise DailyQuotaExhausted(
+                    f"Daily API quota exhausted. Resets in {hours:.1f}h."
+                )
+            for backoff_wait in [60, 120, 300]:
+                print(f"\n  WARNING: Rate limited (429). Waiting {backoff_wait}s...")
+                time.sleep(backoff_wait)
+                try:
+                    resp2 = requests.get(PLANNING_ALERTS_URL, params=params, timeout=30)
+                    if resp2.status_code == 200:
+                        data = resp2.json()
+                        items = data if isinstance(data, list) else data.get("application", data.get("applications", []))
+                        if not isinstance(items, list):
+                            items = [items]
+                        for item in (items or []):
+                            app = item.get("application", item) if isinstance(item, dict) else item
+                            if isinstance(app, dict):
+                                apps.append(app)
+                        break
+                    elif resp2.status_code != 429:
+                        break
+                except requests.RequestException:
+                    break
+            should_cache = len(apps) > 0
         else:
             should_cache = False
     except requests.RequestException:
@@ -408,7 +435,12 @@ def scan_targeted(
             _show_progress(i + 1, total_sites, bar_width, site["name"], "cached", start_time)
             continue
 
-        apps = _fetch_radius(api_key, lat, lon, radius)
+        try:
+            apps = _fetch_radius(api_key, lat, lon, radius)
+        except DailyQuotaExhausted as exc:
+            print(f"\n\n  {exc}")
+            print(f"  Completed {i}/{total_sites} sites. Re-run with --resume to continue.")
+            break
         matched = 0
 
         for app in apps:

@@ -2,11 +2,13 @@
 Item 132 — Same-town additional pharmacy.
 
 Requirements:
+(a)(i)   Candidate must be in the same town as an approved pharmacy
+         ("same town" = same suburb name + same postcode)
 (a)(ii)  At least 200m straight-line from nearest approved pharmacy
 (a)(iii) At least 10km by shortest lawful route from any OTHER approved pharmacy
          (i.e., pharmacies beyond the nearest)
 (b)(i)   At least 4 FTE prescribing medical practitioners in the town
-(b)(ii)  Combined supermarket GLA in town ≥ 2,500 sqm
+(b)(ii)  1 or 2 supermarkets in the same town with combined GLA ≥ 2,500 sqm
 
 Measurement:
 - 200m: geodesic straight-line
@@ -22,9 +24,19 @@ NEAREST_DISTANCE_KM = 0.2     # 200m
 OTHER_ROUTE_KM = 10.0         # 10km by road
 MIN_FTE_GPS = 4.0             # 4 FTE prescribers
 MIN_SUPERMARKET_GLA = 2500    # sqm combined
+MAX_SUPERMARKETS = 2           # Only 1 or 2 supermarkets count
 
-# Town radius for GP/supermarket counting (pragmatic proxy)
+# Town radius for GP/supermarket counting — used as fallback when suburb/postcode unavailable
 TOWN_RADIUS_KM = 5.0
+
+
+def _same_town(item, candidate_suburb, candidate_postcode):
+    """Check if an item (pharmacy/GP/supermarket) is in the same town as the candidate.
+    Same town = same suburb name + same postcode (case-insensitive for suburb)."""
+    item_suburb = (item.get('suburb') or '').strip().lower()
+    item_postcode = (item.get('postcode') or '').strip()
+    return (item_suburb == candidate_suburb.lower() and
+            item_postcode == candidate_postcode)
 
 
 def check_item_132(candidate: Candidate, context) -> RuleResult:
@@ -32,6 +44,38 @@ def check_item_132(candidate: Candidate, context) -> RuleResult:
     reasons = []
     evidence_needed = []
     distances = {}
+
+    # Extract candidate's suburb and postcode for same-town matching
+    candidate_suburb = (getattr(candidate, 'suburb', '') or
+                        (candidate.town_id.split('|')[0] if candidate.town_id and '|' in candidate.town_id else '') or
+                        '').strip()
+    candidate_postcode = (getattr(candidate, 'postcode', '') or
+                          (candidate.town_id.split('|')[1] if candidate.town_id and '|' in candidate.town_id else '') or
+                          '').strip()
+
+    has_town_data = bool(candidate_suburb and candidate_postcode)
+
+    # (a)(i) Must be in the same town as an existing pharmacy
+    if has_town_data:
+        same_town_pharmacies = [
+            p for p in context.pharmacies
+            if _same_town(p, candidate_suburb, candidate_postcode)
+        ]
+        if not same_town_pharmacies:
+            reasons.append(
+                f"FAIL (a)(i): No pharmacy in the same town "
+                f"(suburb={candidate_suburb}, postcode={candidate_postcode})"
+            )
+            return RuleResult(item="Item 132", passed=False, reasons=reasons,
+                            confidence=0.0, distances=distances)
+        reasons.append(
+            f"PASS (a)(i): {len(same_town_pharmacies)} pharmacy(ies) in same town "
+            f"({candidate_suburb} {candidate_postcode})"
+        )
+    else:
+        evidence_needed.append(
+            "Candidate suburb/postcode unavailable — same-town check requires manual verification"
+        )
 
     # (a)(ii) Nearest pharmacy ≥ 200m straight-line
     nearest_pharm, nearest_dist_km = context.nearest_pharmacy(
@@ -60,11 +104,9 @@ def check_item_132(candidate: Candidate, context) -> RuleResult:
     )
 
     # (a)(iii) Other pharmacies must be ≥ 10km by route
-    # Get pharmacies within potential fail range (geodesic < ~8km, route could be < 10km)
     nearby_pharmas = context.pharmacies_within_radius(
         candidate.latitude, candidate.longitude, 8.0
     )
-    # Exclude the nearest pharmacy (it already passed the 200m test)
     other_pharmas = [(p, d) for p, d in nearby_pharmas
                      if p['id'] != nearest_pharm['id']]
 
@@ -93,16 +135,30 @@ def check_item_132(candidate: Candidate, context) -> RuleResult:
         reasons.append("PASS (a)(iii): No other pharmacies within 8km geodesic")
 
     # (b)(i) At least 4 FTE prescribing medical practitioners in town
-    nearby_gps = context.gps_within_radius(
-        candidate.latitude, candidate.longitude, TOWN_RADIUS_KM
-    )
-    total_fte = sum(g.get('fte', 1.0) or 1.0 for g, _ in nearby_gps)
-    distances["gps_in_town"] = len(nearby_gps)
-    distances["total_fte_in_town"] = round(total_fte, 1)
+    if has_town_data:
+        # Filter GPs to same town (suburb + postcode)
+        same_town_gps = [
+            (g, context.geodesic_km(candidate.latitude, candidate.longitude,
+                                     g['latitude'], g['longitude']))
+            for g in context.gps
+            if _same_town(g, candidate_suburb, candidate_postcode)
+        ]
+        total_fte = sum(g.get('fte', 1.0) or 1.0 for g, _ in same_town_gps)
+        distances["gps_in_town"] = len(same_town_gps)
+        distances["total_fte_in_town"] = round(total_fte, 1)
+    else:
+        # Fallback to radius-based search
+        nearby_gps = context.gps_within_radius(
+            candidate.latitude, candidate.longitude, TOWN_RADIUS_KM
+        )
+        same_town_gps = nearby_gps
+        total_fte = sum(g.get('fte', 1.0) or 1.0 for g, _ in nearby_gps)
+        distances["gps_in_town"] = len(nearby_gps)
+        distances["total_fte_in_town"] = round(total_fte, 1)
 
     if total_fte < MIN_FTE_GPS:
         reasons.append(
-            f"FAIL (b)(i): Only {total_fte:.1f} FTE GPs within {TOWN_RADIUS_KM}km "
+            f"FAIL (b)(i): Only {total_fte:.1f} FTE GPs in town "
             f"(need ≥ {MIN_FTE_GPS} FTE)"
         )
         evidence_needed.append("Verify GP FTE counts from Medicare/AHPRA data")
@@ -112,24 +168,38 @@ def check_item_132(candidate: Candidate, context) -> RuleResult:
         )
 
     reasons.append(
-        f"PASS (b)(i): {total_fte:.1f} FTE GPs within {TOWN_RADIUS_KM}km ({len(nearby_gps)} practices)"
+        f"PASS (b)(i): {total_fte:.1f} FTE GPs in town ({len(same_town_gps)} practices)"
     )
 
-    # (b)(ii) Combined supermarket GLA ≥ 2,500 sqm
-    nearby_supers = context.supermarkets_within_radius(
-        candidate.latitude, candidate.longitude, TOWN_RADIUS_KM
-    )
-    combined_gla = sum(
-        (s.get('estimated_gla') or s.get('floor_area_sqm') or 0)
-        for s, _ in nearby_supers
-    )
-    distances["supermarkets_in_town"] = len(nearby_supers)
+    # (b)(ii) 1 or 2 supermarkets in same town with combined GLA ≥ 2,500 sqm
+    if has_town_data:
+        same_town_supers = [
+            s for s in context.supermarkets
+            if _same_town(s, candidate_suburb, candidate_postcode)
+        ]
+    else:
+        # Fallback to radius-based
+        same_town_supers = [s for s, _ in context.supermarkets_within_radius(
+            candidate.latitude, candidate.longitude, TOWN_RADIUS_KM
+        )]
+
+    # Sort by GLA descending, take top 2 only (handbook says "1 or 2 supermarkets")
+    def _get_gla(s):
+        return s.get('estimated_gla') or s.get('floor_area_sqm') or 0
+
+    same_town_supers.sort(key=_get_gla, reverse=True)
+    top_supers = same_town_supers[:MAX_SUPERMARKETS]
+
+    combined_gla = sum(_get_gla(s) for s in top_supers)
+    distances["supermarkets_in_town"] = len(same_town_supers)
+    distances["supermarkets_counted"] = len(top_supers)
     distances["combined_gla_sqm"] = round(combined_gla, 0)
 
     if combined_gla < MIN_SUPERMARKET_GLA:
         reasons.append(
             f"FAIL (b)(ii): Combined supermarket GLA = {combined_gla:.0f} sqm "
-            f"(need ≥ {MIN_SUPERMARKET_GLA} sqm)"
+            f"from top {len(top_supers)} of {len(same_town_supers)} supermarkets "
+            f"(need ≥ {MIN_SUPERMARKET_GLA} sqm from 1 or 2 supermarkets)"
         )
         evidence_needed.append("Verify supermarket GLA from council records")
         return RuleResult(
@@ -139,7 +209,7 @@ def check_item_132(candidate: Candidate, context) -> RuleResult:
 
     reasons.append(
         f"PASS (b)(ii): Combined supermarket GLA = {combined_gla:.0f} sqm "
-        f"({len(nearby_supers)} supermarkets)"
+        f"({len(top_supers)} supermarket(s) counted of {len(same_town_supers)} in town)"
     )
 
     # All checks passed
@@ -151,6 +221,8 @@ def check_item_132(candidate: Candidate, context) -> RuleResult:
     ])
 
     conf = confidence_from_margin_m(margin_200m)
+    if not has_town_data:
+        conf *= 0.7  # Reduce confidence when same-town check couldn't be verified
     return RuleResult(
         item="Item 132", passed=True, reasons=reasons,
         evidence_needed=evidence_needed, confidence=conf, distances=distances,

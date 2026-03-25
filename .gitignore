@@ -20,3 +20,6 @@ data/sources/_cache/
 output/opportunity_zones_*.html
 cache/
 *.db
+node_modules/
+data/australia-latest.osm.pbf
+osrm-data/

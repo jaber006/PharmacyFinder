@@ -1,0 +1,20 @@
+[
+  {
+    "lat": -23.575134,
+    "lon": 148.889328,
+    "suburb": "BLACKWATER",
+    "postcode": "4717",
+    "state": "Queensland",
+    "rule_item": "Item 132",
+    "confidence": 0.55,
+    "nearest_pharmacy_km": 999,
+    "reason": "NEAR-MISS: One-pharmacy town (BLACKWATER 4717): Pharmacy Essentials Blackwater. [needs 2.0 more FTE GPs] Nearest other pharmacy:  at 999.0km by road. GPs: 2.0 FTE. 1 supermarket: Woolworths (3500sqm)",
+    "name": "BLACKWATER (near Pharmacy Essentials Blackwater)",
+    "address": "8 Blain Street Blackwater QLD 4717",
+    "source_type": "one_pharmacy_town",
+    "existing_pharmacy": "Pharmacy Essentials Blackwater",
+    "gp_fte": 2.0,
+    "supermarket_detail": "1 supermarket: Woolworths (3500sqm)",
+    "osrm_verified": false
+  }
+]

@@ -111,7 +111,9 @@ def _create_tables(conn):
             hours_per_week REAL DEFAULT 0,
             source TEXT,
             state TEXT,
-            date_scraped TEXT
+            date_scraped TEXT,
+            medical_fte REAL DEFAULT 0,
+            gp_available_hours REAL DEFAULT 0
         );
         CREATE TABLE IF NOT EXISTS v2_results (
             id TEXT PRIMARY KEY,

@@ -236,6 +236,72 @@ class EvaluationContext:
         _osrm_cache[key] = result
         return result
 
+    def _get_excluded_pharmacy_ids(
+        self,
+        large_sc_radius_km: float = 0.3,
+        hospital_radius_km: float = 0.15,
+        min_tenants_for_large: int = 50,
+    ) -> set:
+        """Build and cache the set of pharmacy IDs that are in large SCs or private hospitals."""
+        cache_key = (large_sc_radius_km, hospital_radius_km, min_tenants_for_large)
+        if hasattr(self, '_excluded_cache') and self._excluded_cache_key == cache_key:
+            return self._excluded_cache
+
+        excluded_ids = set()
+        for p in self.pharmacies:
+            plat, plon = p['latitude'], p['longitude']
+            # Check if pharmacy is inside a large shopping centre
+            for sc, sc_d in self._within_radius_from_index(self._sc_idx, plat, plon, large_sc_radius_km):
+                tenants = sc.get('estimated_tenants') or 0
+                if tenants >= min_tenants_for_large:
+                    excluded_ids.add(p['id'])
+                    break
+            if p['id'] in excluded_ids:
+                continue
+            # Check if pharmacy is inside a private hospital
+            for h, h_d in self._within_radius_from_index(self._hosp_idx, plat, plon, hospital_radius_km):
+                h_type = (h.get('hospital_type') or '').lower()
+                if 'private' in h_type:
+                    excluded_ids.add(p['id'])
+                    break
+
+        self._excluded_cache = excluded_ids
+        self._excluded_cache_key = cache_key
+        print(f"[Context] Excluded {len(excluded_ids)} pharmacies in large SCs/private hospitals")
+        return excluded_ids
+
+    def nearest_pharmacy_excluding_complexes(
+        self, lat: float, lon: float,
+        large_sc_radius_km: float = 0.3,
+        hospital_radius_km: float = 0.15,
+        min_tenants_for_large: int = 50,
+    ) -> Tuple[Optional[Dict], float]:
+        """
+        Find nearest pharmacy EXCLUDING those inside a large shopping centre
+        (>=50 tenants) or private hospital.
+
+        Used by Items 133 and 136(c)(ii).
+        """
+        excluded_ids = self._get_excluded_pharmacy_ids(
+            large_sc_radius_km, hospital_radius_km, min_tenants_for_large
+        )
+
+        # Find nearest non-excluded pharmacy
+        best, best_dist = None, float('inf')
+        # Use expanding radius search
+        for radius in (2, 5, 15, 50, 200):
+            candidates = self._pharm_idx.candidates_near(lat, lon, radius)
+            for p in candidates:
+                if p['id'] in excluded_ids:
+                    continue
+                d = self.geodesic_km(lat, lon, p['latitude'], p['longitude'])
+                if d < best_dist:
+                    best_dist = d
+                    best = p
+            if best is not None:
+                return best, best_dist
+        return None, float('inf')
+
     def estimate_driving_distance(self, lat1: float, lon1: float, lat2: float, lon2: float) -> float:
         """
         Estimate driving distance as ~1.4x geodesic (no API call).
