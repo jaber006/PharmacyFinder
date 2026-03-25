@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PharmacyFinder v4 — Greenfield Opportunity Dashboard</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; }
+.header { background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 20px 30px; border-bottom: 2px solid #e74c3c; }
+.header h1 { font-size: 24px; color: #fff; }
+.header .subtitle { color: #888; font-size: 14px; margin-top: 4px; }
+.stats { display: flex; gap: 15px; padding: 15px 30px; background: #111; flex-wrap: wrap; }
+.stat { background: #1a1a2e; padding: 12px 20px; border-radius: 8px; min-width: 140px; }
+.stat .label { font-size: 11px; color: #888; text-transform: uppercase; }
+.stat .value { font-size: 22px; font-weight: 700; color: #2ecc71; }
+.stat .value.red { color: #e74c3c; }
+.stat .value.blue { color: #3498db; }
+.stat .value.purple { color: #9b59b6; }
+.stat .value.orange { color: #f39c12; }
+#map { height: 500px; width: 100%; }
+.table-container { padding: 20px 30px; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #1a1a2e; padding: 10px 8px; text-align: left; position: sticky; top: 0; cursor: pointer; }
+th:hover { background: #2a2a4e; }
+td { padding: 8px; border-bottom: 1px solid #222; }
+tr:hover { background: #1a1a1a; }
+.positive { color: #2ecc71; font-weight: 600; }
+.negative { color: #e74c3c; }
+.legend { display: flex; gap: 20px; padding: 10px 30px; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+.legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+.filter-bar { padding: 10px 30px; display: flex; gap: 10px; flex-wrap: wrap; }
+.filter-btn { padding: 6px 14px; border: 1px solid #333; background: #1a1a2e; color: #ccc; border-radius: 4px; cursor: pointer; font-size: 12px; }
+.filter-btn.active { border-color: #2ecc71; color: #2ecc71; background: #0a2a0a; }
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>⚔️ PharmacyFinder v4 — Greenfield Opportunities</h1>
+    <div class="subtitle">National scan with GapMaps verified data (6,503 pharmacies) + OSRM road distances — Generated 26 Mar 2026 12:58 AM</div>
+</div>
+
+<div class="stats">
+    <div class="stat"><div class="label">Item 136 (Medical)</div><div class="value">39</div></div>
+    <div class="stat"><div class="label">Item 131 (Rural)</div><div class="value blue">3083</div></div>
+    <div class="stat"><div class="label">Item 130 (Super+GP)</div><div class="value red">11</div></div>
+    <div class="stat"><div class="label">Item 133 (Shopping)</div><div class="value purple">9</div></div>
+    <div class="stat"><div class="label">Item 132 (1-pharm)</div><div class="value orange">1</div></div>
+    <div class="stat"><div class="label">Total Sites</div><div class="value">3143</div></div>
+    <div class="stat"><div class="label">Best Flip (18mo)</div><div class="value">$824k</div></div>
+    <div class="stat"><div class="label">Best ROI</div><div class="value">51%</div></div>
+</div>
+
+<div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#2ecc71"></div> Item 136 — Large Medical Centre</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#e74c3c"></div> Item 130 — Supermarket + GP</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#3498db"></div> Item 131 — Rural Gap (top 50)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#9b59b6"></div> Item 133 — Shopping Centre</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f39c12"></div> Item 132 — One-Pharmacy Town</div>
+</div>
+
+<div id="map"></div>
+
+<div class="table-container">
+    <h2 style="margin-bottom:15px;color:#fff">Top 50 by Profitability (18-month flip)</h2>
+    <table id="profTable">
+        <thead>
+            <tr>
+                <th>#</th><th>Rule</th><th>State</th><th>Name</th><th>Scr/day</th>
+                <th>Revenue</th><th>Profit/yr</th><th>Margin</th><th>Setup</th>
+                <th>18mo Flip</th><th>ROI%</th><th>Payback</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr onclick="map.setView([-42.988689,147.305091], 13)">
+                <td>1</td><td>136</td><td>TAS</td>
+                <td>GP Plus Super Clinic Kingston</td><td>200</td>
+                <td>$1,218,000</td><td>$193,600</td>
+                <td>15.9%</td><td>$380,000</td>
+                <td class="positive">$+823,900</td>
+                <td>50.9%</td><td>24mo</td>
+            </tr>
+            <tr onclick="map.setView([-37.75983,144.807768], 13)">
+                <td>2</td><td>136</td><td>VIC</td>
+                <td>Sunshine Hospital Medical Centre</td><td>200</td>
+                <td>$1,218,000</td><td>$193,600</td>
+                <td>15.9%</td><td>$380,000</td>
+                <td class="positive">$+823,900</td>
+                <td>50.9%</td><td>24mo</td>
+            </tr>
+            <tr onclick="map.setView([-37.836863,145.196847], 13)">
+                <td>3</td><td>136</td><td></td>
+                <td>Vermont Health Care</td><td>198</td>
+                <td>$1,205,820</td><td>$191,164</td>
+                <td>15.9%</td><td>$380,000</td>
+                <td class="positive">$+811,111</td>
+                <td>50.3%</td><td>24mo</td>
+            </tr>
+            <tr onclick="map.setView([-31.741179,115.753133], 13)">
+                <td>4</td><td>136</td><td>WA</td>
+                <td>Joondalup Health Campus Medical Cen</td><td>188</td>
+                <td>$1,144,920</td><td>$178,984</td>
+                <td>15.6%</td><td>$380,000</td>
+                <td class="positive">$+747,166</td>
+                <td>47.1%</td><td>25mo</td>
+            </tr>
+            <tr onclick="map.setView([-38.1889,144.464644], 13)">
+                <td>5</td><td>136</td><td></td>
+                <td>Kensington Hill Medical Centre</td><td>176</td>
+                <td>$1,071,840</td><td>$164,368</td>
+                <td>15.3%</td><td>$380,000</td>
+                <td class="positive">$+670,432</td>
+                <td>43.3%</td><td>28mo</td>
+            </tr>
+            <tr onclick="map.setView([-34.886665,138.657427], 13)">
+                <td>6</td><td>136</td><td></td>
+                <td>Health at Campbelltown</td><td>168</td>
+                <td>$1,023,120</td><td>$154,624</td>
+                <td>15.1%</td><td>$380,000</td>
+                <td class="positive">$+619,276</td>
+                <td>40.7%</td><td>29mo</td>
+            </tr>
+            <tr onclick="map.setView([-37.919828,145.164363], 13)">
+                <td>7</td><td>136</td><td></td>
+                <td>Valewood Clinic</td><td>168</td>
+                <td>$1,023,120</td><td>$154,624</td>
+                <td>15.1%</td><td>$380,000</td>
+                <td class="positive">$+619,276</td>
+                <td>40.7%</td><td>29mo</td>
+            </tr>
+            <tr onclick="map.setView([-37.889197,144.693403], 13)">
+                <td>8</td><td>136</td><td>VIC</td>
+                <td>IPN Medical Centre Werribee Plaza</td><td>164</td>
+                <td>$998,760</td><td>$149,752</td>
+                <td>15.0%</td><td>$380,000</td>
+                <td class="positive">$+593,698</td>
+                <td>39.4%</td><td>30mo</td>
+            </tr>
+            <tr onclick="map.setView([-38.048575,145.260843], 13)">
+                <td>9</td><td>136</td><td>VIC</td>
+                <td>Casey Medical Centre</td><td>164</td>
+                <td>$998,760</td><td>$149,752</td>
+                <td>15.0%</td><td>$380,000</td>
+                <td class="positive">$+593,698</td>
+                <td>39.4%</td><td>30mo</td>
+            </tr>
+            <tr onclick="map.setView([-36.128095,146.888148], 13)">
+                <td>10</td><td>136</td><td></td>
+                <td>Central Medical Group</td><td>164</td>
+                <td>$998,760</td><td>$149,752</td>
+                <td>15.0%</td><td>$380,000</td>
+                <td class="positive">$+593,698</td>
+                <td>39.4%</td><td>30mo</td>
+            </tr>
+            <tr onclick="map.setView([-27.697123,152.908719], 13)">
+                <td>11</td><td>136</td><td>QLD</td>
+                <td>Springfield Medical Centre</td><td>156</td>
+                <td>$950,040</td><td>$140,008</td>
+                <td>14.7%</td><td>$380,000</td>
+                <td class="positive">$+542,542</td>
+                <td>36.8%</td><td>33mo</td>
+            </tr>
+            <tr onclick="map.setView([-32.926595,151.776343], 13)">
+                <td>12</td><td>136</td><td>NSW</td>
+                <td>Newcastle Family Medical Practice</td><td>155</td>
+                <td>$943,950</td><td>$138,790</td>
+                <td>14.7%</td><td>$380,000</td>
+                <td class="positive">$+536,147</td>
+                <td>36.5%</td><td>33mo</td>
+            </tr>
+            <tr onclick="map.setView([-27.641522,153.105272], 13)">
+                <td>13</td><td>136</td><td>QLD</td>
+                <td>Logan Medical Centre</td><td>155</td>
+                <td>$943,950</td><td>$138,790</td>
+                <td>14.7%</td><td>$380,000</td>
+                <td class="positive">$+536,147</td>
+                <td>36.5%</td><td>33mo</td>
+            </tr>
+            <tr onclick="map.setView([-27.084482,152.945904], 13)">
+                <td>14</td><td>136</td><td>QLD</td>
+                <td>Caboolture Medical Centre</td><td>155</td>
+                <td>$943,950</td><td>$138,790</td>
+                <td>14.7%</td><td>$380,000</td>
+                <td class="positive">$+536,147</td>
+                <td>36.5%</td><td>33mo</td>
+            </tr>
+            <tr onclick="map.setView([-35.139239,138.499279], 13)">
+                <td>15</td><td>136</td><td>SA</td>
+                <td>Noarlunga Medical Centre</td><td>155</td>
+                <td>$943,950</td><td>$138,790</td>
+                <td>14.7%</td><td>$380,000</td>
+                <td class="positive">$+536,147</td>
+                <td>36.5%</td><td>33mo</td>
+            </tr>
+            <tr onclick="map.setView([-34.989595,138.556632], 13)">
+                <td>16</td><td>136</td><td>SA</td>
+                <td>Marion Medical Centre</td><td>155</td>
+                <td>$943,950</td><td>$138,790</td>
+                <td>14.7%</td><td>$380,000</td>
+                <td class="positive">$+536,147</td>
+                <td>36.5%</td><td>33mo</td>
+            </tr>
+            <tr onclick="map.setView([-38.073055,145.484719], 13)">
+                <td>17</td><td>136</td><td>VIC</td>
+                <td>Pakenham Medical Centre</td><td>155</td>
+                <td>$943,950</td><td>$138,790</td>
+                <td>14.7%</td><td>$380,000</td>
+                <td class="positive">$+536,147</td>
+                <td>36.5%</td><td>33mo</td>
+            </tr>
+            <tr onclick="map.setView([-27.508864,153.051602], 13)">
+                <td>18</td><td>136</td><td></td>
+                <td>Women's Wellbeing Clinic</td><td>155</td>
+                <td>$943,950</td><td>$138,790</td>
+                <td>14.7%</td><td>$380,000</td>
+                <td class="positive">$+536,147</td>
+                <td>36.5%</td><td>33mo</td>
+            </tr>
+            <tr onclick="map.setView([-33.902538,151.207585], 13)">
+                <td>19</td><td>136</td><td></td>
+                <td>Green Square Health</td><td>155</td>
+                <td>$943,950</td><td>$138,790</td>
+                <td>14.7%</td><td>$380,000</td>
+                <td class="positive">$+536,147</td>
+                <td>36.5%</td><td>33mo</td>
+            </tr>
+            <tr onclick="map.setView([-37.789432,144.987704], 13)">
+                <td>20</td><td>136</td><td></td>
+                <td>Clifton Hill Medical Group</td><td>155</td>
+                <td>$943,950</td><td>$138,790</td>
+                <td>14.7%</td><td>$380,000</td>
+                <td class="positive">$+536,147</td>
+                <td>36.5%</td><td>33mo</td>
+            </tr>
+            <tr onclick="map.setView([-37.834161,144.946037], 13)">
+                <td>21</td><td>136</td><td></td>
+                <td>Port Melbourne Medical</td><td>152</td>
+                <td>$925,680</td><td>$135,136</td>
+                <td>14.6%</td><td>$380,000</td>
+                <td class="positive">$+516,964</td>
+                <td>35.6%</td><td>34mo</td>
+            </tr>
+            <tr onclick="map.setView([-27.661842,153.045654], 13)">
+                <td>22</td><td>136</td><td>QLD</td>
+                <td>Browns Plains Family Practice</td><td>142</td>
+                <td>$864,780</td><td>$122,956</td>
+                <td>14.2%</td><td>$380,000</td>
+                <td class="positive">$+453,019</td>
+                <td>32.4%</td><td>37mo</td>
+            </tr>
+            <tr onclick="map.setView([-19.269835,146.803755], 13)">
+                <td>23</td><td>136</td><td>QLD</td>
+                <td>Townsville Medical Centre</td><td>140</td>
+                <td>$852,600</td><td>$120,520</td>
+                <td>14.1%</td><td>$380,000</td>
+                <td class="positive">$+440,230</td>
+                <td>31.7%</td><td>38mo</td>
+            </tr>
+            <tr onclick="map.setView([-27.234963,153.010732], 13)">
+                <td>24</td><td>136</td><td>QLD</td>
+                <td>North Lakes Medical Centre</td><td>140</td>
+                <td>$852,600</td><td>$120,520</td>
+                <td>14.1%</td><td>$380,000</td>
+                <td class="positive">$+440,230</td>
+                <td>31.7%</td><td>38mo</td>
+            </tr>
+            <tr onclick="map.setView([-32.297174,115.801488], 13)">
+                <td>25</td><td>136</td><td>WA</td>
+                <td>Murdoch Medical Centre</td><td>140</td>
+                <td>$852,600</td><td>$120,520</td>
+                <td>14.1%</td><td>$380,000</td>
+                <td class="positive">$+440,230</td>
+                <td>31.7%</td><td>38mo</td>
+            </tr>
+            <tr onclick="map.setView([-36.803879,144.231261], 13)">
+                <td>26</td><td>136</td><td>VIC</td>
+                <td>Bendigo Medical Centre</td><td>140</td>
+                <td>$852,600</td><td>$120,520</td>
+                <td>14.1%</td><td>$380,000</td>
+                <td class="positive">$+440,230</td>
+                <td>31.7%</td><td>38mo</td>
+            </tr>
+            <tr onclick="map.setView([-37.767475,144.979592], 13)">
+                <td>27</td><td>136</td><td></td>
+                <td>East Brunswick Medical Centre</td><td>140</td>
+                <td>$852,600</td><td>$120,520</td>
+                <td>14.1%</td><td>$380,000</td>
+                <td class="positive">$+440,230</td>
+                <td>31.7%</td><td>38mo</td>
+            </tr>
+            <tr onclick="map.setView([-36.135723,146.860738], 13)">
+                <td>28</td><td>136</td><td></td>
+                <td>Federation Clinic</td><td>140</td>
+                <td>$852,600</td><td>$120,520</td>
+                <td>14.1%</td><td>$380,000</td>
+                <td class="positive">$+440,230</td>
+                <td>31.7%</td><td>38mo</td>
+            </tr>
+            <tr onclick="map.setView([-37.906098,145.186816], 13)">
+                <td>29</td><td>136</td><td></td>
+                <td>Wheelers Hill Clinic</td><td>140</td>
+                <td>$852,600</td><td>$120,520</td>
+                <td>14.1%</td><td>$380,000</td>
+                <td class="positive">$+440,230</td>
+                <td>31.7%</td><td>38mo</td>
+            </tr>
+            <tr onclick="map.setView([-19.300728,146.754547], 13)">
+                <td>30</td><td>136</td><td></td>
+                <td>Cranbrook Medical</td><td>140</td>
+                <td>$852,600</td><td>$120,520</td>
+                <td>14.1%</td><td>$380,000</td>
+                <td class="positive">$+440,230</td>
+                <td>31.7%</td><td>38mo</td>
+            </tr>
+            <tr onclick="map.setView([-27.949317,153.406334], 13)">
+                <td>31</td><td>136</td><td></td>
+                <td>Labrador Medical Centre</td><td>140</td>
+                <td>$852,600</td><td>$120,520</td>
+                <td>14.1%</td><td>$380,000</td>
+                <td class="positive">$+440,230</td>
+                <td>31.7%</td><td>38mo</td>
+            </tr>
+            <tr onclick="map.setView([-41.062968,145.914174], 13)">
+                <td>32</td><td>136</td><td>TAS</td>
+                <td>TAS Family Medical Centre</td><td>125</td>
+                <td>$761,250</td><td>$102,250</td>
+                <td>13.4%</td><td>$380,000</td>
+                <td class="positive">$+344,312</td>
+                <td>26.9%</td><td>45mo</td>
+            </tr>
+            <tr onclick="map.setView([-42.126011,148.290089], 13)">
+                <td>33</td><td>133</td><td>TAS</td>
+                <td>Freycinet Rentals</td><td>100</td>
+                <td>$609,000</td><td>$86,800</td>
+                <td>14.3%</td><td>$320,000</td>
+                <td class="positive">$+266,950</td>
+                <td>27.1%</td><td>44mo</td>
+            </tr>
+            <tr onclick="map.setView([-27.664095,152.849626], 13)">
+                <td>34</td><td>133</td><td>WA</td>
+                <td>Mountview Shopping Centre</td><td>100</td>
+                <td>$609,000</td><td>$71,800</td>
+                <td>11.8%</td><td>$380,000</td>
+                <td class="positive">$+184,450</td>
+                <td>18.9%</td><td>64mo</td>
+            </tr>
+            <tr onclick="map.setView([-37.853381,145.14979], 13)">
+                <td>35</td><td>133</td><td>WA</td>
+                <td>Burwood One</td><td>100</td>
+                <td>$609,000</td><td>$71,800</td>
+                <td>11.8%</td><td>$380,000</td>
+                <td class="positive">$+184,450</td>
+                <td>18.9%</td><td>64mo</td>
+            </tr>
+            <tr onclick="map.setView([-31.457702,152.874601], 13)">
+                <td>36</td><td>133</td><td>WA</td>
+                <td>Lake Innes Village</td><td>100</td>
+                <td>$609,000</td><td>$71,800</td>
+                <td>11.8%</td><td>$380,000</td>
+                <td class="positive">$+184,450</td>
+                <td>18.9%</td><td>64mo</td>
+            </tr>
+            <tr onclick="map.setView([-38.341091,143.593308], 13)">
+                <td>37</td><td>133</td><td>WA</td>
+                <td>Colac Plaza</td><td>100</td>
+                <td>$609,000</td><td>$71,800</td>
+                <td>11.8%</td><td>$380,000</td>
+                <td class="positive">$+184,450</td>
+                <td>18.9%</td><td>64mo</td>
+            </tr>
+            <tr onclick="map.setView([-35.919753,145.641347], 13)">
+                <td>38</td><td>133</td><td>WA</td>
+                <td>Cobram village</td><td>100</td>
+                <td>$609,000</td><td>$71,800</td>
+                <td>11.8%</td><td>$380,000</td>
+                <td class="positive">$+184,450</td>
+                <td>18.9%</td><td>64mo</td>
+            </tr>
+            <tr onclick="map.setView([-16.919689,145.780516], 13)">
+                <td>39</td><td>133</td><td>NSW</td>
+                <td>The Pier Shopping Centre</td><td>100</td>
+                <td>$609,000</td><td>$71,800</td>
+                <td>11.8%</td><td>$380,000</td>
+                <td class="positive">$+184,450</td>
+                <td>18.9%</td><td>64mo</td>
+            </tr>
+            <tr onclick="map.setView([-32.313927,115.753273], 13)">
+                <td>40</td><td>133</td><td>WA</td>
+                <td>Waikiki Village Shopping Centre</td><td>100</td>
+                <td>$609,000</td><td>$71,800</td>
+                <td>11.8%</td><td>$380,000</td>
+                <td class="positive">$+184,450</td>
+                <td>18.9%</td><td>64mo</td>
+            </tr>
+            <tr onclick="map.setView([-19.314917,146.816835], 13)">
+                <td>41</td><td>133</td><td>NSW</td>
+                <td>Kmart</td><td>100</td>
+                <td>$609,000</td><td>$71,800</td>
+                <td>11.8%</td><td>$380,000</td>
+                <td class="positive">$+184,450</td>
+                <td>18.9%</td><td>64mo</td>
+            </tr>
+            <tr onclick="map.setView([-33.30645,151.425105], 13)">
+                <td>42</td><td>136</td><td>NSW</td>
+                <td>Greenway Medical Centre</td><td>94</td>
+                <td>$572,460</td><td>$64,492</td>
+                <td>11.3%</td><td>$380,000</td>
+                <td class="positive">$+146,083</td>
+                <td>17.0%</td><td>71mo</td>
+            </tr>
+            <tr onclick="map.setView([-32.073911,115.912787], 13)">
+                <td>43</td><td>136</td><td>WA</td>
+                <td>Canning Vale Medical Centre</td><td>94</td>
+                <td>$572,460</td><td>$64,492</td>
+                <td>11.3%</td><td>$380,000</td>
+                <td class="positive">$+146,083</td>
+                <td>17.0%</td><td>71mo</td>
+            </tr>
+            <tr onclick="map.setView([-27.917374,120.697785], 13)">
+                <td>44</td><td>130</td><td>WA</td>
+                <td>Unknown Supermarket</td><td>72</td>
+                <td>$438,480</td><td>$62,696</td>
+                <td>14.3%</td><td>$280,000</td>
+                <td class="positive">$+142,904</td>
+                <td>22.4%</td><td>54mo</td>
+            </tr>
+            <tr onclick="map.setView([-22.253445,131.794944], 13)">
+                <td>45</td><td>130</td><td>NT</td>
+                <td>Yuendumu Store</td><td>72</td>
+                <td>$438,480</td><td>$62,696</td>
+                <td>14.3%</td><td>$280,000</td>
+                <td class="positive">$+142,904</td>
+                <td>22.4%</td><td>54mo</td>
+            </tr>
+            <tr onclick="map.setView([-12.104728,134.922231], 13)">
+                <td>46</td><td>130</td><td>NT</td>
+                <td>Unknown Supermarket</td><td>72</td>
+                <td>$438,480</td><td>$62,696</td>
+                <td>14.3%</td><td>$280,000</td>
+                <td class="positive">$+142,904</td>
+                <td>22.4%</td><td>54mo</td>
+            </tr>
+            <tr onclick="map.setView([-31.784719,115.965484], 13)">
+                <td>47</td><td>136</td><td>WA</td>
+                <td>Ellenbrook Medical Centre</td><td>88</td>
+                <td>$535,920</td><td>$57,184</td>
+                <td>10.7%</td><td>$380,000</td>
+                <td class="positive">$+107,716</td>
+                <td>15.0%</td><td>80mo</td>
+            </tr>
+            <tr onclick="map.setView([-42.126092,148.290401], 13)">
+                <td>48</td><td>130</td><td>TAS</td>
+                <td>Coles Bay Convenience</td><td>72</td>
+                <td>$438,480</td><td>$52,696</td>
+                <td>12.0%</td><td>$320,000</td>
+                <td class="positive">$+87,904</td>
+                <td>16.5%</td><td>73mo</td>
+            </tr>
+            <tr onclick="map.setView([-12.496989,130.975015], 13)">
+                <td>49</td><td>136</td><td>NT</td>
+                <td>Palmerston Medical Centre</td><td>80</td>
+                <td>$487,200</td><td>$47,440</td>
+                <td>9.7%</td><td>$380,000</td>
+                <td class="positive">$+56,560</td>
+                <td>12.5%</td><td>96mo</td>
+            </tr>
+            <tr onclick="map.setView([-37.744663,144.744223], 13)">
+                <td>50</td><td>136</td><td>VIC</td>
+                <td>Caroline Springs Medical Centre</td><td>80</td>
+                <td>$487,200</td><td>$47,440</td>
+                <td>9.7%</td><td>$380,000</td>
+                <td class="positive">$+56,560</td>
+                <td>12.5%</td><td>96mo</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+var points = [{"lat": -27.917374, "lon": 120.697785, "name": "Unknown Supermarket", "state": "WA", "rule": "Item 130", "conf": 0.95, "dist": 123.7, "reason": "Item 130(b)(ii): Unknown Supermarket GLA 2714sqm \u22652500sqm, nearest pharmacy 123.679km (margin +122179m)", "color": "#e74c3c"}, {"lat": -42.126092, "lon": 148.290401, "name": "Coles Bay Convenience", "state": "TAS", "rule": "Item 130", "conf": 0.95, "dist": 17.8, "reason": "Item 130(b)(ii): Coles Bay Convenience GLA 3500sqm \u22652500sqm, nearest pharmacy 17.84km (margin +16340m)", "color": "#e74c3c"}, {"lat": -22.253445, "lon": 131.794944, "name": "Yuendumu Store", "state": "NT", "rule": "Item 130", "conf": 0.855, "dist": 999, "reason": "Item 130(b)(i): Yuendumu Store GLA 2137sqm + GP Yuendumu Health Centre within 0.28km, nearest pharmacy 999km", "color": "#e74c3c"}, {"lat": -12.104728, "lon": 134.922231, "name": "Unknown Supermarket", "state": "NT", "rule": "Item 130", "conf": 0.855, "dist": 194.3, "reason": "Item 130(b)(i): Unknown Supermarket GLA 1070sqm + GP Milingimbi Health Centre within 0.16km, nearest pharmacy 194.294km", "color": "#e74c3c"}, {"lat": -23.710075, "lon": 133.860043, "name": "IGA", "state": "NT", "rule": "Item 130", "conf": 0.855, "dist": 2.3, "reason": "Item 130(b)(i): IGA GLA 1003sqm + GP Alice Springs Community Health within 0.23km, nearest pharmacy 2.338km", "color": "#e74c3c"}, {"lat": -27.925348, "lon": 153.3054, "name": "Coles", "state": "QLD", "rule": "Item 130", "conf": 0.85, "dist": 1.8, "reason": "Item 130(b)(ii): Coles GLA 4296sqm \u22652500sqm, nearest pharmacy 1.838km (margin +338m)", "color": "#e74c3c"}, {"lat": -41.454733, "lon": 147.176133, "name": "Norwood IGA", "state": "TAS", "rule": "Item 130", "conf": 0.765, "dist": 1.9, "reason": "Item 130(b)(i): Norwood IGA GLA 1500sqm + GP Norwood Medical Centre within 0.24km, nearest pharmacy 1.865km", "color": "#e74c3c"}, {"lat": -17.898397, "lon": 146.092259, "name": "Woolworths", "state": "NSW", "rule": "Item 130", "conf": 0.76, "dist": 2.3, "reason": "Item 130(b)(ii): Woolworths GLA 3500sqm \u22652500sqm, nearest pharmacy 2.335km (margin +835m)", "color": "#e74c3c"}, {"lat": -27.664038, "lon": 152.849626, "name": "Woolworths", "state": "NSW", "rule": "Item 130", "conf": 0.76, "dist": 2.1, "reason": "Item 130(b)(ii): Woolworths GLA 3500sqm \u22652500sqm, nearest pharmacy 2.11km (margin +610m)", "color": "#e74c3c"}, {"lat": -31.849259, "lon": 115.967826, "name": "Woolworths", "state": "NSW", "rule": "Item 130", "conf": 0.76, "dist": 2.0, "reason": "Item 130(b)(ii): Woolworths GLA 3500sqm \u22652500sqm, nearest pharmacy 2.035km (margin +535m)", "color": "#e74c3c"}, {"lat": -38.330127, "lon": 144.987462, "name": "ALDI", "state": "VIC", "rule": "Item 130", "conf": 0.75, "dist": 1.7, "reason": "Item 130(b)(ii): ALDI GLA 3994sqm \u22652500sqm, nearest pharmacy 1.68km (margin +180m)", "color": "#e74c3c"}, {"lat": -23.575134, "lon": 148.889328, "name": "BLACKWATER (near Pharmacy Essentials Blackwater)", "state": "Queensland", "rule": "Item 132", "conf": 0.55, "dist": 999, "reason": "NEAR-MISS: One-pharmacy town (BLACKWATER 4717): Pharmacy Essentials Blackwater. [needs 2.0 more FTE GPs] Nearest other pharmacy:  at 999.0km by road. GPs: 2.0 FTE. 1 supermarket: Woolworths (3500sqm)", "color": "#f39c12"}, {"lat": -42.126011, "lon": 148.290089, "name": "Freycinet Rentals", "state": "TAS", "rule": "Item 133", "conf": 0.9, "dist": 17.8, "reason": "Small SC: Freycinet Rentals, GLA=5000sqm, tenants=20, supermarket: Coles Bay Convenience (3500sqm). Nearest non-excluded pharmacy: 17.814km (margin +17314m)", "color": "#9b59b6"}, {"lat": -27.664095, "lon": 152.849626, "name": "Mountview Shopping Centre", "state": "WA", "rule": "Item 133", "conf": 0.6, "dist": 2.1, "reason": "Small SC: Mountview Shopping Centre, GLA=0sqm, tenants=?, supermarket: Woolworths (~3500sqm). Nearest non-excluded pharmacy: 2.116km (margin +1616m)", "color": "#9b59b6"}, {"lat": -37.853381, "lon": 145.14979, "name": "Burwood One", "state": "WA", "rule": "Item 133", "conf": 0.6, "dist": 1.4, "reason": "Small SC: Burwood One, GLA=0sqm, tenants=?, supermarket: Coles (~3500sqm). Nearest non-excluded pharmacy: 1.439km (margin +939m)", "color": "#9b59b6"}, {"lat": -31.457702, "lon": 152.874601, "name": "Lake Innes Village", "state": "WA", "rule": "Item 133", "conf": 0.6, "dist": 0.7, "reason": "Small SC: Lake Innes Village, GLA=0sqm, tenants=?, supermarket: Coles (~3500sqm). Nearest non-excluded pharmacy: 0.729km (margin +229m)", "color": "#9b59b6"}, {"lat": -38.341091, "lon": 143.593308, "name": "Colac Plaza", "state": "WA", "rule": "Item 133", "conf": 0.55, "dist": 0.7, "reason": "Small SC: Colac Plaza, GLA=0sqm, tenants=?, supermarket: Coles (~3500sqm). Nearest non-excluded pharmacy: 0.653km (margin +153m)", "color": "#9b59b6"}, {"lat": -35.919753, "lon": 145.641347, "name": "Cobram village", "state": "WA", "rule": "Item 133", "conf": 0.55, "dist": 0.6, "reason": "Small SC: Cobram village, GLA=0sqm, tenants=?, supermarket: Woolworths (~3500sqm). Nearest non-excluded pharmacy: 0.579km (margin +79m)", "color": "#9b59b6"}, {"lat": -16.919689, "lon": 145.780516, "name": "The Pier Shopping Centre", "state": "NSW", "rule": "Item 133", "conf": 0.55, "dist": 0.5, "reason": "Small SC: The Pier Shopping Centre, GLA=0sqm, tenants=?, supermarket: Woolworths (~3500sqm). Nearest non-excluded pharmacy: 0.533km (margin +33m)", "color": "#9b59b6"}, {"lat": -32.313927, "lon": 115.753273, "name": "Waikiki Village Shopping Centre", "state": "WA", "rule": "Item 133", "conf": 0.55, "dist": 0.5, "reason": "Small SC: Waikiki Village Shopping Centre, GLA=0sqm, tenants=?, supermarket: ALDI (2660sqm). Nearest non-excluded pharmacy: 0.527km (margin +27m)", "color": "#9b59b6"}, {"lat": -19.314917, "lon": 146.816835, "name": "Kmart", "state": "NSW", "rule": "Item 133", "conf": 0.55, "dist": 0.5, "reason": "Small SC: Kmart, GLA=0sqm, tenants=?, supermarket: Coles (~3500sqm). Nearest non-excluded pharmacy: 0.508km (margin +8m)", "color": "#9b59b6"}, {"lat": -42.988689, "lon": 147.305091, "name": "GP Plus Super Clinic Kingston", "state": "TAS", "rule": "Item 136", "conf": 0.9, "dist": 1.0, "reason": "Large medical centre: GP Plus Super Clinic Kingston, FTE=12.0 (fte), GPs=15, hours=84.0/wk. Nearest non-excluded pharmacy: 0.972km (margin +672m)", "color": "#2ecc71"}, {"lat": -37.75983, "lon": 144.807768, "name": "Sunshine Hospital Medical Centre", "state": "VIC", "rule": "Item 136", "conf": 0.9, "dist": 0.7, "reason": "Large medical centre: Sunshine Hospital Medical Centre, FTE=12.0 (fte), GPs=15, hours=72.0/wk. Nearest non-excluded pharmacy: 0.694km (margin +394m)", "color": "#2ecc71"}, {"lat": -31.741179, "lon": 115.753133, "name": "Joondalup Health Campus Medical Centre", "state": "WA", "rule": "Item 136", "conf": 0.9, "dist": 1.0, "reason": "Large medical centre: Joondalup Health Campus Medical Centre, FTE=11.2 (fte), GPs=14, hours=84.0/wk. Nearest non-excluded pharmacy: 0.984km (margin +684m)", "color": "#2ecc71"}, {"lat": -37.889197, "lon": 144.693403, "name": "IPN Medical Centre Werribee Plaza", "state": "VIC", "rule": "Item 136", "conf": 0.85, "dist": 0.7, "reason": "Large medical centre: IPN Medical Centre Werribee Plaza, FTE=9.6 (fte), GPs=12, hours=70.0/wk. Nearest non-excluded pharmacy: 0.743km (margin +443m)", "color": "#2ecc71"}, {"lat": -38.048575, "lon": 145.260843, "name": "Casey Medical Centre", "state": "VIC", "rule": "Item 136", "conf": 0.85, "dist": 0.5, "reason": "Large medical centre: Casey Medical Centre, FTE=9.6 (fte), GPs=12, hours=70.0/wk. Nearest non-excluded pharmacy: 0.547km (margin +247m)", "color": "#2ecc71"}, {"lat": -41.062968, "lon": 145.914174, "name": "TAS Family Medical Centre", "state": "TAS", "rule": "Item 136", "conf": 0.85, "dist": 1.4, "reason": "Large medical centre: TAS Family Medical Centre, FTE=8.0 (fte), GPs=10, hours=75.0/wk. Nearest non-excluded pharmacy: 1.36km (margin +1060m)", "color": "#2ecc71"}, {"lat": -19.269835, "lon": 146.803755, "name": "Townsville Medical Centre", "state": "QLD", "rule": "Item 136", "conf": 0.85, "dist": 0.6, "reason": "Large medical centre: Townsville Medical Centre, FTE=8.0 (fte), GPs=10, hours=72.0/wk. Nearest non-excluded pharmacy: 0.61km (margin +310m)", "color": "#2ecc71"}, {"lat": -12.496989, "lon": 130.975015, "name": "Palmerston Medical Centre", "state": "NT", "rule": "Item 136", "conf": 0.85, "dist": 1.3, "reason": "Large medical centre: Palmerston Medical Centre, FTE=8.0 (fte), GPs=3, hours=72.0/wk. Nearest non-excluded pharmacy: 1.3km (margin +1000m)", "color": "#2ecc71"}, {"lat": -33.30645, "lon": 151.425105, "name": "Greenway Medical Centre", "state": "NSW", "rule": "Item 136", "conf": 0.85, "dist": 1.0, "reason": "Large medical centre: Greenway Medical Centre, FTE=8.0 (fte), GPs=7, hours=70.0/wk. Nearest non-excluded pharmacy: 1.041km (margin +741m)", "color": "#2ecc71"}, {"lat": -37.744663, "lon": 144.744223, "name": "Caroline Springs Medical Centre", "state": "VIC", "rule": "Item 136", "conf": 0.85, "dist": 1.1, "reason": "Large medical centre: Caroline Springs Medical Centre, FTE=8.0 (fte), GPs=1, hours=70.0/wk. Nearest non-excluded pharmacy: 1.094km (margin +794m)", "color": "#2ecc71"}, {"lat": -27.697123, "lon": 152.908719, "name": "Springfield Medical Centre", "state": "QLD", "rule": "Item 136", "conf": 0.85, "dist": 2.3, "reason": "Large medical centre: Springfield Medical Centre, FTE=8.0 (fte), GPs=13, hours=70.0/wk. Nearest non-excluded pharmacy: 2.266km (margin +1966m)", "color": "#2ecc71"}, {"lat": -27.234963, "lon": 153.010732, "name": "North Lakes Medical Centre", "state": "QLD", "rule": "Item 136", "conf": 0.85, "dist": 0.6, "reason": "Large medical centre: North Lakes Medical Centre, FTE=8.0 (fte), GPs=10, hours=70.0/wk. Nearest non-excluded pharmacy: 0.585km (margin +285m)", "color": "#2ecc71"}, {"lat": -32.297174, "lon": 115.801488, "name": "Murdoch Medical Centre", "state": "WA", "rule": "Item 136", "conf": 0.85, "dist": 0.7, "reason": "Large medical centre: Murdoch Medical Centre, FTE=8.0 (fte), GPs=10, hours=70.0/wk. Nearest non-excluded pharmacy: 0.696km (margin +396m)", "color": "#2ecc71"}, {"lat": -32.073911, "lon": 115.912787, "name": "Canning Vale Medical Centre", "state": "WA", "rule": "Item 136", "conf": 0.85, "dist": 1.4, "reason": "Large medical centre: Canning Vale Medical Centre, FTE=8.0 (fte), GPs=7, hours=70.0/wk. Nearest non-excluded pharmacy: 1.394km (margin +1094m)", "color": "#2ecc71"}, {"lat": -27.971923, "lon": 153.415133, "name": "Gold Coast Medical Centre", "state": "QLD", "rule": "Item 136", "conf": 0.8, "dist": 0.3, "reason": "Large medical centre: Gold Coast Medical Centre, FTE=9.6 (fte), GPs=3, hours=84.0/wk. Nearest non-excluded pharmacy: 0.303km (margin +3m)", "color": "#2ecc71"}, {"lat": -32.926595, "lon": 151.776343, "name": "Newcastle Family Medical Practice", "state": "NSW", "rule": "Item 136", "conf": 0.8, "dist": 0.4, "reason": "Large medical centre: Newcastle Family Medical Practice, FTE=8.0 (fte), GPs=10, hours=70.0/wk. Nearest non-excluded pharmacy: 0.392km (margin +92m)", "color": "#2ecc71"}, {"lat": -36.803879, "lon": 144.231261, "name": "Bendigo Medical Centre", "state": "VIC", "rule": "Item 136", "conf": 0.8, "dist": 0.9, "reason": "Large medical centre: Bendigo Medical Centre, FTE=8.0 (fte), GPs=10, hours=65.0/wk. Nearest non-excluded pharmacy: 0.926km (margin +626m)", "color": "#2ecc71"}, {"lat": -27.641522, "lon": 153.105272, "name": "Logan Medical Centre", "state": "QLD", "rule": "Item 136", "conf": 0.8, "dist": 0.4, "reason": "Large medical centre: Logan Medical Centre, FTE=8.0 (fte), GPs=10, hours=72.0/wk. Nearest non-excluded pharmacy: 0.375km (margin +75m)", "color": "#2ecc71"}, {"lat": -27.084482, "lon": 152.945904, "name": "Caboolture Medical Centre", "state": "QLD", "rule": "Item 136", "conf": 0.8, "dist": 0.4, "reason": "Large medical centre: Caboolture Medical Centre, FTE=8.0 (fte), GPs=10, hours=70.0/wk. Nearest non-excluded pharmacy: 0.423km (margin +123m)", "color": "#2ecc71"}, {"lat": -35.139239, "lon": 138.499279, "name": "Noarlunga Medical Centre", "state": "SA", "rule": "Item 136", "conf": 0.8, "dist": 0.4, "reason": "Large medical centre: Noarlunga Medical Centre, FTE=8.0 (fte), GPs=10, hours=70.0/wk. Nearest non-excluded pharmacy: 0.441km (margin +141m)", "color": "#2ecc71"}, {"lat": -34.989595, "lon": 138.556632, "name": "Marion Medical Centre", "state": "SA", "rule": "Item 136", "conf": 0.8, "dist": 0.5, "reason": "Large medical centre: Marion Medical Centre, FTE=8.0 (fte), GPs=10, hours=70.0/wk. Nearest non-excluded pharmacy: 0.499km (margin +199m)", "color": "#2ecc71"}, {"lat": -27.661842, "lon": 153.045654, "name": "Browns Plains Family Practice", "state": "QLD", "rule": "Item 136", "conf": 0.8, "dist": 0.4, "reason": "Large medical centre: Browns Plains Family Practice, FTE=8.0 (fte), GPs=9, hours=70.0/wk. Nearest non-excluded pharmacy: 0.378km (margin +78m)", "color": "#2ecc71"}, {"lat": -31.784719, "lon": 115.965484, "name": "Ellenbrook Medical Centre", "state": "WA", "rule": "Item 136", "conf": 0.8, "dist": 0.3, "reason": "Large medical centre: Ellenbrook Medical Centre, FTE=8.0 (fte), GPs=5, hours=70.0/wk. Nearest non-excluded pharmacy: 0.332km (margin +32m)", "color": "#2ecc71"}, {"lat": -32.98206, "lon": 151.670328, "name": "Lake Macquarie Medical Centre", "state": "NSW", "rule": "Item 136", "conf": 0.8, "dist": 0.3, "reason": "Large medical centre: Lake Macquarie Medical Centre, FTE=8.0 (fte), GPs=4, hours=70.0/wk. Nearest non-excluded pharmacy: 0.346km (margin +46m)", "color": "#2ecc71"}, {"lat": -38.073055, "lon": 145.484719, "name": "Pakenham Medical Centre", "state": "VIC", "rule": "Item 136", "conf": 0.75, "dist": 0.5, "reason": "Large medical centre: Pakenham Medical Centre, FTE=8.0 (fte), GPs=10, hours=65.0/wk. Nearest non-excluded pharmacy: 0.465km (margin +165m)", "color": "#2ecc71"}, {"lat": -37.836863, "lon": 145.196847, "name": "Vermont Health Care", "state": "", "rule": "Item 136", "conf": 0.7, "dist": 1.0, "reason": "Large medical centre: Vermont Health Care, FTE=13.6 (estimated), GPs=17, hours=?/wk. Nearest non-excluded pharmacy: 1.049km (margin +749m)", "color": "#2ecc71"}, {"lat": -38.1889, "lon": 144.464644, "name": "Kensington Hill Medical Centre", "state": "", "rule": "Item 136", "conf": 0.7, "dist": 0.6, "reason": "Large medical centre: Kensington Hill Medical Centre, FTE=10.4 (estimated), GPs=13, hours=?/wk. Nearest non-excluded pharmacy: 0.594km (margin +294m)", "color": "#2ecc71"}, {"lat": -36.128095, "lon": 146.888148, "name": "Central Medical Group", "state": "", "rule": "Item 136", "conf": 0.65, "dist": 0.6, "reason": "Large medical centre: Central Medical Group, FTE=9.6 (estimated), GPs=12, hours=?/wk. Nearest non-excluded pharmacy: 0.564km (margin +264m)", "color": "#2ecc71"}, {"lat": -37.834161, "lon": 144.946037, "name": "Port Melbourne Medical", "state": "", "rule": "Item 136", "conf": 0.65, "dist": 0.6, "reason": "Large medical centre: Port Melbourne Medical, FTE=8.8 (estimated), GPs=11, hours=?/wk. Nearest non-excluded pharmacy: 0.631km (margin +331m)", "color": "#2ecc71"}, {"lat": -37.767475, "lon": 144.979592, "name": "East Brunswick Medical Centre", "state": "", "rule": "Item 136", "conf": 0.65, "dist": 0.5, "reason": "Large medical centre: East Brunswick Medical Centre, FTE=8.0 (estimated), GPs=10, hours=?/wk. Nearest non-excluded pharmacy: 0.502km (margin +202m)", "color": "#2ecc71"}, {"lat": -36.135723, "lon": 146.860738, "name": "Federation Clinic", "state": "", "rule": "Item 136", "conf": 0.65, "dist": 0.9, "reason": "Large medical centre: Federation Clinic, FTE=8.0 (estimated), GPs=10, hours=?/wk. Nearest non-excluded pharmacy: 0.949km (margin +649m)", "color": "#2ecc71"}, {"lat": -37.906098, "lon": 145.186816, "name": "Wheelers Hill Clinic", "state": "", "rule": "Item 136", "conf": 0.65, "dist": 0.5, "reason": "Large medical centre: Wheelers Hill Clinic, FTE=8.0 (estimated), GPs=10, hours=?/wk. Nearest non-excluded pharmacy: 0.503km (margin +203m)", "color": "#2ecc71"}, {"lat": -19.300728, "lon": 146.754547, "name": "Cranbrook Medical", "state": "", "rule": "Item 136", "conf": 0.65, "dist": 0.8, "reason": "Large medical centre: Cranbrook Medical, FTE=8.0 (estimated), GPs=10, hours=?/wk. Nearest non-excluded pharmacy: 0.774km (margin +474m)", "color": "#2ecc71"}, {"lat": -27.949317, "lon": 153.406334, "name": "Labrador Medical Centre", "state": "", "rule": "Item 136", "conf": 0.65, "dist": 0.9, "reason": "Large medical centre: Labrador Medical Centre, FTE=8.0 (estimated), GPs=10, hours=?/wk. Nearest non-excluded pharmacy: 0.938km (margin +638m)", "color": "#2ecc71"}, {"lat": -34.886665, "lon": 138.657427, "name": "Health at Campbelltown", "state": "", "rule": "Item 136", "conf": 0.6, "dist": 0.4, "reason": "Large medical centre: Health at Campbelltown, FTE=8.8 (estimated), GPs=11, hours=?/wk. Nearest non-excluded pharmacy: 0.446km (margin +146m)", "color": "#2ecc71"}, {"lat": -37.919828, "lon": 145.164363, "name": "Valewood Clinic", "state": "", "rule": "Item 136", "conf": 0.6, "dist": 0.4, "reason": "Large medical centre: Valewood Clinic, FTE=8.8 (estimated), GPs=11, hours=?/wk. Nearest non-excluded pharmacy: 0.442km (margin +142m)", "color": "#2ecc71"}, {"lat": -27.508864, "lon": 153.051602, "name": "Women\\'s Wellbeing Clinic", "state": "", "rule": "Item 136", "conf": 0.6, "dist": 0.4, "reason": "Large medical centre: Women\\'s Wellbeing Clinic, FTE=8.0 (estimated), GPs=10, hours=?/wk. Nearest non-excluded pharmacy: 0.409km (margin +109m)", "color": "#2ecc71"}, {"lat": -33.902538, "lon": 151.207585, "name": "Green Square Health", "state": "", "rule": "Item 136", "conf": 0.6, "dist": 0.5, "reason": "Large medical centre: Green Square Health, FTE=8.0 (estimated), GPs=10, hours=?/wk. Nearest non-excluded pharmacy: 0.489km (margin +189m)", "color": "#2ecc71"}, {"lat": -37.789432, "lon": 144.987704, "name": "Clifton Hill Medical Group", "state": "", "rule": "Item 136", "conf": 0.6, "dist": 0.3, "reason": "Large medical centre: Clifton Hill Medical Group, FTE=8.0 (estimated), GPs=10, hours=?/wk. Nearest non-excluded pharmacy: 0.326km (margin +26m)", "color": "#2ecc71"}, {"lat": -38.518856, "lon": 145.110861, "name": "SA1 20503109140", "state": "VIC", "rule": "Item 131", "conf": 0.8, "dist": 136.4, "reason": "Nearest pharmacy Flinders Pharmacy is 9.6km geodesic (~13.4km by road), pop=241", "color": "#3498db"}, {"lat": -24.98726, "lon": 146.315232, "name": "SA1 31503140814", "state": "QLD", "rule": "Item 131", "conf": 0.8, "dist": 131.3, "reason": "Nearest pharmacy Tambo Pharmacy is 13.1km geodesic (~18.3km by road), pop=260", "color": "#3498db"}, {"lat": -38.024967, "lon": 147.524929, "name": "SA1 20502108601", "state": "VIC", "rule": "Item 131", "conf": 0.8, "dist": 121.6, "reason": "OSRM verified: 121.6km by road to Loch Sport Pharmacy (5.4km geodesic), pop=231", "color": "#3498db"}, {"lat": -12.437916, "lon": 130.751311, "name": "SA1 70203105703", "state": "NT", "rule": "Item 131", "conf": 0.8, "dist": 119.4, "reason": "Nearest pharmacy Territory Pharmacy Stuart Park is 9.9km geodesic (~13.8km by road), pop=422", "color": "#3498db"}, {"lat": -37.185272, "lon": 145.980684, "name": "SA1 20401105717", "state": "VIC", "rule": "Item 131", "conf": 0.8, "dist": 88.7, "reason": "Nearest pharmacy Chemmart Pharmacy - Eildon is 8.2km geodesic (~11.5km by road), pop=457", "color": "#3498db"}, {"lat": -29.919426, "lon": 153.277007, "name": "SA1 10401108110", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 73.3, "reason": "Nearest pharmacy Live Happy Pharmacy is 14.1km geodesic (~19.8km by road), pop=279", "color": "#3498db"}, {"lat": -43.258363, "lon": 147.130722, "name": "SA1 60302107009", "state": "TAS", "rule": "Item 131", "conf": 0.8, "dist": 73.1, "reason": "Nearest pharmacy DOVER PHARMACY is 11.0km geodesic (~15.4km by road), pop=299", "color": "#3498db"}, {"lat": -42.949974, "lon": 147.642093, "name": "SA1 60303107306", "state": "TAS", "rule": "Item 131", "conf": 0.8, "dist": 72.7, "reason": "Nearest pharmacy TerryWhite Chemmart Dodges Ferry is 10.4km geodesic (~14.6km by road), pop=338", "color": "#3498db"}, {"lat": -43.289877, "lon": 147.14414, "name": "SA1 60302107008", "state": "TAS", "rule": "Item 131", "conf": 0.8, "dist": 67.4, "reason": "Nearest pharmacy Bruny Island Pharmacy is 8.5km geodesic (~12.0km by road), pop=466", "color": "#3498db"}, {"lat": -32.67124, "lon": 152.040976, "name": "SA1 10603112413", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 65.6, "reason": "OSRM verified: 65.6km by road to Wanda Beach Pharmacy (6.5km geodesic), pop=491", "color": "#3498db"}, {"lat": -43.287494, "lon": 147.180325, "name": "SA1 60302106907", "state": "TAS", "rule": "Item 131", "conf": 0.8, "dist": 65.2, "reason": "OSRM verified: 65.2km by road to Bruny Island Pharmacy (6.0km geodesic), pop=208", "color": "#3498db"}, {"lat": -25.177033, "lon": 152.494089, "name": "SA1 31901149917", "state": "QLD", "rule": "Item 131", "conf": 0.8, "dist": 62.0, "reason": "Nearest pharmacy Woodgate Beach Pharmacy is 10.3km geodesic (~14.5km by road), pop=507", "color": "#3498db"}, {"lat": -43.223852, "lon": 147.261529, "name": "SA1 60302106908", "state": "TAS", "rule": "Item 131", "conf": 0.8, "dist": 53.2, "reason": "Nearest pharmacy Bruny Island Pharmacy is 10.4km geodesic (~14.5km by road), pop=287", "color": "#3498db"}, {"lat": -17.781755, "lon": 146.099766, "name": "SA1 30603116003", "state": "QLD", "rule": "Item 131", "conf": 0.8, "dist": 50.7, "reason": "Nearest pharmacy LiveLife Pharmacy Mission Beach is 10.6km geodesic (~14.9km by road), pop=334", "color": "#3498db"}, {"lat": -17.778824, "lon": 146.153668, "name": "SA1 30603116028", "state": "QLD", "rule": "Item 131", "conf": 0.8, "dist": 50.4, "reason": "Nearest pharmacy LiveLife Pharmacy Mission Beach is 12.7km geodesic (~17.8km by road), pop=265", "color": "#3498db"}, {"lat": -17.7754, "lon": 146.106108, "name": "SA1 30603116002", "state": "QLD", "rule": "Item 131", "conf": 0.8, "dist": 49.9, "reason": "Nearest pharmacy LiveLife Pharmacy Mission Beach is 11.4km geodesic (~15.9km by road), pop=287", "color": "#3498db"}, {"lat": -31.902955, "lon": 152.612347, "name": "SA1 10805116803", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 47.7, "reason": "OSRM verified: 47.7km by road to Harrington Waters Village Pharmacy (5.3km geodesic), pop=462", "color": "#3498db"}, {"lat": -17.831608, "lon": 146.095295, "name": "SA1 30603116004", "state": "QLD", "rule": "Item 131", "conf": 0.8, "dist": 46.9, "reason": "OSRM verified: 46.9km by road to LiveLife Pharmacy Mission Beach (5.1km geodesic), pop=367", "color": "#3498db"}, {"lat": -35.749923, "lon": 144.280853, "name": "SA1 21503140114", "state": "VIC", "rule": "Item 131", "conf": 0.8, "dist": 46.8, "reason": "Nearest pharmacy TerryWhite Chemmart Cohuna is 8.5km geodesic (~11.9km by road), pop=550", "color": "#3498db"}, {"lat": -41.218156, "lon": 145.765026, "name": "SA1 60401107604", "state": "TAS", "rule": "Item 131", "conf": 0.8, "dist": 44.9, "reason": "Nearest pharmacy Yolla Community Pharmacy is 10.9km geodesic (~15.3km by road), pop=376", "color": "#3498db"}, {"lat": -34.759825, "lon": 150.233841, "name": "SA1 10105154022", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 44.1, "reason": "Nearest pharmacy Bundanoon Pharmacy is 12.9km geodesic (~18.1km by road), pop=295", "color": "#3498db"}, {"lat": -41.342871, "lon": 146.165951, "name": "SA1 60402109113", "state": "TAS", "rule": "Item 131", "conf": 0.8, "dist": 43.9, "reason": "Nearest pharmacy Turnbull\\'s Pharmacy is 14.0km geodesic (~19.6km by road), pop=422", "color": "#3498db"}, {"lat": -38.771836, "lon": 146.278098, "name": "SA1 20503108722", "state": "VIC", "rule": "Item 131", "conf": 0.8, "dist": 43.7, "reason": "Nearest pharmacy Toora Pharmacy is 12.6km geodesic (~17.7km by road), pop=412", "color": "#3498db"}, {"lat": -34.678247, "lon": 150.713674, "name": "SA1 10703114016", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 43.3, "reason": "Nearest pharmacy The Berry Pharmacy is 10.9km geodesic (~15.3km by road), pop=256", "color": "#3498db"}, {"lat": -32.237669, "lon": 152.468687, "name": "SA1 10801115306", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 43.3, "reason": "OSRM verified: 43.3km by road to Priceline Pharmacy Forster (6.3km geodesic), pop=349", "color": "#3498db"}, {"lat": -32.239589, "lon": 152.475297, "name": "SA1 10801115305", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 43.2, "reason": "OSRM verified: 43.2km by road to Priceline Pharmacy Forster (6.0km geodesic), pop=237", "color": "#3498db"}, {"lat": -32.247172, "lon": 152.485586, "name": "SA1 10801115309", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 42.7, "reason": "OSRM verified: 42.7km by road to Priceline Pharmacy Forster (6.1km geodesic), pop=253", "color": "#3498db"}, {"lat": -32.240208, "lon": 152.421136, "name": "SA1 10801115312", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 42.2, "reason": "Nearest pharmacy Priceline Pharmacy Forster is 10.2km geodesic (~14.3km by road), pop=345", "color": "#3498db"}, {"lat": -34.6619, "lon": 150.589256, "name": "SA1 11401127206", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 41.5, "reason": "Nearest pharmacy Robertson Village Pharmacy is 8.0km geodesic (~11.3km by road), pop=366", "color": "#3498db"}, {"lat": -32.702323, "lon": 115.737892, "name": "SA1 50201102913", "state": "WA", "rule": "Item 131", "conf": 0.8, "dist": 40.8, "reason": "Nearest pharmacy TerryWhite Chemmart Dawesville is 12.0km geodesic (~16.8km by road), pop=515", "color": "#3498db"}, {"lat": -28.636167, "lon": 153.313278, "name": "SA1 11202124903", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 36.5, "reason": "Nearest pharmacy NIMBIN VILLAGE PHARMACY is 9.9km geodesic (~13.9km by road), pop=375", "color": "#3498db"}, {"lat": -17.817985, "lon": 146.040389, "name": "SA1 30603116009", "state": "QLD", "rule": "Item 131", "conf": 0.8, "dist": 36.3, "reason": "Nearest pharmacy LiveLife Pharmacy Mission Beach is 8.5km geodesic (~11.9km by road), pop=458", "color": "#3498db"}, {"lat": -34.595724, "lon": 135.377709, "name": "SA1 40601113016", "state": "SA", "rule": "Item 131", "conf": 0.8, "dist": 36.1, "reason": "Nearest pharmacy Baraz Wellness Pharmacy is 9.1km geodesic (~12.7km by road), pop=492", "color": "#3498db"}, {"lat": -28.185424, "lon": 152.798631, "name": "SA1 31101130528", "state": "QLD", "rule": "Item 131", "conf": 0.8, "dist": 35.9, "reason": "Nearest pharmacy St Mary Pharmacy is 12.0km geodesic (~16.8km by road), pop=252", "color": "#3498db"}, {"lat": -23.331693, "lon": 150.794009, "name": "SA1 30803121804", "state": "QLD", "rule": "Item 131", "conf": 0.8, "dist": 35.8, "reason": "OSRM verified: 35.8km by road to Guardian Pharmacy Zilzie (6.3km geodesic), pop=346", "color": "#3498db"}, {"lat": -35.871788, "lon": 145.427073, "name": "SA1 21602141314", "state": "VIC", "rule": "Item 131", "conf": 0.8, "dist": 35.5, "reason": "Nearest pharmacy Tocumwal Pharmacy is 14.2km geodesic (~19.9km by road), pop=500", "color": "#3498db"}, {"lat": -24.965411, "lon": 152.483911, "name": "SA1 31901149930", "state": "QLD", "rule": "Item 131", "conf": 0.8, "dist": 35.5, "reason": "Nearest pharmacy Carlyle Gardens Chemist is 14.7km geodesic (~20.6km by road), pop=257", "color": "#3498db"}, {"lat": -30.508615, "lon": 151.483384, "name": "SA1 11001118807", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 35.5, "reason": "Nearest pharmacy Uralla Pharmacy is 14.8km geodesic (~20.8km by road), pop=400", "color": "#3498db"}, {"lat": -32.844708, "lon": 149.842174, "name": "SA1 10303107312", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 35.1, "reason": "Nearest pharmacy Kandos Rylstone Pharmacy is 12.5km geodesic (~17.4km by road), pop=219", "color": "#3498db"}, {"lat": -24.736203, "lon": 152.152551, "name": "SA1 31901149815", "state": "QLD", "rule": "Item 131", "conf": 0.8, "dist": 35.0, "reason": "Nearest pharmacy Moore Park Beach Pharmacy is 13.3km geodesic (~18.7km by road), pop=401", "color": "#3498db"}, {"lat": -35.272201, "lon": 150.515799, "name": "SA1 11401128301", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 34.6, "reason": "OSRM verified: 34.6km by road to Mollymook Pharmacy and Newsagency (6.8km geodesic), pop=289", "color": "#3498db"}, {"lat": -16.909324, "lon": 145.622027, "name": "SA1 30605116810", "state": "QLD", "rule": "Item 131", "conf": 0.8, "dist": 34.5, "reason": "Nearest pharmacy WholeLife Pharmacy & Healthfoods is 8.2km geodesic (~11.5km by road), pop=297", "color": "#3498db"}, {"lat": -33.62487, "lon": 150.175204, "name": "SA1 10303107127", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 34.4, "reason": "Nearest pharmacy Dash\\'s Blackheath Pharmacy is 10.3km geodesic (~14.4km by road), pop=389", "color": "#3498db"}, {"lat": -33.439063, "lon": 150.858221, "name": "SA1 11503129904", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 34.3, "reason": "Nearest pharmacy Wisemans Ferry Pharmacy is 13.3km geodesic (~18.6km by road), pop=414", "color": "#3498db"}, {"lat": -35.995826, "lon": 147.122602, "name": "SA1 10901117531", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 34.3, "reason": "Nearest pharmacy Thurgoona Family Pharmacy is 13.0km geodesic (~18.2km by road), pop=321", "color": "#3498db"}, {"lat": -32.154487, "lon": 152.437257, "name": "SA1 10801115313", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 34.3, "reason": "OSRM verified: 34.3km by road to TUNCURRY PHARMACY (6.3km geodesic), pop=484", "color": "#3498db"}, {"lat": -27.904217, "lon": 152.533347, "name": "SA1 31002127723", "state": "QLD", "rule": "Item 131", "conf": 0.8, "dist": 34.2, "reason": "Nearest pharmacy ARATULA PHARMACY is 8.6km geodesic (~12.0km by road), pop=324", "color": "#3498db"}, {"lat": -21.023707, "lon": 149.013001, "name": "SA1 31202135328", "state": "QLD", "rule": "Item 131", "conf": 0.8, "dist": 34.0, "reason": "Nearest pharmacy Hibiscus Coast Pharmacy is 14.3km geodesic (~20.0km by road), pop=232", "color": "#3498db"}, {"lat": -23.35715, "lon": 150.814546, "name": "SA1 30803121802", "state": "QLD", "rule": "Item 131", "conf": 0.8, "dist": 33.8, "reason": "Nearest pharmacy Guardian Pharmacy Zilzie is 8.7km geodesic (~12.2km by road), pop=264", "color": "#3498db"}, {"lat": -28.503985, "lon": 153.317659, "name": "SA1 11203125202", "state": "NSW", "rule": "Item 131", "conf": 0.8, "dist": 33.8, "reason": "Nearest pharmacy NIMBIN VILLAGE PHARMACY is 13.8km geodesic (~19.3km by road), pop=275", "color": "#3498db"}];
+
+var map = L.map('map').setView([-25.5, 134], 4);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19, attribution: '&copy; CARTO'
+}).addTo(map);
+
+points.forEach(function(p) {
+    var marker = L.circleMarker([p.lat, p.lon], {
+        radius: p.rule === 'Item 131' ? 4 : 8,
+        fillColor: p.color,
+        color: '#fff',
+        weight: 1,
+        opacity: 0.8,
+        fillOpacity: 0.7
+    }).addTo(map);
+    
+    marker.bindPopup(
+        '<b>' + p.name + '</b><br>' +
+        '<b>' + p.rule + '</b> | ' + p.state + '<br>' +
+        'Confidence: ' + p.conf + '<br>' +
+        'Nearest pharmacy: ' + p.dist + 'km<br>' +
+        '<small>' + p.reason + '</small>'
+    );
+});
+</script>
+</body>
+</html>
